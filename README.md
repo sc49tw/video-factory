@@ -77,3 +77,20 @@ pnpm lesson:import -- --thumbnail downloaded-thumbnail.png
 
 For an import-only verification without rendering, run `pnpm lesson:import -- --no-render`.
 
+## Continue on Another Computer
+
+The repository keeps source-of-truth project JSON, approved source images,
+sound effects, templates, and scripts. Generated TTS audio, subtitles,
+timelines, QA frames, render reports, and video outputs are intentionally
+excluded from Git.
+
+Install Node.js, pnpm, FFmpeg (including `ffprobe`), Python, and `edge-tts`.
+Then regenerate the current LLFC project from the repository root:
+
+```powershell
+python -m pip install edge-tts
+pnpm vf:llfc:tts -- projects/llfc/llfc-001-a-modern-theme-park
+pnpm vf:llfc:render -- projects/llfc/llfc-001-a-modern-theme-park
+```
+
+Use `--force` only when replacing locally generated results.

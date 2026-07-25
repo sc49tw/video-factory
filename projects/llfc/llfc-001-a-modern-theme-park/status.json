@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0",
   "projectId": "llfc-001",
-  "updatedAt": "2026-07-24T14:15:32.286Z",
-  "stage": "rendered",
-  "nextStage": "review",
+  "updatedAt": "2026-07-25T00:45:01.749Z",
+  "stage": "assets_ready",
+  "nextStage": "TTS",
   "progress": {
     "projectValidated": true,
     "foldersCreated": true,
@@ -15,16 +15,13 @@
     },
     "tts": {
       "required": 10,
-      "generated": 10
+      "generated": 0
     },
-    "subtitlesGenerated": true,
-    "renderReady": true,
-    "rendered": true,
-    "subtitleCueCount": 43,
-    "timelineGenerated": true,
-    "durationSec": 143.844,
-    "outputPath": "output/llfc/llfc-001-a-modern-theme-park/final.mp4",
-    "renderDurationSec": 143.833
+    "subtitlesGenerated": false,
+    "renderReady": false,
+    "rendered": false,
+    "subtitleCueCount": 0,
+    "timelineGenerated": false
   },
   "blockingIssues": [],
   "warnings": [
