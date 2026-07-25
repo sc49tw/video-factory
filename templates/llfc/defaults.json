@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "pipeline": "llfc",
+  "audio": {
+    "tts": {
+      "voiceId": "en-US-ChristopherNeural",
+      "voiceProfile": "older-american-male",
+      "rate": "-15%",
+      "pitch": "-10Hz",
+      "sampleRate": 48000
+    }
+  },
+  "subtitles": {
+    "display": {
+      "mode": "phrase",
+      "maxLines": 2,
+      "maxCharsPerLine": 34,
+      "highlightCurrentWord": false
+    }
+  },
+  "llfcTemplate": {
+    "version": "1.0",
+    "sharedAssets": {
+      "common_opening": "templates/llfc/assets/common_opening.png",
+      "common_ending": "templates/llfc/assets/common_ending.png"
+    },
+    "bookendEffects": {
+      "enabled": true,
+      "gateWeave": "subtle",
+      "lightFlicker": "subtle"
+    }
+  }
+}

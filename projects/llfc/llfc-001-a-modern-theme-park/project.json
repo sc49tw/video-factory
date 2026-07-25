@@ -1,0 +1,673 @@
+{
+  "schemaVersion": "1.0",
+  "pipeline": "llfc",
+  "project": {
+    "id": "llfc-001",
+    "series": "Lessons Learned from Cinema",
+    "episode": 1,
+    "title": "A Modern Theme Park",
+    "slug": "a-modern-theme-park",
+    "language": "en",
+    "status": "planned",
+    "contentRating": "general",
+    "sourceOfTruth": "project.json"
+  },
+  "format": {
+    "aspectRatio": "16:9",
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fps": 30,
+    "targetDurationSec": 120,
+    "safeArea": {
+      "top": 80,
+      "bottom": 120,
+      "left": 100,
+      "right": 100
+    }
+  },
+  "creativeDirection": {
+    "format": "vintage institutional case-study film",
+    "tone": "formal, restrained, bureaucratic, and completely deadpan",
+    "narrationRule": "Do not emphasize punchlines or change tone to signal a joke.",
+    "visualStyle": "mid-century institutional film with report pages, diagrams, stamps, restrained typography, projector texture, and limited color",
+    "continuityNotes": [
+      "Treat all pages as parts of the same official institutional film.",
+      "Keep typography, paper texture, institutional branding, margins, stamps, and page hierarchy consistent.",
+      "Do not add unapproved dialogue or rewrite narration."
+    ]
+  },
+  "assets": [
+    {
+      "assetId": "common_opening",
+      "type": "image",
+      "role": "opening",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "common_opening.png",
+        "common_opening.jpg",
+        "common_opening.webp"
+      ],
+      "targetPath": "assets/images/approved/common_opening"
+    },
+    {
+      "assetId": "cover",
+      "type": "image",
+      "role": "case-study-cover",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "cover.png",
+        "cover.jpg",
+        "cover.webp"
+      ],
+      "targetPath": "assets/images/approved/cover"
+    },
+    {
+      "assetId": "page01",
+      "type": "image",
+      "role": "case-study-page",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "page01.png",
+        "page01.jpg",
+        "page01.webp"
+      ],
+      "targetPath": "assets/images/approved/page01"
+    },
+    {
+      "assetId": "page02",
+      "type": "image",
+      "role": "case-study-page",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "page02.png",
+        "page02.jpg",
+        "page02.webp"
+      ],
+      "targetPath": "assets/images/approved/page02"
+    },
+    {
+      "assetId": "page03",
+      "type": "image",
+      "role": "case-study-page",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "page03.png",
+        "page03.jpg",
+        "page03.webp"
+      ],
+      "targetPath": "assets/images/approved/page03"
+    },
+    {
+      "assetId": "page04",
+      "type": "image",
+      "role": "case-study-page",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "page04.png",
+        "page04.jpg",
+        "page04.webp"
+      ],
+      "targetPath": "assets/images/approved/page04"
+    },
+    {
+      "assetId": "lesson01",
+      "type": "image",
+      "role": "lesson-card",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "lesson01.png",
+        "lesson01.jpg",
+        "lesson01.webp"
+      ],
+      "targetPath": "assets/images/approved/lesson01"
+    },
+    {
+      "assetId": "lesson02",
+      "type": "image",
+      "role": "lesson-card",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "lesson02.png",
+        "lesson02.jpg",
+        "lesson02.webp"
+      ],
+      "targetPath": "assets/images/approved/lesson02"
+    },
+    {
+      "assetId": "lesson03",
+      "type": "image",
+      "role": "lesson-card",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "lesson03.png",
+        "lesson03.jpg",
+        "lesson03.webp"
+      ],
+      "targetPath": "assets/images/approved/lesson03"
+    },
+    {
+      "assetId": "lesson04",
+      "type": "image",
+      "role": "lesson-card",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "lesson04.png",
+        "lesson04.jpg",
+        "lesson04.webp"
+      ],
+      "targetPath": "assets/images/approved/lesson04"
+    },
+    {
+      "assetId": "common_ending",
+      "type": "image",
+      "role": "ending",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "expectedFileNames": [
+        "common_ending.png",
+        "common_ending.jpg",
+        "common_ending.webp"
+      ],
+      "targetPath": "assets/images/approved/common_ending"
+    }
+  ],
+  "audio": {
+    "tts": {
+      "enabled": true,
+      "provider": "edge-tts",
+      "voiceId": "en-US-ChristopherNeural",
+      "delivery": "older-sounding American male institutional-film narrator; slow, low, calm, authoritative, dry and sincere; do not imitate a specific person",
+      "rate": "-15%",
+      "pitch": "-10Hz",
+      "sampleRate": 48000,
+      "outputFormat": "wav"
+    },
+    "mix": {
+      "loudnessTargetLufs": -14,
+      "truePeakDb": -1,
+      "musicEnabled": false,
+      "ambientBed": "projector-running",
+      "ambientBedLevelDb": -16
+    },
+    "soundEffects": [
+      {
+        "soundId": "projector-running",
+        "description": "Continuous vintage film projector mechanism.",
+        "assetPath": "assets/audio/sfx/projector-loop.wav",
+        "required": true
+      },
+      {
+        "soundId": "projector-click",
+        "description": "Dry mechanical click used for hard cuts.",
+        "assetPath": "assets/audio/sfx/projector-click.wav",
+        "required": true
+      },
+      {
+        "soundId": "projector-stop",
+        "description": "Final mechanical stop before black.",
+        "assetPath": "assets/audio/sfx/projector-click.wav",
+        "treatment": "Use the existing projector click as the temporary final mechanical stop.",
+        "required": true
+      },
+      {
+        "soundId": "transition",
+        "description": "Existing short transition sound; use only where a projector click is not specified.",
+        "assetPath": "assets/audio/sfx/transition.mp3",
+        "required": true
+      }
+    ]
+  },
+  "subtitles": {
+    "enabled": true,
+    "language": "en",
+    "formats": [
+      "srt",
+      "ass"
+    ],
+    "source": "scene narration",
+    "timing": "tts-derived",
+    "display": {
+      "burnIn": true,
+      "mode": "phrase",
+      "maxLines": 2,
+      "maxCharsPerLine": 34,
+      "position": "reserved-bottom-panel",
+      "styleId": "llfc-institutional",
+      "highlightCurrentWord": false
+    }
+  },
+  "animation": {
+    "defaultStillMotion": {
+      "type": "subtle-ken-burns",
+      "zoomFrom": 1,
+      "zoomTo": 1.035,
+      "pan": "auto"
+    },
+    "defaultTransition": {
+      "type": "projector-click-hard-cut",
+      "durationMs": 0
+    },
+    "texture": {
+      "filmGrain": "light",
+      "gateWeave": "subtle",
+      "flicker": "subtle"
+    }
+  },
+  "content": {
+    "structure": "opening, case study, four findings, four lessons, ending",
+    "scenes": [
+      {
+        "sceneId": "opening",
+        "order": 0,
+        "kind": "common-opening",
+        "assetId": "common_opening",
+        "onScreenText": [
+          "LESSONS LEARNED",
+          "FROM CINEMA",
+          "Educational Film Series"
+        ],
+        "narration": null,
+        "visualDirection": "Series title card.",
+        "performanceNotes": [],
+        "soundCues": [
+          {
+            "at": "start",
+            "soundId": "projector-running",
+            "action": "start"
+          },
+          {
+            "atSec": 2.5,
+            "soundId": "projector-click",
+            "action": "play"
+          }
+        ],
+        "transitionOut": "hard-cut-on-click",
+        "durationPolicy": {
+          "mode": "fixed",
+          "durationSec": 2.5
+        },
+        "visualEffects": [
+          "subtle-projector-gate-weave",
+          "subtle-projector-light-flicker"
+        ]
+      },
+      {
+        "sceneId": "case-study-cover",
+        "order": 1,
+        "kind": "cover",
+        "assetId": "cover",
+        "onScreenText": [
+          "CASE STUDY No.001",
+          "A MODERN THEME PARK",
+          "An examination of an ambitious entertainment facility."
+        ],
+        "narration": "This film examines the development of a modern theme park featuring unusually realistic attractions.",
+        "visualDirection": "Formal case-study cover.",
+        "performanceNotes": [
+          "Maintain a neutral institutional-film delivery."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "project-overview",
+        "order": 2,
+        "kind": "case-study-page",
+        "assetId": "page01",
+        "onScreenText": [
+          "PROJECT OVERVIEW",
+          "SITE 01",
+          "PRIVATE ISLAND",
+          "APPROVED"
+        ],
+        "narration": "A wealthy businessman develops an ambitious new entertainment facility combining family recreation, scientific innovation, and several animals previously considered unavailable.",
+        "visualDirection": "Show a private island, park entrance, monorail, visitor center, and dinosaurs in the distance. Keep labels minimal.",
+        "performanceNotes": [
+          "The final phrase is the joke; do not alter tone or emphasize it."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "systems-checklist",
+        "order": 3,
+        "kind": "case-study-page",
+        "assetId": "page02",
+        "onScreenText": [
+          "SYSTEMS CHECKLIST",
+          "✓ ELECTRIC FENCES",
+          "✓ POWER SYSTEMS",
+          "✓ GATE SECURITY",
+          "✓ COMMUNICATIONS",
+          "✓ SURVEILLANCE",
+          "✓ EMERGENCY RESPONSE"
+        ],
+        "narration": "Before opening, all essential systems are carefully inspected. The fences are secure. The gates are locked. And the electrical supply is expected to continue existing.",
+        "visualDirection": "Large image of a Tyrannosaurus behind an electrified fence; place a simple checked systems list on the right.",
+        "performanceNotes": [
+          "Deliver the final sentence calmly without emphasis."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "operational-adjustment",
+        "order": 4,
+        "kind": "case-study-page",
+        "assetId": "page03",
+        "onScreenText": [
+          "TEMPORARY",
+          "OPERATIONAL ADJUSTMENT",
+          "POWER             LIMITED",
+          "SECURITY          FLEXIBLE",
+          "ANIMAL LOCATION   UNDER REVIEW"
+        ],
+        "narration": "A minor staffing matter leads to a temporary reduction in electricity, communications, and the traditional distinction between attractions and visitors.",
+        "visualDirection": "Control-center warning lights are off; electric fences have stopped; gates are open; dinosaurs have left their designated areas; a staff member still holds a checklist.",
+        "performanceNotes": [
+          "This is the key tone reference for the episode.",
+          "State the euphemism with complete bureaucratic calm."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "final-evaluation",
+        "order": 5,
+        "kind": "case-study-page",
+        "assetId": "page04",
+        "onScreenText": [
+          "FINAL PROJECT EVALUATION",
+          "SCIENTIFIC ACHIEVEMENT       EXCELLENT",
+          "PUBLIC INTEREST              EXCELLENT",
+          "VISITOR RETENTION            MIXED",
+          "LONG-TERM OPERATIONS         POSTPONED",
+          "REVIEW COMPLETE"
+        ],
+        "narration": "The project successfully demonstrates that prehistoric life can be recreated. It also provides valuable evidence that commercial viability and scientific possibility are not always close relatives. Several useful lessons have therefore been identified.",
+        "visualDirection": "On the left, show the formal evaluation. On the right, show survivors leaving by helicopter or vehicle, localized park damage, and dinosaurs reclaiming the park. Add a large red REVIEW COMPLETE stamp.",
+        "performanceNotes": [
+          "Pause for 0.5 seconds after 'not always close relatives.'",
+          "Resume in the same neutral tone for the final sentence."
+        ],
+        "timingCues": [
+          {
+            "afterText": "are not always close relatives.",
+            "pauseSec": 0.5
+          }
+        ],
+        "soundCues": [
+          {
+            "at": "end",
+            "soundId": "projector-click",
+            "action": "play"
+          }
+        ],
+        "transitionOut": "hard-cut-on-click",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.1
+        }
+      },
+      {
+        "sceneId": "lesson-01",
+        "order": 6,
+        "kind": "lesson-card",
+        "assetId": "lesson01",
+        "onScreenText": [
+          "LESSON 1",
+          "CHOOSING",
+          "APPROPRIATE ATTRACTIONS",
+          "RECOMMENDED",
+          "Ferris Wheel",
+          "Carousel",
+          "Park Train",
+          "ADVANCED OPTION",
+          "Tyrannosaurus"
+        ],
+        "narration": "Traditional attractions include Ferris wheels, carousels, and park trains. Dinosaurs should generally be considered an advanced management option.",
+        "visualDirection": "Compare recommended traditional attractions on the left with Tyrannosaurus as the advanced option on the right.",
+        "performanceNotes": [
+          "Remain entirely sincere."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "lesson-02",
+        "order": 7,
+        "kind": "lesson-card",
+        "assetId": "lesson02",
+        "onScreenText": [
+          "LESSON 2",
+          "MAINTAINING",
+          "ESSENTIAL SYSTEMS",
+          "POWER ON",
+          "Visitors remain separated from attractions.",
+          "POWER OFF",
+          "The visitor experience becomes more interactive."
+        ],
+        "narration": "Modern facilities depend on reliable electrical systems. This is particularly important when electricity is the main reason the visitors are not being eaten.",
+        "visualDirection": "Use a clean side-by-side comparison of POWER ON and POWER OFF.",
+        "performanceNotes": [
+          "This may be the episode's largest joke; deliver it completely flat."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "lesson-03",
+        "order": 8,
+        "kind": "lesson-card",
+        "assetId": "lesson03",
+        "onScreenText": [
+          "LESSON 3",
+          "EMPLOYEE RELATIONS",
+          "SATISFIED EMPLOYEE",
+          "✓ Cooperative",
+          "✓ Reliable",
+          "✓ Reports problems",
+          "DISSATISFIED EMPLOYEE",
+          "△ Distracted",
+          "△ Leaving early",
+          "△ Carrying company property"
+        ],
+        "narration": "Employees should receive appropriate support, clear communication, and adequate compensation. A dissatisfied employee may reduce morale, productivity, and the number of functioning electric fences.",
+        "visualDirection": "Present a simple formal comparison between a satisfied and dissatisfied employee.",
+        "performanceNotes": [
+          "Keep the cadence measured and instructional."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "lesson-04",
+        "order": 9,
+        "kind": "lesson-card",
+        "assetId": "lesson04",
+        "onScreenText": [
+          "LESSON 4",
+          "RISK ASSESSMENT",
+          "CAN WE DO IT?       YES",
+          "SHOULD WE DO IT?    PENDING REVIEW"
+        ],
+        "narration": "The ability to do something does not necessarily mean that it should be done. This principle is useful in science, business, and the management of large carnivorous attractions.",
+        "visualDirection": "Use the minimal CAN WE DO IT? / SHOULD WE DO IT? decision layout.",
+        "performanceNotes": [
+          "Do not signal the final phrase as a punchline."
+        ],
+        "soundCues": [],
+        "transitionOut": "projector-click-hard-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.35
+        }
+      },
+      {
+        "sceneId": "ending",
+        "order": 10,
+        "kind": "common-ending",
+        "assetId": "common_ending",
+        "onScreenText": [
+          "END OF LESSON",
+          "Please remain seated",
+          "until all prehistoric animals",
+          "have left the area.",
+          "Distribution of future materials requires subscription.",
+          "Department of Cinema Education",
+          "and Public Service"
+        ],
+        "narration": "This concludes today's programme. Please remain calm, follow all posted instructions, and avoid unnecessary innovation. Distribution of future materials requires subscription. Thank you for your attention.",
+        "visualDirection": "Formal end card matching the opening title card.",
+        "performanceNotes": [
+          "Close with the same calm institutional delivery."
+        ],
+        "soundCues": [
+          {
+            "at": "start",
+            "soundId": "projector-running",
+            "action": "continue"
+          },
+          {
+            "at": "one-second-after-narration",
+            "soundId": "projector-stop",
+            "action": "play"
+          }
+        ],
+        "transitionOut": "cut-to-black",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 1
+        },
+        "visualEffects": [
+          "subtle-projector-gate-weave",
+          "subtle-projector-light-flicker"
+        ]
+      }
+    ]
+  },
+  "render": {
+    "engine": "ffmpeg",
+    "compositionId": "LLFC-FirstCut",
+    "timelineMode": "derive-from-tts",
+    "backgroundColor": "#11100D",
+    "imageFit": "contain",
+    "outputs": [
+      {
+        "id": "master-landscape",
+        "container": "mp4",
+        "videoCodec": "h264",
+        "audioCodec": "aac",
+        "pixelFormat": "yuv420p",
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "fps": 30,
+        "targetPath": "output/llfc/llfc-001-a-modern-theme-park/final.mp4"
+      },
+      {
+        "id": "subtitles-srt",
+        "format": "srt",
+        "targetPath": "output/llfc/llfc-001-a-modern-theme-park/subtitles.srt"
+      },
+      {
+        "id": "subtitles-ass",
+        "format": "ass",
+        "targetPath": "output/llfc/llfc-001-a-modern-theme-park/subtitles.ass"
+      }
+    ],
+    "preflight": {
+      "requireAllAssets": true,
+      "requireApprovedImages": true,
+      "validateAspectRatio": true,
+      "validateAudio": true,
+      "validateSubtitleOverlap": true
+    },
+    "subtitleArea": {
+      "position": "bottom",
+      "height": 300,
+      "backgroundColor": "#11100D"
+    }
+  },
+  "publishing": {
+    "youtube": {
+      "title": "Lessons Learned from Cinema #001 — A Modern Theme Park",
+      "description": "An official examination of an ambitious entertainment facility featuring unusually realistic attractions.\n\nThis episode reviews project planning, essential systems, employee relations, and risk assessment—all through the reassuring clarity of an official training film.\n\nLessons Learned from Cinema is a deadpan institutional film series about the practical lessons hidden inside familiar movie situations.",
+      "tags": [
+        "Lessons Learned from Cinema",
+        "LLFC",
+        "A Modern Theme Park",
+        "institutional film parody",
+        "deadpan comedy",
+        "cinema comedy",
+        "theme park",
+        "dinosaurs",
+        "risk assessment",
+        "workplace training film"
+      ],
+      "category": "Comedy",
+      "language": "en",
+      "madeForKids": false,
+      "visibility": "private"
+    }
+  },
+  "ingest": {
+    "identityKey": "assetId",
+    "fileNameDependency": false,
+    "assignmentStrategy": "metadata-first-then-exact-name",
+    "unmatchedAssetPolicy": "hold-for-review",
+    "notes": "Asset IDs are permanent. Downloaded filenames may vary; Codex should resolve metadata first, then expected filenames, and normalize storage paths during ingest."
+  }
+}

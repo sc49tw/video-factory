@@ -1,0 +1,71 @@
+﻿{
+    "id":  "CT009",
+    "slug":  "the-emperors-new-clothes",
+    "title":  "The Emperor\u0027s New Clothes",
+    "source_type":  "classic-story",
+    "original_story":  {
+                           "summary":  "",
+                           "original_lesson":  "Truth can expose collective foolishness."
+                       },
+    "characters":  [
+                       {
+                           "name":  "Emperor",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Two swindlers",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Officials",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Crowd",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Child",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       }
+                   ],
+    "hidden_assumptions":  [
+
+                           ],
+    "what_ifs":  [
+
+                 ],
+    "selected_candidate_id":  null,
+    "production":  {
+                       "state":  "brainstorm",
+                       "project_id":  null,
+                       "published_url":  null
+                   },
+    "metadata":  {
+                     "created_at":  "2026-07-25",
+                     "updated_at":  "2026-07-25",
+                     "tags":  [
+                                  "classic-twisted"
+                              ]
+                 }
+}

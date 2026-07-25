@@ -1,0 +1,87 @@
+﻿{
+    "series":  "Classic Twisted",
+    "description":  "Classic stories re-examined through changed assumptions, alternate perspectives, and extended consequences.",
+    "updated_at":  "2026-07-25",
+    "stories":  [
+                    {
+                        "id":  "CT001",
+                        "slug":  "the-tortoise-and-the-hare",
+                        "title":  "The Tortoise and the Hare",
+                        "path":  "stories/CT001-The-Tortoise-and-the-Hare/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT002",
+                        "slug":  "the-boy-who-cried-wolf",
+                        "title":  "The Boy Who Cried Wolf",
+                        "path":  "stories/CT002-The-Boy-Who-Cried-Wolf/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT003",
+                        "slug":  "the-ant-and-the-grasshopper",
+                        "title":  "The Ant and the Grasshopper",
+                        "path":  "stories/CT003-The-Ant-and-the-Grasshopper/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT004",
+                        "slug":  "the-fox-and-the-grapes",
+                        "title":  "The Fox and the Grapes",
+                        "path":  "stories/CT004-The-Fox-and-the-Grapes/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT005",
+                        "slug":  "the-goose-that-laid-the-golden-eggs",
+                        "title":  "The Goose That Laid the Golden Eggs",
+                        "path":  "stories/CT005-The-Goose-that-Laid-the-Golden-Eggs/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT006",
+                        "slug":  "the-three-little-pigs",
+                        "title":  "The Three Little Pigs",
+                        "path":  "stories/CT006-The-Three-Little-Pigs/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT007",
+                        "slug":  "little-red-riding-hood",
+                        "title":  "Little Red Riding Hood",
+                        "path":  "stories/CT007-Little-Red-Riding-Hood/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT008",
+                        "slug":  "jack-and-the-beanstalk",
+                        "title":  "Jack and the Beanstalk",
+                        "path":  "stories/CT008-Jack-and-the-Beanstalk/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT009",
+                        "slug":  "the-emperors-new-clothes",
+                        "title":  "The Emperor\u0027s New Clothes",
+                        "path":  "stories/CT009-The-Emperors-New-Clothes/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    },
+                    {
+                        "id":  "CT010",
+                        "slug":  "cinderella",
+                        "title":  "Cinderella",
+                        "path":  "stories/CT010-Cinderella/story.json",
+                        "state":  "brainstorm",
+                        "selected_candidate_id":  null
+                    }
+                ]
+}

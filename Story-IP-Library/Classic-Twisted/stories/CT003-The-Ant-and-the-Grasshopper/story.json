@@ -1,0 +1,55 @@
+﻿{
+    "id":  "CT003",
+    "slug":  "the-ant-and-the-grasshopper",
+    "title":  "The Ant and the Grasshopper",
+    "source_type":  "classic-story",
+    "original_story":  {
+                           "summary":  "",
+                           "original_lesson":  "Work today to prepare for tomorrow."
+                       },
+    "characters":  [
+                       {
+                           "name":  "Ant",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Grasshopper",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Other ants",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       }
+                   ],
+    "hidden_assumptions":  [
+
+                           ],
+    "what_ifs":  [
+
+                 ],
+    "selected_candidate_id":  null,
+    "production":  {
+                       "state":  "brainstorm",
+                       "project_id":  null,
+                       "published_url":  null
+                   },
+    "metadata":  {
+                     "created_at":  "2026-07-25",
+                     "updated_at":  "2026-07-25",
+                     "tags":  [
+                                  "classic-twisted"
+                              ]
+                 }
+}

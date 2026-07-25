@@ -1,0 +1,6 @@
+# Generated media and build artifacts
+*.mp4
+output/
+projects/**/generated/
+projects/**/render/
+projects/**/output/

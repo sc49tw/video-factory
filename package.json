@@ -1,0 +1,12 @@
+{
+  "name": "language-shadowing-factory",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "lesson:import": "node scripts/lesson-import.mjs",
+    "video:render": "node scripts/render-english-prototype.mjs",
+    "video:prototype": "pnpm video:render lessons/examples/en-junior-high.example.json",
+    "vf:llfc:tts": "node scripts/llfc-tts.mjs",
+    "vf:llfc:render": "node scripts/llfc-render.mjs"
+  }
+}

@@ -1,0 +1,1615 @@
+{
+  "project": {
+    "title": "Do Communication Frameworks Really Make You Better at Speaking?",
+    "episode": "001",
+    "language": "en-US",
+    "estimated_duration_minutes": 15,
+    "format": "two_person_dialogue",
+    "tts_engine": "Microsoft Edge TTS"
+  },
+  "speakers": {
+    "ETHAN": {
+      "name": "Ethan Brooks",
+      "role": "Support",
+      "voice": "en-US-GuyNeural",
+      "rate": "-4%",
+      "pitch": "-2Hz",
+      "volume": "+0%"
+    },
+    "MAYA": {
+      "name": "Dr. Maya Chen",
+      "role": "Opponent",
+      "voice": "en-US-NancyNeural",
+      "rate": "-3%",
+      "pitch": "-3Hz",
+      "volume": "+0%"
+    }
+  },
+  "defaults": {
+    "pause_after_turn_ms": 450,
+    "pause_after_section_ms": 950,
+    "output_audio_format": "audio-24khz-48kbitrate-mono-mp3",
+    "generate_one_audio_file_per_turn": true,
+    "merge_after_generation": true
+  },
+  "sections": [
+    {
+      "id": "opening",
+      "title": "Opening",
+      "turns": [
+        {
+          "id": "turn_001",
+          "speaker": "ETHAN",
+          "text": "Have you ever known exactly what you wanted to say, but failed to put it into words?",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_002",
+          "speaker": "ETHAN",
+          "text": "The idea was clear in your head. But when you started speaking, your explanation became longer, less organized, and somehow more confusing.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_003",
+          "speaker": "ETHAN",
+          "text": "Today, we are looking at ten popular techniques for turning thoughts into clear language.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_004",
+          "speaker": "ETHAN",
+          "text": "I think these techniques can make almost anyone a better communicator.",
+          "pause_after_ms": 450
+        },
+        {
+          "id": "turn_005",
+          "speaker": "MAYA",
+          "text": "And I think that sentence already needs a warning label.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_006",
+          "speaker": "ETHAN",
+          "text": "We have been recording for twenty seconds.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_007",
+          "speaker": "MAYA",
+          "text": "Exactly. We should establish the problem early.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_008",
+          "speaker": "MAYA",
+          "text": "Communication frameworks can help. But they can also make people sound mechanical, oversimplify complex ideas, and create the illusion that every conversation has a clean structure.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_009",
+          "speaker": "ETHAN",
+          "text": "So you are not completely against them.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_010",
+          "speaker": "MAYA",
+          "text": "I am against treating them as universal laws.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_011",
+          "speaker": "ETHAN",
+          "text": "Fair enough. Let us examine the ten techniques one by one.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_012",
+          "speaker": "ETHAN",
+          "text": "I will defend them.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_013",
+          "speaker": "MAYA",
+          "text": "And I will try to break them.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_01",
+      "title": "Point One. Decide Your Conclusion First.",
+      "turns": [
+        {
+          "id": "turn_014",
+          "speaker": "ETHAN",
+          "text": "The first technique is simple.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_015",
+          "speaker": "ETHAN",
+          "text": "Before you start speaking, decide your conclusion in one sentence.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_016",
+          "speaker": "ETHAN",
+          "text": "For example, instead of beginning with a long explanation about market conditions, customer behavior, and last quarter's results, say this.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_017",
+          "speaker": "ETHAN",
+          "text": "Sales are likely to fall by about ten percent next year.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_018",
+          "speaker": "ETHAN",
+          "text": "Then explain why. This prevents the main point from getting lost.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_019",
+          "speaker": "MAYA",
+          "text": "It is efficient, especially in business. But there is a hidden assumption here.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_020",
+          "speaker": "MAYA",
+          "text": "You are assuming the speaker already knows the correct conclusion.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_021",
+          "speaker": "ETHAN",
+          "text": "Usually, the speaker has at least a working conclusion.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_022",
+          "speaker": "MAYA",
+          "text": "Sometimes. But people often discover what they think by speaking.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_023",
+          "speaker": "MAYA",
+          "text": "Imagine a difficult personal conversation. Someone asks, are you happy in this relationship?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_024",
+          "speaker": "MAYA",
+          "text": "You may not have a one-sentence conclusion ready. You may need to explore several conflicting feelings before you understand your own answer.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_025",
+          "speaker": "ETHAN",
+          "text": "That is true. But even then, you could begin with a provisional conclusion.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_026",
+          "speaker": "ETHAN",
+          "text": "You might say, I am not sure, but I feel that something important is missing.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_027",
+          "speaker": "MAYA",
+          "text": "That is better, because it communicates uncertainty honestly.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_028",
+          "speaker": "MAYA",
+          "text": "My concern is that decide your conclusion first can become force yourself to sound certain.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_029",
+          "speaker": "ETHAN",
+          "text": "Then perhaps the real rule is this. Know the main direction of your message before giving the details.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_030",
+          "speaker": "MAYA",
+          "text": "Yes. And your direction can include uncertainty.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_031",
+          "speaker": "MAYA",
+          "text": "I do not know yet can be a legitimate conclusion.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_02",
+      "title": "Point Two. Separate Facts from Interpretations.",
+      "turns": [
+        {
+          "id": "turn_032",
+          "speaker": "ETHAN",
+          "text": "The second technique is to separate facts from interpretations.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_033",
+          "speaker": "ETHAN",
+          "text": "Suppose a company launches an advertising campaign, and sales increase by ten percent.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_034",
+          "speaker": "ETHAN",
+          "text": "The fact is this. Sales increased by ten percent after the campaign.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_035",
+          "speaker": "ETHAN",
+          "text": "The interpretation is this. The campaign caused the increase.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_036",
+          "speaker": "ETHAN",
+          "text": "Separating those statements makes communication more accurate.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_037",
+          "speaker": "MAYA",
+          "text": "This is one of the strongest techniques on the list.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_038",
+          "speaker": "MAYA",
+          "text": "People constantly confuse observations with explanations.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_039",
+          "speaker": "MAYA",
+          "text": "A manager says, Daniel does not care about the project.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_040",
+          "speaker": "MAYA",
+          "text": "But what actually happened?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_041",
+          "speaker": "MAYA",
+          "text": "Daniel missed two meetings and submitted one report late.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_042",
+          "speaker": "MAYA",
+          "text": "Those are observations. Daniel does not care is an interpretation.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_043",
+          "speaker": "ETHAN",
+          "text": "And if the manager presents the interpretation as a fact, Daniel will probably become defensive.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_044",
+          "speaker": "MAYA",
+          "text": "Right. But separating facts from interpretations is harder than it sounds.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_045",
+          "speaker": "MAYA",
+          "text": "Facts are often selected and framed.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_046",
+          "speaker": "MAYA",
+          "text": "For example, you say Daniel missed two meetings. Did he attend twenty other meetings? Was he caring for a sick parent? Were those two meetings mandatory?",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_047",
+          "speaker": "MAYA",
+          "text": "Even technically accurate facts can create a misleading picture.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_048",
+          "speaker": "ETHAN",
+          "text": "So we should provide enough context.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_049",
+          "speaker": "MAYA",
+          "text": "Yes. I would use three layers.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_050",
+          "speaker": "MAYA",
+          "text": "First, what did you directly observe?",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_051",
+          "speaker": "MAYA",
+          "text": "Second, what do you think it means?",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_052",
+          "speaker": "MAYA",
+          "text": "Third, how confident are you in that interpretation?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_053",
+          "speaker": "ETHAN",
+          "text": "For example, Daniel missed two project meetings this month. I am concerned that he may be disengaging, but I have not yet asked him why.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_054",
+          "speaker": "MAYA",
+          "text": "Exactly. That is both clear and intellectually honest.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_03",
+      "title": "Point Three. Align the Premises.",
+      "turns": [
+        {
+          "id": "turn_055",
+          "speaker": "ETHAN",
+          "text": "The third technique is to align the premises before discussing the issue.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_056",
+          "speaker": "ETHAN",
+          "text": "Two people may appear to disagree when they are actually starting from different assumptions.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_057",
+          "speaker": "ETHAN",
+          "text": "Suppose one employee says remote work is successful because productivity has increased.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_058",
+          "speaker": "ETHAN",
+          "text": "Another says remote work is failing because team relationships have weakened.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_059",
+          "speaker": "ETHAN",
+          "text": "They are using different definitions of success.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_060",
+          "speaker": "MAYA",
+          "text": "This happens constantly.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_061",
+          "speaker": "MAYA",
+          "text": "People argue about education, technology, health, and public policy without agreeing on what outcome they are trying to optimize.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_062",
+          "speaker": "ETHAN",
+          "text": "So before debating the answer, clarify the question.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_063",
+          "speaker": "ETHAN",
+          "text": "What are we trying to achieve? What constraints are we assuming? What information do we both accept?",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_064",
+          "speaker": "MAYA",
+          "text": "Useful, but potentially exhausting.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_065",
+          "speaker": "MAYA",
+          "text": "Imagine doing this before every ordinary conversation.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_066",
+          "speaker": "MAYA",
+          "text": "Before we discuss where to eat, let us define affordability, convenience, nutrition, and the acceptable radius from our current location.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_067",
+          "speaker": "ETHAN",
+          "text": "That sounds reasonable to me.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_068",
+          "speaker": "MAYA",
+          "text": "Of course it does. You are a communication coach.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_069",
+          "speaker": "MAYA",
+          "text": "Normal people would leave without you.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_070",
+          "speaker": "ETHAN",
+          "text": "Fair criticism.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_071",
+          "speaker": "ETHAN",
+          "text": "We do not need to formalize every premise. We only need to notice when a disagreement seems strangely persistent.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_072",
+          "speaker": "MAYA",
+          "text": "Yes. If two intelligent people keep repeating themselves, they may not be arguing about the same question.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_073",
+          "speaker": "MAYA",
+          "text": "At that point, ask this. What assumption are you starting from?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_074",
+          "speaker": "MAYA",
+          "text": "Or ask this. What does success mean to you here?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_075",
+          "speaker": "ETHAN",
+          "text": "That one question can save thirty minutes of argument.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_076",
+          "speaker": "MAYA",
+          "text": "Or reveal that the disagreement is deeper than you thought.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_077",
+          "speaker": "MAYA",
+          "text": "But that is still progress.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_04",
+      "title": "Point Four. Use In Other Words to Find the Core Message.",
+      "turns": [
+        {
+          "id": "turn_078",
+          "speaker": "ETHAN",
+          "text": "The fourth technique is to summarize long information by saying, in other words.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_079",
+          "speaker": "ETHAN",
+          "text": "You listen to the details, then identify the central message.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_080",
+          "speaker": "ETHAN",
+          "text": "For example, in other words, the project is technically possible, but we do not have enough people to complete it this quarter.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_081",
+          "speaker": "MAYA",
+          "text": "I like this technique when it is used as a question.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_082",
+          "speaker": "MAYA",
+          "text": "In other words, are you saying that the project is possible, but the schedule is unrealistic?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_083",
+          "speaker": "MAYA",
+          "text": "That gives the other person a chance to correct you.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_084",
+          "speaker": "ETHAN",
+          "text": "Why do you dislike it as a statement?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_085",
+          "speaker": "MAYA",
+          "text": "Because summarizing gives you power.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_086",
+          "speaker": "MAYA",
+          "text": "You decide which details matter and which details disappear.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_087",
+          "speaker": "MAYA",
+          "text": "A person may describe ten problems, and you say, so, in other words, you need better time management.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_088",
+          "speaker": "MAYA",
+          "text": "Perhaps that is not what they meant at all.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_089",
+          "speaker": "ETHAN",
+          "text": "That is a terrible summary.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_090",
+          "speaker": "MAYA",
+          "text": "It is also a very common one.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_091",
+          "speaker": "MAYA",
+          "text": "People compress another person's experience into a conclusion they already wanted to reach.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_092",
+          "speaker": "ETHAN",
+          "text": "Then the technique should include verification.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_093",
+          "speaker": "ETHAN",
+          "text": "Summarize, but do not assume your summary is correct.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_094",
+          "speaker": "MAYA",
+          "text": "Yes. Say, let me check whether I understood you.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_095",
+          "speaker": "MAYA",
+          "text": "That phrase makes the conversation collaborative rather than controlling.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_05",
+      "title": "Point Five. Turn Abstract Words into Concrete Examples.",
+      "turns": [
+        {
+          "id": "turn_096",
+          "speaker": "ETHAN",
+          "text": "The fifth technique is to replace abstract language with concrete actions.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_097",
+          "speaker": "ETHAN",
+          "text": "Do not simply say, we need to work harder.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_098",
+          "speaker": "ETHAN",
+          "text": "Instead say this. We will study for ten minutes each morning, record every mistake, and review our progress once a week.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_099",
+          "speaker": "ETHAN",
+          "text": "Concrete language makes action easier.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_100",
+          "speaker": "MAYA",
+          "text": "Strongly agreed.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_101",
+          "speaker": "MAYA",
+          "text": "Abstract words often create false agreement.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_102",
+          "speaker": "MAYA",
+          "text": "Everyone supports quality, improvement, innovation, responsibility, and teamwork.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_103",
+          "speaker": "MAYA",
+          "text": "But those words can mean almost anything.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_104",
+          "speaker": "ETHAN",
+          "text": "Exactly. If a manager says, we need better communication, employees may nod without knowing what to change.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_105",
+          "speaker": "ETHAN",
+          "text": "A concrete version might be this. After every client meeting, send a five-sentence summary to the team before the end of the day.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_106",
+          "speaker": "MAYA",
+          "text": "However, concrete examples can also become too rigid.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_107",
+          "speaker": "MAYA",
+          "text": "Suppose you define being a supportive parent as calling your child every evening.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_108",
+          "speaker": "MAYA",
+          "text": "That may be helpful for one family and oppressive for another.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_109",
+          "speaker": "ETHAN",
+          "text": "So the action should serve the principle, not replace it.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_110",
+          "speaker": "MAYA",
+          "text": "Right. We need both levels.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_111",
+          "speaker": "MAYA",
+          "text": "The abstract value tells us why.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_112",
+          "speaker": "MAYA",
+          "text": "The concrete behavior tells us what to try.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_113",
+          "speaker": "MAYA",
+          "text": "And then reality tells us whether it works.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_114",
+          "speaker": "ETHAN",
+          "text": "That is a good three-part structure.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_115",
+          "speaker": "ETHAN",
+          "text": "Value, behavior, feedback.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_116",
+          "speaker": "MAYA",
+          "text": "You turned my objection into a framework.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_117",
+          "speaker": "ETHAN",
+          "text": "It is what I do.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_06",
+      "title": "Point Six. Put One Message in Each Sentence.",
+      "turns": [
+        {
+          "id": "turn_118",
+          "speaker": "ETHAN",
+          "text": "The sixth technique is to communicate one message at a time.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_119",
+          "speaker": "ETHAN",
+          "text": "For example, the conclusion is that we should delay the launch.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_120",
+          "speaker": "ETHAN",
+          "text": "The reason is that the security test is incomplete.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_121",
+          "speaker": "ETHAN",
+          "text": "The next action is to run another test on Friday.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_122",
+          "speaker": "ETHAN",
+          "text": "Short, separate messages reduce misunderstanding.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_123",
+          "speaker": "MAYA",
+          "text": "They also make text-to-speech sound much better.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_124",
+          "speaker": "ETHAN",
+          "text": "A practical benefit for this program.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_125",
+          "speaker": "MAYA",
+          "text": "But I want to distinguish short sentences from simplistic thinking.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_126",
+          "speaker": "MAYA",
+          "text": "Complex ideas sometimes require relationships between several conditions.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_127",
+          "speaker": "MAYA",
+          "text": "If every sentence is reduced too aggressively, the listener may miss how the pieces connect.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_128",
+          "speaker": "ETHAN",
+          "text": "Can you give an example?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_129",
+          "speaker": "MAYA",
+          "text": "Consider this statement.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_130",
+          "speaker": "MAYA",
+          "text": "The launch should be delayed, not because the product is unusable, but because the unresolved security issue could create a low-probability, high-impact risk that customers have not agreed to accept.",
+          "pause_after_ms": 450
+        },
+        {
+          "id": "turn_131",
+          "speaker": "MAYA",
+          "text": "That is longer, but the relationships matter.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_132",
+          "speaker": "ETHAN",
+          "text": "True. The goal is not to make every sentence tiny.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_133",
+          "speaker": "ETHAN",
+          "text": "The goal is to prevent one sentence from carrying five unrelated messages.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_134",
+          "speaker": "MAYA",
+          "text": "Exactly. One sentence can contain complexity if all parts support one central idea.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_135",
+          "speaker": "ETHAN",
+          "text": "So we should say one conceptual message per sentence, not necessarily one fact per sentence.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_136",
+          "speaker": "MAYA",
+          "text": "That is a much better rule.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_07",
+      "title": "Point Seven. Present Information in the Listener's Preferred Order.",
+      "turns": [
+        {
+          "id": "turn_137",
+          "speaker": "ETHAN",
+          "text": "The seventh technique is to organize information in the order the listener wants.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_138",
+          "speaker": "ETHAN",
+          "text": "For many busy people, the useful order is conclusion, reason, and next step.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_139",
+          "speaker": "MAYA",
+          "text": "For busy managers, perhaps.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_140",
+          "speaker": "MAYA",
+          "text": "But different listeners need different orders.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_141",
+          "speaker": "MAYA",
+          "text": "A scientist may want methods before conclusions.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_142",
+          "speaker": "MAYA",
+          "text": "A doctor may need symptoms before diagnosis.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_143",
+          "speaker": "MAYA",
+          "text": "A customer hearing bad news may need empathy before explanation.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_144",
+          "speaker": "ETHAN",
+          "text": "So the speaker should adapt the sequence.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_145",
+          "speaker": "MAYA",
+          "text": "Yes. Communication is not only about organizing your own thoughts. It is also about predicting the listener's needs.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_146",
+          "speaker": "ETHAN",
+          "text": "In a status report, I might say this. The delivery will be three days late. A supplier shipment was delayed. We have already moved the installation to Monday.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_147",
+          "speaker": "MAYA",
+          "text": "Clear and appropriate.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_148",
+          "speaker": "MAYA",
+          "text": "But imagine telling an employee this. You are being transferred. Your performance has been strong. The company is restructuring.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_149",
+          "speaker": "MAYA",
+          "text": "The conclusion came first, but the order feels brutal.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_150",
+          "speaker": "ETHAN",
+          "text": "Then I might begin with context.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_151",
+          "speaker": "ETHAN",
+          "text": "The company is restructuring several teams. Your performance has been strong, and this decision is not disciplinary. However, your role will be transferred to another division.",
+          "pause_after_ms": 450
+        },
+        {
+          "id": "turn_152",
+          "speaker": "MAYA",
+          "text": "Much better.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_153",
+          "speaker": "MAYA",
+          "text": "The listener's preferred order is not always the fastest order.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_154",
+          "speaker": "MAYA",
+          "text": "Sometimes emotional safety is part of clarity.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_08",
+      "title": "Point Eight. Organize Your Thoughts into Three Categories.",
+      "turns": [
+        {
+          "id": "turn_155",
+          "speaker": "ETHAN",
+          "text": "The eighth technique is to sort your thoughts into three categories before speaking.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_156",
+          "speaker": "ETHAN",
+          "text": "For example, important, supporting, and unnecessary.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_157",
+          "speaker": "ETHAN",
+          "text": "This helps prevent information overload.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_158",
+          "speaker": "MAYA",
+          "text": "Three is a psychologically attractive number.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_159",
+          "speaker": "MAYA",
+          "text": "People like beginning, middle, and end.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_160",
+          "speaker": "MAYA",
+          "text": "Past, present, and future.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_161",
+          "speaker": "MAYA",
+          "text": "Problem, cause, and solution.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_162",
+          "speaker": "ETHAN",
+          "text": "So you approve.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_163",
+          "speaker": "MAYA",
+          "text": "I approve of grouping. I am suspicious of worshipping the number three.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_164",
+          "speaker": "MAYA",
+          "text": "Sometimes there are two important categories. Sometimes there are five.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_165",
+          "speaker": "ETHAN",
+          "text": "But three creates discipline.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_166",
+          "speaker": "ETHAN",
+          "text": "If someone has seventeen points, asking for the top three forces prioritization.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_167",
+          "speaker": "MAYA",
+          "text": "That is useful. The danger comes when speakers pretend reality has exactly three parts because presentation advice told them it should.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_168",
+          "speaker": "ETHAN",
+          "text": "Then perhaps three is a default, not a law.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_169",
+          "speaker": "MAYA",
+          "text": "Yes. And the categories should match the task.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_170",
+          "speaker": "MAYA",
+          "text": "Before a difficult conversation, I might sort my thoughts into what must be said, what could be said later, and what should not be said while I am angry.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_171",
+          "speaker": "ETHAN",
+          "text": "That third box could save many relationships.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_172",
+          "speaker": "MAYA",
+          "text": "And many emails.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_09",
+      "title": "Point Nine. Translate Ideas into Your Own Words.",
+      "turns": [
+        {
+          "id": "turn_173",
+          "speaker": "ETHAN",
+          "text": "The ninth technique is to restate difficult ideas in your own words.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_174",
+          "speaker": "ETHAN",
+          "text": "If you cannot explain something without repeating the original language, you may not understand it deeply.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_175",
+          "speaker": "MAYA",
+          "text": "Generally true.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_176",
+          "speaker": "MAYA",
+          "text": "Explaining an idea in your own words forces you to rebuild the meaning rather than reproduce the vocabulary.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_177",
+          "speaker": "ETHAN",
+          "text": "This is especially useful in learning.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_178",
+          "speaker": "ETHAN",
+          "text": "Read a paragraph, close the book, and explain the idea aloud as if speaking to a friend.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_179",
+          "speaker": "MAYA",
+          "text": "But there is a risk.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_180",
+          "speaker": "MAYA",
+          "text": "When people translate technical ideas into ordinary language, they may remove important qualifications.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_181",
+          "speaker": "ETHAN",
+          "text": "For example?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_182",
+          "speaker": "MAYA",
+          "text": "Someone reads that a study found a statistical association between two variables.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_183",
+          "speaker": "MAYA",
+          "text": "They explain it as, scientists proved that one causes the other.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_184",
+          "speaker": "MAYA",
+          "text": "The language became simpler, but the meaning became wrong.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_185",
+          "speaker": "ETHAN",
+          "text": "So after restating an idea, compare your version with the source.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_186",
+          "speaker": "MAYA",
+          "text": "Yes. Ask two questions.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_187",
+          "speaker": "MAYA",
+          "text": "Did I preserve the central meaning?",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_188",
+          "speaker": "MAYA",
+          "text": "And did I accidentally make the claim stronger?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_189",
+          "speaker": "ETHAN",
+          "text": "That is particularly important when explaining science, law, medicine, or finance.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_190",
+          "speaker": "MAYA",
+          "text": "Exactly. Simple language should reduce linguistic difficulty, not remove intellectual accuracy.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "point_10",
+      "title": "Point Ten. Confirm What the Listener Understood.",
+      "turns": [
+        {
+          "id": "turn_191",
+          "speaker": "ETHAN",
+          "text": "The final technique is to confirm whether your message was received correctly.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_192",
+          "speaker": "ETHAN",
+          "text": "Ask, how did you understand what I said?",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_193",
+          "speaker": "ETHAN",
+          "text": "Or ask, could you tell me what you are planning to do next?",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_194",
+          "speaker": "MAYA",
+          "text": "This is more reliable than asking, do you understand?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_195",
+          "speaker": "ETHAN",
+          "text": "Because most people will simply say yes.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_196",
+          "speaker": "MAYA",
+          "text": "Sometimes they believe they understand. Sometimes they are embarrassed. Sometimes they want the conversation to end.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_197",
+          "speaker": "MAYA",
+          "text": "A yes-or-no question does not reveal their actual interpretation.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_198",
+          "speaker": "ETHAN",
+          "text": "This technique is critical when the cost of misunderstanding is high.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_199",
+          "speaker": "ETHAN",
+          "text": "Medical instructions. Safety procedures. Technical requirements. Project deadlines.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_200",
+          "speaker": "MAYA",
+          "text": "Agreed. But the wording matters.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_201",
+          "speaker": "MAYA",
+          "text": "Repeat what I just told you can sound like a test.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_202",
+          "speaker": "ETHAN",
+          "text": "What would you say instead?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_203",
+          "speaker": "MAYA",
+          "text": "I may not have explained that clearly. Could you walk me through how you understand the next step?",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_204",
+          "speaker": "MAYA",
+          "text": "That places some responsibility on the speaker.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_205",
+          "speaker": "ETHAN",
+          "text": "Good. It makes verification feel respectful.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_206",
+          "speaker": "MAYA",
+          "text": "And sometimes the listener's summary reveals that your original explanation was ambiguous.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_207",
+          "speaker": "MAYA",
+          "text": "Confirmation is not only a test of the listener.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_208",
+          "speaker": "MAYA",
+          "text": "It is also feedback for the speaker.",
+          "pause_after_ms": 950
+        }
+      ]
+    },
+    {
+      "id": "final_discussion",
+      "title": "Final Discussion",
+      "turns": [
+        {
+          "id": "turn_209",
+          "speaker": "ETHAN",
+          "text": "After all ten points, have I convinced you that communication frameworks work?",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_210",
+          "speaker": "MAYA",
+          "text": "You have convinced me of something narrower.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_211",
+          "speaker": "MAYA",
+          "text": "Frameworks are useful when they help people notice problems.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_212",
+          "speaker": "MAYA",
+          "text": "They become dangerous when people follow them without noticing the situation.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_213",
+          "speaker": "ETHAN",
+          "text": "So the techniques are tools, not laws.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_214",
+          "speaker": "MAYA",
+          "text": "Exactly.",
+          "pause_after_ms": 180
+        },
+        {
+          "id": "turn_215",
+          "speaker": "MAYA",
+          "text": "A hammer is useful. But not every problem is a nail.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_216",
+          "speaker": "MAYA",
+          "text": "And not every conversation is a presentation.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_217",
+          "speaker": "ETHAN",
+          "text": "Let me try to summarize our discussion.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_218",
+          "speaker": "ETHAN",
+          "text": "First, decide the direction of your message, but do not pretend to be more certain than you are.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_219",
+          "speaker": "ETHAN",
+          "text": "Second, separate observations from interpretations, and include enough context.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_220",
+          "speaker": "ETHAN",
+          "text": "Third, check whether you and the other person share the same assumptions.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_221",
+          "speaker": "ETHAN",
+          "text": "Fourth, summarize the message, but verify that your summary is fair.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_222",
+          "speaker": "ETHAN",
+          "text": "Fifth, turn abstract goals into concrete behavior.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_223",
+          "speaker": "ETHAN",
+          "text": "Sixth, keep each sentence centered on one conceptual message.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_224",
+          "speaker": "ETHAN",
+          "text": "Seventh, arrange information according to the listener and the situation.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_225",
+          "speaker": "ETHAN",
+          "text": "Eighth, group your thoughts, using three categories as a helpful default.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_226",
+          "speaker": "ETHAN",
+          "text": "Ninth, restate ideas in your own words without weakening their accuracy.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_227",
+          "speaker": "ETHAN",
+          "text": "And tenth, confirm what the listener actually understood.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_228",
+          "speaker": "MAYA",
+          "text": "That was a very long summary from a man who supports short messages.",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_229",
+          "speaker": "ETHAN",
+          "text": "I said one message per sentence.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_230",
+          "speaker": "ETHAN",
+          "text": "I did not say one sentence per podcast.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_231",
+          "speaker": "MAYA",
+          "text": "Fair enough.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_232",
+          "speaker": "MAYA",
+          "text": "My final advice is this.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_233",
+          "speaker": "MAYA",
+          "text": "Do not focus only on expressing yourself clearly.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_234",
+          "speaker": "MAYA",
+          "text": "Pay attention to what happens inside the other person while you speak.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_235",
+          "speaker": "MAYA",
+          "text": "Do they have enough context?",
+          "pause_after_ms": 180
+        },
+        {
+          "id": "turn_236",
+          "speaker": "MAYA",
+          "text": "Do they feel safe enough to ask questions?",
+          "pause_after_ms": 180
+        },
+        {
+          "id": "turn_237",
+          "speaker": "MAYA",
+          "text": "Are they hearing the message you intended, or a different message shaped by their own experience?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_238",
+          "speaker": "MAYA",
+          "text": "Clear language matters.",
+          "pause_after_ms": 180
+        },
+        {
+          "id": "turn_239",
+          "speaker": "MAYA",
+          "text": "But communication is not complete until meaning has crossed from one mind to another.",
+          "pause_after_ms": 400
+        },
+        {
+          "id": "turn_240",
+          "speaker": "ETHAN",
+          "text": "And my final advice is more practical.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_241",
+          "speaker": "ETHAN",
+          "text": "Before your next important conversation, write down three lines.",
+          "pause_after_ms": 220
+        },
+        {
+          "id": "turn_242",
+          "speaker": "ETHAN",
+          "text": "What is my main message?",
+          "pause_after_ms": 180
+        },
+        {
+          "id": "turn_243",
+          "speaker": "ETHAN",
+          "text": "Why does it matter?",
+          "pause_after_ms": 180
+        },
+        {
+          "id": "turn_244",
+          "speaker": "ETHAN",
+          "text": "What should happen next?",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_245",
+          "speaker": "ETHAN",
+          "text": "You do not need a perfect script.",
+          "pause_after_ms": 200
+        },
+        {
+          "id": "turn_246",
+          "speaker": "ETHAN",
+          "text": "You only need enough structure to avoid getting lost.",
+          "pause_after_ms": 350
+        },
+        {
+          "id": "turn_247",
+          "speaker": "MAYA",
+          "text": "And if the conversation does not follow your structure?",
+          "pause_after_ms": 300
+        },
+        {
+          "id": "turn_248",
+          "speaker": "ETHAN",
+          "text": "Then I adapt.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_249",
+          "speaker": "MAYA",
+          "text": "Good answer.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_250",
+          "speaker": "ETHAN",
+          "text": "You sound almost supportive.",
+          "pause_after_ms": 250
+        },
+        {
+          "id": "turn_251",
+          "speaker": "MAYA",
+          "text": "Do not get used to it.",
+          "pause_after_ms": 0
+        }
+      ]
+    }
+  ]
+}
