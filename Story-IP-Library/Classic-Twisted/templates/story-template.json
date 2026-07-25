@@ -1,0 +1,32 @@
+﻿{
+    "slug":  "",
+    "id":  "",
+    "original_story":  {
+                           "summary":  "",
+                           "original_lesson":  ""
+                       },
+    "metadata":  {
+                     "created_at":  "",
+                     "updated_at":  "",
+                     "tags":  [
+
+                              ]
+                 },
+    "hidden_assumptions":  [
+
+                           ],
+    "characters":  [
+
+                   ],
+    "production":  {
+                       "published_url":  null,
+                       "project_id":  null,
+                       "state":  "brainstorm"
+                   },
+    "source_type":  "fable",
+    "title":  "",
+    "selected_candidate_id":  null,
+    "what_ifs":  [
+
+                 ]
+}

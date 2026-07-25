@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "llfc-001",
+  "renderedAt": "2026-07-24T14:15:32.226Z",
+  "engine": "ffmpeg",
+  "profile": "llfc-first-cut-1080p",
+  "output": {
+    "projectPath": "output/final.mp4",
+    "factoryPath": "output/llfc/llfc-001-a-modern-theme-park/final.mp4",
+    "durationSec": 143.833,
+    "bytes": 11918298,
+    "bitRate": 662896,
+    "video": {
+      "codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "30/1"
+    },
+    "audio": {
+      "codec": "aac",
+      "sampleRate": 48000,
+      "channels": 2
+    },
+    "checksum": "sha256:bc5f35a14a4bf35dc5e379c094c9f279e3081bba744541fb387a1ee56290df1f"
+  },
+  "composition": {
+    "imageFit": "contain",
+    "imageArea": {
+      "width": 1800,
+      "height": 760,
+      "top": 20
+    },
+    "subtitleArea": {
+      "height": 300
+    },
+    "wordHighlight": false,
+    "backgroundColor": "#11100D",
+    "transitions": "hard-cut",
+    "projectorBed": true,
+    "projectorClicks": 11,
+    "existingTransitionAtLesson1": true,
+    "subtitlesBurnedIn": true
+  }
+}

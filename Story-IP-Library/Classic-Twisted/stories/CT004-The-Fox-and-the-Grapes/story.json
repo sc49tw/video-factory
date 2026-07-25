@@ -1,0 +1,55 @@
+﻿{
+    "id":  "CT004",
+    "slug":  "the-fox-and-the-grapes",
+    "title":  "The Fox and the Grapes",
+    "source_type":  "classic-story",
+    "original_story":  {
+                           "summary":  "",
+                           "original_lesson":  "People often dislike what they cannot obtain."
+                       },
+    "characters":  [
+                       {
+                           "name":  "Fox",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Grapes",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Other animals",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       }
+                   ],
+    "hidden_assumptions":  [
+
+                           ],
+    "what_ifs":  [
+
+                 ],
+    "selected_candidate_id":  null,
+    "production":  {
+                       "state":  "brainstorm",
+                       "project_id":  null,
+                       "published_url":  null
+                   },
+    "metadata":  {
+                     "created_at":  "2026-07-25",
+                     "updated_at":  "2026-07-25",
+                     "tags":  [
+                                  "classic-twisted"
+                              ]
+                 }
+}

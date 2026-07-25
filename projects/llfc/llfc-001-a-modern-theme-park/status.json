@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "llfc-001",
+  "updatedAt": "2026-07-24T14:15:32.286Z",
+  "stage": "rendered",
+  "nextStage": "review",
+  "progress": {
+    "projectValidated": true,
+    "foldersCreated": true,
+    "images": {
+      "required": 11,
+      "available": 11,
+      "approved": 11,
+      "targetAspectRatioMatches": 5
+    },
+    "tts": {
+      "required": 10,
+      "generated": 10
+    },
+    "subtitlesGenerated": true,
+    "renderReady": true,
+    "rendered": true,
+    "subtitleCueCount": 43,
+    "timelineGenerated": true,
+    "durationSec": 143.844,
+    "outputPath": "output/llfc/llfc-001-a-modern-theme-park/final.mp4",
+    "renderDurationSec": 143.833
+  },
+  "blockingIssues": [],
+  "warnings": [
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "page01",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop text."
+    },
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "page02",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop text."
+    },
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "page03",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop text."
+    },
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "page04",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop text."
+    },
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "lesson01",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop text."
+    },
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "common_ending",
+      "severity": "warning",
+      "message": "Image is 1448x1086, not 16:9. Preserve the full frame during composition; do not crop text."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+﻿{
+    "id":  "CT008",
+    "slug":  "jack-and-the-beanstalk",
+    "title":  "Jack and the Beanstalk",
+    "source_type":  "classic-story",
+    "original_story":  {
+                           "summary":  "",
+                           "original_lesson":  "Courage and initiative can change your fortune."
+                       },
+    "characters":  [
+                       {
+                           "name":  "Jack",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Jack\u0027s mother",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Giant",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Giant\u0027s wife",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Magic harp",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       },
+                       {
+                           "name":  "Golden hen",
+                           "role":  "",
+                           "conventional_label":  "",
+                           "possible_perspectives":  [
+
+                                                     ]
+                       }
+                   ],
+    "hidden_assumptions":  [
+
+                           ],
+    "what_ifs":  [
+
+                 ],
+    "selected_candidate_id":  null,
+    "production":  {
+                       "state":  "brainstorm",
+                       "project_id":  null,
+                       "published_url":  null
+                   },
+    "metadata":  {
+                     "created_at":  "2026-07-25",
+                     "updated_at":  "2026-07-25",
+                     "tags":  [
+                                  "classic-twisted"
+                              ]
+                 }
+}

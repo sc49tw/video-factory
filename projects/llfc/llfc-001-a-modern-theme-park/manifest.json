@@ -1,0 +1,487 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "llfc-001",
+  "generatedAt": "2026-07-23T14:05:49.2420821Z",
+  "assets": [
+    {
+      "assetId": "common_opening",
+      "type": "image",
+      "role": "opening",
+      "path": "assets/images/approved/common_opening.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1672,
+        "height": 941,
+        "aspectRatio": 1.776833,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": true,
+        "bytes": 2310732
+      },
+      "checksum": "sha256:32272a14fadd880fac2a5c5a3fc807a4cb2314ca9b984ba647abe459178160c6",
+      "bytes": 2385275
+    },
+    {
+      "assetId": "cover",
+      "type": "image",
+      "role": "case-study-cover",
+      "path": "assets/images/approved/cover.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1672,
+        "height": 941,
+        "aspectRatio": 1.776833,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": true,
+        "bytes": 2633387
+      },
+      "checksum": "sha256:fa805584f59264fe59b037a37eef65ce4d57e3ee880bd1dcb60b655d14e92039"
+    },
+    {
+      "assetId": "page01",
+      "type": "image",
+      "role": "case-study-page",
+      "path": "assets/images/approved/page01.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1536,
+        "height": 1024,
+        "aspectRatio": 1.5,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": false,
+        "bytes": 3024358
+      },
+      "checksum": "sha256:8cc2f5b10bac206c610502660f7608b9aa4b609bd9c4f6136e7ce9d908fea990"
+    },
+    {
+      "assetId": "page02",
+      "type": "image",
+      "role": "case-study-page",
+      "path": "assets/images/approved/page02.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1536,
+        "height": 1024,
+        "aspectRatio": 1.5,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": false,
+        "bytes": 2813091
+      },
+      "checksum": "sha256:5f1639996fd9df29d8feacb74f21ba38e54d160b518b44044658a5496a0ded33"
+    },
+    {
+      "assetId": "page03",
+      "type": "image",
+      "role": "case-study-page",
+      "path": "assets/images/approved/page03.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1536,
+        "height": 1024,
+        "aspectRatio": 1.5,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": false,
+        "bytes": 2660209
+      },
+      "checksum": "sha256:1daab2de1f114d7c25bbf2890efad095bfce2ebd38144d9430658825a4a0ad12"
+    },
+    {
+      "assetId": "page04",
+      "type": "image",
+      "role": "case-study-page",
+      "path": "assets/images/approved/page04.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1536,
+        "height": 1024,
+        "aspectRatio": 1.5,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": false,
+        "bytes": 2402839
+      },
+      "checksum": "sha256:3adae92ab93add94be039a1a1f9f71d641257cd0c63da3cfaaf43d282c1e24ef"
+    },
+    {
+      "assetId": "lesson01",
+      "type": "image",
+      "role": "lesson-card",
+      "path": "assets/images/approved/lesson01.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1536,
+        "height": 1024,
+        "aspectRatio": 1.5,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": false,
+        "bytes": 2661515
+      },
+      "checksum": "sha256:68b280cd16f880faafd936ba2034ad316dad6287627a833bdeca76c83f574587"
+    },
+    {
+      "assetId": "lesson02",
+      "type": "image",
+      "role": "lesson-card",
+      "path": "assets/images/approved/lesson02.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1672,
+        "height": 941,
+        "aspectRatio": 1.776833,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": true,
+        "bytes": 2307599
+      },
+      "checksum": "sha256:28358ab3cdd9be13f2bac222c84d69cddba3c2180a7c282e6d38bdbc97b3cf72"
+    },
+    {
+      "assetId": "lesson03",
+      "type": "image",
+      "role": "lesson-card",
+      "path": "assets/images/approved/lesson03.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1672,
+        "height": 941,
+        "aspectRatio": 1.776833,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": true,
+        "bytes": 1898883
+      },
+      "checksum": "sha256:68661762949dd77bda8ca91224290733cf58a073215fa924719dfd8c7cf9ad4c"
+    },
+    {
+      "assetId": "lesson04",
+      "type": "image",
+      "role": "lesson-card",
+      "path": "assets/images/approved/lesson04.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1672,
+        "height": 941,
+        "aspectRatio": 1.776833,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": true,
+        "bytes": 1793772
+      },
+      "checksum": "sha256:222cb61f2f9fdb7ac15fa4dd5ec7d79f4a58269d7615612586f6bdd166bff64e"
+    },
+    {
+      "assetId": "common_ending",
+      "type": "image",
+      "role": "ending",
+      "path": "assets/images/approved/common_ending.png",
+      "source": "chatgpt-via-user",
+      "status": "approved",
+      "media": {
+        "width": 1448,
+        "height": 1086,
+        "aspectRatio": 1.333333,
+        "targetAspectRatio": "16:9",
+        "matchesTargetAspectRatio": false,
+        "bytes": 2095689
+      },
+      "checksum": "sha256:5886454fd40dcfc1158765adac7c231da55efc3dcc07a135d0fd0b4f9cd7151f",
+      "bytes": 2141421
+    },
+    {
+      "assetId": "projector-running",
+      "type": "audio",
+      "role": "ambient-bed",
+      "path": "assets/audio/sfx/projector-loop.wav",
+      "source": "factory-existing-asset",
+      "generator": "llfc-sfx-register",
+      "status": "approved",
+      "media": {
+        "codec": "pcm_f32le",
+        "sampleRate": 48000,
+        "channels": 1,
+        "durationSec": 6.371875,
+        "bytes": 1230946
+      },
+      "checksum": "sha256:74e080a8f102da54e74efbdcf9da039a9ab6fd471afa1e55727a6ae27358d272"
+    },
+    {
+      "assetId": "projector-click",
+      "type": "audio",
+      "role": "hard-cut",
+      "path": "assets/audio/sfx/projector-click.wav",
+      "source": "factory-existing-asset",
+      "generator": "llfc-sfx-register",
+      "status": "approved",
+      "media": {
+        "codec": "pcm_s24le",
+        "sampleRate": 48000,
+        "channels": 2,
+        "durationSec": 0.804125,
+        "bytes": 234750
+      },
+      "checksum": "sha256:2856f8377f097544fcd8bdccae9a1ad519c534cba27034837d918f5e4edb3e14"
+    },
+    {
+      "assetId": "transition",
+      "type": "audio",
+      "role": "transition",
+      "path": "assets/audio/sfx/transition.mp3",
+      "source": "factory-existing-asset",
+      "generator": "llfc-sfx-register",
+      "status": "approved",
+      "media": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2,
+        "durationSec": 0.574688,
+        "bytes": 18390
+      },
+      "checksum": "sha256:c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+    },
+    {
+      "assetId": "case-study-cover-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "case-study-cover",
+      "path": "generated/tts/case-study-cover.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 7.632,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 1465422
+      }
+    },
+    {
+      "assetId": "project-overview-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "project-overview",
+      "path": "generated/tts/project-overview.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 12.96,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2488398
+      }
+    },
+    {
+      "assetId": "systems-checklist-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "systems-checklist",
+      "path": "generated/tts/systems-checklist.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 15.312,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2939982
+      }
+    },
+    {
+      "assetId": "operational-adjustment-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "operational-adjustment",
+      "path": "generated/tts/operational-adjustment.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 10.944,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2101326
+      }
+    },
+    {
+      "assetId": "final-evaluation-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "final-evaluation",
+      "path": "generated/tts/final-evaluation.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 19.988,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 3837774
+      }
+    },
+    {
+      "assetId": "lesson-01-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "lesson-01",
+      "path": "generated/tts/lesson-01.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 12.12,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2327118
+      }
+    },
+    {
+      "assetId": "lesson-02-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "lesson-02",
+      "path": "generated/tts/lesson-02.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 11.88,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2281038
+      }
+    },
+    {
+      "assetId": "lesson-03-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "lesson-03",
+      "path": "generated/tts/lesson-03.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 15.6,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2995278
+      }
+    },
+    {
+      "assetId": "lesson-04-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "lesson-04",
+      "path": "generated/tts/lesson-04.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 13.128,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 2520654
+      }
+    },
+    {
+      "assetId": "ending-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "ending",
+      "path": "generated/tts/ending.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 17.88,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 3433038
+      }
+    },
+    {
+      "assetId": "subtitles-srt",
+      "type": "subtitle",
+      "role": "subtitles-srt",
+      "path": "generated/subtitles/subtitles.srt",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 3193
+    },
+    {
+      "assetId": "subtitles-ass",
+      "type": "subtitle",
+      "role": "subtitles-ass",
+      "path": "generated/subtitles/subtitles.ass",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 4333
+    },
+    {
+      "assetId": "subtitles-vtt",
+      "type": "subtitle",
+      "role": "subtitles-vtt",
+      "path": "generated/subtitles/subtitles.vtt",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 3080
+    },
+    {
+      "assetId": "timeline",
+      "type": "timeline",
+      "role": "timeline",
+      "path": "render/timeline.json",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 37312
+    },
+    {
+      "assetId": "final-video",
+      "type": "video",
+      "role": "master-landscape",
+      "path": "output/final.mp4",
+      "factoryPath": "output/llfc/llfc-001-a-modern-theme-park/final.mp4",
+      "source": "llfc-render",
+      "generator": "llfc-render",
+      "status": "generated",
+      "media": {
+        "projectPath": "output/final.mp4",
+        "factoryPath": "output/llfc/llfc-001-a-modern-theme-park/final.mp4",
+        "durationSec": 143.833,
+        "bytes": 11918298,
+        "bitRate": 662896,
+        "video": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "frameRate": "30/1"
+        },
+        "audio": {
+          "codec": "aac",
+          "sampleRate": 48000,
+          "channels": 2
+        },
+        "checksum": "sha256:bc5f35a14a4bf35dc5e379c094c9f279e3081bba744541fb387a1ee56290df1f"
+      }
+    }
+  ],
+  "updatedAt": "2026-07-24T14:15:32.276Z"
+}
