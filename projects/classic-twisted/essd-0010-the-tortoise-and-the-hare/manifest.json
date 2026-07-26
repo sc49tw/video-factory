@@ -1,0 +1,269 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "essd-0010",
+  "generatedAt": "2026-07-25T00:00:00.000Z",
+  "assets": [
+    {
+      "assetId": "scene01",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene01.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene02",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene02.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene03",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene03.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene04",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene04.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene05",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene05.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene06",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene06.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene07",
+      "type": "image",
+      "role": "story-scene",
+      "path": "assets/images/approved/scene07.png",
+      "source": "user-provided",
+      "status": "approved"
+    },
+    {
+      "assetId": "scene-01-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-01",
+      "path": "generated/tts/scene-01.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 4.44,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 852558
+      }
+    },
+    {
+      "assetId": "scene-02-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-02",
+      "path": "generated/tts/scene-02.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 3.576,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 686670
+      }
+    },
+    {
+      "assetId": "scene-03-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-03",
+      "path": "generated/tts/scene-03.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 4.944,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 949326
+      }
+    },
+    {
+      "assetId": "scene-04-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-04",
+      "path": "generated/tts/scene-04.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 5.256,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 1009230
+      }
+    },
+    {
+      "assetId": "scene-05-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-05",
+      "path": "generated/tts/scene-05.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 4.008,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 769614
+      }
+    },
+    {
+      "assetId": "scene-06-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-06",
+      "path": "generated/tts/scene-06.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 2.664,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 511566
+      }
+    },
+    {
+      "assetId": "scene-07-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "scene-07",
+      "path": "generated/tts/scene-07.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 5.016,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 963150
+      }
+    },
+    {
+      "assetId": "final-moral-voice",
+      "type": "audio",
+      "role": "narration",
+      "sceneId": "final-moral",
+      "path": "generated/tts/final-moral.wav",
+      "source": "edge-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "media": {
+        "durationSec": 7.452,
+        "sampleRate": 48000,
+        "channels": 2,
+        "format": "wav",
+        "bytes": 1430862
+      }
+    },
+    {
+      "assetId": "subtitles-srt",
+      "type": "subtitle",
+      "role": "subtitles-srt",
+      "path": "generated/subtitles/subtitles.srt",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 854
+    },
+    {
+      "assetId": "subtitles-ass",
+      "type": "subtitle",
+      "role": "subtitles-ass",
+      "path": "generated/subtitles/subtitles.ass",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 1576
+    },
+    {
+      "assetId": "subtitles-vtt",
+      "type": "subtitle",
+      "role": "subtitles-vtt",
+      "path": "generated/subtitles/subtitles.vtt",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 834
+    },
+    {
+      "assetId": "timeline",
+      "type": "timeline",
+      "role": "timeline",
+      "path": "render/timeline.json",
+      "source": "llfc-tts",
+      "generator": "llfc-tts",
+      "status": "generated",
+      "bytes": 14047
+    },
+    {
+      "assetId": "final-video",
+      "type": "video",
+      "role": "master-landscape",
+      "path": "output/final.mp4",
+      "factoryPath": "output/classic-twisted/essd-0010-the-tortoise-and-the-hare/final.mp4",
+      "source": "llfc-render",
+      "generator": "llfc-render",
+      "status": "generated",
+      "media": {
+        "projectPath": "output/final.mp4",
+        "factoryPath": "output/classic-twisted/essd-0010-the-tortoise-and-the-hare/final.mp4",
+        "durationSec": 42.839,
+        "bytes": 4077309,
+        "bitRate": 761420,
+        "video": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "frameRate": "30/1"
+        },
+        "audio": {
+          "codec": "aac",
+          "sampleRate": 48000,
+          "channels": 2
+        },
+        "checksum": "sha256:0e1e53ed2bd03b4ab59bd09fb0f56e3dcecc5cf56f22e09004fd00e6e1b2ec89"
+      }
+    }
+  ],
+  "updatedAt": "2026-07-25T06:41:41.232Z"
+}

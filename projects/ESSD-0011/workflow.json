@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ESSD-0011",
+  "kind": "episode",
+  "series": "ESSD",
+  "subtype": "classic-twisted",
+  "status": "waiting",
+  "currentStage": "creative-development",
+  "createdAt": "2026-07-26T00:53:57.821Z",
+  "updatedAt": "2026-07-26T00:56:21.822Z",
+  "approvals": {
+    "content": false,
+    "images": false,
+    "qa": false
+  },
+  "attempts": {},
+  "stages": {
+    "intake": {
+      "status": "completed"
+    },
+    "creative-development": {
+      "status": "waiting"
+    },
+    "content-approval": {
+      "status": "pending"
+    },
+    "images": {
+      "status": "pending"
+    },
+    "render-ready": {
+      "status": "pending"
+    },
+    "rendering": {
+      "status": "pending"
+    },
+    "qa": {
+      "status": "pending"
+    },
+    "completed": {
+      "status": "pending"
+    }
+  },
+  "blocker": null,
+  "nextAction": "Waiting for inbox/ESSD-0011/lesson.json.",
+  "history": [],
+  "gates": {
+    "lesson": {
+      "passed": false,
+      "reason": "Waiting for inbox/ESSD-0011/lesson.json."
+    },
+    "contentApproval": {
+      "passed": false,
+      "reason": "Content approval has not been recorded."
+    },
+    "images": {
+      "passed": false,
+      "reason": null,
+      "missing": []
+    },
+    "render": {
+      "passed": false,
+      "reason": null
+    },
+    "qa": {
+      "passed": false,
+      "reason": null
+    }
+  }
+}

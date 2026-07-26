@@ -1,0 +1,337 @@
+{
+  "schemaVersion": "1.0",
+  "pipeline": "llfc",
+  "project": {
+    "id": "essd-0010",
+    "series": "Classic Twisted",
+    "episode": 10,
+    "title": "The Tortoise and the Hare",
+    "slug": "the-tortoise-and-the-hare",
+    "language": "en",
+    "status": "pilot",
+    "contentRating": "general",
+    "sourceOfTruth": "project.json"
+  },
+  "format": {
+    "aspectRatio": "16:9",
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fps": 30,
+    "safeArea": {
+      "top": 80,
+      "bottom": 160,
+      "left": 100,
+      "right": 100
+    }
+  },
+  "creativeDirection": {
+    "format": "classic storybook narration",
+    "tone": "warm, natural, clear, and gently paced",
+    "narrationRule": "Read only the approved script. Do not explain the twist.",
+    "visualStyle": "use the approved story scene images without replacement",
+    "continuityNotes": [
+      "Display each scene image during its matching narration.",
+      "Keep subtitles readable and clear for A1-A2 English learners.",
+      "Use Scene 7 again for the final moral."
+    ]
+  },
+  "assets": [
+    {
+      "assetId": "scene01",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene01.png"
+    },
+    {
+      "assetId": "scene02",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene02.png"
+    },
+    {
+      "assetId": "scene03",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene03.png"
+    },
+    {
+      "assetId": "scene04",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene04.png"
+    },
+    {
+      "assetId": "scene05",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene05.png"
+    },
+    {
+      "assetId": "scene06",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene06.png"
+    },
+    {
+      "assetId": "scene07",
+      "type": "image",
+      "role": "story-scene",
+      "required": true,
+      "source": "user-provided",
+      "approvalStatus": "approved",
+      "path": "assets/images/approved/scene07.png"
+    }
+  ],
+  "assetSourceMapping": {
+    "scene01": "inbox/essd-0010/scene1.png",
+    "scene02": "inbox/essd-0010/scene2.png",
+    "scene03": "inbox/essd-0010/scene3.png",
+    "scene04": "inbox/essd-0010/scene4.png",
+    "scene05": "inbox/essd-0010/scene5.png",
+    "scene06": "inbox/essd-0010/scene6.png",
+    "scene07": "inbox/essd-0010/scene7.png"
+  },
+  "audio": {
+    "tts": {
+      "enabled": true,
+      "provider": "edge-tts",
+      "voiceId": "en-US-JennyNeural",
+      "delivery": "natural, warm English storybook narration; clear for A1-A2 learners; normal but unhurried",
+      "rate": "-8%",
+      "pitch": "+0Hz",
+      "sampleRate": 48000,
+      "outputFormat": "wav"
+    },
+    "mix": {
+      "loudnessTargetLufs": -14,
+      "truePeakDb": -1,
+      "musicEnabled": false,
+      "ambientBed": null,
+      "ambientBedLevelDb": -99
+    },
+    "soundEffects": [
+      {
+        "soundId": "projector-running",
+        "assetPath": "assets/audio/sfx/projector-loop.wav",
+        "required": false
+      },
+      {
+        "soundId": "projector-click",
+        "assetPath": "assets/audio/sfx/projector-click.wav",
+        "required": false
+      },
+      {
+        "soundId": "transition",
+        "assetPath": "assets/audio/sfx/transition.mp3",
+        "required": false
+      }
+    ]
+  },
+  "subtitles": {
+    "enabled": true,
+    "language": "en",
+    "formats": [
+      "srt",
+      "ass",
+      "vtt"
+    ],
+    "source": "scene narration",
+    "timing": "tts-derived",
+    "display": {
+      "burnIn": true,
+      "mode": "phrase",
+      "maxLines": 2,
+      "maxCharsPerLine": 34,
+      "position": "reserved-bottom-panel",
+      "styleId": "essd-story",
+      "highlightCurrentWord": false
+    }
+  },
+  "llfcTemplate": {
+    "bookendEffects": {
+      "enabled": false
+    }
+  },
+  "content": {
+    "structure": "story-only normal playback",
+    "scenes": [
+      {
+        "sceneId": "scene-01",
+        "order": 1,
+        "kind": "story",
+        "assetId": "scene01",
+        "narration": "Once upon a time, a tortoise challenged a hare to a race.",
+        "visualDirection": "Show Scene 1 during this narration.",
+        "performanceNotes": [
+          "Warm storybook delivery, clear and unhurried."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.45
+        }
+      },
+      {
+        "sceneId": "scene-02",
+        "order": 2,
+        "kind": "story",
+        "assetId": "scene02",
+        "narration": "The hare laughed and quickly ran far ahead.",
+        "visualDirection": "Show Scene 2 during this narration.",
+        "performanceNotes": [
+          "Warm storybook delivery, clear and unhurried."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.45
+        }
+      },
+      {
+        "sceneId": "scene-03",
+        "order": 3,
+        "kind": "story",
+        "assetId": "scene03",
+        "narration": "He looked back. The tortoise was nowhere to be seen.",
+        "visualDirection": "Show Scene 3 during this narration.",
+        "performanceNotes": [
+          "Preserve the natural pause between sentences."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.45
+        }
+      },
+      {
+        "sceneId": "scene-04",
+        "order": 4,
+        "kind": "story",
+        "assetId": "scene04",
+        "narration": "The hare found a cool, shady tree and decided to take a short rest.",
+        "visualDirection": "Show Scene 4 during this narration.",
+        "performanceNotes": [
+          "Warm storybook delivery, clear and unhurried."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.45
+        }
+      },
+      {
+        "sceneId": "scene-05",
+        "order": 5,
+        "kind": "story",
+        "assetId": "scene05",
+        "narration": "After a short break, he stood up and kept running.",
+        "visualDirection": "Show Scene 5 during this narration.",
+        "performanceNotes": [
+          "Warm storybook delivery, clear and unhurried."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.45
+        }
+      },
+      {
+        "sceneId": "scene-06",
+        "order": 6,
+        "kind": "story",
+        "assetId": "scene06",
+        "narration": "He ran as fast as ever.",
+        "visualDirection": "Show Scene 6 during this narration.",
+        "performanceNotes": [
+          "Warm storybook delivery, clear and unhurried."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.45
+        }
+      },
+      {
+        "sceneId": "scene-07",
+        "order": 7,
+        "kind": "story",
+        "assetId": "scene07",
+        "narration": "When the tortoise reached the finish line, the hare was already waiting there.",
+        "visualDirection": "Show Scene 7 during this narration.",
+        "performanceNotes": [
+          "Do not explicitly explain the twist."
+        ],
+        "transitionOut": "clean-cut",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 0.85
+        }
+      },
+      {
+        "sceneId": "final-moral",
+        "order": 8,
+        "kind": "moral",
+        "assetId": "scene07",
+        "narration": "The moral of the story? Hard work beats talent only when talent stops trying.",
+        "visualDirection": "Use Scene 7 as the background for the final lesson.",
+        "performanceNotes": [
+          "Add a deliberate pause after 'The moral of the story?'"
+        ],
+        "timingCues": [
+          {
+            "afterText": "The moral of the story?",
+            "pauseSec": 0.9
+          }
+        ],
+        "transitionOut": "end",
+        "durationPolicy": {
+          "mode": "narration",
+          "tailPaddingSec": 2
+        }
+      }
+    ]
+  },
+  "render": {
+    "engine": "ffmpeg",
+    "compositionId": "ESSD-StoryOnly",
+    "timelineMode": "derive-from-tts",
+    "playbackMode": "story_only",
+    "backgroundColor": "#11100D",
+    "imageFit": "contain",
+    "outputs": [
+      {
+        "id": "master-landscape",
+        "container": "mp4",
+        "videoCodec": "h264",
+        "audioCodec": "aac",
+        "pixelFormat": "yuv420p",
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "fps": 30,
+        "targetPath": "output/classic-twisted/essd-0010-the-tortoise-and-the-hare/final.mp4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSD-0010",
+  "title": "The Tortoise and the Hare",
+  "startedAt": "2026-07-26T03:45:48.006Z",
+  "sourceLesson": "inbox/ESSD-0010/lesson.json",
+  "lessonSha256": "7e53333c1cfb50d5e555a25eeb6aac62db4d985da95b0056fbd67e2e13f35401",
+  "images": [
+    {
+      "source": "inbox/ESSD-0010/scene01.png",
+      "file": "scene01.png",
+      "sha256": "11a395ea320e8e4cd4a6ca37719b47c16be8a8a0247c7dff0f60fb84cccabdca",
+      "modifiedAt": "2026-07-25T06:22:59.855Z"
+    },
+    {
+      "source": "inbox/ESSD-0010/scene02.png",
+      "file": "scene02.png",
+      "sha256": "2a46d7fef6e9903fb4278fdf83b17b5b54bf39619f810377fea6e5436855633c",
+      "modifiedAt": "2026-07-25T06:24:49.268Z"
+    },
+    {
+      "source": "inbox/ESSD-0010/scene03.png",
+      "file": "scene03.png",
+      "sha256": "18d4225a12c47c2f3b7095fd382cf1a5019d593f9891c6fedf8b1f83c38f211c",
+      "modifiedAt": "2026-07-25T06:26:10.627Z"
+    },
+    {
+      "source": "inbox/ESSD-0010/scene04.png",
+      "file": "scene04.png",
+      "sha256": "9522c639534f00a40ca64283b503dcdf77becc34c0a826231369923f0f2f9f13",
+      "modifiedAt": "2026-07-25T06:28:35.138Z"
+    },
+    {
+      "source": "inbox/ESSD-0010/scene05.png",
+      "file": "scene05.png",
+      "sha256": "28f1871b58397e271711147f6a64f774dc99eb28692a0aceeaa3555db97f24f3",
+      "modifiedAt": "2026-07-25T07:08:13.189Z"
+    },
+    {
+      "source": "inbox/ESSD-0010/scene06.png",
+      "file": "scene06.png",
+      "sha256": "3e4a44d8c7e2cce04f92fcbb1d4e3bb12265d7c51c94fc9b74e04ddb298fac53",
+      "modifiedAt": "2026-07-25T06:32:06.086Z"
+    },
+    {
+      "source": "inbox/ESSD-0010/scene07.png",
+      "file": "scene07.png",
+      "sha256": "41c8c9146eb40f0486a80a46b5985f4d59a33c1b6441ae35a34491ae493944e2",
+      "modifiedAt": "2026-07-25T07:10:17.608Z"
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "sentenceCount": 10,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "countdownSeconds": 4,
+  "transitionSeconds": 0.4,
+  "introSeconds": 3,
+  "shadowingTempo": 0.85,
+  "finalVideo": "output/ESSD-0010/ESSD-0010.mp4",
+  "completedAt": "2026-07-26T03:46:59.463Z",
+  "status": "success",
+  "error": null,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "path": "projects/ESSD-0010/audio/sentence-001.mp3",
+      "durationSec": 4.008,
+      "textSha256": "2780662f9c205382f5e090f2f0753aa3474f34a825057d4b164756c31ffbc0b2"
+    },
+    {
+      "id": "sentence-002",
+      "path": "projects/ESSD-0010/audio/sentence-002.mp3",
+      "durationSec": 3.048,
+      "textSha256": "a44df80569ca2aa4d980ab48e2d4d19cf80f3d7dd4f207dcc6e9da331f30245a"
+    },
+    {
+      "id": "sentence-003",
+      "path": "projects/ESSD-0010/audio/sentence-003.mp3",
+      "durationSec": 1.776,
+      "textSha256": "d89bc90e7849c6111d97017e4e9d0c76a4506a9384aaf403a192539e2cfa9e06"
+    },
+    {
+      "id": "sentence-004",
+      "path": "projects/ESSD-0010/audio/sentence-004.mp3",
+      "durationSec": 2.184,
+      "textSha256": "6a8037bf4fcf68c0474ae2d3b50d9d4c96a6a82ac9f754a64f0203db86e1a920"
+    },
+    {
+      "id": "sentence-005",
+      "path": "projects/ESSD-0010/audio/sentence-005.mp3",
+      "durationSec": 2.112,
+      "textSha256": "6079077a4fdd26492994b2e5e971dfd08c49794fec6edb6bffe502e7c285f8e3"
+    },
+    {
+      "id": "sentence-006",
+      "path": "projects/ESSD-0010/audio/sentence-006.mp3",
+      "durationSec": 1.92,
+      "textSha256": "cdbdbdfc13a2f8c4de02eb5bd11e0983129965ada4692db8d736991580e17975"
+    },
+    {
+      "id": "sentence-007",
+      "path": "projects/ESSD-0010/audio/sentence-007.mp3",
+      "durationSec": 3.264,
+      "textSha256": "f5b1ca6e0e6ba7e6846aec40d14bf906b615af9e40b26e4099e0a279be48502c"
+    },
+    {
+      "id": "sentence-008",
+      "path": "projects/ESSD-0010/audio/sentence-008.mp3",
+      "durationSec": 1.968,
+      "textSha256": "4301e79aeb3971a87ea3271183bfaa0e193f330d98390f0c048d2b7d539d263b"
+    },
+    {
+      "id": "sentence-009",
+      "path": "projects/ESSD-0010/audio/sentence-009.mp3",
+      "durationSec": 4.056,
+      "textSha256": "e1824e9135889022b9a11f7343f169a88a93bee3586e524b7e849b0cdc43e170"
+    },
+    {
+      "id": "sentence-010",
+      "path": "projects/ESSD-0010/audio/sentence-010.mp3",
+      "durationSec": 5.208,
+      "textSha256": "9ac9df3dd45bffd246c33419bd743c24d212344d120b49c781806e09592267be"
+    }
+  ],
+  "subtitles": "projects/ESSD-0010/subtitles/first-pass.srt",
+  "estimatedDurationSec": 117.902,
+  "validation": {
+    "passed": true,
+    "fileSize": 30567421,
+    "durationSec": 118.019,
+    "hasVideo": true,
+    "hasAudio": true,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  }
+}

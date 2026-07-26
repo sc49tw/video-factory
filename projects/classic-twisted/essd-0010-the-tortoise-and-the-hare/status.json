@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "essd-0010",
+  "updatedAt": "2026-07-25T06:41:41.235Z",
+  "stage": "rendered",
+  "nextStage": "review",
+  "progress": {
+    "projectValidated": true,
+    "foldersCreated": true,
+    "images": {
+      "required": 7,
+      "available": 7,
+      "approved": 7,
+      "targetAspectRatioMatches": 5
+    },
+    "tts": {
+      "required": 8,
+      "generated": 8
+    },
+    "subtitlesGenerated": true,
+    "renderReady": true,
+    "rendered": true,
+    "subtitleCueCount": 12,
+    "timelineGenerated": true,
+    "durationSec": 42.906,
+    "outputPath": "output/classic-twisted/essd-0010-the-tortoise-and-the-hare/final.mp4",
+    "renderDurationSec": 42.839
+  },
+  "blockingIssues": [],
+  "warnings": [
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "scene01",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop characters."
+    },
+    {
+      "code": "ASPECT_RATIO_MISMATCH",
+      "assetId": "scene02",
+      "severity": "warning",
+      "message": "Image is 1536x1024, not 16:9. Preserve the full frame during composition; do not crop characters."
+    }
+  ]
+}

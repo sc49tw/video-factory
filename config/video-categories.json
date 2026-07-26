@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "series": {
+    "ESSD": {
+      "label": "Easy Story Shadowing Daily",
+      "episodePattern": "^ESSD-[0-9]{4}$",
+      "episodePrefix": "ESSD-",
+      "digits": 4,
+      "renderBehavior": {
+        "introSeconds": 3,
+        "firstPass": "full-with-subtitles",
+        "interRoundPrompt": "Now it’s your turn.",
+        "interRoundPromptSeconds": 3,
+        "secondPass": "full-without-subtitles",
+        "shadowingTempo": 0.85,
+        "countdownAfterEachSecondPassSentence": true,
+        "cameraMotion": "none"
+      },
+      "subtypes": {
+        "classic-twisted": {
+          "label": "Classic Twisted",
+          "description": "A familiar public-domain story with a simple A2-level twist.",
+          "defaultSceneCount": 7,
+          "requiresCreativeDevelopment": true
+        },
+        "movie-explained-badly": {
+          "label": "Movie Explained Badly",
+          "description": "An indirect, intentionally poor explanation of a movie.",
+          "defaultSceneCount": 7,
+          "requiresCreativeDevelopment": true
+        }
+      }
+    },
+    "LLFC": {
+      "label": "Lessons Learned From Cinema",
+      "episodePattern": "^LLFC-[0-9]{4}$",
+      "episodePrefix": "LLFC-",
+      "digits": 4,
+      "subtypes": {
+        "default": {
+          "label": "LLFC",
+          "description": "A structured English lesson built around a cinema theme.",
+          "defaultSceneCount": 4,
+          "requiresCreativeDevelopment": true
+        }
+      }
+    }
+  }
+}

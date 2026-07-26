@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ESSD-0010",
+  "kind": "episode",
+  "series": "ESSD",
+  "subtype": "classic-twisted",
+  "status": "completed",
+  "currentStage": "completed",
+  "createdAt": "2026-07-26T00:53:57.818Z",
+  "updatedAt": "2026-07-26T03:48:19.847Z",
+  "approvals": {
+    "content": true,
+    "images": true,
+    "qa": true
+  },
+  "attempts": {
+    "rendering": {
+      "total": 6,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-07-26T03:46:59.466Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "stages": {
+    "intake": {
+      "status": "completed"
+    },
+    "creative-development": {
+      "status": "completed"
+    },
+    "content-approval": {
+      "status": "completed"
+    },
+    "images": {
+      "status": "completed"
+    },
+    "render-ready": {
+      "status": "completed"
+    },
+    "rendering": {
+      "status": "completed"
+    },
+    "qa": {
+      "status": "completed"
+    },
+    "completed": {
+      "status": "completed"
+    }
+  },
+  "blocker": null,
+  "nextAction": "Production is complete.",
+  "history": [
+    {
+      "at": "2026-07-26T00:53:57.820Z",
+      "event": "existing-input-adopted",
+      "reason": "Existing lesson and assets are treated as previously approved production input."
+    },
+    {
+      "at": "2026-07-26T01:00:47.858Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T01:01:23.202Z",
+      "event": "render-succeeded",
+      "durationSec": 92.379,
+      "output": "output/ESSD-0010/ESSD-0010.mp4"
+    },
+    {
+      "at": "2026-07-26T01:05:34.590Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T01:36:31.792Z",
+      "event": "qa-rejected",
+      "reason": "ESSD must play the full subtitled first round, then Now it's your turn, then the subtitle-free shadowing round with four-second countdowns; ESSD images must remain static."
+    },
+    {
+      "at": "2026-07-26T01:37:03.962Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T01:37:18.299Z",
+      "event": "render-failed",
+      "error": "ffmpeg exited with 234"
+    },
+    {
+      "at": "2026-07-26T01:38:38.101Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T01:39:34.847Z",
+      "event": "render-succeeded",
+      "durationSec": 94.979,
+      "output": "output/ESSD-0010/ESSD-0010.mp4"
+    },
+    {
+      "at": "2026-07-26T01:44:19.183Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T01:55:33.748Z",
+      "event": "qa-rejected",
+      "reason": "Multiline subtitles render the line break as a literal n, corrupting phrases such as 'a race' and other wrapped sentences."
+    },
+    {
+      "at": "2026-07-26T01:56:54.401Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T01:57:40.767Z",
+      "event": "render-succeeded",
+      "durationSec": 94.979,
+      "output": "output/ESSD-0010/ESSD-0010.mp4"
+    },
+    {
+      "at": "2026-07-26T02:01:09.039Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T02:01:56.492Z",
+      "event": "render-succeeded",
+      "durationSec": 94.979,
+      "output": "output/ESSD-0010/ESSD-0010.mp4"
+    },
+    {
+      "at": "2026-07-26T02:10:30.473Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T02:29:03.454Z",
+      "event": "qa-rejected",
+      "reason": "ESSD needs a title intro, the approved moral narration prefixed by 'The moral is...', and a slower shadowing round."
+    },
+    {
+      "at": "2026-07-26T03:45:48.013Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T03:46:59.466Z",
+      "event": "render-succeeded",
+      "durationSec": 118.019,
+      "output": "output/ESSD-0010/ESSD-0010.mp4"
+    },
+    {
+      "at": "2026-07-26T03:48:19.841Z",
+      "event": "qa-approved"
+    }
+  ],
+  "gates": {
+    "lesson": {
+      "passed": true,
+      "reason": null,
+      "sentenceCount": 10
+    },
+    "contentApproval": {
+      "passed": true,
+      "reason": null
+    },
+    "images": {
+      "passed": true,
+      "reason": null,
+      "missing": []
+    },
+    "render": {
+      "passed": true,
+      "reason": null
+    },
+    "qa": {
+      "passed": true,
+      "reason": null
+    }
+  },
+  "needsRerender": false,
+  "rerenderReason": null
+}

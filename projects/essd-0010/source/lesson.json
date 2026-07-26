@@ -1,0 +1,131 @@
+{
+  "episode": "ESSD-0010",
+  "series": "ESSD",
+  "subtype": "classic-twisted",
+  "title": "The Tortoise and the Hare",
+  "language": "en-US",
+  "level": "A2",
+
+  "renderMode": "double-pass-shadowing",
+  "countdownSeconds": 4,
+  "transitionSeconds": 0.4,
+
+  "tts": {
+    "provider": "edge",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "rate": "+0%",
+    "volume": "+0%"
+  },
+
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "cameraMotion": "none",
+    "backgroundMusic": true
+  },
+
+  "subtitle": {
+    "firstPass": true,
+    "secondPass": false,
+    "highlightWords": true
+  },
+
+  "scenes": [
+    {
+      "id": "scene01",
+      "title": "The Challenge",
+      "image": "scene01.png",
+      "durationSeconds": 5,
+      "sentences": [
+        {
+          "text": "Once upon a time, a tortoise challenged a hare to a race."
+        }
+      ]
+    },
+    {
+      "id": "scene02",
+      "title": "A Fast Start",
+      "image": "scene02.png",
+      "durationSeconds": 5,
+      "sentences": [
+        {
+          "text": "The hare laughed and quickly ran far ahead."
+        }
+      ]
+    },
+    {
+      "id": "scene03",
+      "title": "Looking Back",
+      "image": "scene03.png",
+      "durationSeconds": 6,
+      "sentences": [
+        {
+          "text": "He looked back."
+        },
+        {
+          "text": "The tortoise was nowhere to be seen."
+        }
+      ]
+    },
+    {
+      "id": "scene04",
+      "title": "A Short Rest",
+      "image": "scene04.png",
+      "durationSeconds": 6,
+      "sentences": [
+        {
+          "text": "The hare found a cool shady tree."
+        },
+        {
+          "text": "He decided to take a short rest."
+        }
+      ]
+    },
+    {
+      "id": "scene05",
+      "title": "Back on the Race",
+      "image": "scene05.png",
+      "durationSeconds": 5,
+      "sentences": [
+        {
+          "text": "After a short break, he stood up and kept running."
+        }
+      ]
+    },
+    {
+      "id": "scene06",
+      "title": "Still Fast",
+      "image": "scene06.png",
+      "durationSeconds": 4,
+      "sentences": [
+        {
+          "text": "He ran as fast as ever."
+        }
+      ]
+    },
+    {
+      "id": "scene07",
+      "title": "The Twist",
+      "image": "scene07.png",
+      "durationSeconds": 5,
+      "sentences": [
+        {
+          "text": "When the tortoise reached the finish line, the hare was already waiting."
+        }
+      ]
+    }
+  ],
+
+  "ending": {
+    "title": "The Moral of the Story",
+    "text": "Hard work beats talent only when talent stops trying.",
+    "durationSeconds": 6,
+    "tts": true,
+    "subtitle": true
+  },
+
+  "output": {
+    "filename": "CT001.mp4"
+  }
+}

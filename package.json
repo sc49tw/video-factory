@@ -3,10 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "lesson:import": "node scripts/lesson-import.mjs",
-    "video:render": "node scripts/render-english-prototype.mjs",
-    "video:prototype": "pnpm video:render lessons/examples/en-junior-high.example.json",
-    "vf:llfc:tts": "node scripts/llfc-tts.mjs",
-    "vf:llfc:render": "node scripts/llfc-render.mjs"
+    "video:workflow": "node scripts/video-workflow.mjs",
+    "video:render": "node scripts/render-lesson.mjs",
+    "test": "node --test",
+    "typecheck": "node --check scripts/render-lesson.mjs && node --check scripts/video-workflow.mjs && node --check src/categories.mjs && node --check src/chat-handoff.mjs && node --check src/gates.mjs && node --check src/lesson.mjs && node --check src/workflow.mjs"
   }
 }

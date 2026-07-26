@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSD-0010",
+  "completedAt": "2026-07-26T03:46:59.463Z",
+  "totalDurationMs": 71457,
+  "sentenceCount": 10,
+  "outputDurationSec": 118.019,
+  "ttsCacheHits": 9,
+  "ttsCacheMisses": 1,
+  "attempts": {
+    "rendering": {
+      "total": 6,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-07-26T03:46:59.466Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "improvements": [
+    {
+      "priority": "low",
+      "action": "Keep sentence text and TTS settings stable to maximize audio cache reuse.",
+      "automatic": true
+    }
+  ]
+}

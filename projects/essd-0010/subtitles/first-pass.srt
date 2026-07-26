@@ -1,0 +1,40 @@
+1
+00:00:03,000 --> 00:00:07,008
+Once upon a time, a tortoise challenged a hare to a race.
+
+2
+00:00:07,408 --> 00:00:10,456
+The hare laughed and quickly ran far ahead.
+
+3
+00:00:10,856 --> 00:00:12,632
+He looked back.
+
+4
+00:00:13,032 --> 00:00:15,216
+The tortoise was nowhere to be seen.
+
+5
+00:00:15,616 --> 00:00:17,728
+The hare found a cool shady tree.
+
+6
+00:00:18,128 --> 00:00:20,048
+He decided to take a short rest.
+
+7
+00:00:20,448 --> 00:00:23,712
+After a short break, he stood up and kept running.
+
+8
+00:00:24,112 --> 00:00:26,080
+He ran as fast as ever.
+
+9
+00:00:26,480 --> 00:00:30,536
+When the tortoise reached the finish line, the hare was already waiting.
+
+10
+00:00:30,936 --> 00:00:36,144
+The moral is... Hard work beats talent only when talent stops trying.
+
