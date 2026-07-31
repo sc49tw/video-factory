@@ -1,0 +1,591 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "LLFC-0002",
+  "title": "Residential Intrusion Mitigation System",
+  "startedAt": "2026-07-28T13:07:27.075Z",
+  "sourceLesson": "inbox/LLFC-0002/lesson.json",
+  "lessonSha256": "941cbeacfbebccb01f74ed90e861692b89609b49a615c0f20327da7d28ec9757",
+  "images": [
+    {
+      "source": "inbox/LLFC-0002/approved/cover.png",
+      "file": "cover.png",
+      "sha256": "fca6c2b2901e0b825b178efcf3b1da5c28a13c162cb5b0dae465b1e4aaf5d188",
+      "modifiedAt": "2026-07-28T11:20:10.508Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/page01.png",
+      "file": "page01.png",
+      "sha256": "9a095cd1bcbd687b1cec76ac0dcd354201ae7bc6e21379be4ca8d7927c65209f",
+      "modifiedAt": "2026-07-28T11:22:08.472Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/page02.png",
+      "file": "page02.png",
+      "sha256": "a88e44abc98070489caa1974f28aea1589219d892d1768bfc3df60d219829c55",
+      "modifiedAt": "2026-07-28T11:23:25.145Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/page03.png",
+      "file": "page03.png",
+      "sha256": "f631476eb49dd0d92444b6963da980e9586571171fe32242cf8d79c5bac6f06c",
+      "modifiedAt": "2026-07-28T11:26:37.603Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/page04.png",
+      "file": "page04.png",
+      "sha256": "d41a1818c54ef637690462e33f76627fea7986976f203ab20f0cdd0bea9ed5b2",
+      "modifiedAt": "2026-07-28T11:29:55.982Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/lesson01.png",
+      "file": "lesson01.png",
+      "sha256": "e57a23cec430550e275ae89547af9c3420d2928402da8dc80b73ce9e63203e7d",
+      "modifiedAt": "2026-07-28T11:31:19.617Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/lesson02.png",
+      "file": "lesson02.png",
+      "sha256": "fc9c4d43e03337bdedabb65bf1ff108cd105ff98856952f81de63553daa08759",
+      "modifiedAt": "2026-07-28T11:32:32.332Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/lesson03.png",
+      "file": "lesson03.png",
+      "sha256": "41bd7fc35fd3ab953a2555de21df9aa916a209f243538a3e58ea93894daeba45",
+      "modifiedAt": "2026-07-28T11:33:41.595Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/lesson04.png",
+      "file": "lesson04.png",
+      "sha256": "d6ce319a600d57b9e081bfa2ef5811fdfdb4872d10466f489e74ba20813aedb0",
+      "modifiedAt": "2026-07-28T11:34:59.915Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/common_ending.png",
+      "file": "common_ending.png",
+      "sha256": "465ea17d874f3c15d1413fcb48948d9de00e83f975dbf77d049c048c6ccf097d",
+      "modifiedAt": "2026-07-28T11:36:14.533Z"
+    },
+    {
+      "source": "inbox/LLFC-0002/approved/common_opening.png",
+      "file": "common_opening.png",
+      "sha256": "32272a14fadd880fac2a5c5a3fc807a4cb2314ca9b984ba647abe459178160c6",
+      "modifiedAt": "2026-07-26T08:09:10.538Z"
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "voice": "en-US-ChristopherNeural",
+    "rate": "-15%",
+    "pitch": "-10Hz",
+    "volume": "+0%"
+  },
+  "sentenceCount": 37,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "countdownSeconds": 4,
+  "transitionSeconds": 0.4,
+  "introSeconds": 3,
+  "shadowingTempo": 0.85,
+  "finalVideo": "output/LLFC-0002/LLFC-0002.mp4",
+  "completedAt": "2026-07-28T13:09:11.247Z",
+  "status": "success",
+  "error": null,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "path": "projects/LLFC-0002/audio/sentence-001.mp3",
+      "durationSec": 7.008,
+      "textSha256": "48c3a0680521cceb0d7d4494d0162e8e68a2dba02fcda06127f848c039ce0539",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-002",
+      "path": "projects/LLFC-0002/audio/sentence-002.mp3",
+      "durationSec": 6.024,
+      "textSha256": "922c30169c358b77b2f0c207c638241d1639c6e4dda7898f288d2cd0a1a1df90",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-003",
+      "path": "projects/LLFC-0002/audio/sentence-003.mp3",
+      "durationSec": 4.08,
+      "textSha256": "8e5a705c5939a41de8e7f394fe090f7507f7db0f1b6a223d3877e06b58299bcf",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-004",
+      "path": "projects/LLFC-0002/audio/sentence-004.mp3",
+      "durationSec": 5.808,
+      "textSha256": "0a30b294059e9bdd556e8eb589603c006e223d28f9ba72c3c29414ddf06020af",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-005",
+      "path": "projects/LLFC-0002/audio/sentence-005.mp3",
+      "durationSec": 4.584,
+      "textSha256": "5aa8f1332bcb228cfceb346613509719c40fe10634045548b8288d43a90ab96c",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-006",
+      "path": "projects/LLFC-0002/audio/sentence-006.mp3",
+      "durationSec": 4.584,
+      "textSha256": "5083b90b3ec0b3a559ee319262e5d4ae60d40e5b9afc734e2c3370c31bed3485",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-007",
+      "path": "projects/LLFC-0002/audio/sentence-007.mp3",
+      "durationSec": 4.92,
+      "textSha256": "3c9f21ff478808ca1b839a166abc2d77a74a9ae685055b1e85844393b259500e",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-008",
+      "path": "projects/LLFC-0002/audio/sentence-008.mp3",
+      "durationSec": 7.872,
+      "textSha256": "b7a417cba705df42096f338e5ae2f24e21bf52b0e74a9374951fb68c4d56bc24",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-009",
+      "path": "projects/LLFC-0002/audio/sentence-009.mp3",
+      "durationSec": 6.72,
+      "textSha256": "35e4b270e02a60648fb83099bd2f5830154fa4c019c750506159937e0cee509a",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-010",
+      "path": "projects/LLFC-0002/audio/sentence-010.mp3",
+      "durationSec": 3.96,
+      "textSha256": "e0494a9371065570a7809d551d7fba10307edc9db3c8be8bdf682168f424b467",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-011",
+      "path": "projects/LLFC-0002/audio/sentence-011.mp3",
+      "durationSec": 5.688,
+      "textSha256": "921ae04ee1432f3296ed89309896f45cdbad50f2f38df0c692ca262770fbf508",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-012",
+      "path": "projects/LLFC-0002/audio/sentence-012.mp3",
+      "durationSec": 5.496,
+      "textSha256": "991575913da91facd9f0422c2af247771e7da42133bd6bf64dc8e15ea9e8af0f",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-013",
+      "path": "projects/LLFC-0002/audio/sentence-013.mp3",
+      "durationSec": 4.584,
+      "textSha256": "10284da1f7f727dfd2b847f0df0adceb19afd6097a6f1a6fc2999e2892206590",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-014",
+      "path": "projects/LLFC-0002/audio/sentence-014.mp3",
+      "durationSec": 4.272,
+      "textSha256": "45adf723f4bb1282de10ffae42b16b3b50d3c1c51a9c9f6c5770930ca0a0ea65",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-015",
+      "path": "projects/LLFC-0002/audio/sentence-015.mp3",
+      "durationSec": 5.16,
+      "textSha256": "de740fd2ad818b8af1316f0d3e08dac70f9793315f0ba2ed82dadf131a504d5c",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-016",
+      "path": "projects/LLFC-0002/audio/sentence-016.mp3",
+      "durationSec": 5.568,
+      "textSha256": "80f34f8a13dc2f9a55a031420389562a3ed5ee1c4664b262f090ac9b0c1d0ce0",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-017",
+      "path": "projects/LLFC-0002/audio/sentence-017.mp3",
+      "durationSec": 5.592,
+      "textSha256": "930c9efcdeb345d26e22376068d1b1bbb86dd8fed930e7dd45f51dba5fc72051",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-018",
+      "path": "projects/LLFC-0002/audio/sentence-018.mp3",
+      "durationSec": 5.112,
+      "textSha256": "bed2f5529cd63656c3f348b0be71a0124092442fa61ca56f17ae76398bb92d01",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-019",
+      "path": "projects/LLFC-0002/audio/sentence-019.mp3",
+      "durationSec": 4.8,
+      "textSha256": "66a1cb7536adf3fdec67a1f1716057a0109148dfc5f1750ff62dbc81ffa38652",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-020",
+      "path": "projects/LLFC-0002/audio/sentence-020.mp3",
+      "durationSec": 5.808,
+      "textSha256": "48c05c9a23824b6d69166f331fa9a25d6b026d8fd2d20ed08dd9d441c43ebca1",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-021",
+      "path": "projects/LLFC-0002/audio/sentence-021.mp3",
+      "durationSec": 4.824,
+      "textSha256": "897ca660e56be35041ba94535f6f67b77245868a2613dc52f95d4a08ecf355d3",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-022",
+      "path": "projects/LLFC-0002/audio/sentence-022.mp3",
+      "durationSec": 3.888,
+      "textSha256": "cf3145dd19c1a8afdc9bc684dcf4f4c50a23dcea83fbc72aa6afa3136a8c9ff5",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-023",
+      "path": "projects/LLFC-0002/audio/sentence-023.mp3",
+      "durationSec": 4.608,
+      "textSha256": "c272e329c458e8db8fa4e806f0528daf49c89530a2f44d69436b6fc26c77ae54",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-024",
+      "path": "projects/LLFC-0002/audio/sentence-024.mp3",
+      "durationSec": 3.288,
+      "textSha256": "76167bf1bdb077fdb2cba2ed9834b95a6b74c500fbdbf86f92aaa06e700c8251",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-025",
+      "path": "projects/LLFC-0002/audio/sentence-025.mp3",
+      "durationSec": 4.872,
+      "textSha256": "5a8d1a38f3a6138288ca402b10aeff0c3443d648f20fe98a2130ee0816584ad3",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-026",
+      "path": "projects/LLFC-0002/audio/sentence-026.mp3",
+      "durationSec": 5.232,
+      "textSha256": "29007dc3fcc4f63296791526295ed1044f84a0d3d00743324070392cec868fa8",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-027",
+      "path": "projects/LLFC-0002/audio/sentence-027.mp3",
+      "durationSec": 6.624,
+      "textSha256": "86e0723525c1d3f38851640ddd6db3e0a5bbbeda1de159c1130c100f39b3a55b",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-028",
+      "path": "projects/LLFC-0002/audio/sentence-028.mp3",
+      "durationSec": 4.272,
+      "textSha256": "c099ce1a724474449cae8025003e7bfb66fec944f9f92bbfe53611dfbfe57d5d",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-029",
+      "path": "projects/LLFC-0002/audio/sentence-029.mp3",
+      "durationSec": 5.568,
+      "textSha256": "4c568bae4fce44a264de6aff01a70653b4cacf7e726e927bb2811b2375627349",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-030",
+      "path": "projects/LLFC-0002/audio/sentence-030.mp3",
+      "durationSec": 4.992,
+      "textSha256": "bf380405341e2048bdf3763cfe96757c87b8ac1ec45ca4bb52a118ee8caf1cef",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-031",
+      "path": "projects/LLFC-0002/audio/sentence-031.mp3",
+      "durationSec": 5.136,
+      "textSha256": "ed549a119ec7e637e6fd50da48a0194cd556c520c107eb3f4a0cef6f315cca38",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-032",
+      "path": "projects/LLFC-0002/audio/sentence-032.mp3",
+      "durationSec": 5.304,
+      "textSha256": "f59ab6790a2c2e958b437d4473876b1a302f5cc588f1123ba6234c0f41e01637",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-033",
+      "path": "projects/LLFC-0002/audio/sentence-033.mp3",
+      "durationSec": 6.096,
+      "textSha256": "bc2d38acc896598b81f478d6b6696bfe11d5808f6d07c594dc24bbac9192f774",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-034",
+      "path": "projects/LLFC-0002/audio/sentence-034.mp3",
+      "durationSec": 4.824,
+      "textSha256": "ee1f2179d283f5fbc3a9b645bfbe88834a315a4c567d074bd6d6d9ad8c97b3db",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-035",
+      "path": "projects/LLFC-0002/audio/sentence-035.mp3",
+      "durationSec": 6.576,
+      "textSha256": "33d8d165a832237e5148bb0c02d88fdab1b49447bdf79c6d31897e714f9eb386",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-036",
+      "path": "projects/LLFC-0002/audio/sentence-036.mp3",
+      "durationSec": 4.656,
+      "textSha256": "71d2db16d3e302a5c54a21fc37ee96f72ad5840481be167d36b2d9584b78dad5",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-037",
+      "path": "projects/LLFC-0002/audio/sentence-037.mp3",
+      "durationSec": 2.688,
+      "textSha256": "369901902a3c98216d0a06af64d6d1773b6120358046ea657f1bd9dba6d87af3",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-ChristopherNeural",
+        "rate": "-15%",
+        "pitch": "-10Hz",
+        "volume": "+0%"
+      }
+    }
+  ],
+  "subtitles": "projects/LLFC-0002/subtitles/first-pass.srt",
+  "estimatedDurationSec": 208.388,
+  "validation": {
+    "passed": true,
+    "fileSize": 88316232,
+    "durationSec": 208.618,
+    "hasVideo": true,
+    "hasAudio": true,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  }
+}

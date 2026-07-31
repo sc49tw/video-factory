@@ -1,0 +1,182 @@
+{
+  "workingTitle": "Residential Intrusion Mitigation System",
+  "professionalFraming": "A security consulting performance audit of a low-staffed seasonal residence",
+  "satiricalPremise": "The report recognizes the residence as a successful, low-cost security programme operated by one temporarily reassigned junior manager. All events are treated as deliberate system design, field testing, and measurable operational performance.",
+  "learningObjective": "Understand simple A2 cause-and-effect language used to explain operational results.",
+  "summary": "This case study evaluates a suburban residence that maintained site control during repeated unauthorized entry attempts. The audit reviews temporary staffing, visual occupancy simulation, automated external communications, layered access deterrence, incident-response timing, and post-test habitability. The system achieved strong intrusion mitigation using existing household inventory, although visitor satisfaction, resident comfort, and asset replacement costs produced mixed results.",
+  "centralLesson": "Layered security performs best when visible occupancy, automated communication, gravity-assisted equipment, and local response partners are measured as one integrated system.",
+  "mainCharacters": [
+    {
+      "name": "Kevin",
+      "role": "Temporarily reassigned site manager",
+      "conceptFunction": "Maintains operations, activates the occupancy simulation, configures the mitigation system, and records a 100 percent on-site management attendance rate."
+    },
+    {
+      "name": "Harry",
+      "role": "Lead unauthorized visitor",
+      "conceptFunction": "Provides repeated external testing of entry controls, thermal hardware, and emergency exit performance."
+    },
+    {
+      "name": "Marv",
+      "role": "Assistant unauthorized visitor",
+      "conceptFunction": "Provides additional test data for low-friction surfaces, foot-contact materials, gravity modules, and biological distraction."
+    },
+    {
+      "name": "Old Man Marley",
+      "role": "Local incident-response partner",
+      "conceptFunction": "Reduces final resolution time after formal response channels experience delay."
+    },
+    {
+      "name": "Kate",
+      "role": "Off-site senior management",
+      "conceptFunction": "Returns after field testing and resumes standard residential governance."
+    }
+  ],
+  "sceneOutline": [
+    {
+      "scene": 1,
+      "kind": "common-opening",
+      "purpose": "Use the established Lessons Learned from Cinema institutional opening."
+    },
+    {
+      "scene": 2,
+      "kind": "case-study-cover",
+      "heading": "CASE STUDY No.002 — RESIDENTIAL INTRUSION MITIGATION SYSTEM",
+      "purpose": "Introduce an official evaluation of a low-staffed seasonal property without naming the movie."
+    },
+    {
+      "scene": 3,
+      "kind": "case-study-page",
+      "page": "PAGE 1",
+      "heading": "PROJECT OVERVIEW",
+      "purpose": "Define the residence, operating conditions, resources, and staffing model as a normal consulting engagement.",
+      "contentFocus": [
+        "Facility type: suburban family residence",
+        "On-site management staff: 1",
+        "Management experience: 8 years",
+        "Unauthorized visitors: 2",
+        "Procurement budget: existing household inventory",
+        "Senior management location: international",
+        "Operational objective: maintain site control"
+      ],
+      "kpis": [
+        "On-site management attendance: 100%",
+        "Adult oversight latency: extended",
+        "Initial budget compliance: excellent"
+      ],
+      "professionalImplication": "Temporary leadership reassignment occurred during scheduled seasonal travel."
+    },
+    {
+      "scene": 4,
+      "kind": "case-study-page",
+      "page": "PAGE 2",
+      "heading": "VISUAL OCCUPANCY SIMULATION",
+      "purpose": "Measure the automated system used to communicate normal holiday activity to external observers.",
+      "contentFocus": [
+        "Cardboard personnel silhouettes",
+        "Model rail circulation platform",
+        "Synchronized lighting and music",
+        "Continuous evening operation",
+        "No additional payroll requirement"
+      ],
+      "kpis": [
+        "Simulated guest attendance: stable",
+        "Cost per simulated occupant: low",
+        "Effectiveness at street distance: high",
+        "Effectiveness under close inspection: outside test scope"
+      ],
+      "professionalImplication": "Visual occupancy simulation remains highly effective beyond recommended inspection distance."
+    },
+    {
+      "scene": 5,
+      "kind": "case-study-page",
+      "page": "PAGE 3",
+      "heading": "LAYERED MITIGATION ARCHITECTURE",
+      "purpose": "Present the residence as a coordinated multi-zone system rather than a collection of individual events.",
+      "contentFocus": [
+        "Low-friction exterior access surfaces",
+        "Thermally enhanced door hardware",
+        "Decorative glass foot-contact field",
+        "Gravity-assisted impact modules",
+        "Automated television-based communications",
+        "Portable biological distraction unit"
+      ],
+      "kpis": [
+        "Entry routes evaluated: multiple",
+        "System activation rate: 100%",
+        "Paint can throughput: 2 units",
+        "Unauthorized visitor safety incidents: repeated"
+      ],
+      "professionalImplication": "Existing household assets were successfully reassigned to security operations."
+    },
+    {
+      "scene": 6,
+      "kind": "case-study-page",
+      "page": "PAGE 4",
+      "heading": "FINAL PERFORMANCE EVALUATION",
+      "purpose": "Report outcomes with credible scorecard language while minimizing the condition of the facility and test participants.",
+      "contentFocus": [
+        "Site control maintained",
+        "Unauthorized entry programme discontinued",
+        "Local response partner activated",
+        "Formal authorities received final participants",
+        "Standard residential operations restored"
+      ],
+      "kpis": [
+        "Intrusion mitigation: excellent",
+        "Unauthorized visitor satisfaction: low",
+        "Resident comfort index: mixed",
+        "Asset replacement cost: pending",
+        "Emergency response delay: above target",
+        "Continued habitability: approved with minor redesign"
+      ],
+      "professionalImplication": "The programme met its primary objective despite several temporary safety incidents and localized facility adjustments."
+    },
+    {
+      "scene": 7,
+      "kind": "lesson-card",
+      "page": "LESSON 1",
+      "heading": "SIMULATING OCCUPANCY",
+      "purpose": "Visual occupancy simulation is most effective when lighting, sound, and personnel movement operate together.",
+      "connectionToPages": [
+        "PAGE 2"
+      ]
+    },
+    {
+      "scene": 8,
+      "kind": "lesson-card",
+      "page": "LESSON 2",
+      "heading": "USING LAYERED SYSTEMS",
+      "purpose": "A single control may be bypassed, so effective mitigation should combine several independent systems.",
+      "connectionToPages": [
+        "PAGE 3"
+      ]
+    },
+    {
+      "scene": 9,
+      "kind": "lesson-card",
+      "page": "LESSON 3",
+      "heading": "MANAGING GRAVITY",
+      "purpose": "Gravity remains a cost-effective security subcontractor when sufficient ceiling clearance is available.",
+      "connectionToPages": [
+        "PAGE 3",
+        "PAGE 4"
+      ]
+    },
+    {
+      "scene": 10,
+      "kind": "lesson-card",
+      "page": "LESSON 4",
+      "heading": "MAINTAINING LOCAL RESPONSE",
+      "purpose": "Local response partners can reduce incident resolution time when formal channels exceed target delay.",
+      "connectionToPages": [
+        "PAGE 4"
+      ]
+    },
+    {
+      "scene": 11,
+      "kind": "common-ending",
+      "purpose": "Use the established institutional ending and close the review without acknowledging fiction or explaining the joke."
+    }
+  ]
+}

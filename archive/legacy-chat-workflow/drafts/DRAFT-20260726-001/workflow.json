@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "id": "DRAFT-20260726-001",
+  "kind": "draft",
+  "series": "LLFC",
+  "subtype": "default",
+  "status": "waiting-for-chat",
+  "currentStage": "creative-development",
+  "createdAt": "2026-07-26T13:43:08.504Z",
+  "updatedAt": "2026-07-26T13:43:08.504Z",
+  "approvals": {
+    "content": false,
+    "images": false,
+    "qa": false
+  },
+  "attempts": {},
+  "stages": {
+    "intake": {
+      "status": "completed"
+    },
+    "creative-development": {
+      "status": "waiting-for-chat"
+    },
+    "content-approval": {
+      "status": "pending"
+    },
+    "images": {
+      "status": "pending"
+    },
+    "render-ready": {
+      "status": "pending"
+    },
+    "rendering": {
+      "status": "pending"
+    },
+    "qa": {
+      "status": "pending"
+    },
+    "completed": {
+      "status": "pending"
+    }
+  },
+  "blocker": null,
+  "nextAction": "Take the generated prompt to Chat and return its final JSON package.",
+  "history": [
+    {
+      "at": "2026-07-26T13:43:08.504Z",
+      "event": "draft-created"
+    }
+  ]
+}

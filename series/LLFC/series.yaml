@@ -1,0 +1,40 @@
+{
+  "series": "LLFC",
+  "name": "Lessons Learned from Cinema",
+  "creativeDirection": "series/LLFC/creative-direction.md",
+  "worldview": [
+    "Movies are treated as real events, organizations, industries, or incidents.",
+    "The video analyzes them with professional confidence and dry satire.",
+    "The video must not present itself as a normal movie recap."
+  ],
+  "tone": ["professional", "serious", "dry satire", "confidently analytical", "funny because the analysis is overly formal"],
+  "ideationChecks": [
+    "Use one coherent professional lens as the truth of the report.",
+    "Treat movie events as real and classify them using the wrong professional framework.",
+    "Use credible KPIs even for things that should not be measured.",
+    "Use professional euphemisms for disasters and failures.",
+    "Keep approximately 80 percent credible analysis and 20 percent absurd implication.",
+    "Every slide must look professionally credible without context and remain recognizable to movie fans.",
+    "Never wink, explain the joke, summarize the plot, or call the events absurd."
+  ],
+  "language": {"default": "en", "defaultLevel": "A2"},
+  "lessonRules": [
+    "Define one clear English learning objective.",
+    "Use clear English suitable for A2 learners.",
+    "Every sentence must work independently for TTS and shadowing.",
+    "Avoid sentences that depend on text visible on screen.",
+    "Keep lesson examples internally consistent."
+  ],
+  "visualRules": [
+    "Every scene must be visually teachable.",
+    "Character appearance must remain consistent.",
+    "Image prompts must not request captions, subtitles, logos, or embedded text."
+  ],
+  "creativeRules": [
+    "Do not mention the movie title inside the fictional report unless explicitly approved.",
+    "Do not merely retell the movie scene by scene.",
+    "Select the most suitable professional framing for each movie.",
+    "Possible framings include case study, incident investigation, audit, inspection, operational review, risk assessment, consulting report, or public inquiry.",
+    "The framing is variable and must not be hard-coded as Case Study."
+  ]
+}

@@ -1,0 +1,2 @@
+Light, sound, and visible movement should operate
+together.

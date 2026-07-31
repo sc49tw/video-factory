@@ -22,6 +22,42 @@ test("normalizes scenes with multiple sentences", () => {
   assert.equal(lesson.sentences.length, 2);
   assert.equal(lesson.sentences[1].image, "scene01.png");
   assert.equal(lesson.countdownSeconds, 4);
+  assert.deepEqual(lesson.ending, ["Great job!", "See you next time."]);
+});
+
+test("preserves per-sentence speaker and TTS overrides", () => {
+  const lesson = normalizeLesson(
+    {
+      episode: "ESSD-0011",
+      title: "Voices",
+      scenes: [
+        {
+          image: "scene01.png",
+          sentences: [
+            {
+              text: "Wolf! Wolf!",
+              speaker: "boy",
+              tts: {
+                voice: "en-US-AnaNeural",
+                rate: "+18%",
+                pitch: "+8Hz",
+                volume: "+4%",
+              },
+            },
+          ],
+        },
+      ],
+    },
+    "ESSD-0011",
+  );
+  assert.equal(lesson.sentences[0].speaker, "boy");
+  assert.deepEqual(lesson.sentences[0].tts, {
+    voice: "en-US-AnaNeural",
+    rate: "+18%",
+    pitch: "+8Hz",
+    volume: "+4%",
+  });
+  assert.equal(lesson.tts.volume, "+0%");
 });
 
 test("keeps backward compatibility with segments/text", () => {
@@ -98,10 +134,43 @@ test("ESSD duration uses full first round, inter-round prompt, then shadowing", 
     scenes: [{image: "scene01.png", sentences: ["One.", "Two."]}],
   });
   // Intro (3s), normal audio (5s), 85%-tempo shadowing audio,
-  // two countdowns (8s), one transition (0.4s), inter-round prompt (3s),
+  // two countdowns (8s), one inter-round transition (0.4s), prompt (3s),
   // and ending (4s).
   const expected = 3 + 5 + 5 / 0.85 + 8 + 0.4 + 3 + 4;
   assert.ok(Math.abs(expectedDuration(lesson, [2, 3]) - expected) < 1e-9);
+});
+
+test("LLFC preserves opening and report text with a single narration timeline", () => {
+  const lesson = normalizeLesson({
+    episode: "LLFC-0002",
+    series: "LLFC",
+    subtype: "default",
+    title: "Security Review",
+    transitionSeconds: 0.4,
+    sharedOpening: {image: "common-opening.png", durationSec: 2.5},
+    scenes: [
+      {
+        id: "page-01",
+        kind: "case-study-page",
+        title: "PROJECT OVERVIEW",
+        image: "page01.png",
+        onScreenText: ["PROJECT OVERVIEW", "ON-SITE STAFF  1"],
+        sentences: ["One.", "Two."],
+      },
+    ],
+  });
+  assert.deepEqual(lesson.sharedOpening, {
+    image: "common-opening.png",
+    durationSec: 2.5,
+  });
+  assert.equal(lesson.scenes[0].id, "page-01");
+  assert.equal(lesson.scenes[0].kind, "case-study-page");
+  assert.deepEqual(lesson.scenes[0].onScreenText, [
+    "PROJECT OVERVIEW",
+    "ON-SITE STAFF  1",
+  ]);
+  assert.deepEqual(lesson.ending, []);
+  assert.ok(Math.abs(expectedDuration(lesson, [2, 3]) - 8.3) < 1e-9);
 });
 
 test("ESSD lesson appends the approved moral with its spoken prefix", () => {

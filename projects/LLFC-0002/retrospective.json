@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "LLFC-0002",
+  "completedAt": "2026-07-28T13:09:11.247Z",
+  "totalDurationMs": 104172,
+  "sentenceCount": 37,
+  "outputDurationSec": 208.618,
+  "ttsCacheHits": 37,
+  "ttsCacheMisses": 0,
+  "attempts": {
+    "rendering": {
+      "total": 4,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-07-28T13:09:11.256Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "improvements": []
+}

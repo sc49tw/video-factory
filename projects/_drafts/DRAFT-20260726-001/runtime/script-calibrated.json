@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "DRAFT-20260726-001",
+  "language": "en",
+  "level": "A2",
+  "title": "Residential Intrusion Mitigation System",
+  "learningObjective": "Understand simple cause-and-effect statements with because, so, and therefore.",
+  "narrationRule": "Use a calm, sincere institutional-film delivery. Read each scene as one continuous report paragraph. Never emphasize a joke or acknowledge fiction.",
+  "scenes": [
+    {
+      "scene": 1,
+      "sceneId": "common-opening",
+      "kind": "common-opening",
+      "heading": "LESSONS LEARNED FROM CINEMA",
+      "narration": []
+    },
+    {
+      "scene": 2,
+      "sceneId": "case-study-cover",
+      "kind": "case-study-cover",
+      "heading": "CASE STUDY No.002 — RESIDENTIAL INTRUSION MITIGATION SYSTEM",
+      "narration": [
+        "This case study reviews a seasonal residence operated by one eight-year-old manager during two unauthorized entry attempts."
+      ]
+    },
+    {
+      "scene": 3,
+      "sceneId": "page-01",
+      "kind": "case-study-page",
+      "heading": "PROJECT OVERVIEW",
+      "narration": [
+        "Senior management traveled internationally, so one junior manager remained on site.",
+        "The available security budget included only normal household materials.",
+        "On-site management attendance was therefore one hundred percent."
+      ]
+    },
+    {
+      "scene": 4,
+      "sceneId": "page-02",
+      "kind": "case-study-page",
+      "heading": "VISUAL OCCUPANCY SIMULATION",
+      "narration": [
+        "The manager created visible guests with cardboard figures, music, lights, and a model train.",
+        "The figures moved continuously, so the house appeared active from the street.",
+        "The system used no payroll and worked best beyond close inspection distance."
+      ]
+    },
+    {
+      "scene": 5,
+      "sceneId": "page-03",
+      "kind": "case-study-page",
+      "heading": "LAYERED MITIGATION ARCHITECTURE",
+      "narration": [
+        "The residence used several independent controls at different entry points.",
+        "Heated door hardware and a portable biological unit delayed the visitors.",
+        "Two gravity-assisted paint containers then protected the main staircase."
+      ]
+    },
+    {
+      "scene": 6,
+      "sceneId": "page-04",
+      "kind": "case-study-page",
+      "heading": "FINAL PERFORMANCE EVALUATION",
+      "narration": [
+        "The residence maintained site control throughout the test.",
+        "A local response partner completed the final intervention after formal response was delayed.",
+        "Intrusion mitigation was excellent, although visitor satisfaction and resident comfort remained low."
+      ]
+    },
+    {
+      "scene": 7,
+      "sceneId": "lesson-01",
+      "kind": "lesson-card",
+      "heading": "SIMULATING OCCUPANCY",
+      "narration": [
+        "Occupancy simulation should combine light, sound, and visible movement.",
+        "The method is most effective when observers remain outside the inspection range."
+      ]
+    },
+    {
+      "scene": 8,
+      "sceneId": "lesson-02",
+      "kind": "lesson-card",
+      "heading": "USING LAYERED SYSTEMS",
+      "narration": [
+        "One security control may fail or be bypassed.",
+        "Layered systems perform better because the next control is already waiting."
+      ]
+    },
+    {
+      "scene": 9,
+      "sceneId": "lesson-03",
+      "kind": "lesson-card",
+      "heading": "MANAGING GRAVITY",
+      "narration": [
+        "Gravity remains a cost-effective security subcontractor.",
+        "However, gravity-assisted equipment requires clear stairs and enough ceiling space."
+      ]
+    },
+    {
+      "scene": 10,
+      "sceneId": "lesson-04",
+      "kind": "lesson-card",
+      "heading": "MAINTAINING LOCAL RESPONSE",
+      "narration": [
+        "Local response partners can reduce emergency delay.",
+        "A nearby partner may complete work before a formal team arrives."
+      ]
+    },
+    {
+      "scene": 11,
+      "sceneId": "common-ending",
+      "kind": "common-ending",
+      "heading": "END OF LESSON",
+      "narration": [
+        "This concludes the residential intrusion mitigation review.",
+        "Please return all biological units and paint containers to approved storage.",
+        "Distribution of future training materials requires subscription.",
+        "Thank you for your attention."
+      ]
+    }
+  ],
+  "sentences": [
+    {"id": "s001", "scene": 2, "text": "This case study reviews a seasonal residence operated by one eight-year-old manager during two unauthorized entry attempts."},
+    {"id": "s002", "scene": 3, "text": "Senior management traveled internationally, so one junior manager remained on site."},
+    {"id": "s003", "scene": 3, "text": "The available security budget included only normal household materials."},
+    {"id": "s004", "scene": 3, "text": "On-site management attendance was therefore one hundred percent."},
+    {"id": "s005", "scene": 4, "text": "The manager created visible guests with cardboard figures, music, lights, and a model train."},
+    {"id": "s006", "scene": 4, "text": "The figures moved continuously, so the house appeared active from the street."},
+    {"id": "s007", "scene": 4, "text": "The system used no payroll and worked best beyond close inspection distance."},
+    {"id": "s008", "scene": 5, "text": "The residence used several independent controls at different entry points."},
+    {"id": "s009", "scene": 5, "text": "Heated door hardware and a portable biological unit delayed the visitors."},
+    {"id": "s010", "scene": 5, "text": "Two gravity-assisted paint containers then protected the main staircase."},
+    {"id": "s011", "scene": 6, "text": "The residence maintained site control throughout the test."},
+    {"id": "s012", "scene": 6, "text": "A local response partner completed the final intervention after formal response was delayed."},
+    {"id": "s013", "scene": 6, "text": "Intrusion mitigation was excellent, although visitor satisfaction and resident comfort remained low."},
+    {"id": "s014", "scene": 7, "text": "Occupancy simulation should combine light, sound, and visible movement."},
+    {"id": "s015", "scene": 7, "text": "The method is most effective when observers remain outside the inspection range."},
+    {"id": "s016", "scene": 8, "text": "One security control may fail or be bypassed."},
+    {"id": "s017", "scene": 8, "text": "Layered systems perform better because the next control is already waiting."},
+    {"id": "s018", "scene": 9, "text": "Gravity remains a cost-effective security subcontractor."},
+    {"id": "s019", "scene": 9, "text": "However, gravity-assisted equipment requires clear stairs and enough ceiling space."},
+    {"id": "s020", "scene": 10, "text": "Local response partners can reduce emergency delay."},
+    {"id": "s021", "scene": 10, "text": "A nearby partner may complete work before a formal team arrives."},
+    {"id": "s022", "scene": 11, "text": "This concludes the residential intrusion mitigation review."},
+    {"id": "s023", "scene": 11, "text": "Please return all biological units and paint containers to approved storage."},
+    {"id": "s024", "scene": 11, "text": "Distribution of future training materials requires subscription."},
+    {"id": "s025", "scene": 11, "text": "Thank you for your attention."}
+  ]
+}

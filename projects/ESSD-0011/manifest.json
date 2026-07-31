@@ -1,0 +1,280 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSD-0011",
+  "title": "The Boy Who Cried Wolf",
+  "startedAt": "2026-07-26T15:10:20.732Z",
+  "sourceLesson": "inbox/ESSD-0011/lesson.json",
+  "lessonSha256": "b424abe902253c63f5ec8910ce2114aaa74061a9690d5c7f8fbcd9d19bb15662",
+  "images": [
+    {
+      "source": "inbox/ESSD-0011/scene01.png",
+      "file": "scene01.png",
+      "sha256": "c5af168e7d90a61e3813dc44e1c9ea2d62f98289e8bc0145391182ba07ee6d2b",
+      "modifiedAt": "2026-07-26T08:19:36.449Z"
+    },
+    {
+      "source": "inbox/ESSD-0011/scene02.png",
+      "file": "scene02.png",
+      "sha256": "fda80e526077f512bf9d460302a42655cc2ae7d5ea3d42a9bef885c0c88d6cff",
+      "modifiedAt": "2026-07-26T08:19:36.466Z"
+    },
+    {
+      "source": "inbox/ESSD-0011/scene03.png",
+      "file": "scene03.png",
+      "sha256": "e156f772c34d7fc6b4cadebf3bc180bbb71d535b3096c1a86b0191fce6e0347a",
+      "modifiedAt": "2026-07-26T08:19:36.482Z"
+    },
+    {
+      "source": "inbox/ESSD-0011/scene04.png",
+      "file": "scene04.png",
+      "sha256": "325b530591baaacb6d5993073069c38f639269e2e1ef049929077c13087ff6b6",
+      "modifiedAt": "2026-07-26T15:08:16.430Z"
+    },
+    {
+      "source": "inbox/ESSD-0011/scene05.png",
+      "file": "scene05.png",
+      "sha256": "e7b90951146513957ca919da1f7d320db4c5b65731d40e283302f5c45d6ea807",
+      "modifiedAt": "2026-07-26T08:19:36.547Z"
+    },
+    {
+      "source": "inbox/ESSD-0011/scene06.png",
+      "file": "scene06.png",
+      "sha256": "740193c56663868db8e0ef2e7728ee64fcb419a0c698aa9c0123058ce41cff93",
+      "modifiedAt": "2026-07-26T08:19:36.566Z"
+    },
+    {
+      "source": "inbox/ESSD-0011/scene07.png",
+      "file": "scene07.png",
+      "sha256": "e99086f19ce9ba50a448c0261f1b67689b3fb5894f4557626533985e04d2b9f1",
+      "modifiedAt": "2026-07-26T08:19:36.581Z"
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sentenceCount": 15,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "countdownSeconds": 4,
+  "transitionSeconds": 0.4,
+  "introSeconds": 3,
+  "shadowingTempo": 0.85,
+  "finalVideo": "output/ESSD-0011/ESSD-0011.mp4",
+  "completedAt": "2026-07-26T15:11:47.920Z",
+  "status": "success",
+  "error": null,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "path": "projects/ESSD-0011/audio/sentence-001.mp3",
+      "durationSec": 4.44,
+      "textSha256": "eb9ab69533221a8837f2bd6bfadd6eadc3a9a906cbf44b3d1b002052eab95c92",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-002",
+      "path": "projects/ESSD-0011/audio/sentence-002.mp3",
+      "durationSec": 2.232,
+      "textSha256": "81dbcb7fc9483e96204730755c41050eb2557cabaec94bc37cc56c94b53501be",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-003",
+      "path": "projects/ESSD-0011/audio/sentence-003.mp3",
+      "durationSec": 2.496,
+      "textSha256": "fe0d81629f50cb7734df22d2c0ff47f8c363449cbeecc0065c91366400a221b2",
+      "speaker": "boy",
+      "tts": {
+        "voice": "en-US-AnaNeural",
+        "rate": "+18%",
+        "pitch": "+8Hz",
+        "volume": "+4%"
+      }
+    },
+    {
+      "id": "sentence-004",
+      "path": "projects/ESSD-0011/audio/sentence-004.mp3",
+      "durationSec": 3.744,
+      "textSha256": "db3fdeaa20388a84f89a14e6d127e3d77c590291d3c477ce065283b642544ab0",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-005",
+      "path": "projects/ESSD-0011/audio/sentence-005.mp3",
+      "durationSec": 1.728,
+      "textSha256": "8b4041a7366f1f92fa199f092ba190e060995ab06f9ddd4720f4613cf400ac3f",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-006",
+      "path": "projects/ESSD-0011/audio/sentence-006.mp3",
+      "durationSec": 3.912,
+      "textSha256": "0113496ac299626d9e28fc61d740f43d823ae12ff0201eee3fc89b1932d9c94d",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-007",
+      "path": "projects/ESSD-0011/audio/sentence-007.mp3",
+      "durationSec": 2.496,
+      "textSha256": "fe0d81629f50cb7734df22d2c0ff47f8c363449cbeecc0065c91366400a221b2",
+      "speaker": "boy",
+      "tts": {
+        "voice": "en-US-AnaNeural",
+        "rate": "+18%",
+        "pitch": "+8Hz",
+        "volume": "+4%"
+      }
+    },
+    {
+      "id": "sentence-008",
+      "path": "projects/ESSD-0011/audio/sentence-008.mp3",
+      "durationSec": 3.072,
+      "textSha256": "831e88b398ea15076bc87337192dbffbf926fd3f92a065e0357c1b2135e5bba6",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-009",
+      "path": "projects/ESSD-0011/audio/sentence-009.mp3",
+      "durationSec": 1.752,
+      "textSha256": "c19aa30ddbacb9b4bf3a146f5b8bf6f6066d4e7f6ee156d99b00e745a255827f",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-010",
+      "path": "projects/ESSD-0011/audio/sentence-010.mp3",
+      "durationSec": 4.44,
+      "textSha256": "696b091cfbdb7822eb5ca62ef406c94c297f6678b3c2c3966e7924258bb2e23c",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-011",
+      "path": "projects/ESSD-0011/audio/sentence-011.mp3",
+      "durationSec": 2.496,
+      "textSha256": "fe0d81629f50cb7734df22d2c0ff47f8c363449cbeecc0065c91366400a221b2",
+      "speaker": "boy",
+      "tts": {
+        "voice": "en-US-AnaNeural",
+        "rate": "+18%",
+        "pitch": "+8Hz",
+        "volume": "+4%"
+      }
+    },
+    {
+      "id": "sentence-012",
+      "path": "projects/ESSD-0011/audio/sentence-012.mp3",
+      "durationSec": 4.008,
+      "textSha256": "39a96512f57bb64d83b2ad33cc9e362e3be7709e38226c79b19c87279bf70a95",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-013",
+      "path": "projects/ESSD-0011/audio/sentence-013.mp3",
+      "durationSec": 4.008,
+      "textSha256": "8f54be345081a750b2cea5292c15f2b7243bea95e83cf60de26cc28cb6a87a08",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-014",
+      "path": "projects/ESSD-0011/audio/sentence-014.mp3",
+      "durationSec": 2.832,
+      "textSha256": "3ed7939d40120a6d32dd26eedde85b4332eb2761c0a2a0919d80dcc2b9f602cd",
+      "speaker": null,
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-015",
+      "path": "projects/ESSD-0011/audio/sentence-015.mp3",
+      "durationSec": 4.776,
+      "textSha256": "8314dbff33475ff2192ff10d7d1faac8d71aa851ee62283f885c99af8f755b71",
+      "tts": {
+        "voice": "en-US-AndrewMultilingualNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    }
+  ],
+  "subtitles": "projects/ESSD-0011/subtitles/first-pass.srt",
+  "estimatedDurationSec": 175.811,
+  "validation": {
+    "passed": true,
+    "fileSize": 53434962,
+    "durationSec": 175.914,
+    "hasVideo": true,
+    "hasAudio": true,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  }
+}

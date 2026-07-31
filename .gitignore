@@ -1,4 +1,5 @@
 # Generated media and build artifacts
+node_modules/
 *.mp4
 output/
 projects/**/generated/

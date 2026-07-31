@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSD-0011",
+  "completedAt": "2026-07-26T15:11:47.920Z",
+  "totalDurationMs": 87188,
+  "sentenceCount": 15,
+  "outputDurationSec": 175.914,
+  "ttsCacheHits": 15,
+  "ttsCacheMisses": 0,
+  "attempts": {
+    "rendering": {
+      "total": 5,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-07-26T15:11:47.926Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "improvements": []
+}

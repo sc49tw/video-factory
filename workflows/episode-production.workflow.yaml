@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "workflow": "episode-production",
+  "entrypoint": "Codex",
+  "stages": [
+    {"stage": "REQUEST", "input": ["user request"], "output": "request.yaml", "validation": ["series known", "source concept known", "draft ID assigned"], "approval": false, "next": "CONCEPT", "rollback": []},
+    {"stage": "CONCEPT", "input": ["request.yaml", "series contract"], "output": "concept.yaml", "validation": ["concept fields complete"], "approval": "concept", "next": "ENGLISH", "rollback": ["REQUEST"]},
+    {"stage": "ENGLISH", "input": ["approved concept.yaml"], "output": "script.yaml", "validation": ["A2 standalone TTS sentences"], "approval": "english", "next": "STORYBOARD", "rollback": ["CONCEPT"]},
+    {"stage": "STORYBOARD", "input": ["approved script.yaml"], "output": "storyboard.yaml", "validation": ["sequential visual scenes", "all sentences assigned"], "approval": "scenes", "next": "PACKAGE", "rollback": ["ENGLISH", "CONCEPT"]},
+    {"stage": "PACKAGE", "input": ["approved concept.yaml", "approved script.yaml", "approved storyboard.yaml"], "output": "production-package.json", "validation": ["contracts/production-package.schema.json", "runtime semantic checks"], "approval": "package", "next": "ASSETS", "rollback": ["STORYBOARD", "ENGLISH", "CONCEPT"]},
+    {"stage": "ASSETS", "input": ["approved production-package.json"], "output": "assets/manifest.json", "validation": ["existing image and audio gates"], "approval": "existing asset gates", "next": "RENDER", "rollback": ["PACKAGE"]},
+    {"stage": "RENDER", "input": ["approved lesson and assets"], "output": "production-ready MP4", "validation": ["existing renderer QA"], "approval": "qa", "next": null, "rollback": ["ASSETS"]}
+  ]
+}

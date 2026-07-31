@@ -1,0 +1,292 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "LLFC-0002",
+  "series": "LLFC",
+  "subtype": "default",
+  "title": "Residential Intrusion Mitigation System",
+  "language": "en",
+  "level": "A2",
+  "renderMode": "double-pass-shadowing",
+  "countdownSeconds": 4,
+  "transitionSeconds": 0.4,
+  "tts": {
+    "provider": "edge",
+    "voice": "en-US-ChristopherNeural",
+    "rate": "-15%",
+    "pitch": "-10Hz",
+    "volume": "+0%",
+    "sampleRate": 48000
+  },
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "backgroundMusic": {
+    "enabled": false
+  },
+  "sharedOpening": {
+    "image": "approved/common_opening.png",
+    "durationSec": 2.5,
+    "narration": []
+  },
+  "scenes": [
+    {
+      "id": "case-study-cover",
+      "kind": "case-study-cover",
+      "title": "CASE STUDY No.002 — RESIDENTIAL INTRUSION MITIGATION SYSTEM",
+      "image": "approved/cover.png",
+      "onScreenText": [
+        "CASE STUDY No.002",
+        "RESIDENTIAL INTRUSION MITIGATION SYSTEM"
+      ],
+      "sentences": [
+        {
+          "text": "This film examines a residential intrusion mitigation system at a seasonal family property."
+        },
+        {
+          "text": "The system operated with one on-site manager and no new equipment budget."
+        }
+      ]
+    },
+    {
+      "id": "page-01",
+      "kind": "case-study-page",
+      "title": "PROJECT OVERVIEW",
+      "image": "approved/page01.png",
+      "onScreenText": [
+        "PROJECT OVERVIEW",
+        "ON-SITE STAFF  1",
+        "MANAGEMENT EXPERIENCE  8 YEARS",
+        "UNAUTHORIZED VISITORS  2",
+        "SENIOR MANAGEMENT  INTERNATIONAL",
+        "ATTENDANCE  100%"
+      ],
+      "sentences": [
+        {
+          "text": "The facility was a large suburban residence."
+        },
+        {
+          "text": "One eight-year-old manager remained on site during scheduled family travel."
+        },
+        {
+          "text": "Two unauthorized visitors later tested the property."
+        },
+        {
+          "text": "Senior management remained temporarily international."
+        },
+        {
+          "text": "On-site management attendance was therefore one hundred percent."
+        }
+      ]
+    },
+    {
+      "id": "page-02",
+      "kind": "case-study-page",
+      "title": "VISUAL OCCUPANCY SIMULATION",
+      "image": "approved/page02.png",
+      "onScreenText": [
+        "VISUAL OCCUPANCY SIMULATION",
+        "MOVEMENT  CONTINUOUS",
+        "ADDITIONAL PAYROLL  NONE",
+        "STREET EFFECTIVENESS  HIGH",
+        "CLOSE INSPECTION  OUTSIDE TEST RANGE"
+      ],
+      "sentences": [
+        {
+          "text": "Visual occupancy simulation used cardboard personnel, a model train, music, and lighting."
+        },
+        {
+          "text": "The simulated guests moved continuously, so the residence appeared active from the street."
+        },
+        {
+          "text": "The system required no additional payroll."
+        },
+        {
+          "text": "Performance under close inspection was outside the approved test range."
+        }
+      ]
+    },
+    {
+      "id": "page-03",
+      "kind": "case-study-page",
+      "title": "LAYERED MITIGATION ARCHITECTURE",
+      "image": "approved/page03.png",
+      "onScreenText": [
+        "LAYERED MITIGATION ARCHITECTURE",
+        "ZONE 1  ACCESS CONTROL",
+        "ZONE 2  THERMAL WARNING",
+        "ZONE 3  GRAVITY-ASSISTED RESPONSE",
+        "SUPPLEMENTARY CONTROLS  DEPLOYED"
+      ],
+      "sentences": [
+        {
+          "text": "The facility used several independent layers of intrusion mitigation."
+        },
+        {
+          "text": "Exterior ice reduced safe access to the property."
+        },
+        {
+          "text": "Door hardware provided a strong thermal warning."
+        },
+        {
+          "text": "Glass decorations controlled walking routes inside the facility."
+        },
+        {
+          "text": "Two gravity-assisted paint containers protected the main staircase."
+        },
+        {
+          "text": "A recorded communications officer handled external conversations."
+        },
+        {
+          "text": "A portable biological unit provided additional distraction."
+        }
+      ]
+    },
+    {
+      "id": "page-04",
+      "kind": "case-study-page",
+      "title": "FINAL PERFORMANCE EVALUATION",
+      "image": "approved/page04.png",
+      "onScreenText": [
+        "FINAL PERFORMANCE EVALUATION",
+        "INTRUSION MITIGATION  EXCELLENT",
+        "VISITOR SATISFACTION  LOW",
+        "RESIDENT COMFORT  MIXED",
+        "HABITABILITY  APPROVED WITH MINOR REDESIGN"
+      ],
+      "sentences": [
+        {
+          "text": "The residence maintained site control during every test."
+        },
+        {
+          "text": "The two unauthorized visitors experienced repeated safety incidents."
+        },
+        {
+          "text": "A local response partner completed the final intervention."
+        },
+        {
+          "text": "Intrusion mitigation was rated excellent."
+        },
+        {
+          "text": "Unauthorized visitor satisfaction was rated low."
+        },
+        {
+          "text": "Resident comfort remained mixed."
+        },
+        {
+          "text": "Continued habitability was approved with minor redesign."
+        }
+      ]
+    },
+    {
+      "id": "lesson-01",
+      "kind": "lesson-card",
+      "title": "SIMULATING OCCUPANCY",
+      "image": "approved/lesson01.png",
+      "onScreenText": [
+        "LESSON 1",
+        "SIMULATING OCCUPANCY",
+        "LIGHT + SOUND + MOVEMENT",
+        "RECOMMENDED INSPECTION DISTANCE  MAINTAIN"
+      ],
+      "sentences": [
+        {
+          "text": "Light, sound, and visible movement should operate together."
+        },
+        {
+          "text": "Visual occupancy simulation works best beyond the recommended inspection distance."
+        }
+      ]
+    },
+    {
+      "id": "lesson-02",
+      "kind": "lesson-card",
+      "title": "USING LAYERED SYSTEMS",
+      "image": "approved/lesson02.png",
+      "onScreenText": [
+        "LESSON 2",
+        "USING LAYERED SYSTEMS",
+        "SINGLE CONTROL  BYPASS POSSIBLE",
+        "MULTIPLE CONTROLS  MUTUAL SUPPORT"
+      ],
+      "sentences": [
+        {
+          "text": "A single security control may be bypassed."
+        },
+        {
+          "text": "Layered systems perform better because each system supports the others."
+        }
+      ]
+    },
+    {
+      "id": "lesson-03",
+      "kind": "lesson-card",
+      "title": "MANAGING GRAVITY",
+      "image": "approved/lesson03.png",
+      "onScreenText": [
+        "LESSON 3",
+        "MANAGING GRAVITY",
+        "OPERATING COST  LOW",
+        "CEILING CLEARANCE  REQUIRED"
+      ],
+      "sentences": [
+        {
+          "text": "Gravity remains a cost-effective security subcontractor."
+        },
+        {
+          "text": "Gravity-assisted equipment requires sufficient ceiling clearance."
+        }
+      ]
+    },
+    {
+      "id": "lesson-04",
+      "kind": "lesson-card",
+      "title": "MAINTAINING LOCAL RESPONSE",
+      "image": "approved/lesson04.png",
+      "onScreenText": [
+        "LESSON 4",
+        "MAINTAINING LOCAL RESPONSE",
+        "LOCAL ROUTE  SHORT",
+        "FORMAL RESPONSE DELAY  ABOVE TARGET",
+        "INTERVENTION  COMPLETE"
+      ],
+      "sentences": [
+        {
+          "text": "Local response partners can reduce emergency response delay."
+        },
+        {
+          "text": "A nearby partner may complete tasks that automated systems cannot finish."
+        }
+      ]
+    },
+    {
+      "id": "common-ending",
+      "kind": "common-ending",
+      "title": "END OF LESSON",
+      "image": "approved/common_ending.png",
+      "onScreenText": [
+        "END OF LESSON",
+        "RETURN ALL EQUIPMENT TO APPROVED STORAGE",
+        "DISTRIBUTION OF FUTURE MATERIALS REQUIRES SUBSCRIPTION"
+      ],
+      "sentences": [
+        {
+          "text": "This concludes the residential intrusion mitigation review."
+        },
+        {
+          "text": "Please return all biological units and paint containers to approved storage areas."
+        },
+        {
+          "text": "Distribution of future materials requires subscription."
+        },
+        {
+          "text": "Thank you for your attention."
+        }
+      ]
+    }
+  ],
+  "output": {
+    "filename": "LLFC-0002.mp4"
+  }
+}

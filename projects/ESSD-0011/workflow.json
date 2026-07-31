@@ -4,66 +4,158 @@
   "kind": "episode",
   "series": "ESSD",
   "subtype": "classic-twisted",
-  "status": "waiting",
-  "currentStage": "creative-development",
+  "status": "completed",
+  "currentStage": "completed",
   "createdAt": "2026-07-26T00:53:57.821Z",
-  "updatedAt": "2026-07-26T00:56:21.822Z",
+  "updatedAt": "2026-07-28T11:40:35.335Z",
   "approvals": {
-    "content": false,
-    "images": false,
-    "qa": false
+    "content": true,
+    "images": true,
+    "qa": true
   },
-  "attempts": {},
+  "attempts": {
+    "rendering": {
+      "total": 5,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-07-26T15:11:47.926Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
   "stages": {
     "intake": {
       "status": "completed"
     },
     "creative-development": {
-      "status": "waiting"
+      "status": "completed"
     },
     "content-approval": {
-      "status": "pending"
+      "status": "completed"
     },
     "images": {
-      "status": "pending"
+      "status": "completed"
     },
     "render-ready": {
-      "status": "pending"
+      "status": "completed"
     },
     "rendering": {
-      "status": "pending"
+      "status": "completed"
     },
     "qa": {
-      "status": "pending"
+      "status": "completed"
     },
     "completed": {
-      "status": "pending"
+      "status": "completed"
     }
   },
   "blocker": null,
-  "nextAction": "Waiting for inbox/ESSD-0011/lesson.json.",
-  "history": [],
+  "nextAction": "Production is complete.",
+  "history": [
+    {
+      "at": "2026-07-26T12:47:39.649Z",
+      "event": "content-approved"
+    },
+    {
+      "at": "2026-07-26T12:49:06.041Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T12:50:09.854Z",
+      "event": "render-failed",
+      "error": "ffmpeg exited with 4294967274"
+    },
+    {
+      "at": "2026-07-26T12:53:27.867Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T12:54:51.003Z",
+      "event": "render-succeeded",
+      "durationSec": 171.234,
+      "output": "output/ESSD-0011/ESSD-0011.mp4"
+    },
+    {
+      "at": "2026-07-26T12:55:49.752Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T13:07:19.003Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T13:08:32.857Z",
+      "event": "render-succeeded",
+      "durationSec": 171.234,
+      "output": "output/ESSD-0011/ESSD-0011.mp4"
+    },
+    {
+      "at": "2026-07-26T13:08:50.509Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T13:24:03.279Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T13:25:33.301Z",
+      "event": "render-succeeded",
+      "durationSec": 175.914,
+      "output": "output/ESSD-0011/ESSD-0011.mp4"
+    },
+    {
+      "at": "2026-07-26T13:25:55.042Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T15:10:20.747Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T15:11:47.926Z",
+      "event": "render-succeeded",
+      "durationSec": 175.914,
+      "output": "output/ESSD-0011/ESSD-0011.mp4"
+    },
+    {
+      "at": "2026-07-26T15:12:41.523Z",
+      "event": "qa-approved"
+    }
+  ],
   "gates": {
     "lesson": {
-      "passed": false,
-      "reason": "Waiting for inbox/ESSD-0011/lesson.json."
+      "passed": true,
+      "reason": null,
+      "sentenceCount": 15
     },
     "contentApproval": {
-      "passed": false,
-      "reason": "Content approval has not been recorded."
+      "passed": true,
+      "reason": null
     },
     "images": {
-      "passed": false,
+      "passed": true,
       "reason": null,
       "missing": []
     },
     "render": {
-      "passed": false,
+      "passed": true,
       "reason": null
     },
     "qa": {
-      "passed": false,
+      "passed": true,
       "reason": null
     }
-  }
+  },
+  "needsRerender": false,
+  "rerenderReason": null
 }

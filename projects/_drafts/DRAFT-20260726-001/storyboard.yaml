@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "DRAFT-20260726-001",
+  "visualRule": "One clear visual proposition per slide. Use one 16:9 master image per scene and no more than three primary visual elements. Typography and report graphics are added as controlled layout elements, not generated inside the illustration.",
+  "sharedOpening": {
+    "asset": "common_opening",
+    "durationSec": 2.5,
+    "narration": [],
+    "direction": "Reuse the approved LLFC series opening unchanged."
+  },
+  "scenes": [
+    {
+      "scene": 1,
+      "sourceScene": 2,
+      "sceneId": "case-study-cover",
+      "kind": "case-study-cover",
+      "heading": "CASE STUDY No.002 — RESIDENTIAL INTRUSION MITIGATION SYSTEM",
+      "imageDescription": "A formal residential security audit cover featuring a large snow-covered suburban house at night, one small child seen from behind in the foreground, and two distant visitor silhouettes near the property boundary.",
+      "action": "The child stands still and assesses the house while the two distant figures approach from outside the property.",
+      "environment": "Snowy affluent American suburb at night, warm window light, restrained mid-century institutional-film treatment, aged report paper and projector texture.",
+      "keyElements": [
+        "snow-covered family residence",
+        "single child manager",
+        "two distant unauthorized visitors"
+      ],
+      "onScreenText": [
+        "CASE STUDY No.002",
+        "RESIDENTIAL INTRUSION MITIGATION SYSTEM"
+      ],
+      "sentences": [
+        "This film examines a residential intrusion mitigation system at a seasonal family property.",
+        "The system operated with one on-site manager and no new equipment budget."
+      ]
+    },
+    {
+      "scene": 2,
+      "sourceScene": 3,
+      "sceneId": "page-01",
+      "kind": "case-study-page",
+      "heading": "PROJECT OVERVIEW",
+      "imageDescription": "A clean property-audit slide centered on the large suburban residence, with a small formal portrait inset of the eight-year-old on-site manager and a restrained diagram showing two external visitor markers.",
+      "action": "The child manager stands alone at the front window while two visitor markers remain outside the site boundary.",
+      "environment": "Quiet winter evening at a large suburban family residence, viewed like an official facilities assessment with generous margins and limited red, cream, and charcoal colors.",
+      "keyElements": [
+        "residential facility",
+        "eight-year-old on-site manager",
+        "two external visitor markers"
+      ],
+      "onScreenText": [
+        "PROJECT OVERVIEW",
+        "ON-SITE STAFF  1",
+        "MANAGEMENT EXPERIENCE  8 YEARS",
+        "UNAUTHORIZED VISITORS  2",
+        "SENIOR MANAGEMENT  INTERNATIONAL",
+        "ATTENDANCE  100%"
+      ],
+      "sentences": [
+        "The facility was a large suburban residence.",
+        "One eight-year-old manager remained on site during scheduled family travel.",
+        "Two unauthorized visitors later tested the property.",
+        "Senior management remained temporarily international.",
+        "On-site management attendance was therefore one hundred percent."
+      ]
+    },
+    {
+      "scene": 3,
+      "sourceScene": 4,
+      "sceneId": "page-02",
+      "kind": "case-study-page",
+      "heading": "VISUAL OCCUPANCY SIMULATION",
+      "imageDescription": "A recognizable interior view of a staged holiday party in which cardboard adult figures rotate around a living room while a model train provides movement and warm lamps illuminate the windows.",
+      "action": "A model train pulls the cardboard figures through a continuous loop, producing convincing movement when observed from the street.",
+      "environment": "Warm Christmas living room viewed partly from outside a window, presented as a serious occupancy-simulation test with a simple observation-distance diagram.",
+      "keyElements": [
+        "cardboard party guests",
+        "model train movement system",
+        "illuminated street-facing windows"
+      ],
+      "onScreenText": [
+        "VISUAL OCCUPANCY SIMULATION",
+        "MOVEMENT  CONTINUOUS",
+        "ADDITIONAL PAYROLL  NONE",
+        "STREET EFFECTIVENESS  HIGH",
+        "CLOSE INSPECTION  OUTSIDE TEST RANGE"
+      ],
+      "sentences": [
+        "Visual occupancy simulation used cardboard personnel, a model train, music, and lighting.",
+        "The simulated guests moved continuously, so the residence appeared active from the street.",
+        "The system required no additional payroll.",
+        "Performance under close inspection was outside the approved test range."
+      ]
+    },
+    {
+      "scene": 4,
+      "sourceScene": 5,
+      "sceneId": "page-03",
+      "kind": "case-study-page",
+      "heading": "LAYERED MITIGATION ARCHITECTURE",
+      "imageDescription": "A single cutaway security diagram of the residence showing three sequential defense zones: an icy exterior approach, thermally enhanced front-door hardware, and two suspended paint containers protecting the main staircase.",
+      "action": "A numbered route moves from the icy entrance to the heated door hardware and ends beneath the two gravity-assisted paint containers.",
+      "environment": "Simplified architectural cutaway of a suburban home, drawn like a government security review with strong hierarchy, ample negative space, and restrained technical callouts.",
+      "keyElements": [
+        "icy exterior approach",
+        "thermally enhanced door hardware",
+        "gravity-assisted paint containers"
+      ],
+      "onScreenText": [
+        "LAYERED MITIGATION ARCHITECTURE",
+        "ZONE 1  ACCESS CONTROL",
+        "ZONE 2  THERMAL WARNING",
+        "ZONE 3  GRAVITY-ASSISTED RESPONSE",
+        "SUPPLEMENTARY CONTROLS  DEPLOYED"
+      ],
+      "sentences": [
+        "The facility used several independent layers of intrusion mitigation.",
+        "Exterior ice reduced safe access to the property.",
+        "Door hardware provided a strong thermal warning.",
+        "Glass decorations controlled walking routes inside the facility.",
+        "Two gravity-assisted paint containers protected the main staircase.",
+        "A recorded communications officer handled external conversations.",
+        "A portable biological unit provided additional distraction."
+      ]
+    },
+    {
+      "scene": 5,
+      "sourceScene": 6,
+      "sceneId": "page-04",
+      "kind": "case-study-page",
+      "heading": "FINAL PERFORMANCE EVALUATION",
+      "imageDescription": "A post-incident audit scene showing the residence still under control, two exhausted unauthorized visitors seated together under local supervision, and limited visible interior damage.",
+      "action": "A local response partner supervises the two visitors while the residence remains standing and operational behind them.",
+      "environment": "After-action winter night outside the family residence, composed as a formal evaluation slide with a scorecard area and a large review stamp.",
+      "keyElements": [
+        "residence remains under control",
+        "two detained unauthorized visitors",
+        "local response partner"
+      ],
+      "onScreenText": [
+        "FINAL PERFORMANCE EVALUATION",
+        "INTRUSION MITIGATION  EXCELLENT",
+        "VISITOR SATISFACTION  LOW",
+        "RESIDENT COMFORT  MIXED",
+        "HABITABILITY  APPROVED WITH MINOR REDESIGN"
+      ],
+      "sentences": [
+        "The residence maintained site control during every test.",
+        "The two unauthorized visitors experienced repeated safety incidents.",
+        "A local response partner completed the final intervention.",
+        "Intrusion mitigation was rated excellent.",
+        "Unauthorized visitor satisfaction was rated low.",
+        "Resident comfort remained mixed.",
+        "Continued habitability was approved with minor redesign."
+      ]
+    },
+    {
+      "scene": 6,
+      "sourceScene": 7,
+      "sceneId": "lesson-01",
+      "kind": "lesson-card",
+      "heading": "SIMULATING OCCUPANCY",
+      "imageDescription": "A formal three-part training diagram linking a lit window, a speaker emitting sound waves, and a moving cardboard silhouette, observed from a clearly marked safe distance.",
+      "action": "Light, sound, and visible movement combine into one convincing occupancy signal for a distant observer.",
+      "environment": "Minimal institutional training card on aged cream paper with precise diagram lines, limited color, and substantial negative space.",
+      "keyElements": [
+        "light",
+        "sound",
+        "visible movement"
+      ],
+      "onScreenText": [
+        "LESSON 1",
+        "SIMULATING OCCUPANCY",
+        "LIGHT + SOUND + MOVEMENT",
+        "RECOMMENDED INSPECTION DISTANCE  MAINTAIN"
+      ],
+      "sentences": [
+        "Light, sound, and visible movement should operate together.",
+        "Visual occupancy simulation works best beyond the recommended inspection distance."
+      ]
+    },
+    {
+      "scene": 7,
+      "sourceScene": 8,
+      "sceneId": "lesson-02",
+      "kind": "lesson-card",
+      "heading": "USING LAYERED SYSTEMS",
+      "imageDescription": "A clean defense-in-depth diagram showing an unauthorized visitor route interrupted by three consecutive barriers rather than one isolated control.",
+      "action": "The route bypasses the first control but stops as the second and third controls support it.",
+      "environment": "Formal security training slide with a horizontal process diagram, aged paper texture, restrained red accents, and no decorative clutter.",
+      "keyElements": [
+        "visitor route",
+        "first security layer",
+        "supporting second and third layers"
+      ],
+      "onScreenText": [
+        "LESSON 2",
+        "USING LAYERED SYSTEMS",
+        "SINGLE CONTROL  BYPASS POSSIBLE",
+        "MULTIPLE CONTROLS  MUTUAL SUPPORT"
+      ],
+      "sentences": [
+        "A single security control may be bypassed.",
+        "Layered systems perform better because each system supports the others."
+      ]
+    },
+    {
+      "scene": 8,
+      "sourceScene": 9,
+      "sceneId": "lesson-03",
+      "kind": "lesson-card",
+      "heading": "MANAGING GRAVITY",
+      "imageDescription": "A restrained technical side-view diagram of two paint containers suspended above a staircase, with a clear swing arc and ceiling-clearance measurement.",
+      "action": "The containers travel through the calculated arc while the diagram verifies that the ceiling provides adequate clearance.",
+      "environment": "Engineering safety card on aged report paper, using simple geometry, one red motion arc, and a small approval stamp.",
+      "keyElements": [
+        "two suspended paint containers",
+        "swing trajectory",
+        "ceiling clearance"
+      ],
+      "onScreenText": [
+        "LESSON 3",
+        "MANAGING GRAVITY",
+        "OPERATING COST  LOW",
+        "CEILING CLEARANCE  REQUIRED"
+      ],
+      "sentences": [
+        "Gravity remains a cost-effective security subcontractor.",
+        "Gravity-assisted equipment requires sufficient ceiling clearance."
+      ]
+    },
+    {
+      "scene": 9,
+      "sourceScene": 10,
+      "sceneId": "lesson-04",
+      "kind": "lesson-card",
+      "heading": "MAINTAINING LOCAL RESPONSE",
+      "imageDescription": "A simple response-network map connecting the residence to one nearby local partner while a distant emergency-response indicator remains outside the target time window.",
+      "action": "The local partner reaches the residence through a short route and completes the intervention before the distant response route arrives.",
+      "environment": "Minimal operations-management slide with a neighborhood map, timing arrows, cream paper, charcoal linework, and a single muted red highlight.",
+      "keyElements": [
+        "residence",
+        "nearby response partner",
+        "delayed formal response route"
+      ],
+      "onScreenText": [
+        "LESSON 4",
+        "MAINTAINING LOCAL RESPONSE",
+        "LOCAL ROUTE  SHORT",
+        "FORMAL RESPONSE DELAY  ABOVE TARGET",
+        "INTERVENTION  COMPLETE"
+      ],
+      "sentences": [
+        "Local response partners can reduce emergency response delay.",
+        "A nearby partner may complete tasks that automated systems cannot finish."
+      ]
+    },
+    {
+      "scene": 10,
+      "sourceScene": 11,
+      "sceneId": "common-ending",
+      "kind": "common-ending",
+      "heading": "END OF LESSON",
+      "imageDescription": "A formal LLFC end card with an orderly equipment-return diagram featuring a secured paint container and a closed biological transport case.",
+      "action": "All specialized security equipment is shown returned to approved storage while the case file is stamped complete.",
+      "environment": "Series-standard institutional end card matching the opening, with aged cream paper, restrained typography, projector texture, and a centered department seal area.",
+      "keyElements": [
+        "secured paint container",
+        "closed biological transport case",
+        "completed case file"
+      ],
+      "onScreenText": [
+        "END OF LESSON",
+        "RETURN ALL EQUIPMENT TO APPROVED STORAGE",
+        "DISTRIBUTION OF FUTURE MATERIALS REQUIRES SUBSCRIPTION"
+      ],
+      "sentences": [
+        "This concludes the residential intrusion mitigation review.",
+        "Please return all biological units and paint containers to approved storage areas.",
+        "Distribution of future materials requires subscription.",
+        "Thank you for your attention."
+      ]
+    }
+  ]
+}

@@ -1,27 +1,21 @@
 {
   "schemaVersion": "1.0",
   "episode": "ESSD-0010",
-  "completedAt": "2026-07-26T03:46:59.463Z",
-  "totalDurationMs": 71457,
+  "completedAt": "2026-07-26T12:35:20.780Z",
+  "totalDurationMs": 52427,
   "sentenceCount": 10,
-  "outputDurationSec": 118.019,
-  "ttsCacheHits": 9,
-  "ttsCacheMisses": 1,
+  "outputDurationSec": 114.819,
+  "ttsCacheHits": 10,
+  "ttsCacheMisses": 0,
   "attempts": {
     "rendering": {
-      "total": 6,
+      "total": 7,
       "consecutiveFailures": 0,
       "totalDurationMs": 0,
-      "lastAttemptAt": "2026-07-26T03:46:59.466Z",
+      "lastAttemptAt": "2026-07-26T12:35:20.786Z",
       "lastResult": "success",
       "lastError": null
     }
   },
-  "improvements": [
-    {
-      "priority": "low",
-      "action": "Keep sentence text and TTS settings stable to maximize audio cache reuse.",
-      "automatic": true
-    }
-  ]
+  "improvements": []
 }

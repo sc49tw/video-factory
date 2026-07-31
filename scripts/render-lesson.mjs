@@ -70,10 +70,20 @@ async function main() {
   const tempRoot = path.join(projectRoot, "temp");
   const logRoot = path.join(projectRoot, "logs");
   const outputPath = path.join(outputRoot, `${episode}.mp4`);
+  const productionAudio = {
+    intro: path.join(factoryRoot, "assets", "audio", "intro.mp3"),
+    transition: path.join(factoryRoot, "assets", "audio", "transition.mp3"),
+    ending: path.join(factoryRoot, "assets", "audio", "ending.mp3"),
+  };
   manifestPath = path.join(projectRoot, "manifest.json");
 
   if (!(await exists(lessonPath))) {
     throw new Error(`lesson.json does not exist: ${lessonPath}`);
+  }
+  for (const [label, audioPath] of Object.entries(productionAudio)) {
+    if (!(await exists(audioPath))) {
+      throw new Error(`Production ${label} audio does not exist: ${audioPath}`);
+    }
   }
   let rawLesson;
   try {
@@ -111,6 +121,14 @@ async function main() {
       throw new Error(`Scene ${index + 1} image does not exist: ${imagePath}`);
     }
     imageSources.push(imagePath);
+  }
+  let openingSource = null;
+  if (lesson.series === "LLFC" && lesson.sharedOpening?.image) {
+    openingSource = resolveInside(inboxRoot, lesson.sharedOpening.image, "Shared opening image");
+    if (!(await exists(openingSource))) {
+      throw new Error(`Shared opening image does not exist: ${openingSource}`);
+    }
+    imageSources.push(openingSource);
   }
   activeWorkflow.approvals.images = true;
   activeWorkflow.currentStage = "rendering";
@@ -157,7 +175,9 @@ async function main() {
   };
 
   const localEdgeTts = path.join(factoryRoot, ".venv", "bin", "edge-tts");
-  const edgeTts = (await exists(localEdgeTts)) ? localEdgeTts : "edge-tts";
+  const edgeTts =
+    process.env.EDGE_TTS_PATH ??
+    ((await exists(localEdgeTts)) ? localEdgeTts : "edge-tts");
   await Promise.all([
     assertExecutable(edgeTts, ["--version"]),
     assertExecutable("ffmpeg", ["-version"]),
@@ -192,6 +212,7 @@ async function main() {
       voice: lesson.tts.voice,
       rate: lesson.tts.rate,
       pitch: lesson.tts.pitch,
+      volume: lesson.tts.volume,
     },
     sentenceCount: lesson.sentences.length,
     video: lesson.video,
@@ -226,12 +247,22 @@ async function main() {
     const stem = sentence.id;
     const audioPath = path.join(audioRoot, `${stem}.mp3`);
     const cachePath = path.join(audioRoot, `${stem}.json`);
+    const sentenceTts = {
+      voice: sentence.tts?.voice ?? lesson.tts.voice,
+      rate: sentence.tts?.rate ?? lesson.tts.rate,
+      pitch: sentence.tts?.pitch ?? lesson.tts.pitch,
+      volume: sentence.tts?.volume ?? lesson.tts.volume,
+    };
+    const cacheTts = {
+      voice: sentenceTts.voice,
+      rate: sentenceTts.rate,
+      pitch: sentenceTts.pitch,
+      ...(sentenceTts.volume === "+0%" ? {} : {volume: sentenceTts.volume}),
+    };
     const cacheKey = sha256(
       JSON.stringify({
         text: sentence.text,
-        voice: lesson.tts.voice,
-        rate: lesson.tts.rate,
-        pitch: lesson.tts.pitch,
+        ...cacheTts,
       }),
     );
     const cached = await readJsonOptional(cachePath);
@@ -253,9 +284,10 @@ async function main() {
           "--file",
           textPath,
           "--voice",
-          lesson.tts.voice,
-          `--rate=${lesson.tts.rate}`,
-          `--pitch=${lesson.tts.pitch}`,
+          sentenceTts.voice,
+          `--rate=${sentenceTts.rate}`,
+          `--pitch=${sentenceTts.pitch}`,
+          `--volume=${sentenceTts.volume}`,
           "--write-media",
           temporaryAudio,
           "--write-subtitles",
@@ -270,18 +302,27 @@ async function main() {
       await writeJson(cachePath, {
         cacheKey,
         text: sentence.text,
-        voice: lesson.tts.voice,
-        rate: lesson.tts.rate,
-        pitch: lesson.tts.pitch,
+        ...sentenceTts,
       });
     }
     const durationSec = await probeDuration(audioPath);
-    audioRecords.push({...sentence, audioPath, durationSec, cached: cacheHit});
+    audioRecords.push({
+      ...sentence,
+      audioPath,
+      durationSec,
+      cached: cacheHit,
+      resolvedTts: sentenceTts,
+    });
   }
 
   const srtPath = path.join(subtitleRoot, "first-pass.srt");
   const srtCues = [];
-  let timelineOffset = lesson.series === "ESSD" ? lesson.introSeconds : 0;
+  let timelineOffset =
+    lesson.series === "ESSD"
+      ? lesson.introSeconds
+      : lesson.series === "LLFC"
+        ? lesson.sharedOpening?.durationSec ?? 0
+        : 0;
   for (const [index, record] of audioRecords.entries()) {
     srtCues.push({
       startSec: timelineOffset,
@@ -290,11 +331,12 @@ async function main() {
     });
     timelineOffset +=
       lesson.series === "ESSD"
-        ? record.durationSec +
-          (index < audioRecords.length - 1 ? lesson.transitionSeconds : 0)
-        : record.durationSec * 2 +
-          lesson.countdownSeconds +
-          lesson.transitionSeconds;
+        ? record.durationSec
+        : lesson.series === "LLFC"
+          ? record.durationSec + lesson.transitionSeconds
+          : record.durationSec * 2 +
+            lesson.countdownSeconds +
+            lesson.transitionSeconds;
   }
   await writeFile(srtPath, formatSrt(srtCues), "utf8");
 
@@ -303,9 +345,10 @@ async function main() {
     const introPath = path.join(segmentRoot, "intro.mp4");
     await renderIntroClip({
       imagePath: path.join(sourceRoot, path.basename(audioRecords[0].image)),
+      audioPath: productionAudio.intro,
       outputPath: introPath,
-      series: lesson.series,
-      subtype: lesson.subtype,
+      series: classification.series,
+      subtype: classification.subtype,
       title: lesson.title,
       durationSec: lesson.introSeconds,
       lesson,
@@ -320,15 +363,25 @@ async function main() {
         imagePath: stagedImage,
         audioPath: record.audioPath,
         outputPath: firstPassPath,
-        durationSec:
-          record.durationSec +
-          (index < audioRecords.length - 1 ? lesson.transitionSeconds : 0),
+        durationSec: record.durationSec,
         subtitleText: record.text,
         motionIndex: index,
         lesson,
       });
       clips.push(firstPassPath);
     }
+
+    const transitionPath = path.join(segmentRoot, "inter-round-transition.mp4");
+    await renderNarrationClip({
+      imagePath: path.join(sourceRoot, path.basename(audioRecords.at(-1).image)),
+      audioPath: productionAudio.transition,
+      outputPath: transitionPath,
+      durationSec: lesson.transitionSeconds,
+      subtitleText: null,
+      motionIndex: audioRecords.length - 1,
+      lesson,
+    });
+    clips.push(transitionPath);
 
     const interRoundPath = path.join(segmentRoot, "inter-round-prompt.mp4");
     await renderInterRoundClip({
@@ -369,6 +422,35 @@ async function main() {
         });
         clips.push(countdownPath);
       }
+    }
+  } else if (lesson.series === "LLFC") {
+    if (openingSource && lesson.sharedOpening?.durationSec > 0) {
+      const openingPath = path.join(segmentRoot, "llfc-common-opening.mp4");
+      await renderSilentImageClip({
+        imagePath: path.join(sourceRoot, path.basename(openingSource)),
+        outputPath: openingPath,
+        durationSec: lesson.sharedOpening.durationSec,
+        lesson,
+      });
+      clips.push(openingPath);
+    }
+    for (const [index, record] of audioRecords.entries()) {
+      const scene = lesson.scenes[record.sceneIndex];
+      const stagedImage = path.join(sourceRoot, path.basename(record.image));
+      const clipPath = path.join(segmentRoot, `${record.id}-llfc.mp4`);
+      log(`[LLFC ${index + 1}/${audioRecords.length}] ${record.id}`);
+      await renderNarrationClip({
+        imagePath: stagedImage,
+        audioPath: record.audioPath,
+        outputPath: clipPath,
+        durationSec: record.durationSec + lesson.transitionSeconds,
+        subtitleText: record.text,
+        motionIndex: index,
+        onScreenText: scene?.onScreenText ?? [],
+        llfcLayout: true,
+        lesson,
+      });
+      clips.push(clipPath);
     }
   } else for (const [index, record] of audioRecords.entries()) {
     const stagedImage = path.join(sourceRoot, path.basename(record.image));
@@ -418,6 +500,7 @@ async function main() {
     const endingPath = path.join(segmentRoot, "ending.mp4");
     await renderEndingClip({
       imagePath: path.join(sourceRoot, path.basename(audioRecords.at(-1).image)),
+      audioPath: productionAudio.ending,
       outputPath: endingPath,
       lines: lesson.ending,
       lesson,
@@ -518,6 +601,8 @@ async function main() {
       path: relativeFactoryPath(record.audioPath),
       durationSec: round(record.durationSec),
       textSha256: sha256(record.text),
+      speaker: record.speaker,
+      tts: record.resolvedTts,
     })),
     subtitles: relativeFactoryPath(srtPath),
     estimatedDurationSec: round(estimatedDuration),
@@ -645,6 +730,45 @@ function parseArguments(args) {
   };
 }
 
+async function renderSilentImageClip({imagePath, outputPath, durationSec, lesson}) {
+  const {width, height, fps} = lesson.video;
+  await run("ffmpeg", [
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-y",
+    "-loop",
+    "1",
+    "-framerate",
+    String(fps),
+    "-i",
+    imagePath,
+    "-f",
+    "lavfi",
+    "-i",
+    `anullsrc=r=${lesson.tts.sampleRate}:cl=stereo`,
+    "-t",
+    durationSec.toFixed(6),
+    "-vf",
+    `${staticImageFilter({width, height, fps})},format=yuv420p`,
+    "-c:v",
+    "libx264",
+    "-preset",
+    "veryfast",
+    "-crf",
+    "18",
+    "-c:a",
+    "aac",
+    "-b:a",
+    "192k",
+    "-ar",
+    String(lesson.tts.sampleRate),
+    "-ac",
+    "2",
+    outputPath,
+  ]);
+}
+
 async function renderNarrationClip({
   imagePath,
   audioPath,
@@ -653,6 +777,8 @@ async function renderNarrationClip({
   subtitleText,
   motionIndex,
   audioTempo = 1,
+  onScreenText = [],
+  llfcLayout = false,
   lesson,
 }) {
   const {width, height, fps} = lesson.video;
@@ -664,22 +790,46 @@ async function renderNarrationClip({
     (subtitleLines.length === 1
       ? 178
       : 210 + Math.max(0, subtitleLines.length - 2) * subtitleLineGap);
-  const subtitleTextFilters = subtitleLines.map(
-    (line, index) =>
-      `drawtext=fontfile=${escapeFilter(fontPath())}:text='${escapeDrawtext(
-        line,
-      )}':fontcolor=white:fontsize=48:x=(w-text_w)/2:y=${
-        subtitleFirstY + index * subtitleLineGap
-      }`,
-  );
+  let subtitleTextFilter = null;
+  if (subtitleText) {
+    const subtitleTextPath = `${outputPath}.subtitle.txt`;
+    await writeFile(subtitleTextPath, subtitleLines.join("\n"), "utf8");
+    const filterTextPath = subtitleTextPath.replaceAll("\\", "/");
+    subtitleTextFilter =
+      `drawtext=fontfile=${escapeFilter(fontPath())}:` +
+      `textfile=${escapeFilter(filterTextPath)}:` +
+      `fontcolor=white:fontsize=48:line_spacing=14:` +
+      `x=(w-text_w)/2:y=${subtitleFirstY}`;
+  }
+  const llfcTextFilters = [];
+  if (llfcLayout && Array.isArray(onScreenText) && onScreenText.length > 0) {
+    const [heading, ...details] = onScreenText;
+    const detailLines = details.flatMap((line) => wrapText(line, 44).split("\n"));
+    const headingPath = `${outputPath}.heading.txt`;
+    const detailPath = `${outputPath}.details.txt`;
+    await writeFile(headingPath, heading, "utf8");
+    await writeFile(detailPath, detailLines.join("\n"), "utf8");
+    const panelHeight = Math.min(355, 165 + detailLines.length * 38);
+    llfcTextFilters.push(
+      `drawbox=x=55:y=45:w=900:h=${panelHeight}:color=0xead9b5@0.9:t=fill`,
+      `drawbox=x=55:y=45:w=900:h=${panelHeight}:color=0x7a2e22@0.85:t=3`,
+      `drawtext=fontfile=${escapeFilter(fontPath())}:textfile=${escapeFilter(
+        headingPath.replaceAll("\\", "/"),
+      )}:expansion=none:fontcolor=0x2b241c:fontsize=42:x=95:y=82`,
+      `drawtext=fontfile=${escapeFilter(fontPath())}:textfile=${escapeFilter(
+        detailPath.replaceAll("\\", "/"),
+      )}:expansion=none:fontcolor=0x2b241c:fontsize=29:line_spacing=8:x=95:y=148`,
+    );
+  }
   const filters = [
     lesson.series === "ESSD"
       ? staticImageFilter({width, height, fps})
       : kenBurnsFilter({width, height, fps, frameCount, motionIndex}),
+    ...llfcTextFilters,
     subtitleText
       ? `drawbox=x=70:y=ih-245:w=iw-140:h=175:color=black@0.68:t=fill`
       : null,
-    ...subtitleTextFilters,
+    subtitleTextFilter,
     "format=yuv420p",
   ]
     .filter(Boolean)
@@ -725,6 +875,7 @@ async function renderNarrationClip({
 
 async function renderIntroClip({
   imagePath,
+  audioPath,
   outputPath,
   series,
   subtype,
@@ -762,14 +913,14 @@ async function renderIntroClip({
     String(fps),
     "-i",
     imagePath,
-    "-f",
-    "lavfi",
     "-i",
-    `anullsrc=r=${lesson.tts.sampleRate}:cl=stereo`,
+    audioPath,
     "-t",
     durationSec.toFixed(6),
     "-vf",
     filter,
+    "-af",
+    `apad=whole_dur=${durationSec.toFixed(6)},atrim=duration=${durationSec.toFixed(6)}`,
     "-c:v",
     "libx264",
     "-preset",
@@ -891,7 +1042,7 @@ async function renderInterRoundClip({
   ]);
 }
 
-async function renderEndingClip({imagePath, outputPath, lines, lesson}) {
+async function renderEndingClip({imagePath, audioPath, outputPath, lines, lesson}) {
   const {width, height, fps} = lesson.video;
   const lineGap = 104;
   const firstY = (height - lineGap * (lines.length - 1)) / 2 - 55;
@@ -923,14 +1074,14 @@ async function renderEndingClip({imagePath, outputPath, lines, lesson}) {
     String(fps),
     "-i",
     imagePath,
-    "-f",
-    "lavfi",
     "-i",
-    `anullsrc=r=${lesson.tts.sampleRate}:cl=stereo`,
+    audioPath,
     "-t",
     "4",
     "-vf",
     filter,
+    "-af",
+    "apad=whole_dur=4,atrim=duration=4",
     "-c:v",
     "libx264",
     "-preset",
@@ -1060,7 +1211,7 @@ function wrapText(value, maxChars) {
 function escapeDrawtext(value) {
   return String(value)
     .replaceAll("\\", "\\\\")
-    .replaceAll(":", "\\:")
+    .replaceAll(":", "\\\\:")
     .replaceAll("'", "\\'")
     .replaceAll("%", "\\%")
     .replaceAll(",", "\\,")
@@ -1068,7 +1219,7 @@ function escapeDrawtext(value) {
 }
 
 function escapeFilter(value) {
-  return String(value).replaceAll("\\", "\\\\").replaceAll(":", "\\:");
+  return String(value).replaceAll("\\", "\\\\").replaceAll(":", "\\\\:");
 }
 
 function escapeConcatPath(value) {
@@ -1076,7 +1227,17 @@ function escapeConcatPath(value) {
 }
 
 function fontPath() {
-  return "/System/Library/Fonts/Supplemental/Arial.ttf";
+  if (process.env.VIDEO_FONT_PATH) {
+    return process.env.VIDEO_FONT_PATH.replaceAll("\\", "/");
+  }
+  if (process.platform === "win32") {
+    const windowsRoot = process.env.WINDIR || "C:/Windows";
+    return path.join(windowsRoot, "Fonts", "arial.ttf").replaceAll("\\", "/");
+  }
+  if (process.platform === "darwin") {
+    return "/System/Library/Fonts/Supplemental/Arial.ttf";
+  }
+  return "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf";
 }
 
 function sha256(value) {

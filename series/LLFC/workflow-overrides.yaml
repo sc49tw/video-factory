@@ -1,0 +1,9 @@
+{
+  "workflow": "episode-production",
+  "series": "LLFC",
+  "overrides": {
+    "CONCEPT": {"preferredProposalCount": 1, "maximumProposalCount": 3},
+    "ENGLISH": {"language": "en", "level": "A2"},
+    "PACKAGE": {"schema": "contracts/production-package.schema.json"}
+  }
+}

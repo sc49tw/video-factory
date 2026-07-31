@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "LLFC-0002",
+  "draftId": "DRAFT-20260726-001",
+  "status": "approved",
+  "generationMode": "built-in imagegen",
+  "visualDirection": "Vintage mid-century institutional case-study film on aged cream paper, with charcoal linework, restrained brick-red accents, generous margins, and no generated typography.",
+  "assets": [
+    {
+      "assetId": "common_opening",
+      "role": "opening",
+      "reviewPath": "assets/images/generated/common_opening.png",
+      "targetPath": "inbox/LLFC-0002/approved/common_opening.png",
+      "source": "reused approved LLFC series asset",
+      "status": "approved"
+    },
+    {
+      "assetId": "cover",
+      "role": "case-study-cover",
+      "reviewPath": "assets/images/generated/cover.png",
+      "targetPath": "inbox/LLFC-0002/approved/cover.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "page01",
+      "role": "case-study-page",
+      "reviewPath": "assets/images/generated/page01.png",
+      "targetPath": "inbox/LLFC-0002/approved/page01.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "page02",
+      "role": "case-study-page",
+      "reviewPath": "assets/images/generated/page02.png",
+      "targetPath": "inbox/LLFC-0002/approved/page02.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "page03",
+      "role": "case-study-page",
+      "reviewPath": "assets/images/generated/page03.png",
+      "targetPath": "inbox/LLFC-0002/approved/page03.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "page04",
+      "role": "case-study-page",
+      "reviewPath": "assets/images/generated/page04.png",
+      "targetPath": "inbox/LLFC-0002/approved/page04.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "lesson01",
+      "role": "lesson-card",
+      "reviewPath": "assets/images/generated/lesson01.png",
+      "targetPath": "inbox/LLFC-0002/approved/lesson01.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "lesson02",
+      "role": "lesson-card",
+      "reviewPath": "assets/images/generated/lesson02.png",
+      "targetPath": "inbox/LLFC-0002/approved/lesson02.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "lesson03",
+      "role": "lesson-card",
+      "reviewPath": "assets/images/generated/lesson03.png",
+      "targetPath": "inbox/LLFC-0002/approved/lesson03.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "lesson04",
+      "role": "lesson-card",
+      "reviewPath": "assets/images/generated/lesson04.png",
+      "targetPath": "inbox/LLFC-0002/approved/lesson04.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    },
+    {
+      "assetId": "common_ending",
+      "role": "ending",
+      "reviewPath": "assets/images/generated/common_ending.png",
+      "targetPath": "inbox/LLFC-0002/approved/common_ending.png",
+      "source": "built-in imagegen",
+      "status": "approved"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+The residence maintained site control during every
+test.

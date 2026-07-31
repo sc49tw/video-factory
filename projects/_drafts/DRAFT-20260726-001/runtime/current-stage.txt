@@ -1,0 +1,24 @@
+Draft: DRAFT-20260726-001
+Series: LLFC
+Subtype: default
+Current stage: ENGLISH
+
+Read:
+- workflows/episode-production.workflow.yaml
+- series/LLFC/series.yaml
+- series/LLFC/creative-direction.md
+- series/LLFC/style-guide.md
+- projects/_drafts/DRAFT-20260726-001/request.yaml
+- projects/_drafts/DRAFT-20260726-001/state.yaml
+- projects/_drafts/DRAFT-20260726-001/concept.yaml
+- projects/_drafts/DRAFT-20260726-001/script.yaml
+- projects/_drafts/DRAFT-20260726-001/storyboard.yaml
+
+Task:
+Write the complete A2 English text from the approved concept.
+
+Required output: script.yaml
+
+Stop condition:
+Present it and wait for explicit English approval.
+Only perform the current stage. Do not create later-stage artifacts.

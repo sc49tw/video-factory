@@ -1,0 +1,160 @@
+{
+  "episode": "ESSD-0011",
+  "series": "ESSD",
+  "subtype": "classic-twisted",
+  "title": "The Boy Who Cried Wolf",
+  "language": "en-US",
+  "level": "A2",
+
+  "renderMode": "double-pass-shadowing",
+  "countdownSeconds": 4,
+  "transitionSeconds": 0.4,
+
+  "tts": {
+    "provider": "edge",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "rate": "+0%",
+    "volume": "+0%"
+  },
+
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "cameraMotion": "slow",
+    "backgroundMusic": true
+  },
+
+  "subtitle": {
+    "firstPass": true,
+    "secondPass": false,
+    "highlightWords": true
+  },
+
+  "scenes": [
+    {
+      "id": "scene01",
+      "title": "A Boring Day",
+      "image": "scene01.png",
+      "sentences": [
+        {
+          "text": "The shepherd boy had been watching sheep all day, and he was terribly bored."
+        },
+        {
+          "text": "Suddenly, he had an idea."
+        },
+        {
+          "text": "Wolf! Wolf!",
+          "speaker": "boy",
+          "tts": {
+            "voice": "en-US-AnaNeural",
+            "rate": "+18%",
+            "pitch": "+8Hz",
+            "volume": "+4%"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene02",
+      "title": "The First False Alarm",
+      "image": "scene02.png",
+      "sentences": [
+        {
+          "text": "The villagers rushed up the hill as quickly as they could."
+        },
+        {
+          "text": "The boy couldn't stop laughing."
+        }
+      ]
+    },
+    {
+      "id": "scene03",
+      "title": "He Does It Again",
+      "image": "scene03.png",
+      "sentences": [
+        {
+          "text": "A few days later, the same idea came to his mind again."
+        },
+        {
+          "text": "Wolf! Wolf!",
+          "speaker": "boy",
+          "tts": {
+            "voice": "en-US-AnaNeural",
+            "rate": "+18%",
+            "pitch": "+8Hz",
+            "volume": "+4%"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene04",
+      "title": "A Better Response",
+      "image": "scene04.png",
+      "sentences": [
+        {
+          "text": "Once again, the villagers hurried up the hill."
+        },
+        {
+          "text": "The boy laughed even harder."
+        }
+      ]
+    },
+    {
+      "id": "scene05",
+      "title": "The Real Wolf",
+      "image": "scene05.png",
+      "sentences": [
+        {
+          "text": "This time, however, a real wolf appeared behind the sheep."
+        },
+        {
+          "text": "Wolf! Wolf!",
+          "speaker": "boy",
+          "tts": {
+            "voice": "en-US-AnaNeural",
+            "rate": "+18%",
+            "pitch": "+8Hz",
+            "volume": "+4%"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene06",
+      "title": "Ready at Last",
+      "image": "scene06.png",
+      "sentences": [
+        {
+          "text": "Before long, the villagers arrived with everything they needed."
+        },
+        {
+          "text": "The frightened wolf quickly ran back into the forest."
+        }
+      ]
+    },
+    {
+      "id": "scene07",
+      "title": "A Different Lesson",
+      "image": "scene07.png",
+      "sentences": [
+        {
+          "text": "The sheep were safe because everyone was ready."
+        }
+      ]
+    }
+  ],
+
+  "ending": {
+    "title": "The Moral of the Story",
+    "text": "Practice prepares people for real emergencies.",
+    "durationSeconds": 6,
+    "tts": true,
+    "subtitle": true
+  },
+
+  "output": {
+    "filename": "ESSD-0011.mp4"
+  }
+}

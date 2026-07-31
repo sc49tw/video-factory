@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "1.0",
+  "id": "LLFC-0002",
+  "kind": "episode",
+  "series": "LLFC",
+  "subtype": "default",
+  "status": "needs-approval",
+  "currentStage": "content-approval",
+  "createdAt": "2026-07-28T11:40:35.34Z",
+  "updatedAt": "2026-07-28T13:37:23.546Z",
+  "approvals": {
+    "content": false,
+    "images": false,
+    "qa": false
+  },
+  "attempts": {
+    "rendering": {
+      "total": 4,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-07-28T13:09:11.256Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "stages": {
+    "intake": {
+      "status": "completed"
+    },
+    "creative-development": {
+      "status": "completed"
+    },
+    "content-approval": {
+      "status": "needs-approval"
+    },
+    "images": {
+      "status": "pending"
+    },
+    "render-ready": {
+      "status": "pending"
+    },
+    "rendering": {
+      "status": "pending"
+    },
+    "qa": {
+      "status": "pending"
+    },
+    "completed": {
+      "status": "pending"
+    }
+  },
+  "blocker": null,
+  "nextAction": "Review the lesson content and explicitly approve it.",
+  "history": [
+    {
+      "at": "2026-07-28T11:40:35.342Z",
+      "event": "existing-input-adopted",
+      "reason": "Existing renderer input was already approved."
+    },
+    {
+      "at": "2026-07-28T12:26:08.829Z",
+      "event": "images-approved"
+    },
+    {
+      "at": "2026-07-28T12:30:23.728Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-07-28T12:35:54.772Z",
+      "event": "render-succeeded",
+      "durationSec": 549.416,
+      "output": "output/LLFC-0002/LLFC-0002.mp4"
+    },
+    {
+      "at": "2026-07-28T12:35:57.911Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-07-28T13:01:50.91Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-28T13:01:55.375Z",
+      "event": "render-failed",
+      "error": "Required command is unavailable: edge-tts"
+    },
+    {
+      "at": "2026-07-28T13:04:36.705Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-28T13:06:17.96Z",
+      "event": "render-succeeded",
+      "durationSec": 208.618,
+      "output": "output/LLFC-0002/LLFC-0002.mp4"
+    },
+    {
+      "at": "2026-07-28T13:07:27.09Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-28T13:09:11.256Z",
+      "event": "render-succeeded",
+      "durationSec": 208.618,
+      "output": "output/LLFC-0002/LLFC-0002.mp4"
+    },
+    {
+      "at": "2026-07-28T13:36:11.977Z",
+      "event": "qa-rejected",
+      "reason": "Superseded by LLFC-0001 calibration; draft rolled back to ENGLISH for pacing, slide composition, audio, and subtitle recalibration."
+    },
+    {
+      "at": "2026-07-28T13:36:54.6534472Z",
+      "event": "renderer-gates-revoked",
+      "reason": "Draft rolled back to ENGLISH for LLFC-0001 calibration."
+    }
+  ],
+  "gates": {
+    "lesson": {
+      "passed": true,
+      "reason": null,
+      "sentenceCount": 37
+    },
+    "contentApproval": {
+      "passed": false,
+      "reason": "Content approval has not been recorded."
+    },
+    "images": {
+      "passed": true,
+      "reason": null,
+      "missing": []
+    },
+    "render": {
+      "passed": false,
+      "reason": "Draft rolled back to ENGLISH for LLFC-0001 calibration."
+    },
+    "qa": {
+      "passed": false,
+      "reason": "QA is waiting for the corrected render."
+    }
+  },
+  "needsRerender": true,
+  "rerenderReason": "Draft rolled back to ENGLISH for LLFC-0001 calibration."
+}

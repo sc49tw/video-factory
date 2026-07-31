@@ -1,0 +1,253 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "DRAFT-20260726-001",
+  "series": "LLFC",
+  "subtype": "default",
+  "title": "Residential Intrusion Mitigation System",
+  "language": "en",
+  "level": "A2",
+  "summary": "A formal security consulting audit of a suburban residence that maintained site control during repeated unauthorized entry attempts using one junior on-site manager, visual occupancy simulation, layered household security systems, and a local response partner.",
+  "visualDirection": "Vintage mid-century institutional case-study film. Use aged cream report paper, charcoal linework, restrained brick-red accents, generous margins, subtle projector texture, and completely serious consulting-document composition. Each slide has one clear visual proposition and no more than three primary visual elements.",
+  "sharedAssets": {
+    "opening": {
+      "assetId": "common_opening",
+      "instruction": "Reuse the approved LLFC series opening unchanged.",
+      "durationSec": 2.5,
+      "sentences": []
+    }
+  },
+  "characters": [
+    {
+      "name": "Kevin",
+      "visualDescription": "An eight-year-old white boy with fair skin, short tousled blond hair, a small build, an alert expression, and practical winter clothing built around a deep red knit sweater. Keep his age, hair, facial proportions, and red sweater consistent whenever visible."
+    },
+    {
+      "name": "Harry",
+      "visualDescription": "A short, stocky middle-aged white man with a round weathered face, dark stubble, a dark knitted cap, and a heavy black winter coat. He is the more compact of the two unauthorized visitors."
+    },
+    {
+      "name": "Marv",
+      "visualDescription": "A very tall, thin middle-aged white man with a long narrow face, unruly dark curly hair, a dark knitted cap, and a worn long brown winter coat. He is visibly taller than Harry."
+    },
+    {
+      "name": "Old Man Marley",
+      "visualDescription": "A tall elderly white man with swept-back white hair, a short white beard, a grave but calm expression, a dark overcoat, winter gloves, and a broad snow shovel."
+    },
+    {
+      "name": "Kate",
+      "visualDescription": "A white woman in her late thirties with shoulder-length auburn hair, a worried but capable expression, and a tailored dark winter coat. She represents off-site senior management and does not appear in the planned illustration scenes."
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "sourceScene": 2,
+      "sceneId": "case-study-cover",
+      "kind": "case-study-cover",
+      "heading": "CASE STUDY No.002 — RESIDENTIAL INTRUSION MITIGATION SYSTEM",
+      "imageDescription": "A formal residential security audit cover featuring a large snow-covered suburban house at night, one small child seen from behind in the foreground, and two distant visitor silhouettes near the property boundary.",
+      "imagePrompt": "Wide 16:9 illustration for a vintage institutional security audit. A large elegant red-brick suburban family house stands in deep snow at night, warm yellow windows glowing. In the foreground, an eight-year-old blond boy in a deep red knit sweater is seen from behind assessing the property. At the far boundary, two adult male silhouettes approach, one short and stocky and one very tall and thin. Mid-century government training-film realism, aged cream paper, charcoal shadows, restrained brick-red accents, subtle printed halftone and projector wear, formal symmetrical composition, generous empty report space, no lettering, symbols, watermarks, or brand marks.",
+      "onScreenText": [
+        "CASE STUDY No.002",
+        "RESIDENTIAL INTRUSION MITIGATION SYSTEM"
+      ],
+      "sentences": [
+        "This film examines a residential intrusion mitigation system at a seasonal family property.",
+        "The system operated with one on-site manager and no new equipment budget."
+      ]
+    },
+    {
+      "scene": 2,
+      "sourceScene": 3,
+      "sceneId": "page-01",
+      "kind": "case-study-page",
+      "heading": "PROJECT OVERVIEW",
+      "imageDescription": "A clean property-audit slide centered on the large suburban residence, with a small formal portrait inset of the eight-year-old on-site manager and a restrained diagram showing two external visitor markers.",
+      "imagePrompt": "Wide 16:9 property-audit illustration. Center a large red-brick suburban residence in a quiet snowy neighborhood at winter dusk. At one lit front window, an eight-year-old blond boy in a deep red knit sweater stands alone and watches the grounds. Beyond the property line, two minimal human markers suggest one short stocky visitor and one very tall thin visitor. Vintage mid-century facilities-assessment style, aged cream paper, charcoal linework, restrained brick-red accents, strong hierarchy, generous margins and negative space, clean serious government-report design, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "PROJECT OVERVIEW",
+        "ON-SITE STAFF  1",
+        "MANAGEMENT EXPERIENCE  8 YEARS",
+        "UNAUTHORIZED VISITORS  2",
+        "SENIOR MANAGEMENT  INTERNATIONAL",
+        "ATTENDANCE  100%"
+      ],
+      "sentences": [
+        "The facility was a large suburban residence.",
+        "One eight-year-old manager remained on site during scheduled family travel.",
+        "Two unauthorized visitors later tested the property.",
+        "Senior management remained temporarily international.",
+        "On-site management attendance was therefore one hundred percent."
+      ]
+    },
+    {
+      "scene": 3,
+      "sourceScene": 4,
+      "sceneId": "page-02",
+      "kind": "case-study-page",
+      "heading": "VISUAL OCCUPANCY SIMULATION",
+      "imageDescription": "A recognizable interior view of a staged holiday party in which cardboard adult figures rotate around a living room while a model train provides movement and warm lamps illuminate the windows.",
+      "imagePrompt": "Wide 16:9 cutaway view into a warmly lit Christmas living room seen partly through a street-facing window. Flat life-size cardboard adult party figures are mounted on a circular moving system driven by a model train, creating the appearance of a busy holiday gathering. Three primary elements only: cardboard guests, the model railway motion mechanism, and bright street-facing windows. Vintage mid-century institutional demonstration-film illustration, aged cream paper, charcoal and muted holiday colors, restrained technical arrows without labels, serious observation-study composition, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "VISUAL OCCUPANCY SIMULATION",
+        "MOVEMENT  CONTINUOUS",
+        "ADDITIONAL PAYROLL  NONE",
+        "STREET EFFECTIVENESS  HIGH",
+        "CLOSE INSPECTION  OUTSIDE TEST RANGE"
+      ],
+      "sentences": [
+        "Visual occupancy simulation used cardboard personnel, a model train, music, and lighting.",
+        "The simulated guests moved continuously, so the residence appeared active from the street.",
+        "The system required no additional payroll.",
+        "Performance under close inspection was outside the approved test range."
+      ]
+    },
+    {
+      "scene": 4,
+      "sourceScene": 5,
+      "sceneId": "page-03",
+      "kind": "case-study-page",
+      "heading": "LAYERED MITIGATION ARCHITECTURE",
+      "imageDescription": "A single cutaway security diagram of the residence showing three sequential defense zones: an icy exterior approach, thermally enhanced front-door hardware, and two suspended paint containers protecting the main staircase.",
+      "imagePrompt": "Wide 16:9 simplified architectural cutaway of a suburban residence presented as a serious layered-security diagram. A single route passes through three clear defense zones: a glassy ice-covered exterior stair, a glowing overheated brass front doorknob, and two full paint containers suspended above the main staircase on ropes. Keep the three zones visually separated and easy to scan. Vintage government engineering-review illustration, aged cream report paper, precise charcoal lines, restrained brick-red hazard accents, ample negative space, subtle projector texture, no people, lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "LAYERED MITIGATION ARCHITECTURE",
+        "ZONE 1  ACCESS CONTROL",
+        "ZONE 2  THERMAL WARNING",
+        "ZONE 3  GRAVITY-ASSISTED RESPONSE",
+        "SUPPLEMENTARY CONTROLS  DEPLOYED"
+      ],
+      "sentences": [
+        "The facility used several independent layers of intrusion mitigation.",
+        "Exterior ice reduced safe access to the property.",
+        "Door hardware provided a strong thermal warning.",
+        "Glass decorations controlled walking routes inside the facility.",
+        "Two gravity-assisted paint containers protected the main staircase.",
+        "A recorded communications officer handled external conversations.",
+        "A portable biological unit provided additional distraction."
+      ]
+    },
+    {
+      "scene": 5,
+      "sourceScene": 6,
+      "sceneId": "page-04",
+      "kind": "case-study-page",
+      "heading": "FINAL PERFORMANCE EVALUATION",
+      "imageDescription": "A post-incident audit scene showing the residence still under control, two exhausted unauthorized visitors seated together under local supervision, and limited visible interior damage.",
+      "imagePrompt": "Wide 16:9 winter-night after-action audit outside a large red-brick suburban residence that remains standing and illuminated despite limited visible damage. Two exhausted unauthorized visitors sit together in the snow: a short stocky middle-aged man in a dark knit cap and black coat, and a very tall thin middle-aged man with unruly dark curls, a dark knit cap, and a long brown coat. A tall elderly man with white hair, a short white beard, a dark overcoat, and a snow shovel calmly supervises them. Vintage mid-century institutional evaluation-film illustration, aged cream report treatment, charcoal shadows, restrained red accents, formal balanced composition and empty scorecard space, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "FINAL PERFORMANCE EVALUATION",
+        "INTRUSION MITIGATION  EXCELLENT",
+        "VISITOR SATISFACTION  LOW",
+        "RESIDENT COMFORT  MIXED",
+        "HABITABILITY  APPROVED WITH MINOR REDESIGN"
+      ],
+      "sentences": [
+        "The residence maintained site control during every test.",
+        "The two unauthorized visitors experienced repeated safety incidents.",
+        "A local response partner completed the final intervention.",
+        "Intrusion mitigation was rated excellent.",
+        "Unauthorized visitor satisfaction was rated low.",
+        "Resident comfort remained mixed.",
+        "Continued habitability was approved with minor redesign."
+      ]
+    },
+    {
+      "scene": 6,
+      "sourceScene": 7,
+      "sceneId": "lesson-01",
+      "kind": "lesson-card",
+      "heading": "SIMULATING OCCUPANCY",
+      "imageDescription": "A formal three-part training diagram linking a lit window, a speaker emitting sound waves, and a moving cardboard silhouette, observed from a clearly marked safe distance.",
+      "imagePrompt": "Wide 16:9 minimal institutional training diagram on aged cream paper. Three equal visual modules form one system: a warmly illuminated house window, a small speaker emitting simple sound-wave arcs, and a cardboard human silhouette moving along a mechanical track. A distant observer icon remains far from the system. Mid-century government training-film graphics, precise charcoal geometry, restrained brick-red highlights, strong whitespace and clean hierarchy, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "LESSON 1",
+        "SIMULATING OCCUPANCY",
+        "LIGHT + SOUND + MOVEMENT",
+        "RECOMMENDED INSPECTION DISTANCE  MAINTAIN"
+      ],
+      "sentences": [
+        "Light, sound, and visible movement should operate together.",
+        "Visual occupancy simulation works best beyond the recommended inspection distance."
+      ]
+    },
+    {
+      "scene": 7,
+      "sourceScene": 8,
+      "sceneId": "lesson-02",
+      "kind": "lesson-card",
+      "heading": "USING LAYERED SYSTEMS",
+      "imageDescription": "A clean defense-in-depth diagram showing an unauthorized visitor route interrupted by three consecutive barriers rather than one isolated control.",
+      "imagePrompt": "Wide 16:9 clean defense-in-depth diagram on aged cream report paper. A dark visitor-route arrow bypasses one isolated barrier but is stopped by a coordinated sequence of three different security barriers. The route, first control, and supporting controls are the only primary elements. Vintage mid-century institutional security-training graphics, charcoal linework, restrained brick-red emphasis, strict grid, generous negative space, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "LESSON 2",
+        "USING LAYERED SYSTEMS",
+        "SINGLE CONTROL  BYPASS POSSIBLE",
+        "MULTIPLE CONTROLS  MUTUAL SUPPORT"
+      ],
+      "sentences": [
+        "A single security control may be bypassed.",
+        "Layered systems perform better because each system supports the others."
+      ]
+    },
+    {
+      "scene": 8,
+      "sourceScene": 9,
+      "sceneId": "lesson-03",
+      "kind": "lesson-card",
+      "heading": "MANAGING GRAVITY",
+      "imageDescription": "A restrained technical side-view diagram of two paint containers suspended above a staircase, with a clear swing arc and ceiling-clearance measurement.",
+      "imagePrompt": "Wide 16:9 engineering safety diagram in side elevation. Two full metal paint containers hang from ropes above a residential staircase. One clean red arc indicates their gravity-driven swing path, and a simple dimension line indicates ceiling clearance. Vintage mid-century technical training-film illustration on aged cream paper, precise charcoal drafting lines, restrained brick-red accent, generous empty margins, no people, lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "LESSON 3",
+        "MANAGING GRAVITY",
+        "OPERATING COST  LOW",
+        "CEILING CLEARANCE  REQUIRED"
+      ],
+      "sentences": [
+        "Gravity remains a cost-effective security subcontractor.",
+        "Gravity-assisted equipment requires sufficient ceiling clearance."
+      ]
+    },
+    {
+      "scene": 9,
+      "sourceScene": 10,
+      "sceneId": "lesson-04",
+      "kind": "lesson-card",
+      "heading": "MAINTAINING LOCAL RESPONSE",
+      "imageDescription": "A simple response-network map connecting the residence to one nearby local partner while a distant emergency-response indicator remains outside the target time window.",
+      "imagePrompt": "Wide 16:9 minimal neighborhood response map on aged cream report paper. A family residence connects by a short brick-red route to a nearby elderly local responder carrying a snow shovel, while a much longer faint route leads toward a distant formal emergency vehicle. Keep the residence, local responder, and delayed distant route as the three primary elements. Vintage mid-century operations-management training graphic, precise charcoal lines, strict layout, ample negative space, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "LESSON 4",
+        "MAINTAINING LOCAL RESPONSE",
+        "LOCAL ROUTE  SHORT",
+        "FORMAL RESPONSE DELAY  ABOVE TARGET",
+        "INTERVENTION  COMPLETE"
+      ],
+      "sentences": [
+        "Local response partners can reduce emergency response delay.",
+        "A nearby partner may complete tasks that automated systems cannot finish."
+      ]
+    },
+    {
+      "scene": 10,
+      "sourceScene": 11,
+      "sceneId": "common-ending",
+      "kind": "common-ending",
+      "heading": "END OF LESSON",
+      "imageDescription": "A formal LLFC end card with an orderly equipment-return diagram featuring a secured paint container and a closed biological transport case.",
+      "imagePrompt": "Wide 16:9 formal institutional end-card illustration. An orderly storage shelf holds one secured paint container and one closed ventilated biological transport case, while a completed plain case file rests beside them. Vintage mid-century public-service-film design, aged cream paper, charcoal linework, restrained brick-red approval accent, symmetrical calm composition, subtle projector wear, large clear central and lower areas for controlled typography, no lettering, numbers, watermarks, or brand marks.",
+      "onScreenText": [
+        "END OF LESSON",
+        "RETURN ALL EQUIPMENT TO APPROVED STORAGE",
+        "DISTRIBUTION OF FUTURE MATERIALS REQUIRES SUBSCRIPTION"
+      ],
+      "sentences": [
+        "This concludes the residential intrusion mitigation review.",
+        "Please return all biological units and paint containers to approved storage areas.",
+        "Distribution of future materials requires subscription.",
+        "Thank you for your attention."
+      ]
+    }
+  ]
+}

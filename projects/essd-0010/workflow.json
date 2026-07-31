@@ -7,7 +7,7 @@
   "status": "completed",
   "currentStage": "completed",
   "createdAt": "2026-07-26T00:53:57.818Z",
-  "updatedAt": "2026-07-26T03:48:19.847Z",
+  "updatedAt": "2026-07-28T11:40:35.311Z",
   "approvals": {
     "content": true,
     "images": true,
@@ -15,10 +15,10 @@
   },
   "attempts": {
     "rendering": {
-      "total": 6,
+      "total": 7,
       "consecutiveFailures": 0,
       "totalDurationMs": 0,
-      "lastAttemptAt": "2026-07-26T03:46:59.466Z",
+      "lastAttemptAt": "2026-07-26T12:35:20.786Z",
       "lastResult": "success",
       "lastError": null
     }
@@ -157,6 +157,22 @@
     },
     {
       "at": "2026-07-26T03:48:19.841Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-07-26T12:34:28.373Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-07-26T12:35:20.786Z",
+      "event": "render-succeeded",
+      "durationSec": 114.819,
+      "output": "output/ESSD-0010/ESSD-0010.mp4"
+    },
+    {
+      "at": "2026-07-26T12:36:01.277Z",
       "event": "qa-approved"
     }
   ],

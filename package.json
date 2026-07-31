@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "video:workflow": "node scripts/video-workflow.mjs",
+    "video:workflow": "node scripts/video-workflow-codex.mjs",
     "video:render": "node scripts/render-lesson.mjs",
     "test": "node --test",
-    "typecheck": "node --check scripts/render-lesson.mjs && node --check scripts/video-workflow.mjs && node --check src/categories.mjs && node --check src/chat-handoff.mjs && node --check src/gates.mjs && node --check src/lesson.mjs && node --check src/workflow.mjs"
+    "typecheck": "node --check scripts/render-lesson.mjs && node --check scripts/video-workflow-codex.mjs && node --check src/categories.mjs && node --check src/draft-workflow.mjs && node --check src/production-package.mjs && node --check src/stage-prompt.mjs && node --check src/gates.mjs && node --check src/lesson.mjs && node --check src/workflow.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0"
   }
 }

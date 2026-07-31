@@ -14,6 +14,7 @@ export const DEFAULTS = Object.freeze({
   voice: "en-US-JennyNeural",
   rate: "+0%",
   pitch: "+0Hz",
+  volume: "+0%",
 });
 
 export function validateEpisodeId(value) {
@@ -59,7 +60,7 @@ export function normalizeLesson(raw, requestedEpisode) {
       throw new Error(`Scene ${sceneIndex + 1} must contain at least one sentence.`);
     }
     for (const [sentenceIndex, sentence] of scene.sentences.entries()) {
-      const text = String(sentence ?? "").trim();
+      const text = sentence.text;
       if (!text) {
         throw new Error(
           `Scene ${sceneIndex + 1}, sentence ${sentenceIndex + 1} is empty.`,
@@ -71,6 +72,8 @@ export function normalizeLesson(raw, requestedEpisode) {
         sentenceIndex,
         image: scene.image,
         text,
+        speaker: sentence.speaker,
+        tts: sentence.tts,
       });
     }
   }
@@ -150,6 +153,7 @@ export function normalizeLesson(raw, requestedEpisode) {
       voice: String(tts.voice ?? production.voice ?? DEFAULTS.voice),
       rate: String(tts.rate ?? production.speech_rate ?? DEFAULTS.rate),
       pitch: String(tts.pitch ?? production.speech_pitch ?? DEFAULTS.pitch),
+      volume: String(tts.volume ?? production.speech_volume ?? DEFAULTS.volume),
       sampleRate: positiveInteger(
         tts.sampleRate ?? production.sample_rate,
         DEFAULTS.sampleRate,
@@ -174,7 +178,8 @@ export function normalizeLesson(raw, requestedEpisode) {
       ),
     },
     backgroundMusic: normalizeBackgroundMusic(backgroundMusic, raw, production),
-    ending: normalizeEnding(raw.ending ?? production.ending),
+    sharedOpening: normalizeSharedOpening(raw.sharedOpening ?? production.sharedOpening),
+    ending: normalizeEnding(raw.ending ?? production.ending, raw.series),
     moral,
     scenes,
     sentences,
@@ -207,8 +212,18 @@ export function expectedDuration(lesson, audioDurations) {
         0,
       ) +
       lesson.countdownSeconds * audioDurations.length +
-      lesson.transitionSeconds * Math.max(0, audioDurations.length - 1) +
+      lesson.transitionSeconds +
       lesson.interRoundPromptSeconds +
+      endingSeconds
+    );
+  }
+  if (lesson.series === "LLFC") {
+    return (
+      (lesson.sharedOpening?.durationSec ?? 0) +
+      audioDurations.reduce(
+        (total, duration) => total + duration + lesson.transitionSeconds,
+        0,
+      ) +
       endingSeconds
     );
   }
@@ -240,6 +255,10 @@ export function resolveInside(root, relativePath, label) {
 function normalizeScenes(raw) {
   if (Array.isArray(raw.scenes)) {
     return raw.scenes.map((scene, index) => ({
+      id: String(scene?.id ?? scene?.sceneId ?? `scene${String(index + 1).padStart(2, "0")}`),
+      kind: String(scene?.kind ?? "scene"),
+      title: String(scene?.title ?? scene?.heading ?? "").trim(),
+      onScreenText: normalizeOnScreenText(scene?.onScreenText),
       image: normalizeImage(scene, index),
       sentences: normalizeSentenceList(scene),
     }));
@@ -256,11 +275,34 @@ function normalizeScenes(raw) {
 
   if (Array.isArray(raw.content?.scenes)) {
     return raw.content.scenes.map((scene, index) => ({
+      id: String(scene?.id ?? scene?.sceneId ?? `scene${String(index + 1).padStart(2, "0")}`),
+      kind: String(scene?.kind ?? "scene"),
+      title: String(scene?.title ?? scene?.heading ?? "").trim(),
+      onScreenText: normalizeOnScreenText(scene?.onScreenText),
       image: normalizeImage(scene, index),
       sentences: normalizeSentenceList(scene),
     }));
   }
   return [];
+}
+
+function normalizeOnScreenText(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item ?? "").trim()).filter(Boolean);
+}
+
+function normalizeSharedOpening(value) {
+  if (!value || typeof value !== "object") return null;
+  const image = typeof value.image === "string" ? value.image.trim() : "";
+  if (!image) return null;
+  return {
+    image,
+    durationSec: nonNegativeNumber(
+      value.durationSec ?? value.duration_seconds,
+      2.5,
+      "sharedOpening.durationSec",
+    ),
+  };
 }
 
 function normalizeImage(item, index) {
@@ -279,14 +321,32 @@ function normalizeImage(item, index) {
 function normalizeSentenceList(item) {
   const list = item?.sentences ?? item?.lines;
   if (Array.isArray(list)) {
-    return list.map((value) =>
-      typeof value === "object" && value
-        ? value.text ?? value.narration ?? ""
-        : value,
-    );
+    return list.map(normalizeSentence);
   }
   const single = item?.text ?? item?.narration;
-  return single === undefined ? [] : [single];
+  return single === undefined ? [] : [normalizeSentence(single)];
+}
+
+function normalizeSentence(value) {
+  if (typeof value !== "object" || !value) {
+    return {text: String(value ?? "").trim(), speaker: null, tts: null};
+  }
+  const rawTts = value.tts && typeof value.tts === "object" ? value.tts : null;
+  const tts = rawTts
+    ? Object.fromEntries(
+        ["voice", "rate", "pitch", "volume"]
+          .filter((key) => rawTts[key] !== undefined)
+          .map((key) => [key, String(rawTts[key])]),
+      )
+    : null;
+  return {
+    text: String(value.text ?? value.narration ?? "").trim(),
+    speaker:
+      typeof value.speaker === "string" && value.speaker.trim()
+        ? value.speaker.trim()
+        : null,
+    tts: tts && Object.keys(tts).length > 0 ? tts : null,
+  };
 }
 
 function normalizeBackgroundMusic(value, raw, production) {
@@ -306,14 +366,14 @@ function normalizeBackgroundMusic(value, raw, production) {
   return {enabled: false, path: null, volume: 0.08};
 }
 
-function normalizeEnding(value) {
+function normalizeEnding(value, series) {
   if (value === false) {
     return [];
   }
   if (Array.isArray(value)) {
     return value.map((line) => String(line).trim()).filter(Boolean);
   }
-  return ["Great job!", "See you next lesson."];
+  return series === "LLFC" ? [] : ["Great job!", "See you next time."];
 }
 
 function normalizeMoral(value) {

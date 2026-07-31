@@ -1,0 +1,41 @@
+schema_version: 1
+
+project:
+  id: video-factory
+  name: Video Factory
+  lifecycle: active
+
+status:
+  stage: english-review
+  health: attention
+  summary: >-
+    目前有兩部 ESSD 影片已完成渲染與 QA，但 repository 尚無發布紀錄；LLFC-0002
+    因 QA 退回至英文內容核准，LLFC-001 已備妥素材並等待配音，另有八個
+    Classic Twisted 企劃仍在 brainstorm。
+
+current_focus:
+  goal: 完成 LLFC-0002 校正後的內容核准、重新渲染與 QA
+  next_action: 審查並明確核准 LLFC-0002 校正後的英文腳本
+  blocker: LLFC-0002 正等待英文腳本核准，現有 MP4 已被 QA 退回且不可視為可發布成品
+
+progress:
+  completed:
+    - "ESSD-0010 / CT001 — The Tortoise and the Hare 已完成配音、字幕、渲染與 QA，MP4 存在；尚無發布紀錄"
+    - "ESSD-0011 / CT002 — The Boy Who Cried Wolf 已完成配音、字幕、渲染與 QA，MP4 存在；尚無發布紀錄"
+  in_progress:
+    - "LLFC-0002 — 企劃、腳本、分鏡與素材已有產出，但 QA 已退回至英文內容核准；核准後需重新渲染與 QA"
+    - "LLFC-001 — A Modern Theme Park 已完成專案驗證及 11 項圖片素材核准；下一步生成 10 段配音，字幕與渲染尚未開始"
+  later:
+    - "CT003 — The Ant and the Grasshopper 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT004 — The Fox and the Grapes 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT005 — The Goose That Laid the Golden Eggs 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT006 — The Three Little Pigs 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT007 — Little Red Riding Hood 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT008 — Jack and the Beanstalk 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT009 — The Emperor's New Clothes 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+    - "CT010 — Cinderella 僅有 brainstorm 企劃紀錄，尚未選定候選方案或建立製作專案"
+
+updated:
+  at: 2026-07-28
+  by: codex-video-factory
+  source: repository-status-review

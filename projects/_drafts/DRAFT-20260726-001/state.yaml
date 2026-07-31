@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "2.0",
+  "draftId": "DRAFT-20260726-001",
+  "series": "LLFC",
+  "subtype": "default",
+  "format": "LLFC",
+  "currentStage": "ENGLISH",
+  "status": "needs_approval",
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "approvedAt": "2026-07-27T15:00:11.46Z"
+    },
+    "english": {
+      "approved": false
+    },
+    "scenes": {
+      "approved": false
+    },
+    "package": {
+      "approved": false
+    },
+    "images": {
+      "approved": false
+    },
+    "qa": {
+      "approved": false
+    }
+  },
+  "artifacts": {
+    "request": "request.yaml",
+    "concept": "concept.yaml",
+    "script": "script.yaml",
+    "storyboard": "storyboard.yaml",
+    "productionPackage": "production-package.json",
+    "assetManifest": "../../LLFC-0002/assets/manifest.json",
+    "rendererLesson": "../../../inbox/LLFC-0002/lesson.json",
+    "finalVideo": "../../../output/LLFC-0002/LLFC-0002.mp4"
+  },
+  "createdAt": "2026-07-26T13:43:08.504Z",
+  "updatedAt": "2026-07-28T14:01:59.918Z",
+  "history": [
+    {
+      "at": "2026-07-26T13:43:08.504Z",
+      "event": "migrated-from-legacy-chat-workflow"
+    },
+    {
+      "at": "2026-07-27T13:59:03.955Z",
+      "event": "concept-submitted"
+    },
+    {
+      "at": "2026-07-27T14:12:26.002Z",
+      "event": "concept-submitted"
+    },
+    {
+      "at": "2026-07-27T14:25:34.159Z",
+      "event": "concept-submitted"
+    },
+    {
+      "at": "2026-07-27T14:29:49.348Z",
+      "event": "concept-submitted"
+    },
+    {
+      "at": "2026-07-27T14:54:54.28Z",
+      "event": "concept-submitted"
+    },
+    {
+      "at": "2026-07-27T15:00:11.463Z",
+      "event": "concept-approved"
+    },
+    {
+      "at": "2026-07-27T15:01:35.569Z",
+      "event": "english-submitted"
+    },
+    {
+      "at": "2026-07-27T15:08:40.148Z",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-07-27T15:11:48.851Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-07-28T11:09:56.28Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-07-28T11:11:51.33Z",
+      "event": "package-submitted"
+    },
+    {
+      "at": "2026-07-28T11:16:12.362Z",
+      "event": "package-approved"
+    },
+    {
+      "at": "2026-07-28T12:27:31.4071507Z",
+      "event": "images-approved",
+      "episodeId": "LLFC-0002"
+    },
+    {
+      "at": "2026-07-28T12:27:31.4071507Z",
+      "event": "assets-handoff-completed",
+      "episodeId": "LLFC-0002"
+    },
+    {
+      "at": "2026-07-28T12:43:14.6475391Z",
+      "event": "render-completed",
+      "episodeId": "LLFC-0002",
+      "durationSec": 549.416,
+      "validation": "passed"
+    },
+    {
+      "at": "2026-07-28T13:11:11.0547698Z",
+      "event": "llfc-renderer-corrected",
+      "episodeId": "LLFC-0002",
+      "changes": [
+        "shared-opening",
+        "controlled-on-screen-text",
+        "single-pass-institutional-timeline"
+      ]
+    },
+    {
+      "at": "2026-07-28T13:11:11.0547698Z",
+      "event": "render-completed",
+      "episodeId": "LLFC-0002",
+      "durationSec": 208.618,
+      "validation": "passed"
+    },
+    {
+      "at": "2026-07-28T13:35:53.601Z",
+      "event": "draft-rolled-back",
+      "to": "ENGLISH"
+    },
+    {
+      "at": "2026-07-28T13:40:45.774Z",
+      "event": "english-submitted"
+    },
+    {
+      "at": "2026-07-28T14:01:59.915Z",
+      "event": "english-submitted"
+    }
+  ],
+  "episodeId": "LLFC-0002"
+}

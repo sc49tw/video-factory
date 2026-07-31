@@ -8,7 +8,6 @@ import {
   nextEpisodeId,
   validateEpisodeForCategory,
 } from "../src/categories.mjs";
-import {buildChatPrompt, validateChatPackage} from "../src/chat-handoff.mjs";
 import {nextStageFromGates} from "../src/gates.mjs";
 import {
   createWorkflow,
@@ -43,32 +42,6 @@ test("category registry validates IDs and allocates the next ID", async () => {
   );
   assert.equal(validateEpisodeForCategory(registry, "ESSD-0010", "ESSD"), "ESSD-0010");
   assert.equal(await nextEpisodeId(root, registry, "ESSD"), "ESSD-0012");
-});
-
-test("Chat prompt and package share a strict draft contract", () => {
-  const prompt = buildChatPrompt({
-    draftId: "DRAFT-20260726-001",
-    series: "ESSD",
-    subtype: "classic-twisted",
-    category: registry.series.ESSD.subtypes["classic-twisted"],
-  });
-  assert.match(prompt, /DRAFT-20260726-001/);
-  assert.match(prompt, /exactly one JSON code block/);
-  const packageValue = validateChatPackage(
-    {
-      draftId: "DRAFT-20260726-001",
-      series: "ESSD",
-      subtype: "classic-twisted",
-      title: "Test",
-      scenes: [{imagePrompt: "A scene", sentences: ["Hello."]}],
-    },
-    {
-      draftId: "DRAFT-20260726-001",
-      series: "ESSD",
-      subtype: "classic-twisted",
-    },
-  );
-  assert.equal(packageValue.title, "Test");
 });
 
 test("gates stop at approval and QA boundaries", () => {

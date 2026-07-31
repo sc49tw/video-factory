@@ -1,0 +1,20 @@
+Draft: DRAFT-20260726-001
+Series: LLFC
+Subtype: default
+Current stage: CONCEPT
+
+Read:
+- workflows/episode-production.workflow.yaml
+- series/LLFC/series.yaml
+- series/LLFC/style-guide.md
+- projects/_drafts/DRAFT-20260726-001/request.yaml
+- projects/_drafts/DRAFT-20260726-001/state.yaml
+
+Task:
+Create the best concept proposal.
+
+Required output: concept.yaml
+
+Stop condition:
+Present it and wait for explicit concept approval.
+Only perform the current stage. Do not create later-stage artifacts.

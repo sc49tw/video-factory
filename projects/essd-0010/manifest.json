@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "episode": "ESSD-0010",
   "title": "The Tortoise and the Hare",
-  "startedAt": "2026-07-26T03:45:48.006Z",
+  "startedAt": "2026-07-26T12:34:28.353Z",
   "sourceLesson": "inbox/ESSD-0010/lesson.json",
   "lessonSha256": "7e53333c1cfb50d5e555a25eeb6aac62db4d985da95b0056fbd67e2e13f35401",
   "images": [
@@ -10,43 +10,43 @@
       "source": "inbox/ESSD-0010/scene01.png",
       "file": "scene01.png",
       "sha256": "11a395ea320e8e4cd4a6ca37719b47c16be8a8a0247c7dff0f60fb84cccabdca",
-      "modifiedAt": "2026-07-25T06:22:59.855Z"
+      "modifiedAt": "2026-07-26T08:19:36.354Z"
     },
     {
       "source": "inbox/ESSD-0010/scene02.png",
       "file": "scene02.png",
       "sha256": "2a46d7fef6e9903fb4278fdf83b17b5b54bf39619f810377fea6e5436855633c",
-      "modifiedAt": "2026-07-25T06:24:49.268Z"
+      "modifiedAt": "2026-07-26T08:19:36.361Z"
     },
     {
       "source": "inbox/ESSD-0010/scene03.png",
       "file": "scene03.png",
-      "sha256": "18d4225a12c47c2f3b7095fd382cf1a5019d593f9891c6fedf8b1f83c38f211c",
-      "modifiedAt": "2026-07-25T06:26:10.627Z"
+      "sha256": "01347ec187f273ec79f9291fc93abdf89274c9e70d86339904cfd035f4afd966",
+      "modifiedAt": "2026-07-26T12:31:01.329Z"
     },
     {
       "source": "inbox/ESSD-0010/scene04.png",
       "file": "scene04.png",
       "sha256": "9522c639534f00a40ca64283b503dcdf77becc34c0a826231369923f0f2f9f13",
-      "modifiedAt": "2026-07-25T06:28:35.138Z"
+      "modifiedAt": "2026-07-26T08:19:36.402Z"
     },
     {
       "source": "inbox/ESSD-0010/scene05.png",
       "file": "scene05.png",
       "sha256": "28f1871b58397e271711147f6a64f774dc99eb28692a0aceeaa3555db97f24f3",
-      "modifiedAt": "2026-07-25T07:08:13.189Z"
+      "modifiedAt": "2026-07-26T08:19:36.419Z"
     },
     {
       "source": "inbox/ESSD-0010/scene06.png",
       "file": "scene06.png",
       "sha256": "3e4a44d8c7e2cce04f92fcbb1d4e3bb12265d7c51c94fc9b74e04ddb298fac53",
-      "modifiedAt": "2026-07-25T06:32:06.086Z"
+      "modifiedAt": "2026-07-26T08:19:36.426Z"
     },
     {
       "source": "inbox/ESSD-0010/scene07.png",
       "file": "scene07.png",
       "sha256": "41c8c9146eb40f0486a80a46b5985f4d59a33c1b6441ae35a34491ae493944e2",
-      "modifiedAt": "2026-07-25T07:10:17.608Z"
+      "modifiedAt": "2026-07-26T08:19:36.433Z"
     }
   ],
   "tts": {
@@ -66,7 +66,7 @@
   "introSeconds": 3,
   "shadowingTempo": 0.85,
   "finalVideo": "output/ESSD-0010/ESSD-0010.mp4",
-  "completedAt": "2026-07-26T03:46:59.463Z",
+  "completedAt": "2026-07-26T12:35:20.780Z",
   "status": "success",
   "error": null,
   "audio": [
@@ -132,11 +132,11 @@
     }
   ],
   "subtitles": "projects/ESSD-0010/subtitles/first-pass.srt",
-  "estimatedDurationSec": 117.902,
+  "estimatedDurationSec": 114.702,
   "validation": {
     "passed": true,
-    "fileSize": 30567421,
-    "durationSec": 118.019,
+    "fileSize": 29144922,
+    "durationSec": 114.819,
     "hasVideo": true,
     "hasAudio": true,
     "videoCodec": "h264",
