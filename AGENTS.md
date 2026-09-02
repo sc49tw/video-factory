@@ -27,11 +27,50 @@ When the user says `開始影片`, `繼續影片`, or asks for production status
     `output/<EPISODE>/`.
 12. After render, review QA and record approval with
     `pnpm video:workflow approve <EPISODE> qa`.
+12a. For ESSY episodes, the final 1080p master requires its own gate: after
+    frame-verifying `output/<EP>/<EP>-final-v1.mp4`, record
+    `pnpm video:workflow approve <EPISODE> final-assembly`. A rendered final
+    MP4 alone never marks the episode completed.
 13. Never auto-archive after QA. Completed episodes remain in place until the
     user confirms publication and explicitly approves archival.
 14. Archive only with `pnpm video:workflow archive <EPISODE> --published`.
 
 Never modify story, English, or images during rendering.
+
+Never modify story, English, or images during rendering.
+
+## ESSY subtitle architecture (shared, mandatory)
+
+ESSY subtitles MUST use the shared subtitle timeline builder
+(`scripts/_build-subtitle-timeline.mjs` + `scripts/subtitle-config.mjs`).
+Do not implement subtitle splitting independently in render scripts, and do
+not add text-specific exceptions for any episode.
+
+Architecture:
+
+- Source VTT timing (edge-tts) is authoritative; it is never re-estimated.
+- Generated child cues preserve monotonic, absolute timing inside the parent
+  narration window (char-weighted).
+- Subtitle timing is independent of visual shot boundaries. The visual
+  timeline must NEVER be used to derive subtitle cue boundaries.
+- DP balanced segmentation with phrase-aware breakpoint scoring prevents
+  widow/orphan cues (defaults: MAX_CHARS 44, MAX_LINES 2, no generated
+  1-word orphans, strongly avoid generated 2-word children, no generated
+  cue below 700 ms).
+- Global non-overlap normalization guarantees one active cue at a time
+  (deterministic 1 ms clamp; cue start times are preserved).
+- Subtitle QA is a mandatory render gate: the review renderer aborts before
+  ffmpeg if QA fails (`overlapCountAfterNormalization`, `invalidDurationCueCount`,
+  `orphanChildCueCount`, `twoWordChildCueCount`,
+  `generatedCueDurationBelow700msCount`, or `maxRenderedLines > 2`).
+- All limits and the burn-in style live in `scripts/subtitle-config.mjs`.
+  Normal ESSY episodes need no episode override.
+
+Pipeline order: narration approved → TTS/VTT → visual assembly → subtitle
+timeline build → subtitle QA → 540p review (`pnpm video:subtitle-review
+<EPISODE>`) → human QA approval → 1080p final render.
+
+Regression tests: `pnpm test:subtitle`.
 
 If required assets are missing, stop and ask for them.
 

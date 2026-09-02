@@ -144,8 +144,18 @@ async function approve([id, target]) {
     return;
   }
   const workflow = await requireEpisode(id);
-  if (!["content", "images", "qa"].includes(target)) {
-    throw new Error("Episode approval target must be content, images, or qa.");
+  if (!["content", "images", "qa", "final-assembly"].includes(target)) {
+    throw new Error(
+      "Episode approval target must be content, images, qa, or final-assembly.",
+    );
+  }
+  if (target === "final-assembly") {
+    workflow.approvals.finalQa = true;
+    recordEvent(workflow, "final-assembly-approved");
+    await refreshEpisodeWorkflow(factoryRoot, workflow);
+    console.log(`Approved ${target} for ${id}.`);
+    printEpisode(workflow);
+    return;
   }
   workflow.approvals[target] = true;
   if (target === "qa") {
@@ -404,11 +414,15 @@ async function writeJson(filePath, value) {
 }
 
 function inferCategory(episode) {
-  if (/^ESSD-\d{4}$/.test(episode)) {
-    return {series: "ESSD", subtype: "classic-twisted"};
-  }
-  if (/^LLFC-\d{4}$/.test(episode)) {
-    return {series: "LLFC", subtype: "default"};
+  // Registry-driven lookup so newly registered series (e.g. ESSY) work in
+  // discover/status without touching this file again.
+  for (const [series, entry] of Object.entries(registry.series)) {
+    if (!new RegExp(entry.episodePattern).test(episode)) continue;
+    const subtypes = Object.keys(entry.subtypes ?? {});
+    const subtype = subtypes.includes("default")
+      ? "default"
+      : subtypes[0] ?? "default";
+    return {series, subtype};
   }
   return null;
 }

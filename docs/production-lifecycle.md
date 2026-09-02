@@ -19,6 +19,7 @@ REQUEST
   → PACKAGE → schema validation → user approval
   → ASSETS
   → RENDER → QA approval
+  → FINAL-ASSEMBLY (ESSY) → final-assembly approval
   → completed
 ```
 
@@ -66,3 +67,32 @@ archive/episodes/<EPISODE>/
 ```
 
 Archival is never automatic.
+
+## Essay render pipeline (MVP, known non-final)
+
+The ESSY renderer is intentionally a simple pipeline. It is acceptable for the
+current volume but is NOT the final production implementation; segment caching
+or a single-pass timeline renderer should be revisited before scaling up.
+
+Current flow:
+
+1. One cached TTS pass per narration block (`projects/<EP>/audio/*.mp3`,
+   keyed by text + voice settings), with edge-tts sentence cues in
+   `temp/*.vtt`.
+2. A deterministic visual plan (`src/visual-plan.mjs` +
+   `contracts/visual-plan.schema.json`) splits every block into shots cut on
+   TTS sentence boundaries and distributes each block's ACTUAL ffprobe audio
+   duration across its shots automatically. Manual `durationSec` overrides
+   exist in the schema for future extension but are never generated or used.
+   `pauseAfterSec` extends only a block's FINAL shot; burned subtitles always
+   end with the spoken narration and never remain visible during the trailing
+   pause. The validated plan is stored as `projects/<EP>/visual-plan.json`.
+3. Each shot renders to an intermediate MP4 (Ken Burns over the section image,
+   audio sliced from the block TTS, subtitles burned from shot-local cues):
+   `projects/<EP>/segments/<block>-essay-shot-NNN.mp4`.
+4. Intermediates are concatenated with the ffmpeg concat demuxer (`-c copy`)
+   into `temp/concatenated.mp4`, then muxed (optional background-music mix)
+   into `output/<EP>/<EP>.mp4`.
+
+Known costs of this MVP: one encode per shot, no partial re-render of changed
+shots, and concat-level frame rounding (~tens of milliseconds per boundary).

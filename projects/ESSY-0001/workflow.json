@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ESSY-0001",
+  "kind": "episode",
+  "series": "ESSY",
+  "subtype": "essay",
+  "status": "completed",
+  "currentStage": "completed",
+  "createdAt": "2026-08-23T09:02:55.161Z",
+  "updatedAt": "2026-09-02T12:11:02.001Z",
+  "approvals": {
+    "content": true,
+    "images": true,
+    "qa": true,
+    "finalQa": true
+  },
+  "attempts": {
+    "rendering": {
+      "total": 3,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-08-23T14:07:28.737Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "stages": {
+    "intake": {
+      "status": "completed"
+    },
+    "creative-development": {
+      "status": "completed"
+    },
+    "content-approval": {
+      "status": "completed"
+    },
+    "images": {
+      "status": "completed"
+    },
+    "render-ready": {
+      "status": "completed"
+    },
+    "rendering": {
+      "status": "completed"
+    },
+    "qa": {
+      "status": "completed"
+    },
+    "final-assembly": {
+      "status": "completed"
+    },
+    "completed": {
+      "status": "completed"
+    }
+  },
+  "blocker": null,
+  "nextAction": "Production is complete.",
+  "history": [
+    {
+      "at": "2026-08-23T09:06:43.636Z",
+      "event": "content-approved"
+    },
+    {
+      "at": "2026-08-23T09:35:55.077Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-08-23T09:37:07.752Z",
+      "event": "render-succeeded",
+      "durationSec": 413.214,
+      "output": "output/ESSY-0001/ESSY-0001.mp4"
+    },
+    {
+      "at": "2026-08-23T12:36:26.881Z",
+      "event": "render-started",
+      "force": false,
+      "clean": false
+    },
+    {
+      "at": "2026-08-23T12:37:52.972Z",
+      "event": "render-succeeded",
+      "durationSec": 469.136,
+      "output": "output/ESSY-0001/ESSY-0001.mp4"
+    },
+    {
+      "at": "2026-08-23T14:06:36.477Z",
+      "event": "render-started",
+      "force": true,
+      "clean": false
+    },
+    {
+      "at": "2026-08-23T14:07:28.737Z",
+      "event": "render-succeeded",
+      "durationSec": 469.349,
+      "output": "output/ESSY-0001/ESSY-0001.mp4"
+    },
+    {
+      "at": "2026-08-30T08:39:59.074Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-09-02T00:00:00.000Z",
+      "event": "final-assembly-approved",
+      "note": "Reconciled when the final-assembly workflow stage was introduced: master output/ESSY-0001/ESSY-0001-final-v2.mp4 with final-assembly-qa.json passed was already verified."
+    }
+  ],
+  "gates": {
+    "lesson": {
+      "passed": true,
+      "reason": null,
+      "sentenceCount": 18
+    },
+    "contentApproval": {
+      "passed": true,
+      "reason": null
+    },
+    "images": {
+      "passed": true,
+      "reason": null,
+      "missing": []
+    },
+    "render": {
+      "passed": true,
+      "reason": null
+    },
+    "qa": {
+      "passed": true,
+      "reason": null
+    },
+    "finalRender": {
+      "passed": true,
+      "reason": null,
+      "applicable": true,
+      "output": "output/ESSY-0001/ESSY-0001-final-v2.mp4"
+    }
+  },
+  "needsRerender": false,
+  "rerenderReason": null
+}

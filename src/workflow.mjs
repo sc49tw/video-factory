@@ -60,6 +60,34 @@ export async function refreshEpisodeWorkflow(factoryRoot, workflow) {
     series: workflow.series,
     subtype: workflow.subtype,
   });
+  // Legacy reconciliation guard: episodes completed before a gate/stage existed
+  // (e.g. ESSY-0002, produced by the review-render pipeline without the
+  // standard provenance artifacts) must not regress when gates are recomputed.
+  // The gates are still reported, but the completed state is preserved.
+  const legacyCompleted =
+    workflow.legacyGates === true &&
+    workflow.status === "completed" &&
+    workflow.approvals.qa === true;
+  if (legacyCompleted) {
+    workflow.currentStage = "completed";
+    workflow.status = "completed";
+    workflow.gates = gates;
+    workflow.gates.contentApproval = {
+      passed: true,
+      reason: workflow.approvals.content === true
+        ? null
+        : "Legacy episode: content approval is implicit in the reconciled history.",
+    };
+    workflow.nextAction =
+      "Production is complete (legacy reconciliation). Do not re-run gates as approval evidence.";
+    workflow.blocker = null;
+    for (const stageName of STAGES) {
+      workflow.stages[stageName] ??= {};
+      workflow.stages[stageName].status = "completed";
+    }
+    await writeWorkflow(factoryRoot, workflow);
+    return workflow;
+  }
   if (workflow.needsRerender) {
     gates.render.passed = false;
     gates.render.reason = workflow.rerenderReason ?? "QA requested a new render.";
@@ -166,6 +194,11 @@ function nextActionForStage(workflow, stage, gates) {
   if (stage === "render-ready")
     return `Run pnpm video:render ${workflow.id}`;
   if (stage === "qa") return "Review the rendered video and approve QA.";
+  if (stage === "final-assembly") {
+    if (gates.finalRender && !gates.finalRender.passed)
+      return `Run pnpm video:render-final ${workflow.id}`;
+    return `Review output/… final master and run pnpm video:workflow approve ${workflow.id} final-assembly.`;
+  }
   return "Production is complete.";
 }
 

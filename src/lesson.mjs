@@ -79,14 +79,16 @@ export function normalizeLesson(raw, requestedEpisode) {
   }
   const moral = normalizeMoral(raw.ending ?? raw.moral);
   if (moral?.text) {
-    sentences.push({
-      id: `sentence-${String(sentences.length + 1).padStart(3, "0")}`,
-      sceneIndex: scenes.length - 1,
-      sentenceIndex: scenes.at(-1).sentences.length,
-      image: scenes.at(-1).image,
-      text: `${moral.prefix} ${moral.text}`.trim(),
-      kind: "moral",
-    });
+    for (const [moralIndex, segment] of splitMoralSegments(moral.text).entries()) {
+      sentences.push({
+        id: `sentence-${String(sentences.length + 1).padStart(3, "0")}`,
+        sceneIndex: scenes.length - 1,
+        sentenceIndex: scenes.at(-1).sentences.length + moralIndex,
+        image: scenes.at(-1).image,
+        text: moralIndex === 0 ? `${moral.prefix} ${segment}`.trim() : segment,
+        kind: "moral",
+      });
+    }
   }
 
   const tts = raw.tts ?? raw.production?.tts ?? {};
@@ -185,9 +187,9 @@ export function normalizeLesson(raw, requestedEpisode) {
     sentences,
   };
 
-  if (normalized.renderMode !== "double-pass-shadowing") {
+  if (!["double-pass-shadowing", "storybook-silent"].includes(normalized.renderMode)) {
     throw new Error(
-      `Unsupported renderMode "${normalized.renderMode}". Expected "double-pass-shadowing".`,
+      `Unsupported renderMode "${normalized.renderMode}". Expected "double-pass-shadowing" or "storybook-silent".`,
     );
   }
   if (normalized.tts.provider !== "edge") {
@@ -201,6 +203,15 @@ export function normalizeLesson(raw, requestedEpisode) {
 export function expectedDuration(lesson, audioDurations) {
   if (audioDurations.length !== lesson.sentences.length) {
     throw new Error("Audio duration count does not match sentence count.");
+  }
+  if (lesson.series === "ESSY") {
+    // Essay timeline: one narration clip per block, each clip padded with the
+    // block's trailing pause. No intro/countdown/second-pass overhead.
+    return lesson.sentences.reduce(
+      (total, sentence, index) =>
+        total + audioDurations[index] + (sentence.pauseAfterSec ?? 0),
+      0,
+    );
   }
   const endingSeconds = lesson.ending.length > 0 ? 4 : 0;
   if (lesson.series === "ESSD") {
@@ -387,6 +398,16 @@ function normalizeMoral(value) {
         : "The moral is...",
     text,
   };
+}
+
+function splitMoralSegments(value) {
+  const segments =
+    String(value)
+      .trim()
+      .match(/[^.!?]+(?:[.!?]+["']?|$)/g)
+      ?.map((segment) => segment.trim())
+      .filter(Boolean) ?? [];
+  return segments.length > 0 ? segments : [String(value).trim()];
 }
 
 function positiveInteger(value, fallback, label) {

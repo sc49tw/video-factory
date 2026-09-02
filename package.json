@@ -5,8 +5,14 @@
   "scripts": {
     "video:workflow": "node scripts/video-workflow-codex.mjs",
     "video:render": "node scripts/render-lesson.mjs",
+    "video:subtitle-review": "node scripts/render-review-540p-subtitled.mjs",
+    "video:render-final": "node scripts/render-essay-final.mjs",
+    "video:build-narration-master": "node scripts/build-narration-master.mjs",
+    "video:build-bgm": "node scripts/build-bgm-extended.mjs",
+    "test:subtitle": "node scripts/_test-subtitle-segmentation.mjs",
+    "test:essay-identity": "node --test scripts/_test-essay-identity.mjs",
     "test": "node --test",
-    "typecheck": "node --check scripts/render-lesson.mjs && node --check scripts/video-workflow-codex.mjs && node --check src/categories.mjs && node --check src/draft-workflow.mjs && node --check src/production-package.mjs && node --check src/stage-prompt.mjs && node --check src/gates.mjs && node --check src/lesson.mjs && node --check src/workflow.mjs"
+    "typecheck": "node --check scripts/render-lesson.mjs && node --check scripts/build-assembly-timeline.mjs && node --check scripts/video-workflow-codex.mjs && node --check scripts/_build-subtitle-timeline.mjs && node --check scripts/subtitle-config.mjs && node --check scripts/render-review-540p-subtitled.mjs && node --check scripts/_test-subtitle-segmentation.mjs && node --check src/assembly-timeline.mjs && node --check src/categories.mjs && node --check src/draft-workflow.mjs && node --check src/essay-episode.mjs && node --check src/production-package.mjs && node --check src/stage-prompt.mjs && node --check src/visual-plan.mjs && node --check src/gates.mjs && node --check src/lesson.mjs && node --check src/workflow.mjs"
   },
   "dependencies": {
     "ajv": "^8.20.0"

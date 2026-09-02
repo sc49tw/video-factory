@@ -1,0 +1,26 @@
+{
+  "series": "ESSY",
+  "name": "Essay Narration",
+  "mvpLanguage": "en",
+  "worldview": [
+    "Essays are original compositions, not summaries of source material.",
+    "Sources provide facts, ideas, arguments, counterarguments, examples, and inspiration only."
+  ],
+  "formatRules": [
+    "Narration is authored as ordered blocks; each block becomes one cached TTS unit.",
+    "Blocks carry optional pauseAfterSec to control pacing between paragraphs.",
+    "English only for the MVP."
+  ],
+  "visualRules": [
+    "Visuals are mood-based atmosphere, not literal illustration of the narration.",
+    "Static placeholder images with Ken Burns motion are acceptable for the first render.",
+    "Every visual asset must have provenance metadata in inbox/<EPISODE>/visuals.json."
+  ],
+  "provenanceFields": [
+    "sourceUrl",
+    "creator",
+    "license",
+    "downloadedAt",
+    "originalFilename"
+  ]
+}

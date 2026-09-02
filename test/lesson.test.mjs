@@ -192,3 +192,28 @@ test("ESSD lesson appends the approved moral with its spoken prefix", () => {
   );
   assert.equal(lesson.sentences[1].kind, "moral");
 });
+
+test("ESSD lesson splits a multi-sentence moral into separate shadowing rounds", () => {
+  const lesson = normalizeLesson({
+    episode: "ESSD-0013",
+    series: "ESSD",
+    subtype: "classic-twisted",
+    title: "Split Moral",
+    scenes: [{image: "scene01.png", sentences: ["Story."]}],
+    ending: {
+      text: "Sometimes, silence doesn't mean blindness. People simply know the cost of speaking the truth.",
+      tts: true,
+    },
+  });
+  assert.equal(lesson.sentences.length, 3);
+  assert.equal(
+    lesson.sentences[1].text,
+    "The moral is... Sometimes, silence doesn't mean blindness.",
+  );
+  assert.equal(
+    lesson.sentences[2].text,
+    "People simply know the cost of speaking the truth.",
+  );
+  assert.equal(lesson.sentences[1].kind, "moral");
+  assert.equal(lesson.sentences[2].kind, "moral");
+});

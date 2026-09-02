@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0001",
+  "completedAt": "2026-08-23T14:07:28.734Z",
+  "totalDurationMs": 52273,
+  "sentenceCount": 18,
+  "outputDurationSec": 469.349,
+  "ttsCacheHits": 18,
+  "ttsCacheMisses": 0,
+  "visualShotCount": 59,
+  "attempts": {
+    "rendering": {
+      "total": 3,
+      "consecutiveFailures": 0,
+      "totalDurationMs": 0,
+      "lastAttemptAt": "2026-08-23T14:07:28.737Z",
+      "lastResult": "success",
+      "lastError": null
+    }
+  },
+  "improvements": []
+}

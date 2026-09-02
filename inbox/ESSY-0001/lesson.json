@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0001",
+  "series": "ESSY",
+  "subtype": "essay",
+  "title": "ESSY-0001 — Why Life Starts Feeling Different After 40",
+  "language": "en",
+  "renderMode": "essay-narration",
+  "topic": null,
+  "sources": [],
+  "voice": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%"
+  },
+  "sections": [
+    {
+      "id": "n001",
+      "heading": "Adding",
+      "visual": {
+        "image": "scene01.png"
+      },
+      "narration": [
+        {
+          "id": "n001",
+          "text": "For the first few decades of life, progress usually means adding something.\n\nMore skills. More money. More friends. A better job. A bigger home. More experiences. More options.\n\nWhen you're young, this makes sense.\n\nYour world is still expanding."
+        }
+      ]
+    },
+    {
+      "id": "n002",
+      "heading": "Possibilities",
+      "visual": {
+        "image": "scene02.png"
+      },
+      "narration": [
+        {
+          "id": "n002",
+          "text": "You don't know where you'll live, what kind of work you'll do, who you'll become, or what kind of life you'll eventually build.\n\nSo you collect possibilities.\n\nYou say yes.\n\nYou try things.\n\nYou keep doors open.\n\nAnd for a while, having more choices feels exactly like freedom."
+        }
+      ]
+    },
+    {
+      "id": "n003",
+      "heading": "Something Changes",
+      "visual": {
+        "image": "scene03.png"
+      },
+      "narration": [
+        {
+          "id": "n003",
+          "text": "But somewhere along the way, something begins to change.\n\nNot necessarily at forty.\n\nNot on your birthday.\n\nThere isn't a particular morning when you wake up and suddenly understand your life.\n\nIt's more subtle than that."
+        }
+      ]
+    },
+    {
+      "id": "n004",
+      "heading": "Everything Has a Cost",
+      "visual": {
+        "image": "scene04.png"
+      },
+      "narration": [
+        {
+          "id": "n004",
+          "text": "You start noticing that every new thing you add also asks something from you.\n\nEvery possession needs space.\n\nEvery subscription wants money.\n\nEvery friendship needs time.\n\nEvery ambition creates another standard you can fail to meet.\n\nEvery opportunity becomes another decision.\n\nAnd the things that once made life feel bigger can slowly begin to make it feel crowded."
+        }
+      ]
+    },
+    {
+      "id": "n005",
+      "heading": "The Question Changes",
+      "visual": {
+        "image": "scene05.png"
+      },
+      "narration": [
+        {
+          "id": "n005",
+          "text": "Maybe this is one reason life starts feeling different in middle age.\n\nThe question changes.\n\nWhen you're twenty-five, you might ask:\n\n\"What else can I do?\"\n\nLater, you may find yourself asking:\n\n\"What can I stop doing?\"\n\nThat sounds like giving up.\n\nBut it might actually be the beginning of a different kind of freedom."
+        }
+      ]
+    },
+    {
+      "id": "n006",
+      "heading": "Things Accumulate",
+      "visual": {
+        "image": "scene06.png"
+      },
+      "narration": [
+        {
+          "id": "n006",
+          "text": "Think about your home.\n\nMost of us don't wake up one day and decide to fill it with things we don't need.\n\nIt happens slowly.\n\nA drawer becomes two drawers.\n\nA shelf becomes a cabinet.\n\nSomething you once cared about becomes something you keep because throwing it away feels strangely difficult."
+        }
+      ]
+    },
+    {
+      "id": "n007",
+      "heading": "Identities Accumulate Too",
+      "visual": {
+        "image": "scene01.png"
+      },
+      "narration": [
+        {
+          "id": "n007",
+          "text": "The same thing happens to calendars.\n\nTo commitments.\n\nEven to identities.\n\nA job title that once felt exciting becomes something you're afraid to lose.\n\nA goal that once motivated you becomes an obligation.\n\nA version of yourself that made sense ten years ago keeps making decisions for the person you are today."
+        }
+      ]
+    },
+    {
+      "id": "n008",
+      "heading": "Letting Go",
+      "visual": {
+        "image": "scene02.png"
+      },
+      "narration": [
+        {
+          "id": "n008",
+          "text": "And perhaps that's why simplifying life can feel so uncomfortable.\n\nYou're not just removing objects.\n\nYou're questioning old decisions.\n\nYou're admitting that some things mattered once, but don't anymore.\n\nYou're allowing yourself to change."
+        }
+      ]
+    },
+    {
+      "id": "n009",
+      "heading": "The Self-Improvement Trap",
+      "visual": {
+        "image": "scene03.png"
+      },
+      "narration": [
+        {
+          "id": "n009",
+          "text": "Modern life teaches us to measure progress through accumulation.\n\nMore income.\n\nMore productivity.\n\nMore followers.\n\nMore achievements.\n\nEven self-improvement can become another form of accumulation.\n\nMore books to read.\n\nMore habits to build.\n\nMore routines to optimize.\n\nMore systems to maintain."
+        }
+      ]
+    },
+    {
+      "id": "n010",
+      "heading": "Maybe Less",
+      "visual": {
+        "image": "scene04.png"
+      },
+      "narration": [
+        {
+          "id": "n010",
+          "text": "At some point, trying to improve your life can become another thing making your life exhausting.\n\nMaybe the answer isn't always a better system.\n\nMaybe sometimes the answer is having less to manage.\n\nThis doesn't mean becoming passive.\n\nOr abandoning ambition.\n\nIt means becoming more selective."
+        }
+      ]
+    },
+    {
+      "id": "n011",
+      "heading": "Time Becomes Finite",
+      "visual": {
+        "image": "scene05.png"
+      },
+      "narration": [
+        {
+          "id": "n011",
+          "text": "When time feels unlimited, almost anything can seem worth doing.\n\nBut time begins to feel different when you understand, not intellectually but emotionally, that it is finite.\n\nA two-hour meeting is no longer just two hours.\n\nIt's an evening you didn't spend with someone."
+        }
+      ]
+    },
+    {
+      "id": "n012",
+      "heading": "The Calculation Changes",
+      "visual": {
+        "image": "scene06.png"
+      },
+      "narration": [
+        {
+          "id": "n012",
+          "text": "A purchase is no longer just money.\n\nIt may be another object you'll store, maintain, move, and eventually throw away.\n\nA promotion isn't simply more income.\n\nIt might also mean more responsibility, more stress, and less control of your time.\n\nThe calculation changes.\n\nAnd maybe that calculation is what maturity actually looks like."
+        }
+      ]
+    },
+    {
+      "id": "n013",
+      "heading": "What Is Worth Wanting",
+      "visual": {
+        "image": "scene01.png"
+      },
+      "narration": [
+        {
+          "id": "n013",
+          "text": "Not knowing how to get everything you want.\n\nBut knowing which things are worth wanting.\n\nThis is where ideas like purpose become more interesting.\n\nPeople often talk about finding a passion or discovering a single purpose in life.\n\nBut perhaps purpose is less dramatic than that."
+        }
+      ]
+    },
+    {
+      "id": "n014",
+      "heading": "Does Your Life Reflect It?",
+      "visual": {
+        "image": "scene02.png"
+      },
+      "narration": [
+        {
+          "id": "n014",
+          "text": "Maybe it's simply having fewer contradictions between what you say matters and how you actually spend your days.\n\nIf family matters, does your calendar reflect that?\n\nIf health matters, does your routine reflect that?\n\nIf freedom matters, how much of your lifestyle depends on continuing to earn more?\n\nIf curiosity matters, when was the last time you had enough empty time to follow it?"
+        }
+      ]
+    },
+    {
+      "id": "n015",
+      "heading": "Remove",
+      "visual": {
+        "image": "scene03.png"
+      },
+      "narration": [
+        {
+          "id": "n015",
+          "text": "A meaningful life may have less to do with what we add next and more to do with what we're willing to remove.\n\nRemove the obligation you accepted out of habit.\n\nRemove the purchase you don't actually want.\n\nRemove the goal you inherited from someone else.\n\nRemove the need to appear successful to people who rarely think about you."
+        }
+      ]
+    },
+    {
+      "id": "n016",
+      "heading": "Hear Yourself Again",
+      "visual": {
+        "image": "scene04.png"
+      },
+      "narration": [
+        {
+          "id": "n016",
+          "text": "Remove enough noise, and something interesting happens.\n\nYou begin to hear your own preferences again.\n\nMaybe you don't want a bigger life.\n\nMaybe you want a quieter one.\n\nMaybe you don't want to retire from doing things.\n\nYou just want the freedom to choose what those things are."
+        }
+      ]
+    },
+    {
+      "id": "n017",
+      "heading": "Enough",
+      "visual": {
+        "image": "scene05.png"
+      },
+      "narration": [
+        {
+          "id": "n017",
+          "text": "Maybe you don't need more friends.\n\nYou need more time for the few relationships that matter.\n\nMaybe you don't need another productivity tool.\n\nYou need fewer commitments.\n\nAnd maybe you don't need to become a completely different person.\n\nYou just need enough space to notice who you've already become."
+        }
+      ]
+    },
+    {
+      "id": "n018",
+      "heading": "Editing a Life",
+      "visual": {
+        "image": "scene06.png"
+      },
+      "narration": [
+        {
+          "id": "n018",
+          "text": "Growing older is often described as a process of losing things.\n\nEnergy.\n\nYouth.\n\nPossibility.\n\nBut there is another side to it.\n\nYou can also lose unnecessary expectations.\n\nYou can lose the need to prove yourself.\n\nYou can lose goals that no longer belong to you.\n\nAnd strangely, losing these things can make life feel larger.\n\nNot because you suddenly have more.\n\nBut because what remains becomes easier to see.\n\nMaybe freedom isn't having endless choices.\n\nMaybe freedom is reaching a point where you no longer need so many of them.\n\nAnd maybe that's why life starts feeling different after forty.\n\nFor the first half, we learn how to build a life.\n\nFor the next part, we may have to learn something harder.\n\nHow to edit it."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0001",
+  "title": "ESSY-0001 — Why Life Starts Feeling Different After 40",
+  "startedAt": "2026-08-23T14:06:36.461Z",
+  "sourceLesson": "inbox/ESSY-0001/lesson.json",
+  "lessonSha256": "c1d4ef5c9c98a65779d88f15fb0dbf25f07cb1388e479e77cf758763a1c04fee",
+  "images": [
+    {
+      "source": "inbox/ESSY-0001/scene01.png",
+      "file": "scene01.png",
+      "sha256": "57b68f51ed71f5c9157c0421468ee04d14bba788f537d4af1c2f6d1f94789191",
+      "modifiedAt": "2026-08-23T09:02:22.242Z",
+      "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+      "creator": "video-factory",
+      "license": "CC0-1.0 (self-produced)",
+      "downloadedAt": "2026-08-23",
+      "originalFilename": "scene01.png"
+    },
+    {
+      "source": "inbox/ESSY-0001/scene02.png",
+      "file": "scene02.png",
+      "sha256": "5ef7c90863b1da462ae629d85587b65e43ec90e85cdd224fff73e0bc63196226",
+      "modifiedAt": "2026-08-23T09:02:22.320Z",
+      "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+      "creator": "video-factory",
+      "license": "CC0-1.0 (self-produced)",
+      "downloadedAt": "2026-08-23",
+      "originalFilename": "scene02.png"
+    },
+    {
+      "source": "inbox/ESSY-0001/scene03.png",
+      "file": "scene03.png",
+      "sha256": "8b2af03aa4fc4c1db1f92aadf7f8cbfec970fc6cf178f589b5731d83f10b83d6",
+      "modifiedAt": "2026-08-23T09:02:22.423Z",
+      "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+      "creator": "video-factory",
+      "license": "CC0-1.0 (self-produced)",
+      "downloadedAt": "2026-08-23",
+      "originalFilename": "scene03.png"
+    },
+    {
+      "source": "inbox/ESSY-0001/scene04.png",
+      "file": "scene04.png",
+      "sha256": "176ff01c9783f8d6296c6b06dde155d54de1f98eafc0eda4eeb5db5bf0259ca8",
+      "modifiedAt": "2026-08-23T09:02:22.519Z",
+      "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+      "creator": "video-factory",
+      "license": "CC0-1.0 (self-produced)",
+      "downloadedAt": "2026-08-23",
+      "originalFilename": "scene04.png"
+    },
+    {
+      "source": "inbox/ESSY-0001/scene05.png",
+      "file": "scene05.png",
+      "sha256": "32f1139f08c3c95c6f212d471e8fb1f4fe31147758cb509b7a5e488f5771505e",
+      "modifiedAt": "2026-08-23T09:02:22.584Z",
+      "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+      "creator": "video-factory",
+      "license": "CC0-1.0 (self-produced)",
+      "downloadedAt": "2026-08-23",
+      "originalFilename": "scene05.png"
+    },
+    {
+      "source": "inbox/ESSY-0001/scene06.png",
+      "file": "scene06.png",
+      "sha256": "c90b8c591c89469c5f48e6148bc338b1eb962d68742ac87307e56c8849676c18",
+      "modifiedAt": "2026-08-23T09:02:22.649Z",
+      "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+      "creator": "video-factory",
+      "license": "CC0-1.0 (self-produced)",
+      "downloadedAt": "2026-08-23",
+      "originalFilename": "scene06.png"
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sentenceCount": 18,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "countdownSeconds": 0,
+  "transitionSeconds": 0,
+  "introSeconds": 0,
+  "shadowingTempo": 1,
+  "finalVideo": "output/ESSY-0001/ESSY-0001.mp4",
+  "topic": null,
+  "sources": [],
+  "completedAt": "2026-08-23T14:07:28.734Z",
+  "status": "success",
+  "error": null,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "blockId": "n001",
+      "path": "projects/ESSY-0001/audio/sentence-001.mp3",
+      "durationSec": 26.208,
+      "textSha256": "7187b8051b1cdb5f569dc4acab0befe095b297e9b8dc1874e8bf1017f35efff8",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-002",
+      "blockId": "n002",
+      "path": "projects/ESSY-0001/audio/sentence-002.mp3",
+      "durationSec": 22.656,
+      "textSha256": "cc55989fe866a907183198a5e8ec7bda7b8fb55ac1a61c7d2189eeefd8f82acd",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-003",
+      "blockId": "n003",
+      "path": "projects/ESSY-0001/audio/sentence-003.mp3",
+      "durationSec": 17.736,
+      "textSha256": "9b22184e11d7f5b65a80f5a4e4df651026bbb43073eabb8a7cb4107f1e2ccda5",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-004",
+      "blockId": "n004",
+      "path": "projects/ESSY-0001/audio/sentence-004.mp3",
+      "durationSec": 27.504,
+      "textSha256": "a44556aa7ec10031fdca517a7871025f78d4711c8185c2c239a37d849b84c7f6",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-005",
+      "blockId": "n005",
+      "path": "projects/ESSY-0001/audio/sentence-005.mp3",
+      "durationSec": 26.28,
+      "textSha256": "cdf9d76a7267efe13dba1b516953ab37b4b86bb98b9a4d40f9524afefc3a892b",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-006",
+      "blockId": "n006",
+      "path": "projects/ESSY-0001/audio/sentence-006.mp3",
+      "durationSec": 22.56,
+      "textSha256": "697f446d42f70c7568bba67e71ff018f59f3380178aa640acb1dc10495e78471",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-007",
+      "blockId": "n007",
+      "path": "projects/ESSY-0001/audio/sentence-007.mp3",
+      "durationSec": 23.712,
+      "textSha256": "2ccf878987e8c520497eb560e2da1ecf9f037d6f59fc9ea9296a05ce3116bed7",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-008",
+      "blockId": "n008",
+      "path": "projects/ESSY-0001/audio/sentence-008.mp3",
+      "durationSec": 18.48,
+      "textSha256": "4555c6b25632c4f7a967d0acd8de00170cc02b4e90615ea9214f00d559c45768",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-009",
+      "blockId": "n009",
+      "path": "projects/ESSY-0001/audio/sentence-009.mp3",
+      "durationSec": 28.296,
+      "textSha256": "8288716e271c12747cc3e790ccd2f154dfb8b2cfcaa3c016e74a038e2edf19af",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-010",
+      "blockId": "n010",
+      "path": "projects/ESSY-0001/audio/sentence-010.mp3",
+      "durationSec": 22.944,
+      "textSha256": "f0676d8dae0af08bcfd1ab997be584b23f759f1bc4399f002b5b064898abf314",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-011",
+      "blockId": "n011",
+      "path": "projects/ESSY-0001/audio/sentence-011.mp3",
+      "durationSec": 20.256,
+      "textSha256": "a6ce4e070de06be0a9218e194e24638eb36a9876c01365e597e8736aea65d91e",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-012",
+      "blockId": "n012",
+      "path": "projects/ESSY-0001/audio/sentence-012.mp3",
+      "durationSec": 27.528,
+      "textSha256": "64bafb356d575e346886619652f3930a566cff005f6801c44439cbefbc303aa6",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-013",
+      "blockId": "n013",
+      "path": "projects/ESSY-0001/audio/sentence-013.mp3",
+      "durationSec": 20.52,
+      "textSha256": "7cdb167245db68d5cd0dade69fc00edc24358b7dc55f9e229ec62883e7dd4686",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-014",
+      "blockId": "n014",
+      "path": "projects/ESSY-0001/audio/sentence-014.mp3",
+      "durationSec": 26.976,
+      "textSha256": "aab09cf95b3fe48be95874042674881ef6ae3bdeac014815e7b17936fa0b6b7d",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-015",
+      "blockId": "n015",
+      "path": "projects/ESSY-0001/audio/sentence-015.mp3",
+      "durationSec": 22.896,
+      "textSha256": "0075ec5799e06a44551a59242b1bbedd2a77d4894356be58622f991ee6556392",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-016",
+      "blockId": "n016",
+      "path": "projects/ESSY-0001/audio/sentence-016.mp3",
+      "durationSec": 21.864,
+      "textSha256": "e2d7cf00a7072da824f3ae9d3cb8a7feb21d149e2a2475b538493ec98bc9dbac",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-017",
+      "blockId": "n017",
+      "path": "projects/ESSY-0001/audio/sentence-017.mp3",
+      "durationSec": 22.032,
+      "textSha256": "6e486320cf60e7959dc560151259389f81b9b9f4aa5a90a88af7047d13f4e550",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-018",
+      "blockId": "n018",
+      "path": "projects/ESSY-0001/audio/sentence-018.mp3",
+      "durationSec": 59.808,
+      "textSha256": "75be0f2c46c1c9f43ac18d9cb55f2531e16147ffa7f573ef162ed12b6c9deaae",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    }
+  ],
+  "subtitles": "projects/ESSY-0001/subtitles/first-pass.srt",
+  "visualPlan": "projects/ESSY-0001/visual-plan.json",
+  "visualShotCount": 59,
+  "visualPlanStrategy": "sentence-boundary-proportional",
+  "estimatedDurationSec": 469.056,
+  "validation": {
+    "passed": true,
+    "fileSize": 17168190,
+    "durationSec": 469.349,
+    "hasVideo": true,
+    "hasAudio": true,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  }
+}

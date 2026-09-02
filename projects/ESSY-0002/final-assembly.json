@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0002",
+  "title": {
+    "episodeTitle": "When the Future Suddenly Becomes Visible",
+    "fadeInStartSec": 5.0,
+    "fadeInDurSec": 0.6,
+    "fadeOutStartSec": 8.0,
+    "fadeOutDurSec": 0.75
+  },
+  "endCard": {
+    "source": "seriesTitle",
+    "note": "Text is resolved from scripts/essay-identity-config.mjs (single authoritative seriesTitle). Never stored per-episode. v1 regression: endCard.text was 'ESSY' (internal label) and the opening hierarchy was inverted — both fixed by the shared identity contract."
+  },
+  "endingHoldSec": 4.0,
+  "music": {
+    "selectedTrack": "Dreamland",
+    "artist": "Aakash Gandhi",
+    "source": "YouTube Audio Library",
+    "attributionRequired": false,
+    "sourcePath": "projects/ESSY-0001/music/candidates/Dreamland - Aakash Gandhi.mp3",
+    "extendedPath": "projects/ESSY-0002/music/dreamland-extended.wav",
+    "planPath": "projects/ESSY-0002/music/bgm-plan.json",
+    "crossfadeDurationSec": 4,
+    "finalFadeOutDurSec": 4,
+    "gainDb": -9,
+    "ducking": false,
+    "note": "-9 dB is applied at MIX TIME only; never baked into the extended master. Rebuilt with build-bgm-extended.mjs using the ESSY-0001 approved equal-power crossfade / low-RMS-anchor methodology."
+  }
+}

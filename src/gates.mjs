@@ -1,5 +1,9 @@
 import {readFile, stat} from "node:fs/promises";
 import path from "node:path";
+import {
+  isEssayInput,
+  normalizeEssayEpisode,
+} from "./essay-episode.mjs";
 import {normalizeLesson, resolveInside} from "./lesson.mjs";
 
 export const STAGES = Object.freeze([
@@ -10,19 +14,87 @@ export const STAGES = Object.freeze([
   "render-ready",
   "rendering",
   "qa",
+  "final-assembly",
   "completed",
 ]);
 
 export async function evaluateEpisodeGates({factoryRoot, episode, series, subtype}) {
-  const inboxRoot = path.join(factoryRoot, "inbox", episode);
-  const lessonPath = path.join(inboxRoot, "lesson.json");
+  // Renderer input: inbox is canonical, projects/<EP>/source/lesson.json is the
+  // accepted fallback used by the ESSY final-assembly pipeline.
+  let inboxRoot = path.join(factoryRoot, "inbox", episode);
+  let lessonPath = path.join(inboxRoot, "lesson.json");
+  let usingFallbackLesson = false;
+  try {
+    await stat(lessonPath);
+  } catch {
+    const fallbackPath = path.join(
+      factoryRoot, "projects", episode, "source", "lesson.json",
+    );
+    try {
+      await stat(fallbackPath);
+      usingFallbackLesson = true;
+      lessonPath = fallbackPath;
+      inboxRoot = path.dirname(fallbackPath);
+    } catch {
+      // fall through: report the canonical inbox path as missing
+    }
+  }
   const result = {
     lesson: {passed: false, reason: null},
     contentApproval: {passed: false, reason: "Content approval has not been recorded."},
     images: {passed: false, reason: null, missing: []},
     render: {passed: false, reason: null},
     qa: {passed: false, reason: null},
+    // Vacuously passed for series without a final-assembly stage (ESSD/LLFC).
+    // For ESSY it becomes applicable and is evaluated below.
+    finalRender: {passed: true, reason: null, applicable: false},
   };
+
+  // ---- ESSY final-assembly gate ----
+  // Evaluated independently of the lesson gate so a missing renderer input can
+  // never hide a final-assembly drift. Applicable only when the episode
+  // declares a Final-Assembly spec (projects/<EP>/final-assembly.json). A
+  // final MP4 alone is NOT enough: the gate requires the renderer's technical
+  // QA artifact (temp/final-assembly/final-assembly-qa.json) with a passing
+  // subtitle QA. Human sign-off is a separate approval (finalQa).
+  let finalAssemblySpec = null;
+  try {
+    finalAssemblySpec = JSON.parse(
+      await readFile(
+        path.join(factoryRoot, "projects", episode, "final-assembly.json"),
+        "utf8",
+      ),
+    );
+  } catch {
+    finalAssemblySpec = null;
+  }
+  if (finalAssemblySpec) {
+    result.finalRender.applicable = true;
+    const finalQaPath = path.join(
+      factoryRoot, "projects", episode, "temp", "final-assembly",
+      "final-assembly-qa.json",
+    );
+    try {
+      const finalQa = JSON.parse(await readFile(finalQaPath, "utf8"));
+      const subtitleQaRecorded = finalQa.subtitleQa != null;
+      const subtitleQaPassed =
+        !subtitleQaRecorded || finalQa.subtitleQa.passed === true; // legacy masters predate the shared subtitle QA gate
+      const outputExists = finalQa.output
+        ? (await stat(path.join(factoryRoot, finalQa.output))).isFile()
+        : false;
+      result.finalRender.passed = subtitleQaPassed && outputExists;
+      result.finalRender.output = finalQa.output ?? null;
+      result.finalRender.reason = result.finalRender.passed
+        ? null
+        : !outputExists
+          ? `Final assembly QA output is missing: ${finalQa.output ?? "unrecorded"}.`
+          : "Final assembly subtitle QA has not passed.";
+    } catch {
+      result.finalRender.passed = false;
+      result.finalRender.reason =
+        "Final assembly has not been rendered (missing final-assembly-qa.json).";
+    }
+  }
 
   let raw;
   try {
@@ -37,7 +109,9 @@ export async function evaluateEpisodeGates({factoryRoot, episode, series, subtyp
 
   let lesson;
   try {
-    lesson = normalizeLesson(raw, episode);
+    lesson = isEssayInput(raw)
+      ? await normalizeEssayEpisode(raw, episode, inboxRoot)
+      : normalizeLesson(raw, episode);
   } catch (error) {
     result.lesson.reason = error.message;
     return result;
@@ -90,5 +164,9 @@ export function nextStageFromGates(gates, approvals = {}) {
   if (!gates.render.passed) return "render-ready";
   if (!gates.qa.passed) return "qa";
   if (!approvals.qa) return "qa";
+  if (gates.finalRender?.applicable) {
+    if (!gates.finalRender.passed) return "final-assembly";
+    if (!approvals.finalQa) return "final-assembly";
+  }
   return "completed";
 }

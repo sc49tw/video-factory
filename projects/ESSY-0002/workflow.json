@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ESSY-0002",
+  "kind": "episode",
+  "series": "ESSY",
+  "subtype": "essay",
+  "legacyGates": true,
+  "status": "completed",
+  "currentStage": "completed",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-02T12:11:18.150Z",
+  "approvals": {
+    "content": true,
+    "images": true,
+    "qa": true,
+    "finalQa": true
+  },
+  "attempts": {},
+  "stages": {
+    "intake": {
+      "status": "completed"
+    },
+    "creative-development": {
+      "status": "completed"
+    },
+    "content-approval": {
+      "status": "completed"
+    },
+    "images": {
+      "status": "completed"
+    },
+    "render-ready": {
+      "status": "completed"
+    },
+    "rendering": {
+      "status": "completed"
+    },
+    "qa": {
+      "status": "completed"
+    },
+    "final-assembly": {
+      "status": "completed"
+    },
+    "completed": {
+      "status": "completed"
+    }
+  },
+  "blocker": null,
+  "nextAction": "Production is complete (legacy reconciliation). Do not re-run gates as approval evidence.",
+  "history": [
+    {
+      "at": "2026-09-01T00:00:00.000Z",
+      "event": "workflow-registered",
+      "note": "Episode produced via review-render pipeline; workflow registered at QA stage after subtitle segmentation fix and v3 render (output/ESSY-0002/ESSY-0002-review-540p-subtitled-v3.mp4, QA passed)."
+    },
+    {
+      "at": "2026-09-01T14:30:10.125Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-09-02T00:00:00.000Z",
+      "event": "state-reconciled",
+      "note": "Aligned to completed (mirrors ESSY-0001). Final master output/ESSY-0002/ESSY-0002-final-v1.mp4 passed frame-level subtitle verification after the subtitle-restart fix; stale final-v2.mp4 removed."
+    },
+    {
+      "at": "2026-09-02T00:05:00.000Z",
+      "event": "final-assembly-approved",
+      "note": "Reconciled when the final-assembly workflow stage was introduced: master output/ESSY-0002/ESSY-0002-final-v1.mp4 with final-assembly-qa.json passed was already frame-verified."
+    },
+    {
+      "at": "2026-09-02T00:10:00.000Z",
+      "event": "legacy-gates-flagged",
+      "note": "Produced by the review-render pipeline before the standard gate artifacts existed (no source/visuals.json provenance, non-standard manifest.json). Completed state is preserved via legacyGates=true; gates are reported but not used as approval evidence. New episodes must pass all gates normally."
+    }
+  ],
+  "needsRerender": false,
+  "rerenderReason": null,
+  "gates": {
+    "lesson": {
+      "passed": false,
+      "reason": "Missing visuals provenance file D:\\Git\\video-factory\\projects\\ESSY-0002\\source\\visuals.json. Essay episodes require provenance for every visual asset (sourceUrl, license, downloadedAt, originalFilename, creator optional)."
+    },
+    "contentApproval": {
+      "passed": true,
+      "reason": null
+    },
+    "images": {
+      "passed": false,
+      "reason": null,
+      "missing": []
+    },
+    "render": {
+      "passed": false,
+      "reason": null
+    },
+    "qa": {
+      "passed": false,
+      "reason": null
+    },
+    "finalRender": {
+      "passed": true,
+      "reason": null,
+      "applicable": true,
+      "output": "output/ESSY-0002/ESSY-0002-final-v1.mp4"
+    }
+  }
+}

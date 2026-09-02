@@ -1,0 +1,50 @@
+{
+  "scene01.png": {
+    "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+    "creator": "video-factory",
+    "license": "CC0-1.0 (self-produced)",
+    "downloadedAt": "2026-08-23",
+    "originalFilename": "scene01.png",
+    "notes": "Placeholder gradient - quiet urban morning mood. Replace with licensed stock/AI asset when available."
+  },
+  "scene02.png": {
+    "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+    "creator": "video-factory",
+    "license": "CC0-1.0 (self-produced)",
+    "downloadedAt": "2026-08-23",
+    "originalFilename": "scene02.png",
+    "notes": "Placeholder gradient - desk / warm lamp mood."
+  },
+  "scene03.png": {
+    "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+    "creator": "video-factory",
+    "license": "CC0-1.0 (self-produced)",
+    "downloadedAt": "2026-08-23",
+    "originalFilename": "scene03.png",
+    "notes": "Placeholder gradient - window grey light mood."
+  },
+  "scene04.png": {
+    "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+    "creator": "video-factory",
+    "license": "CC0-1.0 (self-produced)",
+    "downloadedAt": "2026-08-23",
+    "originalFilename": "scene04.png",
+    "notes": "Placeholder gradient - open green distance mood."
+  },
+  "scene05.png": {
+    "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+    "creator": "video-factory",
+    "license": "CC0-1.0 (self-produced)",
+    "downloadedAt": "2026-08-23",
+    "originalFilename": "scene05.png",
+    "notes": "Placeholder gradient - road at dusk mood."
+  },
+  "scene06.png": {
+    "sourceUrl": "generated locally via ffmpeg 'gradients' filter",
+    "creator": "video-factory",
+    "license": "CC0-1.0 (self-produced)",
+    "downloadedAt": "2026-08-23",
+    "originalFilename": "scene06.png",
+    "notes": "Placeholder gradient - minimal charcoal abstract mood."
+  }
+}

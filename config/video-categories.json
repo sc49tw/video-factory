@@ -11,7 +11,7 @@
         "firstPass": "full-with-subtitles",
         "interRoundPrompt": "Now it’s your turn.",
         "interRoundPromptSeconds": 3,
-        "secondPass": "full-without-subtitles",
+        "secondPass": "sentence-with-subtitles-then-countdown-without-subtitles",
         "shadowingTempo": 0.85,
         "countdownAfterEachSecondPassSentence": true,
         "cameraMotion": "none"
@@ -41,6 +41,23 @@
           "label": "LLFC",
           "description": "A structured English lesson built around a cinema theme.",
           "defaultSceneCount": 4,
+          "requiresCreativeDevelopment": true
+        }
+      }
+    },
+    "ESSY": {
+      "label": "Essay Narration",
+      "episodePattern": "^ESSY-[0-9]{4}$",
+      "episodePrefix": "ESSY-",
+      "digits": 4,
+      "renderBehavior": {
+        "cameraMotion": "kenburns",
+        "blockPauseSeconds": 0.6
+      },
+      "subtypes": {
+        "essay": {
+          "label": "Essay",
+          "description": "An original English essay narrated over mood-based visuals.",
           "requiresCreativeDevelopment": true
         }
       }
