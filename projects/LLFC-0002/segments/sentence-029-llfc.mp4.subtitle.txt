@@ -1,2 +1,0 @@
-Layered systems perform better because each system
-supports the others.

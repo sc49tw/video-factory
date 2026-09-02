@@ -1,2 +1,0 @@
-Performance under close inspection was outside
-the approved test range.

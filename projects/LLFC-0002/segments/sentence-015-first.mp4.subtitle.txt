@@ -1,2 +1,0 @@
-Glass decorations controlled walking routes inside
-the facility.

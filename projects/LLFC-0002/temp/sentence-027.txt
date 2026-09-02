@@ -1,1 +1,0 @@
-Visual occupancy simulation works best beyond the recommended inspection distance.

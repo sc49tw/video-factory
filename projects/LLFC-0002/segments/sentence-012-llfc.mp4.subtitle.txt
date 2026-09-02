@@ -1,2 +1,0 @@
-The facility used several independent layers of
-intrusion mitigation.

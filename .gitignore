@@ -1,7 +1,57 @@
-# Generated media and build artifacts
+# ============================================================
+# video-factory push policy — see docs/REPOSITORY_POLICY.md
+# Semantics: keep pipeline + rules + canonical inputs + decisions.
+# Do NOT track regenerable artifacts / downloaded media.
+# ============================================================
+
+# ---- Generated media and build artifacts ----
 node_modules/
 *.mp4
 output/
 projects/**/generated/
 projects/**/render/
 projects/**/output/
+
+# ---- Local secrets / environment variables ----
+.env
+.env.*
+!.env.example
+
+# ---- Minor OS / editor cruft ----
+.DS_Store
+
+# ---- Derived / regenerated artifacts (semantic directories) ----
+# TTS narration: <EP>/audio/ holds ONLY generated sentence mp3 + cue json.
+# Verified — the whole ROOT-level dir is safe to ignore. Uses single * (not **)
+# so deep assets/audio/ trees (bundled sfx) stay under B, not this rule.
+projects/*/audio/
+
+# Per-shot intermediate encodes + concat inputs / TTS caches
+projects/**/segments/
+projects/**/temp/
+
+# Generated subtitle passes / cue files
+projects/**/subtitles/
+
+# QA screenshot / image artifacts ONLY.
+# Scoped to images so future qa/*.md and qa/*.json decision records stay tracked.
+projects/**/qa/*.png
+projects/**/qa/*.jpg
+projects/**/qa/*.jpeg
+projects/**/qa/*.webp
+
+# Machine-generated render/QA logs only.
+# retrospective.json / final-assembly.json / manual decision metadata remain tracked.
+projects/**/logs/*.log
+
+# ---- Downloaded external assets ----
+assets/audio/raw/
+projects/**/sourcing/downloads/
+projects/**/assets/audio/sfx/
+
+# ---- Ambiguous — MANUAL decision, NOT auto-excluded ----
+# projects/<EP>/source/*.png        content/manual images (kept)
+# inbox/<EP>/*.png                   content/manual images (kept)
+# assets/images/**                   reusable vs per-episode (manual)
+# assets/overlays/**                 reusable source binary (kept)
+# templates/**                       asset templates (manual)
