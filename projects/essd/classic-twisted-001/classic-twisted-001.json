@@ -1,0 +1,42 @@
+{
+  "id": "CT001",
+  "series": "Classic Twisted",
+  "title": "The Tortoise and the Hare",
+  "mode": "story_only",
+
+  "lesson": {
+    "title": "The Moral of the Story",
+    "text": "Hard work beats talent only when talent stops trying."
+  },
+
+  "scenes": [
+    {
+      "id": "scene01",
+      "text": "Once upon a time, a tortoise challenged a hare to a race."
+    },
+    {
+      "id": "scene02",
+      "text": "The hare laughed and quickly ran far ahead."
+    },
+    {
+      "id": "scene03",
+      "text": "He looked back. The tortoise was nowhere to be seen."
+    },
+    {
+      "id": "scene04",
+      "text": "The hare found a cool tree and sat down to rest."
+    },
+    {
+      "id": "scene05",
+      "text": "The hare stretched his legs. He took a deep breath. He enjoyed the cool shade."
+    },
+    {
+      "id": "scene06",
+      "text": "Then he smiled, stood up, and kept running."
+    },
+    {
+      "id": "scene07",
+      "text": "When the tortoise reached the finish line, the hare was already waiting there."
+    }
+  ]
+}
