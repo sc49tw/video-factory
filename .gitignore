@@ -49,6 +49,12 @@ assets/audio/raw/
 projects/**/sourcing/downloads/
 projects/**/assets/audio/sfx/
 
+# ---- Generated audio / diagnostic media (path-specific, see docs/REPOSITORY_POLICY.md) ----
+/temp/
+projects/*/music/*.wav
+projects/*/music/candidates/
+projects/*/audition/*.mp3
+
 # ---- Ambiguous — MANUAL decision, NOT auto-excluded ----
 # projects/<EP>/source/*.png        content/manual images (kept)
 # inbox/<EP>/*.png                   content/manual images (kept)
