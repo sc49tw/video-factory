@@ -27,9 +27,11 @@ import path from "node:path";
 import process from "node:process";
 import {buildSubtitleTimeline} from "./_build-subtitle-timeline.mjs";
 import {SUBTITLE_CONFIG} from "./subtitle-config.mjs";
+import {resolveStillMotion, stillImageFilter} from "./_still-motion.mjs";
 import {readWorkflow, refreshEpisodeWorkflow, recordEvent} from "../src/workflow.mjs";
 import {
-  buildOpeningTitleFilters,
+  buildColdOpenTitleCardFilter,
+  buildEndingCardFilter,
   resolveEndingCardText,
   resolveEssayIdentity,
 } from "./essay-identity-config.mjs";
@@ -73,6 +75,8 @@ if (IDENTITY.ignoredEndCardOverride) {
 }
 
 const logLines = [];
+let coldOpenTitleCards = [];
+let narrationSuppressWindows = [];
 
 function log(message) {
   const line = `[FINAL-ASM] ${message}`;
@@ -109,6 +113,20 @@ async function main() {
     readJson(path.join(projectRoot, "assembly-timeline.json")),
     readJson(path.join(projectRoot, "manifest.json")),
   ]);
+  const productionPackage = await readJson(
+    path.join(factoryRoot, "projects", "_drafts", episode, "production-package.json"),
+  ).catch(() => null);
+  const coldOpen = productionPackage?.packaging?.coldOpenExperiment;
+  coldOpenTitleCards = coldOpen?.titleCards ?? [];
+  if (coldOpen?.suppressBlockNarration) {
+    const sentenceIds = new Set(
+      coldOpenTitleCards.map((card) => `sentence-${String(card.blockId ?? "").replace(/^n/i, "")}`),
+    );
+    narrationSuppressWindows = (timeline.blocks ?? [])
+      .filter((block) => sentenceIds.has(block.sentenceId))
+      .map((block) => ({startSec: block.startSec ?? 0, endSec: block.endSec ?? 0}))
+      .filter((window) => window.endSec > window.startSec);
+  }
   // Structural validation — NO hard-coded shot count. The expected structure is
   // derived from the episode's own assembly timeline:
   const blocks = timeline.blocks ?? [];
@@ -193,18 +211,16 @@ async function main() {
       shot.absoluteStartSec ?? shot.startSec,
       shot.absoluteEndSec ?? shot.endSec,
     );
-    let blockShotIndex = 0;
-    for (const other of timeline.shots) {
-      if (other.blockId === shot.blockId && other.index < shot.index) blockShotIndex += 1;
-    }
+    // P1: still-image motion is metadata-driven (stillMotion) and never
+    // derived from block/shot index parity.
     log(`SHOT ${shot.index + 1}/${timeline.shots.length} ${shot.slotId} (${shot.mediaType}, ${shot.renderDurationSec.toFixed(3)}s, ${shotCues.length} cues)`);
     const isTitleShot = shot.index === 0;
     if (shot.mediaType === "video") {
-      await renderVideoShot({shot, shotCues, clipPath, isTitleShot});
+      await renderVideoShot({shot, shotCues, clipPath});
     } else {
       await renderPhotoShot({
         shot, shotCues, clipPath,
-        motionIndex: blockShotIndex % 2,
+        stillMotion: resolveStillMotion(shot),
         frameCount: Math.ceil(shot.renderDurationSec * FPS),
       });
     }
@@ -218,7 +234,7 @@ async function main() {
     if (shot.index === timeline.shots.length - 1) {
       clips.push(clipPath);
       const holdPath = path.join(tempRoot, "ending-hold.mp4");
-      await renderEndingHold({shot, clipPath, motionIndex: blockShotIndex % 2, outputPath: holdPath});
+      await renderEndingHold({shot, clipPath, outputPath: holdPath});
       clips.push(holdPath);
       log(`ENDING HOLD rendered (${DECISIONS.endingHoldSec.toFixed(3)}s, no subtitles, no CTA)`);
       continue;
@@ -286,8 +302,8 @@ async function main() {
     "-i", narrationMasterPath,
     "-i", extendedSource,
     "-filter_complex",
-    `[1:a]apad=whole_dur=${musicTotal.toFixed(3)},atrim=duration=${musicTotal.toFixed(3)},anull[nar];` +
-      `[2:a]volume=${musicGain},apad=whole_dur=${musicTotal.toFixed(3)},atrim=duration=${musicTotal.toFixed(3)}[bgm];` +
+    `[1:a]${narrationSuppressFilter()}apad,atrim=duration=${musicTotal.toFixed(3)},anull[nar];` +
+      `[2:a]volume=${musicGain},apad,atrim=duration=${musicTotal.toFixed(3)}[bgm];` +
       `[nar][bgm]amix=inputs=2:duration=first:normalize=0:dropout_transition=0[mix]`,
     "-map", "0:v:0", "-map", "[mix]",
     "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
@@ -375,13 +391,13 @@ async function main() {
 // Shot renderers (same mechanical treatment as the approved review cut)
 // ---------------------------------------------------------------------------
 
-async function renderVideoShot({shot, shotCues, clipPath, isTitleShot}) {
+async function renderVideoShot({shot, shotCues, clipPath}) {
   const subtitleFilters = await buildFinalSubtitleFilters({clipPath, cueList: shotCues});
   const filters = [
     `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=increase:flags=lanczos`,
     `crop=${WIDTH}:${HEIGHT}`,
     `fps=${FPS}`,
-    ...(isTitleShot ? [openingTitleFilter()] : []),
+    ...coldOpenFiltersForShot(shot),
     subtitleFilters,
     "format=yuv420p",
   ].filter(Boolean).join(",");
@@ -395,10 +411,11 @@ async function renderVideoShot({shot, shotCues, clipPath, isTitleShot}) {
   ]);
 }
 
-async function renderPhotoShot({shot, shotCues, clipPath, motionIndex, frameCount}) {
+async function renderPhotoShot({shot, shotCues, clipPath, stillMotion, frameCount}) {
   const subtitleFilters = await buildFinalSubtitleFilters({clipPath, cueList: shotCues});
   const filters = [
-    kenBurnsFilter({frameCount, motionIndex}),
+    stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS, frameCount, stillMotion}),
+    ...coldOpenFiltersForShot(shot),
     subtitleFilters,
     "format=yuv420p",
   ].filter(Boolean).join(",");
@@ -412,7 +429,7 @@ async function renderPhotoShot({shot, shotCues, clipPath, motionIndex, frameCoun
   ]);
 }
 
-async function renderEndingHold({shot, clipPath, motionIndex, outputPath}) {
+async function renderEndingHold({shot, clipPath, outputPath}) {
   const hold = DECISIONS.endingHoldSec;
   const frameCount = Math.ceil(hold * FPS);
   // Hold source: the photo itself, or the final shot's LAST frame (video).
@@ -444,18 +461,20 @@ async function renderEndingHold({shot, clipPath, motionIndex, outputPath}) {
     ]);
     source = lastFramePath;
   }
-  // Gentle fade-in (0.4–1.4 s), readable hold, gentle fade-out (2.8–3.8 s).
-  const alpha =
-    `'if(lt(t,0.4),0,if(lt(t,1.4),(t-0.4)/1.0,` +
-    `if(lt(t,2.8),1,if(lt(t,3.8),(3.8-t)/1.0,0))))'`;
+  // Ending card is ALWAYS the series title (shared identity contract); the
+  // filter + canonical fade timing come from essay-identity-config.mjs so the
+  // final renderer and the 540p review renderer cannot drift.
   const textPath = path.join(tempRoot, "ending-title.txt");
-  // Ending card is ALWAYS the series title (shared identity contract).
   await writeFile(textPath, resolveEndingCardText({finalAssembly: DECISIONS}), "utf8");
   const filter = [
-    kenBurnsFilter({frameCount, motionIndex}),
-    `drawtext=fontfile=${escapeFilter(fontPath())}:textfile=${escapeFilter(relativeFactoryPath(textPath))}:` +
-      `expansion=none:fontcolor=white:fontsize=64:` +
-      `x=(w-text_w)/2:y=(h-text_h)/2:alpha=${alpha}`,
+    // Ending hold is intentionally STATIC (P1 policy: calm hold, no motion).
+    stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS, frameCount, stillMotion: "static"}),
+    buildEndingCardFilter({
+      fontPath: escapeFilter(fontPath()),
+      textFile: escapeFilter(relativeFactoryPath(textPath)),
+      fontSize: 64,
+      baseSec: 0,
+    }),
     "format=yuv420p",
   ].join(",");
   await run("ffmpeg", [
@@ -468,15 +487,26 @@ async function renderEndingHold({shot, clipPath, motionIndex, outputPath}) {
   ]);
 }
 
-function openingTitleFilter() {
-  // Shared ESSY identity contract: seriesTitle DOMINANT, episodeTitle secondary.
-  // Timing (fade in/out) still comes from the episode's title block.
-  return buildOpeningTitleFilters({
-    seriesTitle: IDENTITY.seriesTitle,
-    episodeTitle: IDENTITY.episodeTitle,
-    timing: DECISIONS.title,
-    fontPath: fontPath(),
-  });
+function coldOpenFiltersForShot(shot) {
+  return coldOpenTitleCards
+    .filter((card) => card.endSec > shot.absoluteStartSec && card.startSec < shot.absoluteEndSec)
+    .map((card) => buildColdOpenTitleCardFilter({
+      card: {
+        ...card,
+        startSec: Math.max(0, card.startSec - shot.absoluteStartSec),
+        endSec: Math.min(shot.renderDurationSec, card.endSec - shot.absoluteStartSec),
+      },
+      fontPath: fontPath(),
+      fontSize: card.kind === "channel" ? 72 : 48,
+    }));
+}
+
+function narrationSuppressFilter() {
+  if (!narrationSuppressWindows.length) return "";
+  const enable = narrationSuppressWindows
+    .map((window) => `between(t,${window.startSec.toFixed(3)},${window.endSec.toFixed(3)})`)
+    .join("+");
+  return `volume=0:enable='${enable}',`;
 }
 
 // ---------------------------------------------------------------------------
@@ -547,17 +577,8 @@ function sliceCues(absCues, startSec, endSec) {
   return clipped;
 }
 
-function kenBurnsFilter({frameCount, motionIndex}) {
-  const zoomIn = motionIndex % 2 === 0;
-  const zoom = zoomIn
-    ? `min(zoom+0.00018,1.025)`
-    : `if(eq(on,1),1.025,max(zoom-0.00018,1.0))`;
-  return (
-    `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=increase:flags=lanczos,` +
-    `zoompan=z='${zoom}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':` +
-    `d=${frameCount}:s=${WIDTH}x${HEIGHT}:fps=${FPS}`
-  );
-}
+// kenBurnsFilter removed (P1): still-image motion is metadata-driven via
+// scripts/_still-motion.mjs (static default, explicit slow-push opt-in).
 
 function fontPath() {
   if (process.env.VIDEO_FONT_PATH) {

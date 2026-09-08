@@ -137,6 +137,25 @@ async function submit([id, stage, fileArgument]) {
 async function approve([id, target]) {
   const state = await readDraftState(factoryRoot, id);
   if (state) {
+    // Draft-backed ESSY episodes remain governed by state.yaml through the
+    // render review.  QA is an episode gate (not one of the four creative
+    // artifact approvals), so route it here rather than rejecting the
+    // canonical `approve <EP> qa` command merely because a draft exists.
+    if (target === "qa") {
+      state.approvals.qa = {
+        approved: true,
+        approvedAt: new Date().toISOString(),
+      };
+      state.status = "final_assembly_pending";
+      state.updatedAt = new Date().toISOString();
+      state.history ??= [];
+      state.history.push({at: state.updatedAt, event: "qa-approved"});
+      await writeDraftState(factoryRoot, state);
+      await writeCurrentTask(state);
+      console.log(`Approved ${target} for ${id}.`);
+      printDraft(state);
+      return;
+    }
     await approveDraftStage(factoryRoot, state, target);
     await writeCurrentTask(state);
     console.log(`Approved ${target} for ${id}.`);
