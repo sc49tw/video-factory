@@ -1,6 +1,7 @@
 {
   "series": "ESSY",
   "name": "Essay Narration",
+  "ideaList": "series/ESSY/idea-list.yaml",
   "mvpLanguage": "en",
   "worldview": [
     "Essays are original compositions, not summaries of source material.",

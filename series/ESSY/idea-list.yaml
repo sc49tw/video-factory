@@ -1,0 +1,70 @@
+# ESSY editorial idea backlog
+#
+# Status vocabulary:
+# - idea: captured direction; not yet researched or scheduled
+# - research: ready for source research and editorial development
+# - final-assembly-pending: final master exists, awaiting the human final-assembly gate
+# - completed: final-assembly gate passed
+#
+# An episode reference records the production record that established a status.
+# Do not change an approved episode's story, English, or assets from this file.
+
+schemaVersion: "1.0"
+series: ESSY
+updatedAt: "2026-09-08"
+ideas:
+  - id: ESSY-IDEA-001
+    title: "人生每個階段都有不同的煩惱"
+    status: completed
+    completedEpisode: ESSY-0001
+    completedTitle: "Why Life Starts Feeling Different After 40"
+    note: "以中年後從累積轉向取捨的角度完成；final-assembly gate passed."
+
+  - id: ESSY-IDEA-002
+    title: "成功、比較，與快樂"
+    status: idea
+    hook: "不成功可不可以？"
+
+  - id: ESSY-IDEA-003
+    title: "怎麼樣用優雅的姿態變老"
+    status: research
+    hook: "很不想麻煩別人，但沒有人是一座孤島。"
+
+  - id: ESSY-IDEA-004
+    title: "當工作只剩下薪水：什麼時候可以離開朝九晚五？"
+    englishTitle: "When Work Is Just a Paycheck: When Can You Leave the 9-to-5?"
+    status: final-assembly-pending
+    episode: ESSY-0003
+    episodeTitle: "How Much of Your Life Are You Still Willing to Sell?"
+    hook: "How much of the life I have left am I willing to sell for financial security?"
+    note: "Final master exists; draft state awaits final-assembly approval."
+
+  - id: ESSY-IDEA-005
+    title: "如果我不需要很多朋友，我還能過得幸福嗎？"
+    englishTitle: "Can I Be Happy Without Many Friends?"
+    status: research
+    hook: "Maybe a good life doesn't require many relationships. Maybe it requires enough of the right ones."
+
+  - id: ESSY-IDEA-006
+    title: "AI 讓我變得更有生產力，卻離「好好生活」越來越遠"
+    status: research
+    hook: "當什麼都做得到之後，也許真正稀缺的能力，是決定什麼不要做。"
+
+  - id: ESSY-IDEA-007
+    title: "Dead Bedroom：為什麼婚姻終會走到令人失望的狀態？"
+    status: research
+    hook: "不是不愛了；但為什麼我們最後連靠近彼此都變得困難？"
+    note: "研究與敘事須避免將親密關係問題歸咎於任一方。"
+
+  - id: ESSY-IDEA-008
+    title: "人生中的不得不然"
+    status: idea
+    hook: "在人生所有不得不然之中，我們仍得決定，怎麼成為自己。"
+
+# Completed ESSY episodes that are useful editorial references but do not yet
+# correspond one-to-one with another backlog entry.
+completedEpisodeReferences:
+  - episode: ESSY-0002
+    title: "When the Future Suddenly Becomes Visible"
+    status: completed
+    note: "關於父母變老、時間變得可見，以及普通日子的有限性。"
