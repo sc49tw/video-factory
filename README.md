@@ -1,5 +1,9 @@
 # Video Factory
 
+> Making a new ESSY (reflective essay) episode? Start with
+> `docs/ESSY_EPISODE_RUNBOOK.md` — the single end-to-end path proven by
+> ESSY-0001/0002. Editorial rules: `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md`.
+
 ## Start every new video in Codex
 
 Codex is the only creative workflow entry point. Give Codex the series and

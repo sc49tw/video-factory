@@ -10,8 +10,20 @@ and the single entry point for "make a new ESSY episode from scratch".
 ## Stage 0 — Creative (per Playbook, human-approved)
 
 1. Split the approved script into semantic narration blocks (N001, N002, ...).
+   **Script Compression Pass (Playbook §2.1, ESSY-0004+):** before English
+   approval is frozen, run the canonical compression pass (idea repetition,
+   same-function sentences, restatement, example value, question density,
+   transition overhead, emotional-progression protection, ending discipline).
+   Record it in `projects/<EP>/compression-review.md` — mandatory when the
+   draft exceeds ~9 min; a written length justification is required above
+   ~10 min. No hard duration cap. The human approves the COMPRESSED English
+   script.
 2. Design a visual arc per block; split into sourcing slots (~7–10 s each),
    each with `editorialFunction`, `visualIntent` and an `avoid` list.
+   Still-image motion (P1): STATIC is the default. **Only** if a still
+   composition genuinely benefits from subtle emphasis may the slot record
+   `stillMotion: "slow-push"` in the sourcing/visual-plan metadata.
+   Absence of `stillMotion` = static; never infer motion from shot order.
 3. Run the sequence-level literalness check BEFORE generating search queries.
 4. Search Pexels (video-first), review candidates via contact sheet, select.
    Generic helpers: `scripts/search-pexels.mjs`, `scripts/download-selected-pexels.mjs`
@@ -29,8 +41,16 @@ node scripts/prepare-essy-real-input.mjs <EPISODE>   # builds inbox/<EP>/lesson.
 pnpm video:render <EPISODE>                          # TTS+VTT, visual plan, shot renders
 ```
 
-Artifacts: `projects/<EP>/audio/*.mp3`, `temp/*.vtt` (authoritative timing),
+Artifacts: `projects/<EP>/audio/*.mp3`, `temp/*.vtt` (block parent windows),
+`temp/<sentenceId>.words.json` (canonical word-boundary timing, written in the
+SAME edge-tts synthesis session as the audio — `scripts/generate-essy-tts.py`),
 `projects/<EP>/visual-plan.json`, `projects/<EP>/segments/*.mp4`.
+New-generation ESSY manifests carry `subtitleTiming.policy =
+"word-boundary-required"`: subtitle cues are timed by WordBoundary data
+(speechStart/speechEnd); semantic segmentation decides only text grouping.
+Missing/mismatched word timing FAILS subtitle QA before render. Legacy
+episodes without the policy load with an explicit warn/fallback in the QA
+report (never silent).
 
 ## Stage 2 — Subtitled 540p review (mandatory gate)
 
@@ -88,7 +108,15 @@ confirms EXTERNAL publication.
 ## Hard rules (recap)
 
 - Audio is the master timeline; never slice narration per shot.
-- Subtitle timing comes only from TTS VTT, never from shot boundaries.
+- Subtitle timing comes from edge-tts WordBoundary artifacts
+  (`temp/<sentenceId>.words.json`); VTT only provides block parent windows.
+  Never from shot boundaries. Legacy char-proportional timing is an explicit,
+  reported fallback — never production-grade.
 - Subtitles always use the shared timeline builder + QA gate.
 - Never modify approved story/English/images during rendering.
+- Legacy baseline warning: ESSY-0001/0002/0003 are frozen PUBLISHED baselines.
+  Rebuilding them with ESSY-0004+ renderer defaults (word-boundary subtitles,
+  STATIC-default still motion, canonical narration master) is NOT guaranteed
+  to reproduce their historical visual/subtitle behavior and is not treated
+  as bit-exact backward compatibility. Do not rerender or retro-polish them.
 - One current stage at a time; workflow.json must never disagree with reality.

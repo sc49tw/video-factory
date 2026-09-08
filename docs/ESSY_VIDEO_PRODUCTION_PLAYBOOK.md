@@ -26,6 +26,41 @@ ESSY is a reflective video-essay format. The tone is calm, mature and observatio
 
 Core editorial method: take a familiar assumption and examine it again from a different stage of life or a different angle. The video should invite reflection rather than announce that the viewer has been living incorrectly.
 
+### 2.1 Script Compression Pass (canonical, ESSY-0004+)
+
+Before the English script is approved and frozen, it goes through one editorial
+compression pass: **English Draft → Compression Pass → Human Approval →
+Storyboard / visual planning.** The objective is density, not brevity: remove
+conceptual redundancy, low-value restatement and transition overhead while
+preserving emotional progression, necessary pauses, contrast and the reflective
+ESSY tone. It is never a hard duration cap and never a rush-summary.
+
+Checks (applied in order):
+
+1. **Idea repetition** — has this thought already been established?
+2. **Same-function sentences** — do two consecutive sentences perform the same rhetorical job?
+3. **Restatement after conclusion** — did we land the point, then explain it again?
+4. **Example value** — does the example add a new dimension or merely repeat the claim?
+5. **Rhetorical-question density** — are multiple nearby questions doing the same work? (Intentional callbacks, e.g. a closing title question, are exempt.)
+6. **Transition overhead** — can the transition be shorter without losing tone?
+7. **Emotional progression protection** — is apparent repetition actually necessary escalation, contrast or rhythm? If yes, KEEP.
+8. **Ending discipline** — does the ending land once, or keep explaining after the emotional conclusion?
+
+Duration policy (editorial triggers, not rejection thresholds):
+
+- 6–9 minutes: preferred natural range.
+- > ~9 minutes: mandatory explicit compression review
+  (`projects/<EP>/compression-review.md`).
+- > ~10 minutes: a written justification for the remaining length is required
+  in the compression review.
+- Longer episodes are allowed if the structure earns the duration. Never
+  optimize for duration at the expense of clarity or emotional pacing.
+
+Findings are classified `A — CLEAR REDUNDANCY`, `B — POSSIBLE COMPRESSION`,
+`C — KEEP (length editorially justified)`, with recommendations
+`KEEP / TIGHTEN / CUT / MERGE` and estimated words saved. The human approves
+the COMPRESSED English script; the compressed text is what gets frozen.
+
 ## 3. Stable Production Rules
 
 | Rule | Meaning |
@@ -36,7 +71,7 @@ Core editorial method: take a familiar assumption and examine it again from a di
 | Editorial function before visual intent | Every sourcing slot carries an `editorialFunction` describing the shot's job within the surrounding sequence — not a paraphrase of the narration. Narration meaning and visual function are related but not identical. |
 | Sequence-level literalness check | Slots are reviewed as a sequence, not only as independent semantic matches. Several consecutive shots that each literally illustrate a narration keyword make the video an illustrated transcript. Redesign such runs toward atmosphere, observation, scale change or breathing room. Literal visuals themselves are not banned. |
 | Visual review before approval | No production asset is approved solely from textual metadata when a visual preview is available. Candidates pass through a contact sheet / visual preview gate (Section 8). |
-| Video first | Prefer suitable stock video. Use still photos with subtle Ken Burns motion when video is weak or unavailable. |
+| Video first | Prefer suitable stock video. Use still photos with static (default) or explicitly requested slow-push motion when video is weak or unavailable. |
 | Avoid stock-actor overload | Mix people, environments, objects, movement, architecture, landscapes and atmospheric shots. Prefer natural behavior, backs/silhouettes/hands/spaces when appropriate. |
 | Sourcing slot = visual shot | A selected sourcing slot normally maps to one visual shot and one use of its source asset. Do not duplicate or loop an asset merely to satisfy a pre-existing placeholder shot count. If more visual changes are editorially needed, source additional assets instead. |
 | Adjacent reuse | Do not repeat the same source asset in adjacent shots. Reuse only when justified and preferably separated in time (Section 7.2). |
@@ -58,8 +93,9 @@ Core editorial method: take a familiar assumption and examine it again from a di
 | Visual rhythm | roughly 7–10 seconds per shot; not a hard fixed interval |
 | Source priority | Pexels video → Pexels photo → other approved sources / owned assets |
 | Subtitle direction | visually secondary: white text, thin dark outline/shadow, maximum 2 lines, lower safe area; avoid a large opaque black panel |
+| Subtitle timing | Edge TTS WordBoundary (`temp/<sentenceId>.words.json`) decides WHEN text is spoken; semantic segmentation decides only grouping. New-generation ESSY requires word timing (manifest `subtitleTiming.policy`); legacy char-proportional timing is an explicit, reported fallback — never production-grade |
 | Transitions | hard cuts are acceptable by default; do not add complex transitions without a demonstrated need |
-| Motion for stills | subtle Ken Burns in/out or static |
+| Motion for stills | STATIC is the default. Motion requires explicit editorial justification via metadata `stillMotion: "slow-push"`. No automatic alternating Ken Burns. "Calm frame, meaningful motion." |
 
 ## 5. Episode Workflow
 
@@ -389,5 +425,9 @@ Stable rules should change only after an observed production problem or a delibe
 v1.1 (2026-08-25): promoted the real-asset timeline rules verified on the ESSY-0001 N001–N003 prototype — sourcing slots define shots; placeholder plan superseded; source-reuse policy; shot-duration policy; narration/subtitle independence (Section 7).
 
 v1.2 (2026-08-30): promoted the ESSY-0001 sourcing-v2 editorial lessons into stable rules — required `editorialFunction` layer per slot (Section 6.1); `visualIntent` + `avoid` list contract (Section 6.2); mandatory sequence-level literalness check before search (Section 6.3); contact-sheet/visual-preview approval gate (Section 8.1); unintended-symbolism review in selection criteria (Section 9); targeted slot-level revision with frozen unaffected shots (Sections 1, 5, 14).
+
+v1.3 (P1 still-image motion): STATIC is the default still treatment; motion requires explicit `stillMotion: "slow-push"` metadata and is never chosen from shot-index parity. No automatic alternating Ken Burns. "Calm frame, meaningful motion." Applies to ESSY-0004+ and newly-rendered episodes only — published ESSY-0001/0002/0003 are frozen baselines and are not guaranteed to reproduce their historical behavior if rebuilt with these defaults (not bit-exact backward compatibility; do not rerender).
+
+v1.4 (P1 script compression): canonical Script Compression Pass before English approval (Section 2.1) — 8 density checks, KEEP-protection for emotional progression, 6–9 min preferred range, >9 min mandatory compression review, >10 min written justification, no hard cap. Evidence: retrospective audits of ESSY-0001–0003 (projects/<EP>/compression-review.md).
 
 Suggested repository path: `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md`
