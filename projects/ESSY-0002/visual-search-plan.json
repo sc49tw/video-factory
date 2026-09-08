@@ -1,0 +1,1065 @@
+{
+  "episodeId": "ESSY-0002",
+  "title": "When the Future Suddenly Becomes Visible",
+  "version": 1,
+  "status": "editorial-plan-ready-for-approval",
+  "playbook": "docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md",
+  "script": "projects/ESSY-0002/script.md",
+  "voice": {
+    "name": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "timing": {
+    "spokenDurationSec": 538.008,
+    "blockPauseSeconds": 0.6,
+    "interBlockPauseCount": 17,
+    "estimatedTotalDurationSec": 548.208,
+    "targetVisualRhythmSec": "roughly 7-10 seconds per shot",
+    "plannedSlotCount": 64
+  },
+  "editorialPrinciples": [
+    "Narration blocks are semantic/TTS units, not visual shots.",
+    "Audio is the master timeline; visual boundaries must never alter narration continuity.",
+    "Each slot must perform an editorial function within the surrounding sequence.",
+    "Avoid consecutive mechanical narration-keyword-to-stock-image translation.",
+    "Prefer natural behavior, environments, objects, movement, architecture, and atmospheric shots over stock-actor overload.",
+    "Prefer video first; photos are fallback.",
+    "Do not approve production assets solely from textual metadata when visual previews are available.",
+    "One selected sourcing slot normally maps to one visual shot and one source use.",
+    "Do not silently loop or duplicate assets to satisfy shot counts."
+  ],
+  "sequenceLiteralnessReview": {
+    "status": "PASS_WITH_CAUTION",
+    "notes": [
+      "Direct elderly/caregiving imagery is intentionally concentrated in a minority of slots.",
+      "Mid-episode sections deliberately shift toward domestic space, routine, movement, planning objects, and environmental change.",
+      "Avoid repeated runs of sad elderly portraits, medication, hospital, wheelchair, lonely windows, or mortality-coded stock imagery.",
+      "N011-N013 and N018 require especially careful preview review because impermanence, anticipatory grief, and endings easily attract cliché symbolism."
+    ]
+  },
+  "blocks": [
+    {
+      "narrationId": "N001",
+      "actualNarrationDurationSec": 26.664,
+      "visualArc": "ordinary evening → subtle physical difficulty → disrupted normality",
+      "slots": [
+        {
+          "slotId": "N001-S1",
+          "narrationId": "N001",
+          "editorialFunction": "Establish an ordinary domestic evening before anything feels wrong.",
+          "visualIntent": "A lived-in bedroom or hallway at night with warm practical light and no visible crisis.",
+          "avoid": [
+            "hospital room",
+            "dramatic elderly portrait",
+            "medication close-up",
+            "obvious illness"
+          ],
+          "query": "quiet home bedroom evening warm light",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.888
+        },
+        {
+          "slotId": "N001-S2",
+          "narrationId": "N001",
+          "editorialFunction": "Introduce physical effort without turning the moment into a medical emergency.",
+          "visualIntent": "An older adult slowly shifting position or preparing to get out of bed, preferably partial body, back, or hands rather than expressive acting.",
+          "avoid": [
+            "collapse",
+            "wheelchair",
+            "nurse",
+            "exaggerated pain",
+            "staged suffering"
+          ],
+          "query": "senior man getting out of bed home natural",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.888
+        },
+        {
+          "slotId": "N001-S3",
+          "narrationId": "N001",
+          "editorialFunction": "Let the ordinary scene become subtly unstable without escalating into drama.",
+          "visualIntent": "A quiet bedside moment with hesitant movement, a hand finding support, or a pause before standing.",
+          "avoid": [
+            "falling person",
+            "ambulance",
+            "hospital equipment",
+            "dramatic facial acting"
+          ],
+          "query": "older man bedside slow movement home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.888
+        }
+      ]
+    },
+    {
+      "narrationId": "N002",
+      "actualNarrationDurationSec": 25.152,
+      "visualArc": "practical response → narrowed attention → temporary settling",
+      "slots": [
+        {
+          "slotId": "N002-S1",
+          "narrationId": "N002",
+          "editorialFunction": "Narrow attention to the small practical actions that take over during a difficult moment.",
+          "visualIntent": "Hands arranging a glass of water or simple bedside items in an ordinary home.",
+          "avoid": [
+            "pharmaceutical advertising",
+            "pill macro shot",
+            "emergency equipment"
+          ],
+          "query": "bedside table glass water night home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.384
+        },
+        {
+          "slotId": "N002-S2",
+          "narrationId": "N002",
+          "editorialFunction": "Show care as a sequence of simple actions rather than an emotional performance.",
+          "visualIntent": "A family member quietly helping another person sit or settle, framed naturally and without obvious caregiving theatrics.",
+          "avoid": [
+            "hugging stock actors",
+            "nurse uniform",
+            "dramatic distress",
+            "wheelchair"
+          ],
+          "query": "family helping senior sit home natural",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.384
+        },
+        {
+          "slotId": "N002-S3",
+          "narrationId": "N002",
+          "editorialFunction": "Release the immediate tension without implying that the larger issue has been resolved.",
+          "visualIntent": "The room settling back into stillness: blanket, lamp, doorway, or a person lying down out of focus.",
+          "avoid": [
+            "smiling recovered patient",
+            "doctor",
+            "triumphant caregiving"
+          ],
+          "query": "quiet bedroom night lamp peaceful home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.384
+        }
+      ]
+    },
+    {
+      "narrationId": "N003",
+      "actualNarrationDurationSec": 24.96,
+      "visualArc": "quiet aftermath → mental replay → fear shifting toward the future",
+      "slots": [
+        {
+          "slotId": "N003-S1",
+          "narrationId": "N003",
+          "editorialFunction": "Shift perspective from the father's condition to the narrator's quiet aftermath.",
+          "visualIntent": "An empty kitchen or living room late at night with one light left on and traces of recent activity.",
+          "avoid": [
+            "worried actor holding head",
+            "crying person",
+            "elderly face close-up"
+          ],
+          "query": "empty living room night quiet home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.32
+        },
+        {
+          "slotId": "N003-S2",
+          "narrationId": "N003",
+          "editorialFunction": "Suggest that the event continues mentally after it has physically ended.",
+          "visualIntent": "A still domestic space with subtle movement such as curtain, clock hands at a distance, or light from another room.",
+          "avoid": [
+            "literal flashback effect",
+            "anxiety clock close-up",
+            "sad face"
+          ],
+          "query": "quiet house at night interior ambient",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.32
+        },
+        {
+          "slotId": "N003-S3",
+          "narrationId": "N003",
+          "editorialFunction": "Turn fear away from the incident itself and toward the next possible time.",
+          "visualIntent": "A quiet view through a dark window or residential exterior where nothing is visibly wrong.",
+          "avoid": [
+            "storm symbolism",
+            "ambulance lights",
+            "lonely elderly silhouette"
+          ],
+          "query": "residential street night quiet ordinary",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.32
+        }
+      ]
+    },
+    {
+      "narrationId": "N004",
+      "actualNarrationDurationSec": 26.808,
+      "visualArc": "ordinary aging → gradual change → manageable-looking decline",
+      "slots": [
+        {
+          "slotId": "N004-S1",
+          "narrationId": "N004",
+          "editorialFunction": "Present aging as something woven into ordinary life rather than as a medical condition.",
+          "visualIntent": "An older adult carrying out an unremarkable home routine slowly, such as making tea or opening curtains.",
+          "avoid": [
+            "frailty performance",
+            "hospital",
+            "nursing home",
+            "lonely elderly portrait"
+          ],
+          "query": "senior man daily routine home morning",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.936
+        },
+        {
+          "slotId": "N004-S2",
+          "narrationId": "N004",
+          "editorialFunction": "Show gradual change through pace and environment rather than another explicit symptom.",
+          "visualIntent": "A familiar home interior with an older person moving more slowly through it.",
+          "avoid": [
+            "walker close-up",
+            "medical device",
+            "falling"
+          ],
+          "query": "older adult walking slowly home interior",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.936
+        },
+        {
+          "slotId": "N004-S3",
+          "narrationId": "N004",
+          "editorialFunction": "Show time accumulating through environment rather than through a symbolic montage.",
+          "visualIntent": "A long-lived home interior with ordinary signs of years of use.",
+          "avoid": [
+            "family photo nostalgia montage",
+            "clocks",
+            "obvious decay"
+          ],
+          "query": "lived in family home interior quiet",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.936
+        }
+      ]
+    },
+    {
+      "narrationId": "N005",
+      "actualNarrationDurationSec": 29.328,
+      "visualArc": "small physical changes → sudden visibility → changed understanding of the future",
+      "slots": [
+        {
+          "slotId": "N005-S1",
+          "narrationId": "N005",
+          "editorialFunction": "Briefly establish the loss of effortless mobility that makes gradual aging suddenly noticeable.",
+          "visualIntent": "An older person's hand finding support on furniture, a railing, or a doorway during ordinary movement.",
+          "avoid": [
+            "falling",
+            "wheelchair",
+            "caregiver",
+            "hospital corridor"
+          ],
+          "query": "senior hand railing walking home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.332
+        },
+        {
+          "slotId": "N005-S2",
+          "narrationId": "N005",
+          "editorialFunction": "Expand from one physical limitation to other small disruptions of independence.",
+          "visualIntent": "A simple daily task taking more effort than expected, such as standing from a chair or reaching for something.",
+          "avoid": [
+            "medical emergency",
+            "crying elder",
+            "staged pain"
+          ],
+          "query": "senior standing from chair home natural",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.332
+        },
+        {
+          "slotId": "N005-S3",
+          "narrationId": "N005",
+          "editorialFunction": "Mark the perceptual shift: nothing dramatic has changed, but the future now feels different.",
+          "visualIntent": "A familiar room seen from farther away, with the person small in frame.",
+          "avoid": [
+            "deathbed composition",
+            "isolated sad elder close-up"
+          ],
+          "query": "older person home wide shot quiet",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.332
+        },
+        {
+          "slotId": "N005-S4",
+          "narrationId": "N005",
+          "editorialFunction": "Move from the physical event to the observer's changed sense of what lies ahead.",
+          "visualIntent": "A familiar residential street or house viewed from a slight distance as ordinary life continues.",
+          "avoid": [
+            "sunset",
+            "storm clouds",
+            "cemetery",
+            "road to horizon cliché"
+          ],
+          "query": "quiet residential neighborhood ordinary day",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.332
+        }
+      ]
+    },
+    {
+      "narrationId": "N006",
+      "actualNarrationDurationSec": 26.784,
+      "visualArc": "everyday continuity → acknowledged uncertainty → return to ordinary functioning",
+      "slots": [
+        {
+          "slotId": "N006-S1",
+          "narrationId": "N006",
+          "editorialFunction": "Establish the repetitive stability on which ordinary life depends.",
+          "visualIntent": "A familiar weekday morning rhythm with commuters, neighborhood movement, or people beginning routine tasks.",
+          "avoid": [
+            "frantic city montage",
+            "corporate stress imagery"
+          ],
+          "query": "ordinary weekday morning commuters routine",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.928
+        },
+        {
+          "slotId": "N006-S2",
+          "narrationId": "N006",
+          "editorialFunction": "Acknowledge uncertainty without illustrating danger literally.",
+          "visualIntent": "Everyday systems continuing normally: traffic lights cycling, train arriving, shutters opening.",
+          "avoid": [
+            "accident",
+            "ambulance",
+            "hospital imagery"
+          ],
+          "query": "everyday city routine morning life",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.928
+        },
+        {
+          "slotId": "N006-S3",
+          "narrationId": "N006",
+          "editorialFunction": "Return to ordinary functioning after the narration names life's unpredictability.",
+          "visualIntent": "A calm home or street scene where nothing unusual appears to be happening.",
+          "avoid": [
+            "storm",
+            "ominous clouds",
+            "dramatic loneliness"
+          ],
+          "query": "ordinary neighborhood daily life calm",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.928
+        }
+      ]
+    },
+    {
+      "narrationId": "N007",
+      "actualNarrationDurationSec": 25.536,
+      "visualArc": "planning ahead → imagined continuity → assumption quietly destabilized",
+      "slots": [
+        {
+          "slotId": "N007-S1",
+          "narrationId": "N007",
+          "editorialFunction": "Show how naturally people extend today's assumptions into tomorrow.",
+          "visualIntent": "A calendar or planner being casually used as part of normal daily life.",
+          "avoid": [
+            "productivity influencer desk",
+            "financial planner",
+            "retirement brochure"
+          ],
+          "query": "person writing calendar home desk natural",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.512
+        },
+        {
+          "slotId": "N007-S2",
+          "narrationId": "N007",
+          "editorialFunction": "Expand from near-term planning into an imagined future without specifying what that future should be.",
+          "visualIntent": "A person on an ordinary journey, such as looking from a train window or walking through a station.",
+          "avoid": [
+            "luxury travel",
+            "retirement beach couple",
+            "inspirational horizon"
+          ],
+          "query": "train window everyday journey landscape",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.512
+        },
+        {
+          "slotId": "N007-S3",
+          "narrationId": "N007",
+          "editorialFunction": "Let the idea of stability become slightly less certain.",
+          "visualIntent": "A routine commute or familiar place interrupted only by a pause, delay, or moment of stillness.",
+          "avoid": [
+            "dramatic disruption",
+            "missed train panic",
+            "accident"
+          ],
+          "query": "commuter pause station quiet moment",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.512
+        }
+      ]
+    },
+    {
+      "narrationId": "N008",
+      "actualNarrationDurationSec": 25.488,
+      "visualArc": "solution-seeking → practical constraints → adult responsibilities crowding the frame",
+      "slots": [
+        {
+          "slotId": "N008-S1",
+          "narrationId": "N008",
+          "editorialFunction": "Introduce the family's attempt to turn uncertainty into manageable information.",
+          "visualIntent": "Papers, notebook, or laptop used in a calm home discussion or planning session.",
+          "avoid": [
+            "arguing family",
+            "calculator macro",
+            "medical forms dominating frame"
+          ],
+          "query": "family planning paperwork kitchen table",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.496
+        },
+        {
+          "slotId": "N008-S2",
+          "narrationId": "N008",
+          "editorialFunction": "Bring abstract planning back to the physical home where decisions have consequences.",
+          "visualIntent": "Stairs, bathroom threshold, hallway, or another ordinary architectural obstacle.",
+          "avoid": [
+            "staged home safety demonstration",
+            "wheelchair showcase"
+          ],
+          "query": "older home stairs hallway interior",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.496
+        },
+        {
+          "slotId": "N008-S3",
+          "narrationId": "N008",
+          "editorialFunction": "Widen the problem beyond caregiving to the competing structures of adult life.",
+          "visualIntent": "An adult moving between work and home contexts, such as leaving an office or commuting in the evening.",
+          "avoid": [
+            "stressed worker holding head",
+            "laptop baby phone cliché"
+          ],
+          "query": "middle aged commuter leaving work evening",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.496
+        }
+      ]
+    },
+    {
+      "narrationId": "N009",
+      "actualNarrationDurationSec": 40.44,
+      "visualArc": "care options → competing costs → recognition of trade-offs",
+      "slots": [
+        {
+          "slotId": "N009-S1",
+          "narrationId": "N009",
+          "editorialFunction": "Convey that practical care decisions begin with legitimate options rather than obvious answers.",
+          "visualIntent": "A calm household conversation or planning surface with notes and everyday objects.",
+          "avoid": [
+            "family argument",
+            "hospital brochure close-up",
+            "money piles"
+          ],
+          "query": "family kitchen table planning care",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.088
+        },
+        {
+          "slotId": "N009-S2",
+          "narrationId": "N009",
+          "editorialFunction": "Show that keeping someone at home preserves familiarity but introduces real physical constraints.",
+          "visualIntent": "A quiet lived-in home with stairs, narrow spaces, or thresholds shown observationally.",
+          "avoid": [
+            "wheelchair obstruction demo",
+            "hazard dramatization"
+          ],
+          "query": "lived in older home stairs interior",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.088
+        },
+        {
+          "slotId": "N009-S3",
+          "narrationId": "N009",
+          "editorialFunction": "Represent professional support without turning it into an advertisement or moral answer.",
+          "visualIntent": "A neutral care environment or professional helping an older adult in a natural, unstaged way.",
+          "avoid": [
+            "luxury nursing home ad",
+            "smiling caregiver commercial",
+            "medical drama"
+          ],
+          "query": "caregiver helping senior natural care setting",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.088
+        },
+        {
+          "slotId": "N009-S4",
+          "narrationId": "N009",
+          "editorialFunction": "Show that every direction carries a cost without using a literal decision metaphor.",
+          "visualIntent": "A person pausing in a corridor, station, or transitional architectural space.",
+          "avoid": [
+            "crossroads sign",
+            "forked road",
+            "dramatic silhouette"
+          ],
+          "query": "person waiting station corridor decision",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.088
+        },
+        {
+          "slotId": "N009-S5",
+          "narrationId": "N009",
+          "editorialFunction": "Land on trade-offs rather than a perfect solution.",
+          "visualIntent": "A quiet family home exterior or evening interior where ordinary life continues despite unresolved decisions.",
+          "avoid": [
+            "happy family resolution",
+            "sunset closure",
+            "celebratory imagery"
+          ],
+          "query": "family home evening unresolved calm",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.088
+        }
+      ]
+    },
+    {
+      "narrationId": "N010",
+      "actualNarrationDurationSec": 28.056,
+      "visualArc": "structured problem-solving → limits of optimization → acceptance of an irreversible direction",
+      "slots": [
+        {
+          "slotId": "N010-S1",
+          "narrationId": "N010",
+          "editorialFunction": "Establish the familiar confidence of structured problem-solving.",
+          "visualIntent": "An engineer or professional quietly examining information or working through a problem.",
+          "avoid": [
+            "business team high-five",
+            "charts filling screen",
+            "motivational office"
+          ],
+          "query": "engineer working desk thoughtful office",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.352
+        },
+        {
+          "slotId": "N010-S2",
+          "narrationId": "N010",
+          "editorialFunction": "Let orderly problem-solving encounter a limit that cannot be optimized away.",
+          "visualIntent": "A plan, notes, or computer work left unfinished while daylight changes around the workspace.",
+          "avoid": [
+            "broken computer",
+            "failure icon",
+            "dramatic frustration"
+          ],
+          "query": "desk changing daylight unfinished work",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.352
+        },
+        {
+          "slotId": "N010-S3",
+          "narrationId": "N010",
+          "editorialFunction": "Move from optimization toward irreversible change without melodrama.",
+          "visualIntent": "Slow natural change in a familiar room or exterior environment.",
+          "avoid": [
+            "dying flower",
+            "hourglass",
+            "sunset",
+            "death metaphor"
+          ],
+          "query": "changing daylight room time passing",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.352
+        }
+      ]
+    },
+    {
+      "narrationId": "N011",
+      "actualNarrationDurationSec": 21.096,
+      "visualArc": "ordinary change → impermanence made concrete → emotional dependence on continuity",
+      "slots": [
+        {
+          "slotId": "N011-S1",
+          "narrationId": "N011",
+          "editorialFunction": "Make impermanence observable rather than mystical.",
+          "visualIntent": "The same ordinary environment undergoing subtle change in light, weather, or movement.",
+          "avoid": [
+            "Buddha statue",
+            "temple",
+            "meditation",
+            "falling leaf cliché"
+          ],
+          "query": "changing light home window time passing",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.032
+        },
+        {
+          "slotId": "N011-S2",
+          "narrationId": "N011",
+          "editorialFunction": "Return philosophical abstraction to familiar domestic continuity.",
+          "visualIntent": "Frequently used household objects or spaces carrying traces of routine.",
+          "avoid": [
+            "memorial objects",
+            "old photographs montage",
+            "empty rocking chair"
+          ],
+          "query": "everyday home objects lived in quiet",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.032
+        },
+        {
+          "slotId": "N011-S3",
+          "narrationId": "N011",
+          "editorialFunction": "Reveal how much emotional stability depends on continuity that usually goes unnoticed.",
+          "visualIntent": "A familiar domestic scene with one small change in arrangement or absence.",
+          "avoid": [
+            "dramatic empty chair",
+            "funeral symbolism",
+            "sad elder"
+          ],
+          "query": "familiar home subtle change quiet",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.032
+        }
+      ]
+    },
+    {
+      "narrationId": "N012",
+      "actualNarrationDurationSec": 30.768,
+      "visualArc": "familiar parental presence → assumptions corrected → anticipation of future loss",
+      "slots": [
+        {
+          "slotId": "N012-S1",
+          "narrationId": "N012",
+          "editorialFunction": "Show continuity between parent, home, and long-established routine before introducing anticipated loss.",
+          "visualIntent": "An older adult quietly moving through a familiar home space.",
+          "avoid": [
+            "isolated sad elder",
+            "photo album",
+            "staring through window"
+          ],
+          "query": "senior man walking around home daily life",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.692
+        },
+        {
+          "slotId": "N012-S2",
+          "narrationId": "N012",
+          "editorialFunction": "Show assumptions being corrected one by one through ordinary dependence.",
+          "visualIntent": "A familiar task now requiring a pause, support, or help.",
+          "avoid": [
+            "medical emergency",
+            "wheelchair close-up",
+            "collapse"
+          ],
+          "query": "senior daily task needs help home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.692
+        },
+        {
+          "slotId": "N012-S3",
+          "narrationId": "N012",
+          "editorialFunction": "Introduce anticipatory grief through presence that already feels fragile.",
+          "visualIntent": "Two generations sharing space quietly without overt sadness or affection acting.",
+          "avoid": [
+            "crying",
+            "hugging stock actors",
+            "deathbed composition"
+          ],
+          "query": "adult son elderly father home everyday",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.692
+        },
+        {
+          "slotId": "N012-S4",
+          "narrationId": "N012",
+          "editorialFunction": "Allow the idea of future absence to emerge from space rather than emotional acting.",
+          "visualIntent": "A recently occupied chair, table, or room after someone has moved out of frame.",
+          "avoid": [
+            "obviously abandoned room",
+            "memorial objects",
+            "empty wheelchair"
+          ],
+          "query": "quiet living room chair natural daylight",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.692
+        }
+      ]
+    },
+    {
+      "narrationId": "N013",
+      "actualNarrationDurationSec": 22.104,
+      "visualArc": "calm room → unresolved feeling → mind moving beyond the present",
+      "slots": [
+        {
+          "slotId": "N013-S1",
+          "narrationId": "N013",
+          "editorialFunction": "Recreate the emotional paradox of calm surroundings after a frightening moment.",
+          "visualIntent": "A still bedroom doorway or hallway with someone resting indistinctly beyond.",
+          "avoid": [
+            "crying relative",
+            "hospital monitor",
+            "deathbed composition"
+          ],
+          "query": "quiet bedroom doorway night home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.368
+        },
+        {
+          "slotId": "N013-S2",
+          "narrationId": "N013",
+          "editorialFunction": "Show that the external scene is calm while the internal experience remains active.",
+          "visualIntent": "A person sitting quietly in another room, seen from a distance or from behind.",
+          "avoid": [
+            "head in hands",
+            "panic acting",
+            "tears close-up"
+          ],
+          "query": "middle aged person sitting quietly home night",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.368
+        },
+        {
+          "slotId": "N013-S3",
+          "narrationId": "N013",
+          "editorialFunction": "Move attention away from the room and toward the mind projecting beyond the present.",
+          "visualIntent": "Slow nighttime movement outside, such as passing lights from a car or train window.",
+          "avoid": [
+            "rain-on-window sadness cliché",
+            "dramatic city loneliness"
+          ],
+          "query": "night street passing lights calm",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.368
+        }
+      ]
+    },
+    {
+      "narrationId": "N014",
+      "actualNarrationDurationSec": 27.984,
+      "visualArc": "preparation → reasonable planning → boundary where uncertainty remains",
+      "slots": [
+        {
+          "slotId": "N014-S1",
+          "narrationId": "N014",
+          "editorialFunction": "Acknowledge practical preparation as legitimate and necessary.",
+          "visualIntent": "Calm organization of documents, contacts, or household information.",
+          "avoid": [
+            "disaster preparation",
+            "insurance advertising",
+            "frantic paperwork"
+          ],
+          "query": "organizing documents home table calm",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.328
+        },
+        {
+          "slotId": "N014-S2",
+          "narrationId": "N014",
+          "editorialFunction": "Show planning as useful but limited in scope.",
+          "visualIntent": "A notebook, folder, or phone notes being closed after practical preparation.",
+          "avoid": [
+            "checklist tick animation",
+            "deadline countdown"
+          ],
+          "query": "closing notebook home table calm",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.328
+        },
+        {
+          "slotId": "N014-S3",
+          "narrationId": "N014",
+          "editorialFunction": "Show where preparation ends: the world continues beyond the plan.",
+          "visualIntent": "The closed notebook remains on the table while ordinary household activity continues elsewhere.",
+          "avoid": [
+            "dramatic unfinished task",
+            "ominous lighting"
+          ],
+          "query": "notebook table quiet home natural light",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.328
+        }
+      ]
+    },
+    {
+      "narrationId": "N015",
+      "actualNarrationDurationSec": 31.848,
+      "visualArc": "care as presence → limits of control → love meeting finite resources",
+      "slots": [
+        {
+          "slotId": "N015-S1",
+          "narrationId": "N015",
+          "editorialFunction": "Visualize care as presence rather than total control.",
+          "visualIntent": "Two generations sharing an ordinary space without obvious caregiving performance.",
+          "avoid": [
+            "hugging stock actors",
+            "nurse",
+            "wheelchair",
+            "exaggerated affection"
+          ],
+          "query": "adult son elderly father home everyday",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.962
+        },
+        {
+          "slotId": "N015-S2",
+          "narrationId": "N015",
+          "editorialFunction": "Show that care can be attentive without being all-powerful.",
+          "visualIntent": "A small helping action such as passing water, adjusting a chair, or walking nearby.",
+          "avoid": [
+            "heroic caregiver",
+            "medical procedure",
+            "dramatic rescue"
+          ],
+          "query": "family member helping elderly parent home natural",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.962
+        },
+        {
+          "slotId": "N015-S3",
+          "narrationId": "N015",
+          "editorialFunction": "Widen the frame to remind us that caregivers remain embedded in other responsibilities.",
+          "visualIntent": "An adult commuting, returning home, or carrying ordinary work and household items.",
+          "avoid": [
+            "frantic multitasking",
+            "burnout acting"
+          ],
+          "query": "middle aged man commute home evening",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.962
+        },
+        {
+          "slotId": "N015-S4",
+          "narrationId": "N015",
+          "editorialFunction": "Provide breathing room after the dense argument about finite resources.",
+          "visualIntent": "Quiet exteriors of homes or apartments at dusk with ordinary life visible in windows.",
+          "avoid": [
+            "luxury homes",
+            "lonely window",
+            "sunset symbolism"
+          ],
+          "query": "residential homes evening windows everyday",
+          "preferredMediaType": "video",
+          "targetDurationSec": 7.962
+        }
+      ]
+    },
+    {
+      "narrationId": "N016",
+      "actualNarrationDurationSec": 36.024,
+      "visualArc": "expanding responsibility → guilt logic → absence of a regret-free option",
+      "slots": [
+        {
+          "slotId": "N016-S1",
+          "narrationId": "N016",
+          "editorialFunction": "Suggest how responsibility expands internally even when nothing is happening externally.",
+          "visualIntent": "An adult sitting quietly after completing ordinary household tasks, neutral rather than visibly distressed.",
+          "avoid": [
+            "head in hands",
+            "crying",
+            "insomnia cliché"
+          ],
+          "query": "middle aged man sitting kitchen quiet evening",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.006
+        },
+        {
+          "slotId": "N016-S2",
+          "narrationId": "N016",
+          "editorialFunction": "Show competing responsibilities sharing the same life rather than appearing as separate crises.",
+          "visualIntent": "Work bag, keys, groceries, documents, and household objects naturally sharing one frame.",
+          "avoid": [
+            "symbolic balancing scales",
+            "overloaded desk montage"
+          ],
+          "query": "work bag groceries keys home table everyday",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.006
+        },
+        {
+          "slotId": "N016-S3",
+          "narrationId": "N016",
+          "editorialFunction": "Express guilt as an internal logic, not a visible breakdown.",
+          "visualIntent": "A person hesitating before leaving home, turning off a light, or standing briefly in a doorway.",
+          "avoid": [
+            "crying",
+            "dramatic farewell",
+            "hospital"
+          ],
+          "query": "middle aged person doorway pause home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.006
+        },
+        {
+          "slotId": "N016-S4",
+          "narrationId": "N016",
+          "editorialFunction": "Land on the absence of a regret-free option without false resolution.",
+          "visualIntent": "A quiet domestic scene where multiple tasks remain unfinished but life continues.",
+          "avoid": [
+            "perfect tidy home",
+            "happy family resolution",
+            "dramatic mess"
+          ],
+          "query": "lived in home evening unfinished ordinary",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.006
+        }
+      ]
+    },
+    {
+      "narrationId": "N017",
+      "actualNarrationDurationSec": 27.024,
+      "visualArc": "realistic care → small manageable actions → releasing the demand for perfection",
+      "slots": [
+        {
+          "slotId": "N017-S1",
+          "narrationId": "N017",
+          "editorialFunction": "Show realistic care through small concrete actions rather than heroic sacrifice.",
+          "visualIntent": "A simple household safety improvement or clearing of a walkway.",
+          "avoid": [
+            "renovation advertisement",
+            "professional caregiver",
+            "medical device showcase"
+          ],
+          "query": "family making home safer senior simple",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.008
+        },
+        {
+          "slotId": "N017-S2",
+          "narrationId": "N017",
+          "editorialFunction": "Shift from solving everything to doing one manageable thing at a time.",
+          "visualIntent": "One ordinary practical task being completed slowly and calmly.",
+          "avoid": [
+            "checklist graphic",
+            "motivational productivity imagery"
+          ],
+          "query": "simple household task calm hands home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.008
+        },
+        {
+          "slotId": "N017-S3",
+          "narrationId": "N017",
+          "editorialFunction": "Create emotional space by showing release rather than victory.",
+          "visualIntent": "A quiet home settling into nighttime stillness after the task is done.",
+          "avoid": [
+            "sunset",
+            "triumphant smile",
+            "dramatic darkness"
+          ],
+          "query": "quiet house interior night warm light",
+          "preferredMediaType": "video",
+          "targetDurationSec": 9.008
+        }
+      ]
+    },
+    {
+      "narrationId": "N018",
+      "actualNarrationDurationSec": 61.944,
+      "visualArc": "return to the original evening → ordinary life resumes → future briefly visible → unresolved continuity",
+      "slots": [
+        {
+          "slotId": "N018-S1",
+          "narrationId": "N018",
+          "editorialFunction": "Visually return to the original evening and close the immediate incident without implying resolution.",
+          "visualIntent": "A dim bedroom or hallway similar in feeling to the opening.",
+          "avoid": [
+            "recovered smiling elder",
+            "medical imagery",
+            "hospital"
+          ],
+          "query": "quiet bedroom hallway night home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        },
+        {
+          "slotId": "N018-S2",
+          "narrationId": "N018",
+          "editorialFunction": "Show that the crisis has passed while keeping the emotional question open.",
+          "visualIntent": "A bedside lamp being dimmed, a door left slightly open, or a quiet room after someone lies down.",
+          "avoid": [
+            "deathbed composition",
+            "dramatic darkness",
+            "sad face"
+          ],
+          "query": "bedroom lamp night quiet home",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        },
+        {
+          "slotId": "N018-S3",
+          "narrationId": "N018",
+          "editorialFunction": "Reinforce the observation that ordinary life simply resumes.",
+          "visualIntent": "Early morning household routine beginning again with curtains, kettle, or daylight entering.",
+          "avoid": [
+            "inspirational sunrise",
+            "happy family advertising"
+          ],
+          "query": "ordinary home morning routine daylight",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        },
+        {
+          "slotId": "N018-S4",
+          "narrationId": "N018",
+          "editorialFunction": "Show that externally, very little has changed.",
+          "visualIntent": "The same or similar residential environment in neutral morning light.",
+          "avoid": [
+            "dramatic weather",
+            "empty abandoned street"
+          ],
+          "query": "quiet residential street morning ordinary",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        },
+        {
+          "slotId": "N018-S5",
+          "narrationId": "N018",
+          "editorialFunction": "Mark the narrator's changed perception without literal symbolism.",
+          "visualIntent": "A familiar home or neighborhood viewed from a slightly greater distance than before.",
+          "avoid": [
+            "horizon metaphor",
+            "lone figure silhouette",
+            "cemetery"
+          ],
+          "query": "familiar home exterior morning wide shot",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        },
+        {
+          "slotId": "N018-S6",
+          "narrationId": "N018",
+          "editorialFunction": "Give the ending visual breathing room as the future becomes uncertain again.",
+          "visualIntent": "Ordinary people beginning their day, walking, commuting, or opening shops with no sense of climax.",
+          "avoid": [
+            "motivational montage",
+            "celebration",
+            "fast cuts"
+          ],
+          "query": "ordinary morning people starting day calm",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        },
+        {
+          "slotId": "N018-S7",
+          "narrationId": "N018",
+          "editorialFunction": "End with continuity rather than closure.",
+          "visualIntent": "A quiet residential or domestic scene held long enough to feel unresolved but stable.",
+          "avoid": [
+            "sunset",
+            "road into horizon",
+            "dramatic lone figure",
+            "death symbolism"
+          ],
+          "query": "quiet neighborhood morning everyday life still",
+          "preferredMediaType": "video",
+          "targetDurationSec": 8.849
+        }
+      ]
+    }
+  ]
+}

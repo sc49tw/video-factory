@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "SMOKE-ESSY-WT",
+  "title": "How Much of Your Life Are You Still Willing to Sell?",
+  "sourceLesson": "projects/ESSY-0003/source/lesson.json",
+  "tts": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sentenceCount": 3,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "blockId": "n001",
+      "path": "projects/ESSY-0003/audio/sentence-001.mp3",
+      "durationSec": 16.872,
+      "textSha256": "b2e181e5c297db1bf70bb5656fb77a1bb4364a90a951148298afd32360d46d08",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-002",
+      "blockId": "n002",
+      "path": "projects/ESSY-0003/audio/sentence-002.mp3",
+      "durationSec": 6.288,
+      "textSha256": "e3b40e82609404839ddc511670be994b42115fb74efe6b231109580629c704b6",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-003",
+      "blockId": "n003",
+      "path": "projects/ESSY-0003/audio/sentence-003.mp3",
+      "durationSec": 47.592,
+      "textSha256": "4cbd0aa031d17cb689652180c334f9928b818a81f95501ee0b1e59dfac5b872b",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    }
+  ],
+  "subtitleTiming": {
+    "policy": "word-boundary-required",
+    "schemaVersion": "1.0"
+  },
+  "smoke": {
+    "source": "ESSY-0003 N001-N003",
+    "purpose": "canonical production-path word-boundary subtitle timing validation"
+  }
+}

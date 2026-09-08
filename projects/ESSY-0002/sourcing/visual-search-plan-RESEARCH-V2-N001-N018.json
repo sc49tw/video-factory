@@ -1,0 +1,6 @@
+[
+  {"narrationId":"N004","slotId":"N004-S1","visualIntent":"A walking cane stands beside a front door in an ordinary lived-in home, with an older adult reaching for it before leaving in soft morning light.","searchQuery":"senior reaching for cane entryway home morning","preferredMediaType":"video"},
+  {"narrationId":"N015","slotId":"N015-S3","visualIntent":"An adult leaves a family home for work while an older parent remains at the doorway; the parting is ordinary and unperformed.","searchQuery":"adult leaving home older parent doorway morning goodbye","preferredMediaType":"video"},
+  {"narrationId":"N017","slotId":"N017-S1","visualIntent":"Hands close a notebook, place a pen beside it, and leave a warm desk lamp on; planning pauses without defeat.","searchQuery":"hands close notebook put down pen desk lamp evening","preferredMediaType":"video"},
+  {"narrationId":"N018","slotId":"N018-S2","visualIntent":"A hand turns off a single hallway lamp in a quiet home at night, returning the house to its ordinary rhythm.","searchQuery":"hand turning off hallway lamp home night","preferredMediaType":"video"}
+]

@@ -1,0 +1,5 @@
+[
+  {"narrationId":"N004","slotId":"N004-S1","visualIntent":"A formerly ordinary daily action now takes more time: an older adult moves carefully through a familiar home routine, without medical or symbolic framing.","searchQuery":"senior slow daily routine home morning","preferredMediaType":"video"},
+  {"narrationId":"N015","slotId":"N015-S3","visualIntent":"An ordinary morning departure: keys, a work bag, and a front door closing. The narration carries the competing-responsibilities meaning.","searchQuery":"morning leaving home keys work bag door closing","preferredMediaType":"video"},
+  {"narrationId":"N017","slotId":"N017-S1","visualIntent":"A warm desk lamp remains on over papers left on a table as a person walks away from the desk; planning pauses without defeat.","searchQuery":"desk lamp papers table person walks away evening","preferredMediaType":"video"}
+]

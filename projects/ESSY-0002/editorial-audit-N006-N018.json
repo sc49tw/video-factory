@@ -1,0 +1,574 @@
+{
+  "episodeId": "ESSY-0002",
+  "scope": "N006-N018",
+  "reference": "prototype-N001-N005-v2",
+  "note": "Editorial audit only — no sourcing, downloads, provenance, timeline, narration, TTS, or render changes. Actual scope contains 48 shots (assembly-timeline.json), not 49: N001-N005 comprises 16 shots including N005-S4, so 64 - 16 = 48.",
+  "method": "Each shot judged with its narration, recorded editorial intent, asset metadata/Pexels source slug, and previous/next shots; blocks and block transitions judged as sequences against the N001-N005 v2 golden sample.",
+  "shots": [
+    {
+      "slotId": "N006-S1",
+      "narrationId": "N006",
+      "assetId": "pexels-video-35674366",
+      "classification": "KEEP",
+      "reason": "Sunlit morning kitchen routine continues the golden sample's domestic exhale after N005; quiet environment, no acting, no secondary meaning.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N006-S2",
+      "narrationId": "N006",
+      "assetId": "pexels-video-9010687",
+      "classification": "KEEP",
+      "reason": "Brief neutral cloud time-lapse widens the frame between the kitchen and the street; calm, non-symbolic in this single transitional use.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N006-S3",
+      "narrationId": "N006",
+      "assetId": "pexels-video-853830",
+      "classification": "KEEP",
+      "reason": "Ordinary street flow returns the essay to collective routine with people as anonymous presence, not characters.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N007-S1",
+      "narrationId": "N007",
+      "assetId": "pexels-video-9903482",
+      "classification": "KEEP",
+      "reason": "The one intentional literal planning shot; hands and notebook stay practical and appear only once in the episode.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N007-S2",
+      "narrationId": "N007",
+      "assetId": "pexels-video-7477605",
+      "classification": "REVIEW",
+      "reason": "Elderly couple at breakfast literalizes 'imagine retirement' and introduces an unrelated elderly couple as recurring-character candidates; judge against the episode's other elderly appearances (N012, N015, N018) before deciding.",
+      "riskFlags": ["literalness", "character-continuity"]
+    },
+    {
+      "slotId": "N007-S3",
+      "narrationId": "N007",
+      "assetId": "pexels-photo-32922275",
+      "classification": "REVIEW",
+      "reason": "Minimalist showroom-style living room reads closer to a staged interior/real-estate aesthetic than a lived-in home; function is right, texture is questionable.",
+      "riskFlags": ["visual-world"]
+    },
+    {
+      "slotId": "N008-S1",
+      "narrationId": "N008",
+      "assetId": "pexels-photo-9870228",
+      "classification": "REPLACE",
+      "reason": "Source page itself describes a 'meeting at home with social worker': staged professional-plus-couple setup introduces throwaway stock characters reenacting the family conversation, and duplicates the documents-at-table vocabulary N009-S1 already carries.",
+      "riskFlags": ["stock-acting", "character-continuity", "repetition"]
+    },
+    {
+      "slotId": "N008-S2",
+      "narrationId": "N008",
+      "assetId": "pexels-video-6711918",
+      "classification": "KEEP",
+      "reason": "Stair descent makes home-safety constraints concrete through ordinary movement, no demonstration acting.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N008-S3",
+      "narrationId": "N008",
+      "assetId": "pexels-video-34573865",
+      "classification": "KEEP",
+      "reason": "Dim subway journey conveys adult-life pressure and distance without burnout acting; urban realism is consistent with N006-S3's street register.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N009-S1",
+      "narrationId": "N009",
+      "assetId": "pexels-video-9869606",
+      "classification": "KEEP",
+      "reason": "With N008-S1 replaced, this becomes the single literal documents shot: two people quietly weighing papers, no conflict performance.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N009-S2",
+      "narrationId": "N009",
+      "assetId": "pexels-video-6377575",
+      "classification": "KEEP",
+      "reason": "Home laptop work expresses competing demands as ordinary action; grounded, non-symbolic.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N009-S3",
+      "narrationId": "N009",
+      "assetId": "pexels-video-6646685",
+      "classification": "REPLACE",
+      "reason": "Staged volunteer-visiting-elderly clip is exactly the staged elderly-care acting pattern the golden sample removed at N002-S2; creates two throwaway stock characters (visitor + elderly man) in a high-risk role.",
+      "riskFlags": ["stock-acting", "character-continuity"]
+    },
+    {
+      "slotId": "N009-S4",
+      "narrationId": "N009",
+      "assetId": "pexels-video-4990441",
+      "classification": "KEEP",
+      "reason": "Old wooden staircase works as environmental constraint and gives the block a non-paperwork beat.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N009-S5",
+      "narrationId": "N009",
+      "assetId": "pexels-video-39029339",
+      "classification": "REVIEW",
+      "reason": "Ordinary kitchen-paper action closes the trade-offs beat, but it is the third paperwork image across N008-N009; confirm the block does not tip into an illustrated transcript once N008-S1 is decided.",
+      "riskFlags": ["literalness", "repetition"]
+    },
+    {
+      "slotId": "N010-S1",
+      "narrationId": "N010",
+      "assetId": "pexels-video-8275955",
+      "classification": "KEEP",
+      "reason": "Sketching diagrams personifies the solver mindset with one literal, non-corporate shot.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N010-S2",
+      "narrationId": "N010",
+      "assetId": "pexels-video-8025546",
+      "classification": "KEEP",
+      "reason": "Large indifferent weather provides a scale shift after hands-on problem-solving; calm, no crisis coding.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N010-S3",
+      "narrationId": "N010",
+      "assetId": "pexels-video-5963476",
+      "classification": "REVIEW",
+      "reason": "River visualizes the narration's own 'direction of travel' metaphor, which is a defensible editorial reason, but it directly follows the mountains shot; check that the two-shot nature run does not read as generic b-roll.",
+      "riskFlags": ["cliche-symbolism", "repetition"]
+    },
+    {
+      "slotId": "N011-S1",
+      "narrationId": "N011",
+      "assetId": "pexels-photo-5231304",
+      "classification": "KEEP",
+      "reason": "Cropped, unrecognizable figure watering a plant is human presence through ordinary domestic routine — impermanence without any aging cliché (no statue, stones, or falling leaves).",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N011-S2",
+      "narrationId": "N011",
+      "assetId": "pexels-video-34580818",
+      "classification": "KEEP",
+      "reason": "Changing sunlight in a familiar room is precisely the golden sample's environmental time-passage language.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N011-S3",
+      "narrationId": "N011",
+      "assetId": "pexels-video-6343834",
+      "classification": "KEEP",
+      "reason": "Hands with a warm mug keep the philosophical section embodied; restrained window language consistent with frozen N003-S3.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N012-S1",
+      "narrationId": "N012",
+      "assetId": "pexels-video-7844216",
+      "classification": "KEEP",
+      "reason": "Grandfather repairing a garden cart shows parental competence through practical work, not emotional performance; as the block's only identifiable elderly actor (once N012-S2 is replaced) it establishes presence without continuity stacking.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N012-S2",
+      "narrationId": "N012",
+      "assetId": "pexels-photo-5637854",
+      "classification": "REPLACE",
+      "reason": "Second identifiable unrelated elderly man in consecutive shots (after N012-S1) recreates the elderly-then-elderly fake-continuity pattern the golden sample removed at N004-S1; asset also drifts from the recorded intent (street walk, not garden presence in background).",
+      "riskFlags": ["character-continuity", "repetition"]
+    },
+    {
+      "slotId": "N012-S3",
+      "narrationId": "N012",
+      "assetId": "pexels-video-5406291",
+      "classification": "REVIEW",
+      "reason": "Calm sea gives contemplative distance for anticipatory grief, but it is the essay's third large-nature metaphor block (after N010's mountains and river); confirm the vocabulary is not becoming a fallback.",
+      "riskFlags": ["cliche-symbolism", "repetition"]
+    },
+    {
+      "slotId": "N012-S4",
+      "narrationId": "N012",
+      "assetId": "pexels-video-4099278",
+      "classification": "KEEP",
+      "reason": "Window shadows crossing a bedroom wall make time observable inside an ordinary room — core golden-sample language.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N013-S1",
+      "narrationId": "N013",
+      "assetId": "pexels-video-6598397",
+      "classification": "KEEP",
+      "reason": "Dimming a bedside lamp mirrors N002-S3's settling language; calm after crisis without another elderly close-up.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N013-S2",
+      "narrationId": "N013",
+      "assetId": "pexels-video-7172119",
+      "classification": "REVIEW",
+      "reason": "Night kitchen coffee-by-window is restrained but is the third window-reflection composition in three blocks (N011-S3, N013-S2/S3); watch cumulative window vocabulary before keeping all instances.",
+      "riskFlags": ["repetition"]
+    },
+    {
+      "slotId": "N013-S3",
+      "narrationId": "N013",
+      "assetId": "pexels-video-1978094",
+      "classification": "KEEP",
+      "reason": "Window bokeh after the human shot supplies the correct breathing-room beat and externalizes the mind moving beyond the present.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N014-S1",
+      "narrationId": "N014",
+      "assetId": "pexels-video-5637948",
+      "classification": "REVIEW",
+      "reason": "Asset is an office desk (source: 'woman filling a form at office desk') while the intent and the essay's world are domestic; one literal preparation shot is wanted, but the corporate environment breaks visual-world consistency.",
+      "riskFlags": ["visual-world", "literalness"]
+    },
+    {
+      "slotId": "N014-S2",
+      "narrationId": "N014",
+      "assetId": "pexels-video-10567300",
+      "classification": "KEEP",
+      "reason": "Putting documents away is a strong behavioral equivalent of 'preparation has a limit'; grounded and unsentimental.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N014-S3",
+      "narrationId": "N014",
+      "assetId": "pexels-video-17670034",
+      "classification": "REVIEW",
+      "reason": "Man-at-lamp-table sustains the post-planning mood, but this composition now recurs (N013-S2, N014-S3, N017-S1); verify the lamp-table vocabulary is not over-repeated.",
+      "riskFlags": ["repetition"]
+    },
+    {
+      "slotId": "N015-S1",
+      "narrationId": "N015",
+      "assetId": "pexels-photo-29372743",
+      "classification": "REPLACE",
+      "reason": "Source describes a professional caregiver assisting a senior down stairs: staged elderly-care stock with demonstrational framing, far from the recorded intent (coat at the front door); mirrors the problem removed at N002-S2.",
+      "riskFlags": ["stock-acting", "character-continuity", "literalness"]
+    },
+    {
+      "slotId": "N015-S2",
+      "narrationId": "N015",
+      "assetId": "pexels-photo-8507641",
+      "classification": "REPLACE",
+      "reason": "Source describes 'father and son bonding in a modern kitchen': staged bonding warmth that viewers will read as a reenactment of the narrator and his father — the strongest fake-character-continuity risk in the episode.",
+      "riskFlags": ["character-continuity", "stock-acting"]
+    },
+    {
+      "slotId": "N015-S3",
+      "narrationId": "N015",
+      "assetId": "pexels-video-7986201",
+      "classification": "KEEP",
+      "reason": "Ordinary departure with door and keys; narration carries the competing-responsibilities meaning, image stays practical.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N015-S4",
+      "narrationId": "N015",
+      "assetId": "pexels-photo-7118793",
+      "classification": "REVIEW",
+      "reason": "Elderly woman on the couch while a child plays is ambient rather than emotional and supplies occupied-living-room life, but once N015-S1/S2 are replaced it becomes the block's only face-bearing family image; judge whether it reads as reenactment.",
+      "riskFlags": ["character-continuity"]
+    },
+    {
+      "slotId": "N016-S1",
+      "narrationId": "N016",
+      "assetId": "pexels-video-1535673",
+      "classification": "REVIEW",
+      "reason": "Vine over a fence is a mild untamed-growth metaphor and the essay's fourth nature-symbol vocabulary; keep only if the sequence needs the visual break from domestic interiors.",
+      "riskFlags": ["cliche-symbolism", "repetition"]
+    },
+    {
+      "slotId": "N016-S2",
+      "narrationId": "N016",
+      "assetId": "pexels-video-6270071",
+      "classification": "KEEP",
+      "reason": "Writing a diary while a partner reads in the background conveys simultaneous obligations via ambient human presence, distinct from N007-S1's scheduling asset.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N016-S3",
+      "narrationId": "N016",
+      "assetId": "pexels-photo-7677886",
+      "classification": "KEEP",
+      "reason": "Unpacking groceries is a grounded household-demand image with no designed complexity metaphor.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N016-S4",
+      "narrationId": "N016",
+      "assetId": "pexels-video-6289666",
+      "classification": "KEEP",
+      "reason": "Bringing dishes to the table conveys lived-in family responsibility and warmth without empty-bench or loneliness coding.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N017-S1",
+      "narrationId": "N017",
+      "assetId": "pexels-photo-7063738",
+      "classification": "REVIEW",
+      "reason": "Papers/lamp/person-nearby works as a planning-pauses beat, but it is the third man-papers-lamp composition after N013-S2 and N014-S3; the repetition is cumulative rather than fatal.",
+      "riskFlags": ["repetition"]
+    },
+    {
+      "slotId": "N017-S2",
+      "narrationId": "N017",
+      "assetId": "pexels-video-7655276",
+      "classification": "KEEP",
+      "reason": "Planting vegetables is a concrete, manageable act restoring ordinary agency late in the essay; ordinary action, not symbolism.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N017-S3",
+      "narrationId": "N017",
+      "assetId": "pexels-video-30067844",
+      "classification": "REVIEW",
+      "reason": "Tea and candlelight gives the needed pause, but the 'cozy winter evening' lifestyle aesthetic is glossier than the essay's plain domestic realism; check it against the closing block's register.",
+      "riskFlags": ["visual-world"]
+    },
+    {
+      "slotId": "N018-S1",
+      "narrationId": "N018",
+      "assetId": "pexels-photo-8860200",
+      "classification": "REVIEW",
+      "reason": "Sleeping senior is the closing mirror of the opening's restrained elderly reveal and is editorially justified, but the 'stylish bedroom with framed photos' staging signals higher production value than the essay's ordinary home; confirm the room reads ordinary.",
+      "riskFlags": ["visual-world", "character-continuity"]
+    },
+    {
+      "slotId": "N018-S2",
+      "narrationId": "N018",
+      "assetId": "pexels-video-25951436",
+      "classification": "REPLACE",
+      "reason": "Asset slug is 'smart-home-button': a tech product close-up, not the intended hallway lamp switch-off; commercial smart-home aesthetic is a hard visual-world break for the quiet domestic ending.",
+      "riskFlags": ["visual-world"]
+    },
+    {
+      "slotId": "N018-S3",
+      "narrationId": "N018",
+      "assetId": "pexels-video-4109492",
+      "classification": "KEEP",
+      "reason": "Quiet night kitchen supports 'the house became quiet again' and ordinary life continuing without sentimentality.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N018-S4",
+      "narrationId": "N018",
+      "assetId": "pexels-photo-10608455",
+      "classification": "KEEP",
+      "reason": "Polaroids on a shelf suggest lived history with no grieving person present; restrained memory object.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N018-S5",
+      "narrationId": "N018",
+      "assetId": "pexels-photo-4132661",
+      "classification": "KEEP",
+      "reason": "Warm light through a slightly open door deliberately bookends frozen N001-S3; earned visual echo, not a cliché.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N018-S6",
+      "narrationId": "N018",
+      "assetId": "pexels-video-6944074",
+      "classification": "KEEP",
+      "reason": "Closing curtains is an ordinary end-of-night action that avoids dramatic or mortality-coded ending imagery.",
+      "riskFlags": []
+    },
+    {
+      "slotId": "N018-S7",
+      "narrationId": "N018",
+      "assetId": "pexels-video-4018217",
+      "classification": "REVIEW",
+      "reason": "Long calm window silhouette matches frozen N003-S3's language and refuses closure, which fits the final lines, but a silhouette ending is also a stock closing gesture; confirm the clip's stillness reads as quiet rather than existential.",
+      "riskFlags": ["cliche-symbolism"]
+    }
+  ],
+  "blocks": [
+    {
+      "narrationId": "N006",
+      "shotCount": 3,
+      "sequence": "Sunlit kitchen -> clouds -> street flow; a widening return to ordinary collective life after the N001-N005 crisis.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "KEEP block as-is; clean restart of the essay's ordinary-life register."
+    },
+    {
+      "narrationId": "N007",
+      "shotCount": 3,
+      "sequence": "Schedule writing -> elderly couple breakfast -> tidy living room; stability assumed then quietly questioned.",
+      "literalnessRisk": "MEDIUM",
+      "characterContinuityRisk": "MEDIUM",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "REVIEW",
+      "recommendation": "Hold N007-S1; review S2 (elderly-couple literalism) and S3 (showroom texture) in sequence with N012/N015/N018 elderly appearances."
+    },
+    {
+      "narrationId": "N008",
+      "shotCount": 3,
+      "sequence": "Staged home meeting -> stairs -> subway; the block's one literal establishing shot is its weakest link.",
+      "literalnessRisk": "MEDIUM",
+      "characterContinuityRisk": "HIGH",
+      "stockActingRisk": "HIGH",
+      "visualWorldConsistency": "REVIEW",
+      "recommendation": "Replace N008-S1; keep N008-S2 and N008-S3."
+    },
+    {
+      "narrationId": "N009",
+      "shotCount": 5,
+      "sequence": "Documents -> laptop -> volunteer visit -> staircase -> papers; trade-offs stay practical but paperwork density is high and the caregiver visit is staged stock.",
+      "literalnessRisk": "HIGH",
+      "characterContinuityRisk": "HIGH",
+      "stockActingRisk": "HIGH",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "Replace N009-S3; with N008-S1 replaced, N009-S1 becomes the single literal documents shot and the block rebalances."
+    },
+    {
+      "narrationId": "N010",
+      "shotCount": 3,
+      "sequence": "Graph sketching -> mountains -> river; solver mindset then scale and irreversibility.",
+      "literalnessRisk": "MEDIUM",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "Keep S1/S2; review S3 only to confirm the two-shot nature run works in sequence."
+    },
+    {
+      "narrationId": "N011",
+      "shotCount": 3,
+      "sequence": "Watering a plant -> changing sunlight -> tea by window; impermanence through observation.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "KEEP whole block; the philosophical section avoids Buddha/stones/leaves clichés entirely — strongest block in the audit."
+    },
+    {
+      "narrationId": "N012",
+      "shotCount": 4,
+      "sequence": "Grandfather garden work -> elderly man walking -> sea -> window shadows; parental presence then anticipatory grief.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "HIGH",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "Replace N012-S2 (second consecutive unrelated elderly man); keep S1 and S4; review S3's sea in the nature-vocabulary context."
+    },
+    {
+      "narrationId": "N013",
+      "shotCount": 3,
+      "sequence": "Lamp dimming -> night coffee by window -> window bokeh; quiet aftermath correctly alternates human presence and environment.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "Keep; only watch the accumulating window-reflection vocabulary across N011-N013."
+    },
+    {
+      "narrationId": "N014",
+      "shotCount": 3,
+      "sequence": "Form filling -> documents put away -> man at lamp table; preparation established then closed.",
+      "literalnessRisk": "MEDIUM",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "REVIEW",
+      "recommendation": "Review N014-S1 (office desk breaks the domestic world) and N014-S3 (lamp-table repetition); keep N014-S2."
+    },
+    {
+      "narrationId": "N015",
+      "shotCount": 4,
+      "sequence": "Caregiver on stairs -> father-and-son kitchen -> departure -> grandmother and child; the block's care imagery is its problem.",
+      "literalnessRisk": "MEDIUM",
+      "characterContinuityRisk": "HIGH",
+      "stockActingRisk": "HIGH",
+      "visualWorldConsistency": "REVIEW",
+      "recommendation": "Replace N015-S1 and N015-S2 (staged caregiver and father-son reenactment risk); keep N015-S3; review N015-S4 after replacements."
+    },
+    {
+      "narrationId": "N016",
+      "shotCount": 4,
+      "sequence": "Vine on fence -> diary with partner reading -> groceries -> dishes to table; responsibility as ordinary household texture.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "GOOD",
+      "recommendation": "Keep S2-S4; S1's vine is the only symbolic question and is defensible as a break from interiors."
+    },
+    {
+      "narrationId": "N017",
+      "shotCount": 3,
+      "sequence": "Papers and lamp -> planting vegetables -> tea and candlelight; from pause to agency to rest.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "LOW",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "REVIEW",
+      "recommendation": "Keep N017-S2; review N017-S1 (lamp-table repetition) and N017-S3 (lifestyle-cozy gloss)."
+    },
+    {
+      "narrationId": "N018",
+      "shotCount": 7,
+      "sequence": "Sleeping senior -> lamp switch-off -> night kitchen -> polaroids -> door ajar -> curtains -> window silhouette; a seven-beat quiet closing that mirrors the opening.",
+      "literalnessRisk": "LOW",
+      "characterContinuityRisk": "MEDIUM",
+      "stockActingRisk": "LOW",
+      "visualWorldConsistency": "REVIEW",
+      "recommendation": "Replace N018-S2 (smart-home tech shot); review N018-S1 (stylish bedroom) and N018-S7 (silhouette ending); the block otherwise avoids sunset/road/mortality clichés."
+    }
+  ],
+  "transitions": [
+    {
+      "boundary": "N007 -> N008",
+      "assessment": "N007-S3's tidy empty room into N008-S1's staged social-worker meeting is an abrupt register jump from stillness to stock performance; replacing N008-S1 makes the transition a calm descent into practical questions (stair shot follows well)."
+    },
+    {
+      "boundary": "N009 -> N010",
+      "assessment": "N009-S5 papers into N010-S1 graph continues the paperwork vocabulary across the boundary; N009-S4's staircase breaks it inside the block, and the graph is a fresh composition — acceptable, but watch paperwork density if N009-S5 is ever revisited."
+    },
+    {
+      "boundary": "N010 -> N011",
+      "assessment": "River into plant-watering resets nature to domestic; good pivot from abstraction back to ordinary life."
+    },
+    {
+      "boundary": "N011 -> N012",
+      "assessment": "Tea by window into grandfather's garden moves philosophy into parental presence; works, provided N012-S2 is replaced so the block contains only one identifiable elderly actor."
+    },
+    {
+      "boundary": "N012 -> N013",
+      "assessment": "Window shadows into lamp dimming: two dim interior time-passage shots back to back; coherent and intentionally quiet, low risk."
+    },
+    {
+      "boundary": "N014 -> N015",
+      "assessment": "Closed documents into caregiver-on-stairs jumps from paperwork to dramatized care; once N015-S1/S2 are replaced, the block must open with a new care-as-ordinary-work beat so the sequence does not go documents -> departure with no human care image."
+    },
+    {
+      "boundary": "N016 -> N017",
+      "assessment": "Dishes to table into papers-and-lamp: domestic evening into planning pause; natural, no action needed."
+    },
+    {
+      "boundary": "N017 -> N018",
+      "assessment": "Candlelight tea into sleeping senior: both warm night interiors; if N017-S3's lifestyle gloss is kept, it sits directly against the ending's plain domestic realism — resolve N017-S3 and N018-S1's register together."
+    }
+  ],
+  "summary": {
+    "total": 48,
+    "keep": 28,
+    "review": 14,
+    "replace": 6,
+    "scopeNote": "Audit scope contains 48 shots, not 49: N001-N005 comprises 16 shots (N005 has four slots), so 64 total - 16 = 48.",
+    "replaceSlots": ["N008-S1", "N009-S3", "N012-S2", "N015-S1", "N015-S2", "N018-S2"],
+    "reviewSlots": ["N007-S2", "N007-S3", "N009-S5", "N010-S3", "N012-S3", "N013-S2", "N014-S1", "N014-S3", "N015-S4", "N016-S1", "N017-S1", "N017-S3", "N018-S1", "N018-S7"],
+    "dominantRisks": [
+      "Staged elderly-care / family stock acting concentrates in N008, N009, N015",
+      "Fake character continuity from identifiable unrelated elderly actors (N012, N015, and borderline N007-S2, N018-S1)",
+      "Cross-episode nature-metaphor vocabulary accumulation (N010 mountains/river, N012 sea, N016 vine)",
+      "Repeating man-papers-lamp and window-reflection compositions (N013-N014-N017; N011-N013)"
+    ]
+  }
+}

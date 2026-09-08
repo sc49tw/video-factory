@@ -1,0 +1,370 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0003",
+  "series": "ESSY",
+  "subtype": "essay",
+  "title": "How Much of Your Life Are You Still Willing to Sell?",
+  "language": "en",
+  "renderMode": "essay-narration",
+  "voice": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sections": [
+    {
+      "id": "n001",
+      "heading": "N001",
+      "narration": [
+        {
+          "id": "n001",
+          "text": "What if you're good at your job... but no longer want to spend your life doing it?\r\n\r\nHow much money is enough to make another year of your life worth trading away?\r\n\r\nAnd if nothing forces you to leave... how will you ever know when it's time to choose something else?",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n002",
+      "heading": "N002",
+      "narration": [
+        {
+          "id": "n002",
+          "text": "A Second Look at Life.\r\n\r\nHow Much of Your Life Are You Still Willing to Sell?",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n003",
+      "heading": "N003",
+      "narration": [
+        {
+          "id": "n003",
+          "text": "There is a strange point in a career when work can become difficult to think about.\r\n\r\nNot because the job is terrible.\r\n\r\nSometimes, the opposite is true.\r\n\r\nYou are good at it.\r\n\r\nYou know what you are doing.\r\n\r\nPeople trust you.\r\n\r\nThe salary is stable.\r\n\r\nThe work is familiar.\r\n\r\nAnd after twenty or thirty years of building a career, walking away from all of that can seem almost irrational.\r\n\r\nBut somewhere underneath that stability, another question may begin to appear.\r\n\r\nNot:\r\n\r\n\"Should I quit my job?\"\r\n\r\nBut something quieter.\r\n\r\nHow much of my remaining life am I still willing to sell for financial security?",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n004",
+      "heading": "N004",
+      "narration": [
+        {
+          "id": "n004",
+          "text": "When we are young, work is often about building.\r\n\r\nBuilding skills.\r\n\r\nBuilding a career.\r\n\r\nBuilding savings.\r\n\r\nBuilding a reputation.\r\n\r\nBuilding a life.\r\n\r\nAnd for a long time, those things point in roughly the same direction.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n005",
+      "heading": "N005",
+      "narration": [
+        {
+          "id": "n005",
+          "text": "Becoming better at your work gives you more opportunities.\r\n\r\nMore opportunities give you more income.\r\n\r\nMore income gives you more security.\r\n\r\nSo you keep going.\r\n\r\nAnd this makes sense.\r\n\r\nBut eventually, something changes.\r\n\r\nThe question is no longer only:\r\n\r\nWhat can I become?\r\n\r\nIt also becomes:\r\n\r\nWhat do I want to do with the time I have left?\r\n\r\nThose are not quite the same question.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n006",
+      "heading": "N006",
+      "narration": [
+        {
+          "id": "n006",
+          "text": "There are at least three things we often confuse when we think about our careers.\r\n\r\nWhat we are suited for.\r\n\r\nWhat we are good at.\r\n\r\nAnd what we still want to spend our lives doing.\r\n\r\nThey can overlap.\r\n\r\nBut they do not have to.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n007",
+      "heading": "N007",
+      "narration": [
+        {
+          "id": "n007",
+          "text": "You may be perfectly suited to your profession.\r\n\r\nYou may have become very good at it.\r\n\r\nYou may even be better at it today than at any earlier point in your career.\r\n\r\nAnd still...\r\n\r\nyou may no longer want to give most of your waking hours to it.\r\n\r\nThat does not mean the career was a mistake.\r\n\r\nIt may simply mean that something that made sense for one part of your life does not automatically deserve the rest of it.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n008",
+      "heading": "N008",
+      "narration": [
+        {
+          "id": "n008",
+          "text": "This is difficult to admit because leaving a career is rarely just about leaving a salary.\r\n\r\nYou are also leaving something you spent decades constructing.\r\n\r\nA degree.\r\n\r\nA profession.\r\n\r\nExpertise.\r\n\r\nSeniority.\r\n\r\nA reputation.\r\n\r\nPerhaps even a large part of your identity.\r\n\r\nWhen someone asks what you do, you have had an answer for years.\r\n\r\nAnd the longer you have lived inside that answer, the harder it becomes to imagine yourself outside it.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n009",
+      "heading": "N009",
+      "narration": [
+        {
+          "id": "n009",
+          "text": "There is also the weight of everything already invested.\r\n\r\nAll those years of education.\r\n\r\nAll those late nights.\r\n\r\nAll the difficult projects.\r\n\r\nAll the things you learned that only a small number of people know how to do.\r\n\r\nWalking away can feel like wasting them.\r\n\r\nEconomists have a name for part of this: the sunk-cost fallacy.\r\n\r\nWe allow what we have already invested to influence what we believe we should continue investing.\r\n\r\nBut time already spent cannot be recovered.\r\n\r\nThe more important question is what deserves the time that has not yet been spent.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n010",
+      "heading": "N010",
+      "narration": [
+        {
+          "id": "n010",
+          "text": "Financial security complicates this even further.\r\n\r\nBecause financial security is real.\r\n\r\nMoney is not an abstract concept when there is a mortgage to pay, parents who may need care, children who still depend on you, or decades of life still ahead.\r\n\r\nA stable salary protects us from uncertainty.\r\n\r\nAnd that protection has enormous value.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n011",
+      "heading": "N011",
+      "narration": [
+        {
+          "id": "n011",
+          "text": "So this is not an argument for quitting.\r\n\r\nIt is not an argument for abandoning responsibility in the name of freedom.\r\n\r\nBut perhaps security also has a price.\r\n\r\nAnd the price is not measured only in effort.\r\n\r\nIt is measured in mornings.\r\n\r\nIn commutes.\r\n\r\nIn meetings.\r\n\r\nIn evenings when you come home with little energy left for anything else.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n012",
+      "heading": "N012",
+      "narration": [
+        {
+          "id": "n012",
+          "text": "One day of work rarely feels like a large sacrifice.\r\n\r\nNeither does one month.\r\n\r\nEven one year can pass surprisingly quickly.\r\n\r\nBut careers are built from thousands of ordinary days.\r\n\r\nAnd eventually those days become a significant portion of a life.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n013",
+      "heading": "N013",
+      "narration": [
+        {
+          "id": "n013",
+          "text": "Psychologist Erik Erikson described a central tension of middle adulthood as generativity versus stagnation.\r\n\r\nGenerativity is often described as the desire to create, contribute, teach, care for others, or leave something meaningful beyond ourselves.\r\n\r\nIt does not necessarily mean changing careers.\r\n\r\nAnd it certainly does not mean everyone needs some grand new purpose.\r\n\r\nSometimes it may be much smaller.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n014",
+      "heading": "N014",
+      "narration": [
+        {
+          "id": "n014",
+          "text": "Making something because you want it to exist.\r\n\r\nLearning something that has no connection to your résumé.\r\n\r\nCooking dinner without rushing.\r\n\r\nHelping someone.\r\n\r\nReading.\r\n\r\nWalking.\r\n\r\nSpending an afternoon on a project nobody is paying you to finish.\r\n\r\nHaving enough mental space to notice your own life again.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n015",
+      "heading": "N015",
+      "narration": [
+        {
+          "id": "n015",
+          "text": "Perhaps what changes in midlife is not that work suddenly becomes meaningless.\r\n\r\nPerhaps other forms of meaning simply begin competing more seriously for the same limited hours.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n016",
+      "heading": "N016",
+      "narration": [
+        {
+          "id": "n016",
+          "text": "When we are younger, the future can feel almost unlimited.\r\n\r\nThere will be another year.\r\n\r\nAnother job.\r\n\r\nAnother opportunity.\r\n\r\nAnother decade.\r\n\r\nLater, time begins to feel different.\r\n\r\nNot necessarily frightening.\r\n\r\nJust more visible.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n017",
+      "heading": "N017",
+      "narration": [
+        {
+          "id": "n017",
+          "text": "You start to understand that there may be only so many healthy years when you can travel easily.\r\n\r\nOnly so many summers when your children still want to spend time with you.\r\n\r\nOnly so many years when your parents are still here.\r\n\r\nOnly so many ordinary mornings when your body allows you to decide freely what to do with the day.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n018",
+      "heading": "N018",
+      "narration": [
+        {
+          "id": "n018",
+          "text": "This does not make every hour precious.\r\n\r\nLife does not need to become another optimization problem.\r\n\r\nBut it does make time harder to treat as an unlimited resource.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n019",
+      "heading": "N019",
+      "narration": [
+        {
+          "id": "n019",
+          "text": "Existentialist thinkers often returned to a simple but uncomfortable idea:\r\n\r\nA life is shaped by the choices we actually make.\r\n\r\nNot only by the possibilities we imagine.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n020",
+      "heading": "N020",
+      "narration": [
+        {
+          "id": "n020",
+          "text": "We may tell ourselves that someday we will slow down.\r\n\r\nSomeday we will make things.\r\n\r\nSomeday we will travel.\r\n\r\nSomeday we will spend more time with people we love.\r\n\r\nSomeday we will have time for ourselves.\r\n\r\nBut \"someday\" is a strange place.\r\n\r\nIt can remain permanently in the future.\r\n\r\nAnd a stable life makes postponement particularly easy.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n021",
+      "heading": "N021",
+      "narration": [
+        {
+          "id": "n021",
+          "text": "Nothing is obviously wrong.\r\n\r\nThere is no crisis forcing a decision.\r\n\r\nThe salary arrives every month.\r\n\r\nThe calendar stays full.\r\n\r\nAnother year passes.\r\n\r\nAnd then another.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n022",
+      "heading": "N022",
+      "narration": [
+        {
+          "id": "n022",
+          "text": "Perhaps this is why the hardest career decisions are sometimes not about escaping bad jobs.\r\n\r\nThey are about leaving good enough ones.\r\n\r\nA terrible job gives you a reason to leave.\r\n\r\nA good-enough job gives you a reason to stay indefinitely.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n023",
+      "heading": "N023",
+      "narration": [
+        {
+          "id": "n023",
+          "text": "And maybe that is where the question becomes useful.\r\n\r\nNot:\r\n\r\n\"Do I hate my job enough to quit?\"\r\n\r\nNot even:\r\n\r\n\"Do I have enough money to retire?\"\r\n\r\nBut:\r\n\r\nIf I continue exactly as I am, what am I buying with these years?",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n024",
+      "heading": "N024",
+      "narration": [
+        {
+          "id": "n024",
+          "text": "Maybe the answer is security.\r\n\r\nMaybe it is responsibility.\r\n\r\nMaybe it is giving your family opportunities you deeply care about.\r\n\r\nMaybe it is work you still find genuinely worthwhile.\r\n\r\nThose can all be good answers.\r\n\r\nThe point is not that selling our time is wrong.\r\n\r\nAlmost everyone does it.\r\n\r\nThe point is to know what we are receiving in exchange.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n025",
+      "heading": "N025",
+      "narration": [
+        {
+          "id": "n025",
+          "text": "And perhaps, at some stage of life, the calculation changes.\r\n\r\nAn extra amount of money may matter less than it once did.\r\n\r\nAn extra free morning may matter more.\r\n\r\nAnother promotion may become less interesting.\r\n\r\nBeing able to decide what to do on a Tuesday afternoon may become strangely valuable.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n026",
+      "heading": "N026",
+      "narration": [
+        {
+          "id": "n026",
+          "text": "This does not require a dramatic resignation.\r\n\r\nThe answer might be working fewer hours.\r\n\r\nChanging roles.\r\n\r\nTaking a sabbatical.\r\n\r\nBuilding enough financial independence to make work optional.\r\n\r\nOr simply protecting parts of your life that work is no longer allowed to consume.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n027",
+      "heading": "N027",
+      "narration": [
+        {
+          "id": "n027",
+          "text": "The decision does not have to be binary.\r\n\r\nWork or freedom.\r\n\r\nCareer or life.\r\n\r\nStay or quit.\r\n\r\nThere is a large space between those extremes.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n028",
+      "heading": "N028",
+      "narration": [
+        {
+          "id": "n028",
+          "text": "Maybe the real purpose of financial security is not to accumulate enough money to feel permanently safe.\r\n\r\nPerhaps permanent safety does not exist.\r\n\r\nMaybe the purpose is eventually to give ourselves more choices about our time.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n029",
+      "heading": "N029",
+      "narration": [
+        {
+          "id": "n029",
+          "text": "Because money can be earned, lost, invested, and sometimes earned again.\r\n\r\nBut time moves in only one direction.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n030",
+      "heading": "N030",
+      "narration": [
+        {
+          "id": "n030",
+          "text": "The years spent becoming who we are were not wasted.\r\n\r\nThey brought us here.\r\n\r\nThe skills remain.\r\n\r\nThe experiences remain.\r\n\r\nThe people we helped remain.\r\n\r\nThe person we became remains.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n031",
+      "heading": "N031",
+      "narration": [
+        {
+          "id": "n031",
+          "text": "We do not have to justify the past by repeating it forever.\r\n\r\nSo perhaps the question for the second half of a career is not whether work is still good.\r\n\r\nIt may still be good.\r\n\r\nThe question is whether it is still worth what it costs.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n032",
+      "heading": "N032",
+      "narration": [
+        {
+          "id": "n032",
+          "text": "And that is something only each of us can answer.\r\n\r\nHow much of your remaining time are you still willing to sell?",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    }
+  ]
+}

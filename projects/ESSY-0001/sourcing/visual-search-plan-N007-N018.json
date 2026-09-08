@@ -1,0 +1,296 @@
+[
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S1",
+    "visualIntent": "A calendar gradually filled with appointments and obligations.",
+    "searchQuery": "busy calendar schedule appointments planning",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S2",
+    "visualIntent": "A professional identity represented by ordinary office life rather than success imagery.",
+    "searchQuery": "middle aged professional office working desk thoughtful",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S3",
+    "visualIntent": "Someone encountering an older version of themselves through photographs or personal history.",
+    "searchQuery": "person looking old photographs memories home",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S1",
+    "visualIntent": "Someone sorting through accumulated personal belongings.",
+    "searchQuery": "sorting personal belongings boxes home decluttering",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S2",
+    "visualIntent": "A moment of hesitation before deciding whether to keep an old possession.",
+    "searchQuery": "person holding old object thoughtful memory home",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S3",
+    "visualIntent": "A calm physical gesture of letting something go.",
+    "searchQuery": "donating belongings cardboard box decluttering home",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S1",
+    "visualIntent": "Financial and performance metrics accumulating on screens or documents.",
+    "searchQuery": "financial charts numbers computer screen work",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S2",
+    "visualIntent": "A person trying to maximize productivity across many tasks.",
+    "searchQuery": "busy professional multitasking laptop phone notes productivity",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S3",
+    "visualIntent": "Social-media attention and validation represented through everyday phone use.",
+    "searchQuery": "person scrolling social media smartphone notifications",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S4",
+    "visualIntent": "Self-improvement accumulating into books, planners, habits and routines.",
+    "searchQuery": "self improvement books planner journal habits desk",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S5",
+    "visualIntent": "Optimization itself becoming visually overwhelming.",
+    "searchQuery": "overwhelmed person desk sticky notes planner laptop",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N010",
+    "slotId": "N010-S1",
+    "visualIntent": "Someone fatigued by organizing and optimizing everyday work.",
+    "searchQuery": "tired person desk planner laptop overwhelmed",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N010",
+    "slotId": "N010-S2",
+    "visualIntent": "A transition toward a simple uncluttered physical environment.",
+    "searchQuery": "simple calm minimal home interior natural light",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N010",
+    "slotId": "N010-S3",
+    "visualIntent": "Deliberately choosing one thing while leaving other options aside.",
+    "searchQuery": "person choosing one item simple decision thoughtful",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N011",
+    "slotId": "N011-S1",
+    "visualIntent": "Time initially represented as abundant and open.",
+    "searchQuery": "slow morning sunlight empty room peaceful time",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N011",
+    "slotId": "N011-S2",
+    "visualIntent": "The passage of finite time shown without melodramatic mortality imagery.",
+    "searchQuery": "clock sunlight moving shadows passage of time",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N011",
+    "slotId": "N011-S3",
+    "visualIntent": "An evening relationship moment that could be lost to work.",
+    "searchQuery": "family couple evening home dinner together",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S1",
+    "visualIntent": "An ordinary consumer purchase entering the home.",
+    "searchQuery": "online shopping package delivery opening box home",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S2",
+    "visualIntent": "The hidden work of storing, cleaning or maintaining possessions.",
+    "searchQuery": "organizing storage cleaning belongings home maintenance",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S3",
+    "visualIntent": "Career advancement represented by increased professional responsibility.",
+    "searchQuery": "manager busy office meeting responsibility work",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S4",
+    "visualIntent": "A quiet moment considering the trade-off between money, responsibility and personal time.",
+    "searchQuery": "professional alone office window evening thoughtful",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S1",
+    "visualIntent": "Many desirable possibilities presented without luxury advertising imagery.",
+    "searchQuery": "people walking city choices everyday life possibilities",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S2",
+    "visualIntent": "Someone searching for meaning through reflection rather than dramatic revelation.",
+    "searchQuery": "person walking alone nature thoughtful reflection",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S3",
+    "visualIntent": "Purpose expressed through an ordinary meaningful everyday activity.",
+    "searchQuery": "person gardening cooking reading quiet meaningful activity",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S1",
+    "visualIntent": "Family receiving genuine unhurried attention.",
+    "searchQuery": "family spending time together home candid",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S2",
+    "visualIntent": "Health represented as an ordinary sustainable routine.",
+    "searchQuery": "middle aged person walking exercise morning routine",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S3",
+    "visualIntent": "Freedom contrasted with continuous work and earning.",
+    "searchQuery": "person leaving office walking outside evening freedom",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S4",
+    "visualIntent": "Unstructured time allowing curiosity to emerge.",
+    "searchQuery": "person browsing books museum exploring alone curiosity",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N015",
+    "slotId": "N015-S1",
+    "visualIntent": "An obligation being removed from an overloaded schedule.",
+    "searchQuery": "crossing out calendar appointment planner schedule",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N015",
+    "slotId": "N015-S2",
+    "visualIntent": "Choosing not to make an unnecessary purchase.",
+    "searchQuery": "person shopping puts item back shelf decision",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N015",
+    "slotId": "N015-S3",
+    "visualIntent": "Questioning an inherited definition of career success.",
+    "searchQuery": "professional office thoughtful career decision window",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N015",
+    "slotId": "N015-S4",
+    "visualIntent": "Stepping away from visible status and social comparison.",
+    "searchQuery": "person puts smartphone away quiet alone",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S1",
+    "visualIntent": "Visual noise and activity gradually giving way to quiet.",
+    "searchQuery": "busy city crowd transition quiet street evening",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S2",
+    "visualIntent": "A person enjoying a smaller quieter life without appearing lonely.",
+    "searchQuery": "person peaceful home window coffee quiet morning",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S3",
+    "visualIntent": "Freedom expressed as choosing what to do with one's own time.",
+    "searchQuery": "adult enjoying hobby workshop painting gardening free time",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N017",
+    "slotId": "N017-S1",
+    "visualIntent": "A small number of close relationships receiving undivided attention.",
+    "searchQuery": "two close friends talking together candid quiet",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N017",
+    "slotId": "N017-S2",
+    "visualIntent": "A deliberately sparse schedule with breathing room.",
+    "searchQuery": "simple planner empty calendar minimal schedule",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N017",
+    "slotId": "N017-S3",
+    "visualIntent": "Quiet self-recognition rather than dramatic self-transformation.",
+    "searchQuery": "middle aged person mirror quiet morning thoughtful",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S1",
+    "visualIntent": "Growing older shown as a natural passage rather than decline.",
+    "searchQuery": "middle aged person walking morning natural candid",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S2",
+    "visualIntent": "Letting old expectations and goals physically recede.",
+    "searchQuery": "person clearing papers old notes desk letting go",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S3",
+    "visualIntent": "With less noise, what remains becomes clearer and more visible.",
+    "searchQuery": "quiet open landscape horizon morning minimal peaceful",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S4",
+    "visualIntent": "Editing a life represented by calmly choosing what remains, ending with openness rather than finality.",
+    "searchQuery": "person walking open road horizon peaceful future",
+    "preferredMediaType": "video"
+  }
+]

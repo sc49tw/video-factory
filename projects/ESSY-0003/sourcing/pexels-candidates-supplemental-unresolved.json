@@ -1,0 +1,1925 @@
+{
+  "schemaVersion": "2.0",
+  "episode": "ESSY-0003",
+  "provider": "pexels",
+  "pass": "supplemental-unresolved",
+  "mode": "search-only-no-downloads",
+  "passType": "supplemental-unresolved-slots",
+  "note": "Covers 22 unresolved slots the human review deferred. Nothing assigned, nothing downloaded, nothing approved; high-confidence-only recommendations will be added in the HTML review artifact for human sign-off.",
+  "searchedAt": "2026-09-05T03:50:36.868Z",
+  "videosPerSlot": 3,
+  "photoFallbacksPerSlot": 1,
+  "families": [
+    {
+      "familyId": "SF-03",
+      "unresolvedSlots": [
+        "N023-S3"
+      ],
+      "intent": "a small ordinary transfer/exchange between people — hands passing a modest object across a counter without visible money or payment-terminal emphasis.",
+      "avoid": "finance imagery, payment terminal cliche, staged exchange",
+      "avoidRegex": "cash|bank|payment.terminal|credit.card|bill.counting|money.stack",
+      "queries": [
+        {
+          "query": "hands passing small item across counter ordinary shop",
+          "count": 2
+        },
+        {
+          "query": "handing receipt ticket small object counter candid",
+          "count": 1
+        },
+        {
+          "query": "customer receiving small item from shopkeeper hands",
+          "count": 1
+        }
+      ],
+      "videoCount": 4,
+      "candidates": [
+        {
+          "id": "pexels-video-6127660",
+          "familyId": "SF-03",
+          "slotIds": [
+            "N023-S3"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/giving-a-customer-a-free-drink-6127660/",
+          "creator": "cottonbro studio",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-03-N023-S3-pexels-video-6127660.mp4",
+          "durationSec": 86,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6127660/pexels-photo-6127660.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6127660/6127660-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "hands passing small item across counter ordinary shop",
+          "semanticNote": "handover of a free drink — transfer but cafe 'freebie' register; 86s",
+          "assignedSlotId": "N023-S3",
+          "selectionNote": "handover of a drink — use a segment/crop focused on the handover gesture; do not emphasize cafe/freebie/promotional context",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N023-S3-video-6127660.mp4",
+          "sha256": "c2e3dddae76bc52f80d8d171cd2580f0b84e5d8aad96c39e250e7f2eaab18ff0",
+          "fileSizeBytes": 29068317
+        },
+        {
+          "id": "pexels-video-29832466",
+          "familyId": "SF-03",
+          "slotIds": [
+            "N023-S3"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/retail-checkout-process-with-scanner-and-items-29832466/",
+          "creator": "Ahimsa -  OM",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-03-N023-S3-pexels-video-29832466.mp4",
+          "durationSec": 5,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/29832466/pexels-photo-29832466.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/29832466/12812516_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "hands passing small item across counter ordinary shop",
+          "semanticNote": "retail checkout / scanner = payment-terminal emphasis, banned"
+        },
+        {
+          "id": "pexels-video-28913294",
+          "familyId": "SF-03",
+          "slotIds": [
+            "N023-S3"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/charming-small-town-railway-station-in-thailand-28913294/",
+          "creator": "LayG Traveller",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-03-N023-S3-pexels-video-28913294.mp4",
+          "durationSec": 5,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/28913294/journey-railway-station-small-town-thailand-28913294.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/28913294/12514553_1920_1080_60fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "handing receipt ticket small object counter candid",
+          "semanticNote": "travel / tourism (Thai railway station), wrong subject"
+        },
+        {
+          "id": "pexels-video-36066735",
+          "familyId": "SF-03",
+          "slotIds": [
+            "N023-S3"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/bustling-day-at-a-busy-filipino-market-stall-36066735/",
+          "creator": "Airam Dato-on",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-03-N023-S3-pexels-video-36066735.mp4",
+          "durationSec": 16,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/36066735/marikina-metro-manila-palengke-36066735.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/36066735/15295375_1920_1080_24fps.mp4",
+          "altText": null,
+          "selectionStatus": "flagged-semantic",
+          "foundByQuery": "customer receiving small item from shopkeeper hands",
+          "semanticNote": "busy market stall — a real exchange but reads bustling; possible, not certain"
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-24",
+      "unresolvedSlots": [
+        "N016-S3"
+      ],
+      "intent": "a lived, quiet marker of elapsed years rather than calendar-as-time symbolism.",
+      "avoid": "calendar/planner grammar, sepia nostalgia, growing-up montage",
+      "avoidRegex": "calendar|planner|sepia|nostalgia|montage.growing",
+      "queries": [
+        {
+          "query": "child height marks on doorframe pencil home",
+          "count": 2
+        },
+        {
+          "query": "old children bicycle garage wall years",
+          "count": 1
+        },
+        {
+          "query": "worn measuring marks doorway quiet home",
+          "count": 1
+        },
+        {
+          "query": "aged school shoes by door hooks row",
+          "count": 1
+        }
+      ],
+      "videoCount": 5,
+      "candidates": [
+        {
+          "id": "pexels-video-3981946",
+          "familyId": "SF-24",
+          "slotIds": [
+            "N016-S3"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-little-girl-writing-on-notebook-3981946/",
+          "creator": "Gustavo Fring",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-24-N016-S3-pexels-video-3981946.mp4",
+          "durationSec": 13,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/3981946/pexels-photo-3981946.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/3981946/3981946-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "child height marks on doorframe pencil home",
+          "semanticNote": "girl writing in notebook — not a time marker"
+        },
+        {
+          "id": "pexels-video-27876429",
+          "familyId": "SF-24",
+          "slotIds": [
+            "N016-S3"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-person-measuring-a-piece-of-wood-with-a-ruler-27876429/",
+          "creator": "Videas Cl",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-24-N016-S3-pexels-video-27876429.mp4",
+          "durationSec": 20,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/27876429/pexels-photo-27876429.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/27876429/12252462_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "child height marks on doorframe pencil home",
+          "semanticNote": "measuring wood with ruler — tool shot, not elapsed-years"
+        },
+        {
+          "id": "pexels-video-5792245",
+          "familyId": "SF-24",
+          "slotIds": [
+            "N016-S3"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/close-up-shot-of-old-bikes-5792245/",
+          "creator": "Matthias Groeneveld",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-24-N016-S3-pexels-video-5792245.mp4",
+          "durationSec": 36,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/5792245/pexels-photo-5792245.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/5792245/5792245-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "old children bicycle garage wall years",
+          "recommendationNote": "lived quiet marker of elapsed years (old bikes). RECOMMENDED WITH CAUTION: bicycle motif may echo N012-S2's bikes — sequence-QA must differentiate the two frames.",
+          "assignedSlotId": "N016-S3",
+          "selectionNote": "old bikes / accumulated elapsed time — DELIBERATE visual rhyme with N012-S2 (childhood). Flag sequence QA so the two shots read as progression, not repetitive bicycle stock.",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N016-S3-video-5792245.mp4",
+          "sha256": "aa806fd758c96b67a4cd6c93509133cae33e413a3c808eb6d03b65347782f56e",
+          "fileSizeBytes": 26399541
+        },
+        {
+          "id": "pexels-video-5967527",
+          "familyId": "SF-24",
+          "slotIds": [
+            "N016-S3"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/measuring-a-piece-of-wood-5967527/",
+          "creator": "Ono  Kosuki",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-24-N016-S3-pexels-video-5967527.mp4",
+          "durationSec": 5,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/5967527/pexels-photo-5967527.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/5967527/5967527-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "worn measuring marks doorway quiet home",
+          "semanticNote": "measuring wood — tool shot"
+        },
+        {
+          "id": "pexels-video-8499696",
+          "familyId": "SF-24",
+          "slotIds": [
+            "N016-S3"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-happy-little-boy-in-a-school-giving-a-thumb-up-8499696/",
+          "creator": "RDNE Stock project",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-24-N016-S3-pexels-video-8499696.mp4",
+          "durationSec": 16,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8499696/adult-apartment-architecture-art-8499696.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8499696/8499696-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "aged school shoes by door hooks row",
+          "semanticNote": "child thumbs-up at school — celebration cliche"
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-12",
+      "unresolvedSlots": [
+        "N004-S1",
+        "N016-S1"
+      ],
+      "intent": "youth in open motion: studying, commuting, running for a train; vitality without countdown.",
+      "avoid": "college-party, fitness-ad, extreme sport register",
+      "avoidRegex": "party|club|gym.fitness.ad|marathon|extreme.sport|party.dance",
+      "queries": [
+        {
+          "query": "students walking campus morning candid",
+          "count": 2
+        },
+        {
+          "query": "commuters moving toward train platform morning",
+          "count": 1
+        },
+        {
+          "query": "adult morning jog ordinary city street",
+          "count": 1
+        },
+        {
+          "query": "young adults walking to work daylight candid",
+          "count": 1
+        }
+      ],
+      "videoCount": 5,
+      "candidates": [
+        {
+          "id": "pexels-video-6145687",
+          "familyId": "SF-12",
+          "slotIds": [
+            "N004-S1"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/smiling-young-people-leaving-university-building-with-books-6145687/",
+          "creator": "Keira Burton",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-12-N004-S1-pexels-video-6145687.mp4",
+          "durationSec": 11,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6145687/pexels-photo-6145687.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6145687/6145687-hd_1920_1080_24fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "students walking campus morning candid",
+          "recommendationNote": "young adults leaving university — building phase in motion, vitality without countdown",
+          "assignedSlotId": "N004-S1",
+          "selectionNote": "young adults leaving university — building phase in motion",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N004-S1-video-6145687.mp4",
+          "sha256": "057661d57274106c0919450f67526796437baee0f5345223e4427fef85e5ac57",
+          "fileSizeBytes": 7202184
+        },
+        {
+          "id": "pexels-video-3680686",
+          "familyId": "SF-12",
+          "slotIds": [
+            "N004-S1"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/young-man-on-skateboard-walking-on-pathway-3680686/",
+          "creator": "Rob  Cot",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-12-N004-S1-pexels-video-3680686.mp4",
+          "durationSec": 21,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/3680686/grass-pathway-pop-up-skateboard-skateboard-3680686.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/3680686/3680686-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "flagged-semantic",
+          "foundByQuery": "students walking campus morning candid",
+          "semanticNote": "skateboard walking — youth register may clash with mid-career framing"
+        },
+        {
+          "id": "pexels-video-32032311",
+          "familyId": "SF-12",
+          "slotIds": [
+            "N016-S1"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/peaceful-morning-at-a-train-station-platform-32032311/",
+          "creator": "Efrem  Efre",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-12-N016-S1-pexels-video-32032311.mp4",
+          "durationSec": 6,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/32032311/in-motion-32032311.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/32032311/13653675_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "flagged-semantic",
+          "foundByQuery": "commuters moving toward train platform morning",
+          "semanticNote": "'peaceful' empty platform — opposite of running-for-train"
+        },
+        {
+          "id": "pexels-video-3192168",
+          "familyId": "SF-12",
+          "slotIds": [
+            "N004-S1"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/an-elderly-couple-jogging-on-the-sidewalk-3192168/",
+          "creator": "Pressmaster",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-12-N004-S1-pexels-video-3192168.mp4",
+          "durationSec": 31,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/3192168/free-video-3192168.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/3192168/3192168-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "adult morning jog ordinary city street",
+          "semanticNote": "elderly couple jogging — wrong age for youth-motion slots"
+        },
+        {
+          "id": "pexels-video-7894222",
+          "familyId": "SF-12",
+          "slotIds": [
+            "N016-S1"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/women-walking-on-a-docking-area-7894222/",
+          "creator": "Kampus Production",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-12-N016-S1-pexels-video-7894222.mp4",
+          "durationSec": 18,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7894222/pexels-photo-7894222.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7894222/7894222-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "young adults walking to work daylight candid",
+          "semanticNote": "women walking at a docking area — open unfolding motion; check industrial feel"
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-14",
+      "unresolvedSlots": [
+        "N005-S2",
+        "N011-S1",
+        "N011-S4",
+        "N026-S1"
+      ],
+      "intent": "neutral routine and the work-shaped day, especially the dark coming-home beat; routine executed smoothly, duty shown neutrally.",
+      "avoid": "silhouette, collapse-on-couch, alcohol trope",
+      "avoidRegex": "silhouette|collapse.couch|drunk|alcohol|exhausted.dramatic",
+      "queries": [
+        {
+          "query": "hanging coat hallway evening dim warm",
+          "count": 2
+        },
+        {
+          "query": "arriving home hallway evening coat keys",
+          "count": 1
+        },
+        {
+          "query": "apartment entrance returning home after work evening",
+          "count": 1
+        },
+        {
+          "query": "ordinary commute station entrance morning candid",
+          "count": 1
+        }
+      ],
+      "videoCount": 5,
+      "candidates": [
+        {
+          "id": "pexels-video-8049623",
+          "familyId": "SF-14",
+          "slotIds": [
+            "N005-S2"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/shadow-of-a-person-walking-outdoors-8049623/",
+          "creator": "SHVETS production",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-14-N005-S2-pexels-video-8049623.mp4",
+          "durationSec": 7,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8049623/pexels-photo-8049623.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8049623/8049623-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "hanging coat hallway evening dim warm",
+          "semanticNote": "shadow/silhouette — already rejected by human review (silhouette metaphor risk)"
+        },
+        {
+          "id": "pexels-video-7986624",
+          "familyId": "SF-14",
+          "slotIds": [
+            "N005-S2"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/shadow-of-a-person-passing-by-7986624/",
+          "creator": "SHVETS production",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-14-N005-S2-pexels-video-7986624.mp4",
+          "durationSec": 7,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7986624/at-home-couple-gadgets-life-at-home-7986624.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7986624/7986624-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "hanging coat hallway evening dim warm",
+          "semanticNote": "shadow/silhouette — same silhouette risk"
+        },
+        {
+          "id": "pexels-video-7986201",
+          "familyId": "SF-14",
+          "slotIds": [
+            "N011-S1"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/woman-going-out-of-the-door-7986201/",
+          "creator": "SHVETS production",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-14-N011-S1-pexels-video-7986201.mp4",
+          "durationSec": 17,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7986201/flat-home-key-keys-7986201.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7986201/7986201-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "arriving home hallway evening coat keys",
+          "assignedSlotId": "N011-S1",
+          "selectionNote": "leave-home / keys / doorway routine — duty shown neutrally",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N011-S1-video-7986201.mp4",
+          "sha256": "8fd56c06724cf0f6aa6dfcda2c196a864f14d60c1d40cdf8c2c1f60875b7be7f",
+          "fileSizeBytes": 8577934
+        },
+        {
+          "id": "pexels-video-8103672",
+          "familyId": "SF-14",
+          "slotIds": [
+            "N011-S4"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/man-carrying-guitar-case-8103672/",
+          "creator": "MART  PRODUCTION",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-14-N011-S4-pexels-video-8103672.mp4",
+          "durationSec": 17,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8103672/pexels-photo-8103672.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8103672/8103672-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "apartment entrance returning home after work evening",
+          "semanticNote": "guitar case — not coming-home in dark"
+        },
+        {
+          "id": "pexels-video-19319640",
+          "familyId": "SF-14",
+          "slotIds": [
+            "N026-S1"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/people-are-walking-up-the-stairs-at-a-train-station-19319640/",
+          "creator": "Vintage Lenses",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-14-N026-S1-pexels-video-19319640.mp4",
+          "durationSec": 110,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/19319640/concrete-stairs-escalator-metro-metro-station-19319640.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/19319640/19319640-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "ordinary commute station entrance morning candid",
+          "assignedSlotId": "N026-S1",
+          "selectionNote": "ordinary station-stairs segment — no need to represent the full 110s source",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N026-S1-video-19319640.mp4",
+          "sha256": "474345c8153ebcec724982ac88a396c66fc5f9d51d6b1226457218e5b0ad28d2",
+          "fileSizeBytes": 76982929
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-21",
+      "unresolvedSlots": [
+        "N023-S1"
+      ],
+      "intent": "mundane, mild ordinary work frustration — not the film's subject.",
+      "avoid": "dramatic stress, head-in-hands, window-stare, corporate chaos",
+      "avoidRegex": "head.in.hands|rage|scream|window.stare.dramatic|chaos|furious",
+      "queries": [
+        {
+          "query": "office worker brief tired glance desk calm",
+          "count": 2
+        },
+        {
+          "query": "employee pauses at desk ordinary workday",
+          "count": 1
+        },
+        {
+          "query": "mild frustration office paperwork understated",
+          "count": 1
+        },
+        {
+          "query": "worker looking away from screen briefly natural",
+          "count": 1
+        }
+      ],
+      "videoCount": 5,
+      "candidates": [
+        {
+          "id": "pexels-video-9077871",
+          "familyId": "SF-21",
+          "slotIds": [
+            "N023-S1"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/sleepy-man-drinking-coffee-at-the-office-9077871/",
+          "creator": "cottonbro studio",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-21-N023-S1-pexels-video-9077871.mp4",
+          "durationSec": 29,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/9077871/pexels-photo-9077871.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/9077871/9077871-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "office worker brief tired glance desk calm",
+          "semanticNote": "sleepy office coffee — mild tired glance, acceptable alternate"
+        },
+        {
+          "id": "pexels-video-8682316",
+          "familyId": "SF-21",
+          "slotIds": [
+            "N023-S1"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/two-call-center-agents-feeling-bored-and-exhausted-8682316/",
+          "creator": "Ron Lach",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-21-N023-S1-pexels-video-8682316.mp4",
+          "durationSec": 24,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8682316/pexels-photo-8682316.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8682316/8682316-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "office worker brief tired glance desk calm",
+          "semanticNote": "'bored and exhausted' call agents — too heavy/staged"
+        },
+        {
+          "id": "pexels-video-7581241",
+          "familyId": "SF-21",
+          "slotIds": [
+            "N023-S1"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/man-listening-to-his-colleague-7581241/",
+          "creator": "RDNE Stock project",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-21-N023-S1-pexels-video-7581241.mp4",
+          "durationSec": 10,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7581241/boss-bright-office-brown-people-business-meeting-7581241.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7581241/7581241-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "employee pauses at desk ordinary workday"
+        },
+        {
+          "id": "pexels-video-6032132",
+          "familyId": "SF-21",
+          "slotIds": [
+            "N023-S1"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/close-up-shot-of-some-crumpled-paper-6032132/",
+          "creator": "https://kaboompics.com/",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-21-N023-S1-pexels-video-6032132.mp4",
+          "durationSec": 17,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6032132/bored-burnout-woman-6032132.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6032132/6032132-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "mild frustration office paperwork understated",
+          "recommendationNote": "crumpled paper — understated mild frustration, no acting, 'not the film's subject'",
+          "assignedSlotId": "N023-S1",
+          "selectionNote": "crumpled paper — understated mild frustration; do not amplify burnout framing",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N023-S1-video-6032132.mp4",
+          "sha256": "c3620c63e5eb3a3c351818705e53cacadf53f1a167f3574bf8ef09cb19d73deb",
+          "fileSizeBytes": 2133489
+        },
+        {
+          "id": "pexels-video-7263302",
+          "familyId": "SF-21",
+          "slotIds": [
+            "N023-S1"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/man-using-a-smartphone-7263302/",
+          "creator": "MART  PRODUCTION",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-21-N023-S1-pexels-video-7263302.mp4",
+          "durationSec": 24,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7263302/pexels-photo-7263302.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7263302/7263302-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "worker looking away from screen briefly natural",
+          "semanticNote": "smartphone use — wrong subject"
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-22",
+      "unresolvedSlots": [
+        "N006-S3"
+      ],
+      "intent": "after hours: workplace empty, private interests visible; overlap becoming separateness. A quiet unused room, no horror.",
+      "avoid": "abandoned-building, horror, decay, ominous framing",
+      "avoidRegex": "abandoned.horror|haunted|creepy|derelict|decay.dark|ominous",
+      "queries": [
+        {
+          "query": "quiet unused room after hours single desk lamp",
+          "count": 2
+        },
+        {
+          "query": "empty hobby room evening lived in warm",
+          "count": 1
+        },
+        {
+          "query": "unfinished project table quiet room evening",
+          "count": 1
+        },
+        {
+          "query": "closed workshop room after hours calm",
+          "count": 1
+        }
+      ],
+      "videoCount": 5,
+      "candidates": [
+        {
+          "id": "pexels-video-9902312",
+          "familyId": "SF-22",
+          "slotIds": [
+            "N006-S3"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/man-inside-the-house-looking-at-the-pills-9902312/",
+          "creator": "Ron Lach",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-22-N006-S3-pexels-video-9902312.mp4",
+          "durationSec": 33,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/9902312/alone-anxiety-at-home-covid-9902312.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/9902312/9902312-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "quiet unused room after hours single desk lamp",
+          "semanticNote": "pills — medical, wrong subject"
+        },
+        {
+          "id": "pexels-video-34148254",
+          "familyId": "SF-22",
+          "slotIds": [
+            "N006-S3"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/cozy-minimalist-home-office-setup-34148254/",
+          "creator": "ubeyonroad",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-22-N006-S3-pexels-video-34148254.mp4",
+          "durationSec": 5,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/34148254/pexels-photo-34148254.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/34148254/14478256_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "quiet unused room after hours single desk lamp",
+          "semanticNote": "cozy lived-in home office — private space; lacks 'empty after hours' weight"
+        },
+        {
+          "id": "pexels-video-39310418",
+          "familyId": "SF-22",
+          "slotIds": [
+            "N006-S3"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/moody-indoor-scene-at-sunset-39310418/",
+          "creator": "Özgür Sürmeli",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-22-N006-S3-pexels-video-39310418.mp4",
+          "durationSec": 45,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/39310418/pexels-photo-39310418.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/39310418/16726979_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "empty hobby room evening lived in warm",
+          "semanticNote": "'moody' sunset indoor — ominous/sunset cliche, banned"
+        },
+        {
+          "id": "pexels-video-6615305",
+          "familyId": "SF-22",
+          "slotIds": [
+            "N006-S3"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/architect-working-while-listening-to-music-6615305/",
+          "creator": "Tima Miroshnichenko",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-22-N006-S3-pexels-video-6615305.mp4",
+          "durationSec": 20,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6615305/pexels-photo-6615305.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6615305/6615305-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "unfinished project table quiet room evening"
+        },
+        {
+          "id": "pexels-video-8321930",
+          "familyId": "SF-22",
+          "slotIds": [
+            "N006-S3"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/close-up-view-of-different-paintbrushes-8321930/",
+          "creator": "Tima Miroshnichenko",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-22-N006-S3-pexels-video-8321930.mp4",
+          "durationSec": 17,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8321930/pexels-photo-8321930.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8321930/8321930-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "closed workshop room after hours calm",
+          "semanticNote": "paintbrushes close-up — private creative identity visible; strongest available for the private-interests beat",
+          "assignedSlotId": "N006-S3",
+          "selectionNote": "private creative identity/interests becoming visible beside work — no literal empty-office required",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N006-S3-video-8321930.mp4",
+          "sha256": "a47d861a228c371940827edf03d0f3d917e7abb7861f931238b02925d1a6be77",
+          "fileSizeBytes": 2994883
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-25",
+      "unresolvedSlots": [
+        "N026-S2",
+        "N027-S2",
+        "N028-S3"
+      ],
+      "intent": "mid-career / age-neutral modest autonomy; leaving in daylight, lighter schedule, saying no to something small.",
+      "avoid": "FIRE fantasy, luxury leisure, perfect work-life-balance advertising, youth/skateboard register",
+      "avoidRegex": "fire.flex|beach.laptop|yacht|luxury.balance|skateboard|twenty.something.startup",
+      "queries": [
+        {
+          "query": "leaving office daylight ordinary adult",
+          "count": 2
+        },
+        {
+          "query": "weekday cafe alone afternoon adult candid",
+          "count": 1
+        },
+        {
+          "query": "adult personal errand weekday daylight calm",
+          "count": 1
+        },
+        {
+          "query": "politely declining small request office natural gesture",
+          "count": 1
+        },
+        {
+          "query": "parent audience school event calm ordinary",
+          "count": 1
+        },
+        {
+          "query": "working from home then closing laptop daylight adult",
+          "count": 1
+        }
+      ],
+      "videoCount": 7,
+      "candidates": [
+        {
+          "id": "pexels-video-34688123",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N026-S2"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/urban-street-scene-in-abuja-with-pedestrian-34688123/",
+          "creator": "Trumpet Studios",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-25-N026-S2-pexels-video-34688123.mp4",
+          "durationSec": 5,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/34688123/abuja-nigeria-nigerian-street-plastic-waste-34688123.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/34688123/14702842_1920_1080_50fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "leaving office daylight ordinary adult"
+        },
+        {
+          "id": "pexels-video-4992293",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N026-S2"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/video-of-woman-carrying-a-bag-4992293/",
+          "creator": "Ketut Subiyanto",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-25-N026-S2-pexels-video-4992293.mp4",
+          "durationSec": 10,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/4992293/pexels-photo-4992293.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/4992293/4992293-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "leaving office daylight ordinary adult",
+          "assignedSlotId": "N026-S2",
+          "selectionNote": "modest daylight autonomy — not aspirational lifestyle advertising",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N026-S2-video-4992293.mp4",
+          "sha256": "dc68181b088a0d536a7c14e9d13a21aae7d57632ae40c1f2c27af36087e6402e",
+          "fileSizeBytes": 4488515
+        },
+        {
+          "id": "pexels-video-38883101",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N027-S2"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/young-woman-relaxing-in-outdoor-cafe-38883101/",
+          "creator": "Engin Akyurt",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-25-N027-S2-pexels-video-38883101.mp4",
+          "durationSec": 59,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/38883101/adult-attractive-beautiful-beauty-38883101.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/38883101/16532352_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "flagged-semantic",
+          "foundByQuery": "weekday cafe alone afternoon adult candid",
+          "semanticNote": "'young woman' — age register clashes with mid-career framing"
+        },
+        {
+          "id": "pexels-video-7641183",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N028-S3"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/bed-bedroom-morning-tidy-7641183/",
+          "creator": "MART  PRODUCTION",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-25-N028-S3-pexels-video-7641183.mp4",
+          "durationSec": 29,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7641183/pexels-photo-7641183.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7641183/7641183-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "adult personal errand weekday daylight calm",
+          "semanticNote": "bedroom tidy — not modest autonomy"
+        },
+        {
+          "id": "pexels-video-28860097",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N026-S2"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/professional-dialogue-in-office-setting-28860097/",
+          "creator": "Max Medyk",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-25-N026-S2-pexels-video-28860097.mp4",
+          "durationSec": 13,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/28860097/business-meeting-federal-government-government-political-28860097.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/28860097/12497485_1920_1080_60fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "politely declining small request office natural gesture",
+          "semanticNote": "professional office dialogue — not autonomy"
+        },
+        {
+          "id": "pexels-video-34495148",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N027-S2"
+          ],
+          "rank": 6,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/school-assembly-with-engaged-audience-and-presenters-34495148/",
+          "creator": "JMT 35",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-25-N027-S2-pexels-video-34495148.mp4",
+          "durationSec": 26,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/34495148/pexels-photo-34495148.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/34495148/14616453_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "parent audience school event calm ordinary"
+        },
+        {
+          "id": "pexels-video-4974702",
+          "familyId": "SF-25",
+          "slotIds": [
+            "N028-S3"
+          ],
+          "rank": 7,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/man-using-laptops-while-drinking-beverage-4974702/",
+          "creator": "olia danilevich",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-25-N028-S3-pexels-video-4974702.mp4",
+          "durationSec": 20,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/4974702/coding-computer-developer-laptop-4974702.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/4974702/4974702-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "working from home then closing laptop daylight adult"
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-08",
+      "unresolvedSlots": [
+        "N003-S2",
+        "N004-S2",
+        "N007-S3",
+        "N008-S1",
+        "N030-S1",
+        "N030-S3"
+      ],
+      "intent": "accumulated career evidence with distinct visual sub-modes: diplomas, worn notebook, workbench tools, thank-you note, early-vs-mature work. Do not collapse into generic career objects.",
+      "avoid": "industrial objects, glass factory, wall-of-fame boast, trash",
+      "avoidRegex": "industry.steel|glass.factory|trophy.celebration|trash|throwing.away",
+      "queries": [
+        {
+          "query": "diploma certificate frame desk lived in",
+          "count": 2
+        },
+        {
+          "query": "worn notebook pen filled pages close up",
+          "count": 1
+        },
+        {
+          "query": "workbench old tools hanging wall years",
+          "count": 1
+        },
+        {
+          "query": "handwritten thank you note pinned board",
+          "count": 1
+        },
+        {
+          "query": "craftsman first project beside recent work",
+          "count": 1
+        }
+      ],
+      "videoCount": 6,
+      "candidates": [
+        {
+          "id": "pexels-video-8061562",
+          "familyId": "SF-08",
+          "slotIds": [
+            "N003-S2"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/man-using-laptop-in-office-8061562/",
+          "creator": "Pavel Danilyuk",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-08-N003-S2-pexels-video-8061562.mp4",
+          "durationSec": 21,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8061562/access-accomplishment-administration-adult-8061562.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8061562/8061562-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "diploma certificate frame desk lived in",
+          "semanticNote": "laptop in office — not career-evidence object"
+        },
+        {
+          "id": "pexels-video-8523701",
+          "familyId": "SF-08",
+          "slotIds": [
+            "N003-S2"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-person-signing-the-certificate-8523701/",
+          "creator": "olia danilevich",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-08-N003-S2-pexels-video-8523701.mp4",
+          "durationSec": 8,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8523701/pexels-photo-8523701.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8523701/8523701-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "diploma certificate frame desk lived in",
+          "recommendationNote": "signing a certificate — constructed identity / diplomas",
+          "assignedSlotId": "N008-S1",
+          "selectionNote": "signing a certificate — constructed identity",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N008-S1-video-8523701.mp4",
+          "sha256": "a7cfe1efb184ff2d88fbedb53dc42c3bab4eb92f576a7e2882c8da6bd5754f48",
+          "fileSizeBytes": 2742997
+        },
+        {
+          "id": "pexels-video-11025488",
+          "familyId": "SF-08",
+          "slotIds": [
+            "N004-S2"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/close-up-of-woman-reading-notebook-11025488/",
+          "creator": "ROMAN ODINTSOV",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-08-N004-S2-pexels-video-11025488.mp4",
+          "durationSec": 13,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/11025488/pexels-photo-11025488.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/11025488/11025488-hd_1366_720_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "worn notebook pen filled pages close up",
+          "recommendationNote": "worn notebook read in a familiar way — familiarity/continuity of the workspace",
+          "assignedSlotId": "N003-S2",
+          "selectionNote": "worn notebook — familiarity/continuity of the workspace",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N003-S2-video-11025488.mp4",
+          "sha256": "bfbfcd9fa475e241eb6ca9c2b7d5e4216252a4f9a097e09a105fe51aa956a80f",
+          "fileSizeBytes": 2411197
+        },
+        {
+          "id": "pexels-video-5972091",
+          "familyId": "SF-08",
+          "slotIds": [
+            "N007-S3"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/set-of-wood-chisels-5972091/",
+          "creator": "Ono  Kosuki",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-08-N007-S3-pexels-video-5972091.mp4",
+          "durationSec": 6,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/5972091/pexels-photo-5972091.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/5972091/5972091-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "workbench old tools hanging wall years",
+          "recommendationNote": "wood chisels — tools of a well-used life treated warmly",
+          "assignedSlotId": "N007-S3",
+          "selectionNote": "wood chisels — tools of a well-used life treated warmly",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N007-S3-video-5972091.mp4",
+          "sha256": "b7f471f7355a83386c39a4b1ce34675f74a0b909b35655b476b874748fa33da5",
+          "fileSizeBytes": 1882709
+        },
+        {
+          "id": "pexels-video-7430217",
+          "familyId": "SF-08",
+          "slotIds": [
+            "N008-S1"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/person-putting-a-thank-you-card-inside-an-envelope-7430217/",
+          "creator": "alleksana",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-08-N008-S1-pexels-video-7430217.mp4",
+          "durationSec": 10,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7430217/pexels-photo-7430217.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7430217/7430217-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "handwritten thank you note pinned board",
+          "recommendationNote": "thank-you card — human continuities / identity held warmly",
+          "assignedSlotId": "N030-S3",
+          "selectionNote": "thank-you card — human continuities / identity held warmly",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N030-S3-video-7430217.mp4",
+          "sha256": "aecf58861a9706b915eecdbc19d4137a91c5ab9af82422b3f7d34170050f0556",
+          "fileSizeBytes": 4707937
+        },
+        {
+          "id": "pexels-video-5967518",
+          "familyId": "SF-08",
+          "slotIds": [
+            "N030-S1"
+          ],
+          "rank": 6,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-man-putting-markings-on-the-wood-5967518/",
+          "creator": "Ono  Kosuki",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-08-N030-S1-pexels-video-5967518.mp4",
+          "durationSec": 7,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/5967518/pexels-photo-5967518.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/5967518/5967518-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "craftsman first project beside recent work",
+          "recommendationNote": "marking wood — craft evidence; early-vs-mature bridge",
+          "assignedSlotId": "N030-S1",
+          "selectionNote": "marking wood — craft evidence, early-vs-mature bridge",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N030-S1-video-5967518.mp4",
+          "sha256": "5aa8283a659b7f5d6a7d5852c50415a912c6bc06de6c173d9fcbb8455d12b2c7",
+          "fileSizeBytes": 4633944
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-30",
+      "unresolvedSlots": [
+        "N031-S1",
+        "N031-S3"
+      ],
+      "intent": "ordinary completion, not dramatic farewell: finishing, tidying, a full day ending with cost and yield visible.",
+      "avoid": "farewell, last-day box, ledger, sunset-window stare, productivity checklist",
+      "avoidRegex": "farewell|last.day|ledger|sunset.window.stare|checklist.planner|productivity",
+      "queries": [
+        {
+          "query": "turning off desk lamp end of day office",
+          "count": 2
+        },
+        {
+          "query": "washing up dishes after dinner evening quiet",
+          "count": 1
+        },
+        {
+          "query": "closing laptop end of workday calm",
+          "count": 1
+        },
+        {
+          "query": "wiping workbench clean finishing evening",
+          "count": 1
+        }
+      ],
+      "videoCount": 5,
+      "candidates": [
+        {
+          "id": "pexels-video-7164569",
+          "familyId": "SF-30",
+          "slotIds": [
+            "N031-S1"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-person-activating-an-alarm-clock-7164569/",
+          "creator": "Nino Souza",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-30-N031-S1-pexels-video-7164569.mp4",
+          "durationSec": 8,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7164569/alarm-alarm-clock-bed-clock-7164569.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7164569/7164569-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "turning off desk lamp end of day office",
+          "semanticNote": "alarm clock — clock symbolism, banned"
+        },
+        {
+          "id": "pexels-video-8371031",
+          "familyId": "SF-30",
+          "slotIds": [
+            "N031-S1"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/men-working-with-the-files-8371031/",
+          "creator": "cottonbro studio",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-30-N031-S1-pexels-video-8371031.mp4",
+          "durationSec": 20,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8371031/adult-book-series-business-chair-8371031.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8371031/8371031-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "turning off desk lamp end of day office",
+          "semanticNote": "working with files — not completion"
+        },
+        {
+          "id": "pexels-video-6304829",
+          "familyId": "SF-30",
+          "slotIds": [
+            "N031-S3"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/women-washing-the-dishes-6304829/",
+          "creator": "Kampus Production",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-30-N031-S3-pexels-video-6304829.mp4",
+          "durationSec": 9,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6304829/pexels-photo-6304829.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6304829/6304829-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "washing up dishes after dinner evening quiet",
+          "recommendationNote": "washing dishes — a full day ending, cost and yield in an ordinary evening",
+          "assignedSlotId": "N031-S3",
+          "selectionNote": "washing dishes — a full day ending in an ordinary evening",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N031-S3-video-6304829.mp4",
+          "sha256": "e6d149aecdc07da8bb07cfd534cc1f5bc3eb2381f9dc3bfae707d771457576e5",
+          "fileSizeBytes": 5860817
+        },
+        {
+          "id": "pexels-video-8472309",
+          "familyId": "SF-30",
+          "slotIds": [
+            "N031-S1"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/person-opening-a-laptop-8472309/",
+          "creator": "Cup of  Couple",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-30-N031-S1-pexels-video-8472309.mp4",
+          "durationSec": 9,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8472309/adult-art-blur-breakfast-8472309.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8472309/8472309-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "flagged-semantic",
+          "foundByQuery": "closing laptop end of workday calm",
+          "semanticNote": "slug says 'opening' laptop; we want closing — likely wrong direction"
+        },
+        {
+          "id": "pexels-video-4218147",
+          "familyId": "SF-30",
+          "slotIds": [
+            "N031-S3"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/person-wiping-wooden-table-4218147/",
+          "creator": "Richa  Sharma",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-30-N031-S3-pexels-video-4218147.mp4",
+          "durationSec": 13,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/4218147/pexels-photo-4218147.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/4218147/4218147-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "wiping workbench clean finishing evening",
+          "recommendationNote": "wiping a wooden table — closing/tidying without ceremony",
+          "assignedSlotId": "N031-S1",
+          "selectionNote": "wiping a wooden table — closing/tidying without ceremony",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N031-S1-video-4218147.mp4",
+          "sha256": "68507001d79aad57c1ec0d210f18f47d86c5ff63bbccfc80d48f425fe8cbae10",
+          "fileSizeBytes": 5028909
+        }
+      ],
+      "photoFallbacks": []
+    },
+    {
+      "familyId": "SF-31",
+      "unresolvedSlots": [
+        "N008-S2"
+      ],
+      "intent": "a rehearsed social identity answer inside ordinary small talk, not a literal introduction ritual.",
+      "avoid": "handshake, networking event, introduction, celebration/toast, exaggerated laughter, awkward-party acting",
+      "avoidRegex": "handshake|networking|introduction|celebration|toast|laughter.loud|awkward.party|tourist",
+      "queries": [
+        {
+          "query": "guests chatting kitchen gathering casual candid",
+          "count": 2
+        },
+        {
+          "query": "neighbors talking doorway daytime natural",
+          "count": 1
+        },
+        {
+          "query": "colleagues chatting coffee corner natural",
+          "count": 1
+        },
+        {
+          "query": "adults casual small talk living room candid",
+          "count": 1
+        },
+        {
+          "query": "two adults chatting at ordinary social gathering",
+          "count": 1
+        }
+      ],
+      "videoCount": 6,
+      "candidates": [
+        {
+          "id": "pexels-video-6952920",
+          "familyId": "SF-31",
+          "slotIds": [
+            "N008-S2"
+          ],
+          "rank": 1,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/people-talking-together-6952920/",
+          "creator": "cottonbro studio",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-31-N008-S2-pexels-video-6952920.mp4",
+          "durationSec": 52,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6952920/alcoholic-beverages-asians-at-home-attractive-6952920.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6952920/6952920-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "guests chatting kitchen gathering casual candid",
+          "semanticNote": "generic people talking (52s) — vague but on-register"
+        },
+        {
+          "id": "pexels-video-7683543",
+          "familyId": "SF-31",
+          "slotIds": [
+            "N008-S2"
+          ],
+          "rank": 2,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/friends-chatting-in-the-kitchen-7683543/",
+          "creator": "RDNE Stock project",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": "2026-09-05T04:08:54.523Z",
+          "originalFilename": "SF-31-N008-S2-pexels-video-7683543.mp4",
+          "durationSec": 9,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7683543/adult-breakfast-campus-chef-7683543.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7683543/7683543-hd_1920_1080_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "selected",
+          "foundByQuery": "guests chatting kitchen gathering casual candid",
+          "recommendationNote": "friends chatting in a kitchen — the rehearsed answer inside ordinary small talk",
+          "assignedSlotId": "N008-S2",
+          "selectionNote": "friends chatting in a kitchen — the rehearsed answer inside ordinary small talk",
+          "localPath": "projects/ESSY-0003/sourcing/downloads/N008-S2-video-7683543.mp4",
+          "sha256": "09d7612fec32e255b89274da529279543decfd81754cd0b1777070726296b0e1",
+          "fileSizeBytes": 5350858
+        },
+        {
+          "id": "pexels-video-29072593",
+          "familyId": "SF-31",
+          "slotIds": [
+            "N008-S2"
+          ],
+          "rank": 3,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/curious-man-peering-through-doorway-at-night-29072593/",
+          "creator": "Themba Mtegha",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-31-N008-S2-pexels-video-29072593.mp4",
+          "durationSec": 18,
+          "width": 3840,
+          "height": 1644,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/29072593/arrest-at-night-crime-criminal-29072593.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/29072593/12565187_1682_720_30fps.mp4",
+          "altText": null,
+          "selectionStatus": "rejected-semantic",
+          "foundByQuery": "neighbors talking doorway daytime natural",
+          "semanticNote": "peering through doorway at night — wrong/odd"
+        },
+        {
+          "id": "pexels-video-6563965",
+          "familyId": "SF-31",
+          "slotIds": [
+            "N008-S2"
+          ],
+          "rank": 4,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/close-up-video-of-people-holding-a-cup-6563965/",
+          "creator": "Mikhail Nilov",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-31-N008-S2-pexels-video-6563965.mp4",
+          "durationSec": 16,
+          "width": 1920,
+          "height": 1080,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/6563965/account-analysis-beautiful-board-6563965.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/6563965/6563965-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "colleagues chatting coffee corner natural",
+          "semanticNote": "holding a cup close-up — weakly on-register"
+        },
+        {
+          "id": "pexels-video-7246493",
+          "familyId": "SF-31",
+          "slotIds": [
+            "N008-S2"
+          ],
+          "rank": 5,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/a-group-of-friends-gathering-together-7246493/",
+          "creator": "Cedric Fauntleroy",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-31-N008-S2-pexels-video-7246493.mp4",
+          "durationSec": 12,
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/7246493/adolescent-affection-canada-canada-day-7246493.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/7246493/7246493-hd_1920_1080_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "flagged-semantic",
+          "foundByQuery": "adults casual small talk living room candid",
+          "semanticNote": "'friends gathering' — may lean celebration"
+        },
+        {
+          "id": "pexels-video-8345826",
+          "familyId": "SF-31",
+          "slotIds": [
+            "N008-S2"
+          ],
+          "rank": 6,
+          "mediaType": "video",
+          "role": "primary-video",
+          "sourceUrl": "https://www.pexels.com/video/female-friends-talking-while-in-a-restaurant-8345826/",
+          "creator": "Ron Lach",
+          "license": "Pexels License",
+          "licenseUrl": "https://www.pexels.com/license/",
+          "downloadedAt": null,
+          "originalFilename": "SF-31-N008-S2-pexels-video-8345826.mp4",
+          "durationSec": 18,
+          "width": 4096,
+          "height": 2160,
+          "orientation": "landscape",
+          "previewUrl": "https://images.pexels.com/videos/8345826/pexels-photo-8345826.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "videoFileUrl": "https://videos.pexels.com/video-files/8345826/8345826-hd_1366_720_25fps.mp4",
+          "altText": null,
+          "selectionStatus": "candidate",
+          "foundByQuery": "two adults chatting at ordinary social gathering",
+          "semanticNote": "talking at a restaurant — conversational register, alternate"
+        }
+      ],
+      "photoFallbacks": []
+    }
+  ],
+  "recommendations": [
+    {
+      "slotId": "N016-S3",
+      "assetId": "pexels-video-5792245",
+      "familyId": "SF-24",
+      "note": "lived quiet marker of elapsed years (old bikes). RECOMMENDED WITH CAUTION: bicycle motif may echo N012-S2's bikes — sequence-QA must differentiate the two frames."
+    },
+    {
+      "slotId": "N004-S1",
+      "assetId": "pexels-video-6145687",
+      "familyId": "SF-12",
+      "note": "young adults leaving university — building phase in motion, vitality without countdown"
+    },
+    {
+      "slotId": "N023-S1",
+      "assetId": "pexels-video-6032132",
+      "familyId": "SF-21",
+      "note": "crumpled paper — understated mild frustration, no acting, 'not the film's subject'"
+    },
+    {
+      "slotId": "N007-S3",
+      "assetId": "pexels-video-5972091",
+      "familyId": "SF-08",
+      "note": "wood chisels — tools of a well-used life treated warmly"
+    },
+    {
+      "slotId": "N030-S3",
+      "assetId": "pexels-video-7430217",
+      "familyId": "SF-08",
+      "note": "thank-you card — human continuities / identity held warmly"
+    },
+    {
+      "slotId": "N008-S1",
+      "assetId": "pexels-video-8523701",
+      "familyId": "SF-08",
+      "note": "signing a certificate — constructed identity / diplomas"
+    },
+    {
+      "slotId": "N003-S2",
+      "assetId": "pexels-video-11025488",
+      "familyId": "SF-08",
+      "note": "worn notebook read in a familiar way — familiarity/continuity of the workspace"
+    },
+    {
+      "slotId": "N030-S1",
+      "assetId": "pexels-video-5967518",
+      "familyId": "SF-08",
+      "note": "marking wood — craft evidence; early-vs-mature bridge"
+    },
+    {
+      "slotId": "N031-S1",
+      "assetId": "pexels-video-4218147",
+      "familyId": "SF-30",
+      "note": "wiping a wooden table — closing/tidying without ceremony"
+    },
+    {
+      "slotId": "N031-S3",
+      "assetId": "pexels-video-6304829",
+      "familyId": "SF-30",
+      "note": "washing dishes — a full day ending, cost and yield in an ordinary evening"
+    },
+    {
+      "slotId": "N008-S2",
+      "assetId": "pexels-video-7683543",
+      "familyId": "SF-31",
+      "note": "friends chatting in a kitchen — the rehearsed answer inside ordinary small talk"
+    }
+  ],
+  "stillUnresolved": {
+    "SF-03": [
+      {
+        "slotId": "N023-S3",
+        "reason": "no high-confidence handover shot; only busy market stall (36066735) possible"
+      }
+    ],
+    "SF-12": [
+      {
+        "slotId": "N016-S1",
+        "reason": "no strong match for 'running for a train / endless horizon'; choose 7894222, 32032311 or run another query"
+      }
+    ],
+    "SF-14": [
+      {
+        "slotId": "N005-S2",
+        "reason": "routine-only options; choose a light routine shot or revise"
+      },
+      {
+        "slotId": "N011-S1",
+        "reason": "7986201 (leaving home) is nearest; confirm duty-neutral read"
+      },
+      {
+        "slotId": "N011-S4",
+        "reason": "DARK COMING-HOME STILL UNCOVERED — needs a new query (e.g. 'house door unlocking evening shadowless', 'hallway light switch after work dim')"
+      },
+      {
+        "slotId": "N026-S1",
+        "reason": "19319640 (station stairs, 110s) is the only usable pool-wide candidate; confirm"
+      }
+    ],
+    "SF-22": [
+      {
+        "slotId": "N006-S3",
+        "reason": "no confident empty-after-hours shot; choose 8321930 (private interests) or run 'empty office after hours desk lamp warm'"
+      }
+    ],
+    "SF-25": [
+      {
+        "slotId": "N026-S2",
+        "reason": "choose leaving-in-daylight shot (4992293, 34688123) or run supplemental"
+      },
+      {
+        "slotId": "N027-S2",
+        "reason": "no age-neutral weekday autonomy shot; 38883101 is too young"
+      },
+      {
+        "slotId": "N028-S3",
+        "reason": "saying-no beat still weak; 34495148 (school assembly) or 4974702 best available"
+      }
+    ],
+    "SF-08": [
+      {
+        "slotId": "N004-S2",
+        "reason": "the 'converge list into one layered career image' mode has no strong asset; run 'career wall books diplomas layered'"
+      }
+    ]
+  },
+  "approvalGateNote": "Supplemental candidates are SEARCH-ONLY. High-confidence recommendations are marked recommended-NOT-approved; nothing is downloaded or assigned until human approval. STILL_UNRESOLVED slots need a reviewer decision or an additional targeted query."
+}

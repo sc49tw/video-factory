@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0001",
+  "purpose": "temporary-bgm-audition",
+  "note": "Audition only. No track is selected here; the BGM decision and any production render are separate future steps.",
+  "basis": {
+    "inputVideo": "output/ESSY-0001/prototype-N001-N003.mp4",
+    "trimSeconds": 60,
+    "baseTempFile": "projects/ESSY-0001/temp/bgm-audition-base60.mp4",
+    "foregroundAudio": "prototype narration, unchanged",
+    "bgmStartSec": 0,
+    "narrationMeanDb": -25.1,
+    "narrationPeakDb": -6.6,
+    "appliedBgmGainDb": -9,
+    "gainMode": "fixed-uniform",
+    "looping": false,
+    "duckingOrCompression": false
+  },
+  "source": "YouTube Audio Library",
+  "attributionRequired": false,
+  "candidates": [
+    {
+      "title": "Dreamland",
+      "artist": "Aakash Gandhi",
+      "source": "YouTube Audio Library",
+      "attributionRequired": false,
+      "localPath": "projects/ESSY-0001/music/candidates/Dreamland - Aakash Gandhi.mp3",
+      "auditionOutput": "output/ESSY-0001/bgm-audition/01-dreamland.mp4",
+      "appliedBgmGainDb": -9,
+      "fadeInSec": 1.5,
+      "fadeOutSec": 2
+    },
+    {
+      "title": "State Drive",
+      "artist": "VYEN",
+      "source": "YouTube Audio Library",
+      "attributionRequired": false,
+      "localPath": "projects/ESSY-0001/music/candidates/State Drive - VYEN.mp3",
+      "auditionOutput": "output/ESSY-0001/bgm-audition/02-state-drive.mp4",
+      "appliedBgmGainDb": -9,
+      "fadeInSec": 1.5,
+      "fadeOutSec": 2
+    },
+    {
+      "title": "Frolic",
+      "artist": "E's Jammy Jams",
+      "source": "YouTube Audio Library",
+      "attributionRequired": false,
+      "localPath": "projects/ESSY-0001/music/candidates/Frolic - E's Jammy Jams.mp3",
+      "auditionOutput": "output/ESSY-0001/bgm-audition/03-frolic.mp4",
+      "appliedBgmGainDb": -9,
+      "fadeInSec": 1.5,
+      "fadeOutSec": 2
+    },
+    {
+      "title": "Lord Of The Dawn",
+      "artist": "Jesse Gallagher",
+      "source": "YouTube Audio Library",
+      "attributionRequired": false,
+      "localPath": "projects/ESSY-0001/music/candidates/Lord Of The Dawn - Jesse Gallagher.mp3",
+      "auditionOutput": "output/ESSY-0001/bgm-audition/04-lord-of-the-dawn.mp4",
+      "appliedBgmGainDb": -9,
+      "fadeInSec": 1.5,
+      "fadeOutSec": 2
+    }
+  ]
+}

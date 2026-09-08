@@ -1,0 +1,108 @@
+{
+  "episodeId": "ESSY-0002",
+  "artifact": "editorial-adjudication-REVIEW",
+  "input": "editorial-audit-N006-N018.json",
+  "scope": "The 14 shots classified REVIEW in the editorial audit, re-evaluated in the now-updated sequence (six REPLACE slots already replaced: N008-S1, N009-S3, N012-S2, N015-S1, N015-S2, N018-S2).",
+  "policy": "Binary classification only: KEEP or REPLACE. Conservative — KEEP unless the shot creates a clearly visible sequence-level problem in the updated neighbors. No replacement sourcing performed in this pass.",
+  "attentionItems": [
+    "repeated nature metaphor vocabulary (N010 mountains/river, N012 sea, N016 vine)",
+    "repeated window/reflection vocabulary (N011-S3, N013-S2/S3, N018-S7)",
+    "repeated papers/lamp/table compositions (N013-S2, N014-S3, N017-S1)",
+    "remaining identifiable elderly/family stock characters (N007-S2, N015-S4, N018-S1)",
+    "visual-world consistency",
+    "N017 -> N018 closing register"
+  ],
+  "decisions": [
+    {
+      "slotId": "N007-S2",
+      "assetId": "pexels-video-7477605",
+      "classification": "KEEP",
+      "reason": "With the N008/N009/N012/N015 stock-acting replacements in place, this is the episode's only older-couple image and it carries the narration's own 'imagine retirement' beat; one restrained occurrence is no longer continuity stacking. No visible sequence problem."
+    },
+    {
+      "slotId": "N007-S3",
+      "assetId": "pexels-photo-32922275",
+      "classification": "KEEP",
+      "reason": "Showroom-minimalist texture is a soft mismatch, but the shot functions as a stability still between two human shots and replacing it would be perfection-seeking, not problem-solving."
+    },
+    {
+      "slotId": "N009-S5",
+      "assetId": "pexels-video-39029339",
+      "classification": "KEEP",
+      "reason": "With N008-S1 no longer showing documents, the paperwork run is N009-S1 -> S2 -> S5 with the staircase breaking it; the block no longer reads as an illustrated transcript. The closing papers beat is needed for unresolved trade-offs."
+    },
+    {
+      "slotId": "N010-S3",
+      "assetId": "pexels-video-5963476",
+      "classification": "KEEP",
+      "reason": "The river visualizes the narration's own 'the direction of travel remains the same' metaphor — a concrete editorial justification — and the mountains-then-river pair provides the scale shift the block needs before N011 returns to the domestic."
+    },
+    {
+      "slotId": "N012-S3",
+      "assetId": "pexels-video-5406291",
+      "classification": "KEEP",
+      "reason": "In the updated sequence (grandfather -> garden tools still -> sea -> window shadows) the sea is the single large-nature beat of the block and supports anticipatory grief; it is separated from N010's nature pair by N011's fully domestic block, so the vocabulary no longer accumulates."
+    },
+    {
+      "slotId": "N013-S2",
+      "assetId": "pexels-video-7172119",
+      "classification": "KEEP",
+      "reason": "The window-reflection vocabulary remains distributed (N011-S3, N013-S2, N013-S3, N018-S7) and each occurrence serves a different function; the night-kitchen wakeful beat is needed between lamp dimming and window bokeh. Removing it would create a two-empty-shots run."
+    },
+    {
+      "slotId": "N014-S1",
+      "assetId": "pexels-video-5637948",
+      "classification": "REPLACE",
+      "reason": "Clearly visible sequence-level problem: the shot takes place at an office desk (source: 'woman filling a form at office desk'), a corporate environment inside an otherwise fully domestic essay, directly after the night-kitchen and bedside lamp imagery of N013. The updated neighbors (N013-S3 window bokeh -> THIS -> N014-S2 documents put away at home) make the corporate break more conspicuous, not less, and the preparation function is achievable with a home-table form shot."
+    },
+    {
+      "slotId": "N014-S3",
+      "assetId": "pexels-video-17670034",
+      "classification": "KEEP",
+      "reason": "The man-at-lamp-table composition recurs, but the three instances are spread across N013/N014/N017 with different functions (wakeful reflection / preparation closing / planning pause); no single adjacency produces a visible duplication."
+    },
+    {
+      "slotId": "N015-S4",
+      "assetId": "pexels-photo-7118793",
+      "classification": "KEEP",
+      "reason": "After the S1/S2 replacements the block is person-light (shoes -> two people reading -> departure), so this ambient grandmother-and-child still is the block's only face-bearing shot and provides occupied domestic life without emotional performance; it no longer stacks with staged care imagery."
+    },
+    {
+      "slotId": "N016-S1",
+      "assetId": "pexels-video-1535673",
+      "classification": "KEEP",
+      "reason": "The vine remains a mild metaphor, but with N012-S2 now a garden-tools still rather than an elderly walk, the nature beats are spaced (N010, N012, N016) and the vine supplies the block's only exterior; no visible cumulative problem."
+    },
+    {
+      "slotId": "N017-S1",
+      "assetId": "pexels-photo-7063738",
+      "classification": "KEEP",
+      "reason": "Third papers/lamp composition, but separated from N014-S3 by the whole of N015-N016 and functioning as the deliberate pause before the essay's resolution; replacing it would not change what the viewer notices."
+    },
+    {
+      "slotId": "N017-S3",
+      "assetId": "pexels-video-30067844",
+      "classification": "KEEP",
+      "reason": "Closing register: the candlelight still reads warmer/glossier than the essay's plain realism, but it is brief, sits between planting and the N018 night return, and does not misstate the narration. Conservative call: no clearly visible problem."
+    },
+    {
+      "slotId": "N018-S1",
+      "assetId": "pexels-photo-8860200",
+      "classification": "KEEP",
+      "reason": "The sleeping senior is the structural mirror of the opening's restrained reveal and the narration's own 'he went back to bed' beat; the stylish-bedroom texture is a soft mismatch, but the shot is functionally load-bearing and any replacement would re-introduce the same imagery class."
+    },
+    {
+      "slotId": "N018-S7",
+      "assetId": "pexels-video-4018217",
+      "classification": "KEEP",
+      "reason": "The long window silhouette matches frozen N003-S3's language, refuses closure to match the final lines, and follows six quiet domestic beats that prevent it from reading as a lone existential gesture."
+    }
+  ],
+  "summary": {
+    "reviewed": 14,
+    "keep": 13,
+    "replace": 1,
+    "newReplaceSlots": ["N014-S1"],
+    "totalAdditionalShotsRequiringSourcing": 1
+  }
+}

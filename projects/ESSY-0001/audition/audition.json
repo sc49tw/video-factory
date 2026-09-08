@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0001",
+  "purpose": "voice audition",
+  "sourceBlockId": "n001",
+  "sourceFile": "inbox/ESSY-0001/script.md",
+  "narrationSha256": "7187b8051b1cdb5f569dc4acab0befe095b297e9b8dc1874e8bf1017f35efff8",
+  "note": "Audition only; episode default voice is unchanged until user selects one.",
+  "samples": [
+    {
+      "key": "A",
+      "voice": "en-US-ChristopherNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%",
+      "provider": "edge",
+      "file": "N001-A-en-US-ChristopherNeural-r12pct.mp3"
+    },
+    {
+      "key": "B",
+      "voice": "en-US-ChristopherNeural",
+      "rate": "-18%",
+      "pitch": "+0Hz",
+      "volume": "+0%",
+      "provider": "edge",
+      "file": "N001-B-en-US-ChristopherNeural-r18pct.mp3"
+    },
+    {
+      "key": "C",
+      "voice": "en-US-EricNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%",
+      "provider": "edge",
+      "file": "N001-C-en-US-EricNeural-r12pct.mp3"
+    },
+    {
+      "key": "D",
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%",
+      "provider": "edge",
+      "file": "N001-D-en-GB-RyanNeural-r12pct.mp3"
+    }
+  ]
+}

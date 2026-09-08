@@ -1,0 +1,988 @@
+{
+  "episodeId": "ESSY-0003",
+  "title": "How Much of Your Life Are You Still Willing to Sell?",
+  "version": 1,
+  "status": "storyboard-ready-for-approval",
+  "playbook": "docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md",
+  "script": "projects/_drafts/ESSY-0003/script.md",
+  "voice": {
+    "name": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "timing": {
+    "estimatedSpokenDurationSec": 640,
+    "note": "Pre-TTS estimate only. Actual block durations come from ffprobe after TTS; slot counts here define the sourcing plan, not the final render contract.",
+    "targetVisualRhythmSec": "roughly 7-10 seconds per shot",
+    "plannedSlotCount": 101
+  },
+  "editorialPrinciples": [
+    "Narration blocks are semantic/TTS units, not visual shots.",
+    "Audio is the master timeline; visual boundaries must never alter narration continuity.",
+    "Each slot must perform an editorial function within the surrounding sequence.",
+    "Avoid consecutive mechanical narration-keyword-to-stock-image translation.",
+    "Prefer natural behavior, environments, objects, movement, architecture, and atmospheric shots over stock-actor overload.",
+    "Prefer video first; photos are fallback.",
+    "One selected sourcing slot normally maps to one visual shot and one source use.",
+    "Do not silently loop or duplicate assets to satisfy shot counts."
+  ],
+  "coldOpenExperiment": {
+    "id": "cold-open-three-questions",
+    "scope": "episode-specific editorial experiment; Playbook and renderer contract intentionally NOT modified",
+    "structure": "3 reflective questions -> short pause -> channel name -> episode title -> short pause -> main essay",
+    "visualTreatment": [
+      "N001 (questions): no talking-to-camera faces and no text overlays that pre-answer the questions. Slow, slightly ambiguous observational imagery whose mood matches each question (work/stillness, money/time, crossroads/choice). The audience should feel addressed, not lectured.",
+      "Title beats inside N002 are rendered by the final-assembly cold-open title layer (existing renderer capability), so the N002 slot carries atmosphere only, with clean negative space where the title text will sit. No competing on-screen typography in the sourced footage.",
+      "Pauses between questions and titles belong to the narration timeline; they may extend the final shot of a block (pauseAfterSec) but never create additional slots."
+    ],
+    "openQuestionsForReview": [
+      "RESOLVED (human approval, storyboard approval): N001 keeps one visual slot per cold-open question (N001-S1/S2/S3, three separate slots).",
+      "RESOLVED (human approval, storyboard approval): N032-S2 keeps the visual rhyme with N002-S1 so the ending subtly returns to the opening/title visual language."
+    ]
+  },
+  "sequenceLiteralnessReview": {
+    "status": "PASS_WITH_CAUTION",
+    "notes": [
+      "List-shaped narration (N004 building list, N011 mornings/commutes/meetings/evenings, N014 small-meaning list, N016 another-year list, N020 someday list) is the highest literalness risk; each is deliberately spread across atmospheric/human-observation slots instead of one keyword image per line.",
+      "Direct office/worker imagery is concentrated in N003 and N022-N024; mid-episode shifts toward domestic space, landscapes, movement, and time-of-day change.",
+      "Avoid runs of: calendar/planner close-ups, hourglass clocks, stairs-to-success, handshake/corporate cliché, glowing-future sunrise, dramatic resignation silhouette at a window.",
+      "N028-N030 (security/choice/what remains) attract cliché time symbolism; slots there are designed around places, routines, and continuities instead of clocks and sand."
+    ]
+  },
+  "blocks": [
+    {
+      "narrationId": "N001",
+      "kind": "cold-open-questions",
+      "estimatedDurationSec": 24,
+      "visualArc": "addressed directly -> cost made tangible -> unforced choice; slow, quiet, slightly unresolved",
+      "slots": [
+        {
+          "slotId": "N001-S1",
+          "editorialFunction": "Open the film inside a working life the viewer recognizes, before any question is asked.",
+          "visualIntent": "An anonymous office or commuter crowd at the end of the day, seen from a distance; stillness inside routine.",
+          "avoid": ["grinning stock professional", "laptop hero shot", "text overlays", "dramatic lighting"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N001-S2",
+          "editorialFunction": "Make the abstract question about money and traded years feel physical and quiet.",
+          "visualIntent": "A worn wallet, bank card, or pay slip on an ordinary table in natural light; an object touched, not counted.",
+          "avoid": ["stacks of cash", "stock charts", "calculator close-up"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N001-S3",
+          "editorialFunction": "Leave the third question open: no exit shown, no answer implied.",
+          "visualIntent": "A person seen from behind pausing at a plain doorway or platform, undecided; movement withheld.",
+          "avoid": ["sunset silhouette cliché", "running toward light", "open-road adventure"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N002",
+      "kind": "cold-open-titles",
+      "estimatedDurationSec": 8,
+      "visualArc": "calm neutral surface for the title layer; single held shot",
+      "slots": [
+        {
+          "slotId": "N002-S1",
+          "editorialFunction": "Provide a quiet visual surface beneath the channel name and episode title; the title layer owns this shot.",
+          "visualIntent": "A still, softly lit interior with generous negative space — a window, a cup, late afternoon light — composed so centered title text will read cleanly.",
+          "avoid": ["busy composition", "on-screen typography in footage", "faces", "strong motion"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N003",
+      "estimatedDurationSec": 45,
+      "visualArc": "competence and stability shown from the outside -> accumulated years -> the quiet question surfaces",
+      "slots": [
+        {
+          "slotId": "N003-S1",
+          "editorialFunction": "Establish a workplace where someone is quietly good at what they do.",
+          "visualIntent": "Skilled hands working confidently in a craft, lab, or office context; competence shown through action, not posing.",
+          "avoid": ["stressed office tropes", "thumbs-up teamwork"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N003-S2",
+          "editorialFunction": "Show trust and familiarity accumulating around the same workplace.",
+          "visualIntent": "A familiar workspace over time: same desk, same tools, used and worn; continuity rather than novelty.",
+          "avoid": ["bright new-office gloss", "before/after gimmicks"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N003-S3",
+          "editorialFunction": "Anchor stability in the ordinary comfort it buys.",
+          "visualIntent": "A calm domestic evening enabled by that stability — dinner, lamplight, an ordinary errand.",
+          "avoid": ["luxury lifestyle", "money imagery"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N003-S4",
+          "editorialFunction": "Convey the span of twenty or thirty years without a literal calendar.",
+          "visualIntent": "Long shot of a city or neighborhood shifting from day into dusk; time passing at scale.",
+          "avoid": ["clock close-ups", "hourglass", "calendar pages"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N003-S5",
+          "editorialFunction": "Let the quiet question surface without illustrating the words.",
+          "visualIntent": "The same person alone at the end of the day, briefly still; a pause between activities rather than a decisive look.",
+          "avoid": ["pensive stock stare", "rain-on-window cliché", "mirror monologue"],
+          "targetDurationSec": 9
+        }
+      ]
+    },
+    {
+      "narrationId": "N004",
+      "estimatedDurationSec": 19,
+      "visualArc": "the building years: many directions converging; list broken by scale change",
+      "slots": [
+        {
+          "slotId": "N004-S1",
+          "editorialFunction": "Open the building phase in movement — a life visibly under construction.",
+          "visualIntent": "Young adults in motion: studying, commuting, first jobs; energy without triumphalism.",
+          "avoid": ["graduation caps in air", "motivational poster energy"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N004-S2",
+          "editorialFunction": "Converge the list (skills, career, savings, reputation, life) into one accumulating direction instead of five literal images.",
+          "visualIntent": "A slow reveal of a lived-in apartment or a career wall of small accumulated objects; one image carrying the whole list.",
+          "avoid": ["one shot per list item", "money stack", "trophy shelf"],
+          "targetDurationSec": 9.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N005",
+      "estimatedDurationSec": 38,
+      "visualArc": "the logical ladder works -> it keeps working -> something quietly changes -> two different questions",
+      "slots": [
+        {
+          "slotId": "N005-S1",
+          "editorialFunction": "Show the effort-to-opportunity-to-income chain as lived motion, not a diagram.",
+          "visualIntent": "A person advancing through ordinary work stages — training, doing, showing someone else — continuous forward motion.",
+          "avoid": ["arrow infographic", "ladder-to-success"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N005-S2",
+          "editorialFunction": "Rest on the sense that continuing makes sense.",
+          "visualIntent": "Satisfied ordinary rhythm: routine executed smoothly, small ordered pleasures.",
+          "avoid": ["ecstatic success", "slow clap"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N005-S3",
+          "editorialFunction": "Mark the turn — something changes — without a visible event.",
+          "visualIntent": "A subtle shift of light or season over the same street or desk; nothing breaks, but the tone cools.",
+          "avoid": ["crash imagery", "storm metaphors", "alarm clocks"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N005-S4",
+          "editorialFunction": "Hold the two questions apart: becoming versus spending remaining time.",
+          "visualIntent": "A fork in an ordinary context — two metro directions, two paths in a park — observed calmly, unresolved.",
+          "avoid": ["mountain summit", "crossroads desert cliché", "signpost typography"],
+          "targetDurationSec": 9.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N006",
+      "estimatedDurationSec": 26,
+      "visualArc": "three confusable things distinguished; overlap shown, not enumerated",
+      "slots": [
+        {
+          "slotId": "N006-S1",
+          "editorialFunction": "Introduce the confusion without an on-screen list.",
+          "visualIntent": "A person mid-flow at work — suited, able, absorbed — while something personal (a sketch, a plant, a window) sits at the edge of frame.",
+          "avoid": ["3-column graphic", "checklist imagery"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N006-S2",
+          "editorialFunction": "Show that suited-for and good-at can fully coincide.",
+          "visualIntent": "Expertise demonstrated cleanly: a professional doing excellent, confident work.",
+          "avoid": ["showing off", "award ceremonies"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N006-S3",
+          "editorialFunction": "Open the third possibility — still wanting it — as a gap rather than a statement.",
+          "visualIntent": "After hours: the workplace empty, the person's private interests visible at home; overlap becoming separateness.",
+          "avoid": ["dramatic sighing", "head-in-hands"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N007",
+      "estimatedDurationSec": 40,
+      "visualArc": "mastery at its peak -> the mismatch appears -> no blame, no mistake",
+      "slots": [
+        {
+          "slotId": "N007-S1",
+          "editorialFunction": "Show mastery at its best — the career working exactly as designed.",
+          "visualIntent": "Peak professional competence in real conditions; respect from colleagues visible in behavior.",
+          "avoid": ["superhero framing", "arrogance tropes"],
+          "targetDurationSec": 10
+        },
+        {
+          "slotId": "N007-S2",
+          "editorialFunction": "Insert the 'and still...' pivot as a quiet visual dissonance.",
+          "visualIntent": "The same competent person, after the work is done, staring at nothing in particular — competence intact, appetite gone.",
+          "avoid": ["dramatic despair", "burnout tropes"],
+          "targetDurationSec": 10
+        },
+        {
+          "slotId": "N007-S3",
+          "editorialFunction": "Protect the career from retroactive judgment: it was not a mistake.",
+          "visualIntent": "Objects of a well-used professional life — tools, books, awards — treated warmly in passing light.",
+          "avoid": ["shameful discarding of objects", "trash imagery"],
+          "targetDurationSec": 10
+        },
+        {
+          "slotId": "N007-S4",
+          "editorialFunction": "Land the reframe: something that fit one season need not own the rest.",
+          "visualIntent": "Seasonal change over a familiar place — the same view, a different light; fit is temporal.",
+          "avoid": ["withering/death metaphors", "dramatic seasons timelapse"],
+          "targetDurationSec": 10
+        }
+      ]
+    },
+    {
+      "narrationId": "N008",
+      "estimatedDurationSec": 33,
+      "visualArc": "identity built over decades -> the answer to 'what do you do' -> difficulty imagining outside it",
+      "slots": [
+        {
+          "slotId": "N008-S1",
+          "editorialFunction": "Show a career as a constructed identity, not just an income.",
+          "visualIntent": "Layered evidence of a long profession: diplomas, worn tools, an office that took years to assemble.",
+          "avoid": ["frame-perfect wall-of-fame boast", "burning-the-diploma metaphor"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N008-S2",
+          "editorialFunction": "Make 'what do you do' feel like a script rehearsed for years.",
+          "visualIntent": "Everyday social exchanges — introductions, small talk at a gathering — where work is the answer everyone gives.",
+          "avoid": ["awkward-party comedy", "cringe acting"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N008-S3",
+          "editorialFunction": "Show how living inside the answer narrows the imaginable self.",
+          "visualIntent": "A person reflected in ordinary routines that are all work-shaped: same commute, same entrance, same rhythm.",
+          "avoid": ["mirror-shot cliché", "split-personality effects"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N008-S4",
+          "editorialFunction": "Give breathing room before the investment theme — an unclaimed outside.",
+          "visualIntent": "A space the person rarely enters anymore — a garden, a studio, a beach path — quiet, available, unused.",
+          "avoid": ["dramatic escape imagery", " Bucket-list tourism"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N009",
+      "estimatedDurationSec": 45,
+      "visualArc": "the sunk investment enumerated -> its logic named -> time's one-way direction reframes the question",
+      "slots": [
+        {
+          "slotId": "N009-S1",
+          "editorialFunction": "Make the accumulated investment tangible as lived effort.",
+          "visualIntent": "Traces of long effort: marked-up notebooks, late-night desk light, a hard-won project completed.",
+          "avoid": ["one prop per line item", "sweat-and-grind stock montages"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N009-S2",
+          "editorialFunction": "Convey rare expertise without bragging.",
+          "visualIntent": "A specialist absorbed in work only a few could do; quiet depth rather than spectacle.",
+          "avoid": ["genius-glow effects", "brain imagery"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N009-S3",
+          "editorialFunction": "Name the sunk-cost pull as a human behavior, not a lecture.",
+          "visualIntent": "Someone visibly holding on — tightening a grip on a rail, rearranging the same papers — persistence caught in a small gesture.",
+          "avoid": ["textbook illustrations", "casino/gambling metaphors"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N009-S4",
+          "editorialFunction": "Turn from unrecoverable time to the question of what remains.",
+          "visualIntent": "Water flowing one direction under a bridge, or a shadow lengthening; time's arrow stated by landscape, not clocks.",
+          "avoid": ["hourglass", "ticking clock close-up", "reverse-footage gimmick"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N009-S5",
+          "editorialFunction": "Open the forward-looking question with visual generosity.",
+          "visualIntent": "An open horizon of ordinary days ahead — a long view down a quiet street in morning light.",
+          "avoid": ["pristine fantasy future", "neon opportunity graphics"],
+          "targetDurationSec": 9
+        }
+      ]
+    },
+    {
+      "narrationId": "N010",
+      "estimatedDurationSec": 26,
+      "visualArc": "security is real -> its concrete weight -> the value of protection",
+      "slots": [
+        {
+          "slotId": "N010-S1",
+          "editorialFunction": "Ground the episode's argument: financial security is not an abstraction here.",
+          "visualIntent": "Ordinary financial duties in a humane register: a mortgage letter on the kitchen table, school bags by the door, medicine boxes in a cabinet.",
+          "avoid": ["debt-horror framing", "sympathy-porn poverty imagery"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N010-S2",
+          "editorialFunction": "Show the people the salary quietly protects.",
+          "visualIntent": "Family life in the background of an ordinary day — parents aging, children doing homework — observed from a slight distance.",
+          "avoid": ["sentimental hugs", "illness close-ups"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N010-S3",
+          "editorialFunction": "Let protection itself be seen as valuable, not mocked.",
+          "visualIntent": "A home held steady in bad weather seen through a window; shelter as a real good.",
+          "avoid": ["fortress imagery", "storm-disaster footage"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N011",
+      "estimatedDurationSec": 36,
+      "visualArc": "no quitting argument -> the price of security -> price measured in days",
+      "slots": [
+        {
+          "slotId": "N011-S1",
+          "editorialFunction": "Keep the film honest: this is not a resignation manifesto.",
+          "visualIntent": "A person responsibly at work, neither miserable nor euphoric; duty shown neutrally.",
+          "avoid": ["freedom-poster imagery", "quit-your-boss memes"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N011-S2",
+          "editorialFunction": "Introduce the idea of a price without naming its units yet.",
+          "visualIntent": "A receipt, a meter, something small being exchanged; the language of transactions in daily life.",
+          "avoid": ["cash register cliché", "toll-booth metaphor"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N011-S3",
+          "editorialFunction": "Begin enumerating the days — but as one lived morning, not a list.",
+          "visualIntent": "A single ordinary morning: alarm, coffee, coat, door. Observed closely and without drama.",
+          "avoid": ["one-image-per-line montage", "rooster/alarm frenzy"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N011-S4",
+          "editorialFunction": "Land the emotional cost: evenings with little left over.",
+          "visualIntent": "Coming home in the dark, coat still on, dinner unmade; low energy rendered respectfully.",
+          "avoid": ["collapse on couch cliché", "alcohol tropes"],
+          "targetDurationSec": 9
+        }
+      ]
+    },
+    {
+      "narrationId": "N012",
+      "estimatedDurationSec": 26,
+      "visualArc": "small sacrifices invisible -> accumulation -> days become a life",
+      "slots": [
+        {
+          "slotId": "N012-S1",
+          "editorialFunction": "Show how single days fail to register as sacrifice.",
+          "visualIntent": "An unremarkable workday passing without incident; nothing memorable, by design.",
+          "avoid": ["montage speed-up", "calendar X-marks"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N012-S2",
+          "editorialFunction": "Convey years passing quickly without literalizing them.",
+          "visualIntent": "A child's bicycle becoming too small, a jacket style changing on the same commuter; quiet time markers.",
+          "avoid": ["timelapse seasons overuse", "aging makeup effects"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N012-S3",
+          "editorialFunction": "Deliver the block's weight: thousands of ordinary days become a significant portion of a life.",
+          "visualIntent": "A wide static shot of a residential street at dusk, many windows lit; each window an ordinary day.",
+          "avoid": ["nighttime city glamour", "drone-show spectacle"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N013",
+      "estimatedDurationSec": 38,
+      "visualArc": "a named psychological tension -> what generativity means -> it need not be grand",
+      "slots": [
+        {
+          "slotId": "N013-S1",
+          "editorialFunction": "Introduce Erikson's tension without textbook framing.",
+          "visualIntent": "A middle-aged person between two rooms — one of work, one of home — light different in each; the tension embodied, not diagrammed.",
+          "avoid": ["psychology diagram", "portrait-with-name-caption"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N013-S2",
+          "editorialFunction": "Show generativity as contribution beyond oneself.",
+          "visualIntent": "Teaching, mentoring, caregiving, building something others will use; gentle outward-facing activity.",
+          "avoid": ["hero-teacher cliché", "halo lighting"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N013-S3",
+          "editorialFunction": "Block the misreading that this means a new career or grand purpose.",
+          "visualIntent": "Small non-career creation in progress: bread rising, a birdhouse half-built, seeds in jars.",
+          "avoid": ["startup montage", "bucket-list adventure"],
+          "targetDurationSec": 9.5
+        },
+        {
+          "slotId": "N013-S4",
+          "editorialFunction": "Complete the downshift: sometimes it is much smaller.",
+          "visualIntent": "One unhurried small act done for its own sake, in ordinary light.",
+          "avoid": ["inspirational voiceover energy", "golden-hour glow overuse"],
+          "targetDurationSec": 9.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N014",
+      "estimatedDurationSec": 36,
+      "visualArc": "a catalogue of small meanings -> mental space regained; list absorbed into one living scene",
+      "slots": [
+        {
+          "slotId": "N014-S1",
+          "editorialFunction": "Open the list of small meanings inside one coherent setting rather than one shot per line.",
+          "visualIntent": "A lived-in home in soft daylight where several small activities coexist: cooking, reading, a half-finished project.",
+          "avoid": ["rapid montage", "stock-photo collage", "one image per item"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N014-S2",
+          "editorialFunction": "Emphasize making and learning disconnected from résumé value.",
+          "visualIntent": "Hands doing something impractical but absorbing — pottery, a jigsaw, an old radio taken apart.",
+          "avoid": ["productivity framing", "progress bars"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N014-S3",
+          "editorialFunction": "Show unhurried time with others — helping, being present.",
+          "visualIntent": "Unstaged togetherness: sharing food, walking side by side, a slow conversation on a bench.",
+          "avoid": ["laughing-group stock pose", "hand-holding sunset"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N014-S4",
+          "editorialFunction": "Land the block: enough mental space to notice your own life again.",
+          "visualIntent": "A person doing nothing in particular, looking out a window, tea cooling; attention returning inward.",
+          "avoid": ["forced serenity", "meditation-cliché lotus pose"],
+          "targetDurationSec": 9
+        }
+      ]
+    },
+    {
+      "narrationId": "N015",
+      "estimatedDurationSec": 14,
+      "visualArc": "work did not lose meaning; other meanings began competing for the same hours",
+      "slots": [
+        {
+          "slotId": "N015-S1",
+          "editorialFunction": "Reframe without negation: work is not suddenly meaningless.",
+          "visualIntent": "Work continuing normally in the background — the office running as always — while life's other textures sit in the foreground of the frame.",
+          "avoid": ["abandoned workplace", "burning laptop"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N015-S2",
+          "editorialFunction": "Make the competition for limited hours visible.",
+          "visualIntent": "A calendar page or week planner where one life's claims crowd one another; restrained, observational, not frantic.",
+          "avoid": ["color-coded productivity porn", "overlapping-appointment comedy"],
+          "targetDurationSec": 7
+        }
+      ]
+    },
+    {
+      "narrationId": "N016",
+      "estimatedDurationSec": 26,
+      "visualArc": "the unlimited future -> time becomes visible; list delivered through one changing life, not five images",
+      "slots": [
+        {
+          "slotId": "N016-S1",
+          "editorialFunction": "Establish the young self's sense of endless horizon.",
+          "visualIntent": "Youth in open motion — running for a train, plan in hand — the future assumed, unexamined.",
+          "avoid": ["nostalgia filter", "backward-glance slow motion"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N016-S2",
+          "editorialFunction": "Mark the change in how time feels — not frightening, just visible.",
+          "visualIntent": "A mid-year morning with long clear shadows; light making everything countable.",
+          "avoid": ["ominous storm", "aging-body scrutiny"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N016-S3",
+          "editorialFunction": "Close on visibility rather than dread.",
+          "visualIntent": "A person calmly noting something small — a date, a season, a child's height on a doorframe.",
+          "avoid": ["bucket-list checklist", "farewell imagery"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N017",
+      "estimatedDurationSec": 36,
+      "visualArc": "the 'only so many' inventory -> each finitude honored quietly; highest list risk, absorbed into paired scenes",
+      "slots": [
+        {
+          "slotId": "N017-S1",
+          "editorialFunction": "Hold healthy years as capacity, not countdown.",
+          "visualIntent": "A body still fully in use — hiking, swimming, carrying things — vitality framed as finite and present.",
+          "avoid": [" frailty imagery", "counting motif"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N017-S2",
+          "editorialFunction": "Deliver the children's summers line with warmth and restraint.",
+          "visualIntent": "A late-summer garden, children a little older each time; ordinary family leisure, unhurried.",
+          "avoid": ["perfect-family advertising", "growing-up montage cliché"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N017-S3",
+          "editorialFunction": "Honor the parents line without mortality staging.",
+          "visualIntent": "Time with aging parents in ordinary acts — shopping, a shared meal, a phone call — presence over sentiment.",
+          "avoid": ["hospital rooms", "deathbed framing", "hands-held-at-bedside"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N017-S4",
+          "editorialFunction": "Close the inventory on the ordinary morning the body still allows.",
+          "visualIntent": "Waking without an alarm, stretching, deciding slowly what the day will be.",
+          "avoid": ["freedom-yacht fantasy", "retirement-brochure imagery"],
+          "targetDurationSec": 9
+        }
+      ]
+    },
+    {
+      "narrationId": "N018",
+      "estimatedDurationSec": 17,
+      "visualArc": "no optimization trap -> time simply stops being treated as unlimited",
+      "slots": [
+        {
+          "slotId": "N018-S1",
+          "editorialFunction": "Refuse the over-correction: not every hour must be precious.",
+          "visualIntent": "Ordinary wasted-looking time, warmly framed — doodling, daydreaming by a bus stop; permission, not guilt.",
+          "avoid": ["productivity-guilt framing", "grindset imagery"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N018-S2",
+          "editorialFunction": "State the quiet conclusion: time is harder to treat as unlimited.",
+          "visualIntent": "A finite, beautiful thing observed — a tide going out, bread cooling on a rack — finitude made tangible without clocks.",
+          "avoid": ["hourglass", "sand running out", "melting-candle metaphor"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N019",
+      "estimatedDurationSec": 14,
+      "visualArc": "existentialist premise: a life is shaped by choices actually made",
+      "slots": [
+        {
+          "slotId": "N019-S1",
+          "editorialFunction": "Introduce the uncomfortable idea with dignity, not doom.",
+          "visualIntent": "A person standing at an ordinary junction of daily life, mid-decision — small scale, real weight.",
+          "avoid": ["philosophy-portrait clichés", "fog-and-cliff melodrama"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N019-S2",
+          "editorialFunction": "Separate imagined possibilities from lived choices.",
+          "visualIntent": "Half-made things in a life: an unused instrument, unbought tickets, an unopened box — traces of imagination, treated kindly.",
+          "avoid": ["regret-wall framing", "broken-dreams metaphor"],
+          "targetDurationSec": 7
+        }
+      ]
+    },
+    {
+      "narrationId": "N020",
+      "estimatedDurationSec": 40,
+      "visualArc": "the someday list -> someday as a place that never arrives -> stability makes postponement easy",
+      "slots": [
+        {
+          "slotId": "N020-S1",
+          "editorialFunction": "Open the someday list as one continuous ordinary evening, not five clips.",
+          "visualIntent": "A person at home letting plans pass by in a single evening: magazine closed, sketchbook untouched, phone set aside.",
+          "avoid": ["one-shot-per-someday montage", "travel-brochure inserts"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N020-S2",
+          "editorialFunction": "Show 'someday' remaining permanently in the future.",
+          "visualIntent": "A path walked around rather than along — a park gate passed daily, never entered.",
+          "avoid": ["dramatic destiny framing", "closed-gate symbolism overdone"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N020-S3",
+          "editorialFunction": "Show why stable lives postpone well: nothing forces the question.",
+          "visualIntent": "A smoothly running household — bills paid, fridge full, lights working — comfort filmed honestly.",
+          "avoid": ["luxury smugness", "doom undertones"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N020-S4",
+          "editorialFunction": "Let the block settle: postponement as the default path of least resistance.",
+          "visualIntent": "The same comfortable room an hour later, unchanged; nothing happened, and that is the point.",
+          "avoid": ["sudden melancholy score cue", "storm imagery"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N021",
+      "estimatedDurationSec": 21,
+      "visualArc": "no crisis, full calendar -> years pass -> and then another",
+      "slots": [
+        {
+          "slotId": "N021-S1",
+          "editorialFunction": "Depict the undramatic surface of a life with no forcing crisis.",
+          "visualIntent": "Monthly rhythms repeating: payday, groceries, a filled calendar — orderly and unremarkable.",
+          "avoid": ["financial-drama imagery", "countdown motifs"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N021-S2",
+          "editorialFunction": "Convey a year passing without an event worth remembering.",
+          "visualIntent": "The same location across subtle seasonal light changes; nearly identical frames.",
+          "avoid": ["timelapse spectacle", "obvious winter-to-summer jump"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N021-S3",
+          "editorialFunction": "Give the repetition its quiet sting.",
+          "visualIntent": "A calendar being replaced with a new one; the same handwriting, a new year, nothing else changed.",
+          "avoid": ["calendar-page tear-off cliché", "clock striking"],
+          "targetDurationSec": 7
+        }
+      ]
+    },
+    {
+      "narrationId": "N022",
+      "estimatedDurationSec": 17,
+      "visualArc": "hardest decisions target good-enough jobs; the trap of indefinitely",
+      "slots": [
+        {
+          "slotId": "N022-S1",
+          "editorialFunction": "Reframe the difficulty: not escape, but leaving something fine.",
+          "visualIntent": "A genuinely pleasant workplace seen tenderly — good colleagues, decent light, real competence; the thing that must be left is lovable.",
+          "avoid": ["dystopian office contrast", "toxic-boss imagery"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N022-S2",
+          "editorialFunction": "Show the asymmetry: bad jobs push, good-enough jobs hold.",
+          "visualIntent": "A comfortable chair, a settled desk, a routine that fits perfectly; gravity rendered as furniture.",
+          "avoid": ["quitting-scene drama", "slamming-laptop trope"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N023",
+      "estimatedDurationSec": 17,
+      "visualArc": "the useful question replaces the two usual ones",
+      "slots": [
+        {
+          "slotId": "N023-S1",
+          "editorialFunction": "Dismiss the first usual question without mocking it.",
+          "visualIntent": "A neutral passing image of ordinary work frustration — mundane, mild, not the film's subject.",
+          "avoid": ["rage-quit imagery", "hate-the-boss comedy"],
+          "targetDurationSec": 4.5
+        },
+        {
+          "slotId": "N023-S2",
+          "editorialFunction": "Dismiss the second usual question equally quietly.",
+          "visualIntent": "Retirement-adjacent imagery kept abstract — a coin jar, a savings statement — pleasant but beside the point.",
+          "avoid": ["retirement-brochure beach", "money-pile imagery"],
+          "targetDurationSec": 4.5
+        },
+        {
+          "slotId": "N023-S3",
+          "editorialFunction": "Deliver the block's real question as an image of exchange.",
+          "visualIntent": "A hand handing over time-shaped value in an ordinary transaction; restrained, non-literal.",
+          "avoid": ["selling-soul metaphor", "chain-and-shackle imagery", "coins-for-heart cliché"],
+          "targetDurationSec": 8
+        }
+      ]
+    },
+    {
+      "narrationId": "N024",
+      "estimatedDurationSec": 36,
+      "visualArc": "the possible answers honored -> selling time is not wrong -> the point is knowing the exchange",
+      "slots": [
+        {
+          "slotId": "N024-S1",
+          "editorialFunction": "Give the first answers their dignity: security and responsibility are real goods.",
+          "visualIntent": "A protected family life glimpsed honestly — a safe home, children thriving, needs met without display.",
+          "avoid": ["sacrifice-glorification", "provider-hero framing"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N024-S2",
+          "editorialFunction": "Give the remaining answers their dignity: work can still be genuinely worthwhile.",
+          "visualIntent": "A person doing meaningful work with visible quiet satisfaction — the good answer shown, not told.",
+          "avoid": ["corporate-values-video energy", "pride-ceremony imagery"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N024-S3",
+          "editorialFunction": "Normalize selling time: almost everyone does it.",
+          "visualIntent": "A busy ordinary crowd at rush hour, each face neither tragic nor triumphant; the human default.",
+          "avoid": ["crowd-as-ants aerial cliché", "zombie-commute framing"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N024-S4",
+          "editorialFunction": "Land the block: the point is knowing what is received in exchange.",
+          "visualIntent": "A quiet two-shot of a transaction completing in daily life — receipt taken, glance exchanged; attention on awareness.",
+          "avoid": ["ledger close-up", "scale-of-justice metaphor"],
+          "targetDurationSec": 7.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N025",
+      "estimatedDurationSec": 31,
+      "visualArc": "the calculation changes -> money's marginal weight falls -> a free Tuesday rises",
+      "slots": [
+        {
+          "slotId": "N025-S1",
+          "editorialFunction": "Mark the shift in the calculation without a plot event.",
+          "visualIntent": "A payslip looked at briefly, then set aside for something else already in progress at home.",
+          "avoid": ["money-disgust framing", "tearing-the-payslip drama"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N025-S2",
+          "editorialFunction": "Show the free morning gaining value.",
+          "visualIntent": "An unhurried weekday morning in a usually empty house — sunlight moving across a table, no clock-checking.",
+          "avoid": ["spa-retreat luxury", "brunch-advertising gloss"],
+          "targetDurationSec": 8
+        },
+        {
+          "slotId": "N025-S3",
+          "editorialFunction": "Reduce promotion's pull visually.",
+          "visualIntent": "An office celebration heard faintly from a distance while the subject stays outside in daylight; ambivalence made spatial.",
+          "avoid": ["award rejection drama", "envy imagery"],
+          "targetDurationSec": 7.5
+        },
+        {
+          "slotId": "N025-S4",
+          "editorialFunction": "Name the strange value of a self-determined Tuesday afternoon.",
+          "visualIntent": "A person mid-week doing something small and elective — a museum, a long walk, a nap — unexplained and unhurried.",
+          "avoid": ["sick-day deception comedy", "empty-city fantasy"],
+          "targetDurationSec": 7.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N026",
+      "estimatedDurationSec": 36,
+      "visualArc": "no dramatic resignation -> the middle answers: fewer hours, new roles, sabbatical, financial independence, protected life",
+      "slots": [
+        {
+          "slotId": "N026-S1",
+          "editorialFunction": "Explicitly refuse the dramatic-resignation trope.",
+          "visualIntent": "An utterly unremarkable workday continuing — the film declining the movie version of quitting.",
+          "avoid": ["empty-desk box carry", "dramatic exit walk", "confetti of freedom"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N026-S2",
+          "editorialFunction": "Show smaller structural answers: fewer hours, changed roles.",
+          "visualIntent": "A person negotiating or living a lighter schedule — leaving in daylight, handing over part of a role, working part of the week elsewhere.",
+          "avoid": ["part-time-idyll fantasy", "handed-resignation-letter close-up"],
+          "targetDurationSec": 7.5
+        },
+        {
+          "slotId": "N026-S3",
+          "editorialFunction": "Show the sabbatical and independence paths as ordinary and available.",
+          "visualIntent": "A planned pause made visible gently — a bag packed weeks ahead, a savings chart on a kitchen wall, a ticket booked calmly.",
+          "avoid": ["gap-year cliché", "freedom-numbers montage"],
+          "targetDurationSec": 7.5
+        },
+        {
+          "slotId": "N026-S4",
+          "editorialFunction": "Land the block on the boundary being drawn: work no longer consumes everything.",
+          "visualIntent": "An evening explicitly protected — phone face-down, door to the home office closed, dinner happening anyway.",
+          "avoid": ["digital-detox sermon", "burning-phone imagery"],
+          "targetDurationSec": 7.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N027",
+      "estimatedDurationSec": 17,
+      "visualArc": "the binary dissolves into a large middle space",
+      "slots": [
+        {
+          "slotId": "N027-S1",
+          "editorialFunction": "Collapse the either/or framing visually.",
+          "visualIntent": "Two extremes seen small — a cubicle and a beach at the far edges of a frame — with a wide, detailed, ordinary middle ground between them.",
+          "avoid": ["split-screen gimmick", "binary signposts"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N027-S2",
+          "editorialFunction": "Inhabit the middle space where real answers live.",
+          "visualIntent": "A mixed life in progress: a workshop next to a laptop, a weekday project beside a part-time schedule.",
+          "avoid": ["perfect-balance lifestyle ad", "yin-yang symbolism"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N028",
+      "estimatedDurationSec": 26,
+      "visualArc": "security's real purpose -> no permanent safety -> more choices about time",
+      "slots": [
+        {
+          "slotId": "N028-S1",
+          "editorialFunction": "Question the goal of feeling permanently safe.",
+          "visualIntent": "A well-defended, comfortable home at night — safe-looking, yet clearly not permanent; shelter without illusion.",
+          "avoid": ["vault imagery", "doomsday-prepper framing"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N028-S2",
+          "editorialFunction": "Accept that permanent safety does not exist — without despair.",
+          "visualIntent": "Weather changing over a stable landscape; the land remains, conditions do not.",
+          "avoid": ["catastrophe footage", "apocalyptic skies"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N028-S3",
+          "editorialFunction": "Reframe security as purchasing choices about time.",
+          "visualIntent": "A buffer made visible as possibility: a person able to say no to something small — declining a shift, skipping a meeting for a school play.",
+          "avoid": ["financial-independence-number flex", "freedom-formula graphics"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N029",
+      "estimatedDurationSec": 14,
+      "visualArc": "money is recoverable; time is not",
+      "slots": [
+        {
+          "slotId": "N029-S1",
+          "editorialFunction": "Show money's recoverability honestly.",
+          "visualIntent": "Cycles of money in ordinary life — coins saved, spent, saved again — a loop, filmed without judgment.",
+          "avoid": ["wealth porn", "poverty warnings"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N029-S2",
+          "editorialFunction": "Contrast with time's single direction, in landscape rather than clocks.",
+          "visualIntent": "A river or tide moving one way past a fixed point; the frame holds still while the water does not.",
+          "avoid": ["hourglass", "calendar flip", "reverse playback"],
+          "targetDurationSec": 7
+        }
+      ]
+    },
+    {
+      "narrationId": "N030",
+      "estimatedDurationSec": 21,
+      "visualArc": "the past was not wasted -> what remains remains",
+      "slots": [
+        {
+          "slotId": "N030-S1",
+          "editorialFunction": "Honor the years spent becoming who we are.",
+          "visualIntent": "A long apprenticeship-like montage compressed into one image: a craftsman's early work beside the mature work, both kept.",
+          "avoid": ["before/after superiority framing", "embarrassed-past tropes"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N030-S2",
+          "editorialFunction": "Show the skills and experiences remaining, in use or at rest.",
+          "visualIntent": "Old competence still quietly alive: hands that remember, tools maintained, a library still consulted.",
+          "avoid": ["rust-and-abandonment framing", "museum-dust metaphor"],
+          "targetDurationSec": 7
+        },
+        {
+          "slotId": "N030-S3",
+          "editorialFunction": "Land on what remains in people: those helped, and the person we became.",
+          "visualIntent": "Brief human continuities — a thank-you message still pinned, a friendship intact across years; identity held warmly.",
+          "avoid": ["sentimental reunion scene", "legacy-trophy framing"],
+          "targetDurationSec": 7
+        }
+      ]
+    },
+    {
+      "narrationId": "N031",
+      "estimatedDurationSec": 26,
+      "visualArc": "no obligation to repeat the past -> work may still be good -> the question is the price",
+      "slots": [
+        {
+          "slotId": "N031-S1",
+          "editorialFunction": "Release the obligation to justify the past by repeating it.",
+          "visualIntent": "A person closing a chapter without ceremony — finishing a project, tidying a desk, keeping what matters and leaving the rest.",
+          "avoid": ["funeral-for-a-career framing", "dramatic last-day montage"],
+          "targetDurationSec": 9
+        },
+        {
+          "slotId": "N031-S2",
+          "editorialFunction": "Affirm that work may still be good — the critique is not rejection.",
+          "visualIntent": "Work shown one more time in its best light; genuine, warm, complete.",
+          "avoid": ["sour aftertaste framing", "disingenuous praise"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N031-S3",
+          "editorialFunction": "Deliver the block's question: whether it is still worth what it costs.",
+          "visualIntent": "A quiet balanced image of exchange — a full day ending, its cost and yield both visible in an ordinary evening.",
+          "avoid": ["ledger imagery", "moralizing lighting"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    },
+    {
+      "narrationId": "N032",
+      "estimatedDurationSec": 17,
+      "visualArc": "the answer belongs to each of us -> the final question, held open",
+      "slots": [
+        {
+          "slotId": "N032-S1",
+          "editorialFunction": "Return the question to the viewer: only each of us can answer.",
+          "visualIntent": "Ordinary people in separate quiet frames — at windows, on porches, in kitchens — each mid-thought; no single protagonist anymore.",
+          "avoid": ["wise-elder figure", "answer-in-eyes close-up"],
+          "targetDurationSec": 8.5
+        },
+        {
+          "slotId": "N032-S2",
+          "editorialFunction": "Hold the final question open over the closing frame; visually rhyme with the cold-open title surface.",
+          "visualIntent": "The same kind of still, softly lit interior with negative space as N002-S1 — the film ends where its title began, question unresolved.",
+          "avoid": ["resolution imagery", "sunrise-through-window cliché", "fade-to-black Symbolism overuse"],
+          "targetDurationSec": 8.5
+        }
+      ]
+    }
+  ]
+}

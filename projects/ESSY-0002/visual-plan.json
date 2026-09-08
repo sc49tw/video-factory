@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0002",
+  "strategy": "audio-master-real-assets",
+  "shots": [
+    {
+      "sectionId": "N001",
+      "sentenceId": "sentence-001",
+      "startSec": 0,
+      "endSec": 27.264000000000003,
+      "cues": []
+    },
+    {
+      "sectionId": "N002",
+      "sentenceId": "sentence-002",
+      "startSec": 0,
+      "endSec": 25.752000000000002,
+      "cues": []
+    },
+    {
+      "sectionId": "N003",
+      "sentenceId": "sentence-003",
+      "startSec": 0,
+      "endSec": 25.560000000000002,
+      "cues": []
+    },
+    {
+      "sectionId": "N004",
+      "sentenceId": "sentence-004",
+      "startSec": 0,
+      "endSec": 27.408,
+      "cues": []
+    },
+    {
+      "sectionId": "N005",
+      "sentenceId": "sentence-005",
+      "startSec": 0,
+      "endSec": 29.928,
+      "cues": []
+    },
+    {
+      "sectionId": "N006",
+      "sentenceId": "sentence-006",
+      "startSec": 0,
+      "endSec": 27.384,
+      "cues": []
+    },
+    {
+      "sectionId": "N007",
+      "sentenceId": "sentence-007",
+      "startSec": 0,
+      "endSec": 26.136000000000003,
+      "cues": []
+    },
+    {
+      "sectionId": "N008",
+      "sentenceId": "sentence-008",
+      "startSec": 0,
+      "endSec": 26.088,
+      "cues": []
+    },
+    {
+      "sectionId": "N009",
+      "sentenceId": "sentence-009",
+      "startSec": 0,
+      "endSec": 41.04,
+      "cues": []
+    },
+    {
+      "sectionId": "N010",
+      "sentenceId": "sentence-010",
+      "startSec": 0,
+      "endSec": 28.656000000000002,
+      "cues": []
+    },
+    {
+      "sectionId": "N011",
+      "sentenceId": "sentence-011",
+      "startSec": 0,
+      "endSec": 21.696,
+      "cues": []
+    },
+    {
+      "sectionId": "N012",
+      "sentenceId": "sentence-012",
+      "startSec": 0,
+      "endSec": 31.368000000000002,
+      "cues": []
+    },
+    {
+      "sectionId": "N013",
+      "sentenceId": "sentence-013",
+      "startSec": 0,
+      "endSec": 22.704,
+      "cues": []
+    },
+    {
+      "sectionId": "N014",
+      "sentenceId": "sentence-014",
+      "startSec": 0,
+      "endSec": 28.584000000000003,
+      "cues": []
+    },
+    {
+      "sectionId": "N015",
+      "sentenceId": "sentence-015",
+      "startSec": 0,
+      "endSec": 32.448,
+      "cues": []
+    },
+    {
+      "sectionId": "N016",
+      "sentenceId": "sentence-016",
+      "startSec": 0,
+      "endSec": 36.624,
+      "cues": []
+    },
+    {
+      "sectionId": "N017",
+      "sentenceId": "sentence-017",
+      "startSec": 0,
+      "endSec": 27.624000000000002,
+      "cues": []
+    },
+    {
+      "sectionId": "N018",
+      "sentenceId": "sentence-018",
+      "startSec": 0,
+      "endSec": 62.544000000000004,
+      "cues": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "mode": "search-only-no-downloads",
+  "note": "Scoped single-slot batch generated 2026-08-25 from pexels-candidates-N007-N018.json after editorial approval D5: N008-S2 -> pexels-video-8871841 (v3), replacing pexels-photo-9818697 (blocked by D2 anti-reuse rule). N006-S3 continues using pexels-photo-9818697.",
+  "episode": "ESSY-0001",
+  "sections": [
+    {
+      "narrationId": "N008",
+      "slotId": "N008-S2",
+      "visualIntent": "A moment of hesitation before deciding whether to keep an old possession.",
+      "searchQuery": "person holding old object thoughtful memory home",
+      "preferredMediaType": "video",
+      "orientation": "landscape",
+      "slots": [
+        {
+          "slotId": "N008-S2",
+          "videos": [
+            {
+              "id": "pexels-video-8871841",
+              "slotId": "N008-S2",
+              "rank": 3,
+              "mediaType": "video",
+              "role": "primary-video",
+              "sourceUrl": "https://www.pexels.com/video/elderly-woman-holding-a-picture-frame-while-sitting-on-sofa-8871841/",
+              "creator": "Kampus Production",
+              "creatorUrl": "https://www.pexels.com/@kampus",
+              "license": "Pexels License",
+              "licenseUrl": "https://www.pexels.com/license/",
+              "downloadedAt": "2026-08-26T11:52:07.484Z",
+              "originalFilename": "N008-S2-pexels-video-8871841.mp4",
+              "durationSec": 10,
+              "width": 3840,
+              "height": 2160,
+              "orientation": "landscape",
+              "previewUrl": "https://images.pexels.com/videos/8871841/pexels-photo-8871841.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+              "posterUrl": "https://images.pexels.com/videos/8871841/pexels-photo-8871841.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+              "videoFileUrl": "https://videos.pexels.com/video-files/8871841/8871841-hd_1920_1080_25fps.mp4",
+              "videoFileQuality": "hd",
+              "altText": null,
+              "selectionStatus": "selected",
+              "localPath": "projects/ESSY-0001/sourcing/downloads/N008-S2-pexels-video-8871841.mp4",
+              "sha256": "d8cbdccab2baaf68a840d4d741f9c239666ab20673226095cb404ec5cd0e06cb",
+              "fileSizeBytes": 1254968
+            }
+          ],
+          "photoFallbacks": []
+        }
+      ]
+    }
+  ]
+}

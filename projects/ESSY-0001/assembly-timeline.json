@@ -1,0 +1,2376 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0001",
+  "strategy": "real-asset-sourced",
+  "plannedDurationSec": 469.056,
+  "blocks": [
+    {
+      "sentenceId": "sentence-001",
+      "startSec": 0,
+      "endSec": 26.808,
+      "durationSec": 26.808,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 5.67,
+          "text": "For the first few decades of life, progress usually means adding something."
+        },
+        {
+          "startSec": 5.62,
+          "endSec": 7.637,
+          "text": "More skills."
+        },
+        {
+          "startSec": 7.637,
+          "endSec": 9.342,
+          "text": "More money."
+        },
+        {
+          "startSec": 9.342,
+          "endSec": 11.345,
+          "text": "More friends."
+        },
+        {
+          "startSec": 11.345,
+          "endSec": 13.321,
+          "text": "A better job."
+        },
+        {
+          "startSec": 13.321,
+          "endSec": 15.296,
+          "text": "A bigger home."
+        },
+        {
+          "startSec": 15.296,
+          "endSec": 17.782,
+          "text": "More experiences."
+        },
+        {
+          "startSec": 17.782,
+          "endSec": 19.885,
+          "text": "More options."
+        },
+        {
+          "startSec": 19.885,
+          "endSec": 23.182,
+          "text": "When you're young, this makes sense."
+        },
+        {
+          "startSec": 23.182,
+          "endSec": 26.208,
+          "text": "Your world is still expanding."
+        }
+      ],
+      "shots": [
+        {
+          "index": 0,
+          "blockId": "sentence-001",
+          "slotId": "N001-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N001-S1-pexels-video-5977058.mp4",
+          "sourceDurationSec": 9.36,
+          "renderDurationSec": 9.344,
+          "startSec": 0,
+          "endSec": 9.344,
+          "absoluteStartSec": 0,
+          "absoluteEndSec": 9.344
+        },
+        {
+          "index": 1,
+          "blockId": "sentence-001",
+          "slotId": "N001-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N001-S2-pexels-video-7252804.mp4",
+          "sourceDurationSec": 8.12,
+          "renderDurationSec": 8.12,
+          "startSec": 9.344,
+          "endSec": 17.464,
+          "absoluteStartSec": 9.344,
+          "absoluteEndSec": 17.464
+        },
+        {
+          "index": 2,
+          "blockId": "sentence-001",
+          "slotId": "N001-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N001-S3-pexels-video-4569919.mp4",
+          "sourceDurationSec": 18.04,
+          "renderDurationSec": 9.344,
+          "startSec": 17.464,
+          "endSec": 26.808,
+          "absoluteStartSec": 17.464,
+          "absoluteEndSec": 26.808
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-002",
+      "startSec": 26.808,
+      "endSec": 50.064,
+      "durationSec": 23.256,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 8.156,
+          "text": "You don't know where you'll live, what kind of work you'll do, who you'll become, or what kind of life you'll eventually build."
+        },
+        {
+          "startSec": 8.106,
+          "endSec": 8.156,
+          "text": "So you collect possibilities."
+        },
+        {
+          "startSec": 8.156,
+          "endSec": 10.933,
+          "text": "So you collect possibilities."
+        },
+        {
+          "startSec": 10.933,
+          "endSec": 13.065,
+          "text": "You say yes."
+        },
+        {
+          "startSec": 13.065,
+          "endSec": 15.197,
+          "text": "You try things."
+        },
+        {
+          "startSec": 15.197,
+          "endSec": 17.583,
+          "text": "You keep doors open."
+        },
+        {
+          "startSec": 17.583,
+          "endSec": 22.656,
+          "text": "And for a while, having more choices feels exactly like freedom."
+        }
+      ],
+      "shots": [
+        {
+          "index": 3,
+          "blockId": "sentence-002",
+          "slotId": "N002-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N002-S1-pexels-video-38755800.mp4",
+          "sourceDurationSec": 12.1121,
+          "renderDurationSec": 7.752,
+          "startSec": 0,
+          "endSec": 7.752,
+          "absoluteStartSec": 26.808,
+          "absoluteEndSec": 34.56
+        },
+        {
+          "index": 4,
+          "blockId": "sentence-002",
+          "slotId": "N002-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N002-S2-pexels-video-19959356.mp4",
+          "sourceDurationSec": 10.026667,
+          "renderDurationSec": 7.752,
+          "startSec": 7.752,
+          "endSec": 15.504,
+          "absoluteStartSec": 34.56,
+          "absoluteEndSec": 42.312
+        },
+        {
+          "index": 5,
+          "blockId": "sentence-002",
+          "slotId": "N002-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N002-S3-pexels-video-8747384.mp4",
+          "sourceDurationSec": 7.841167,
+          "renderDurationSec": 7.752,
+          "startSec": 15.504,
+          "endSec": 23.256,
+          "absoluteStartSec": 42.312,
+          "absoluteEndSec": 50.064
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-003",
+      "startSec": 50.064,
+      "endSec": 68.4,
+      "durationSec": 18.336,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 4.493,
+          "text": "But somewhere along the way, something begins to change."
+        },
+        {
+          "startSec": 4.443,
+          "endSec": 7.343,
+          "text": "Not necessarily at forty."
+        },
+        {
+          "startSec": 7.343,
+          "endSec": 9.874,
+          "text": "Not on your birthday."
+        },
+        {
+          "startSec": 9.874,
+          "endSec": 15.277,
+          "text": "There isn't a particular morning when you wake up and suddenly understand your life."
+        },
+        {
+          "startSec": 15.277,
+          "endSec": 17.736,
+          "text": "It's more subtle than that."
+        }
+      ],
+      "shots": [
+        {
+          "index": 6,
+          "blockId": "sentence-003",
+          "slotId": "N003-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N003-S1-pexels-video-38748169.mp4",
+          "sourceDurationSec": 19.96,
+          "renderDurationSec": 6.112,
+          "startSec": 0,
+          "endSec": 6.112,
+          "absoluteStartSec": 50.064,
+          "absoluteEndSec": 56.176
+        },
+        {
+          "index": 7,
+          "blockId": "sentence-003",
+          "slotId": "N003-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N003-S2-pexels-video-7593617.mp4",
+          "sourceDurationSec": 11.413333,
+          "renderDurationSec": 6.112,
+          "startSec": 6.112,
+          "endSec": 12.224,
+          "absoluteStartSec": 56.176,
+          "absoluteEndSec": 62.288
+        },
+        {
+          "index": 8,
+          "blockId": "sentence-003",
+          "slotId": "N003-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N003-S3-pexels-video-38516685.mp4",
+          "sourceDurationSec": 23.390033,
+          "renderDurationSec": 6.112,
+          "startSec": 12.224,
+          "endSec": 18.336,
+          "absoluteStartSec": 62.288,
+          "absoluteEndSec": 68.4
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-004",
+      "startSec": 68.4,
+      "endSec": 96.504,
+      "durationSec": 28.104,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 5.445,
+          "text": "You start noticing that every new thing you add also asks something from you."
+        },
+        {
+          "startSec": 5.395,
+          "endSec": 8.268,
+          "text": "Every possession needs space."
+        },
+        {
+          "startSec": 8.268,
+          "endSec": 11.04,
+          "text": "Every subscription wants money."
+        },
+        {
+          "startSec": 11.04,
+          "endSec": 13.827,
+          "text": "Every friendship needs time."
+        },
+        {
+          "startSec": 13.827,
+          "endSec": 18.22,
+          "text": "Every ambition creates another standard you can fail to meet."
+        },
+        {
+          "startSec": 18.22,
+          "endSec": 21.675,
+          "text": "Every opportunity becomes another decision."
+        },
+        {
+          "startSec": 21.675,
+          "endSec": 27.504,
+          "text": "And the things that once made life feel bigger can slowly begin to make it feel crowded."
+        }
+      ],
+      "shots": [
+        {
+          "index": 9,
+          "blockId": "sentence-004",
+          "slotId": "N004-S1",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N004-S1-pexels-photo-25651557.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 9.368,
+          "startSec": 0,
+          "endSec": 9.368,
+          "absoluteStartSec": 68.4,
+          "absoluteEndSec": 77.768
+        },
+        {
+          "index": 10,
+          "blockId": "sentence-004",
+          "slotId": "N004-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N004-S2-pexels-video-8297994.mp4",
+          "sourceDurationSec": 20.6,
+          "renderDurationSec": 9.368,
+          "startSec": 9.368,
+          "endSec": 18.736,
+          "absoluteStartSec": 77.768,
+          "absoluteEndSec": 87.136
+        },
+        {
+          "index": 11,
+          "blockId": "sentence-004",
+          "slotId": "N004-S3",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N004-S3-pexels-photo-13600865.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 9.368,
+          "startSec": 18.736,
+          "endSec": 28.104,
+          "absoluteStartSec": 87.136,
+          "absoluteEndSec": 96.504
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-005",
+      "startSec": 96.504,
+      "endSec": 123.384,
+      "durationSec": 26.88,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 5.4,
+          "text": "Maybe this is one reason life starts feeling different in middle age."
+        },
+        {
+          "startSec": 5.35,
+          "endSec": 7.794,
+          "text": "The question changes."
+        },
+        {
+          "startSec": 7.794,
+          "endSec": 13.421,
+          "text": "When you're twenty-five, you might ask: What else can I do?"
+        },
+        {
+          "startSec": 13.421,
+          "endSec": 19.289,
+          "text": "Later, you may find yourself asking: What can I stop doing?"
+        },
+        {
+          "startSec": 19.289,
+          "endSec": 21.789,
+          "text": "That sounds like giving up."
+        },
+        {
+          "startSec": 21.789,
+          "endSec": 26.28,
+          "text": "But it might actually be the beginning of a different kind of freedom."
+        }
+      ],
+      "shots": [
+        {
+          "index": 12,
+          "blockId": "sentence-005",
+          "slotId": "N005-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N005-S1-pexels-video-35559503.mp4",
+          "sourceDurationSec": 13.2132,
+          "renderDurationSec": 8.96,
+          "startSec": 0,
+          "endSec": 8.96,
+          "absoluteStartSec": 96.504,
+          "absoluteEndSec": 105.464
+        },
+        {
+          "index": 13,
+          "blockId": "sentence-005",
+          "slotId": "N005-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N005-S2-pexels-video-34333581.mp4",
+          "sourceDurationSec": 11.011,
+          "renderDurationSec": 8.96,
+          "startSec": 8.96,
+          "endSec": 17.92,
+          "absoluteStartSec": 105.464,
+          "absoluteEndSec": 114.424
+        },
+        {
+          "index": 14,
+          "blockId": "sentence-005",
+          "slotId": "N005-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N005-S3-pexels-video-6654095.mp4",
+          "sourceDurationSec": 15.92,
+          "renderDurationSec": 8.96,
+          "startSec": 17.92,
+          "endSec": 26.88,
+          "absoluteStartSec": 114.424,
+          "absoluteEndSec": 123.384
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-006",
+      "startSec": 123.384,
+      "endSec": 146.544,
+      "durationSec": 23.16,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 2.517,
+          "text": "Think about your home."
+        },
+        {
+          "startSec": 2.467,
+          "endSec": 7.871,
+          "text": "Most of us don't wake up one day and decide to fill it with things we don't need."
+        },
+        {
+          "startSec": 7.871,
+          "endSec": 10.061,
+          "text": "It happens slowly."
+        },
+        {
+          "startSec": 10.061,
+          "endSec": 13.133,
+          "text": "A drawer becomes two drawers."
+        },
+        {
+          "startSec": 13.133,
+          "endSec": 15.82,
+          "text": "A shelf becomes a cabinet."
+        },
+        {
+          "startSec": 15.82,
+          "endSec": 22.56,
+          "text": "Something you once cared about becomes something you keep because throwing it away feels strangely difficult."
+        }
+      ],
+      "shots": [
+        {
+          "index": 15,
+          "blockId": "sentence-006",
+          "slotId": "N006-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N006-S1-pexels-video-8580887.mp4",
+          "sourceDurationSec": 15.6,
+          "renderDurationSec": 7.72,
+          "startSec": 0,
+          "endSec": 7.72,
+          "absoluteStartSec": 123.384,
+          "absoluteEndSec": 131.104
+        },
+        {
+          "index": 16,
+          "blockId": "sentence-006",
+          "slotId": "N006-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N006-S2-pexels-video-5085422.mp4",
+          "sourceDurationSec": 15.166667,
+          "renderDurationSec": 7.72,
+          "startSec": 7.72,
+          "endSec": 15.44,
+          "absoluteStartSec": 131.104,
+          "absoluteEndSec": 138.824
+        },
+        {
+          "index": 17,
+          "blockId": "sentence-006",
+          "slotId": "N006-S3",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N006-S3-pexels-photo-9818697.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 7.72,
+          "startSec": 15.44,
+          "endSec": 23.16,
+          "absoluteStartSec": 138.824,
+          "absoluteEndSec": 146.544
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-007",
+      "startSec": 146.544,
+      "endSec": 170.856,
+      "durationSec": 24.312,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 3.171,
+          "text": "The same thing happens to calendars."
+        },
+        {
+          "startSec": 3.121,
+          "endSec": 5.112,
+          "text": "To commitments."
+        },
+        {
+          "startSec": 5.112,
+          "endSec": 7.643,
+          "text": "Even to identities."
+        },
+        {
+          "startSec": 7.643,
+          "endSec": 13.089,
+          "text": "A job title that once felt exciting becomes something you're afraid to lose."
+        },
+        {
+          "startSec": 13.089,
+          "endSec": 17.171,
+          "text": "A goal that once motivated you becomes an obligation."
+        },
+        {
+          "startSec": 17.171,
+          "endSec": 23.712,
+          "text": "A version of yourself that made sense ten years ago keeps making decisions for the person you are today."
+        }
+      ],
+      "shots": [
+        {
+          "index": 18,
+          "blockId": "sentence-007",
+          "slotId": "N007-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N007-S1-pexels-video-9057574.mp4",
+          "sourceDurationSec": 12.885,
+          "renderDurationSec": 8.104,
+          "startSec": 0,
+          "endSec": 8.104,
+          "absoluteStartSec": 146.544,
+          "absoluteEndSec": 154.648
+        },
+        {
+          "index": 19,
+          "blockId": "sentence-007",
+          "slotId": "N007-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N007-S2-pexels-video-7792232.mp4",
+          "sourceDurationSec": 17.48,
+          "renderDurationSec": 8.104,
+          "startSec": 8.104,
+          "endSec": 16.208,
+          "absoluteStartSec": 154.648,
+          "absoluteEndSec": 162.752
+        },
+        {
+          "index": 20,
+          "blockId": "sentence-007",
+          "slotId": "N007-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N007-S3-pexels-video-7546434.mp4",
+          "sourceDurationSec": 9.76,
+          "renderDurationSec": 8.104,
+          "startSec": 16.208,
+          "endSec": 24.312,
+          "absoluteStartSec": 162.752,
+          "absoluteEndSec": 170.856
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-008",
+      "startSec": 170.856,
+      "endSec": 189.936,
+      "durationSec": 19.08,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 5.215,
+          "text": "And perhaps that's why simplifying life can feel so uncomfortable."
+        },
+        {
+          "startSec": 5.165,
+          "endSec": 8.178,
+          "text": "You're not just removing objects."
+        },
+        {
+          "startSec": 8.178,
+          "endSec": 11.034,
+          "text": "You're questioning old decisions."
+        },
+        {
+          "startSec": 11.034,
+          "endSec": 15.567,
+          "text": "You're admitting that some things mattered once, but don't anymore."
+        },
+        {
+          "startSec": 15.567,
+          "endSec": 18.48,
+          "text": "You're allowing yourself to change."
+        }
+      ],
+      "shots": [
+        {
+          "index": 21,
+          "blockId": "sentence-008",
+          "slotId": "N008-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N008-S1-pexels-video-4520154.mp4",
+          "sourceDurationSec": 13.3133,
+          "renderDurationSec": 6.36,
+          "startSec": 0,
+          "endSec": 6.36,
+          "absoluteStartSec": 170.856,
+          "absoluteEndSec": 177.216
+        },
+        {
+          "index": 22,
+          "blockId": "sentence-008",
+          "slotId": "N008-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N008-S2-pexels-video-8871841.mp4",
+          "sourceDurationSec": 10.325,
+          "renderDurationSec": 6.36,
+          "startSec": 6.36,
+          "endSec": 12.72,
+          "absoluteStartSec": 177.216,
+          "absoluteEndSec": 183.576
+        },
+        {
+          "index": 23,
+          "blockId": "sentence-008",
+          "slotId": "N008-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N008-S3-pexels-video-8581134.mp4",
+          "sourceDurationSec": 14.566667,
+          "renderDurationSec": 6.36,
+          "startSec": 12.72,
+          "endSec": 19.08,
+          "absoluteStartSec": 183.576,
+          "absoluteEndSec": 189.936
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-009",
+      "startSec": 189.936,
+      "endSec": 218.832,
+      "durationSec": 28.896,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 4.689,
+          "text": "Modern life teaches us to measure progress through accumulation."
+        },
+        {
+          "startSec": 4.639,
+          "endSec": 6.614,
+          "text": "More income."
+        },
+        {
+          "startSec": 6.614,
+          "endSec": 8.787,
+          "text": "More productivity."
+        },
+        {
+          "startSec": 8.787,
+          "endSec": 10.919,
+          "text": "More followers."
+        },
+        {
+          "startSec": 10.919,
+          "endSec": 13.179,
+          "text": "More achievements."
+        },
+        {
+          "startSec": 13.179,
+          "endSec": 17.867,
+          "text": "Even self-improvement can become another form of accumulation."
+        },
+        {
+          "startSec": 17.867,
+          "endSec": 20.198,
+          "text": "More books to read."
+        },
+        {
+          "startSec": 20.198,
+          "endSec": 22.612,
+          "text": "More habits to build."
+        },
+        {
+          "startSec": 22.612,
+          "endSec": 25.554,
+          "text": "More routines to optimize."
+        },
+        {
+          "startSec": 25.554,
+          "endSec": 28.296,
+          "text": "More systems to maintain."
+        }
+      ],
+      "shots": [
+        {
+          "index": 24,
+          "blockId": "sentence-009",
+          "slotId": "N009-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S1-pexels-video-853830.mp4",
+          "sourceDurationSec": 19.88,
+          "renderDurationSec": 5.779,
+          "startSec": 0,
+          "endSec": 5.779,
+          "absoluteStartSec": 189.936,
+          "absoluteEndSec": 195.715
+        },
+        {
+          "index": 25,
+          "blockId": "sentence-009",
+          "slotId": "N009-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S2-pexels-video-7691561.mp4",
+          "sourceDurationSec": 20.28,
+          "renderDurationSec": 5.779,
+          "startSec": 5.779,
+          "endSec": 11.558,
+          "absoluteStartSec": 195.715,
+          "absoluteEndSec": 201.494
+        },
+        {
+          "index": 26,
+          "blockId": "sentence-009",
+          "slotId": "N009-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S3-pexels-video-8439621.mp4",
+          "sourceDurationSec": 13.76,
+          "renderDurationSec": 5.779,
+          "startSec": 11.558,
+          "endSec": 17.338,
+          "absoluteStartSec": 201.494,
+          "absoluteEndSec": 207.274
+        },
+        {
+          "index": 27,
+          "blockId": "sentence-009",
+          "slotId": "N009-S4",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S4-pexels-video-5717486.mp4",
+          "sourceDurationSec": 17.96,
+          "renderDurationSec": 5.779,
+          "startSec": 17.338,
+          "endSec": 23.117,
+          "absoluteStartSec": 207.274,
+          "absoluteEndSec": 213.053
+        },
+        {
+          "index": 28,
+          "blockId": "sentence-009",
+          "slotId": "N009-S5",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S5-pexels-video-32090009.mp4",
+          "sourceDurationSec": 11,
+          "renderDurationSec": 5.779,
+          "startSec": 23.117,
+          "endSec": 28.896,
+          "absoluteStartSec": 213.053,
+          "absoluteEndSec": 218.832
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-010",
+      "startSec": 218.832,
+      "endSec": 242.376,
+      "durationSec": 23.544,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 6.395,
+          "text": "At some point, trying to improve your life can become another thing making your life exhausting."
+        },
+        {
+          "startSec": 6.345,
+          "endSec": 6.395,
+          "text": "Maybe the answer isn't always a better system."
+        },
+        {
+          "startSec": 6.395,
+          "endSec": 10.111,
+          "text": "Maybe the answer isn't always a better system."
+        },
+        {
+          "startSec": 10.111,
+          "endSec": 14.289,
+          "text": "Maybe sometimes the answer is having less to manage."
+        },
+        {
+          "startSec": 14.289,
+          "endSec": 17.344,
+          "text": "This doesn't mean becoming passive."
+        },
+        {
+          "startSec": 17.344,
+          "endSec": 19.889,
+          "text": "Or abandoning ambition."
+        },
+        {
+          "startSec": 19.889,
+          "endSec": 22.944,
+          "text": "It means becoming more selective."
+        }
+      ],
+      "shots": [
+        {
+          "index": 29,
+          "blockId": "sentence-010",
+          "slotId": "N010-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N010-S1-pexels-video-8631882.mp4",
+          "sourceDurationSec": 7.6,
+          "renderDurationSec": 7.6,
+          "startSec": 0,
+          "endSec": 7.6,
+          "absoluteStartSec": 218.832,
+          "absoluteEndSec": 226.432
+        },
+        {
+          "index": 30,
+          "blockId": "sentence-010",
+          "slotId": "N010-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N010-S2-pexels-video-9583986.mp4",
+          "sourceDurationSec": 15.6,
+          "renderDurationSec": 7.972,
+          "startSec": 7.6,
+          "endSec": 15.572,
+          "absoluteStartSec": 226.432,
+          "absoluteEndSec": 234.404
+        },
+        {
+          "index": 31,
+          "blockId": "sentence-010",
+          "slotId": "N010-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N010-S3-pexels-video-8306453.mp4",
+          "sourceDurationSec": 17.12,
+          "renderDurationSec": 7.972,
+          "startSec": 15.572,
+          "endSec": 23.544,
+          "absoluteStartSec": 234.404,
+          "absoluteEndSec": 242.376
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-011",
+      "startSec": 242.376,
+      "endSec": 263.232,
+      "durationSec": 20.856,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 5.361,
+          "text": "When time feels unlimited, almost anything can seem worth doing."
+        },
+        {
+          "startSec": 5.311,
+          "endSec": 12.72,
+          "text": "But time begins to feel different when you understand, not intellectually but emotionally, that it is finite."
+        },
+        {
+          "startSec": 12.72,
+          "endSec": 16.957,
+          "text": "A two-hour meeting is no longer just two hours."
+        },
+        {
+          "startSec": 16.957,
+          "endSec": 20.256,
+          "text": "It's an evening you didn't spend with someone."
+        }
+      ],
+      "shots": [
+        {
+          "index": 32,
+          "blockId": "sentence-011",
+          "slotId": "N011-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N011-S1-pexels-video-34580818.mp4",
+          "sourceDurationSec": 11.678333,
+          "renderDurationSec": 6.952,
+          "startSec": 0,
+          "endSec": 6.952,
+          "absoluteStartSec": 242.376,
+          "absoluteEndSec": 249.328
+        },
+        {
+          "index": 33,
+          "blockId": "sentence-011",
+          "slotId": "N011-S2",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N011-S2-pexels-photo-38112113.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 6.952,
+          "startSec": 6.952,
+          "endSec": 13.904,
+          "absoluteStartSec": 249.328,
+          "absoluteEndSec": 256.28
+        },
+        {
+          "index": 34,
+          "blockId": "sentence-011",
+          "slotId": "N011-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N011-S3-pexels-video-6289666.mp4",
+          "sourceDurationSec": 17.88,
+          "renderDurationSec": 6.952,
+          "startSec": 13.904,
+          "endSec": 20.856,
+          "absoluteStartSec": 256.28,
+          "absoluteEndSec": 263.232
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-012",
+      "startSec": 263.232,
+      "endSec": 291.36,
+      "durationSec": 28.128,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 3.41,
+          "text": "A purchase is no longer just money."
+        },
+        {
+          "startSec": 3.36,
+          "endSec": 10.109,
+          "text": "It may be another object you'll store, maintain, move, and eventually throw away."
+        },
+        {
+          "startSec": 10.109,
+          "endSec": 13.391,
+          "text": "A promotion isn't simply more income."
+        },
+        {
+          "startSec": 13.391,
+          "endSec": 19.87,
+          "text": "It might also mean more responsibility, more stress, and less control of your time."
+        },
+        {
+          "startSec": 19.87,
+          "endSec": 22.612,
+          "text": "The calculation changes."
+        },
+        {
+          "startSec": 22.612,
+          "endSec": 27.528,
+          "text": "And maybe that calculation is what maturity actually looks like."
+        }
+      ],
+      "shots": [
+        {
+          "index": 35,
+          "blockId": "sentence-012",
+          "slotId": "N012-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S1-pexels-video-4440956.mp4",
+          "sourceDurationSec": 6.335,
+          "renderDurationSec": 6.335,
+          "startSec": 0,
+          "endSec": 6.335,
+          "absoluteStartSec": 263.232,
+          "absoluteEndSec": 269.567
+        },
+        {
+          "index": 36,
+          "blockId": "sentence-012",
+          "slotId": "N012-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S2-pexels-video-10567295.mp4",
+          "sourceDurationSec": 29.84,
+          "renderDurationSec": 7.264,
+          "startSec": 6.335,
+          "endSec": 13.599,
+          "absoluteStartSec": 269.567,
+          "absoluteEndSec": 276.831
+        },
+        {
+          "index": 37,
+          "blockId": "sentence-012",
+          "slotId": "N012-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S3-pexels-video-7643454.mp4",
+          "sourceDurationSec": 17.68,
+          "renderDurationSec": 7.264,
+          "startSec": 13.599,
+          "endSec": 20.864,
+          "absoluteStartSec": 276.831,
+          "absoluteEndSec": 284.096
+        },
+        {
+          "index": 38,
+          "blockId": "sentence-012",
+          "slotId": "N012-S4",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S4-pexels-video-5483091.mp4",
+          "sourceDurationSec": 17.56,
+          "renderDurationSec": 7.264,
+          "startSec": 20.864,
+          "endSec": 28.128,
+          "absoluteStartSec": 284.096,
+          "absoluteEndSec": 291.36
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-013",
+      "startSec": 291.36,
+      "endSec": 312.48,
+      "durationSec": 21.12,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 3.412,
+          "text": "Not knowing how to get everything you want."
+        },
+        {
+          "startSec": 3.362,
+          "endSec": 6.66,
+          "text": "But knowing which things are worth wanting."
+        },
+        {
+          "startSec": 6.66,
+          "endSec": 10.896,
+          "text": "This is where ideas like purpose become more interesting."
+        },
+        {
+          "startSec": 10.896,
+          "endSec": 16.696,
+          "text": "People often talk about finding a passion or discovering a single purpose in life."
+        },
+        {
+          "startSec": 16.696,
+          "endSec": 20.52,
+          "text": "But perhaps purpose is less dramatic than that."
+        }
+      ],
+      "shots": [
+        {
+          "index": 39,
+          "blockId": "sentence-013",
+          "slotId": "N013-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N013-S1-pexels-video-37036976.mp4",
+          "sourceDurationSec": 18.88,
+          "renderDurationSec": 7.04,
+          "startSec": 0,
+          "endSec": 7.04,
+          "absoluteStartSec": 291.36,
+          "absoluteEndSec": 298.4
+        },
+        {
+          "index": 40,
+          "blockId": "sentence-013",
+          "slotId": "N013-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N013-S2-pexels-video-15067909.mp4",
+          "sourceDurationSec": 25.173333,
+          "renderDurationSec": 7.04,
+          "startSec": 7.04,
+          "endSec": 14.08,
+          "absoluteStartSec": 298.4,
+          "absoluteEndSec": 305.44
+        },
+        {
+          "index": 41,
+          "blockId": "sentence-013",
+          "slotId": "N013-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N013-S3-pexels-video-6231392.mp4",
+          "sourceDurationSec": 15.53,
+          "renderDurationSec": 7.04,
+          "startSec": 14.08,
+          "endSec": 21.12,
+          "absoluteStartSec": 305.44,
+          "absoluteEndSec": 312.48
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-014",
+      "startSec": 312.48,
+      "endSec": 340.056,
+      "durationSec": 27.576,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 7.492,
+          "text": "Maybe it's simply having fewer contradictions between what you say matters and how you actually spend your days."
+        },
+        {
+          "startSec": 7.442,
+          "endSec": 7.492,
+          "text": "If family matters, does your calendar reflect that?"
+        },
+        {
+          "startSec": 7.492,
+          "endSec": 11.409,
+          "text": "If family matters, does your calendar reflect that?"
+        },
+        {
+          "startSec": 11.409,
+          "endSec": 15.347,
+          "text": "If health matters, does your routine reflect that?"
+        },
+        {
+          "startSec": 15.347,
+          "endSec": 21.204,
+          "text": "If freedom matters, how much of your lifestyle depends on continuing to earn more?"
+        },
+        {
+          "startSec": 21.204,
+          "endSec": 26.976,
+          "text": "If curiosity matters, when was the last time you had enough empty time to follow it?"
+        }
+      ],
+      "shots": [
+        {
+          "index": 42,
+          "blockId": "sentence-014",
+          "slotId": "N014-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S1-pexels-video-7981333.mp4",
+          "sourceDurationSec": 7.16,
+          "renderDurationSec": 6.894,
+          "startSec": 0,
+          "endSec": 6.894,
+          "absoluteStartSec": 312.48,
+          "absoluteEndSec": 319.374
+        },
+        {
+          "index": 43,
+          "blockId": "sentence-014",
+          "slotId": "N014-S2",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S2-pexels-photo-7869666.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 6.894,
+          "startSec": 6.894,
+          "endSec": 13.788,
+          "absoluteStartSec": 319.374,
+          "absoluteEndSec": 326.268
+        },
+        {
+          "index": 44,
+          "blockId": "sentence-014",
+          "slotId": "N014-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S3-pexels-video-6136998.mp4",
+          "sourceDurationSec": 8.541867,
+          "renderDurationSec": 6.894,
+          "startSec": 13.788,
+          "endSec": 20.682,
+          "absoluteStartSec": 326.268,
+          "absoluteEndSec": 333.162
+        },
+        {
+          "index": 45,
+          "blockId": "sentence-014",
+          "slotId": "N014-S4",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S4-pexels-video-8198666.mp4",
+          "sourceDurationSec": 20.2,
+          "renderDurationSec": 6.894,
+          "startSec": 20.682,
+          "endSec": 27.576,
+          "absoluteStartSec": 333.162,
+          "absoluteEndSec": 340.056
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-015",
+      "startSec": 340.056,
+      "endSec": 363.552,
+      "durationSec": 23.496,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 6.778,
+          "text": "A meaningful life may have less to do with what we add next and more to do with what we're willing to remove."
+        },
+        {
+          "startSec": 6.728,
+          "endSec": 6.778,
+          "text": "Remove the obligation you accepted out of habit."
+        },
+        {
+          "startSec": 6.778,
+          "endSec": 10.621,
+          "text": "Remove the obligation you accepted out of habit."
+        },
+        {
+          "startSec": 10.621,
+          "endSec": 14.088,
+          "text": "Remove the purchase you don't actually want."
+        },
+        {
+          "startSec": 14.088,
+          "endSec": 17.824,
+          "text": "Remove the goal you inherited from someone else."
+        },
+        {
+          "startSec": 17.824,
+          "endSec": 22.896,
+          "text": "Remove the need to appear successful to people who rarely think about you."
+        }
+      ],
+      "shots": [
+        {
+          "index": 46,
+          "blockId": "sentence-015",
+          "slotId": "N015-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S1-pexels-video-7845435.mp4",
+          "sourceDurationSec": 7,
+          "renderDurationSec": 5.874,
+          "startSec": 0,
+          "endSec": 5.874,
+          "absoluteStartSec": 340.056,
+          "absoluteEndSec": 345.93
+        },
+        {
+          "index": 47,
+          "blockId": "sentence-015",
+          "slotId": "N015-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S2-pexels-video-5699534.mp4",
+          "sourceDurationSec": 7.75775,
+          "renderDurationSec": 5.874,
+          "startSec": 5.874,
+          "endSec": 11.748,
+          "absoluteStartSec": 345.93,
+          "absoluteEndSec": 351.804
+        },
+        {
+          "index": 48,
+          "blockId": "sentence-015",
+          "slotId": "N015-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S3-pexels-video-7223709.mp4",
+          "sourceDurationSec": 34.32,
+          "renderDurationSec": 5.874,
+          "startSec": 11.748,
+          "endSec": 17.622,
+          "absoluteStartSec": 351.804,
+          "absoluteEndSec": 357.678
+        },
+        {
+          "index": 49,
+          "blockId": "sentence-015",
+          "slotId": "N015-S4",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S4-pexels-video-16747044.mp4",
+          "sourceDurationSec": 8.148333,
+          "renderDurationSec": 5.874,
+          "startSec": 17.622,
+          "endSec": 23.496,
+          "absoluteStartSec": 357.678,
+          "absoluteEndSec": 363.552
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-016",
+      "startSec": 363.552,
+      "endSec": 386.016,
+      "durationSec": 22.464,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 4.764,
+          "text": "Remove enough noise, and something interesting happens."
+        },
+        {
+          "startSec": 4.714,
+          "endSec": 8.24,
+          "text": "You begin to hear your own preferences again."
+        },
+        {
+          "startSec": 8.24,
+          "endSec": 11.227,
+          "text": "Maybe you don't want a bigger life."
+        },
+        {
+          "startSec": 11.227,
+          "endSec": 14.128,
+          "text": "Maybe you want a quieter one."
+        },
+        {
+          "startSec": 14.128,
+          "endSec": 17.982,
+          "text": "Maybe you don't want to retire from doing things."
+        },
+        {
+          "startSec": 17.982,
+          "endSec": 21.864,
+          "text": "You just want the freedom to choose what those things are."
+        }
+      ],
+      "shots": [
+        {
+          "index": 50,
+          "blockId": "sentence-016",
+          "slotId": "N016-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N016-S1-pexels-video-36370002.mp4",
+          "sourceDurationSec": 9.36,
+          "renderDurationSec": 7.488,
+          "startSec": 0,
+          "endSec": 7.488,
+          "absoluteStartSec": 363.552,
+          "absoluteEndSec": 371.04
+        },
+        {
+          "index": 51,
+          "blockId": "sentence-016",
+          "slotId": "N016-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N016-S2-pexels-video-8279396.mp4",
+          "sourceDurationSec": 13.25,
+          "renderDurationSec": 7.488,
+          "startSec": 7.488,
+          "endSec": 14.976,
+          "absoluteStartSec": 371.04,
+          "absoluteEndSec": 378.528
+        },
+        {
+          "index": 52,
+          "blockId": "sentence-016",
+          "slotId": "N016-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N016-S3-pexels-video-6023125.mp4",
+          "sourceDurationSec": 8.96,
+          "renderDurationSec": 7.488,
+          "startSec": 14.976,
+          "endSec": 22.464,
+          "absoluteStartSec": 378.528,
+          "absoluteEndSec": 386.016
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-017",
+      "startSec": 386.016,
+      "endSec": 408.648,
+      "durationSec": 22.632,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 3.185,
+          "text": "Maybe you don't need more friends."
+        },
+        {
+          "startSec": 3.135,
+          "endSec": 7.031,
+          "text": "You need more time for the few relationships that matter."
+        },
+        {
+          "startSec": 7.031,
+          "endSec": 10.728,
+          "text": "Maybe you don't need another productivity tool."
+        },
+        {
+          "startSec": 10.728,
+          "endSec": 13.372,
+          "text": "You need fewer commitments."
+        },
+        {
+          "startSec": 13.372,
+          "endSec": 17.639,
+          "text": "And maybe you don't need to become a completely different person."
+        },
+        {
+          "startSec": 17.639,
+          "endSec": 22.032,
+          "text": "You just need enough space to notice who you've already become."
+        }
+      ],
+      "shots": [
+        {
+          "index": 53,
+          "blockId": "sentence-017",
+          "slotId": "N017-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N017-S1-pexels-video-5252440.mp4",
+          "sourceDurationSec": 9.642967,
+          "renderDurationSec": 7.544,
+          "startSec": 0,
+          "endSec": 7.544,
+          "absoluteStartSec": 386.016,
+          "absoluteEndSec": 393.56
+        },
+        {
+          "index": 54,
+          "blockId": "sentence-017",
+          "slotId": "N017-S2",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N017-S2-pexels-photo-5240019.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 7.544,
+          "startSec": 7.544,
+          "endSec": 15.088,
+          "absoluteStartSec": 393.56,
+          "absoluteEndSec": 401.104
+        },
+        {
+          "index": 55,
+          "blockId": "sentence-017",
+          "slotId": "N017-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N017-S3-pexels-video-6657873.mp4",
+          "sourceDurationSec": 8.81,
+          "renderDurationSec": 7.544,
+          "startSec": 15.088,
+          "endSec": 22.632,
+          "absoluteStartSec": 401.104,
+          "absoluteEndSec": 408.648
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-018",
+      "startSec": 408.648,
+      "endSec": 469.056,
+      "durationSec": 60.408,
+      "cues": [
+        {
+          "startSec": 0.1,
+          "endSec": 5.001,
+          "text": "Growing older is often described as a process of losing things."
+        },
+        {
+          "startSec": 4.951,
+          "endSec": 6.515,
+          "text": "Energy."
+        },
+        {
+          "startSec": 6.515,
+          "endSec": 8.148,
+          "text": "Youth."
+        },
+        {
+          "startSec": 8.148,
+          "endSec": 10.066,
+          "text": "Possibility."
+        },
+        {
+          "startSec": 10.066,
+          "endSec": 12.78,
+          "text": "But there is another side to it."
+        },
+        {
+          "startSec": 12.78,
+          "endSec": 17,
+          "text": "You can also lose unnecessary expectations."
+        },
+        {
+          "startSec": 17,
+          "endSec": 20.282,
+          "text": "You can lose the need to prove yourself."
+        },
+        {
+          "startSec": 20.282,
+          "endSec": 24.061,
+          "text": "You can lose goals that no longer belong to you."
+        },
+        {
+          "startSec": 24.061,
+          "endSec": 28.977,
+          "text": "And strangely, losing these things can make life feel larger."
+        },
+        {
+          "startSec": 28.977,
+          "endSec": 31.832,
+          "text": "Not because you suddenly have more."
+        },
+        {
+          "startSec": 31.832,
+          "endSec": 35.697,
+          "text": "But because what remains becomes easier to see."
+        },
+        {
+          "startSec": 35.697,
+          "endSec": 39.462,
+          "text": "Maybe freedom isn't having endless choices."
+        },
+        {
+          "startSec": 39.462,
+          "endSec": 44.648,
+          "text": "Maybe freedom is reaching a point where you no longer need so many of them."
+        },
+        {
+          "startSec": 44.648,
+          "endSec": 49.323,
+          "text": "And maybe that's why life starts feeling different after forty."
+        },
+        {
+          "startSec": 49.323,
+          "endSec": 53.5,
+          "text": "For the first half, we learn how to build a life."
+        },
+        {
+          "startSec": 53.5,
+          "endSec": 57.791,
+          "text": "For the next part, we may have to learn something harder."
+        },
+        {
+          "startSec": 57.791,
+          "endSec": 59.808,
+          "text": "How to edit it."
+        }
+      ],
+      "shots": [
+        {
+          "index": 56,
+          "blockId": "sentence-018",
+          "slotId": "N018-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S1-pexels-video-27327969.mp4",
+          "sourceDurationSec": 20.96,
+          "renderDurationSec": 19.944,
+          "startSec": 0,
+          "endSec": 19.944,
+          "absoluteStartSec": 408.648,
+          "absoluteEndSec": 428.592
+        },
+        {
+          "index": 57,
+          "blockId": "sentence-018",
+          "slotId": "N018-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S2-pexels-video-4872871.mp4",
+          "sourceDurationSec": 9.8,
+          "renderDurationSec": 9.8,
+          "startSec": 19.944,
+          "endSec": 29.744,
+          "absoluteStartSec": 428.592,
+          "absoluteEndSec": 438.392
+        },
+        {
+          "index": 58,
+          "blockId": "sentence-018",
+          "slotId": "N018-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S3-pexels-video-34411926.mp4",
+          "sourceDurationSec": 10.719042,
+          "renderDurationSec": 10.719,
+          "startSec": 29.744,
+          "endSec": 40.464,
+          "absoluteStartSec": 438.392,
+          "absoluteEndSec": 449.112
+        },
+        {
+          "index": 59,
+          "blockId": "sentence-018",
+          "slotId": "N018-S4",
+          "mediaType": "photo",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S4-pexels-photo-9973278.jpg",
+          "sourceDurationSec": null,
+          "renderDurationSec": 19.944,
+          "startSec": 40.464,
+          "endSec": 60.408,
+          "absoluteStartSec": 449.112,
+          "absoluteEndSec": 469.056
+        }
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "index": 0,
+      "blockId": "sentence-001",
+      "slotId": "N001-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N001-S1-pexels-video-5977058.mp4",
+      "sourceDurationSec": 9.36,
+      "renderDurationSec": 9.344,
+      "startSec": 0,
+      "endSec": 9.344,
+      "absoluteStartSec": 0,
+      "absoluteEndSec": 9.344
+    },
+    {
+      "index": 1,
+      "blockId": "sentence-001",
+      "slotId": "N001-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N001-S2-pexels-video-7252804.mp4",
+      "sourceDurationSec": 8.12,
+      "renderDurationSec": 8.12,
+      "startSec": 9.344,
+      "endSec": 17.464,
+      "absoluteStartSec": 9.344,
+      "absoluteEndSec": 17.464
+    },
+    {
+      "index": 2,
+      "blockId": "sentence-001",
+      "slotId": "N001-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N001-S3-pexels-video-4569919.mp4",
+      "sourceDurationSec": 18.04,
+      "renderDurationSec": 9.344,
+      "startSec": 17.464,
+      "endSec": 26.808,
+      "absoluteStartSec": 17.464,
+      "absoluteEndSec": 26.808
+    },
+    {
+      "index": 3,
+      "blockId": "sentence-002",
+      "slotId": "N002-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N002-S1-pexels-video-38755800.mp4",
+      "sourceDurationSec": 12.1121,
+      "renderDurationSec": 7.752,
+      "startSec": 0,
+      "endSec": 7.752,
+      "absoluteStartSec": 26.808,
+      "absoluteEndSec": 34.56
+    },
+    {
+      "index": 4,
+      "blockId": "sentence-002",
+      "slotId": "N002-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N002-S2-pexels-video-19959356.mp4",
+      "sourceDurationSec": 10.026667,
+      "renderDurationSec": 7.752,
+      "startSec": 7.752,
+      "endSec": 15.504,
+      "absoluteStartSec": 34.56,
+      "absoluteEndSec": 42.312
+    },
+    {
+      "index": 5,
+      "blockId": "sentence-002",
+      "slotId": "N002-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N002-S3-pexels-video-8747384.mp4",
+      "sourceDurationSec": 7.841167,
+      "renderDurationSec": 7.752,
+      "startSec": 15.504,
+      "endSec": 23.256,
+      "absoluteStartSec": 42.312,
+      "absoluteEndSec": 50.064
+    },
+    {
+      "index": 6,
+      "blockId": "sentence-003",
+      "slotId": "N003-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N003-S1-pexels-video-38748169.mp4",
+      "sourceDurationSec": 19.96,
+      "renderDurationSec": 6.112,
+      "startSec": 0,
+      "endSec": 6.112,
+      "absoluteStartSec": 50.064,
+      "absoluteEndSec": 56.176
+    },
+    {
+      "index": 7,
+      "blockId": "sentence-003",
+      "slotId": "N003-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N003-S2-pexels-video-7593617.mp4",
+      "sourceDurationSec": 11.413333,
+      "renderDurationSec": 6.112,
+      "startSec": 6.112,
+      "endSec": 12.224,
+      "absoluteStartSec": 56.176,
+      "absoluteEndSec": 62.288
+    },
+    {
+      "index": 8,
+      "blockId": "sentence-003",
+      "slotId": "N003-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N003-S3-pexels-video-38516685.mp4",
+      "sourceDurationSec": 23.390033,
+      "renderDurationSec": 6.112,
+      "startSec": 12.224,
+      "endSec": 18.336,
+      "absoluteStartSec": 62.288,
+      "absoluteEndSec": 68.4
+    },
+    {
+      "index": 9,
+      "blockId": "sentence-004",
+      "slotId": "N004-S1",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N004-S1-pexels-photo-25651557.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 9.368,
+      "startSec": 0,
+      "endSec": 9.368,
+      "absoluteStartSec": 68.4,
+      "absoluteEndSec": 77.768
+    },
+    {
+      "index": 10,
+      "blockId": "sentence-004",
+      "slotId": "N004-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N004-S2-pexels-video-8297994.mp4",
+      "sourceDurationSec": 20.6,
+      "renderDurationSec": 9.368,
+      "startSec": 9.368,
+      "endSec": 18.736,
+      "absoluteStartSec": 77.768,
+      "absoluteEndSec": 87.136
+    },
+    {
+      "index": 11,
+      "blockId": "sentence-004",
+      "slotId": "N004-S3",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N004-S3-pexels-photo-13600865.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 9.368,
+      "startSec": 18.736,
+      "endSec": 28.104,
+      "absoluteStartSec": 87.136,
+      "absoluteEndSec": 96.504
+    },
+    {
+      "index": 12,
+      "blockId": "sentence-005",
+      "slotId": "N005-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N005-S1-pexels-video-35559503.mp4",
+      "sourceDurationSec": 13.2132,
+      "renderDurationSec": 8.96,
+      "startSec": 0,
+      "endSec": 8.96,
+      "absoluteStartSec": 96.504,
+      "absoluteEndSec": 105.464
+    },
+    {
+      "index": 13,
+      "blockId": "sentence-005",
+      "slotId": "N005-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N005-S2-pexels-video-34333581.mp4",
+      "sourceDurationSec": 11.011,
+      "renderDurationSec": 8.96,
+      "startSec": 8.96,
+      "endSec": 17.92,
+      "absoluteStartSec": 105.464,
+      "absoluteEndSec": 114.424
+    },
+    {
+      "index": 14,
+      "blockId": "sentence-005",
+      "slotId": "N005-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N005-S3-pexels-video-6654095.mp4",
+      "sourceDurationSec": 15.92,
+      "renderDurationSec": 8.96,
+      "startSec": 17.92,
+      "endSec": 26.88,
+      "absoluteStartSec": 114.424,
+      "absoluteEndSec": 123.384
+    },
+    {
+      "index": 15,
+      "blockId": "sentence-006",
+      "slotId": "N006-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N006-S1-pexels-video-8580887.mp4",
+      "sourceDurationSec": 15.6,
+      "renderDurationSec": 7.72,
+      "startSec": 0,
+      "endSec": 7.72,
+      "absoluteStartSec": 123.384,
+      "absoluteEndSec": 131.104
+    },
+    {
+      "index": 16,
+      "blockId": "sentence-006",
+      "slotId": "N006-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N006-S2-pexels-video-5085422.mp4",
+      "sourceDurationSec": 15.166667,
+      "renderDurationSec": 7.72,
+      "startSec": 7.72,
+      "endSec": 15.44,
+      "absoluteStartSec": 131.104,
+      "absoluteEndSec": 138.824
+    },
+    {
+      "index": 17,
+      "blockId": "sentence-006",
+      "slotId": "N006-S3",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N006-S3-pexels-photo-9818697.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 7.72,
+      "startSec": 15.44,
+      "endSec": 23.16,
+      "absoluteStartSec": 138.824,
+      "absoluteEndSec": 146.544
+    },
+    {
+      "index": 18,
+      "blockId": "sentence-007",
+      "slotId": "N007-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N007-S1-pexels-video-9057574.mp4",
+      "sourceDurationSec": 12.885,
+      "renderDurationSec": 8.104,
+      "startSec": 0,
+      "endSec": 8.104,
+      "absoluteStartSec": 146.544,
+      "absoluteEndSec": 154.648
+    },
+    {
+      "index": 19,
+      "blockId": "sentence-007",
+      "slotId": "N007-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N007-S2-pexels-video-7792232.mp4",
+      "sourceDurationSec": 17.48,
+      "renderDurationSec": 8.104,
+      "startSec": 8.104,
+      "endSec": 16.208,
+      "absoluteStartSec": 154.648,
+      "absoluteEndSec": 162.752
+    },
+    {
+      "index": 20,
+      "blockId": "sentence-007",
+      "slotId": "N007-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N007-S3-pexels-video-7546434.mp4",
+      "sourceDurationSec": 9.76,
+      "renderDurationSec": 8.104,
+      "startSec": 16.208,
+      "endSec": 24.312,
+      "absoluteStartSec": 162.752,
+      "absoluteEndSec": 170.856
+    },
+    {
+      "index": 21,
+      "blockId": "sentence-008",
+      "slotId": "N008-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N008-S1-pexels-video-4520154.mp4",
+      "sourceDurationSec": 13.3133,
+      "renderDurationSec": 6.36,
+      "startSec": 0,
+      "endSec": 6.36,
+      "absoluteStartSec": 170.856,
+      "absoluteEndSec": 177.216
+    },
+    {
+      "index": 22,
+      "blockId": "sentence-008",
+      "slotId": "N008-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N008-S2-pexels-video-8871841.mp4",
+      "sourceDurationSec": 10.325,
+      "renderDurationSec": 6.36,
+      "startSec": 6.36,
+      "endSec": 12.72,
+      "absoluteStartSec": 177.216,
+      "absoluteEndSec": 183.576
+    },
+    {
+      "index": 23,
+      "blockId": "sentence-008",
+      "slotId": "N008-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N008-S3-pexels-video-8581134.mp4",
+      "sourceDurationSec": 14.566667,
+      "renderDurationSec": 6.36,
+      "startSec": 12.72,
+      "endSec": 19.08,
+      "absoluteStartSec": 183.576,
+      "absoluteEndSec": 189.936
+    },
+    {
+      "index": 24,
+      "blockId": "sentence-009",
+      "slotId": "N009-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S1-pexels-video-853830.mp4",
+      "sourceDurationSec": 19.88,
+      "renderDurationSec": 5.779,
+      "startSec": 0,
+      "endSec": 5.779,
+      "absoluteStartSec": 189.936,
+      "absoluteEndSec": 195.715
+    },
+    {
+      "index": 25,
+      "blockId": "sentence-009",
+      "slotId": "N009-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S2-pexels-video-7691561.mp4",
+      "sourceDurationSec": 20.28,
+      "renderDurationSec": 5.779,
+      "startSec": 5.779,
+      "endSec": 11.558,
+      "absoluteStartSec": 195.715,
+      "absoluteEndSec": 201.494
+    },
+    {
+      "index": 26,
+      "blockId": "sentence-009",
+      "slotId": "N009-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S3-pexels-video-8439621.mp4",
+      "sourceDurationSec": 13.76,
+      "renderDurationSec": 5.779,
+      "startSec": 11.558,
+      "endSec": 17.338,
+      "absoluteStartSec": 201.494,
+      "absoluteEndSec": 207.274
+    },
+    {
+      "index": 27,
+      "blockId": "sentence-009",
+      "slotId": "N009-S4",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S4-pexels-video-5717486.mp4",
+      "sourceDurationSec": 17.96,
+      "renderDurationSec": 5.779,
+      "startSec": 17.338,
+      "endSec": 23.117,
+      "absoluteStartSec": 207.274,
+      "absoluteEndSec": 213.053
+    },
+    {
+      "index": 28,
+      "blockId": "sentence-009",
+      "slotId": "N009-S5",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N009-S5-pexels-video-32090009.mp4",
+      "sourceDurationSec": 11,
+      "renderDurationSec": 5.779,
+      "startSec": 23.117,
+      "endSec": 28.896,
+      "absoluteStartSec": 213.053,
+      "absoluteEndSec": 218.832
+    },
+    {
+      "index": 29,
+      "blockId": "sentence-010",
+      "slotId": "N010-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N010-S1-pexels-video-8631882.mp4",
+      "sourceDurationSec": 7.6,
+      "renderDurationSec": 7.6,
+      "startSec": 0,
+      "endSec": 7.6,
+      "absoluteStartSec": 218.832,
+      "absoluteEndSec": 226.432
+    },
+    {
+      "index": 30,
+      "blockId": "sentence-010",
+      "slotId": "N010-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N010-S2-pexels-video-9583986.mp4",
+      "sourceDurationSec": 15.6,
+      "renderDurationSec": 7.972,
+      "startSec": 7.6,
+      "endSec": 15.572,
+      "absoluteStartSec": 226.432,
+      "absoluteEndSec": 234.404
+    },
+    {
+      "index": 31,
+      "blockId": "sentence-010",
+      "slotId": "N010-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N010-S3-pexels-video-8306453.mp4",
+      "sourceDurationSec": 17.12,
+      "renderDurationSec": 7.972,
+      "startSec": 15.572,
+      "endSec": 23.544,
+      "absoluteStartSec": 234.404,
+      "absoluteEndSec": 242.376
+    },
+    {
+      "index": 32,
+      "blockId": "sentence-011",
+      "slotId": "N011-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N011-S1-pexels-video-34580818.mp4",
+      "sourceDurationSec": 11.678333,
+      "renderDurationSec": 6.952,
+      "startSec": 0,
+      "endSec": 6.952,
+      "absoluteStartSec": 242.376,
+      "absoluteEndSec": 249.328
+    },
+    {
+      "index": 33,
+      "blockId": "sentence-011",
+      "slotId": "N011-S2",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N011-S2-pexels-photo-38112113.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 6.952,
+      "startSec": 6.952,
+      "endSec": 13.904,
+      "absoluteStartSec": 249.328,
+      "absoluteEndSec": 256.28
+    },
+    {
+      "index": 34,
+      "blockId": "sentence-011",
+      "slotId": "N011-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N011-S3-pexels-video-6289666.mp4",
+      "sourceDurationSec": 17.88,
+      "renderDurationSec": 6.952,
+      "startSec": 13.904,
+      "endSec": 20.856,
+      "absoluteStartSec": 256.28,
+      "absoluteEndSec": 263.232
+    },
+    {
+      "index": 35,
+      "blockId": "sentence-012",
+      "slotId": "N012-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S1-pexels-video-4440956.mp4",
+      "sourceDurationSec": 6.335,
+      "renderDurationSec": 6.335,
+      "startSec": 0,
+      "endSec": 6.335,
+      "absoluteStartSec": 263.232,
+      "absoluteEndSec": 269.567
+    },
+    {
+      "index": 36,
+      "blockId": "sentence-012",
+      "slotId": "N012-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S2-pexels-video-10567295.mp4",
+      "sourceDurationSec": 29.84,
+      "renderDurationSec": 7.264,
+      "startSec": 6.335,
+      "endSec": 13.599,
+      "absoluteStartSec": 269.567,
+      "absoluteEndSec": 276.831
+    },
+    {
+      "index": 37,
+      "blockId": "sentence-012",
+      "slotId": "N012-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S3-pexels-video-7643454.mp4",
+      "sourceDurationSec": 17.68,
+      "renderDurationSec": 7.264,
+      "startSec": 13.599,
+      "endSec": 20.864,
+      "absoluteStartSec": 276.831,
+      "absoluteEndSec": 284.096
+    },
+    {
+      "index": 38,
+      "blockId": "sentence-012",
+      "slotId": "N012-S4",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N012-S4-pexels-video-5483091.mp4",
+      "sourceDurationSec": 17.56,
+      "renderDurationSec": 7.264,
+      "startSec": 20.864,
+      "endSec": 28.128,
+      "absoluteStartSec": 284.096,
+      "absoluteEndSec": 291.36
+    },
+    {
+      "index": 39,
+      "blockId": "sentence-013",
+      "slotId": "N013-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N013-S1-pexels-video-37036976.mp4",
+      "sourceDurationSec": 18.88,
+      "renderDurationSec": 7.04,
+      "startSec": 0,
+      "endSec": 7.04,
+      "absoluteStartSec": 291.36,
+      "absoluteEndSec": 298.4
+    },
+    {
+      "index": 40,
+      "blockId": "sentence-013",
+      "slotId": "N013-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N013-S2-pexels-video-15067909.mp4",
+      "sourceDurationSec": 25.173333,
+      "renderDurationSec": 7.04,
+      "startSec": 7.04,
+      "endSec": 14.08,
+      "absoluteStartSec": 298.4,
+      "absoluteEndSec": 305.44
+    },
+    {
+      "index": 41,
+      "blockId": "sentence-013",
+      "slotId": "N013-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N013-S3-pexels-video-6231392.mp4",
+      "sourceDurationSec": 15.53,
+      "renderDurationSec": 7.04,
+      "startSec": 14.08,
+      "endSec": 21.12,
+      "absoluteStartSec": 305.44,
+      "absoluteEndSec": 312.48
+    },
+    {
+      "index": 42,
+      "blockId": "sentence-014",
+      "slotId": "N014-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S1-pexels-video-7981333.mp4",
+      "sourceDurationSec": 7.16,
+      "renderDurationSec": 6.894,
+      "startSec": 0,
+      "endSec": 6.894,
+      "absoluteStartSec": 312.48,
+      "absoluteEndSec": 319.374
+    },
+    {
+      "index": 43,
+      "blockId": "sentence-014",
+      "slotId": "N014-S2",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S2-pexels-photo-7869666.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 6.894,
+      "startSec": 6.894,
+      "endSec": 13.788,
+      "absoluteStartSec": 319.374,
+      "absoluteEndSec": 326.268
+    },
+    {
+      "index": 44,
+      "blockId": "sentence-014",
+      "slotId": "N014-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S3-pexels-video-6136998.mp4",
+      "sourceDurationSec": 8.541867,
+      "renderDurationSec": 6.894,
+      "startSec": 13.788,
+      "endSec": 20.682,
+      "absoluteStartSec": 326.268,
+      "absoluteEndSec": 333.162
+    },
+    {
+      "index": 45,
+      "blockId": "sentence-014",
+      "slotId": "N014-S4",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N014-S4-pexels-video-8198666.mp4",
+      "sourceDurationSec": 20.2,
+      "renderDurationSec": 6.894,
+      "startSec": 20.682,
+      "endSec": 27.576,
+      "absoluteStartSec": 333.162,
+      "absoluteEndSec": 340.056
+    },
+    {
+      "index": 46,
+      "blockId": "sentence-015",
+      "slotId": "N015-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S1-pexels-video-7845435.mp4",
+      "sourceDurationSec": 7,
+      "renderDurationSec": 5.874,
+      "startSec": 0,
+      "endSec": 5.874,
+      "absoluteStartSec": 340.056,
+      "absoluteEndSec": 345.93
+    },
+    {
+      "index": 47,
+      "blockId": "sentence-015",
+      "slotId": "N015-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S2-pexels-video-5699534.mp4",
+      "sourceDurationSec": 7.75775,
+      "renderDurationSec": 5.874,
+      "startSec": 5.874,
+      "endSec": 11.748,
+      "absoluteStartSec": 345.93,
+      "absoluteEndSec": 351.804
+    },
+    {
+      "index": 48,
+      "blockId": "sentence-015",
+      "slotId": "N015-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S3-pexels-video-7223709.mp4",
+      "sourceDurationSec": 34.32,
+      "renderDurationSec": 5.874,
+      "startSec": 11.748,
+      "endSec": 17.622,
+      "absoluteStartSec": 351.804,
+      "absoluteEndSec": 357.678
+    },
+    {
+      "index": 49,
+      "blockId": "sentence-015",
+      "slotId": "N015-S4",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N015-S4-pexels-video-16747044.mp4",
+      "sourceDurationSec": 8.148333,
+      "renderDurationSec": 5.874,
+      "startSec": 17.622,
+      "endSec": 23.496,
+      "absoluteStartSec": 357.678,
+      "absoluteEndSec": 363.552
+    },
+    {
+      "index": 50,
+      "blockId": "sentence-016",
+      "slotId": "N016-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N016-S1-pexels-video-36370002.mp4",
+      "sourceDurationSec": 9.36,
+      "renderDurationSec": 7.488,
+      "startSec": 0,
+      "endSec": 7.488,
+      "absoluteStartSec": 363.552,
+      "absoluteEndSec": 371.04
+    },
+    {
+      "index": 51,
+      "blockId": "sentence-016",
+      "slotId": "N016-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N016-S2-pexels-video-8279396.mp4",
+      "sourceDurationSec": 13.25,
+      "renderDurationSec": 7.488,
+      "startSec": 7.488,
+      "endSec": 14.976,
+      "absoluteStartSec": 371.04,
+      "absoluteEndSec": 378.528
+    },
+    {
+      "index": 52,
+      "blockId": "sentence-016",
+      "slotId": "N016-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N016-S3-pexels-video-6023125.mp4",
+      "sourceDurationSec": 8.96,
+      "renderDurationSec": 7.488,
+      "startSec": 14.976,
+      "endSec": 22.464,
+      "absoluteStartSec": 378.528,
+      "absoluteEndSec": 386.016
+    },
+    {
+      "index": 53,
+      "blockId": "sentence-017",
+      "slotId": "N017-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N017-S1-pexels-video-5252440.mp4",
+      "sourceDurationSec": 9.642967,
+      "renderDurationSec": 7.544,
+      "startSec": 0,
+      "endSec": 7.544,
+      "absoluteStartSec": 386.016,
+      "absoluteEndSec": 393.56
+    },
+    {
+      "index": 54,
+      "blockId": "sentence-017",
+      "slotId": "N017-S2",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N017-S2-pexels-photo-5240019.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 7.544,
+      "startSec": 7.544,
+      "endSec": 15.088,
+      "absoluteStartSec": 393.56,
+      "absoluteEndSec": 401.104
+    },
+    {
+      "index": 55,
+      "blockId": "sentence-017",
+      "slotId": "N017-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N017-S3-pexels-video-6657873.mp4",
+      "sourceDurationSec": 8.81,
+      "renderDurationSec": 7.544,
+      "startSec": 15.088,
+      "endSec": 22.632,
+      "absoluteStartSec": 401.104,
+      "absoluteEndSec": 408.648
+    },
+    {
+      "index": 56,
+      "blockId": "sentence-018",
+      "slotId": "N018-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S1-pexels-video-27327969.mp4",
+      "sourceDurationSec": 20.96,
+      "renderDurationSec": 19.944,
+      "startSec": 0,
+      "endSec": 19.944,
+      "absoluteStartSec": 408.648,
+      "absoluteEndSec": 428.592
+    },
+    {
+      "index": 57,
+      "blockId": "sentence-018",
+      "slotId": "N018-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S2-pexels-video-4872871.mp4",
+      "sourceDurationSec": 9.8,
+      "renderDurationSec": 9.8,
+      "startSec": 19.944,
+      "endSec": 29.744,
+      "absoluteStartSec": 428.592,
+      "absoluteEndSec": 438.392
+    },
+    {
+      "index": 58,
+      "blockId": "sentence-018",
+      "slotId": "N018-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S3-pexels-video-34411926.mp4",
+      "sourceDurationSec": 10.719042,
+      "renderDurationSec": 10.719,
+      "startSec": 29.744,
+      "endSec": 40.464,
+      "absoluteStartSec": 438.392,
+      "absoluteEndSec": 449.112
+    },
+    {
+      "index": 59,
+      "blockId": "sentence-018",
+      "slotId": "N018-S4",
+      "mediaType": "photo",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0001\\sourcing\\downloads\\N018-S4-pexels-photo-9973278.jpg",
+      "sourceDurationSec": null,
+      "renderDurationSec": 19.944,
+      "startSec": 40.464,
+      "endSec": 60.408,
+      "absoluteStartSec": 449.112,
+      "absoluteEndSec": 469.056
+    }
+  ],
+  "createdAt": "2026-08-30T11:00:12.230Z"
+}

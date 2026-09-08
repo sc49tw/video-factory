@@ -1,0 +1,273 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "SMOKE-ESSY-WT",
+  "strategy": "real-asset-sourced",
+  "plannedDurationSec": 73,
+  "blocks": [
+    {
+      "sentenceId": "sentence-001",
+      "startSec": 0,
+      "endSec": 17.472,
+      "durationSec": 17.472,
+      "cues": [],
+      "shots": [
+        {
+          "index": 0,
+          "blockId": "sentence-001",
+          "slotId": "N001-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N001-S1-video-38836318.mp4",
+          "sourceDurationSec": 15.96,
+          "renderDurationSec": 5.824,
+          "startSec": 0,
+          "endSec": 5.824,
+          "absoluteStartSec": 0,
+          "absoluteEndSec": 5.824
+        },
+        {
+          "index": 1,
+          "blockId": "sentence-001",
+          "slotId": "N001-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N001-S2-video-7986194.mp4",
+          "sourceDurationSec": 7.04,
+          "renderDurationSec": 5.824,
+          "startSec": 5.824,
+          "endSec": 11.648,
+          "absoluteStartSec": 5.824,
+          "absoluteEndSec": 11.648
+        },
+        {
+          "index": 2,
+          "blockId": "sentence-001",
+          "slotId": "N001-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N001-S3-video-6279418.mp4",
+          "sourceDurationSec": 9.458333,
+          "renderDurationSec": 5.824,
+          "startSec": 11.648,
+          "endSec": 17.472,
+          "absoluteStartSec": 11.648,
+          "absoluteEndSec": 17.472
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-002",
+      "startSec": 17.472,
+      "endSec": 24.36,
+      "durationSec": 6.888,
+      "cues": [],
+      "shots": [
+        {
+          "index": 3,
+          "blockId": "sentence-002",
+          "slotId": "N002-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N002-S1-video-6963729.mp4",
+          "sourceDurationSec": 9.44,
+          "renderDurationSec": 6.888,
+          "startSec": 0,
+          "endSec": 6.888,
+          "absoluteStartSec": 17.472,
+          "absoluteEndSec": 24.36
+        }
+      ]
+    },
+    {
+      "sentenceId": "sentence-003",
+      "startSec": 24.36,
+      "endSec": 72.552,
+      "durationSec": 48.192,
+      "cues": [],
+      "shots": [
+        {
+          "index": 4,
+          "blockId": "sentence-003",
+          "slotId": "N003-S1",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S1-video-5972650.mp4",
+          "sourceDurationSec": 10.6,
+          "renderDurationSec": 9.723,
+          "startSec": 0,
+          "endSec": 9.723,
+          "absoluteStartSec": 24.36,
+          "absoluteEndSec": 34.083
+        },
+        {
+          "index": 5,
+          "blockId": "sentence-003",
+          "slotId": "N003-S2",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S2-video-11025488.mp4",
+          "sourceDurationSec": 13.418333,
+          "renderDurationSec": 9.723,
+          "startSec": 9.723,
+          "endSec": 19.446,
+          "absoluteStartSec": 34.083,
+          "absoluteEndSec": 43.806
+        },
+        {
+          "index": 6,
+          "blockId": "sentence-003",
+          "slotId": "N003-S3",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S3-video-9243207.mp4",
+          "sourceDurationSec": 34.76,
+          "renderDurationSec": 9.723,
+          "startSec": 19.446,
+          "endSec": 29.168,
+          "absoluteStartSec": 43.806,
+          "absoluteEndSec": 53.528
+        },
+        {
+          "index": 7,
+          "blockId": "sentence-003",
+          "slotId": "N003-S4",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S4-video-28872831.mp4",
+          "sourceDurationSec": 9.300958,
+          "renderDurationSec": 9.301,
+          "startSec": 29.168,
+          "endSec": 38.469,
+          "absoluteStartSec": 53.528,
+          "absoluteEndSec": 62.829
+        },
+        {
+          "index": 8,
+          "blockId": "sentence-003",
+          "slotId": "N003-S5",
+          "mediaType": "video",
+          "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S5-video-6933192.mp4",
+          "sourceDurationSec": 14.32,
+          "renderDurationSec": 9.723,
+          "startSec": 38.469,
+          "endSec": 48.192,
+          "absoluteStartSec": 62.829,
+          "absoluteEndSec": 72.552
+        }
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "index": 0,
+      "blockId": "sentence-001",
+      "slotId": "N001-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N001-S1-video-38836318.mp4",
+      "sourceDurationSec": 15.96,
+      "renderDurationSec": 5.824,
+      "startSec": 0,
+      "endSec": 5.824,
+      "absoluteStartSec": 0,
+      "absoluteEndSec": 5.824
+    },
+    {
+      "index": 1,
+      "blockId": "sentence-001",
+      "slotId": "N001-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N001-S2-video-7986194.mp4",
+      "sourceDurationSec": 7.04,
+      "renderDurationSec": 5.824,
+      "startSec": 5.824,
+      "endSec": 11.648,
+      "absoluteStartSec": 5.824,
+      "absoluteEndSec": 11.648
+    },
+    {
+      "index": 2,
+      "blockId": "sentence-001",
+      "slotId": "N001-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N001-S3-video-6279418.mp4",
+      "sourceDurationSec": 9.458333,
+      "renderDurationSec": 5.824,
+      "startSec": 11.648,
+      "endSec": 17.472,
+      "absoluteStartSec": 11.648,
+      "absoluteEndSec": 17.472
+    },
+    {
+      "index": 3,
+      "blockId": "sentence-002",
+      "slotId": "N002-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N002-S1-video-6963729.mp4",
+      "sourceDurationSec": 9.44,
+      "renderDurationSec": 6.888,
+      "startSec": 0,
+      "endSec": 6.888,
+      "absoluteStartSec": 17.472,
+      "absoluteEndSec": 24.36
+    },
+    {
+      "index": 4,
+      "blockId": "sentence-003",
+      "slotId": "N003-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S1-video-5972650.mp4",
+      "sourceDurationSec": 10.6,
+      "renderDurationSec": 9.723,
+      "startSec": 0,
+      "endSec": 9.723,
+      "absoluteStartSec": 24.36,
+      "absoluteEndSec": 34.083
+    },
+    {
+      "index": 5,
+      "blockId": "sentence-003",
+      "slotId": "N003-S2",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S2-video-11025488.mp4",
+      "sourceDurationSec": 13.418333,
+      "renderDurationSec": 9.723,
+      "startSec": 9.723,
+      "endSec": 19.446,
+      "absoluteStartSec": 34.083,
+      "absoluteEndSec": 43.806
+    },
+    {
+      "index": 6,
+      "blockId": "sentence-003",
+      "slotId": "N003-S3",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S3-video-9243207.mp4",
+      "sourceDurationSec": 34.76,
+      "renderDurationSec": 9.723,
+      "startSec": 19.446,
+      "endSec": 29.168,
+      "absoluteStartSec": 43.806,
+      "absoluteEndSec": 53.528
+    },
+    {
+      "index": 7,
+      "blockId": "sentence-003",
+      "slotId": "N003-S4",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S4-video-28872831.mp4",
+      "sourceDurationSec": 9.300958,
+      "renderDurationSec": 9.301,
+      "startSec": 29.168,
+      "endSec": 38.469,
+      "absoluteStartSec": 53.528,
+      "absoluteEndSec": 62.829
+    },
+    {
+      "index": 8,
+      "blockId": "sentence-003",
+      "slotId": "N003-S5",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0003\\sourcing\\downloads\\N003-S5-video-6933192.mp4",
+      "sourceDurationSec": 14.32,
+      "renderDurationSec": 9.723,
+      "startSec": 38.469,
+      "endSec": 48.192,
+      "absoluteStartSec": 62.829,
+      "absoluteEndSec": 72.552
+    }
+  ],
+  "createdAt": "2026-09-05T08:11:05.086Z",
+  "note": "SMOKE: ESSY-0003 N001-N003 controlled production-path validation"
+}

@@ -1,0 +1,361 @@
+{
+  "episodeId": "ESSY-0003",
+  "artifact": "sourcing-plan",
+  "version": 1,
+  "scope": "ASSETS stage step 1 — search-family planning only. No downloads, no contact sheets, no changes to frozen narration, approved storyboard, Playbook, or renderer contract.",
+  "source": {
+    "storyboard": "projects/_drafts/ESSY-0003/storyboard.yaml",
+    "package": "projects/_drafts/ESSY-0003/production-package.json",
+    "plannedSlotCount": 101
+  },
+  "statistics": {
+    "totalSlots": 101,
+    "searchFamilies": 31,
+    "averageSlotsPerFamily": 3.3,
+    "singleSlotFamilies": ["SF-26", "SF-27", "SF-28", "SF-31"],
+    "note": "SF-05 (title surface) covers two slots (N002-S1, N032-S2) but requires TWO distinct assets: the storyboard mandates a visual rhyme between opening title and ending — same imagery language, deliberately different clips."
+  },
+  "priorityOrder": [
+    {"priority": "P0", "families": ["SF-01", "SF-02", "SF-04", "SF-05"], "reason": "cold open (N001), money-question object, thresholds, and title/ending visual-rhyme surface (N002-S1 + N032-S2)."},
+    {"priority": "P1", "families": ["SF-10", "SF-29", "SF-13", "SF-06"], "reason": "major conceptual transitions (time-at-scale, one-way time, the lived-morning pivot) and the competence backbone used across the essay."},
+    {"priority": "P2", "families": ["SF-19", "SF-20", "SF-23", "SF-11", "SF-28"], "reason": "highest cliché-risk abstract/list passages (someday list, calendars, inertia, pensive solitude, binary-dissolve)."}
+  ],
+  "searchFamilies": [
+    {
+      "id": "SF-01",
+      "name": "End-of-day commuter crowd",
+      "slotIds": ["N001-S1", "N024-S3"],
+      "editorialIntent": "Routine human flow at day's end, neither tragic nor triumphant; the film's opening address and 'everyone sells time' normalization.",
+      "searchQueries": ["commuters leaving office evening crowd slow", "subway platform crowd end of workday", "rush hour pedestrians street level calm"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "Avoid zombie-commute framing and ant-swarm aerials (storyboard avoid-list)."
+    },
+    {
+      "id": "SF-02",
+      "name": "Money objects in domestic light",
+      "slotIds": ["N001-S2", "N023-S2", "N025-S1", "N029-S1"],
+      "editorialIntent": "The money question made physical and quiet: worn wallet, payslip, coin jar — objects touched, not counted.",
+      "searchQueries": ["wallet keys kitchen table evening natural light", "payslip envelope kitchen table natural light", "household bills unopened mail table quiet"],
+      "mediaPreference": "video first, photo fallback",
+      "clicheRisk": "medium",
+      "riskNotes": "Hard avoid: stock charts, cash stacks, calculators, money-pile imagery."
+    },
+    {
+      "id": "SF-03",
+      "name": "Small daily transactions",
+      "slotIds": ["N011-S2", "N023-S3", "N024-S4"],
+      "editorialIntent": "Exchange as the episode's core metaphor: receipts, meters, a hand handing over value — restrained, non-literal.",
+      "searchQueries": ["hand taking receipt counter close up", "paying card terminal everyday shop", "small exchange hands quiet"],
+      "mediaPreference": "video",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-04",
+      "name": "Thresholds and undecided moments",
+      "slotIds": ["N001-S3", "N005-S4", "N019-S1", "N020-S2"],
+      "editorialIntent": "Choice withheld: doorway pauses, forked paths, a gate passed daily — small scale, real weight, no answer implied.",
+      "searchQueries": ["open doorway quiet interior adjacent rooms natural light", "park gate beside daily walking route observational", "side street entrance passed by pedestrians ordinary", "unentered path edge of neighborhood calm"],
+      "mediaPreference": "video",
+      "clicheRisk": "high",
+      "riskNotes": "APPROVED WITH REVISION (P0): prefer environments where a choice is perceptible without an actor visibly 'acting undecided'. Avoid doorway-back-view contemplation, fork-in-the-road symbolism, silhouettes, signposts, and other decision clichés."
+    },
+    {
+      "id": "SF-05",
+      "name": "Title surface — quiet interior with negative space",
+      "slotIds": ["N002-S1", "N032-S2"],
+      "editorialIntent": "Still, softly lit interior composed for the title layer (opening) and its closing rhyme (ending). Same visual language, TWO distinct assets — do not reuse one clip for both.",
+      "searchQueries": ["soft window light empty room interior minimal", "cup tea table late afternoon light quiet", "calm interior negative space window light"],
+      "mediaPreference": "video (near-static) or photo with Ken Burns",
+      "clicheRisk": "low",
+      "riskNotes": "APPROVED (P0) with selection note: treat opening/ending as a subtle visual rhyme — N002: a quiet space that feels open/waiting; N032: similar visual grammar with a sense that time has passed. Do not make this symbolism overt. No faces, no busy composition, no on-screen typography in footage, no sunrise-through-window cliché for N032-S2."
+    },
+    {
+      "id": "SF-06",
+      "name": "Competence shown through action",
+      "slotIds": ["N003-S1", "N006-S1", "N006-S2", "N007-S1", "N009-S2", "N024-S2", "N030-S2", "N031-S2"],
+      "editorialIntent": "The essay's backbone: skilled hands, quiet expertise, work done well, meaningful work with quiet satisfaction — competence intact even when appetite changes.",
+      "searchQueries": ["craftsman hands working workshop focused", "professional working focused hands close up", "specialist absorbed precise work"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "Avoid stressed-office tropes, thumbs-up teamwork, genius-glow effects, superhero framing."
+    },
+    {
+      "id": "SF-07",
+      "name": "Mentoring and generativity",
+      "slotIds": ["N005-S1", "N013-S2"],
+      "editorialIntent": "Contribution beyond oneself: teaching, mentoring, caregiving — gentle outward-facing activity without halo lighting.",
+      "searchQueries": ["mentor teaching colleague workplace", "older person teaching craft student", "caregiving helping gentle"],
+      "mediaPreference": "video",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-08",
+      "name": "Accumulated career evidence",
+      "slotIds": ["N003-S2", "N004-S2", "N007-S3", "N008-S1", "N030-S1", "N030-S3"],
+      "editorialIntent": "A life's constructed identity: worn tools, marked notebooks, diplomas, early work beside mature work, a thank-you note still pinned.",
+      "searchQueries": ["worn desk tools years of use detail", "home office bookshelf diplomas lived in", "workshop early work beside finished work"],
+      "mediaPreference": "photo first, video fallback",
+      "clicheRisk": "low",
+      "riskNotes": "No wall-of-fame boast framing, no trash/discarding imagery."
+    },
+    {
+      "id": "SF-09",
+      "name": "Calm family and domestic life",
+      "slotIds": ["N003-S3", "N010-S2", "N020-S3", "N024-S1"],
+      "editorialIntent": "What stability buys: dinners, lamplight, children doing homework, a household running honestly — shelter as a real good.",
+      "searchQueries": ["family dinner ordinary evening home", "children homework kitchen evening", "cozy living room lamplight calm"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "Avoid lifestyle-ad gloss, perfect-family advertising, sentimental hugs."
+    },
+    {
+      "id": "SF-10",
+      "name": "Time at scale — light and seasons over familiar places",
+      "slotIds": ["N003-S4", "N005-S3", "N007-S4", "N009-S5", "N012-S3", "N016-S2", "N021-S2", "N028-S2"],
+      "editorialIntent": "Years passing without calendars: day into dusk over a city, subtle seasonal light on the same street, weather changing over stable land.",
+      "searchQueries": ["residential street dusk windows lit static", "same street different light subtle season change", "weather moving over calm landscape wide"],
+      "mediaPreference": "video (slow timelapse acceptable, no spectacle)",
+      "clicheRisk": "medium",
+      "riskNotes": "Timelapse overuse is a named storyboard risk; avoid dramatic winter-to-summer jumps and apocalyptic skies."
+    },
+    {
+      "id": "SF-11",
+      "name": "Solitary pause — attention turning inward",
+      "slotIds": ["N003-S5", "N007-S2", "N013-S1", "N014-S4", "N032-S1"],
+      "editorialIntent": "Competence intact, appetite gone; people mid-thought between rooms, at windows, porches, kitchens — no single protagonist by the end.",
+      "searchQueries": ["person looking out window quiet afternoon", "person standing between two rooms home light", "tea cooling window seat unhurried", "person sitting alone porch natural light"],
+      "mediaPreference": "video",
+      "clicheRisk": "high",
+      "riskNotes": "Pensive stock stare, rain-on-window, mirror monologue, answer-in-eyes close-up are all on the avoid list."
+    },
+    {
+      "id": "SF-12",
+      "name": "Youth in open motion",
+      "slotIds": ["N004-S1", "N016-S1", "N017-S1"],
+      "editorialIntent": "The building years, the assumed future, and the body still fully in use: studying, commuting, hiking, swimming — vitality framed as finite and present, no countdown.",
+      "searchQueries": ["young adults commuting city morning motion", "running for train young person", "hiking swimming active adult vitality"],
+      "mediaPreference": "video",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-13",
+      "name": "Ordinary mornings",
+      "slotIds": ["N011-S3", "N017-S4", "N025-S2"],
+      "editorialIntent": "One lived morning instead of a list: alarm, coffee, coat, door — and later, waking without an alarm, sunlight crossing a table.",
+      "searchQueries": ["morning coffee kitchen routine quiet", "waking without alarm stretching morning light", "sunlight moving across table empty house"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "List-shaped narration (N011); keep as one lived morning, not one image per line."
+    },
+    {
+      "id": "SF-14",
+      "name": "Neutral routine and the work-shaped day",
+      "slotIds": ["N005-S2", "N008-S3", "N011-S1", "N011-S4", "N012-S1", "N026-S1"],
+      "editorialIntent": "Duty shown neutrally: same commute, same entrance, coming home in the dark, an unremarkable workday by design.",
+      "searchQueries": ["coming home evening coat dark hallway", "daily commute routine same entrance", "ordinary workday desk neutral nothing happens"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "Avoid collapse-on-couch, alcohol tropes, quit-your-boss meme energy."
+    },
+    {
+      "id": "SF-15",
+      "name": "Holding on — sunk-cost gestures",
+      "slotIds": ["N009-S1", "N009-S3"],
+      "editorialIntent": "Persistence caught in small gestures: late-night desk light, a grip tightening on a rail, the same papers rearranged.",
+      "searchQueries": ["late night desk lamp working alone", "hand gripping railing close up", "person sorting papers repetition"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium"
+    },
+    {
+      "id": "SF-16",
+      "name": "Financial duties, humane register",
+      "slotIds": ["N010-S1", "N021-S1"],
+      "editorialIntent": "Security is real: mortgage letter on the kitchen table, school bags by the door, groceries, payday rhythms.",
+      "searchQueries": ["bills letters kitchen table morning", "grocery shopping ordinary supermarket", "medicine box cabinet home"],
+      "mediaPreference": "video or photo",
+      "clicheRisk": "low",
+      "riskNotes": "No debt-horror framing, no countdown motifs."
+    },
+    {
+      "id": "SF-17",
+      "name": "Shelter and weather",
+      "slotIds": ["N010-S3", "N028-S1"],
+      "editorialIntent": "Protection valued without illusion: a home steady in bad weather seen through a window; a safe-looking house at night that is clearly not permanent.",
+      "searchQueries": ["rain on window cozy interior view out", "house exterior night warm windows quiet", "home sheltered weather window"],
+      "mediaPreference": "video",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-18",
+      "name": "Small creation — hands for their own sake",
+      "slotIds": ["N013-S3", "N013-S4", "N014-S1", "N014-S2"],
+      "editorialIntent": "Non-career meaning: bread rising, a half-built birdhouse, pottery, an old radio taken apart — absorbing, impractical, unmonetized.",
+      "searchQueries": ["baking bread home kitchen hands", "amateur pottery hands wheel", "hobby workbench repair old radio"],
+      "mediaPreference": "video",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-19",
+      "name": "Unstaged togetherness",
+      "slotIds": ["N014-S3", "N017-S2", "N017-S3"],
+      "editorialIntent": "Presence over sentiment: sharing food, walking side by side, late-summer garden with children a little older, ordinary acts with aging parents.",
+      "searchQueries": ["friends walking talking bench unhurried", "family garden late summer children playing quiet", "older parent shopping together ordinary"],
+      "mediaPreference": "video",
+      "clicheRisk": "high",
+      "riskNotes": "Perfect-family advertising, growing-up montage, hospital/deathbed framing all on the avoid list."
+    },
+    {
+      "id": "SF-20",
+      "name": "Calendars and crowded weeks",
+      "slotIds": ["N015-S2", "N021-S3"],
+      "editorialIntent": "Claims crowding one life; a new calendar with the same handwriting — restrained, observational.",
+      "searchQueries": ["week planner handwriting desk calm", "wall calendar new year replacing quiet"],
+      "mediaPreference": "photo first",
+      "clicheRisk": "high",
+      "riskNotes": "Calendar/planner runs are a named storyboard cliché risk; avoid tear-off pages, color-coded productivity porn."
+    },
+    {
+      "id": "SF-21",
+      "name": "Work continuing in the background",
+      "slotIds": ["N015-S1", "N022-S1", "N023-S1"],
+      "editorialIntent": "The office running as always; a genuinely pleasant workplace seen tenderly; mild frustration kept beside the point.",
+      "searchQueries": ["office normal day workers background calm", "pleasant workplace good light colleagues", "mundane office moment mild frustration"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium"
+    },
+    {
+      "id": "SF-22",
+      "name": "Unused spaces and half-made things",
+      "slotIds": ["N006-S3", "N008-S4", "N019-S2"],
+      "editorialIntent": "Traces of imagination treated kindly: an unused instrument, unbought tickets, a garden rarely entered, after-hours emptiness.",
+      "searchQueries": ["dusty guitar unused room quiet", "unopened box project room", "empty garden bench available quiet"],
+      "mediaPreference": "photo first, video fallback",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-23",
+      "name": "Comfortable inertia — someday",
+      "slotIds": ["N018-S1", "N020-S1", "N020-S4", "N022-S2"],
+      "editorialIntent": "Postponement as the default: plans passing by in one evening, a comfortable chair, wasted-looking time warmly framed.",
+      "searchQueries": ["person sofa evening doing nothing home", "comfortable armchair settled desk quiet", "daydreaming bus stop doodling warm"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium"
+    },
+    {
+      "id": "SF-24",
+      "name": "Quiet time markers",
+      "slotIds": ["N012-S2", "N016-S3"],
+      "editorialIntent": "Years passing quietly: a child's bicycle grown too small, a height marked on a doorframe — visibility, not dread.",
+      "searchQueries": ["child bicycle small garage memory", "height marks doorframe pencil", "calendar date noting calm hand"],
+      "mediaPreference": "photo first, video fallback",
+      "clicheRisk": "low"
+    },
+    {
+      "id": "SF-25",
+      "name": "Small autonomy — the lighter schedule",
+      "slotIds": ["N025-S3", "N025-S4", "N026-S2", "N027-S2", "N028-S3"],
+      "editorialIntent": "The middle answers: leaving in daylight, a self-determined Tuesday, a mixed life, being able to say no to something small.",
+      "searchQueries": ["person leaving office daylight relaxed", "weekday museum visitor unhurried alone", "home workshop laptop mixed use room"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "Avoid part-time-idyll fantasy, perfect-balance lifestyle ad, financial-independence number flex."
+    },
+    {
+      "id": "SF-26",
+      "name": "Planned pause — sabbatical preparation",
+      "slotIds": ["N026-S3"],
+      "editorialIntent": "A pause made visible gently: a bag packed weeks ahead, a ticket booked calmly, a chart on a kitchen wall.",
+      "searchQueries": ["packing suitcase calm home", "booking flight laptop relaxed evening", "savings chart kitchen wall simple"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "No gap-year cliché, no freedom-numbers montage."
+    },
+    {
+      "id": "SF-27",
+      "name": "Protected boundary evening",
+      "slotIds": ["N026-S4"],
+      "editorialIntent": "An evening explicitly protected: phone face-down, home-office door closed, dinner happening anyway.",
+      "searchQueries": ["phone face down dinner table", "closing home office door evening", "family dinner protected evening"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "No digital-detox sermon, no burning-phone imagery."
+    },
+    {
+      "id": "SF-28",
+      "name": "The wide middle between extremes",
+      "slotIds": ["N027-S1"],
+      "editorialIntent": "Two extremes seen small with a wide, detailed, ordinary middle ground — the binary dissolving spatially.",
+      "searchQueries": ["wide landscape small buildings middle ground depth", "town aerial wide ordinary middle distance", "long road quiet town middle ground"],
+      "mediaPreference": "video (wide)",
+      "clicheRisk": "high",
+      "riskNotes": "Hardest abstract shot; no split-screen gimmick, no binary signposts, no yin-yang symbolism."
+    },
+    {
+      "id": "SF-29",
+      "name": "One-way time — water and finitude",
+      "slotIds": ["N009-S4", "N018-S2", "N029-S2"],
+      "editorialIntent": "Time's arrow stated by landscape, not clocks: water flowing one way past a fixed point, a tide going out, bread cooling.",
+      "searchQueries": ["river flowing past fixed point steady", "tide going out beach calm", "bread cooling rack kitchen quiet"],
+      "mediaPreference": "video",
+      "clicheRisk": "high",
+      "riskNotes": "N028–N030 cliché alert: absolutely no hourglass, sand running out, melting candles, or reverse playback."
+    },
+    {
+      "id": "SF-30",
+      "name": "Closing a chapter without ceremony",
+      "slotIds": ["N031-S1", "N031-S3"],
+      "editorialIntent": "Finishing and tidying without drama; a full day ending with its cost and yield both visible in an ordinary evening.",
+      "searchQueries": ["tidying desk finishing project calm evening", "quiet evening window day ending ordinary"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "No funeral-for-a-career framing, no last-day montage, no ledger imagery."
+    },
+    {
+      "id": "SF-31",
+      "name": "Social identity — the rehearsed answer",
+      "slotIds": ["N008-S2"],
+      "editorialIntent": "Everyday introductions where work is the answer everyone gives — the script rehearsed for years.",
+      "searchQueries": ["people talking party introduction natural", "small talk gathering adults candid", "introducing themselves conversation ordinary"],
+      "mediaPreference": "video",
+      "clicheRisk": "medium",
+      "riskNotes": "Avoid awkward-party comedy and cringe acting."
+    }
+  ],
+  "uniqueSourcingNotes": [
+    "N002-S1 and N032-S2 share SF-05 imagery language but MUST be two different assets (storyboard-mandated visual rhyme).",
+    "No slot may reuse another slot's downloaded asset silently (series visualRules; storyboard editorialPrinciples).",
+    "Provenance (sourceUrl, creator, license, downloadedAt, originalFilename) required for every downloaded asset in inbox/ESSY-0003/visuals.json at manifest time."
+  ],
+  "workflowLessons": [
+    {
+      "id": "WL-1",
+      "lesson": "Search family -> initial candidate batch -> coverage check -> targeted supplemental search when needed.",
+      "detail": "A search family reduces duplicated retrieval work; it does not imply that one fixed candidate batch must cover every slot. Observed on ESSY-0003 P0 pass: SF-01 and SF-05 were fully covered by the initial batch; SF-02 and SF-04 required targeted supplemental searches with revised briefs.",
+      "recordedAt": "2026-09-04",
+      "disposition": "Retrospective consideration only; Playbook intentionally NOT modified yet."
+    },
+    {
+      "id": "WL-2",
+      "lesson": "Candidate validation must evaluate returned asset semantics, not only whether it was returned for an approved query. Query match != editorial match.",
+      "detail": "Slug/title/description and visual preview can reveal retrieval false positives. Observed on ESSY-0003 P0: SF-01 photo fallback 'silhouetted commuters at sunset' passed the approved query but violated the silhouette cliche ban; SF-04 initial batch returned real-estate-style interiors for doorway queries.",
+      "recordedAt": "2026-09-04",
+      "disposition": "Retrospective consideration only; Playbook intentionally NOT modified yet."
+    },
+    {
+      "id": "WL-3",
+      "lesson": "Asset uniqueness is subordinate to editorial coherence.",
+      "detail": "Non-adjacent intentional reuse may be preferable to inserting a weaker stock asset, provided reuse is explicitly recorded and later checked in sequence QA. Observed on ESSY-0003 P0: pexels-video-6279418 deliberately reused for N001-S3 and N019-S1 as a recurring lived-in-threshold motif (provenance entries marked intentionalMotifReuse; sequence-QA check required).",
+      "recordedAt": "2026-09-04",
+      "disposition": "Retrospective consideration only; Playbook intentionally NOT modified yet."
+    },
+    {
+      "id": "WL-4",
+      "lesson": "Search-family batching needs a semantic-diversity / coverage check when one family spans many slots. A family can be conceptually coherent while still requiring multiple visual sub-modes. Candidate count alone is not coverage.",
+      "detail": "Observed on ESSY-0003 P1: SF-10's initial batch skewed entirely to residential-street dusk (one temporal mechanism for eight slots spanning day-dusk, seasons, weather, and inhabited/quiet shifts); SF-06's initial batch skewed to craft/workshop imagery, which would visually redefine 'competence' as craftsmanship alone. Both required targeted supplemental passes with mechanism-diverse briefs. Also applied positively: SF-29's three slots deliberately vary the one-way-time metaphor (river -> tide -> bread cooling) instead of collapsing into water imagery.",
+      "recordedAt": "2026-09-05",
+      "disposition": "Retrospective consideration only; Playbook intentionally NOT modified yet."
+    }
+  ],
+  "nextStepAfterApproval": "Batched asset search per family (P0 first), candidate review, then selection and inbox/ESSY-0003 handoff."
+}

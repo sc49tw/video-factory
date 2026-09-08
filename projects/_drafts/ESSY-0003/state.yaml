@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "2.0",
+  "draftId": "ESSY-0003",
+  "series": "ESSY",
+  "subtype": "essay",
+  "format": "ESSY",
+  "currentStage": "RENDER",
+  "status": "final_assembly_pending",
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "approvedAt": "2026-09-03T00:00:00.000Z",
+      "note": "Human-approved via ChatGPT editorial conversation before draft creation; recorded retroactively as the canonical source of truth."
+    },
+    "english": {
+      "approved": true,
+      "approvedAt": "2026-09-03T00:00:00.000Z",
+      "note": "Human-approved full English narration including the 3-question experimental cold open; frozen in script.md. Do not modify during rendering."
+    },
+    "scenes": {
+      "approved": true,
+      "approvedAt": "2026-09-03T00:00:00.000Z",
+      "decisions": [
+        "N001 approved: three cold-open questions kept as three separate visual slots (one question per slot).",
+        "N032 approved: visual rhyme with N002-S1 kept so the ending returns to the opening/title visual language.",
+        "Overall storyboard approved, including the PASS_WITH_CAUTION literalness strategy."
+      ]
+    },
+    "package": {
+      "approved": true,
+      "approvedAt": "2026-09-04T14:05:18.643Z"
+    },
+    "assets": {
+      "approved": true,
+      "approvedAt": "2026-09-05T00:00:00.000Z",
+      "slotCoverage": 101,
+      "distinctAssets": 92,
+      "intentionalReprises": 9,
+      "manifest": "assets/manifest.json",
+      "provenance": "projects/ESSY-0003/sourcing/downloads/provenance.json"
+    },
+    "qa": {
+      "approved": true,
+      "approvedAt": "2026-09-06T07:52:46.546Z"
+    }
+  },
+  "artifacts": {
+    "request": "request.yaml",
+    "concept": "concept.yaml",
+    "script": "script.md",
+    "storyboard": "storyboard.yaml",
+    "productionPackage": "production-package.json",
+    "assetsManifest": "assets/manifest.json",
+    "assemblyTimeline": "assembly-timeline.json",
+    "narrationMaster": "temp/ESSY-0003-narration-master.m4a",
+    "subtitleSrt": "temp/ESSY-0003-subtitles.srt",
+    "subtitleQa": "temp/ESSY-0003-subtitle-qa.json",
+    "review540p": "output/ESSY-0003/ESSY-0003-review-540p-subtitled-v4.mp4"
+  },
+  "episodePlan": {
+    "episodeId": "ESSY-0003",
+    "title": "How Much of Your Life Are You Still Willing to Sell?",
+    "channel": "A Second Look at Life",
+    "voice": {
+      "name": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz"
+    },
+    "editorialExperiment": {
+      "id": "cold-open-three-questions",
+      "scope": "episode-only",
+      "touchesPlaybook": false,
+      "touchesRendererContract": false
+    }
+  },
+  "createdAt": "2026-09-03T00:00:00.000Z",
+  "updatedAt": "2026-09-06T07:52:46.548Z",
+  "history": [
+    {
+      "at": "2026-09-03T00:00:00.000Z",
+      "event": "draft-created"
+    },
+    {
+      "at": "2026-09-03T00:00:00.000Z",
+      "event": "concept-approved",
+      "detail": "recorded from human approval in editorial conversation"
+    },
+    {
+      "at": "2026-09-03T00:00:00.000Z",
+      "event": "english-approved",
+      "detail": "frozen narration incl. experimental cold open"
+    },
+    {
+      "at": "2026-09-03T00:00:00.000Z",
+      "event": "storyboard-approved",
+      "detail": "cold-open open questions resolved: N001 three slots; N032 visual rhyme with N002-S1"
+    },
+    {
+      "at": "2026-09-03T00:00:00.000Z",
+      "event": "package-submitted",
+      "detail": "essay-episode contract generated from frozen script.md; contracts/essay-episode.schema.json validation passed"
+    },
+    {
+      "at": "2026-09-04T14:05:18.644Z",
+      "event": "package-approved"
+    },
+    {
+      "at": "2026-09-05T00:00:00.000Z",
+      "event": "assets-complete",
+      "detail": "ASSETS stage: 101/101 slots sourced, 92 distinct downloads, 9 intentional reprises, assets/manifest.json handoff created"
+    },
+    {
+      "at": "2026-09-05T00:00:00.000Z",
+      "event": "render-540p-review",
+      "detail": "540p subtitled review render complete: ESSY-0003-review-540p-subtitled-v2.mp4; subtitle QA passed (0 overlaps, 0 orphans, 0 short cues); awaiting human QA approval"
+    },
+    {
+      "at": "2026-09-06T00:00:00.000Z",
+      "event": "qa-revision-540p-review",
+      "detail": "Targeted QA revision v3: fixed VTT parser (full narration now subtitled, 247 cues vs 48), discourse-marker penalty in DP segmentation (Not:/Not even:/is not joined), cold-open title cards (channel + episode) drawn by metadata-driven title layer in review render; N002 no longer produces subtitle cues. QA passed. Root-cause report: projects/ESSY-0003/temp/ESSY-0003-qa-revision-report.md. Awaiting human QA approval."
+    },
+    {
+      "at": "2026-09-06T01:00:00.000Z",
+      "event": "qa-revision-540p-review-v4",
+      "detail": "Final minimal QA revision v4: (P0) N002 title narration suppressed via metadata-driven suppressBlockNarration flag + titleCards blockId resolved against assembly-timeline block window (17.472-24.360s, volume=0, timing preserved) — title window verified silent (-91.0 dB), Q narration and essay body audio intact; (P1) title cards given subtle stroke + soft shadow for readability over bright footage, frame-verified at 540p. Subtitle regression tests pass. Awaiting human QA approval."
+    },
+    {
+      "at": "2026-09-06T07:52:46.548Z",
+      "event": "qa-approved"
+    }
+  ]
+}

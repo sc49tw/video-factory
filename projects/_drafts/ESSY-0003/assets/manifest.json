@@ -1,0 +1,1658 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0003",
+  "draftId": "ESSY-0003",
+  "createdAt": "2026-09-05T07:46:03.099Z",
+  "totalSlots": 101,
+  "mapping": [
+    {
+      "slotId": "N001-S1",
+      "narrationId": "N001",
+      "familyId": "SF-01",
+      "asset": {
+        "id": "pexels-video-38836318",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N001-S1-video-38836318.mp4",
+        "sha256": "f2d5b9b7c2e18a4cac7f61e69cab13a2c0e1ab6d8d757ee875b4ef275f1b70c5"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Open the film inside a working life the viewer recognizes, before any question is asked.",
+      "visualIntent": "An anonymous office or commuter crowd at the end of the day, seen from a distance; stillness inside routine.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N001-S2",
+      "narrationId": "N001",
+      "familyId": "SF-02",
+      "asset": {
+        "id": "pexels-video-7986194",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N001-S2-video-7986194.mp4",
+        "sha256": "f4620954c095d9aba3dd2d6c1e8f0d8824a65d85c3377f4369253f43fa3820d5"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Make the abstract question about money and traded years feel physical and quiet.",
+      "visualIntent": "A worn wallet, bank card, or pay slip on an ordinary table in natural light; an object touched, not counted.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N001-S3",
+      "narrationId": "N001",
+      "familyId": "SF-04",
+      "asset": {
+        "id": "pexels-video-6279418",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N001-S3-video-6279418.mp4",
+        "sha256": "9998f77412fb9e734bb415a07950e88dd971438d8d1d95d6af5d7869873fcf53"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Leave the third question open: no exit shown, no answer implied.",
+      "visualIntent": "A person seen from behind pausing at a plain doorway or platform, undecided; movement withheld.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N002-S1",
+      "narrationId": "N002",
+      "familyId": "SF-05",
+      "asset": {
+        "id": "pexels-video-6963729",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N002-S1-video-6963729.mp4",
+        "sha256": "a491b26d58833f2132b2d3fc113a4a8d554e8a483d3cbe37ce1c24eee8785913"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Provide a quiet visual surface beneath the channel name and episode title; the title layer owns this shot.",
+      "visualIntent": "A still, softly lit interior with generous negative space — a window, a cup, late afternoon light — composed so centered title text will read cleanly.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N003-S1",
+      "narrationId": "N003",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-5972650",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N003-S1-video-5972650.mp4",
+        "sha256": "df2613253632751079767a5e75deef4f6fd9d892aa9afe94719f0af768d7ffd0"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Establish a workplace where someone is quietly good at what they do.",
+      "visualIntent": "Skilled hands working confidently in a craft, lab, or office context; competence shown through action, not posing.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N003-S2",
+      "narrationId": "N003",
+      "familyId": "SF-08",
+      "asset": {
+        "id": "pexels-video-11025488",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N003-S2-video-11025488.mp4",
+        "sha256": "bfbfcd9fa475e241eb6ca9c2b7d5e4216252a4f9a097e09a105fe51aa956a80f"
+      },
+      "selectionNote": "worn notebook — familiarity/continuity of the workspace",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show trust and familiarity accumulating around the same workplace.",
+      "visualIntent": "A familiar workspace over time: same desk, same tools, used and worn; continuity rather than novelty.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N003-S3",
+      "narrationId": "N003",
+      "familyId": "SF-09",
+      "asset": {
+        "id": "pexels-video-9243207",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N003-S3-video-9243207.mp4",
+        "sha256": "6ce5bacee6b84ef4f49d43ee309b7651a5921d582db0876b1678c73bcf584198"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Anchor stability in the ordinary comfort it buys.",
+      "visualIntent": "A calm domestic evening enabled by that stability — dinner, lamplight, an ordinary errand.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N003-S4",
+      "narrationId": "N003",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-28872831",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N003-S4-video-28872831.mp4",
+        "sha256": "bb1b8a0d619596cc0f9da8c14fbb59a5a976c813e0d19605fb8ce8257cbeb692"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Convey the span of twenty or thirty years without a literal calendar.",
+      "visualIntent": "Long shot of a city or neighborhood shifting from day into dusk; time passing at scale.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N003-S5",
+      "narrationId": "N003",
+      "familyId": "SF-11",
+      "asset": {
+        "id": "pexels-video-6933192",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N003-S5-video-6933192.mp4",
+        "sha256": "7cb7442d06d71cba2b838f4133bb643ca8fa07ec3d2839a7648a699979ea4a39"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Let the quiet question surface without illustrating the words.",
+      "visualIntent": "The same person alone at the end of the day, briefly still; a pause between activities rather than a decisive look.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N004-S1",
+      "narrationId": "N004",
+      "familyId": "SF-12",
+      "asset": {
+        "id": "pexels-video-6145687",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N004-S1-video-6145687.mp4",
+        "sha256": "057661d57274106c0919450f67526796437baee0f5345223e4427fef85e5ac57"
+      },
+      "selectionNote": "young adults leaving university — building phase in motion",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Open the building phase in movement — a life visibly under construction.",
+      "visualIntent": "Young adults in motion: studying, commuting, first jobs; energy without triumphalism.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N004-S2",
+      "narrationId": "N004",
+      "familyId": "SF-08",
+      "asset": {
+        "id": "pexels-video-8478099",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N004-S2-video-8478099.mp4",
+        "sha256": "064f7c24187354b720620476d4e42d90228604507d4b865d7913d1d2ad56d82c"
+      },
+      "selectionNote": "lived-in study / books as accumulated career evidence in an ordinary life. Not a perfect literal composite — accept as-is. No more search.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Converge the list (skills, career, savings, reputation, life) into one accumulating direction instead of five literal images.",
+      "visualIntent": "A slow reveal of a lived-in apartment or a career wall of small accumulated objects; one image carrying the whole list.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N005-S1",
+      "narrationId": "N005",
+      "familyId": "SF-07",
+      "asset": {
+        "id": "pexels-video-7882635",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N005-S1-video-7882635.mp4",
+        "sha256": "655f5e31e3f80c3f90d8355c91a04087274e0d8405ffa0a1acf88a8a44216ec4"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show the effort-to-opportunity-to-income chain as lived motion, not a diagram.",
+      "visualIntent": "A person advancing through ordinary work stages — training, doing, showing someone else — continuous forward motion.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N005-S2",
+      "narrationId": "N005",
+      "familyId": "SF-14",
+      "asset": {
+        "id": "pexels-video-32511497",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N005-S2-video-32511497.mp4",
+        "sha256": "e867b94e3773c1798595ad5e81ead217f1134baf51aa22aaf026dc6861546675"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N008-S3",
+        "motif": "the same gate, the same work-shaped day"
+      },
+      "editorialFunction": "Rest on the sense that continuing makes sense.",
+      "visualIntent": "Satisfied ordinary rhythm: routine executed smoothly, small ordered pleasures.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N005-S3",
+      "narrationId": "N005",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-10155047",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N005-S3-video-10155047.mp4",
+        "sha256": "3e7d9628c6e87be363a68bdf9e5450178128458c7fc04a8b6ecc8712b15f5475"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Mark the turn — something changes — without a visible event.",
+      "visualIntent": "A subtle shift of light or season over the same street or desk; nothing breaks, but the tone cools.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N005-S4",
+      "narrationId": "N005",
+      "familyId": "SF-04",
+      "asset": {
+        "id": "pexels-video-6841962",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N005-S4-video-6841962.mp4",
+        "sha256": "1f8e6857aafc53044375ee824409d87d9b9565d7cd8014005d671e6f5257e1c5"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Hold the two questions apart: becoming versus spending remaining time.",
+      "visualIntent": "A fork in an ordinary context — two metro directions, two paths in a park — observed calmly, unresolved.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N006-S1",
+      "narrationId": "N006",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-6615520",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N006-S1-video-6615520.mp4",
+        "sha256": "d20e005cbab1a4d1bd3079ec87dde1333f918c255f615e1b7490def0b2209f89"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Introduce the confusion without an on-screen list.",
+      "visualIntent": "A person mid-flow at work — suited, able, absorbed — while something personal (a sketch, a plant, a window) sits at the edge of frame.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N006-S2",
+      "narrationId": "N006",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-6192869",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N006-S2-video-6192869.mp4",
+        "sha256": "62eadfaefa266ccd764c5a15a5d9ad0ae01bcd498e55db3c2d6f9734b96b15a5"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show that suited-for and good-at can fully coincide.",
+      "visualIntent": "Expertise demonstrated cleanly: a professional doing excellent, confident work.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N006-S3",
+      "narrationId": "N006",
+      "familyId": "SF-22",
+      "asset": {
+        "id": "pexels-video-8321930",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N006-S3-video-8321930.mp4",
+        "sha256": "a47d861a228c371940827edf03d0f3d917e7abb7861f931238b02925d1a6be77"
+      },
+      "selectionNote": "private creative identity/interests becoming visible beside work — no literal empty-office required",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Open the third possibility — still wanting it — as a gap rather than a statement.",
+      "visualIntent": "After hours: the workplace empty, the person's private interests visible at home; overlap becoming separateness.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N007-S1",
+      "narrationId": "N007",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-8460903",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N007-S1-video-8460903.mp4",
+        "sha256": "8a097da52385d9c1f62aba45ea96ca5b7c975b1373aa4afb3776e2a3c262f377"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show mastery at its best — the career working exactly as designed.",
+      "visualIntent": "Peak professional competence in real conditions; respect from colleagues visible in behavior.",
+      "targetDurationSec": 10
+    },
+    {
+      "slotId": "N007-S2",
+      "narrationId": "N007",
+      "familyId": "SF-11",
+      "asset": {
+        "id": "pexels-video-855988",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N007-S2-video-855988.mp4",
+        "sha256": "2e005be1b825da8a3eb12f688edc54aebf91a562bdb655bd045e5cc5c06f8d1f"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Insert the 'and still...' pivot as a quiet visual dissonance.",
+      "visualIntent": "The same competent person, after the work is done, staring at nothing in particular — competence intact, appetite gone.",
+      "targetDurationSec": 10
+    },
+    {
+      "slotId": "N007-S3",
+      "narrationId": "N007",
+      "familyId": "SF-08",
+      "asset": {
+        "id": "pexels-video-5972091",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N007-S3-video-5972091.mp4",
+        "sha256": "b7f471f7355a83386c39a4b1ce34675f74a0b909b35655b476b874748fa33da5"
+      },
+      "selectionNote": "wood chisels — tools of a well-used life treated warmly",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Protect the career from retroactive judgment: it was not a mistake.",
+      "visualIntent": "Objects of a well-used professional life — tools, books, awards — treated warmly in passing light.",
+      "targetDurationSec": 10
+    },
+    {
+      "slotId": "N007-S4",
+      "narrationId": "N007",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-5061816",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N007-S4-video-5061816.mp4",
+        "sha256": "b821da08a137133f348da1eab9bb320c9fd45ddec257f76990c62d52df1e66e1"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Land the reframe: something that fit one season need not own the rest.",
+      "visualIntent": "Seasonal change over a familiar place — the same view, a different light; fit is temporal.",
+      "targetDurationSec": 10
+    },
+    {
+      "slotId": "N008-S1",
+      "narrationId": "N008",
+      "familyId": "SF-08",
+      "asset": {
+        "id": "pexels-video-8523701",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N008-S1-video-8523701.mp4",
+        "sha256": "a7cfe1efb184ff2d88fbedb53dc42c3bab4eb92f576a7e2882c8da6bd5754f48"
+      },
+      "selectionNote": "signing a certificate — constructed identity",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show a career as a constructed identity, not just an income.",
+      "visualIntent": "Layered evidence of a long profession: diplomas, worn tools, an office that took years to assemble.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N008-S2",
+      "narrationId": "N008",
+      "familyId": "SF-31",
+      "asset": {
+        "id": "pexels-video-7683543",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N008-S2-video-7683543.mp4",
+        "sha256": "09d7612fec32e255b89274da529279543decfd81754cd0b1777070726296b0e1"
+      },
+      "selectionNote": "friends chatting in a kitchen — the rehearsed answer inside ordinary small talk",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Make 'what do you do' feel like a script rehearsed for years.",
+      "visualIntent": "Everyday social exchanges — introductions, small talk at a gathering — where work is the answer everyone gives.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N008-S3",
+      "narrationId": "N008",
+      "familyId": "SF-14",
+      "asset": {
+        "id": "pexels-video-32511497",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N008-S3-video-32511497.mp4",
+        "sha256": "e867b94e3773c1798595ad5e81ead217f1134baf51aa22aaf026dc6861546675"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show how living inside the answer narrows the imaginable self.",
+      "visualIntent": "A person reflected in ordinary routines that are all work-shaped: same commute, same entrance, same rhythm.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N008-S4",
+      "narrationId": "N008",
+      "familyId": "SF-22",
+      "asset": {
+        "id": "pexels-video-15232585",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N008-S4-video-15232585.mp4",
+        "sha256": "5bb154969580e85fc85eaf76e661191f23d21f9652f2e9e773b6f811b4d45a85"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Give breathing room before the investment theme — an unclaimed outside.",
+      "visualIntent": "A space the person rarely enters anymore — a garden, a studio, a beach path — quiet, available, unused.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N009-S1",
+      "narrationId": "N009",
+      "familyId": "SF-15",
+      "asset": {
+        "id": "pexels-video-9617184",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N009-S1-video-9617184.mp4",
+        "sha256": "89e5b8a0edaef3f2c9ef38f2e4a4bb28da6ab4342d9c3e0144ba9f6076cceccc"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Make the accumulated investment tangible as lived effort.",
+      "visualIntent": "Traces of long effort: marked-up notebooks, late-night desk light, a hard-won project completed.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N009-S2",
+      "narrationId": "N009",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-5941021",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N009-S2-video-5941021.mp4",
+        "sha256": "0f41fc30e35833fe60878215f8a0287f78a44addc9c71412c6de948b3ae51b21"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Convey rare expertise without bragging.",
+      "visualIntent": "A specialist absorbed in work only a few could do; quiet depth rather than spectacle.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N009-S3",
+      "narrationId": "N009",
+      "familyId": "SF-15",
+      "asset": {
+        "id": "pexels-video-2117231",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N009-S3-video-2117231.mp4",
+        "sha256": "12615f6785242d8489aea9d08c450f1c638169dca1115e90ac0b74042a57ee37"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Name the sunk-cost pull as a human behavior, not a lecture.",
+      "visualIntent": "Someone visibly holding on — tightening a grip on a rail, rearranging the same papers — persistence caught in a small gesture.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N009-S4",
+      "narrationId": "N009",
+      "familyId": "SF-29",
+      "asset": {
+        "id": "pexels-video-4887473",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N009-S4-video-4887473.mp4",
+        "sha256": "e2c2497925948c690b795fe8a76c20d66d7adcce44dedef430f47ed37d7ca832"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Turn from unrecoverable time to the question of what remains.",
+      "visualIntent": "Water flowing one direction under a bridge, or a shadow lengthening; time's arrow stated by landscape, not clocks.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N009-S5",
+      "narrationId": "N009",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-7149872",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N009-S5-video-7149872.mp4",
+        "sha256": "5b86cae173f2dcdae855c108c36c22fdbb0aa007dae31f0b8b710a2112a59126"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Open the forward-looking question with visual generosity.",
+      "visualIntent": "An open horizon of ordinary days ahead — a long view down a quiet street in morning light.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N010-S1",
+      "narrationId": "N010",
+      "familyId": "SF-16",
+      "asset": {
+        "id": "pexels-video-8580945",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N010-S1-video-8580945.mp4",
+        "sha256": "93502687a0680e5e39ec82c2a7e385b1b1aa0f1c3f8afe998181cf79373204e0"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Ground the episode's argument: financial security is not an abstraction here.",
+      "visualIntent": "Ordinary financial duties in a humane register: a mortgage letter on the kitchen table, school bags by the door, medicine boxes in a cabinet.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N010-S2",
+      "narrationId": "N010",
+      "familyId": "SF-09",
+      "asset": {
+        "id": "pexels-video-7128782",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N010-S2-video-7128782.mp4",
+        "sha256": "5054d28e32d6e4ce9322b2afb53f6377ba4831c42d34c92c845e9111058cd97b"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show the people the salary quietly protects.",
+      "visualIntent": "Family life in the background of an ordinary day — parents aging, children doing homework — observed from a slight distance.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N010-S3",
+      "narrationId": "N010",
+      "familyId": "SF-17",
+      "asset": {
+        "id": "pexels-video-11738477",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N010-S3-video-11738477.mp4",
+        "sha256": "00e88fda32428f088e7562c8a219b332ab9f64b259996fb1fcef3875344cafa3"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Let protection itself be seen as valuable, not mocked.",
+      "visualIntent": "A home held steady in bad weather seen through a window; shelter as a real good.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N011-S1",
+      "narrationId": "N011",
+      "familyId": "SF-14",
+      "asset": {
+        "id": "pexels-video-7986201",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N011-S1-video-7986201.mp4",
+        "sha256": "8fd56c06724cf0f6aa6dfcda2c196a864f14d60c1d40cdf8c2c1f60875b7be7f"
+      },
+      "selectionNote": "leave-home / keys / doorway routine — duty shown neutrally",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Keep the film honest: this is not a resignation manifesto.",
+      "visualIntent": "A person responsibly at work, neither miserable nor euphoric; duty shown neutrally.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N011-S2",
+      "narrationId": "N011",
+      "familyId": "SF-03",
+      "asset": {
+        "id": "pexels-video-8830801",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N011-S2-video-8830801.mp4",
+        "sha256": "5bb4b4d4e4ab420d67baf93f00d35437355a0ba8dd802cb20fa078a0a1f80e66"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Introduce the idea of a price without naming its units yet.",
+      "visualIntent": "A receipt, a meter, something small being exchanged; the language of transactions in daily life.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N011-S3",
+      "narrationId": "N011",
+      "familyId": "SF-13",
+      "asset": {
+        "id": "pexels-video-7496059",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N011-S3-video-7496059.mp4",
+        "sha256": "62f70c89a7a72a234aadd3c01b903e7aca73a5621141537f53aefcbcc972a073"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Begin enumerating the days — but as one lived morning, not a list.",
+      "visualIntent": "A single ordinary morning: alarm, coffee, coat, door. Observed closely and without drama.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N011-S4",
+      "narrationId": "N011",
+      "familyId": "SF-14",
+      "asset": {
+        "id": "pexels-video-7599308",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N011-S4-video-7599308.mp4",
+        "sha256": "c5264ca18ae445e0b89d5f585b867f7f75dbea3b6e7600872bea9625262e0575"
+      },
+      "selectionNote": "GOOD-ENOUGH under final stop rule. Use neutral hallway/light/returning-home segment. Avoid dramatic/lonoir/posed frames. No more search.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Land the emotional cost: evenings with little left over.",
+      "visualIntent": "Coming home in the dark, coat still on, dinner unmade; low energy rendered respectfully.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N012-S1",
+      "narrationId": "N012",
+      "familyId": "SF-14",
+      "asset": {
+        "id": "pexels-video-5971274",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N012-S1-video-5971274.mp4",
+        "sha256": "eb2a3e51e0d5cb9dd9793819c8b8a050cbc6abf363015df90459bf056242a118"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show how single days fail to register as sacrifice.",
+      "visualIntent": "An unremarkable workday passing without incident; nothing memorable, by design.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N012-S2",
+      "narrationId": "N012",
+      "familyId": "SF-24",
+      "asset": {
+        "id": "pexels-photo-28506741",
+        "mediaType": "photo",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N012-S2-photo-28506741.jpg",
+        "sha256": "39fd0c1fcda193409bfd938e6820259973902522d001ce783fb03370bf583576"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Convey years passing quickly without literalizing them.",
+      "visualIntent": "A child's bicycle becoming too small, a jacket style changing on the same commuter; quiet time markers.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N012-S3",
+      "narrationId": "N012",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-35136510",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N012-S3-video-35136510.mp4",
+        "sha256": "f97bf71b658b5e7b84a3be7f2ff247272c7faa16acc70084d381833e5fe32f5b"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Deliver the block's weight: thousands of ordinary days become a significant portion of a life.",
+      "visualIntent": "A wide static shot of a residential street at dusk, many windows lit; each window an ordinary day.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N013-S1",
+      "narrationId": "N013",
+      "familyId": "SF-11",
+      "asset": {
+        "id": "pexels-video-7705264",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N013-S1-video-7705264.mp4",
+        "sha256": "e217e67a61c52841653674adadb997a4d37bff451a2c9f9100f28757f19df6a3"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Introduce Erikson's tension without textbook framing.",
+      "visualIntent": "A middle-aged person between two rooms — one of work, one of home — light different in each; the tension embodied, not diagrammed.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N013-S2",
+      "narrationId": "N013",
+      "familyId": "SF-07",
+      "asset": {
+        "id": "pexels-video-7522219",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N013-S2-video-7522219.mp4",
+        "sha256": "2a3fd15f1e3a3effc7d4b8a9b23240fe21f34c68d2921290ad8b620cd84d86ba"
+      },
+      "selectionNote": "HUMAN OVERRIDE: outward-facing caregiving/generativity (6023341 rejected as SF-18 craft overlap)",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show generativity as contribution beyond oneself.",
+      "visualIntent": "Teaching, mentoring, caregiving, building something others will use; gentle outward-facing activity.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N013-S3",
+      "narrationId": "N013",
+      "familyId": "SF-18",
+      "asset": {
+        "id": "pexels-video-8180418",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N013-S3-video-8180418.mp4",
+        "sha256": "dbcd51cfa2d5742091dd710188c01e8e275c7ca94463ab114aa8a9d359c90438"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Block the misreading that this means a new career or grand purpose.",
+      "visualIntent": "Small non-career creation in progress: bread rising, a birdhouse half-built, seeds in jars.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N013-S4",
+      "narrationId": "N013",
+      "familyId": "SF-18",
+      "asset": {
+        "id": "pexels-video-8180413",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N013-S4-video-8180413.mp4",
+        "sha256": "02454cc28bda46405fc005a1644a5800afe716b6ba93834ad9da89f949995dc3"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Complete the downshift: sometimes it is much smaller.",
+      "visualIntent": "One unhurried small act done for its own sake, in ordinary light.",
+      "targetDurationSec": 9.5
+    },
+    {
+      "slotId": "N014-S1",
+      "narrationId": "N014",
+      "familyId": "SF-18",
+      "asset": {
+        "id": "pexels-video-17661961",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N014-S1-video-17661961.mp4",
+        "sha256": "e3899c74ba2288614e105833824c7e010e13c45f973ce3018474ee3df2058efb"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Open the list of small meanings inside one coherent setting rather than one shot per line.",
+      "visualIntent": "A lived-in home in soft daylight where several small activities coexist: cooking, reading, a half-finished project.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N014-S2",
+      "narrationId": "N014",
+      "familyId": "SF-18",
+      "asset": {
+        "id": "pexels-video-5564571",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N014-S2-video-5564571.mp4",
+        "sha256": "5e6a638032bf9a7733c2d4a794bd3c7efb8e3b9c0e5ea2382378c743edca63e9"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Emphasize making and learning disconnected from résumé value.",
+      "visualIntent": "Hands doing something impractical but absorbing — pottery, a jigsaw, an old radio taken apart.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N014-S3",
+      "narrationId": "N014",
+      "familyId": "SF-19",
+      "asset": {
+        "id": "pexels-video-8211862",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N014-S3-video-8211862.mp4",
+        "sha256": "d18b823eb09f2aa84044b592ec3b382f596df2402e4d0be94bd5bb2f7732916f"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show unhurried time with others — helping, being present.",
+      "visualIntent": "Unstaged togetherness: sharing food, walking side by side, a slow conversation on a bench.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N014-S4",
+      "narrationId": "N014",
+      "familyId": "SF-11",
+      "asset": {
+        "id": "pexels-video-34580818",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N014-S4-video-34580818.mp4",
+        "sha256": "6f83557cda78603be6e0aa61c5690925ae0bcc28aed448b5a3fb92c53be19a66"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Land the block: enough mental space to notice your own life again.",
+      "visualIntent": "A person doing nothing in particular, looking out a window, tea cooling; attention returning inward.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N015-S1",
+      "narrationId": "N015",
+      "familyId": "SF-21",
+      "asset": {
+        "id": "pexels-video-6912421",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N015-S1-video-6912421.mp4",
+        "sha256": "f4309c901af466a80c3de76675c93db69d827e49703e2863cb90963701b089d1"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Reframe without negation: work is not suddenly meaningless.",
+      "visualIntent": "Work continuing normally in the background — the office running as always — while life's other textures sit in the foreground of the frame.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N015-S2",
+      "narrationId": "N015",
+      "familyId": "SF-20",
+      "asset": {
+        "id": "pexels-video-7356016",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N015-S2-video-7356016.mp4",
+        "sha256": "873812dce78db175870b3427bd919db7dc10f318b6343dabb83ae7228b840821"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Make the competition for limited hours visible.",
+      "visualIntent": "A calendar page or week planner where one life's claims crowd one another; restrained, observational, not frantic.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N016-S1",
+      "narrationId": "N016",
+      "familyId": "SF-12",
+      "asset": {
+        "id": "pexels-video-30614059",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N016-S1-video-30614059.mp4",
+        "sha256": "0d104620d14fa91b94d25ebe93dd9272af7992a8ff0ee18fb044c70b739244d1"
+      },
+      "selectionNote": "crowded train-platform motion — building years / future still moving. Avoid travel tourism / spectacle segments.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Establish the young self's sense of endless horizon.",
+      "visualIntent": "Youth in open motion — running for a train, plan in hand — the future assumed, unexamined.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N016-S2",
+      "narrationId": "N016",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-35573205",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N016-S2-video-35573205.mp4",
+        "sha256": "175f65a39ae3c2d8da9229abca467df47ea2cb53f06b59dc472cb149250eae1d"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Mark the change in how time feels — not frightening, just visible.",
+      "visualIntent": "A mid-year morning with long clear shadows; light making everything countable.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N016-S3",
+      "narrationId": "N016",
+      "familyId": "SF-24",
+      "asset": {
+        "id": "pexels-video-5792245",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N016-S3-video-5792245.mp4",
+        "sha256": "aa806fd758c96b67a4cd6c93509133cae33e413a3c808eb6d03b65347782f56e"
+      },
+      "selectionNote": "old bikes / accumulated elapsed time — DELIBERATE visual rhyme with N012-S2 (childhood). Flag sequence QA so the two shots read as progression, not repetitive bicycle stock.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Close on visibility rather than dread.",
+      "visualIntent": "A person calmly noting something small — a date, a season, a child's height on a doorframe.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N017-S1",
+      "narrationId": "N017",
+      "familyId": "SF-12",
+      "asset": {
+        "id": "pexels-video-6539702",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N017-S1-video-6539702.mp4",
+        "sha256": "90fd601aace79a1e91be98ad03f02edbc2e66de8a4ffaef69f1f43580fb88b32"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Hold healthy years as capacity, not countdown.",
+      "visualIntent": "A body still fully in use — hiking, swimming, carrying things — vitality framed as finite and present.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N017-S2",
+      "narrationId": "N017",
+      "familyId": "SF-19",
+      "asset": {
+        "id": "pexels-video-8480209",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N017-S2-video-8480209.mp4",
+        "sha256": "bef05d01b29e305a4a04a8f444adb441687fce846dfd8b2c37221f4ef1493408"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Deliver the children's summers line with warmth and restraint.",
+      "visualIntent": "A late-summer garden, children a little older each time; ordinary family leisure, unhurried.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N017-S3",
+      "narrationId": "N017",
+      "familyId": "SF-19",
+      "asset": {
+        "id": "pexels-video-7491028",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N017-S3-video-7491028.mp4",
+        "sha256": "7e169db3146c2eefa5fdf9ced92ad4d6140a506745f6aae71005bf0e575c7cd9"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Honor the parents line without mortality staging.",
+      "visualIntent": "Time with aging parents in ordinary acts — shopping, a shared meal, a phone call — presence over sentiment.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N017-S4",
+      "narrationId": "N017",
+      "familyId": "SF-13",
+      "asset": {
+        "id": "pexels-video-5983679",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N017-S4-video-5983679.mp4",
+        "sha256": "fb3406079f89af9e8d5f32be5754f13f8dcc601ec6438dd64404ec224e3f2ac1"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Close the inventory on the ordinary morning the body still allows.",
+      "visualIntent": "Waking without an alarm, stretching, deciding slowly what the day will be.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N018-S1",
+      "narrationId": "N018",
+      "familyId": "SF-23",
+      "asset": {
+        "id": "pexels-video-6289663",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N018-S1-video-6289663.mp4",
+        "sha256": "72a5436191e56d1cc554ce0d840893303c34de7b863282fe588d88a88af5626b"
+      },
+      "selectionNote": "after-dinner lingering / comfortable continuation of the evening; visual overlap with SF-19 domestic togetherness to be verified as distinct during sequence QA",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Refuse the over-correction: not every hour must be precious.",
+      "visualIntent": "Ordinary wasted-looking time, warmly framed — doodling, daydreaming by a bus stop; permission, not guilt.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N018-S2",
+      "narrationId": "N018",
+      "familyId": "SF-29",
+      "asset": {
+        "id": "pexels-video-4603009",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N018-S2-video-4603009.mp4",
+        "sha256": "af2c383512681f64be6a254bac9638eef518e7a662686e10c129e577d7c6aa30"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "State the quiet conclusion: time is harder to treat as unlimited.",
+      "visualIntent": "A finite, beautiful thing observed — a tide going out, bread cooling on a rack — finitude made tangible without clocks.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N019-S1",
+      "narrationId": "N019",
+      "familyId": "SF-04",
+      "asset": {
+        "id": "pexels-video-6279418",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N019-S1-video-6279418.mp4",
+        "sha256": "9998f77412fb9e734bb415a07950e88dd971438d8d1d95d6af5d7869873fcf53"
+      },
+      "selectionNote": "INTENTIONAL VISUAL-MOTIF REUSE with N001-S1..N019-S1 recurrence; verify in sequence QA that recurrence feels intentional, not repetitive.",
+      "intentionalMotifReuse": {
+        "reusesSlot": "N001-S3",
+        "motif": "lived-in threshold (corridor/doorways), recurring deliberately"
+      },
+      "editorialFunction": "Introduce the uncomfortable idea with dignity, not doom.",
+      "visualIntent": "A person standing at an ordinary junction of daily life, mid-decision — small scale, real weight.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N019-S2",
+      "narrationId": "N019",
+      "familyId": "SF-22",
+      "asset": {
+        "id": "pexels-photo-25460890",
+        "mediaType": "photo",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N019-S2-photo-25460890.jpg",
+        "sha256": "43e8ca43b7862369e64f20284f7e47ebf5604fdbf94da01aaf468a69443a2c15"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Separate imagined possibilities from lived choices.",
+      "visualIntent": "Half-made things in a life: an unused instrument, unbought tickets, an unopened box — traces of imagination, treated kindly.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N020-S1",
+      "narrationId": "N020",
+      "familyId": "SF-23",
+      "asset": {
+        "id": "pexels-video-5708171",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N020-S1-video-5708171.mp4",
+        "sha256": "f91c600908b15f926ebb474ebef6ddd783d78524d171de4b34d3d31b291ab257"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Open the someday list as one continuous ordinary evening, not five clips.",
+      "visualIntent": "A person at home letting plans pass by in a single evening: magazine closed, sketchbook untouched, phone set aside.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N020-S2",
+      "narrationId": "N020",
+      "familyId": "SF-04",
+      "asset": {
+        "id": "pexels-video-34955072",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N020-S2-video-34955072.mp4",
+        "sha256": "96710d1d071fb99b1ab18604b8e26a613c0c1a1f667dc4d721decaef9ddf2d81"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show 'someday' remaining permanently in the future.",
+      "visualIntent": "A path walked around rather than along — a park gate passed daily, never entered.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N020-S3",
+      "narrationId": "N020",
+      "familyId": "SF-09",
+      "asset": {
+        "id": "pexels-video-6289666",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N020-S3-video-6289666.mp4",
+        "sha256": "e15e48d8798aad99c877b26b86975e9444d6862b458d32da6d4e3f9eab8d3fa7"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N024-S1",
+        "motif": "the same evening keeps happening"
+      },
+      "editorialFunction": "Show why stable lives postpone well: nothing forces the question.",
+      "visualIntent": "A smoothly running household — bills paid, fridge full, lights working — comfort filmed honestly.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N020-S4",
+      "narrationId": "N020",
+      "familyId": "SF-23",
+      "asset": {
+        "id": "pexels-video-6890220",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N020-S4-video-6890220.mp4",
+        "sha256": "58a6d92564b76e4e61248421cc1df6df903a622ba63080e0e0360cdffbd54731"
+      },
+      "selectionNote": "planning/thinking is present but the life structure remains unchanged — NOT productivity imagery",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Let the block settle: postponement as the default path of least resistance.",
+      "visualIntent": "The same comfortable room an hour later, unchanged; nothing happened, and that is the point.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N021-S1",
+      "narrationId": "N021",
+      "familyId": "SF-16",
+      "asset": {
+        "id": "pexels-video-10901926",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N021-S1-video-10901926.mp4",
+        "sha256": "93e3f7aa893d781e61de49855d736662ab32b54d026f008a55b285b06cdbfd0b"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Depict the undramatic surface of a life with no forcing crisis.",
+      "visualIntent": "Monthly rhythms repeating: payday, groceries, a filled calendar — orderly and unremarkable.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N021-S2",
+      "narrationId": "N021",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-10155047",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N021-S2-video-10155047.mp4",
+        "sha256": "3e7d9628c6e87be363a68bdf9e5450178128458c7fc04a8b6ecc8712b15f5475"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N005-S3",
+        "motif": "same street subtle light/season change reprising at the payday/calendar beat"
+      },
+      "editorialFunction": "Convey a year passing without an event worth remembering.",
+      "visualIntent": "The same location across subtle seasonal light changes; nearly identical frames.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N021-S3",
+      "narrationId": "N021",
+      "familyId": "SF-20",
+      "asset": {
+        "id": "pexels-video-7356016",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N021-S3-video-7356016.mp4",
+        "sha256": "873812dce78db175870b3427bd919db7dc10f318b6343dabb83ae7228b840821"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N015-S2",
+        "motif": "the same modest planner/calendar reappearing — 'the same weeks keep being claimed by ordinary obligations'"
+      },
+      "editorialFunction": "Give the repetition its quiet sting.",
+      "visualIntent": "A calendar being replaced with a new one; the same handwriting, a new year, nothing else changed.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N022-S1",
+      "narrationId": "N022",
+      "familyId": "SF-21",
+      "asset": {
+        "id": "pexels-video-6325853",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N022-S1-video-6325853.mp4",
+        "sha256": "9b57ad7887e6104dc5584d2fde63f47604eda0036e54a1a31595353c11178715"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Reframe the difficulty: not escape, but leaving something fine.",
+      "visualIntent": "A genuinely pleasant workplace seen tenderly — good colleagues, decent light, real competence; the thing that must be left is lovable.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N022-S2",
+      "narrationId": "N022",
+      "familyId": "SF-23",
+      "asset": {
+        "id": "pexels-video-5708171",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N022-S2-video-5708171.mp4",
+        "sha256": "f91c600908b15f926ebb474ebef6ddd783d78524d171de4b34d3d31b291ab257"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N020-S1",
+        "motif": "unhurried evening reading reprising at the comfortable-chair/settled-desk beat"
+      },
+      "editorialFunction": "Show the asymmetry: bad jobs push, good-enough jobs hold.",
+      "visualIntent": "A comfortable chair, a settled desk, a routine that fits perfectly; gravity rendered as furniture.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N023-S1",
+      "narrationId": "N023",
+      "familyId": "SF-21",
+      "asset": {
+        "id": "pexels-video-6032132",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N023-S1-video-6032132.mp4",
+        "sha256": "c3620c63e5eb3a3c351818705e53cacadf53f1a167f3574bf8ef09cb19d73deb"
+      },
+      "selectionNote": "crumpled paper — understated mild frustration; do not amplify burnout framing",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Dismiss the first usual question without mocking it.",
+      "visualIntent": "A neutral passing image of ordinary work frustration — mundane, mild, not the film's subject.",
+      "targetDurationSec": 4.5
+    },
+    {
+      "slotId": "N023-S2",
+      "narrationId": "N023",
+      "familyId": "SF-02",
+      "asset": {
+        "id": "pexels-video-5916730",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N023-S2-video-5916730.mp4",
+        "sha256": "14941ce615e36d37b64bfeebcaf066c230f771ec12d7c47e3e2632987dfd65ca"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Dismiss the second usual question equally quietly.",
+      "visualIntent": "Retirement-adjacent imagery kept abstract — a coin jar, a savings statement — pleasant but beside the point.",
+      "targetDurationSec": 4.5
+    },
+    {
+      "slotId": "N023-S3",
+      "narrationId": "N023",
+      "familyId": "SF-03",
+      "asset": {
+        "id": "pexels-video-6127660",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N023-S3-video-6127660.mp4",
+        "sha256": "c2e3dddae76bc52f80d8d171cd2580f0b84e5d8aad96c39e250e7f2eaab18ff0"
+      },
+      "selectionNote": "handover of a drink — use a segment/crop focused on the handover gesture; do not emphasize cafe/freebie/promotional context",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Deliver the block's real question as an image of exchange.",
+      "visualIntent": "A hand handing over time-shaped value in an ordinary transaction; restrained, non-literal.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N024-S1",
+      "narrationId": "N024",
+      "familyId": "SF-09",
+      "asset": {
+        "id": "pexels-video-6289666",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N024-S1-video-6289666.mp4",
+        "sha256": "e15e48d8798aad99c877b26b86975e9444d6862b458d32da6d4e3f9eab8d3fa7"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Give the first answers their dignity: security and responsibility are real goods.",
+      "visualIntent": "A protected family life glimpsed honestly — a safe home, children thriving, needs met without display.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N024-S2",
+      "narrationId": "N024",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-7844876",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N024-S2-video-7844876.mp4",
+        "sha256": "01f5ca7811f0ce2489cb8e564e7271eb0ef54a75422711d57c1d222186b8ccfb"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Give the remaining answers their dignity: work can still be genuinely worthwhile.",
+      "visualIntent": "A person doing meaningful work with visible quiet satisfaction — the good answer shown, not told.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N024-S3",
+      "narrationId": "N024",
+      "familyId": "SF-01",
+      "asset": {
+        "id": "pexels-video-3893422",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N024-S3-video-3893422.mp4",
+        "sha256": "9876bb76b3354dfbbe70d94c37941e6afcb38f442f2d12f9388671766cc8034b"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Normalize selling time: almost everyone does it.",
+      "visualIntent": "A busy ordinary crowd at rush hour, each face neither tragic nor triumphant; the human default.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N024-S4",
+      "narrationId": "N024",
+      "familyId": "SF-03",
+      "asset": {
+        "id": "pexels-video-6685174",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N024-S4-video-6685174.mp4",
+        "sha256": "d36d928a9134a43a88359189b6be5c16f5d426a8661a815f8e67cb6d8fc69b51"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Land the block: the point is knowing what is received in exchange.",
+      "visualIntent": "A quiet two-shot of a transaction completing in daily life — receipt taken, glance exchanged; attention on awareness.",
+      "targetDurationSec": 7.5
+    },
+    {
+      "slotId": "N025-S1",
+      "narrationId": "N025",
+      "familyId": "SF-02",
+      "asset": {
+        "id": "pexels-video-6862461",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N025-S1-video-6862461.mp4",
+        "sha256": "8d46a4c6e15263da8145d31e8ed2586d2db9a7ae880f4ad5ae85079814896ff8"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Mark the shift in the calculation without a plot event.",
+      "visualIntent": "A payslip looked at briefly, then set aside for something else already in progress at home.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N025-S2",
+      "narrationId": "N025",
+      "familyId": "SF-13",
+      "asset": {
+        "id": "pexels-video-2996079",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N025-S2-video-2996079.mp4",
+        "sha256": "40e708dff03fdd369e42622f43aad30323e08e283ec8a18b203df1555cdbb3b6"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show the free morning gaining value.",
+      "visualIntent": "An unhurried weekday morning in a usually empty house — sunlight moving across a table, no clock-checking.",
+      "targetDurationSec": 8
+    },
+    {
+      "slotId": "N025-S3",
+      "narrationId": "N025",
+      "familyId": "SF-25",
+      "asset": {
+        "id": "pexels-video-7279471",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N025-S3-video-7279471.mp4",
+        "sha256": "8bd4df6284698fb78e48f0b62cf9673d4f78849891bbf1e230818bbc51aad798"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Reduce promotion's pull visually.",
+      "visualIntent": "An office celebration heard faintly from a distance while the subject stays outside in daylight; ambivalence made spatial.",
+      "targetDurationSec": 7.5
+    },
+    {
+      "slotId": "N025-S4",
+      "narrationId": "N025",
+      "familyId": "SF-25",
+      "asset": {
+        "id": "pexels-video-34324796",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N025-S4-video-34324796.mp4",
+        "sha256": "2a35de5186503d884fb43eb64da156075d7082ffc02111907575a62389a8796f"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Name the strange value of a self-determined Tuesday afternoon.",
+      "visualIntent": "A person mid-week doing something small and elective — a museum, a long walk, a nap — unexplained and unhurried.",
+      "targetDurationSec": 7.5
+    },
+    {
+      "slotId": "N026-S1",
+      "narrationId": "N026",
+      "familyId": "SF-14",
+      "asset": {
+        "id": "pexels-video-19319640",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N026-S1-video-19319640.mp4",
+        "sha256": "474345c8153ebcec724982ac88a396c66fc5f9d51d6b1226457218e5b0ad28d2"
+      },
+      "selectionNote": "ordinary station-stairs segment — no need to represent the full 110s source",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Explicitly refuse the dramatic-resignation trope.",
+      "visualIntent": "An utterly unremarkable workday continuing — the film declining the movie version of quitting.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N026-S2",
+      "narrationId": "N026",
+      "familyId": "SF-25",
+      "asset": {
+        "id": "pexels-video-4992293",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N026-S2-video-4992293.mp4",
+        "sha256": "dc68181b088a0d536a7c14e9d13a21aae7d57632ae40c1f2c27af36087e6402e"
+      },
+      "selectionNote": "modest daylight autonomy — not aspirational lifestyle advertising",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show smaller structural answers: fewer hours, changed roles.",
+      "visualIntent": "A person negotiating or living a lighter schedule — leaving in daylight, handing over part of a role, working part of the week elsewhere.",
+      "targetDurationSec": 7.5
+    },
+    {
+      "slotId": "N026-S3",
+      "narrationId": "N026",
+      "familyId": "SF-26",
+      "asset": {
+        "id": "pexels-video-7429267",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N026-S3-video-7429267.mp4",
+        "sha256": "4ad1299059a7abbea0b472cdcb1064f950f330f6cfb31fd47c03fa610e163052"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show the sabbatical and independence paths as ordinary and available.",
+      "visualIntent": "A planned pause made visible gently — a bag packed weeks ahead, a savings chart on a kitchen wall, a ticket booked calmly.",
+      "targetDurationSec": 7.5
+    },
+    {
+      "slotId": "N026-S4",
+      "narrationId": "N026",
+      "familyId": "SF-27",
+      "asset": {
+        "id": "pexels-video-6603157",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N026-S4-video-6603157.mp4",
+        "sha256": "16c989e06f3f5ee813763e409f7f3a2ba7b8af21b804bc9c839d9810d46452e2"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Land the block on the boundary being drawn: work no longer consumes everything.",
+      "visualIntent": "An evening explicitly protected — phone face-down, door to the home office closed, dinner happening anyway.",
+      "targetDurationSec": 7.5
+    },
+    {
+      "slotId": "N027-S1",
+      "narrationId": "N027",
+      "familyId": "SF-28",
+      "asset": {
+        "id": "pexels-video-5514356",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N027-S1-video-5514356.mp4",
+        "sha256": "d4704186cecacc9d4592915273fe49824803332da03e7518f1c099962866ff48"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Collapse the either/or framing visually.",
+      "visualIntent": "Two extremes seen small — a cubicle and a beach at the far edges of a frame — with a wide, detailed, ordinary middle ground between them.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N027-S2",
+      "narrationId": "N027",
+      "familyId": "SF-25",
+      "asset": {
+        "id": "pexels-video-7986424",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N027-S2-video-7986424.mp4",
+        "sha256": "f32cfa2d04ad871832b16d54ee7a16c3ebc32aae2569e35153125c4faab5a053"
+      },
+      "selectionNote": "ordinary self-directed time / modest weekday autonomy. Not laziness or retirement.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Inhabit the middle space where real answers live.",
+      "visualIntent": "A mixed life in progress: a workshop next to a laptop, a weekday project beside a part-time schedule.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N028-S1",
+      "narrationId": "N028",
+      "familyId": "SF-17",
+      "asset": {
+        "id": "pexels-video-35889601",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N028-S1-video-35889601.mp4",
+        "sha256": "16af46464c8bd47feedacab8121bdb9f41bf0c40ef5f9120a0ec397d9ed20456"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Question the goal of feeling permanently safe.",
+      "visualIntent": "A well-defended, comfortable home at night — safe-looking, yet clearly not permanent; shelter without illusion.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N028-S2",
+      "narrationId": "N028",
+      "familyId": "SF-10",
+      "asset": {
+        "id": "pexels-video-5061816",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N028-S2-video-5061816.mp4",
+        "sha256": "b821da08a137133f348da1eab9bb320c9fd45ddec257f76990c62d52df1e66e1"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N007-S4",
+        "motif": "shadow moving across a room reprising at the permanent-safety beat"
+      },
+      "editorialFunction": "Accept that permanent safety does not exist — without despair.",
+      "visualIntent": "Weather changing over a stable landscape; the land remains, conditions do not.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N028-S3",
+      "narrationId": "N028",
+      "familyId": "SF-25",
+      "asset": {
+        "id": "pexels-video-32078346",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N028-S3-video-32078346.mp4",
+        "sha256": "8a2c61497d30b86282619106ca14a4652f7c45bc338eed2d9d0f813b51458c3a"
+      },
+      "selectionNote": "closing garage door as indirect boundary imagery — modest boundary being closed/protected. Do not over-symbolize.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Reframe security as purchasing choices about time.",
+      "visualIntent": "A buffer made visible as possibility: a person able to say no to something small — declining a shift, skipping a meeting for a school play.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N029-S1",
+      "narrationId": "N029",
+      "familyId": "SF-02",
+      "asset": {
+        "id": "pexels-video-5981287",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N029-S1-video-5981287.mp4",
+        "sha256": "38063c5143bafd417094f9c470008e76a4862b787f7de358a5ad325838d15a8e"
+      },
+      "selectionNote": "CONDITIONAL: acceptable only in later cost/security context; more explicit finance/receipt semantics; never use near the opening.",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show money's recoverability honestly.",
+      "visualIntent": "Cycles of money in ordinary life — coins saved, spent, saved again — a loop, filmed without judgment.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N029-S2",
+      "narrationId": "N029",
+      "familyId": "SF-29",
+      "asset": {
+        "id": "pexels-video-7405929",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N029-S2-video-7405929.mp4",
+        "sha256": "88312cc4c222ce5e7ea937d6b960e663188d56067e19587cd1deb2928bdc5a76"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Contrast with time's single direction, in landscape rather than clocks.",
+      "visualIntent": "A river or tide moving one way past a fixed point; the frame holds still while the water does not.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N030-S1",
+      "narrationId": "N030",
+      "familyId": "SF-08",
+      "asset": {
+        "id": "pexels-video-5967518",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N030-S1-video-5967518.mp4",
+        "sha256": "5aa8283a659b7f5d6a7d5852c50415a912c6bc06de6c173d9fcbb8455d12b2c7"
+      },
+      "selectionNote": "marking wood — craft evidence, early-vs-mature bridge",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Honor the years spent becoming who we are.",
+      "visualIntent": "A long apprenticeship-like montage compressed into one image: a craftsman's early work beside the mature work, both kept.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N030-S2",
+      "narrationId": "N030",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-10276473",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N030-S2-video-10276473.mp4",
+        "sha256": "5517125efeaf1a537760fe568621355bdb740f77849d81dff249ac6a18e3fefc"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Show the skills and experiences remaining, in use or at rest.",
+      "visualIntent": "Old competence still quietly alive: hands that remember, tools maintained, a library still consulted.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N030-S3",
+      "narrationId": "N030",
+      "familyId": "SF-08",
+      "asset": {
+        "id": "pexels-video-7430217",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N030-S3-video-7430217.mp4",
+        "sha256": "aecf58861a9706b915eecdbc19d4137a91c5ab9af82422b3f7d34170050f0556"
+      },
+      "selectionNote": "thank-you card — human continuities / identity held warmly",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Land on what remains in people: those helped, and the person we became.",
+      "visualIntent": "Brief human continuities — a thank-you message still pinned, a friendship intact across years; identity held warmly.",
+      "targetDurationSec": 7
+    },
+    {
+      "slotId": "N031-S1",
+      "narrationId": "N031",
+      "familyId": "SF-30",
+      "asset": {
+        "id": "pexels-video-4218147",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N031-S1-video-4218147.mp4",
+        "sha256": "68507001d79aad57c1ec0d210f18f47d86c5ff63bbccfc80d48f425fe8cbae10"
+      },
+      "selectionNote": "wiping a wooden table — closing/tidying without ceremony",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Release the obligation to justify the past by repeating it.",
+      "visualIntent": "A person closing a chapter without ceremony — finishing a project, tidying a desk, keeping what matters and leaving the rest.",
+      "targetDurationSec": 9
+    },
+    {
+      "slotId": "N031-S2",
+      "narrationId": "N031",
+      "familyId": "SF-06",
+      "asset": {
+        "id": "pexels-video-6615520",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N031-S2-video-6615520.mp4",
+        "sha256": "d20e005cbab1a4d1bd3079ec87dde1333f918c255f615e1b7490def0b2209f89"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N006-S1",
+        "motif": "technical-drawing concentration reprising at the closing what-remains beat"
+      },
+      "editorialFunction": "Affirm that work may still be good — the critique is not rejection.",
+      "visualIntent": "Work shown one more time in its best light; genuine, warm, complete.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N031-S3",
+      "narrationId": "N031",
+      "familyId": "SF-30",
+      "asset": {
+        "id": "pexels-video-6304829",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N031-S3-video-6304829.mp4",
+        "sha256": "e6d149aecdc07da8bb07cfd534cc1f5bc3eb2381f9dc3bfae707d771457576e5"
+      },
+      "selectionNote": "washing dishes — a full day ending in an ordinary evening",
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Deliver the block's question: whether it is still worth what it costs.",
+      "visualIntent": "A quiet balanced image of exchange — a full day ending, its cost and yield both visible in an ordinary evening.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N032-S1",
+      "narrationId": "N032",
+      "familyId": "SF-11",
+      "asset": {
+        "id": "pexels-video-34580818",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N032-S1-video-34580818.mp4",
+        "sha256": "6f83557cda78603be6e0aa61c5690925ae0bcc28aed448b5a3fb92c53be19a66"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": {
+        "reusesSlot": "N014-S4",
+        "motif": "sunlit quiet corner chair reprising at the closing 'ordinary people, separate quiet frames' beat"
+      },
+      "editorialFunction": "Return the question to the viewer: only each of us can answer.",
+      "visualIntent": "Ordinary people in separate quiet frames — at windows, on porches, in kitchens — each mid-thought; no single protagonist anymore.",
+      "targetDurationSec": 8.5
+    },
+    {
+      "slotId": "N032-S2",
+      "narrationId": "N032",
+      "familyId": "SF-05",
+      "asset": {
+        "id": "pexels-video-4505486",
+        "mediaType": "video",
+        "localPath": "projects/ESSY-0003/sourcing/downloads/N032-S2-video-4505486.mp4",
+        "sha256": "db01d5f6efcbdb2b18acd1a55121f4ecb25ecd4db5f76f7f8c8534bc1b0a5ba0"
+      },
+      "selectionNote": null,
+      "intentionalMotifReuse": false,
+      "editorialFunction": "Hold the final question open over the closing frame; visually rhyme with the cold-open title surface.",
+      "visualIntent": "The same kind of still, softly lit interior with negative space as N002-S1 — the film ends where its title began, question unresolved.",
+      "targetDurationSec": 8.5
+    }
+  ],
+  "provenanceFile": "projects/ESSY-0003/sourcing/downloads/provenance.json",
+  "gate": {
+    "allSlotsCovered": true,
+    "distinctAssets": 92,
+    "intentionalReprises": 9
+  }
+}

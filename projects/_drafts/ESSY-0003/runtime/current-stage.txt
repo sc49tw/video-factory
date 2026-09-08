@@ -1,0 +1,24 @@
+Draft: ESSY-0003
+Series: ESSY
+Subtype: essay
+Current stage: RENDER
+
+Read:
+- workflows/episode-production.workflow.yaml
+- series/ESSY/series.yaml
+- series/ESSY/creative-direction.md
+- series/ESSY/style-guide.md
+- projects/_drafts/ESSY-0003/request.yaml
+- projects/_drafts/ESSY-0003/state.yaml
+- projects/_drafts/ESSY-0003/concept.yaml
+- projects/_drafts/ESSY-0003/script.md
+- projects/_drafts/ESSY-0003/storyboard.yaml
+
+Task:
+Use the existing renderer and complete QA.
+
+Required output: output/<EPISODE>/<EPISODE>.mp4
+
+Stop condition:
+Record QA approval after review.
+Only perform the current stage. Do not create later-stage artifacts.

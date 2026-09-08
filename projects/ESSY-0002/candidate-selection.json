@@ -1,0 +1,727 @@
+{
+  "episodeId": "ESSY-0002",
+  "title": "When the Future Suddenly Becomes Visible",
+  "version": 1,
+  "sourceContactSheet": "pexels-contact-sheet-N001-N018.html",
+  "reviewScope": {
+    "plannedSlots": 64,
+    "slotGroupsPresentInContactSheet": 63,
+    "note": "The supplied contact sheet contains 63 slot groups. N005-S4 is absent and is therefore marked RESEARCH."
+  },
+  "reviewPolicy": {
+    "selectedMeaning": "Editorially preferred from the supplied candidate set; keep preview approval as the final pre-download gate.",
+    "researchMeaning": "Do not download any current candidate for this slot; run a targeted replacement search.",
+    "sequenceChecks": [
+      "avoid consecutive keyword-to-stock literalism",
+      "avoid nostalgia, loneliness, mortality, and wellness clichés unless editorially necessary",
+      "prefer ordinary domestic observation over staged emotional acting",
+      "avoid repeated crossroads, fog-road, empty-bench, autumn-leaf, balanced-stone, and similar conspicuous metaphors"
+    ]
+  },
+  "summary": {
+    "selected": 42,
+    "research": 22
+  },
+  "reviews": [
+    {
+      "slotId": "N001-S1",
+      "status": "SELECTED",
+      "intent": "Dim home hallway at night, one lamp, stillness.",
+      "selectedAsset": {
+        "assetId": "pexels-video-19217894",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-dark-hallway-with-a-light-on-the-wall-19217894/",
+        "previewUrl": "https://images.pexels.com/videos/19217894/aisle-alone-dark-darkness-19217894.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-19217894 | 10s | 3840x2160 | Nino Souza"
+      },
+      "reason": "Strong atmospheric opener: domestic stillness without prematurely medicalizing the story."
+    },
+    {
+      "slotId": "N001-S2",
+      "status": "RESEARCH",
+      "intent": "Elderly hand on bed edge or armrest, slow deliberate effort.",
+      "reason": "Candidates drift into hospital care, pulse checking, nostalgia, or sadness; none cleanly shows slow physical effort at home.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N001-S3",
+      "status": "SELECTED",
+      "intent": "Dark room, door ajar, warm light spilling out.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-147634",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/steel-door-handle-on-door-147634/",
+        "previewUrl": "https://images.pexels.com/photos/147634/pexels-photo-147634.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-147634 | 4945x3297 | lalesh aldarwish | A dark room with a door slightly ajar, revealing a glowing light through the opening."
+      },
+      "reason": "Still-image fallback matches the doorway/light composition cleanly and avoids the horror-coded video candidates."
+    },
+    {
+      "slotId": "N002-S1",
+      "status": "SELECTED",
+      "intent": "Hands with pill organizer and glass of water, close and practical.",
+      "selectedAsset": {
+        "assetId": "pexels-video-8580945",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/person-putting-medicines-in-a-pill-box-8580945/",
+        "previewUrl": "https://images.pexels.com/videos/8580945/achievement-adult-aid-architecture-8580945.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-8580945 | 27s | 1920x1080 | RDNE Stock project"
+      },
+      "reason": "Practical medication organization reads as an ordinary task rather than a crisis."
+    },
+    {
+      "slotId": "N002-S2",
+      "status": "SELECTED",
+      "intent": "Supporting someone to sit, steady and unhurried.",
+      "selectedAsset": {
+        "assetId": "pexels-video-7522208",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-bearded-man-assisting-an-elderly-man-to-bed-1-7522208/",
+        "previewUrl": "https://images.pexels.com/videos/7522208/pexels-photo-7522208.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-7522208 | 10s | 3840x2160 | Kampus Production"
+      },
+      "reason": "Directly supports the physical helping action and keeps the scene domestic."
+    },
+    {
+      "slotId": "N002-S3",
+      "status": "SELECTED",
+      "intent": "Calm bedroom with nightlight, stillness after the effort.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-28500445",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/cozy-bedroom-night-scene-with-table-lamp-28500445/",
+        "previewUrl": "https://images.pexels.com/photos/28500445/pexels-photo-28500445.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-28500445 | 6240x4160 | Hoài  Nam | Illuminated bedside table with modern glass lamp and pillows at night."
+      },
+      "reason": "Quiet bedside-lamp still gives needed decompression after two literal human-action shots."
+    },
+    {
+      "slotId": "N003-S1",
+      "status": "SELECTED",
+      "intent": "Elderly man resting; the room is calm.",
+      "selectedAsset": {
+        "assetId": "pexels-video-9057933",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/an-elderly-man-preparing-to-sleep-9057933/",
+        "previewUrl": "https://images.pexels.com/videos/9057933/elderly-elderly-man-grandfather-grandpa-9057933.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-9057933 | 18s | 3840x2160 | SHVETS production"
+      },
+      "reason": "Natural bedtime behavior supports 'the immediate problem had passed' without adding overt distress."
+    },
+    {
+      "slotId": "N003-S2",
+      "status": "SELECTED",
+      "intent": "Empty living room at night, silence and stillness.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-8887627",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/table-and-chairs-inside-a-dark-room-8887627/",
+        "previewUrl": "https://images.pexels.com/photos/8887627/pexels-photo-8887627.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-8887627 | 9504x6336 | Thomas  balabaud | A dimly lit dining room with vintage chairs and table, seen through a window at night."
+      },
+      "reason": "Empty domestic interior creates aftermath and silence without another actor."
+    },
+    {
+      "slotId": "N003-S3",
+      "status": "SELECTED",
+      "intent": "Person at a window at night, city lights distant, contemplation.",
+      "selectedAsset": {
+        "assetId": "pexels-video-4538212",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/man-standing-in-front-of-the-window-4538212/",
+        "previewUrl": "https://images.pexels.com/videos/4538212/test-4538212.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-4538212 | 16s | 3840x2160 | NetMovies Produ"
+      },
+      "reason": "Reflective night-window composition moves the emphasis from event to thought."
+    },
+    {
+      "slotId": "N004-S1",
+      "status": "RESEARCH",
+      "intent": "Walking cane by the door, elderly hands, ordinary morning.",
+      "reason": "Candidates either introduce a hospital setting, fashion/stylization, or do not clearly deliver the intended ordinary cane-by-the-door detail.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N004-S2",
+      "status": "SELECTED",
+      "intent": "Reading glasses and medicine bottles in morning light; the one literal establishing shot for this block.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-9874613",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/pile-of-books-and-mixture-of-pills-and-medicines-laying-on-bed-table-9874613/",
+        "previewUrl": "https://images.pexels.com/photos/9874613/pexels-photo-9874613.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-9874613 | 4849x3233 | Ron Lach | A cozy interior scene with medicines and books on a wooden bedside table, offering a warm"
+      },
+      "reason": "Books/medication in a lived-in bedside setting is less clinical than the medication-only alternatives."
+    },
+    {
+      "slotId": "N004-S3",
+      "status": "SELECTED",
+      "intent": "Elderly man walking slowly in a park, ordinary and dignified.",
+      "selectedAsset": {
+        "assetId": "pexels-video-29476597",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/man-walking-on-tree-lined-pathway-in-park-29476597/",
+        "previewUrl": "https://images.pexels.com/videos/29476597/pexels-photo-29476597.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-29476597 | 32s | 3840x2160 | 대정 김"
+      },
+      "reason": "Slow park walking provides dignified ordinary aging and useful visual scale change."
+    },
+    {
+      "slotId": "N005-S1",
+      "status": "RESEARCH",
+      "intent": "Old family photographs on a table, hands looking through them.",
+      "reason": "The old-photo candidates add nostalgia/loss symbolism too early and create a literal aging montage.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N005-S2",
+      "status": "RESEARCH",
+      "intent": "Unfinished crossword and misplaced everyday objects on a table.",
+      "reason": "Crossword/Sudoku candidates imply cognitive decline too directly and would compound N005's keyword-by-keyword illustration.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N005-S3",
+      "status": "SELECTED",
+      "intent": "Person sitting alone at a kitchen table in the evening, thinking.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-6756345",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/a-man-sitting-in-a-kitchen-6756345/",
+        "previewUrl": "https://images.pexels.com/photos/6756345/pexels-photo-6756345.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-6756345 | 6240x4160 | cottonbro studio | A man sits thoughtfully in a kitchen, captured with ambient lighting."
+      },
+      "reason": "A restrained kitchen contemplation still is preferable to the loneliness-coded video alternatives."
+    },
+    {
+      "slotId": "N005-S4",
+      "status": "RESEARCH",
+      "intent": null,
+      "reason": "No N005-S4 candidate group exists in the supplied contact sheet; new search is required.",
+      "candidateCountReviewed": 0
+    },
+    {
+      "slotId": "N006-S1",
+      "status": "SELECTED",
+      "intent": "Morning coffee routine, sunrise light, ordinary kitchen.",
+      "selectedAsset": {
+        "assetId": "pexels-video-35674366",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/cozy-morning-in-a-sunlit-kitchen-with-cat-35674366/",
+        "previewUrl": "https://images.pexels.com/videos/35674366/at-home-beautiful-calming-cat-35674366.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-35674366 | 16s | 3840x2160 | Alex Moliski"
+      },
+      "reason": "Ordinary sunlit kitchen routine restores everyday continuity after the incident."
+    },
+    {
+      "slotId": "N006-S2",
+      "status": "SELECTED",
+      "intent": "Clouds shifting over a calm landscape; nothing wrong, nothing guaranteed.",
+      "selectedAsset": {
+        "assetId": "pexels-video-9010687",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/time-lapse-of-moving-clouds-9010687/",
+        "previewUrl": "https://images.pexels.com/videos/9010687/4k-beautiful-bright-california-9010687.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-9010687 | 10s | 3840x2160 | Kindel Media"
+      },
+      "reason": "Simple moving clouds provide a brief neutral transition without crisis imagery."
+    },
+    {
+      "slotId": "N006-S3",
+      "status": "SELECTED",
+      "intent": "People flowing through an ordinary city morning.",
+      "selectedAsset": {
+        "assetId": "pexels-video-853830",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/people-walking-on-street-853830/",
+        "previewUrl": "https://images.pexels.com/videos/853830/free-video-853830.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-853830 | 20s | 1920x1080 | Coverr"
+      },
+      "reason": "Street flow clearly returns the sequence to normal collective routine."
+    },
+    {
+      "slotId": "N007-S1",
+      "status": "SELECTED",
+      "intent": "Writing plans in a notebook beside a calendar; the one literal establishing shot for planning.",
+      "selectedAsset": {
+        "assetId": "pexels-video-9903482",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-person-making-his-schedule-9903482/",
+        "previewUrl": "https://images.pexels.com/videos/9903482/adult-art-arts-and-crafts-at-table-9903482.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-9903482 | 17s | 4096x2160 | Ron Lach"
+      },
+      "reason": "Scheduling action establishes planning literally once, as intended."
+    },
+    {
+      "slotId": "N007-S2",
+      "status": "RESEARCH",
+      "intent": "Elderly couple walking along a beach in soft morning light.",
+      "reason": "The elderly-couple-on-beach set reads as retirement/lifestyle stock and over-specifies an imagined future.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N007-S3",
+      "status": "SELECTED",
+      "intent": "Tidy bright living room, still morning light, everything in place.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-32922275",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/minimalist-living-room-with-neutral-tones-32922275/",
+        "previewUrl": "https://images.pexels.com/photos/32922275/pexels-photo-32922275.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-32922275 | 5800x3867 | Letícia Alvares | A peaceful interior with a minimalist aesthetic featuring a beige sofa, wooden table, and"
+      },
+      "reason": "Neutral orderly living-room still conveys assumed stability without another planning prop."
+    },
+    {
+      "slotId": "N008-S1",
+      "status": "SELECTED",
+      "intent": "Family discussing around a kitchen table with documents; the one literal establishing shot for the question list.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-9870228",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/afro-american-man-and-caucasian-woman-having-meeting-at-home-with-social-worker-9870228/",
+        "previewUrl": "https://images.pexels.com/photos/9870228/pexels-photo-9870228.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-9870228 | 5397x3598 | Ron Lach | Couple having a thoughtful conversation at home in a modern kitchen setting."
+      },
+      "reason": "Home conversation image is calmer and less melodramatic than the arguing/bills videos."
+    },
+    {
+      "slotId": "N008-S2",
+      "status": "SELECTED",
+      "intent": "A hand checking a stair handrail; safety as a small concrete act.",
+      "selectedAsset": {
+        "assetId": "pexels-video-6711918",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/person-walking-down-the-stairs-6711918/",
+        "previewUrl": "https://images.pexels.com/videos/6711918/pexels-photo-6711918.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-6711918 | 9s | 2560x1440 | Martina Tomšič"
+      },
+      "reason": "Stair movement makes home-safety constraints concrete without a staged safety demonstration."
+    },
+    {
+      "slotId": "N008-S3",
+      "status": "SELECTED",
+      "intent": "A parent commuting in the evening; life already full.",
+      "selectedAsset": {
+        "assetId": "pexels-video-34573865",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/subway-journey-through-dimly-lit-train-car-34573865/",
+        "previewUrl": "https://images.pexels.com/videos/34573865/pexels-photo-34573865.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-34573865 | 52s | 1920x1080 | Caleb Oquendo"
+      },
+      "reason": "Long subway journey gives adult-life pressure and transition without burnout acting."
+    },
+    {
+      "slotId": "N009-S1",
+      "status": "RESEARCH",
+      "intent": "Crossroads and diverging paths in an open landscape.",
+      "reason": "Crossroads/diverging-road imagery is an over-familiar decision metaphor and conflicts with the restrained ESSY tone.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N009-S2",
+      "status": "SELECTED",
+      "intent": "Evening desk at home, work unfinished, one lamp.",
+      "selectedAsset": {
+        "assetId": "pexels-video-6377575",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/woman-using-a-laptop-at-home-6377575/",
+        "previewUrl": "https://images.pexels.com/videos/6377575/pexels-photo-6377575.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-6377575 | 12s | 3840x2160 | ArtHouse Studio"
+      },
+      "reason": "Home laptop work communicates competing demands in a grounded, non-symbolic way."
+    },
+    {
+      "slotId": "N009-S3",
+      "status": "SELECTED",
+      "intent": "A caregiver greeting an elderly person at the door; neutral, human.",
+      "selectedAsset": {
+        "assetId": "pexels-video-6646685",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-male-volunteer-visiting-an-elderly-man-6646685/",
+        "previewUrl": "https://images.pexels.com/videos/6646685/africa-causes-change-charity-6646685.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-6646685 | 18s | 1920x1080 | RDNE Stock project"
+      },
+      "reason": "Volunteer visit is the closest neutral human representation of outside support arriving at home."
+    },
+    {
+      "slotId": "N009-S4",
+      "status": "SELECTED",
+      "intent": "An old wooden staircase, uneven light and shadow.",
+      "selectedAsset": {
+        "assetId": "pexels-video-4990441",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/wooden-staircase-4990441/",
+        "previewUrl": "https://images.pexels.com/videos/4990441/pexels-photo-4990441.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-4990441 | 8s | 2560x1080 | Pavel Danilyuk"
+      },
+      "reason": "The old staircase works as an environmental constraint rather than another caregiving performance."
+    },
+    {
+      "slotId": "N009-S5",
+      "status": "RESEARCH",
+      "intent": "Stacked balanced stones in nature.",
+      "reason": "Balanced stones are a generic wellness/balance cliché and feel artificially philosophical.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N010-S1",
+      "status": "SELECTED",
+      "intent": "Hands sketching diagrams in a notebook.",
+      "selectedAsset": {
+        "assetId": "pexels-video-8275955",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-person-drawing-a-graph-in-a-notebook-8275955/",
+        "previewUrl": "https://images.pexels.com/videos/8275955/adult-banking-book-bindings-business-8275955.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-8275955 | 22s | 1920x1080 | PNW Production"
+      },
+      "reason": "Notebook graphing fits the problem-solving mindset with minimal corporate stock language."
+    },
+    {
+      "slotId": "N010-S2",
+      "status": "SELECTED",
+      "intent": "Weather moving over mountains; large, indifferent, calm.",
+      "selectedAsset": {
+        "assetId": "pexels-video-8025546",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/video-of-a-sky-and-mountains-8025546/",
+        "previewUrl": "https://images.pexels.com/videos/8025546/pexels-photo-8025546.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-8025546 | 17s | 3840x2160 | Yaroslav Shuraev"
+      },
+      "reason": "Large-scale weather creates a useful scale shift after desk/problem-solving imagery."
+    },
+    {
+      "slotId": "N010-S3",
+      "status": "SELECTED",
+      "intent": "A river flowing steadily in one direction.",
+      "selectedAsset": {
+        "assetId": "pexels-video-5963476",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/flowing-river-5963476/",
+        "previewUrl": "https://images.pexels.com/videos/5963476/pexels-photo-5963476.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-5963476 | 21s | 3840x2160 | Grisha Grishkoff"
+      },
+      "reason": "Steady river movement supports irreversible direction while remaining calm and visually simple."
+    },
+    {
+      "slotId": "N011-S1",
+      "status": "RESEARCH",
+      "intent": "Autumn leaves falling in sunlight.",
+      "reason": "Autumn leaves are an overly conventional impermanence/aging metaphor.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N011-S2",
+      "status": "RESEARCH",
+      "intent": "Cloud shapes drifting in a blue sky.",
+      "reason": "A second consecutive nature/time metaphor after N010 would make the sequence feel generic and detached from ordinary life.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N011-S3",
+      "status": "SELECTED",
+      "intent": "A person holding warm tea by a window, reflective.",
+      "selectedAsset": {
+        "assetId": "pexels-video-6343834",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-person-holding-the-mug-6343834/",
+        "previewUrl": "https://images.pexels.com/videos/6343834/pexels-photo-6343834.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-6343834 | 14s | 4096x2160 | KATRIN  BOLOVTSOVA"
+      },
+      "reason": "Hands with a mug by a window brings the philosophical section back into ordinary embodied life."
+    },
+    {
+      "slotId": "N012-S1",
+      "status": "SELECTED",
+      "intent": "Elderly parents in their garden on an ordinary sunny day.",
+      "selectedAsset": {
+        "assetId": "pexels-video-7844216",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/grandfather-repairing-the-wheel-of-garden-cart-7844216/",
+        "previewUrl": "https://images.pexels.com/videos/7844216/pexels-photo-7844216.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-7844216 | 22s | 3840x2160 | Kampus Production"
+      },
+      "reason": "Grandfather doing practical garden work shows familiar competence and ordinary parental presence."
+    },
+    {
+      "slotId": "N012-S2",
+      "status": "RESEARCH",
+      "intent": "An empty garden chair, wind moving leaves, afternoon.",
+      "reason": "Empty bench/chair imagery risks loneliness and mortality symbolism; the available alternatives do not cleanly preserve ordinary presence/absence.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N012-S3",
+      "status": "SELECTED",
+      "intent": "A calm sea horizon in soft grey light; contemplative distance.",
+      "selectedAsset": {
+        "assetId": "pexels-video-5406291",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/waves-on-pebble-beach-shore-5406291/",
+        "previewUrl": "https://images.pexels.com/videos/5406291/pexels-photo-5406291.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-5406291 | 120s | 3840x2160 | Dey Kheireddine"
+      },
+      "reason": "Long, calm sea footage provides contemplative distance and enough source duration."
+    },
+    {
+      "slotId": "N012-S4",
+      "status": "SELECTED",
+      "intent": "Slow shadows crossing a quiet room across an afternoon.",
+      "selectedAsset": {
+        "assetId": "pexels-video-4099278",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-moving-window-shadow-on-the-bedroom-wall-4099278/",
+        "previewUrl": "https://images.pexels.com/videos/4099278/bed-bedroom-book-spring-4099278.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-4099278 | 14s | 1920x1080 | Léo Merchadou"
+      },
+      "reason": "Moving window shadows make time passing observable inside an ordinary room."
+    },
+    {
+      "slotId": "N013-S1",
+      "status": "SELECTED",
+      "intent": "Bedroom at night, lamp on, a person resting peacefully.",
+      "selectedAsset": {
+        "assetId": "pexels-video-6598397",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-woman-dimming-the-light-on-a-lamp-6598397/",
+        "previewUrl": "https://images.pexels.com/videos/6598397/accent-advertisement-apartment-asleep-6598397.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-6598397 | 17s | 3840x2160 | Hanna Pad"
+      },
+      "reason": "Dimming a bedside lamp supports calm after the crisis without another explicit elderly close-up."
+    },
+    {
+      "slotId": "N013-S2",
+      "status": "SELECTED",
+      "intent": "A person standing in a night kitchen under a single lamp with coffee.",
+      "selectedAsset": {
+        "assetId": "pexels-video-7172119",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/man-drinking-coffee-and-looking-outside-7172119/",
+        "previewUrl": "https://images.pexels.com/videos/7172119/pexels-photo-7172119.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-7172119 | 18s | 3840x2160 | MART  PRODUCTION"
+      },
+      "reason": "Quiet coffee/window behavior conveys wakeful reflection without melodramatic acting."
+    },
+    {
+      "slotId": "N013-S3",
+      "status": "SELECTED",
+      "intent": "A night window reflection, street lights as soft bokeh.",
+      "selectedAsset": {
+        "assetId": "pexels-video-1978094",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/view-from-a-window-1978094/",
+        "previewUrl": "https://images.pexels.com/videos/1978094/free-video-1978094.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-1978094 | 9s | 1920x1080 | Burak The Weekender"
+      },
+      "reason": "Window-view footage externalizes the mind moving beyond the present while staying restrained."
+    },
+    {
+      "slotId": "N014-S1",
+      "status": "SELECTED",
+      "intent": "Hands writing important documents in a folder at home; the one literal establishing shot for preparation.",
+      "selectedAsset": {
+        "assetId": "pexels-video-5637948",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/woman-filling-a-form-at-office-desk-5637948/",
+        "previewUrl": "https://images.pexels.com/videos/5637948/pexels-photo-5637948.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-5637948 | 10s | 3840x2160 | Sora Shimazaki"
+      },
+      "reason": "Form/document writing gives one clear literal preparation shot before the sequence moves away from paperwork."
+    },
+    {
+      "slotId": "N014-S2",
+      "status": "RESEARCH",
+      "intent": "A single umbrella in a vast minimal landscape.",
+      "reason": "Available boat/horizon/lone-chair imagery is too symbolic and does not match the stated umbrella intent without adding solitude symbolism.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N014-S3",
+      "status": "RESEARCH",
+      "intent": "Fog covering a road; the way ahead invisible but the road remains.",
+      "reason": "Fog-road imagery is a familiar uncertainty metaphor and would make the philosophical section visually too explicit.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N015-S1",
+      "status": "RESEARCH",
+      "intent": "Hands releasing a kite string into the sky.",
+      "reason": "Kite imagery turns 'limits of control' into a conspicuous metaphor and risks sentimental uplift.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N015-S2",
+      "status": "RESEARCH",
+      "intent": "Tucking a blanket over a sleeping person in gentle light.",
+      "reason": "Candidates do not clearly show the intended small caregiving action without shifting to spouse/young-family/sleep imagery.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N015-S3",
+      "status": "RESEARCH",
+      "intent": "Two people walking separate paths from the same house in autumn.",
+      "reason": "Candidates show people walking together, not separate responsibilities/paths; selecting them would change the editorial meaning.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N015-S4",
+      "status": "RESEARCH",
+      "intent": "Warm dusk light across a lived-in family home.",
+      "reason": "Available family/living-room candidates look generic or staged and do not convincingly provide a lived-in breathing-space shot.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N016-S1",
+      "status": "SELECTED",
+      "intent": "A vine growing over a garden fence, untamed.",
+      "selectedAsset": {
+        "assetId": "pexels-video-1535673",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/plant-crawling-on-a-wire-fence-1535673/",
+        "previewUrl": "https://images.pexels.com/videos/1535673/free-video-1535673.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-1535673 | 10s | 1920x1080 | Motion Places - Free Stock Video"
+      },
+      "reason": "The growing vine is subtle enough as environmental imagery and breaks up the run of domestic interiors."
+    },
+    {
+      "slotId": "N016-S2",
+      "status": "RESEARCH",
+      "intent": "A person at a crossroads of lamplit streets at night.",
+      "reason": "Night crossroads is another literal decision metaphor; reject to avoid repeating N009's rejected crossroads language.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N016-S3",
+      "status": "RESEARCH",
+      "intent": "A hedge maze seen from above.",
+      "reason": "The hedge maze is a conspicuous 'life is complicated' metaphor and feels too designed for this essay.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N016-S4",
+      "status": "RESEARCH",
+      "intent": "An empty park bench under autumn leaves, quiet afternoon.",
+      "reason": "Empty autumn bench strongly codes absence/loneliness/mortality, exactly the unintended symbolism the playbook warns about.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N017-S1",
+      "status": "RESEARCH",
+      "intent": "Hands calmly closing a notebook under a desk lamp.",
+      "reason": "Candidates show writing rather than the intended act of calmly closing/setting aside planning; new search should target completion/release.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N017-S2",
+      "status": "SELECTED",
+      "intent": "Elderly hands gardening, planting in soil, sunlight.",
+      "selectedAsset": {
+        "assetId": "pexels-video-7655276",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-couple-planting-vegetables-7655276/",
+        "previewUrl": "https://images.pexels.com/videos/7655276/pexels-photo-7655276.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-7655276 | 8s | 3840x2160 | Kampus Production"
+      },
+      "reason": "Gardening together is a concrete, manageable act and restores ordinary agency late in the essay."
+    },
+    {
+      "slotId": "N017-S3",
+      "status": "SELECTED",
+      "intent": "A cup of tea, steam rising, evening window light.",
+      "selectedAsset": {
+        "assetId": "pexels-video-30067844",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/cozy-winter-evening-with-tea-and-candlelight-30067844/",
+        "previewUrl": "https://images.pexels.com/videos/30067844/atmospheric-mood-candle-arrangement-contemplative-mood-dark-ambience-30067844.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-30067844 | 10s | 3840x2160 | Stefanie Jockschat"
+      },
+      "reason": "Warm tea/candlelight gives a quiet pause before the final return to the original evening."
+    },
+    {
+      "slotId": "N018-S1",
+      "status": "SELECTED",
+      "intent": "An elderly man resting peacefully at night; the room is calm.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-8860200",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/adult-man-sleeping-8860200/",
+        "previewUrl": "https://images.pexels.com/photos/8860200/pexels-photo-8860200.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-8860200 | 6000x4000 | cottonbro studio | Senior man sleeping in a stylish bedroom with a nightstand and framed photos."
+      },
+      "reason": "Still photo of a sleeping senior is calmer and less narratively specific than the available phone/grandson videos."
+    },
+    {
+      "slotId": "N018-S2",
+      "status": "RESEARCH",
+      "intent": "Hallway lights turning off one by one at night.",
+      "reason": "The strongest literal candidate shows lights turning on, not off; other options do not deliver the intended quiet shutdown.",
+      "candidateCountReviewed": 5
+    },
+    {
+      "slotId": "N018-S3",
+      "status": "SELECTED",
+      "intent": "Dishes drying on a rack in a quiet night kitchen.",
+      "selectedAsset": {
+        "assetId": "pexels-video-4109492",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/house-glass-kitchen-apartment-4109492/",
+        "previewUrl": "https://images.pexels.com/videos/4109492/pexels-photo-4109492.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-4109492 | 25s | 4096x2160 | cottonbro studio"
+      },
+      "reason": "General kitchen footage supports ordinary life continuing without forcing a sentimental family moment."
+    },
+    {
+      "slotId": "N018-S4",
+      "status": "SELECTED",
+      "intent": "A family photograph in a frame on a shelf, soft focus.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-10608455",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/close-up-of-polaroid-photos-10608455/",
+        "previewUrl": "https://images.pexels.com/photos/10608455/pexels-photo-10608455.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-10608455 | 5800x3867 | Ron Lach | Charming home interior featuring polaroid photos and stones on a wooden shelf."
+      },
+      "reason": "Polaroids on a shelf suggest lived history without showing someone grieving over a photograph."
+    },
+    {
+      "slotId": "N018-S5",
+      "status": "SELECTED",
+      "intent": "A door slightly open, light spilling into a dark room.",
+      "selectedAsset": {
+        "assetId": "pexels-photo-4132661",
+        "mediaType": "photo",
+        "sourceUrl": "https://www.pexels.com/photo/slightly-opened-door-in-dark-room-4132661/",
+        "previewUrl": "https://images.pexels.com/photos/4132661/pexels-photo-4132661.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "metadata": "pexels-photo-4132661 | 4032x3024 | Sam J | Beam of warm light coming through doorway with closed door into dark room"
+      },
+      "reason": "Warm light through a slightly open door directly echoes the opening visual language."
+    },
+    {
+      "slotId": "N018-S6",
+      "status": "SELECTED",
+      "intent": "A curtain moving in a night breeze as a lamp goes out.",
+      "selectedAsset": {
+        "assetId": "pexels-video-6944074",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/a-man-closing-the-curtain-6944074/",
+        "previewUrl": "https://images.pexels.com/videos/6944074/bed-bedroom-boredom-copyspace-6944074.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-6944074 | 41s | 4096x2160 | cottonbro studio"
+      },
+      "reason": "Closing curtains provides a natural end-of-night action and avoids a dramatic symbolic ending."
+    },
+    {
+      "slotId": "N018-S7",
+      "status": "SELECTED",
+      "intent": "A person standing calmly at a night window over the city.",
+      "selectedAsset": {
+        "assetId": "pexels-video-4018217",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/silhouette-of-a-person-standing-4018217/",
+        "previewUrl": "https://images.pexels.com/videos/4018217/pexels-photo-4018217.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+        "metadata": "pexels-video-4018217 | 45s | 3840x2160 | Honye Sanges"
+      },
+      "reason": "Long, calm window silhouette can hold the final lines without demanding closure."
+    }
+  ]
+}

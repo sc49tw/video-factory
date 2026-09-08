@@ -1,0 +1,24 @@
+{
+  "workingTitle": "How Much of Your Life Are You Still Willing to Sell?",
+  "channel": "A Second Look at Life",
+  "professionalFraming": "Reflective video essay examining the quiet question that appears inside a stable, successful career: how much of one's remaining life is still willing to be traded for financial security.",
+  "editorialTerritory": ["midlife", "work", "money", "time", "freedom", "ambition", "identity"],
+  "coreEditorialMethod": "Take the familiar assumption that a good career should simply be continued, and examine it again from the stage of life where time, not opportunity, becomes the scarce resource.",
+  "centralQuestion": "How much of my remaining life am I still willing to sell for financial security?",
+  "summary": "The episode examines the point at which competence, salary stability and accumulated identity make leaving a career feel irrational, distinguishes what we are suited for, good at, and still want to spend our lives doing, weighs the real value of financial security against its price in ordinary days, and reframes the purpose of security as buying choices about time rather than permanent safety.",
+  "centralLesson": "The purpose of financial security is not permanent safety but more choices about one's remaining time; the question is not whether work is still good, but whether it is still worth what it costs.",
+  "coldOpenStructure": {
+    "kind": "three-reflective-questions",
+    "experimental": true,
+    "sequence": [
+      "question 1: What if you're good at your job... but no longer want to spend your life doing it?",
+      "question 2: How much money is enough to make another year of your life worth trading away?",
+      "question 3: And if nothing forces you to leave... how will you ever know when it's time to choose something else?",
+      "short pause",
+      "channel name: A Second Look at Life",
+      "episode title: How Much of Your Life Are You Still Willing to Sell?",
+      "short pause",
+      "main essay"
+    ]
+  }
+}

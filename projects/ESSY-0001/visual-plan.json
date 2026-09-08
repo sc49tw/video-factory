@@ -1,0 +1,1424 @@
+{
+  "schemaVersion": "1.0",
+  "planning": {
+    "strategy": "sentence-boundary-proportional",
+    "durationSource": "ffprobe",
+    "targetShots": 59
+  },
+  "shots": [
+    {
+      "id": "shot-001",
+      "index": 0,
+      "sentenceId": "sentence-001",
+      "sectionId": "n001",
+      "image": "scene01.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 9.341852,
+      "endSec": 9.341852,
+      "cues": [
+        {
+          "startSec": 0.100031,
+          "endSec": 5.669731,
+          "text": "For the first few decades of life, progress usually means adding something."
+        },
+        {
+          "startSec": 5.619715,
+          "endSec": 7.637331,
+          "text": "More skills."
+        },
+        {
+          "startSec": 7.637331,
+          "endSec": 9.341852,
+          "text": "More money."
+        }
+      ]
+    },
+    {
+      "id": "shot-002",
+      "index": 1,
+      "sentenceId": "sentence-001",
+      "sectionId": "n001",
+      "image": "scene01.png",
+      "motionIndex": 1,
+      "startSec": 9.341852,
+      "speechEndSec": 17.782428,
+      "endSec": 17.782428,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.003611,
+          "text": "More friends."
+        },
+        {
+          "startSec": 2.003611,
+          "endSec": 3.979214,
+          "text": "A better job."
+        },
+        {
+          "startSec": 3.979214,
+          "endSec": 5.953817,
+          "text": "A bigger home."
+        },
+        {
+          "startSec": 5.953817,
+          "endSec": 8.440576,
+          "text": "More experiences."
+        }
+      ]
+    },
+    {
+      "id": "shot-003",
+      "index": 2,
+      "sentenceId": "sentence-001",
+      "sectionId": "n001",
+      "image": "scene01.png",
+      "motionIndex": 0,
+      "startSec": 17.782428,
+      "speechEndSec": 26.208,
+      "endSec": 26.808,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.102642,
+          "text": "More options."
+        },
+        {
+          "startSec": 2.102642,
+          "endSec": 5.399648,
+          "text": "When you're young, this makes sense."
+        },
+        {
+          "startSec": 5.399648,
+          "endSec": 8.425572,
+          "text": "Your world is still expanding."
+        }
+      ]
+    },
+    {
+      "id": "shot-004",
+      "index": 3,
+      "sentenceId": "sentence-002",
+      "sectionId": "n002",
+      "image": "scene02.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 8.15552,
+      "endSec": 8.15552,
+      "cues": [
+        {
+          "startSec": 0.100031,
+          "endSec": 8.15552,
+          "text": "You don't know where you'll live, what kind of work you'll do, who you'll become, or what kind of life you'll eventually build."
+        },
+        {
+          "startSec": 8.105504,
+          "endSec": 8.15552,
+          "text": "So you collect possibilities."
+        }
+      ]
+    },
+    {
+      "id": "shot-005",
+      "index": 4,
+      "sentenceId": "sentence-002",
+      "sectionId": "n002",
+      "image": "scene02.png",
+      "motionIndex": 0,
+      "startSec": 8.15552,
+      "speechEndSec": 10.933378,
+      "endSec": 10.933378,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.777858,
+          "text": "So you collect possibilities."
+        }
+      ]
+    },
+    {
+      "id": "shot-006",
+      "index": 5,
+      "sentenceId": "sentence-002",
+      "sectionId": "n002",
+      "image": "scene02.png",
+      "motionIndex": 1,
+      "startSec": 10.933378,
+      "speechEndSec": 13.065037,
+      "endSec": 13.065037,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.131659,
+          "text": "You say yes."
+        }
+      ]
+    },
+    {
+      "id": "shot-007",
+      "index": 6,
+      "sentenceId": "sentence-002",
+      "sectionId": "n002",
+      "image": "scene02.png",
+      "motionIndex": 0,
+      "startSec": 13.065037,
+      "speechEndSec": 15.196695,
+      "endSec": 15.196695,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.131658,
+          "text": "You try things."
+        }
+      ]
+    },
+    {
+      "id": "shot-008",
+      "index": 7,
+      "sentenceId": "sentence-002",
+      "sectionId": "n002",
+      "image": "scene02.png",
+      "motionIndex": 1,
+      "startSec": 15.196695,
+      "speechEndSec": 17.583433,
+      "endSec": 17.583433,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.386738,
+          "text": "You keep doors open."
+        }
+      ]
+    },
+    {
+      "id": "shot-009",
+      "index": 8,
+      "sentenceId": "sentence-002",
+      "sectionId": "n002",
+      "image": "scene02.png",
+      "motionIndex": 0,
+      "startSec": 17.583433,
+      "speechEndSec": 22.656,
+      "endSec": 23.256,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.072567,
+          "text": "And for a while, having more choices feels exactly like freedom."
+        }
+      ]
+    },
+    {
+      "id": "shot-010",
+      "index": 9,
+      "sentenceId": "sentence-003",
+      "sectionId": "n003",
+      "image": "scene03.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 9.873907,
+      "endSec": 9.873907,
+      "cues": [
+        {
+          "startSec": 0.10009,
+          "endSec": 4.493053,
+          "text": "But somewhere along the way, something begins to change."
+        },
+        {
+          "startSec": 4.443008,
+          "endSec": 7.342624,
+          "text": "Not necessarily at forty."
+        },
+        {
+          "startSec": 7.342624,
+          "endSec": 9.873907,
+          "text": "Not on your birthday."
+        }
+      ]
+    },
+    {
+      "id": "shot-011",
+      "index": 10,
+      "sentenceId": "sentence-003",
+      "sectionId": "n003",
+      "image": "scene03.png",
+      "motionIndex": 0,
+      "startSec": 9.873907,
+      "speechEndSec": 17.736,
+      "endSec": 18.336,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.402874,
+          "text": "There isn't a particular morning when you wake up and suddenly understand your life."
+        },
+        {
+          "startSec": 5.402874,
+          "endSec": 7.862093,
+          "text": "It's more subtle than that."
+        }
+      ]
+    },
+    {
+      "id": "shot-012",
+      "index": 11,
+      "sentenceId": "sentence-004",
+      "sectionId": "n004",
+      "image": "scene04.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 8.267816,
+      "endSec": 8.267816,
+      "cues": [
+        {
+          "startSec": 0.100095,
+          "endSec": 5.445147,
+          "text": "You start noticing that every new thing you add also asks something from you."
+        },
+        {
+          "startSec": 5.3951,
+          "endSec": 8.267816,
+          "text": "Every possession needs space."
+        }
+      ]
+    },
+    {
+      "id": "shot-013",
+      "index": 12,
+      "sentenceId": "sentence-004",
+      "sectionId": "n004",
+      "image": "scene04.png",
+      "motionIndex": 0,
+      "startSec": 8.267816,
+      "speechEndSec": 18.220224,
+      "endSec": 18.220224,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.772621,
+          "text": "Every subscription wants money."
+        },
+        {
+          "startSec": 2.772621,
+          "endSec": 5.559255,
+          "text": "Every friendship needs time."
+        },
+        {
+          "startSec": 5.559255,
+          "endSec": 9.952408,
+          "text": "Every ambition creates another standard you can fail to meet."
+        }
+      ]
+    },
+    {
+      "id": "shot-014",
+      "index": 13,
+      "sentenceId": "sentence-004",
+      "sectionId": "n004",
+      "image": "scene04.png",
+      "motionIndex": 1,
+      "startSec": 18.220224,
+      "speechEndSec": 27.504,
+      "endSec": 28.104,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.455266,
+          "text": "Every opportunity becomes another decision."
+        },
+        {
+          "startSec": 3.455266,
+          "endSec": 9.283776,
+          "text": "And the things that once made life feel bigger can slowly begin to make it feel crowded."
+        }
+      ]
+    },
+    {
+      "id": "shot-015",
+      "index": 14,
+      "sentenceId": "sentence-005",
+      "sectionId": "n005",
+      "image": "scene05.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 7.793669,
+      "endSec": 7.793669,
+      "cues": [
+        {
+          "startSec": 0.100034,
+          "endSec": 5.399849,
+          "text": "Maybe this is one reason life starts feeling different in middle age."
+        },
+        {
+          "startSec": 5.349832,
+          "endSec": 7.793669,
+          "text": "The question changes."
+        }
+      ]
+    },
+    {
+      "id": "shot-016",
+      "index": 15,
+      "sentenceId": "sentence-005",
+      "sectionId": "n005",
+      "image": "scene05.png",
+      "motionIndex": 1,
+      "startSec": 7.793669,
+      "speechEndSec": 19.288606,
+      "endSec": 19.288606,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.626927,
+          "text": "When you're twenty-five, you might ask: What else can I do?"
+        },
+        {
+          "startSec": 5.626927,
+          "endSec": 11.494937,
+          "text": "Later, you may find yourself asking: What can I stop doing?"
+        }
+      ]
+    },
+    {
+      "id": "shot-017",
+      "index": 16,
+      "sentenceId": "sentence-005",
+      "sectionId": "n005",
+      "image": "scene05.png",
+      "motionIndex": 0,
+      "startSec": 19.288606,
+      "speechEndSec": 26.28,
+      "endSec": 26.88,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.500856,
+          "text": "That sounds like giving up."
+        },
+        {
+          "startSec": 2.500856,
+          "endSec": 6.991394,
+          "text": "But it might actually be the beginning of a different kind of freedom."
+        }
+      ]
+    },
+    {
+      "id": "shot-018",
+      "index": 17,
+      "sentenceId": "sentence-006",
+      "sectionId": "n006",
+      "image": "scene06.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 10.061149,
+      "endSec": 10.061149,
+      "cues": [
+        {
+          "startSec": 0.100111,
+          "endSec": 2.516789,
+          "text": "Think about your home."
+        },
+        {
+          "startSec": 2.466734,
+          "endSec": 7.870722,
+          "text": "Most of us don't wake up one day and decide to fill it with things we don't need."
+        },
+        {
+          "startSec": 7.870722,
+          "endSec": 10.061149,
+          "text": "It happens slowly."
+        }
+      ]
+    },
+    {
+      "id": "shot-019",
+      "index": 18,
+      "sentenceId": "sentence-006",
+      "sectionId": "n006",
+      "image": "scene06.png",
+      "motionIndex": 0,
+      "startSec": 10.061149,
+      "speechEndSec": 22.56,
+      "endSec": 23.16,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.071404,
+          "text": "A drawer becomes two drawers."
+        },
+        {
+          "startSec": 3.071404,
+          "endSec": 5.758382,
+          "text": "A shelf becomes a cabinet."
+        },
+        {
+          "startSec": 5.758382,
+          "endSec": 12.498851,
+          "text": "Something you once cared about becomes something you keep because throwing it away feels strangely difficult."
+        }
+      ]
+    },
+    {
+      "id": "shot-020",
+      "index": 19,
+      "sentenceId": "sentence-007",
+      "sectionId": "n007",
+      "image": "scene01.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 7.643381,
+      "endSec": 7.643381,
+      "cues": [
+        {
+          "startSec": 0.10011,
+          "endSec": 3.171477,
+          "text": "The same thing happens to calendars."
+        },
+        {
+          "startSec": 3.121423,
+          "endSec": 5.111605,
+          "text": "To commitments."
+        },
+        {
+          "startSec": 5.111605,
+          "endSec": 7.643381,
+          "text": "Even to identities."
+        }
+      ]
+    },
+    {
+      "id": "shot-021",
+      "index": 20,
+      "sentenceId": "sentence-007",
+      "sectionId": "n007",
+      "image": "scene01.png",
+      "motionIndex": 0,
+      "startSec": 7.643381,
+      "speechEndSec": 17.170828,
+      "endSec": 17.170828,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.445971,
+          "text": "A job title that once felt exciting becomes something you're afraid to lose."
+        },
+        {
+          "startSec": 5.445971,
+          "endSec": 9.527447,
+          "text": "A goal that once motivated you becomes an obligation."
+        }
+      ]
+    },
+    {
+      "id": "shot-022",
+      "index": 21,
+      "sentenceId": "sentence-007",
+      "sectionId": "n007",
+      "image": "scene01.png",
+      "motionIndex": 1,
+      "startSec": 17.170828,
+      "speechEndSec": 23.712,
+      "endSec": 24.312,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 6.541172,
+          "text": "A version of yourself that made sense ten years ago keeps making decisions for the person you are today."
+        }
+      ]
+    },
+    {
+      "id": "shot-023",
+      "index": 22,
+      "sentenceId": "sentence-008",
+      "sectionId": "n008",
+      "image": "scene02.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 8.178098,
+      "endSec": 8.178098,
+      "cues": [
+        {
+          "startSec": 0.100038,
+          "endSec": 5.214975,
+          "text": "And perhaps that's why simplifying life can feel so uncomfortable."
+        },
+        {
+          "startSec": 5.164956,
+          "endSec": 8.178098,
+          "text": "You're not just removing objects."
+        }
+      ]
+    },
+    {
+      "id": "shot-024",
+      "index": 23,
+      "sentenceId": "sentence-008",
+      "sectionId": "n008",
+      "image": "scene02.png",
+      "motionIndex": 1,
+      "startSec": 8.178098,
+      "speechEndSec": 18.48,
+      "endSec": 19.08,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.856082,
+          "text": "You're questioning old decisions."
+        },
+        {
+          "startSec": 2.856082,
+          "endSec": 7.388799,
+          "text": "You're admitting that some things mattered once, but don't anymore."
+        },
+        {
+          "startSec": 7.388799,
+          "endSec": 10.301902,
+          "text": "You're allowing yourself to change."
+        }
+      ]
+    },
+    {
+      "id": "shot-025",
+      "index": 24,
+      "sentenceId": "sentence-009",
+      "sectionId": "n009",
+      "image": "scene03.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 8.787484,
+      "endSec": 8.787484,
+      "cues": [
+        {
+          "startSec": 0.100028,
+          "endSec": 4.689326,
+          "text": "Modern life teaches us to measure progress through accumulation."
+        },
+        {
+          "startSec": 4.639312,
+          "endSec": 6.61387,
+          "text": "More income."
+        },
+        {
+          "startSec": 6.61387,
+          "endSec": 8.787484,
+          "text": "More productivity."
+        }
+      ]
+    },
+    {
+      "id": "shot-026",
+      "index": 25,
+      "sentenceId": "sentence-009",
+      "sectionId": "n009",
+      "image": "scene03.png",
+      "motionIndex": 1,
+      "startSec": 8.787484,
+      "speechEndSec": 17.867051,
+      "endSec": 17.867051,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.131603,
+          "text": "More followers."
+        },
+        {
+          "startSec": 2.131603,
+          "endSec": 4.391242,
+          "text": "More achievements."
+        },
+        {
+          "startSec": 4.391242,
+          "endSec": 9.079567,
+          "text": "Even self-improvement can become another form of accumulation."
+        }
+      ]
+    },
+    {
+      "id": "shot-027",
+      "index": 26,
+      "sentenceId": "sentence-009",
+      "sectionId": "n009",
+      "image": "scene03.png",
+      "motionIndex": 0,
+      "startSec": 17.867051,
+      "speechEndSec": 28.296,
+      "endSec": 28.896,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.330659,
+          "text": "More books to read."
+        },
+        {
+          "startSec": 2.330659,
+          "endSec": 4.745342,
+          "text": "More habits to build."
+        },
+        {
+          "startSec": 4.745342,
+          "endSec": 7.687174,
+          "text": "More routines to optimize."
+        },
+        {
+          "startSec": 7.687174,
+          "endSec": 10.428949,
+          "text": "More systems to maintain."
+        }
+      ]
+    },
+    {
+      "id": "shot-028",
+      "index": 27,
+      "sentenceId": "sentence-010",
+      "sectionId": "n010",
+      "image": "scene04.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 6.395066,
+      "endSec": 6.395066,
+      "cues": [
+        {
+          "startSec": 0.100048,
+          "endSec": 6.395066,
+          "text": "At some point, trying to improve your life can become another thing making your life exhausting."
+        },
+        {
+          "startSec": 6.345042,
+          "endSec": 6.395066,
+          "text": "Maybe the answer isn't always a better system."
+        }
+      ]
+    },
+    {
+      "id": "shot-029",
+      "index": 28,
+      "sentenceId": "sentence-010",
+      "sectionId": "n010",
+      "image": "scene04.png",
+      "motionIndex": 0,
+      "startSec": 6.395066,
+      "speechEndSec": 10.110847,
+      "endSec": 10.110847,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.715781,
+          "text": "Maybe the answer isn't always a better system."
+        }
+      ]
+    },
+    {
+      "id": "shot-030",
+      "index": 29,
+      "sentenceId": "sentence-010",
+      "sectionId": "n010",
+      "image": "scene04.png",
+      "motionIndex": 1,
+      "startSec": 10.110847,
+      "speechEndSec": 14.28885,
+      "endSec": 14.28885,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 4.178003,
+          "text": "Maybe sometimes the answer is having less to manage."
+        }
+      ]
+    },
+    {
+      "id": "shot-031",
+      "index": 30,
+      "sentenceId": "sentence-010",
+      "sectionId": "n010",
+      "image": "scene04.png",
+      "motionIndex": 0,
+      "startSec": 14.28885,
+      "speechEndSec": 17.344315,
+      "endSec": 17.344315,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.055465,
+          "text": "This doesn't mean becoming passive."
+        }
+      ]
+    },
+    {
+      "id": "shot-032",
+      "index": 31,
+      "sentenceId": "sentence-010",
+      "sectionId": "n010",
+      "image": "scene04.png",
+      "motionIndex": 1,
+      "startSec": 17.344315,
+      "speechEndSec": 19.888535,
+      "endSec": 19.888535,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.54422,
+          "text": "Or abandoning ambition."
+        }
+      ]
+    },
+    {
+      "id": "shot-033",
+      "index": 32,
+      "sentenceId": "sentence-010",
+      "sectionId": "n010",
+      "image": "scene04.png",
+      "motionIndex": 0,
+      "startSec": 19.888535,
+      "speechEndSec": 22.944,
+      "endSec": 23.544,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.055465,
+          "text": "It means becoming more selective."
+        }
+      ]
+    },
+    {
+      "id": "shot-034",
+      "index": 33,
+      "sentenceId": "sentence-011",
+      "sectionId": "n011",
+      "image": "scene05.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 12.719815,
+      "endSec": 12.719815,
+      "cues": [
+        {
+          "startSec": 0.100109,
+          "endSec": 5.360822,
+          "text": "When time feels unlimited, almost anything can seem worth doing."
+        },
+        {
+          "startSec": 5.310768,
+          "endSec": 12.719815,
+          "text": "But time begins to feel different when you understand, not intellectually but emotionally, that it is finite."
+        }
+      ]
+    },
+    {
+      "id": "shot-035",
+      "index": 34,
+      "sentenceId": "sentence-011",
+      "sectionId": "n011",
+      "image": "scene05.png",
+      "motionIndex": 0,
+      "startSec": 12.719815,
+      "speechEndSec": 20.256,
+      "endSec": 20.856,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 4.237602,
+          "text": "A two-hour meeting is no longer just two hours."
+        },
+        {
+          "startSec": 4.237602,
+          "endSec": 7.536185,
+          "text": "It's an evening you didn't spend with someone."
+        }
+      ]
+    },
+    {
+      "id": "shot-036",
+      "index": 35,
+      "sentenceId": "sentence-012",
+      "sectionId": "n012",
+      "image": "scene06.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 10.10857,
+      "endSec": 10.10857,
+      "cues": [
+        {
+          "startSec": 0.100025,
+          "endSec": 3.409867,
+          "text": "A purchase is no longer just money."
+        },
+        {
+          "startSec": 3.359854,
+          "endSec": 10.10857,
+          "text": "It may be another object you'll store, maintain, move, and eventually throw away."
+        }
+      ]
+    },
+    {
+      "id": "shot-037",
+      "index": 36,
+      "sentenceId": "sentence-012",
+      "sectionId": "n012",
+      "image": "scene06.png",
+      "motionIndex": 0,
+      "startSec": 10.10857,
+      "speechEndSec": 19.870053,
+      "endSec": 19.870053,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.282835,
+          "text": "A promotion isn't simply more income."
+        },
+        {
+          "startSec": 3.282835,
+          "endSec": 9.761483,
+          "text": "It might also mean more responsibility, more stress, and less control of your time."
+        }
+      ]
+    },
+    {
+      "id": "shot-038",
+      "index": 37,
+      "sentenceId": "sentence-012",
+      "sectionId": "n012",
+      "image": "scene06.png",
+      "motionIndex": 1,
+      "startSec": 19.870053,
+      "speechEndSec": 27.528,
+      "endSec": 28.128,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.741697,
+          "text": "The calculation changes."
+        },
+        {
+          "startSec": 2.741697,
+          "endSec": 7.657947,
+          "text": "And maybe that calculation is what maturity actually looks like."
+        }
+      ]
+    },
+    {
+      "id": "shot-039",
+      "index": 38,
+      "sentenceId": "sentence-013",
+      "sectionId": "n013",
+      "image": "scene01.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 10.896496,
+      "endSec": 10.896496,
+      "cues": [
+        {
+          "startSec": 0.100078,
+          "endSec": 3.41166,
+          "text": "Not knowing how to get everything you want."
+        },
+        {
+          "startSec": 3.361621,
+          "endSec": 6.660193,
+          "text": "But knowing which things are worth wanting."
+        },
+        {
+          "startSec": 6.660193,
+          "endSec": 10.896496,
+          "text": "This is where ideas like purpose become more interesting."
+        }
+      ]
+    },
+    {
+      "id": "shot-040",
+      "index": 39,
+      "sentenceId": "sentence-013",
+      "sectionId": "n013",
+      "image": "scene01.png",
+      "motionIndex": 1,
+      "startSec": 10.896496,
+      "speechEndSec": 20.52,
+      "endSec": 21.12,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.799522,
+          "text": "People often talk about finding a passion or discovering a single purpose in life."
+        },
+        {
+          "startSec": 5.799522,
+          "endSec": 9.623504,
+          "text": "But perhaps purpose is less dramatic than that."
+        }
+      ]
+    },
+    {
+      "id": "shot-041",
+      "index": 40,
+      "sentenceId": "sentence-014",
+      "sectionId": "n014",
+      "image": "scene02.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 7.492388,
+      "endSec": 7.492388,
+      "cues": [
+        {
+          "startSec": 0.100085,
+          "endSec": 7.492388,
+          "text": "Maybe it's simply having fewer contradictions between what you say matters and how you actually spend your days."
+        },
+        {
+          "startSec": 7.442345,
+          "endSec": 7.492388,
+          "text": "If family matters, does your calendar reflect that?"
+        }
+      ]
+    },
+    {
+      "id": "shot-042",
+      "index": 41,
+      "sentenceId": "sentence-014",
+      "sectionId": "n014",
+      "image": "scene02.png",
+      "motionIndex": 1,
+      "startSec": 7.492388,
+      "speechEndSec": 15.347085,
+      "endSec": 15.347085,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.916339,
+          "text": "If family matters, does your calendar reflect that?"
+        },
+        {
+          "startSec": 3.916339,
+          "endSec": 7.854697,
+          "text": "If health matters, does your routine reflect that?"
+        }
+      ]
+    },
+    {
+      "id": "shot-043",
+      "index": 42,
+      "sentenceId": "sentence-014",
+      "sectionId": "n014",
+      "image": "scene02.png",
+      "motionIndex": 0,
+      "startSec": 15.347085,
+      "speechEndSec": 26.976,
+      "endSec": 27.576,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.856994,
+          "text": "If freedom matters, how much of your lifestyle depends on continuing to earn more?"
+        },
+        {
+          "startSec": 5.856994,
+          "endSec": 11.628915,
+          "text": "If curiosity matters, when was the last time you had enough empty time to follow it?"
+        }
+      ]
+    },
+    {
+      "id": "shot-044",
+      "index": 43,
+      "sentenceId": "sentence-015",
+      "sectionId": "n015",
+      "image": "scene03.png",
+      "motionIndex": 1,
+      "startSec": 0,
+      "speechEndSec": 6.777776,
+      "endSec": 6.777776,
+      "cues": [
+        {
+          "startSec": 0.100026,
+          "endSec": 6.777776,
+          "text": "A meaningful life may have less to do with what we add next and more to do with what we're willing to remove."
+        },
+        {
+          "startSec": 6.727763,
+          "endSec": 6.777776,
+          "text": "Remove the obligation you accepted out of habit."
+        }
+      ]
+    },
+    {
+      "id": "shot-045",
+      "index": 44,
+      "sentenceId": "sentence-015",
+      "sectionId": "n015",
+      "image": "scene03.png",
+      "motionIndex": 0,
+      "startSec": 6.777776,
+      "speechEndSec": 10.620783,
+      "endSec": 10.620783,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.843007,
+          "text": "Remove the obligation you accepted out of habit."
+        }
+      ]
+    },
+    {
+      "id": "shot-046",
+      "index": 45,
+      "sentenceId": "sentence-015",
+      "sectionId": "n015",
+      "image": "scene03.png",
+      "motionIndex": 1,
+      "startSec": 10.620783,
+      "speechEndSec": 14.087692,
+      "endSec": 14.087692,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.466909,
+          "text": "Remove the purchase you don't actually want."
+        }
+      ]
+    },
+    {
+      "id": "shot-047",
+      "index": 46,
+      "sentenceId": "sentence-015",
+      "sectionId": "n015",
+      "image": "scene03.png",
+      "motionIndex": 0,
+      "startSec": 14.087692,
+      "speechEndSec": 17.823671,
+      "endSec": 17.823671,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.735979,
+          "text": "Remove the goal you inherited from someone else."
+        }
+      ]
+    },
+    {
+      "id": "shot-048",
+      "index": 47,
+      "sentenceId": "sentence-015",
+      "sectionId": "n015",
+      "image": "scene03.png",
+      "motionIndex": 1,
+      "startSec": 17.823671,
+      "speechEndSec": 22.896,
+      "endSec": 23.496,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 5.072329,
+          "text": "Remove the need to appear successful to people who rarely think about you."
+        }
+      ]
+    },
+    {
+      "id": "shot-049",
+      "index": 48,
+      "sentenceId": "sentence-016",
+      "sectionId": "n016",
+      "image": "scene04.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 11.226837,
+      "endSec": 11.226837,
+      "cues": [
+        {
+          "startSec": 0.100114,
+          "endSec": 4.764448,
+          "text": "Remove enough noise, and something interesting happens."
+        },
+        {
+          "startSec": 4.714391,
+          "endSec": 8.240422,
+          "text": "You begin to hear your own preferences again."
+        },
+        {
+          "startSec": 8.240422,
+          "endSec": 11.226837,
+          "text": "Maybe you don't want a bigger life."
+        }
+      ]
+    },
+    {
+      "id": "shot-050",
+      "index": 49,
+      "sentenceId": "sentence-016",
+      "sectionId": "n016",
+      "image": "scene04.png",
+      "motionIndex": 1,
+      "startSec": 11.226837,
+      "speechEndSec": 21.864,
+      "endSec": 22.464,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.901318,
+          "text": "Maybe you want a quieter one."
+        },
+        {
+          "startSec": 2.901318,
+          "endSec": 6.754724,
+          "text": "Maybe you don't want to retire from doing things."
+        },
+        {
+          "startSec": 6.754724,
+          "endSec": 10.637163,
+          "text": "You just want the freedom to choose what those things are."
+        }
+      ]
+    },
+    {
+      "id": "shot-051",
+      "index": 50,
+      "sentenceId": "sentence-017",
+      "sectionId": "n017",
+      "image": "scene05.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 10.727712,
+      "endSec": 10.727712,
+      "cues": [
+        {
+          "startSec": 0.1001,
+          "endSec": 3.185181,
+          "text": "Maybe you don't need more friends."
+        },
+        {
+          "startSec": 3.135131,
+          "endSec": 7.031021,
+          "text": "You need more time for the few relationships that matter."
+        },
+        {
+          "startSec": 7.031021,
+          "endSec": 10.727712,
+          "text": "Maybe you don't need another productivity tool."
+        }
+      ]
+    },
+    {
+      "id": "shot-052",
+      "index": 51,
+      "sentenceId": "sentence-017",
+      "sectionId": "n017",
+      "image": "scene05.png",
+      "motionIndex": 1,
+      "startSec": 10.727712,
+      "speechEndSec": 22.032,
+      "endSec": 22.632,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 2.644641,
+          "text": "You need fewer commitments."
+        },
+        {
+          "startSec": 2.644641,
+          "endSec": 6.910901,
+          "text": "And maybe you don't need to become a completely different person."
+        },
+        {
+          "startSec": 6.910901,
+          "endSec": 11.304288,
+          "text": "You just need enough space to notice who you've already become."
+        }
+      ]
+    },
+    {
+      "id": "shot-053",
+      "index": 52,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 0,
+      "startSec": 0,
+      "speechEndSec": 8.147907,
+      "endSec": 8.147907,
+      "cues": [
+        {
+          "startSec": 0.100023,
+          "endSec": 5.001171,
+          "text": "Growing older is often described as a process of losing things."
+        },
+        {
+          "startSec": 4.951159,
+          "endSec": 6.514525,
+          "text": "Energy."
+        },
+        {
+          "startSec": 6.514525,
+          "endSec": 8.147907,
+          "text": "Youth."
+        }
+      ]
+    },
+    {
+      "id": "shot-054",
+      "index": 53,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 1,
+      "startSec": 8.147907,
+      "speechEndSec": 16.999979,
+      "endSec": 16.999979,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 1.918449,
+          "text": "Possibility."
+        },
+        {
+          "startSec": 1.918449,
+          "endSec": 4.632085,
+          "text": "But there is another side to it."
+        },
+        {
+          "startSec": 4.632085,
+          "endSec": 8.852072,
+          "text": "You can also lose unnecessary expectations."
+        }
+      ]
+    },
+    {
+      "id": "shot-055",
+      "index": 54,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 0,
+      "startSec": 16.999979,
+      "speechEndSec": 24.060632,
+      "endSec": 24.060632,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.281769,
+          "text": "You can lose the need to prove yourself."
+        },
+        {
+          "startSec": 3.281769,
+          "endSec": 7.060653,
+          "text": "You can lose goals that no longer belong to you."
+        }
+      ]
+    },
+    {
+      "id": "shot-056",
+      "index": 55,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 1,
+      "startSec": 24.060632,
+      "speechEndSec": 35.697356,
+      "endSec": 35.697356,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 4.916151,
+          "text": "And strangely, losing these things can make life feel larger."
+        },
+        {
+          "startSec": 4.916151,
+          "endSec": 7.771819,
+          "text": "Not because you suddenly have more."
+        },
+        {
+          "startSec": 7.771819,
+          "endSec": 11.636724,
+          "text": "But because what remains becomes easier to see."
+        }
+      ]
+    },
+    {
+      "id": "shot-057",
+      "index": 56,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 0,
+      "startSec": 35.697356,
+      "speechEndSec": 44.648451,
+      "endSec": 44.648451,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 3.764881,
+          "text": "Maybe freedom isn't having endless choices."
+        },
+        {
+          "startSec": 3.764881,
+          "endSec": 8.951095,
+          "text": "Maybe freedom is reaching a point where you no longer need so many of them."
+        }
+      ]
+    },
+    {
+      "id": "shot-058",
+      "index": 57,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 1,
+      "startSec": 44.648451,
+      "speechEndSec": 49.322546,
+      "endSec": 49.322546,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 4.674095,
+          "text": "And maybe that's why life starts feeling different after forty."
+        }
+      ]
+    },
+    {
+      "id": "shot-059",
+      "index": 58,
+      "sentenceId": "sentence-018",
+      "sectionId": "n018",
+      "image": "scene06.png",
+      "motionIndex": 0,
+      "startSec": 49.322546,
+      "speechEndSec": 59.808,
+      "endSec": 60.408,
+      "pauseAfterSec": 0.6,
+      "cues": [
+        {
+          "startSec": 0,
+          "endSec": 4.176977,
+          "text": "For the first half, we learn how to build a life."
+        },
+        {
+          "startSec": 4.176977,
+          "endSec": 8.467982,
+          "text": "For the next part, we may have to learn something harder."
+        },
+        {
+          "startSec": 8.467982,
+          "endSec": 10.485454,
+          "text": "How to edit it."
+        }
+      ]
+    }
+  ],
+  "episode": "ESSY-0001",
+  "series": "ESSY",
+  "createdAt": "2026-08-23T14:06:36.461Z",
+  "sourceLessonSha256": "c1d4ef5c9c98a65779d88f15fb0dbf25f07cb1388e479e77cf758763a1c04fee"
+}
