@@ -1,6 +1,6 @@
 # ESSY Video Production Playbook
 
-Version 1.2 — Reflective Essay / Narration Video
+Version 1.5 — Reflective Essay / Narration Video
 
 Working channel identity: A Second Look at Life
 
@@ -12,7 +12,7 @@ Purpose: provide a portable editorial and production contract that can be attach
 2. When a new episode starts, provide this document plus the complete episode script to the AI conversation.
 3. Read the entire script before planning visuals. Do not plan shot-by-shot while only seeing fragments.
 4. If narration blocks are not already defined, divide the script into stable semantic narration blocks and assign stable IDs (N001, N002, ...).
-5. Create a visual arc for each narration block, then divide it into visual slots targeting roughly 7–10 seconds per visual.
+5. Create a visual arc for each narration block, then divide it into visual slots where editorially needed. Roughly 7–10 seconds per visual remains a useful pacing guideline, NOT a requirement to create another sourcing slot or visual cut: a suitable atmospheric visual may remain on screen substantially longer (see §6.4).
 6. For every slot, assign an `editorialFunction` (what editorial job the shot performs in the surrounding sequence), then a `visualIntent` plus an `avoid` list. Narration meaning and visual function are related but not identical.
 7. Inspect the slots of each block as a sequence and run the sequence-level literalness check before generating queries. One literal shot can establish an idea; several consecutive literal shots can turn the video into an illustrated transcript.
 8. Generate video-first stock search queries for each slot only after the editorial-function, visual-intent and literalness steps are complete. Use photos as fallback, not the default.
@@ -65,15 +65,15 @@ the COMPRESSED English script; the compressed text is what gets frozen.
 
 | Rule | Meaning |
 | --- | --- |
-| Narration Block ≠ Visual Shot | A narration block is a semantic/TTS unit. One block normally contains multiple visual shots. |
+| Narration Block ≠ Visual Shot | A narration block is a semantic/TTS unit. One block may contain one or more visual shots; a single calm visual may cover a whole passage (§6.4). |
 | Audio is the master timeline | Cached narration audio remains continuous. Visual shot boundaries must never cut, seek, slice or independently mux narration audio. |
-| Visuals form an arc | Do not illustrate every sentence literally. The shots within a block should collectively express its mood, idea or progression. |
+| Visuals form an arc | Do not illustrate every sentence literally. The shots within a block should collectively express its mood, idea or progression. Narration carries meaning; visuals may primarily provide atmosphere, emotion, pacing, continuity, or simply stay out of the way of the narration (§6.4). |
 | Editorial function before visual intent | Every sourcing slot carries an `editorialFunction` describing the shot's job within the surrounding sequence — not a paraphrase of the narration. Narration meaning and visual function are related but not identical. |
-| Sequence-level literalness check | Slots are reviewed as a sequence, not only as independent semantic matches. Several consecutive shots that each literally illustrate a narration keyword make the video an illustrated transcript. Redesign such runs toward atmosphere, observation, scale change or breathing room. Literal visuals themselves are not banned. |
+| Sequence-level literalness check | Slots are reviewed as a sequence, not only as independent semantic matches. Several consecutive shots that each literally illustrate a narration keyword make the video an illustrated transcript. Redesign such runs toward atmosphere, observation, scale change or breathing room. Literal visuals themselves are not banned; semantic visual scarcity can create emphasis when a deliberately narration-matched visual appears against mostly atmospheric continuity (§6.4). |
 | Visual review before approval | No production asset is approved solely from textual metadata when a visual preview is available. Candidates pass through a contact sheet / visual preview gate (Section 8). |
-| Video first | Prefer suitable stock video. Use still photos with static (default) or explicitly requested slow-push motion when video is weak or unavailable. |
+| Video first | Prefer suitable stock video. Use still photos with static (default) or explicitly requested slow-push motion when video is weak or unavailable. Low-semantic-load ambient visuals (landscape, ocean, clouds, forest, rain, night city, window views, slow travel footage, space/cosmic imagery, abstract light/motion — examples only, not a house style) are explicitly valid sourcing targets (§6.4). |
 | Avoid stock-actor overload | Mix people, environments, objects, movement, architecture, landscapes and atmospheric shots. Prefer natural behavior, backs/silhouettes/hands/spaces when appropriate. |
-| Sourcing slot = visual shot | A selected sourcing slot normally maps to one visual shot and one use of its source asset. Do not duplicate or loop an asset merely to satisfy a pre-existing placeholder shot count. If more visual changes are editorially needed, source additional assets instead. |
+| Sourcing slot = visual shot | A selected sourcing slot normally maps to one visual shot and one use of its source asset. Do not duplicate or loop an asset merely to satisfy a pre-existing placeholder shot count. If more visual changes are editorially needed, source additional assets instead. Sourcing-slot count is editorial, not mechanical: fewer slots with longer atmospheric holds are valid (§6.4, §7.3). |
 | Adjacent reuse | Do not repeat the same source asset in adjacent shots. Reuse only when justified and preferably separated in time (Section 7.2). |
 | Placeholder plan is not authoritative | The placeholder visual-plan shot count must not constrain the final real-asset timeline once real editorial sourcing exists (Section 7.1). |
 | Fit is judged on actual media duration | Use ffprobe duration, never rounded provenance metadata, when deciding whether a source can cover its shot; otherwise raise INSUFFICIENT_SOURCE (Section 7.2). |
@@ -90,7 +90,7 @@ the COMPRESSED English script; the compressed text is what gets frozen.
 | Speech rate | -12% |
 | Pitch | 0 Hz |
 | Output | 1920×1080, 30 fps, H.264 + AAC |
-| Visual rhythm | roughly 7–10 seconds per shot; not a hard fixed interval |
+| Visual rhythm | roughly 7–10 seconds per shot as a pacing guideline, never a requirement to cut; an atmospheric visual may hold substantially longer (§6.4, §7.3) |
 | Source priority | Pexels video → Pexels photo → other approved sources / owned assets |
 | Subtitle direction | visually secondary: white text, thin dark outline/shadow, maximum 2 lines, lower safe area; avoid a large opaque black panel |
 | Subtitle timing | Edge TTS WordBoundary (`temp/<sentenceId>.words.json`) decides WHEN text is spoken; semantic segmentation decides only grouping. New-generation ESSY requires word timing (manifest `subtitleTiming.policy`); legacy char-proportional timing is an explicit, reported fallback — never production-grade |
@@ -107,7 +107,7 @@ C. TTS — Generate/cache narration per block. TTS cache keys must depend on nar
 
 D. Visual arc — For each block, describe the visual progression in one concise phrase or sequence.
 
-E. Visual slots — Split the block into enough slots to achieve an average 7–10 second visual rhythm. Shot count follows audio duration. After selection, the approved slots define the final visual shots; the placeholder count does not persist into rendering (Section 7).
+E. Visual slots — Narration/audio duration determines the total available visual timeline for the block; editorial intent alone determines whether and where visual cuts / sourcing slots are needed within that timeline. Split the block into as many slots as the editorial intent requires — never by mechanical 7–10 second division. A single calm visual may cover a whole passage (§6.4). After selection, the approved slots define the final visual shots; the placeholder count does not persist into rendering (Section 7).
 
 F. Editorial function — For each slot, define an `editorialFunction`: what editorial job does this shot perform within the surrounding sequence? It must describe the shot's function, not merely paraphrase the narration.
 
@@ -221,7 +221,67 @@ Even if every individual shot is semantically relevant, the sequence may still b
 - scale change
 - quiet visual breathing room
 
-Do NOT ban literal visuals. A literal visual remains valuable when it establishes an idea clearly; the goal is to avoid consecutive mechanical sentence-to-image translation. List-shaped narration ("More income. More productivity. More followers...") deserves particular scrutiny because it naturally encourages keyword-by-keyword illustration.
+Do NOT ban literal visuals. A literal visual remains valuable when it establishes an idea clearly; the goal is to avoid consecutive mechanical sentence-to-image translation. List-shaped narration ("More income. More productivity. More followers...") deserves particular scrutiny because it naturally encourages keyword-by-keyword illustration. Conversely, when most visuals are atmospheric / low-semantic-load, a single deliberately narration-matched visual gains emphasis precisely through semantic scarcity (§6.4).
+
+### 6.4 Visual Editorial Principles (canonical, ESSY-0004+)
+
+No separate "Standard vs Cinematic" pipeline or production mode is created.
+The existing `editorialFunction` / `visualIntent` / `avoid` model already
+expresses these choices. Atmospheric / low-semantic-load visual continuity
+is a first-class editorial choice alongside semantic visuals — not a
+replacement for them. Semantic sourcing, literal visuals, and visual arcs
+all remain available.
+
+1. **Narration carries meaning.** Visuals do not need to explain every
+   sentence. A visual may primarily provide atmosphere, emotion, pacing,
+   continuity, or simply stay out of the way of the narration.
+2. **Mood match is sufficient by default.** Do not require semantic
+   matching for every visual. Reserve strongly semantic / literal visuals
+   for moments where they add editorial value, such as thesis statements,
+   turning points, concrete examples, or deliberate emphasis. Mood match
+   does NOT mean generic repetitive queries: variety and selection
+   criteria (§9) and the §14 lesson on generic-mood drift still apply.
+3. **"Stay out of the way" is a legitimate editorial function.** A visual
+   can be successful precisely because it does not demand interpretation
+   or compete with narration. Example `editorialFunction`: "Provide quiet
+   visual continuity while the narration carries the idea."
+4. **Visual breathing room is intentional.** A suitable atmospheric visual
+   may remain on screen substantially longer than the nominal 7–10 second
+   rhythm. 7–10 seconds remains a useful pacing guideline, NOT a
+   requirement to create another sourcing slot or visual cut.
+5. **Semantic scarcity creates emphasis.** If most visuals are atmospheric
+   / low-semantic-load, a deliberately narration-matched visual becomes
+   more meaningful when it appears.
+6. **Subtitle changes contribute to visual rhythm.** When evaluating
+   whether a sequence feels visually static, consider subtitle/typography
+   changes together with background motion and shot changes. Do NOT make
+   normal ESSY subtitles oversized in response: current subtitle
+   readability and visually-secondary principles (Section 4) remain.
+7. **Prefer the simplest visual treatment that sustains attention.** Do
+   not source, animate, transition, or illustrate merely because the
+   pipeline supports it. If one calm visual can support a passage
+   effectively, unnecessary visual cuts are not an improvement.
+8. **Low-semantic-load ambient visuals are explicitly valid.** Examples
+   may include landscape, ocean, clouds, forest, rain, night city, window
+   views, slow travel footage, space/cosmic imagery, or abstract
+   light/motion. These are examples, not a prescribed ESSY visual style.
+
+Conceptual example (illustrative shape of the model, not a new schema):
+
+```json
+{
+  "editorialFunction":
+    "Provide quiet visual continuity while the narration carries the idea.",
+  "visualIntent":
+    "Slow-moving atmospheric imagery with low semantic specificity.",
+  "avoid": [
+    "literal illustration of narration",
+    "dramatic human action",
+    "visually dense composition",
+    "distracting text/signage",
+    "imagery that demands interpretation"
+  ]
+}
 
 ## 7. Real-Asset Timeline Rules
 
@@ -271,8 +331,8 @@ Narration remains the master timeline. Within each narration block:
 2. Determine how many approved sourcing slots belong to that block.
 3. Distribute the visual duration approximately evenly across those slots by default.
 4. Respect actual source-media duration.
-5. Prefer approximately 7–10 seconds per visual for the current ESSY editorial style, but treat this as a pacing guideline rather than a hard numerical contract.
-6. Do not manufacture extra visual cuts solely to reach a target shot count.
+5. Prefer approximately 7–10 seconds per visual as a pacing guideline for the current ESSY editorial style, but never as a requirement to cut or to source another slot. A suitable atmospheric visual may hold substantially longer (§6.4).
+6. Do not manufacture extra visual cuts solely to reach a target shot count. Prefer the simplest visual treatment that sustains attention.
 
 If the prose or editorial intent benefits from a different rhythm, editorial intent wins over the nominal 7–10 s guideline.
 
@@ -318,10 +378,10 @@ Textual descriptions are useful for filtering but do not substitute for visual r
 
 ## 9. Selection Criteria
 
-- Does the asset support the block's visual arc rather than merely match a keyword?
+- Does the asset support the block's visual arc — or, where editorially intended, provide quiet atmospheric continuity / breathing room while the narration carries the idea (§6.4) — rather than merely match a keyword?
 - Does it feel natural, or like an obvious staged stock advertisement?
 - Does it add variety relative to the shots immediately before and after it?
-- Is the motion useful at the intended 7–10 second viewing duration?
+- Is the motion useful at the intended viewing duration (nominal 7–10 s guideline, or a longer intentional atmospheric hold per §6.4)?
 - Is the resolution sufficient for 1080p output? Prefer higher-resolution sources when a 720p variant looks soft.
 - Does the asset contain distracting logos, text, faces acting unnaturally, or visual details that shift attention away from the narration?
 - Does the visual introduce unintended meaning or symbolism that competes with the narration?
@@ -390,7 +450,7 @@ Read the complete script first. Then:
 
 1. Verify or create stable narration blocks.
 2. Create a coherent visual arc for each narration block.
-3. Divide blocks into visual slots targeting roughly 7–10 seconds per visual.
+3. Divide blocks into visual slots where editorially needed (roughly 7–10 seconds per visual is a pacing guideline, NOT a requirement to cut; an atmospheric visual may hold substantially longer — §6.4).
 4. Assign an `editorialFunction` for every slot: the editorial job the shot performs within the surrounding sequence. Distinguish this from the literal meaning of the narration — narration meaning and visual function are related but not identical.
 5. Create a `visualIntent` plus an `avoid` list for each slot; the avoid list should name the obvious literal representations that adjacent slots already provide.
 6. Inspect adjacent slots and run the sequence-level literalness review across each block before generating any query. Redesign runs of consecutive keyword-illustrating shots toward atmosphere, observation, movement, scale change or breathing room. Do not ban literal visuals; avoid consecutive mechanical translation.
@@ -429,5 +489,7 @@ v1.2 (2026-08-30): promoted the ESSY-0001 sourcing-v2 editorial lessons into sta
 v1.3 (P1 still-image motion): STATIC is the default still treatment; motion requires explicit `stillMotion: "slow-push"` metadata and is never chosen from shot-index parity. No automatic alternating Ken Burns. "Calm frame, meaningful motion." Applies to ESSY-0004+ and newly-rendered episodes only — published ESSY-0001/0002/0003 are frozen baselines and are not guaranteed to reproduce their historical behavior if rebuilt with these defaults (not bit-exact backward compatibility; do not rerender).
 
 v1.4 (P1 script compression): canonical Script Compression Pass before English approval (Section 2.1) — 8 density checks, KEEP-protection for emotional progression, 6–9 min preferred range, >9 min mandatory compression review, >10 min written justification, no hard cap. Evidence: retrospective audits of ESSY-0001–0003 (projects/<EP>/compression-review.md).
+
+v1.5 (visual editorial principles, ESSY-0004+): §6.4 canonical principles — narration carries meaning; mood match sufficient by default; "stay out of the way" as legitimate editorial function; intentional breathing room (7–10 s guideline, never a cut requirement); semantic scarcity creates emphasis; subtitle changes count toward visual rhythm (subtitles stay visually secondary, no oversizing); simplest treatment that sustains attention; low-semantic-load ambient visuals explicitly valid (examples, not a house style). Relaxed/clarified: §1.5, §3 arc/literalness/slot rows, §4 rhythm, §5.E, §6.3, §7.3.5–6, §9 motion criterion, §13.3. No new pipeline/mode; existing editorialFunction/visualIntent/avoid model expresses these choices. Semantic sourcing, literal visuals, and visual arcs remain available.
 
 Suggested repository path: `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md`

@@ -18,7 +18,7 @@ and the single entry point for "make a new ESSY episode from scratch".
    draft exceeds ~9 min; a written length justification is required above
    ~10 min. No hard duration cap. The human approves the COMPRESSED English
    script.
-2. Design a visual arc per block; split into sourcing slots (~7–10 s each),
+2. Design a visual arc per block (atmospheric continuity is a valid arc — Playbook §6.4); split into sourcing slots where editorially needed (~7–10 s per visual is a guideline, never a cut requirement; longer atmospheric holds allowed).
    each with `editorialFunction`, `visualIntent` and an `avoid` list.
    Still-image motion (P1): STATIC is the default. **Only** if a still
    composition genuinely benefits from subtle emphasis may the slot record
