@@ -1,109 +1,184 @@
-# ESSY Episode Runbook (end-to-end)
+# ESSY Episode Runbook (single entry point)
 
-Canonical, minimal path from a raw script to a finished 1080p master.
-This is the exact path proven by ESSY-0001 and ESSY-0002. Editorial rules
-live in `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md` (authoritative for
-editorial/sourcing decisions); renderer mechanics live in
-`docs/production-lifecycle.md`. This document is the step-by-step sequence
-and the single entry point for "make a new ESSY episode from scratch".
+> **This is the single entry point for producing an ESSY episode.**
+> Runbook = WHAT / WHEN / WHO. Editorial HOW/WHY lives in
+> `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md` (authoritative for
+> editorial/sourcing decisions); renderer mechanics live in
+> `docs/production-lifecycle.md`. This document states the phase sequence,
+> ownership, and approval gates — not the detailed editorial rules.
+>
+> Any AI (ChatGPT / Codex) starting or continuing an ESSY episode:
+>
+> 1. Read this Runbook first.
+> 2. Determine the current Phase and Gate state from repository state —
+>    repository state is canonical truth; do not rely on chat memory.
+> 3. Read the Playbook sections referenced for that Phase.
+> 4. Determine the next artifact / action.
+> 5. Do not skip approval gates.
 
-## Stage 0 — Creative (per Playbook, human-approved)
+## Canonical 5-phase workflow
 
-1. Split the approved script into semantic narration blocks (N001, N002, ...).
-   **Script Compression Pass (Playbook §2.1, ESSY-0004+):** before English
-   approval is frozen, run the canonical compression pass (idea repetition,
-   same-function sentences, restatement, example value, question density,
-   transition overhead, emotional-progression protection, ending discipline).
-   Record it in `projects/<EP>/compression-review.md` — mandatory when the
-   draft exceeds ~9 min; a written length justification is required above
-   ~10 min. No hard duration cap. The human approves the COMPRESSED English
-   script.
-2. Design a visual arc per block (atmospheric continuity is a valid arc — Playbook §6.4); split into sourcing slots where editorially needed (~7–10 s per visual is a guideline, never a cut requirement; longer atmospheric holds allowed).
-   each with `editorialFunction`, `visualIntent` and an `avoid` list.
-   Still-image motion (P1): STATIC is the default. **Only** if a still
-   composition genuinely benefits from subtle emphasis may the slot record
-   `stillMotion: "slow-push"` in the sourcing/visual-plan metadata.
-   Absence of `stillMotion` = static; never infer motion from shot order.
-3. Run the sequence-level literalness check BEFORE generating search queries.
-4. Search Pexels (video-first), review candidates via contact sheet, select.
-   Generic helpers: `scripts/search-pexels.mjs`, `scripts/download-selected-pexels.mjs`
-   (episode-specific one-offs are kept in `scripts/oneoff/` for reference only).
-5. Record decisions in `projects/<EP>/final-assembly.md` (subtitle style, BGM
-   state, mix params, QA checklist) and `projects/<EP>/script.md`.
-
-Gate: user approves script + selections. Story/English/images are frozen
-from here on.
-
-## Stage 1 — Renderer inputs
-
-```bash
-node scripts/prepare-essy-real-input.mjs <EPISODE>   # builds inbox/<EP>/lesson.json
-pnpm video:render <EPISODE>                          # TTS+VTT, visual plan, shot renders
+```text
+WRITE → PREPARE → DIRECT → BUILD → FINALIZE
 ```
 
-Artifacts: `projects/<EP>/audio/*.mp3`, `temp/*.vtt` (block parent windows),
-`temp/<sentenceId>.words.json` (canonical word-boundary timing, written in the
-SAME edge-tts synthesis session as the audio — `scripts/generate-essy-tts.py`),
-`projects/<EP>/visual-plan.json`, `projects/<EP>/segments/*.mp4`.
-New-generation ESSY manifests carry `subtitleTiming.policy =
-"word-boundary-required"`: subtitle cues are timed by WordBoundary data
-(speechStart/speechEnd); semantic segmentation decides only text grouping.
-Missing/mismatched word timing FAILS subtitle QA before render. Legacy
-episodes without the policy load with an explicit warn/fallback in the QA
-report (never silent).
+| Phase | Owner | Gate out |
+| --- | --- | --- |
+| 1. WRITE | ChatGPT + Human | Gate 1 — Script approval |
+| 2. PREPARE | Codex / Video Factory | (none — hands timing to DIRECT) |
+| 3. DIRECT | ChatGPT directs / Codex executes / Human selects | Gate 2 — Visual selection approval |
+| 4. BUILD | Codex / Video Factory | Gate 3 — Review approval |
+| 5. FINALIZE | Codex / Video Factory + Human | Gate 4 — Final approval → DONE |
 
-## Stage 2 — Subtitled 540p review (mandatory gate)
+## PHASE 1 — WRITE
 
-```bash
-pnpm video:subtitle-review <EPISODE>
+- **Owner:** ChatGPT conversation + Human.
+- **Input:** episode idea / raw draft.
+- **Main work:** Idea → English Draft → Compression Pass → Narration Blocks.
+  Follow the Playbook Script Compression Pass (§2.1): record it in
+  `projects/<EP>/compression-review.md` — mandatory when the draft exceeds
+  ~9 min; a written length justification is required above ~10 min. No hard
+  duration cap. Split the approved script into semantic narration blocks
+  with stable IDs (N001, N002, ...).
+- **Visual-only text contract:** text that is NOT narration (e.g. series
+  title `"A Second Look at Life"`, episode card `"Who Am I Beyond My
+  Roles?"`) must be explicitly separated from narration with
+  machine-readable semantics, e.g. `tts: false` + `role: title`. Never rely
+  on Codex inferring TTS-eligibility from Markdown formatting.
+- **Output:** approved English narration + narration blocks
+  (`projects/<EP>/script.md`, `projects/<EP>/compression-review.md`).
+- **Gate 1 — SCRIPT APPROVAL:** human approves the COMPRESSED English
+  script. After approval, Codex and the pipeline must not rewrite narration.
+- **Next:** PREPARE.
+
+## PHASE 2 — PREPARE
+
+- **Owner:** Codex / Video Factory.
+- **Input:** approved script + narration blocks.
+- **Main work:** create episode production artifacts; generate/cache TTS per
+  block; generate WordBoundary timing in the SAME synthesis session as the
+  audio (`scripts/generate-essy-tts.py`); determine actual narration
+  duration per block; subtitle timing preparation (`temp/*.vtt` block parent
+  windows, `temp/<sentenceId>.words.json` canonical timing).
+- **Output:** narration timing artifacts ready for editorial planning
+  (`projects/<EP>/audio/*.mp3`, timing files).
+- **Invariant: Audio is the master timeline.** Visual shot count must NOT be
+  fixed before actual narration durations are known.
+- **Next:** hand each Nxxx's actual duration / timing back to DIRECT.
+
+## PHASE 3 — DIRECT
+
+- **Owner:** ChatGPT = editorial direction; Codex = sourcing/search
+  execution; Human = selection approval.
+- **Input:** complete script + actual audio timing from PREPARE.
+- **Main work (ChatGPT):** Visual Arc → Visual Slots (where editorially
+  needed; ~7–10 s is a pacing guideline, never a quota — Playbook §6.4) →
+  `editorialFunction` → `visualIntent` → `avoid` → sequence-level
+  literalness check → search queries. Follow the Playbook (§§6–9). Never
+  pre-fix a shot count.
+- **Execution (Codex):** candidate search (video-first), preview / contact
+  sheet generation, candidate metadata. **Search ≠ selection ≠ download.**
+  Candidates must pass visual review before download — never approve solely
+  from textual metadata when a preview is available.
+- **Output:** human-approved asset selections.
+- **Gate 2 — VISUAL SELECTION APPROVAL:** only approved assets proceed to
+  download.
+- **Next:** BUILD.
+
+## PHASE 4 — BUILD
+
+- **Owner:** Codex / Video Factory.
+- **Input:** approved script + approved asset selections.
+- **Main work:** download approved assets only → provenance → real-asset
+  timeline → subtitles → BGM → render → automated technical QA → review
+  proxy.
+- **Commands (reference):**
+  `prepare-essy-real-input` (builds `inbox/<EP>/lesson.json`),
+  `video:render` (visual plan + shot renders),
+  `video:subtitle-review` (continuous 540p burn-in proxy).
+- **Invariants (preserved):** audio is the master timeline — never slice
+  narration per shot; sourcing slot = visual shot; no silent source looping;
+  fit judged on actual ffprobe duration; subtitle cues timed by WordBoundary
+  data (`speechStart`/`speechEnd`), never shot boundaries — missing/mismatched
+  word timing FAILS subtitle QA (`subtitleTiming.policy =
+  "word-boundary-required"`; legacy loads warn explicitly, never silently);
+  shared subtitle timeline builder + QA gate; still-image motion STATIC by
+  default, `stillMotion: "slow-push"` only with explicit justification
+  (absence = static; never infer from shot order); approved
+  story/English/images frozen — never modified during rendering; episode
+  one-offs stay in `scripts/oneoff/` (reference only); `final-assembly.md`
+  records subtitle style, BGM state, mix params, QA checklist.
+- **Output:** review-quality proxy.
+- **Gate 3 — REVIEW APPROVAL:** human reviews the proxy; record with
+  `pnpm video:workflow approve <EPISODE> qa` (workflow must be registered;
+  do NOT register retroactively).
+- **Targeted revision:** on review issues, revise only affected slots and
+  freeze unaffected shots. Do not redesign the renderer or re-source the
+  whole episode for a local editorial problem.
+- **Next:** FINALIZE.
+
+## PHASE 5 — FINALIZE
+
+- **Owner:** Codex / Video Factory + Human.
+- **Input:** review-approved episode.
+- **Main work:** final 1080p assembly → final technical QA → human viewing
+  QA (frame-verify against `projects/<EP>/temp/<EP>-subtitles.srt`) → final
+  sign-off.
+- **Commands (reference):** `video:build-narration-master` (continuous
+  narration master), `video:build-bgm` (extended BGM master, optional),
+  `video:render-final <EPISODE> --label v1` (`final-assembly.json`
+  required; shot-incremental via `--only=`).
+- **Deliverable hygiene:** `output/<EP>/` holds final deliverables (and
+  review proxies) only — keep exactly ONE final master, delete superseded
+  labels; QA screenshots / render diagnostics go to
+  `projects/<EP>/logs/qa-screens/`.
+- **Gate 4 — FINAL APPROVAL:** a rendered final MP4 does NOT complete the
+  episode. Record the human sign-off with
+  `pnpm video:workflow approve <EPISODE> final-assembly`. The renderer keeps
+  the workflow at `final-assembly` with a `final-render-succeeded` history
+  event (a new label invalidates earlier approval), so workflow state never
+  runs ahead of artifacts. Approval completes the episode (state = DONE).
+- **Archival (preserved):** never automatic, never inferable from production
+  state — `pnpm video:workflow archive <EPISODE> --published` only after the
+  user confirms EXTERNAL publication.
+
+## Responsibility model
+
+- **ChatGPT — THINK / WRITE / DIRECT / SELECT:** meaning, script,
+  compression, narrative structure, visual arc, `editorialFunction`,
+  `visualIntent`, literalness review, search strategy, editorial candidate
+  evaluation.
+- **Human — APPROVE (4 gates):** 1. Script · 2. Visual Selection ·
+  3. Review · 4. Final.
+- **Codex / Video Factory — BUILD / SEARCH / EXECUTE / VERIFY:** repository
+  artifacts, TTS, WordBoundary, timing, search execution, contact sheets,
+  downloads, provenance, ffprobe, timeline construction, subtitles,
+  rendering, automated QA.
+- **Core principle:** editorial judgment must not silently migrate into
+  deterministic production code; deterministic engineering work must not
+  depend on ChatGPT manually performing production operations.
+
+## Post-episode learning loop
+
+```text
+Produce → Review → Learn → Promote reusable rule → Next episode reads improved rules
 ```
 
-Renders a continuous 540p burn-in proxy. Aborts on subtitle QA failure
-(overlaps, orphans, <700 ms cues, >2 lines — see `scripts/subtitle-config.mjs`).
-Human QA reviews the proxy; record approval with
-`pnpm video:workflow approve <EPISODE> qa` (workflow must be registered;
-do NOT register retroactively).
+After each episode, ask: *"Did this episode reveal a reusable lesson that
+should improve future ESSY episodes?"* Classify:
 
-## Stage 3 — Final assembly (1080p master)
+- **A. Episode-specific issue** → keep in `projects/<EP>/...`; do NOT
+  promote.
+- **B. Reusable editorial lesson** → update
+  `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md`.
+- **C. Reusable workflow / ownership / gate lesson** → update this Runbook.
+- **D. Reusable implementation / technical lesson** → update the appropriate
+  engineering documentation.
 
-```bash
-pnpm video:build-narration-master <EPISODE>          # continuous narration master
-pnpm video:build-bgm <EPISODE>                       # extended BGM master (optional)
-pnpm video:render-final <EPISODE> --label v1         # final-assembly.json required
-```
-
-`render-essay-final.mjs` applies cold-open title, ending hold + end card,
-BGM mix-at-time, and the shared subtitle pipeline with its QA gate. It is
-shot-incremental: `--only=N001-S1,N002-S3` re-renders just those shots.
-Verify a re-render by extracting frames and matching them against cue
-windows in `projects/<EP>/temp/<EP>-subtitles.srt`.
-
-Output: `output/<EP>/<EP>-final-v1.mp4`. Keep exactly ONE final master;
-delete superseded labels to avoid shipping stale subtitles.
-
-Output hygiene: `output/<EP>/` holds final deliverables (and review proxies)
-only. QA screenshots and render diagnostics go to
-`projects/<EP>/logs/qa-screens/`.
-
-Final QA gate: a rendered final MP4 does NOT complete the episode. After
-frame-verifying the master against `projects/<EP>/temp/<EP>-subtitles.srt`,
-record the human sign-off:
-
-```bash
-pnpm video:workflow approve <EPISODE> final-assembly
-```
-
-The renderer itself keeps the workflow at stage `final-assembly` and records a
-`final-render-succeeded` history event (and invalidates any earlier
-final-assembly approval when a new label is rendered), so workflow state can
-never run ahead of the artifacts.
-
-## Stage 4 — Done
-
-Final-assembly approval (`approve <EP> final-assembly`) completes the episode.
-Archival is never automatic and never inferable from production state:
-`pnpm video:workflow archive <EPISODE> --published` only after the user
-confirms EXTERNAL publication.
+Do not promote one-off preferences into global rules without evidence —
+but workflow ambiguity, data-contract ambiguity, approval ambiguity, or a
+deterministic production defect should be considered for immediate
+promotion.
 
 ## Hard rules (recap)
 
