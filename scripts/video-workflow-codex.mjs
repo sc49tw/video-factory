@@ -9,8 +9,10 @@ import {
 import {
   approveDraftStage,
   createDraftState,
+  draftBlocksProductionWorkflow,
   draftRoot,
   readDraftState,
+  recordPrepareComplete,
   rollbackDraft,
   submitStageArtifact,
   writeDraftState,
@@ -36,6 +38,7 @@ try {
   else if (command === "request") await completeRequest(args);
   else if (command === "submit") await submit(args);
   else if (command === "approve") await approve(args);
+  else if (command === "prepare") await prepareDraft(args);
   else if (command === "rollback") await rollback(args);
   else if (command === "discover") await discover();
   else if (command === "status") await status(args[0]);
@@ -156,6 +159,13 @@ async function approve([id, target]) {
       printDraft(state);
       return;
     }
+    // PREPARE has no human approval gate (Runbook: PREPARE hands timing to
+    // DIRECT). Record deterministic machine completion via `prepare` instead.
+    if (target === "prepare") {
+      throw new Error(
+        `PREPARE is not a human approval. Record machine completion with "pnpm video:workflow prepare ${id}".`,
+      );
+    }
     await approveDraftStage(factoryRoot, state, target);
     await writeCurrentTask(state);
     console.log(`Approved ${target} for ${id}.`);
@@ -194,10 +204,28 @@ async function rollback([id, stage]) {
   printDraft(state);
 }
 
+// Deterministic PREPARE machine completion (ESSY-only, no human approval).
+// Validates actual TTS timing, then advances PREPARE -> STORYBOARD (= DIRECT)
+// and records an explicit prepare-complete history event.
+async function prepareDraft([id]) {
+  const state = await requireDraft(id);
+  await recordPrepareComplete(factoryRoot, state);
+  await writeCurrentTask(state);
+  console.log(`Recorded PREPARE completion for ${id}.`);
+  printDraft(state);
+}
+
 async function discover() {
   const names = await readDirectories(path.join(factoryRoot, "inbox"));
   let created = 0;
   for (const episode of names) {
+    // A draft-backed episode keeps state.yaml authoritative through review,
+    // so discover() must never create a competing production workflow.json
+    // for it during WRITE/PREPARE/DIRECT (or any later draft stage).
+    const draft = await readDraftState(factoryRoot, episode);
+    if (draft && draftBlocksProductionWorkflow(draft)) {
+      continue;
+    }
     const inferred = inferCategory(episode);
     if (!inferred) continue;
     validateEpisodeForCategory(registry, episode, inferred.series);
@@ -464,6 +492,22 @@ function printDraft(state) {
   console.log(
     `- ${state.draftId} | ${state.series}/${state.subtype} | ${state.currentStage} | ${state.status}`,
   );
+  if (
+    state.currentStage === "PREPARE" &&
+    String(state.series ?? "").toUpperCase() === "ESSY"
+  ) {
+    const prepared = state.prepare?.completed === true;
+    if (prepared) {
+      console.log(
+        `  PREPARE complete (${state.prepare.blockCount ?? "?"} blocks, ${state.prepare.totalDurationSec ?? "?"}s). Next: DIRECT storyboard planning.`,
+      );
+    } else {
+      console.log(
+        "  Codex action: complete PREPARE (TTS + WordBoundary timing), then run: pnpm video:workflow prepare <ID>",
+      );
+    }
+    return;
+  }
   const approval = {
     CONCEPT: "concept",
     ENGLISH: "english",

@@ -1,4 +1,4 @@
-import {mkdir, readFile, writeFile} from "node:fs/promises";
+import {mkdir, readFile, stat, writeFile} from "node:fs/promises";
 import path from "node:path";
 import {validateProductionPackage} from "./production-package.mjs";
 
@@ -6,6 +6,7 @@ export const DRAFT_STAGES = Object.freeze([
   "REQUEST",
   "CONCEPT",
   "ENGLISH",
+  "PREPARE",
   "STORYBOARD",
   "PACKAGE",
   "ASSETS",
@@ -31,10 +32,29 @@ const NEXT_STAGE = Object.freeze({
   REQUEST: "CONCEPT",
   CONCEPT: "ENGLISH",
   ENGLISH: "STORYBOARD",
+  PREPARE: "STORYBOARD",
   STORYBOARD: "PACKAGE",
   PACKAGE: "ASSETS",
   ASSETS: "RENDER",
 });
+
+// Canonical ESSY mapping (Runbook 5-phase):
+//   WRITE   = draft ENGLISH
+//   PREPARE = draft PREPARE (ESSY-only, no human approval gate)
+//   DIRECT  = draft STORYBOARD (ESSY visual-slot planning, consumes PREPARE timing)
+//   BUILD   = PACKAGE -> ASSETS -> RENDER (unchanged)
+// Non-ESSY series keep the legacy ENGLISH -> STORYBOARD transition untouched.
+export function nextStageForSeries(stage, series) {
+  const normalized = String(stage ?? "").toUpperCase();
+  if (normalized === "ENGLISH" && String(series ?? "").toUpperCase() === "ESSY") {
+    return "PREPARE";
+  }
+  return NEXT_STAGE[normalized] ?? null;
+}
+
+export function isEssySeries(series) {
+  return String(series ?? "").toUpperCase() === "ESSY";
+}
 
 export function draftRoot(factoryRoot, draftId) {
   return path.join(factoryRoot, "projects", "_drafts", draftId);
@@ -114,6 +134,22 @@ export async function writeRequest(factoryRoot, state, request) {
 
 export async function submitStageArtifact(factoryRoot, state, stage, value) {
   stage = normalizeStage(stage);
+  // ESSY WRITE text lives in script.md (frozen approved narration), not in a
+  // submitted script.yaml. ESSY PREPARE completes deterministically via
+  // recordPrepareComplete (verified TTS timing), not via artifact submit.
+  if (isEssySeries(state.series) && (stage === "ENGLISH" || stage === "PREPARE")) {
+    throw new Error(
+      stage === "ENGLISH"
+        ? "ESSY ENGLISH is approved from script.md, not a submitted script.yaml."
+        : "ESSY PREPARE completes via verified TTS timing (prepare-complete), not artifact submit.",
+    );
+  }
+  if (stage === "PREPARE") {
+    throw new Error("PREPARE is ESSY-only and completes via verified TTS timing.");
+  }
+  if (isEssySeries(state.series) && stage === "STORYBOARD" && state?.prepare?.completed !== true) {
+    throw new Error("ESSY STORYBOARD (DIRECT) requires completed PREPARE timing.");
+  }
   if (state.currentStage !== stage) {
     throw new Error(`Cannot submit ${stage} while current stage is ${state.currentStage}.`);
   }
@@ -140,21 +176,27 @@ export async function approveDraftStage(factoryRoot, state, target) {
   if (state.currentStage !== stage) {
     throw new Error(`Cannot approve ${target}; current stage is ${state.currentStage}.`);
   }
-  const artifact = ARTIFACTS[stage];
-  try {
-    await readFile(path.join(draftRoot(factoryRoot, state.draftId), artifact), "utf8");
-  } catch (error) {
-    if (error?.code === "ENOENT") {
-      throw new Error(`Cannot approve ${target} before ${artifact} exists.`);
+  // ESSY canonical English artifact is script.md (+ WRITE-side records);
+  // every other series keeps the legacy script.yaml existence check exactly.
+  if (stage === "ENGLISH" && isEssySeries(state.series)) {
+    await assertEssyEnglishArtifact(factoryRoot, state);
+  } else {
+    const artifact = ARTIFACTS[stage];
+    try {
+      await readFile(path.join(draftRoot(factoryRoot, state.draftId), artifact), "utf8");
+    } catch (error) {
+      if (error?.code === "ENOENT") {
+        throw new Error(`Cannot approve ${target} before ${artifact} exists.`);
+      }
+      throw error;
     }
-    throw error;
   }
   const approval = APPROVAL_FOR_STAGE[stage];
   state.approvals[approval] = {
     approved: true,
     approvedAt: new Date().toISOString(),
   };
-  state.currentStage = NEXT_STAGE[stage];
+  state.currentStage = nextStageForSeries(stage, state.series);
   state.status = stage === "PACKAGE" ? "package_approved" : "in_progress";
   record(state, `${approval}-approved`);
   await writeDraftState(factoryRoot, state);
@@ -163,14 +205,7 @@ export async function approveDraftStage(factoryRoot, state, target) {
 
 export async function rollbackDraft(factoryRoot, state, requestedStage) {
   const target = normalizeStage(requestedStage);
-  const allowed = {
-    CONCEPT: ["REQUEST"],
-    ENGLISH: ["CONCEPT"],
-    STORYBOARD: ["ENGLISH", "CONCEPT"],
-    PACKAGE: ["STORYBOARD", "ENGLISH", "CONCEPT"],
-    ASSETS: ["PACKAGE", "STORYBOARD", "ENGLISH", "CONCEPT"],
-    RENDER: ["ASSETS", "PACKAGE", "STORYBOARD", "ENGLISH", "CONCEPT"],
-  }[state.currentStage] ?? [];
+  const allowed = allowedRollbackTargets(state.currentStage, state.series);
   if (!allowed.includes(target)) {
     throw new Error(
       `Cannot roll back ${state.currentStage} to ${target}. Allowed: ${allowed.join(", ") || "none"}.`,
@@ -192,10 +227,41 @@ export async function rollbackDraft(factoryRoot, state, requestedStage) {
       state.approvals[approval] = {approved: false};
     }
   }
+  // Rolling back to (or through) PREPARE invalidates the deterministic
+  // machine completion: timing must be re-verified before DIRECT resumes.
+  if (DRAFT_STAGES.indexOf("PREPARE") >= DRAFT_STAGES.indexOf(target)) {
+    state.prepare = {completed: false};
+  }
   state.currentStage = target;
   state.status = "in_progress";
   record(state, "draft-rolled-back", {to: target});
   await writeDraftState(factoryRoot, state);
+}
+
+// Series-aware rollback graph. Non-ESSY series keep the legacy graph
+// byte-for-byte (PREPARE is never a legal source or target there).
+// ESSY inserts PREPARE between ENGLISH and STORYBOARD (= DIRECT).
+export function allowedRollbackTargets(currentStage, series) {
+  const current = String(currentStage ?? "").toUpperCase();
+  if (!isEssySeries(series)) {
+    return {
+      CONCEPT: ["REQUEST"],
+      ENGLISH: ["CONCEPT"],
+      STORYBOARD: ["ENGLISH", "CONCEPT"],
+      PACKAGE: ["STORYBOARD", "ENGLISH", "CONCEPT"],
+      ASSETS: ["PACKAGE", "STORYBOARD", "ENGLISH", "CONCEPT"],
+      RENDER: ["ASSETS", "PACKAGE", "STORYBOARD", "ENGLISH", "CONCEPT"],
+    }[current] ?? [];
+  }
+  return {
+    CONCEPT: ["REQUEST"],
+    ENGLISH: ["CONCEPT"],
+    PREPARE: ["ENGLISH", "CONCEPT"],
+    STORYBOARD: ["PREPARE", "ENGLISH", "CONCEPT"],
+    PACKAGE: ["STORYBOARD", "PREPARE", "ENGLISH", "CONCEPT"],
+    ASSETS: ["PACKAGE", "STORYBOARD", "PREPARE", "ENGLISH", "CONCEPT"],
+    RENDER: ["ASSETS", "PACKAGE", "STORYBOARD", "PREPARE", "ENGLISH", "CONCEPT"],
+  }[current] ?? [];
 }
 
 export function validateStageArtifact(stage, value, state) {
@@ -222,11 +288,18 @@ export function validateStageArtifact(stage, value, state) {
       }
     }
   } else if (stage === "STORYBOARD") {
-    requireNonEmptyArray(value.scenes, "scenes");
-    for (const [index, scene] of value.scenes.entries()) {
-      if (scene.scene !== index + 1) throw new Error("Storyboard scenes must be sequential.");
-      requireStrings(scene, ["imageDescription", "action", "environment"]);
-      requireNonEmptyArray(scene.sentences, `scenes[${index}].sentences`);
+    // ESSY STORYBOARD is Runbook DIRECT: visual slots planned from actual
+    // PREPARE timing. LLFC scenes/action/environment validation must NOT
+    // apply to ESSY storyboard artifacts.
+    if (isEssySeries(state?.series)) {
+      validateEssyStoryboardArtifact(value, state);
+    } else {
+      requireNonEmptyArray(value.scenes, "scenes");
+      for (const [index, scene] of value.scenes.entries()) {
+        if (scene.scene !== index + 1) throw new Error("Storyboard scenes must be sequential.");
+        requireStrings(scene, ["imageDescription", "action", "environment"]);
+        requireNonEmptyArray(scene.sentences, `scenes[${index}].sentences`);
+      }
     }
   } else if (stage === "PACKAGE") {
     for (const approval of ["concept", "english", "scenes"]) {
@@ -291,7 +364,230 @@ function requireNonEmptyArray(value, name) {
   }
 }
 
+// --- ESSY WRITE -> PREPARE -> DIRECT contract (Runbook 5-phase) ---
+
+// ESSY canonical English artifact is the projects script.md (NOT
+// script.yaml), plus the WRITE-side records declared on the draft state
+// (titles.json / compression-review.md for ESSY-0004+). Older ESSY drafts
+// only declare script.md; only declared records are enforced so frozen
+// episodes keep their shape.
+export async function assertEssyEnglishArtifact(factoryRoot, state) {
+  const scriptPath = await resolveEssyWriteFile(factoryRoot, state, ["script", "script.md"]);
+  if (!scriptPath) {
+    throw new Error("Cannot approve english before script.md exists.");
+  }
+  const text = await readFile(scriptPath, "utf8");
+  const blocks = parseEssyNarrationBlocks(text);
+  if (blocks.length === 0) {
+    throw new Error("script.md contains no narration blocks (expected ## N001, N002, ...).");
+  }
+  for (const block of blocks) {
+    if (!block.text.trim()) {
+      throw new Error(`script.md block ${block.id} must contain non-empty narration text.`);
+    }
+  }
+  for (const key of ["titles", "compressionReview"]) {
+    const declared = state.artifacts?.[key];
+    if (typeof declared !== "string" || !declared) continue;
+    const found = await resolveEssyWriteFile(factoryRoot, state, [key, declared]);
+    if (!found) {
+      throw new Error(`Cannot approve english before ${declared} exists.`);
+    }
+  }
+  return {scriptPath, blockCount: blocks.length, blocks: blocks.map((block) => block.id)};
+}
+
+export function parseEssyNarrationBlocks(text) {
+  const blocks = [];
+  const pattern = /^##\s+(N\d{3})\b.*$/gm;
+  const headings = [...String(text ?? "").matchAll(pattern)];
+  for (const [index, heading] of headings.entries()) {
+    const start = heading.index + heading[0].length;
+    const end = index + 1 < headings.length ? headings[index + 1].index : text.length;
+    blocks.push({id: heading[1], text: text.slice(start, end)});
+  }
+  return blocks;
+}
+
+async function resolveEssyWriteFile(factoryRoot, state, candidates) {
+  const roots = [
+    draftRoot(factoryRoot, state.draftId),
+    path.join(factoryRoot, "projects", state.draftId),
+  ];
+  const names = new Set();
+  for (const candidate of candidates) {
+    if (typeof candidate !== "string" || !candidate) continue;
+    names.add(candidate);
+    names.add(path.basename(candidate));
+  }
+  for (const root of roots) {
+    for (const name of names) {
+      const full = path.join(root, name);
+      try {
+        const info = await stat(full);
+        if (info.isFile()) return full;
+      } catch {
+        // try next candidate
+      }
+    }
+  }
+  return null;
+}
+
 function record(state, event, detail = {}) {
   state.history ??= [];
   state.history.push({at: new Date().toISOString(), event, ...detail});
+}
+
+export async function recordPrepareComplete(factoryRoot, state) {
+  if (!isEssySeries(state.series)) {
+    throw new Error("PREPARE completion is ESSY-only.");
+  }
+  if (state.currentStage !== "PREPARE") {
+    throw new Error(`Cannot complete PREPARE during ${state.currentStage}.`);
+  }
+  if (state.approvals?.english?.approved !== true) {
+    throw new Error("Cannot complete PREPARE before english approval.");
+  }
+  const summary = await assertEssyPrepareTiming(factoryRoot, state);
+  state.prepare = {completed: true, completedAt: new Date().toISOString(), ...summary};
+  state.currentStage = "STORYBOARD";
+  state.status = "in_progress";
+  record(state, "prepare-complete", summary);
+  await writeDraftState(factoryRoot, state);
+  return state;
+}
+
+export async function assertEssyPrepareTiming(factoryRoot, state) {
+  const episodeDir = path.join(factoryRoot, "projects", state.draftId);
+  const manifestPath = path.join(episodeDir, "manifest.json");
+  let manifest;
+  try {
+    manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  } catch (error) {
+    if (error?.code === "ENOENT") {
+      throw new Error("Cannot complete PREPARE before manifest.json exists.");
+    }
+    throw new Error(`Cannot complete PREPARE: invalid manifest.json (${error.message}).`);
+  }
+  const entries = manifest.audio;
+  if (!Array.isArray(entries) || entries.length === 0) {
+    throw new Error("Cannot complete PREPARE: manifest.json lists no audio entries.");
+  }
+  let totalDurationSec = 0;
+  for (const entry of entries) {
+    const id = entry?.id;
+    if (typeof id !== "string" || !id) {
+      throw new Error("Cannot complete PREPARE: manifest audio entry is missing its id.");
+    }
+    if (typeof entry.durationSec !== "number" || !(entry.durationSec > 0)) {
+      throw new Error(`Cannot complete PREPARE: audio entry ${id} has no positive durationSec.`);
+    }
+    if (typeof entry.textSha256 !== "string" || !entry.textSha256) {
+      throw new Error(`Cannot complete PREPARE: audio entry ${id} is missing textSha256.`);
+    }
+    const audioPath = path.join(factoryRoot, entry.path);
+    try {
+      const info = await stat(audioPath);
+      if (!info.isFile() || info.size === 0) {
+        throw new Error(`Cannot complete PREPARE: audio file for ${id} is empty.`);
+      }
+    } catch (error) {
+      if (error?.message?.startsWith("Cannot complete PREPARE")) throw error;
+      throw new Error(`Cannot complete PREPARE: audio file for ${id} is missing.`);
+    }
+    const vttPath = path.join(episodeDir, "temp", `${id}.vtt`);
+    try {
+      await stat(vttPath);
+    } catch {
+      throw new Error(`Cannot complete PREPARE: temp/${id}.vtt is missing.`);
+    }
+    const wordsPath = path.join(episodeDir, "temp", `${id}.words.json`);
+    let words;
+    try {
+      words = JSON.parse(await readFile(wordsPath, "utf8"));
+    } catch (error) {
+      if (error?.code === "ENOENT") {
+        throw new Error(`Cannot complete PREPARE: temp/${id}.words.json is missing.`);
+      }
+      throw new Error(`Cannot complete PREPARE: temp/${id}.words.json is invalid (${error.message}).`);
+    }
+    assertEssyWordsArtifact(words, entry);
+    totalDurationSec += entry.durationSec;
+  }
+  return {
+    blockCount: entries.length,
+    totalDurationSec: Math.round(totalDurationSec * 1000) / 1000,
+    manifest: "manifest.json",
+  };
+}
+
+function assertEssyWordsArtifact(words, entry) {
+  const id = entry.id;
+  if (words?.timingSource !== "edge-tts-word-boundary") {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json is not edge-tts-word-boundary timing.`);
+  }
+  const cache = words.cacheIdentity;
+  if (cache?.textSha256 !== entry.textSha256) {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json textSha256 does not match manifest.`);
+  }
+  const manifestDuration = entry.durationSec;
+  const wordsDuration = cache?.audioDurationSec;
+  if (typeof wordsDuration !== "number" || Math.abs(wordsDuration - manifestDuration) > 0.01) {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json audio duration does not match manifest.`);
+  }
+  const validation = words.validation;
+  if (typeof validation?.wordCount !== "number" || validation.wordCount <= 0) {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json has no words.`);
+  }
+  if (typeof validation?.lastWordEndSec !== "number" || !(validation.lastWordEndSec > 0)) {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json has no word end timing.`);
+  }
+  if (validation.lastWordEndSec > manifestDuration + 1.5) {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json timing exceeds audio duration.`);
+  }
+  if (!Array.isArray(words.words) || words.words.length === 0) {
+    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json has an empty words array.`);
+  }
+}
+
+// ESSY STORYBOARD is Runbook DIRECT: visual slots planned FROM actual
+// PREPARE timing (Visual Arc -> Slots -> editorialFunction -> visualIntent
+// -> avoid + sequence literalness review). Valid only after PREPARE
+// completion; slot count becomes concrete only here.
+function validateEssyStoryboardArtifact(value, state) {
+  if (state?.prepare?.completed !== true) {
+    throw new Error("ESSY STORYBOARD (DIRECT) requires completed PREPARE timing.");
+  }
+  if (Array.isArray(value.scenes)) {
+    throw new Error("ESSY storyboard uses blocks/slots, not LLFC scenes.");
+  }
+  requireNonEmptyArray(value.blocks, "blocks");
+  for (const [index, block] of value.blocks.entries()) {
+    if (typeof block?.narrationId !== "string" || !block.narrationId.trim()) {
+      throw new Error(`ESSY storyboard blocks[${index}] requires a narrationId.`);
+    }
+    requireStrings(block, ["visualArc"]);
+    requireNonEmptyArray(block.slots, `blocks[${index}].slots`);
+    for (const [slotIndex, slot] of block.slots.entries()) {
+      requireStrings(slot, ["slotId", "editorialFunction", "visualIntent"]);
+      if (!Array.isArray(slot.avoid)) {
+        throw new Error(`ESSY storyboard blocks[${index}].slots[${slotIndex}] requires an avoid list.`);
+      }
+    }
+  }
+  const reviewStatus = value.sequenceLiteralnessReview?.status;
+  if (typeof reviewStatus !== "string" || !reviewStatus.trim()) {
+    throw new Error("ESSY storyboard requires sequenceLiteralnessReview.status.");
+  }
+  return value;
+}
+
+// A draft-backed episode must never gain a competing production
+// projects/<EP>/workflow.json while any draft stage still governs it.
+// discover() and renderer lazy-create paths consult this guard before
+// creating a parallel production workflow.
+export function draftBlocksProductionWorkflow(state) {
+  if (!state || typeof state.draftId !== "string") return false;
+  return DRAFT_STAGES.includes(String(state.currentStage ?? "").toUpperCase());
 }
