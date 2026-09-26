@@ -644,7 +644,7 @@ async function main() {
               );
             }
           }
-          const cueList = sliceCues(absCues, shot.startSec, shot.endSec);
+          const cueList = sliceCues(absCues, shot.startSec, shot.speechEndSec ?? shot.endSec);
           log(
             `[REAL-ASSET SHOT ${++shotNumber}/${requested.length}] ` +
               `${shot.slotId} <- ${shot.blockId} (${shot.mediaType}, ` +
@@ -655,6 +655,7 @@ async function main() {
             isVideo: shot.mediaType === "video",
             outputPath: clipPath,
             durationSec: shot.renderDurationSec,
+            holdSec: shot.trailingHoldSec ?? 0,
             cueList,
             stillMotion: shot.mediaType === "photo"
               ? resolveStillMotion(shot)
@@ -1535,6 +1536,7 @@ async function renderRealAssetClip({
   isVideo,
   outputPath,
   durationSec,
+  holdSec = 0,
   cueList,
   stillMotion,
   lesson,
@@ -1548,17 +1550,25 @@ async function renderRealAssetClip({
     maxChars,
   });
 
+  // The hold is rendered after narration playback ends as a frozen final
+  // frame (videos: explicit tpad clone; photos: -loop already covers it).
+  const renderDurationSec = durationSec + holdSec;
+
   if (!isVideo) {
     return renderRealAssetPhotoClip({
-      sourcePath, outputPath, durationSec, subtitleFilters, stillMotion, lesson,
+      sourcePath, outputPath, durationSec: renderDurationSec, subtitleFilters, stillMotion, lesson,
     });
   }
 
   // Video: play from source t=0, no -stream_loop, no -ss on the video input.
+  // The hold never consumes extra source duration: tpad clones the last frame.
   const videoFilters = [
     `scale=${width}:${height}:force_original_aspect_ratio=increase:flags=lanczos`,
     `crop=${width}:${height}`,
     `fps=${fps}`,
+    ...(holdSec > 0
+      ? [`tpad=stop_mode=clone:stop_duration=${holdSec.toFixed(6)}`]
+      : []),
     subtitleFilters,
     "format=yuv420p",
   ].filter(Boolean).join(",");
@@ -1570,7 +1580,7 @@ async function renderRealAssetClip({
     "-i",
     sourcePath,
     "-t",
-    durationSec.toFixed(6),
+    renderDurationSec.toFixed(6),
     "-vf",
     videoFilters,
     "-c:v",

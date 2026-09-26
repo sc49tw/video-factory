@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/essy-assets-validation.schema.json",
+  "title": "ESSY ASSETS Validation",
+  "description": "Deterministic machine completion for the ESSY draft ASSETS stage: validated production provenance + asset bijection + media/duration-fit status. No human approval gate; submission transitions ASSETS -> RENDER.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "draftId", "series", "provenance", "expectedAssets", "validatedAssets", "validation"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "draftId": {"type": "string", "pattern": "^ESSY-[0-9]{4}$"},
+    "series": {"const": "ESSY"},
+    "provenance": {"type": "string", "minLength": 1},
+    "expectedAssets": {"type": "integer", "minimum": 1},
+    "validatedAssets": {"type": "integer", "minimum": 1},
+    "videos": {"type": "integer", "minimum": 0},
+    "photos": {"type": "integer", "minimum": 0},
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bijection", "media", "durationFit"],
+      "properties": {
+        "bijection": {"const": "pass"},
+        "media": {"const": "pass"},
+        "durationFit": {"const": "pass"}
+      }
+    }
+  },
+  "$defs": {},
+  "x-runtimeValidation": {
+    "implementation": "src/essy-assets-validation.mjs"
+  }
+}

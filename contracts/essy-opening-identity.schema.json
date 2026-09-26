@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/essy-opening-identity.schema.json",
+  "title": "ESSY Opening Identity",
+  "description": "Canonical metadata for ESSY episode opening identity reveal. Represents the editorial decision of how/when the series title and episode title appear after the opening hook, over continuing footage. This is the preferred canonical path for ESSY-0004+ episodes. Backward compatible with legacy title-timing fields and coldOpenExperiment.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["seriesTitle", "episodeTitle", "timing"],
+  "properties": {
+    "seriesTitle": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Series title text for the identity reveal. Typically resolved from the shared ESSY_SERIES_IDENTITY but can be overridden per episode if editorially justified."
+    },
+    "episodeTitle": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Episode title text for the identity reveal. From WRITE-approved visual-only metadata (titles.json visualOnly entry with tts:false)."
+    },
+    "timing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startSec", "durationSec"],
+      "properties": {
+        "startSec": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Absolute start time of the identity reveal on the main timeline (seconds). Derived from the end of the opening hook/narration block. t=0 is N001 start, not a pre-roll."
+        },
+        "durationSec": {
+          "type": "number",
+          "minimum": 0.1,
+          "description": "Duration of the identity reveal (seconds). During this window, footage continues but narration and subtitles are suppressed (if enabled)."
+        }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["sequential", "simultaneous"],
+          "description": "How series title and episode title are presented. 'sequential' = series title appears first, then episode title. 'simultaneous' = both appear together. Defaults to 'sequential' if omitted."
+        },
+        "seriesTitleFirst": {
+          "type": "boolean",
+          "description": "When mode is 'sequential', whether series title appears before episode title. Defaults to true."
+        }
+      }
+    },
+    "narrationSuppression": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether narration is suppressed (muted) during the identity reveal window. Defaults to true for identity reveals."
+        }
+      },
+      "default": {"enabled": true}
+    },
+    "subtitleSuppression": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether subtitles are suppressed during the identity reveal window. Defaults to true for identity reveals."
+        }
+      },
+      "default": {"enabled": true}
+    }
+  },
+  "x-runtimeValidation": {
+    "implementation": "src/essy-opening-identity.mjs"
+  }
+}

@@ -45,10 +45,21 @@ export const SUBTITLE_CONFIG = Object.freeze({
     MARGIN_V: 48, // lower safe area at 540p (1080 design: 96)
     MARGIN_LR: 40,
     PRIMARY_COLOUR: "&H00FFFFFF",
-    OUTLINE_COLOUR: "&H008C0000",
+    OUTLINE_COLOUR: "&H00000000",
     BACK_COLOUR: "&H96000000",
   }),
 });
+
+// SRT/libass defaults to a 384x288 script canvas. Our style is in 540p pixels.
+export function buildAssForceStyle() {
+  const s = SUBTITLE_CONFIG.STYLE;
+  const scale = 288 / 540;
+  return `FontName=${s.FONT_NAME},FontSize=${s.FONT_SIZE * scale}` +
+    `,PrimaryColour=${s.PRIMARY_COLOUR},OutlineColour=${s.OUTLINE_COLOUR}` +
+    `,BorderStyle=1,Outline=${s.OUTLINE * scale},Shadow=${s.SHADOW * scale}` +
+    `,BackColour=${s.BACK_COLOUR},Alignment=${s.ALIGNMENT}` +
+    `,MarginV=${s.MARGIN_V * scale},MarginL=${s.MARGIN_LR * scale},MarginR=${s.MARGIN_LR * scale}`;
+}
 
 // Shallow-merge episode-level overrides over the shared defaults.
 // Unknown override keys are ignored to keep configs forward-compatible.

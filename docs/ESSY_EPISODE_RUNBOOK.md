@@ -87,8 +87,42 @@ WRITE → PREPARE → DIRECT → BUILD → FINALIZE
 
 ## PHASE 4 — BUILD
 
+### Render readiness: mandatory before a full render
+
+Codex reads [ESSY render stabilization](ESSY_RENDER_STABILIZATION.md) before
+starting or repairing the renderer. Run `pnpm video:preflight <EP> review`
+first. A passing preflight is not QA approval or proof of final readiness.
+When renderer behavior changes, verify a short opening/body-boundary/ending
+sample before spending time on the full review. Do not discover opening or
+subtitle presentation decisions through repeated full-length renders.
+
+For openingIdentity episodes the current final renderer is NOT ready:
+review/final insertion parity remains an explicit engineering prerequisite.
+Do not describe v13 review success as completion of the reusable pipeline.
+
 - **Owner:** Codex / Video Factory.
 - **Input:** approved script + approved asset selections.
+- **Deterministic handoff:** BUILD begins with the draft PACKAGE stage, which
+  is series-specific (`contracts/essy-production-package.schema.json` for ESSY,
+  `contracts/production-package.schema.json` for LLFC). The package contains
+  references to already-approved artifacts only — no new editorial decision —
+  and for ESSY requires ENGLISH + scenes (Gate 2) approvals and completed
+  PREPARE timing (no CONCEPT gate exists in the ESSY flow).
+- **Source-duration fit = narration playback only.** Inter-block trailing pause
+  is a deterministic **last-frame hold** on the block's final shot (frozen
+  clone, never looped, never charged to source duration). Approved narration
+  trim tolerance is `MAX_NARRATION_TRIM_SEC` (≤0.11s) and any within-tolerance
+  deficit becomes extra trailing hold. Silence never creates a sourcing slot.
+- **ASSETS completion is machine validation, not a human gate.** A passing
+  `assets-validation.json` deterministically advances ASSETS → RENDER. ESSY
+  keeps exactly **four** human approval gates (english, scenes, package, qa).
+- **Draft-backed ownership through review.** A draft-backed ESSY episode stays
+  governed by `state.yaml` through review — do **not** register a competing
+  `projects/<EP>/workflow.json` for QA. “Review proxy ready” is deterministic
+  BUILD state (RENDER / in_progress). Gate 3 is recorded with
+  `pnpm video:workflow approve <EP> qa`, which writes QA approval into the
+  authoritative draft state. Legacy/non-draft episodes keep the episode-level
+  workflow.json gate unchanged.
 - **Main work:** download approved assets only → provenance → real-asset
   timeline → subtitles → BGM → render → automated technical QA → review
   proxy.

@@ -17,8 +17,12 @@ REQUEST
   → ENGLISH → compression pass (Playbook §2.1, projects/<DRAFT-ID>/compression-review.md)
             → user approval of the compressed script
   → STORYBOARD → user approval
-  → PACKAGE → schema validation → user approval
-  → ASSETS
+  → PACKAGE → series-specific schema validation (LLFC uses the LLFC-only
+    production-package contract; ESSY has its own essy-production-package
+    contract and no CONCEPT gate) → user approval
+  → ASSETS → machine validation (ESSY only; no human gate) → RENDER
+  → REVIEW (draft-backed: governed by state.yaml; do not create a competing
+    workflow.json) → Gate 3 QA approval via `approve <EP> qa` → FINAL-ASSEMBLY
   → RENDER → QA approval
   → FINAL-ASSEMBLY (ESSY) → final-assembly approval
   → completed

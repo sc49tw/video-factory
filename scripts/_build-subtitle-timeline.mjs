@@ -340,11 +340,18 @@ export function normalizeCueTimeline(cues) {
   return {cues: kept, corrections};
 }
 
-export async function buildSubtitleTimeline({root, episode, config: configOverrides} = {}) {
+export async function buildSubtitleTimeline({root, episode, config: configOverrides, insertion = null} = {}) {
   const config = resolveSubtitleConfig(configOverrides);
   const project = path.join(root, "projects", episode);
   const timeline = JSON.parse(await readFile(path.join(project, "assembly-timeline.json"), "utf8"));
-  const blockStart = new Map(timeline.blocks.map((b) => [b.sentenceId, b.startSec ?? 0]));
+  if (insertion && (!(insertion.startSec >= 0) || !(insertion.durationSec > 0) || !Number.isFinite(insertion.startSec + insertion.durationSec))) {
+    throw new Error('Invalid narration insertion timing.');
+  }
+  if (insertion && timeline.blocks.some(b => b.startSec < insertion.startSec - 0.001 && b.endSec > insertion.startSec + 0.001)) {
+    throw new Error('Identity insertion must fall between complete narration blocks.');
+  }
+  const blockStart = new Map(timeline.blocks.map((b) => [b.sentenceId,
+    (b.startSec ?? 0) + (insertion && b.startSec >= insertion.startSec - 0.001 ? insertion.durationSec : 0)]));
 
   // ---- Per-generation word-timing requirement policy ----
   // New-generation ESSY manifests carry subtitleTiming.policy =
@@ -524,6 +531,7 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
   const report = {
     schemaVersion: "1.3",
     episode,
+    deliveryInsertion: insertion ? {startSec: insertion.startSec, durationSec: insertion.durationSec} : null,
     generatedFrom: "per-block edge-tts VTT + word-timing artifacts + assembly-timeline offsets (no re-estimation)",
     segmentation: "balanced phrase-aware DP (segmentParentText), MAX_CHARS hard bound",
     totalCueCount: cues.length,

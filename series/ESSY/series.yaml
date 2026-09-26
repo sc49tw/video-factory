@@ -3,6 +3,12 @@
   "name": "Essay Narration",
   "ideaList": "series/ESSY/idea-list.yaml",
   "mvpLanguage": "en",
+  "currentDefaultBgm": {
+    "selectedTrack": "Dreamland",
+    "sourcePath": "projects/ESSY-0001/music/candidates/Dreamland - Aakash Gandhi.mp3",
+    "episodeOverrideAllowed": true,
+    "note": "Current editorial default selected by the user for ESSY-0004 FINALIZE readiness; not an immutable series invariant. Materialize explicit per-episode music settings in final-assembly.json using the established ESSY Dreamland convention."
+  },
   "worldview": [
     "Essays are original compositions, not summaries of source material.",
     "Sources provide facts, ideas, arguments, counterarguments, examples, and inspiration only."

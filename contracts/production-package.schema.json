@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "contracts/production-package.schema.json",
   "title": "LLFC Production Package",
+  "description": "LLFC-only production package contract (characters, scenes, imagePrompt, level A2, DRAFT-* ids). ESSY uses contracts/essy-production-package.schema.json; series dispatch lives in src/series-contracts.mjs.",
   "type": "object",
   "additionalProperties": true,
   "required": ["draftId", "series", "subtype", "title", "language", "level", "summary", "characters", "scenes"],

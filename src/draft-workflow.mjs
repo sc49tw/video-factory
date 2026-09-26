@@ -1,6 +1,7 @@
 import {mkdir, readFile, stat, writeFile} from "node:fs/promises";
 import path from "node:path";
-import {validateProductionPackage} from "./production-package.mjs";
+import {validatePackageForSeries} from "./series-contracts.mjs";
+import {validateEssyAssetsValidation} from "./essy-assets-validation.mjs";
 
 export const DRAFT_STAGES = Object.freeze([
   "REQUEST",
@@ -19,6 +20,7 @@ export const ARTIFACTS = Object.freeze({
   ENGLISH: "script.yaml",
   STORYBOARD: "storyboard.yaml",
   PACKAGE: "production-package.json",
+  ASSETS: "assets-validation.json",
 });
 
 const APPROVAL_FOR_STAGE = Object.freeze({
@@ -163,10 +165,20 @@ export async function submitStageArtifact(factoryRoot, state, stage, value) {
     ENGLISH: "script",
     STORYBOARD: "storyboard",
     PACKAGE: "productionPackage",
+    ASSETS: "assetsValidation",
   }[stage];
   state.artifacts[stateKey] = ARTIFACTS[stage];
-  state.status = "needs_approval";
-  record(state, `${stage.toLowerCase()}-submitted`);
+  if (stage === "ASSETS") {
+    // ASSETS is a machine-only validation stage with NO human approval gate.
+    // A passing validation deterministically completes the stage and advances
+    // to RENDER; ESSY keeps exactly four human gates.
+    state.currentStage = "RENDER";
+    state.status = "in_progress";
+    record(state, "assets-complete");
+  } else {
+    state.status = "needs_approval";
+    record(state, `${stage.toLowerCase()}-submitted`);
+  }
   await writeDraftState(factoryRoot, state);
   return artifactPath;
 }
@@ -302,15 +314,22 @@ export function validateStageArtifact(stage, value, state) {
       }
     }
   } else if (stage === "PACKAGE") {
-    for (const approval of ["concept", "english", "scenes"]) {
-      if (state.approvals[approval]?.approved !== true) {
-        throw new Error(`PACKAGE requires approved ${approval}.`);
-      }
+    // Series-specific contract dispatch: LLFC and ESSY package fields,
+    // approval prerequisites, and validators live behind series-contracts.mjs.
+    validatePackageForSeries(state.series, value, state);
+  } else if (stage === "ASSETS") {
+    // ESSY machine-only completion: validated production provenance +
+    // bijection + media/duration-fit. No human approval gate exists here, and
+    // LLFC/other series keep their legacy behavior (no ASSETS artifact).
+    if (!isEssySeries(state.series)) {
+      throw new Error("ASSETS artifact validation is ESSY-only.");
     }
-    validateProductionPackage(value, {
+    if (state.approvals.package?.approved !== true) {
+      throw new Error("ASSETS completion requires approved package.");
+    }
+    validateEssyAssetsValidation(value, {
       draftId: state.draftId,
       series: state.series,
-      subtype: state.subtype,
     });
   }
   return value;

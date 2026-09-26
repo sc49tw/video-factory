@@ -5,6 +5,28 @@
 // filename ("ESSY") or any internal workflow label. Episodes supply ONLY their
 // episodeTitle; the renderer consumes seriesTitle from here.
 // ---------------------------------------------------------------------------
+import {readFile} from 'node:fs/promises';
+import path from 'node:path';
+
+// A visual-only title is not authorization for a standalone pre-roll.
+export async function resolveEpisodePreRollTitleCard({root, episode}) {
+  let pkg;
+  try { pkg = JSON.parse(await readFile(path.join(root, 'projects', '_drafts', episode, 'production-package.json'), 'utf8')); }
+  catch (error) { if (error.code === 'ENOENT') return null; throw error; }
+  const card = pkg.packaging?.preRollTitleCard;
+  if (!card) return null;
+  if (pkg.openingIdentity || pkg.packaging?.coldOpenExperiment) throw new Error('Conflicting opening mechanisms');
+  if (!card.text || !(card.durationSec > 0)) throw new Error('Explicit pre-roll requires text and durationSec');
+  return card;
+}
+export function preRollOffsetSec(card) { return card?.durationSec ?? 0; }
+export function buildPreRollClipArgs({fontPath, titleCard, width, height, fps, crf = 18, outputPath}) {
+  return ['-hide_banner','-loglevel','error','-y','-f','lavfi','-i',`color=black:s=${width}x${height}:r=${fps}`,
+    '-f','lavfi','-i','anullsrc=r=48000:cl=stereo','-t',String(titleCard.durationSec),
+    '-vf',`drawtext=fontfile=${fontPath}:text='${escapeFilterText(titleCard.text).replaceAll("'", '’')}':expansion=none:fontcolor=white:fontsize=${height / 22.5}:x=(w-text_w)/2:y=(h-text_h)/2`,
+    '-c:v','libx264','-crf',String(crf),'-pix_fmt','yuv420p','-c:a','aac',outputPath];
+}
+
 export const ESSY_SERIES_IDENTITY = Object.freeze({
   seriesId: "ESSY",
   seriesTitle: "A SECOND LOOK AT LIFE",

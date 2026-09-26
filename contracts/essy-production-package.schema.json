@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/essy-production-package.schema.json",
+  "title": "ESSY Production Package",
+  "description": "Deterministic, series-specific handoff from an approved ESSY creative draft into BUILD. References canonical artifacts; embeds no editorial decisions and no LLFC characters/scenes fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "draftId", "series", "title", "language", "narration", "storyboard", "approvedAssets"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "draftId": {"type": "string", "pattern": "^ESSY-[0-9]{4}$"},
+    "series": {"const": "ESSY"},
+    "title": {"$ref": "#/$defs/plainText"},
+    "language": {"enum": ["en"]},
+    "narration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["script", "manifest", "blockCount"],
+      "properties": {
+        "script": {"type": "string", "minLength": 1},
+        "manifest": {"type": "string", "minLength": 1},
+        "blockCount": {"type": "integer", "minimum": 1}
+      }
+    },
+    "storyboard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "slotCount"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "slotCount": {"type": "integer", "minimum": 1}
+      }
+    },
+    "approvedAssets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "count"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "count": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "$defs": {
+    "plainText": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![\\s\\S]*```)(?!\\s*#{1,6}\\s)(?!\\s*[-*]\\s)[\\s\\S]+$"
+    }
+  },
+  "x-runtimeValidation": {
+    "implementation": "src/essy-production-package.mjs"
+  }
+}

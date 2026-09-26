@@ -133,8 +133,12 @@ async function submit([id, stage, fileArgument]) {
     value,
   );
   await writeCurrentTask(state);
-  console.log(`Validated and saved ${relative(artifactPath)}.`);
-  console.log(`Waiting for user approval: ${approvalName(stage)}.`);
+  if (String(stage).toUpperCase() === "ASSETS") {
+    console.log(`Validated ASSETS completion for ${id}; advanced to RENDER.`);
+  } else {
+    console.log(`Validated and saved ${relative(artifactPath)}.`);
+    console.log(`Waiting for user approval: ${approvalName(stage)}.`);
+  }
 }
 
 async function approve([id, target]) {
@@ -153,6 +157,37 @@ async function approve([id, target]) {
       state.updatedAt = new Date().toISOString();
       state.history ??= [];
       state.history.push({at: state.updatedAt, event: "qa-approved"});
+      await writeDraftState(factoryRoot, state);
+      await writeCurrentTask(state);
+      console.log(`Approved ${target} for ${id}.`);
+      printDraft(state);
+      return;
+    }
+    // Draft-backed ESSY stays owned by state.yaml through FINALIZE. Gate 4 is
+    // a final-output approval, not a creative-artifact approval, so it must
+    // not be routed through approveDraftStage(). Require both Gate 3 and a
+    // rendered final master before completing the draft.
+    if (target === "final-assembly") {
+      if (state.approvals.qa?.approved !== true) {
+        throw new Error("Cannot approve final-assembly before QA approval.");
+      }
+      const finalPath = path.join(factoryRoot, "output", id, `${id}-final-v1.mp4`);
+      try {
+        await readFile(finalPath);
+      } catch (error) {
+        if (error?.code === "ENOENT") {
+          throw new Error(`Cannot approve final-assembly before ${relative(finalPath)} exists.`);
+        }
+        throw error;
+      }
+      state.approvals.finalAssembly = {
+        approved: true,
+        approvedAt: new Date().toISOString(),
+      };
+      state.status = "completed";
+      state.updatedAt = new Date().toISOString();
+      state.history ??= [];
+      state.history.push({at: state.updatedAt, event: "final-assembly-approved"});
       await writeDraftState(factoryRoot, state);
       await writeCurrentTask(state);
       console.log(`Approved ${target} for ${id}.`);

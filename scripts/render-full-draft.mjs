@@ -113,7 +113,12 @@ for (const block of blocks) {
       }
       usedSlots.add(slotId);
       const durationSec = shot.renderDurationSec;
-      if (!(durationSec > 0)) {
+      // Deterministic last-frame hold: the block's trailing pause (plus any
+      // approved narration trim tolerance) is rendered AFTER source playback
+      // ends as a frozen final frame. Never looped, never sourced longer.
+      const holdSec = shot.trailingHoldSec ?? 0;
+      const renderDurationSec = durationSec + holdSec;
+      if (!(renderDurationSec > 0)) {
         throw new Error(`Shot ${slotId} has no positive render duration.`);
       }
       const sourcePath = shot.sourcePath;
@@ -121,26 +126,33 @@ for (const block of blocks) {
         throw new Error(`Non-local source path for ${slotId}: ${sourcePath}`);
       }
       const segmentPath = path.join(segmentRoot, `${slotId}.mp4`);
-      expectedTotal += durationSec;
-      blockTotal += durationSec;
-      const windowEnd = windowStart + durationSec;
+      expectedTotal += renderDurationSec;
+      blockTotal += renderDurationSec;
+      const windowEnd = windowStart + renderDurationSec;
 
       process.stdout.write(
-        `[SHOT ${slotId}] ${durationSec.toFixed(3)}s @ ${globalCursor.toFixed(3)}s ` +
-          `(media ${shot.mediaType})\n`,
+        `[SHOT ${slotId}] ${durationSec.toFixed(3)}s + hold ${holdSec.toFixed(3)}s ` +
+          `@ ${globalCursor.toFixed(3)}s (media ${shot.mediaType})\n`,
       );
       shotReport.push({slotId, sentenceId, startSec: globalCursor, durationSec, mediaType: shot.mediaType});
-      globalCursor += durationSec;
+      globalCursor += renderDurationSec;
 
       const loopArg = shot.mediaType === "photo" ? ["-loop", "1"] : [];
+      // Photos loop over any duration; videos need an explicit clone of the
+      // final frame for the hold (no looping, no re-seeking of the source).
+      const holdFilters =
+        holdSec > 0 && shot.mediaType === "video"
+          ? [`tpad=stop_mode=clone:stop_duration=${holdSec.toFixed(6)}`]
+          : [];
       const vf =
         `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=increase:flags=lanczos,` +
-        `crop=${WIDTH}:${HEIGHT},fps=${FPS},format=yuv420p`;
+        `crop=${WIDTH}:${HEIGHT},fps=${FPS},format=yuv420p` +
+        (holdFilters.length ? `,${holdFilters.join(",")}` : "");
       await run("ffmpeg", [
         "-hide_banner", "-loglevel", "error", "-y",
         ...loopArg,
         "-i", sourcePath,
-        "-t", durationSec.toFixed(6),
+        "-t", renderDurationSec.toFixed(6),
         "-an",
         "-vf", vf,
         "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",

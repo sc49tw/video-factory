@@ -8,6 +8,12 @@
 
 const MIN_CUE_SEC = 0.1;
 
+// Canonical narration-fit trim tolerance (Gate 2 contract, max accepted 0.11s).
+// Sources falling short of the NARRATION playback window by at most this amount
+// are accepted; the deficit becomes extra deterministic last-frame hold. It is
+// NEVER covered by looping or by charging the inter-block pause to sources.
+export const MAX_NARRATION_TRIM_SEC = 0.11;
+
 /**
  * Distribute `total` seconds across caps (ffprobe source durations) as evenly
  * as possible, never exceeding a cap. Slots whose cap cannot hold the even
@@ -17,7 +23,7 @@ const MIN_CUE_SEC = 0.1;
  * @param {Array<number|null>} caps null caps (still photos) are unbounded.
  * @returns {number[]}
  */
-export function distributeEvenly(total, caps) {
+export function distributeEvenly(total, caps, maxDeficitSec = 0) {
   const result = new Array(caps.length).fill(0);
   let remaining = total;
   const pending = new Set(caps.keys());
@@ -38,8 +44,22 @@ export function distributeEvenly(total, caps) {
     }
     if (remaining <= 1e-6 && pending.size > 0) break;
   }
+  if (remaining > 1e-6) {
+    // Approved narration-fit trim tolerance (e.g. Gate 2 <= 0.11s): when the
+    // sources fall deterministically short of the NARRATION playback window by
+    // at most maxDeficitSec, the deficit is NOT charged to any shot; it is
+    // clamped out of the visual coverage and re-emerges as extra trailing
+    // hold after the last shot (the renderer freezes the last frame there).
+    if (remaining > maxDeficitSec + 1e-6) {
+      throw new Error(
+        `INSUFFICIENT_SOURCE: durations ${JSON.stringify(caps)} ` +
+          `cannot cover ${total.toFixed(3)}s (uncovered ${remaining.toFixed(3)}s).`,
+      );
+    }
+    const covered = total - remaining;
+    return distributeEvenly(covered, caps, 0);
+  }
   if (
-    remaining > 1e-6 ||
     remaining < -1e-6 ||
     result.some((duration) => !(Number.isFinite(duration) && duration > 0))
   ) {
@@ -84,11 +104,16 @@ export function buildBlockWindows(blocks) {
   const windows = [];
   let cursor = 0;
   for (const block of blocks) {
-    const durationSec = block.audioDurationSec + (block.pauseAfterSec ?? 0);
+    const narrationDurationSec = block.audioDurationSec;
+    const durationSec = narrationDurationSec + (block.pauseAfterSec ?? 0);
     windows.push({
       sentenceId: block.sentenceId,
       startSec: cursor,
       endSec: cursor + durationSec,
+      // Visual fit is against narration playback ONLY; the trailing pause is
+      // rendered as a deterministic last-frame hold after the block's final
+      // shot (never charged to source duration, never looped).
+      narrationDurationSec,
       durationSec,
     });
     cursor += durationSec;
@@ -122,11 +147,24 @@ export function buildAssemblyTimeline({blocks, slotsByBlock, cuesByBlock}) {
     const caps = slots.map((slot) =>
       slot.mediaType === "video" ? slot.sourceDurationSec : null,
     );
-    const durations = distributeEvenly(window.durationSec, caps);
+    // Source fit is against NARRATION playback only; the inter-block pause is
+    // a deterministic last-frame hold on the block's final shot.
+    const durations = distributeEvenly(
+      window.narrationDurationSec,
+      caps,
+      MAX_NARRATION_TRIM_SEC,
+    );
+    const narrationCoverage = durations.reduce((sum, d) => sum + d, 0);
+    const trimmedSec = round3(window.narrationDurationSec - narrationCoverage);
+    const trailingHoldSec = round3(
+      (window.durationSec - window.narrationDurationSec) + trimmedSec,
+    );
     const blockShots = [];
     let blockCursor = window.startSec;
     slots.forEach((slot, index) => {
       const renderDurationSec = durations[index];
+      const isFinalShot = index === slots.length - 1;
+      const holdSec = isFinalShot ? trailingHoldSec : 0;
       if (seenSlots.has(slot.slotId)) {
         throw new Error(`Duplicate slot assignment: ${slot.slotId}.`);
       }
@@ -152,26 +190,37 @@ export function buildAssemblyTimeline({blocks, slotsByBlock, cuesByBlock}) {
         sourceDurationSec: slot.sourceDurationSec,
         stillMotion: slot.stillMotion ?? null,
         renderDurationSec: round3(renderDurationSec),
+        // Narration playback end (hold never carries subtitles or narration).
+        speechEndSec: round3(blockCursor - window.startSec + renderDurationSec),
+        // endSec spans narration playback + this shot's trailing hold share.
         startSec: round3(blockCursor - window.startSec),
-        endSec: round3(blockCursor - window.startSec + renderDurationSec),
+        endSec: round3(blockCursor - window.startSec + renderDurationSec + holdSec),
+        trailingHoldSec: round3(holdSec),
         absoluteStartSec: round3(blockCursor),
-        absoluteEndSec: round3(blockCursor + renderDurationSec),
+        absoluteEndSec: round3(blockCursor + renderDurationSec + holdSec),
       };
       blockShots.push(shot);
       timelineShots.push(shot);
-      blockCursor += renderDurationSec;
+      blockCursor += renderDurationSec + holdSec;
     });
-    const coverage = durations.reduce((sum, d) => sum + d, 0);
-    if (Math.abs(coverage - window.durationSec) > 0.02) {
+    const coverage = narrationCoverage;
+    if (
+      Math.abs(coverage - window.narrationDurationSec) > 0.02 &&
+      window.narrationDurationSec - coverage > MAX_NARRATION_TRIM_SEC + 0.02
+    ) {
       throw new Error(
         `INSUFFICIENT_SOURCE block ${window.sentenceId}: ` +
-          `slots cover ${coverage.toFixed(3)}s of ${window.durationSec.toFixed(3)}s window.`,
+          `slots cover ${coverage.toFixed(3)}s of ${window.narrationDurationSec.toFixed(3)}s narration window.`,
       );
     }
     timelineBlocks.push({
       sentenceId: window.sentenceId,
       startSec: round3(window.startSec),
       endSec: round3(window.endSec),
+      audioDurationSec: round3(window.narrationDurationSec),
+      pauseAfterSec: round3(window.durationSec - window.narrationDurationSec),
+      trailingHoldSec,
+      trimmedSec,
       durationSec: round3(window.durationSec),
       cues: (cuesByBlock.get(window.sentenceId) ?? []).map((cue) => ({
         ...cue,
@@ -211,14 +260,56 @@ export function validateAssemblyTimeline(timeline) {
       );
     }
     expectedCursor = block.endSec;
+    // Shots must cover the block's NARRATION playback window exactly; the
+    // inter-block pause is a deterministic last-frame hold after the final
+    // shot, never charged to source duration.
     const blockCovered = (block.shots ?? []).reduce(
       (sum, shot) => sum + shot.renderDurationSec,
       0,
     );
-    if (Math.abs(blockCovered - block.durationSec) > 0.02) {
+    // Shots tile narration playback within the approved trim tolerance; the
+    // deficit becomes extra deterministic last-frame hold, never looped.
+    const narrationCoverage =
+      block.audioDurationSec - (block.trimmedSec ?? 0);
+    if (Math.abs(blockCovered - narrationCoverage) > 0.02) {
       throw new Error(
         `Block ${block.sentenceId} shots cover ${blockCovered.toFixed(3)}s, ` +
-          `expected ${block.durationSec.toFixed(3)}s.`,
+          `expected narration duration ${block.audioDurationSec.toFixed(3)}s.`,
+      );
+    }
+    if ((block.trimmedSec ?? 0) > MAX_NARRATION_TRIM_SEC + 0.02) {
+      throw new Error(
+        `Block ${block.sentenceId} narration trim ${block.trimmedSec ?? 0}s ` +
+          `exceeds allowed tolerance ${MAX_NARRATION_TRIM_SEC}s.`,
+      );
+    }
+    if (
+      Math.abs(
+        block.audioDurationSec -
+          (block.trimmedSec ?? 0) +
+          (block.trailingHoldSec ?? 0) -
+          block.durationSec,
+      ) > 0.02
+    ) {
+      throw new Error(
+        `Block ${block.sentenceId}: narration ${block.audioDurationSec.toFixed(3)}s ` +
+          `- trim ${block.trimmedSec ?? 0}s + hold ${block.trailingHoldSec ?? 0}s ` +
+          `!= block window ${block.durationSec.toFixed(3)}s.`,
+      );
+    }
+    const lastShot = (block.shots ?? []).at(-1);
+    const shotHoldTotal = (block.shots ?? [])
+      .slice(0, -1)
+      .reduce((sum, shot) => sum + (shot.trailingHoldSec ?? 0), 0);
+    if (shotHoldTotal > 1e-6) {
+      throw new Error(
+        `Block ${block.sentenceId}: trailing hold found on non-final shots.`,
+      );
+    }
+    if (Math.abs((lastShot?.trailingHoldSec ?? 0) - (block.trailingHoldSec ?? 0)) > 0.02) {
+      throw new Error(
+        `Block ${block.sentenceId}: final shot hold ${lastShot?.trailingHoldSec ?? 0}s ` +
+          `!= block hold ${block.trailingHoldSec ?? 0}s.`,
       );
     }
     let blockCursor = block.startSec;

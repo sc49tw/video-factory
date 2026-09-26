@@ -1,3 +1,8 @@
+// LLFC-only production package: characters, visually teachable scenes, and
+// image prompts for the LLFC series. ESSY uses its own contract
+// (contracts/essy-production-package.schema.json + src/essy-production-package.mjs)
+// and must never be validated with this module. Series dispatch is centralized
+// in src/series-contracts.mjs.
 import {readFileSync} from "node:fs";
 import Ajv2020 from "ajv/dist/2020.js";
 

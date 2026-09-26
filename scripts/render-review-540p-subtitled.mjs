@@ -25,8 +25,16 @@ import {copyFile, mkdir, readFile, readdir, writeFile} from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import {buildSubtitleTimeline} from "./_build-subtitle-timeline.mjs";
-import {buildColdOpenTitleCardFilter, buildEndingCardFilter, resolveEndingCardSpec} from "./essay-identity-config.mjs";
-import {SUBTITLE_CONFIG} from "./subtitle-config.mjs";
+import {
+  buildColdOpenTitleCardFilter,
+  buildEndingCardFilter,
+  buildPreRollClipArgs,
+  preRollOffsetSec,
+  resolveEndingCardSpec,
+  resolveEpisodePreRollTitleCard,
+} from "./essay-identity-config.mjs";
+import {buildAssForceStyle} from "./subtitle-config.mjs";
+import {renderOpeningReview} from './render-opening-review.mjs';
 
 const OUT_W = 960;
 const OUT_H = 540;
@@ -43,7 +51,7 @@ function run(command, args) {
     child.on("close", (code) =>
       code === 0
         ? resolve({stdout, stderr})
-        : reject(new Error(`${command} exited ${code}: ${stderr.slice(-1000)}`)),
+        : reject(new Error(`${command} exited ${code}: ${stderr.slice(-12000)}`)),
     );
   });
 }
@@ -74,13 +82,6 @@ async function nextOutputPath(outputRoot, episode) {
 // The channel name and episode title are TITLE CARDS drawn by this layer —
 // they must never behave like ordinary narration subtitle cues. Each card is
 // a centered drawtext with the shared fade language (alpha expression).
-function escapeDrawtext(value) {
-  return String(value)
-    .replaceAll("\\", "\\\\")
-    .replaceAll(":", "\\:")
-    .replaceAll("'", "\u2019")
-    .replaceAll("%", "\\%");
-}
 
 // 540p title sizes = half of the 1080 design (channel 72 -> 36, episode 48 -> 24).
 // Readability: subtle stroke + soft shadow keep white text legible over bright
@@ -91,37 +92,18 @@ function buildTitleCardFilter(card, fontPath) {
     fontPath,
     fontSize: card.kind === "channel" ? 36 : 24,
   });
-  /* Legacy inline implementation retained below only for patch-local context.
-     The shared final-assembly helper above is authoritative. */
-  const size = card.kind === "channel" ? 36 : 24;
-  const fadeInStart = card.startSec;
-  const fadeInDur = card.fadeInDurSec ?? 0.5;
-  const fadeOutStart = Math.max(card.endSec - (card.fadeOutDurSec ?? 0.4), card.startSec);
-  const fadeOutDur = card.fadeOutDurSec ?? 0.4;
-  const readability = card.readability ?? {};
-  const borderW = readability.borderW ?? 1;
-  const borderOpacity = readability.borderOpacity ?? 0.6;
-  const shadowOpacity = readability.shadowOpacity ?? 0.45;
-  const alpha =
-    `'if(lt(t,${fadeInStart.toFixed(3)}),0,` +
-    `if(lt(t,${(fadeInStart + fadeInDur).toFixed(3)}),(t-${fadeInStart.toFixed(3)})/${fadeInDur.toFixed(3)},` +
-    `if(lt(t,${fadeOutStart.toFixed(3)}),1,` +
-    `if(lt(t,${(fadeOutStart + fadeOutDur).toFixed(3)}),(${fadeOutStart.toFixed(3)}+${fadeOutDur.toFixed(3)}-t)/${fadeOutDur.toFixed(3)},0))))'`;
-  return (
-    `drawtext=fontfile=${fontPath}` +
-    `:text='${escapeDrawtext(card.text)}'` +
-    `:expansion=none:fontcolor=white:fontsize=${size}` +
-    `:borderw=${borderW}:bordercolor=black@${borderOpacity}` +
-    `:shadowcolor=black@${shadowOpacity}:shadowx=1:shadowy=1` +
-    `:x=(w-text_w)/2:y=h*0.40:alpha=${alpha}`
-  );
 }
 
-async function readTitleCards(root, episode) {
+// Cold-open EXPERIMENT title cards: explicit per-episode editorial decisions
+// (packaging.coldOpenExperiment.titleCards — e.g. ESSY-0003). When an episode
+// declares none, it uses the normal standalone PRE-ROLL contract instead (see
+// resolveEpisodePreRollTitleCard below); the two mechanisms never mix.
+async function readColdOpenExperimentCards(root, episode) {
   try {
     const pkgPath = path.join(root, "projects", "_drafts", episode, "production-package.json");
     const pkg = JSON.parse(await readFile(pkgPath, "utf8"));
-    return pkg?.packaging?.coldOpenExperiment?.titleCards ?? [];
+    const explicit = pkg?.packaging?.coldOpenExperiment?.titleCards;
+    return Array.isArray(explicit) ? explicit : [];
   } catch {
     return [];
   }
@@ -214,6 +196,16 @@ const main = async () => {
   const outputRoot = path.join(root, "output", episode);
   await mkdir(outputRoot, {recursive: true});
 
+  let pkg = null;
+  try { pkg = JSON.parse(await readFile(path.join(root, 'projects', '_drafts', episode, 'production-package.json'), 'utf8')); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  if (pkg?.openingIdentity) {
+    await renderOpeningReview({root, episode, identity:pkg.openingIdentity,
+      input:await locateMasterDraft(outputRoot,episode), output:await nextOutputPath(outputRoot,episode),
+      fontPath:await stageFont(path.join(root,'projects',episode,'temp')), ending:await readEndingSpec(root,episode), run});
+    return;
+  }
+
   // ---- Build one episode-wide, globally valid SRT (validated, QA report) ----
   const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({root, episode});
 
@@ -244,22 +236,23 @@ const main = async () => {
   // Use a relative (cwd-based) path for the subtitles filter: a Windows drive
   // letter colon would otherwise be parsed as a filter option separator.
   const srtEsc = path.relative(root, srtPath).replace(/\\/g, "/");
-  const style = SUBTITLE_CONFIG.STYLE;
-  const forceStyle =
-    `FontName=${style.FONT_NAME},FontSize=${style.FONT_SIZE}` +
-    `,PrimaryColour=${style.PRIMARY_COLOUR},OutlineColour=${style.OUTLINE_COLOUR}` +
-    `,BorderStyle=1,Outline=${style.OUTLINE},Shadow=${style.SHADOW}` +
-    `,BackColour=${style.BACK_COLOUR},Alignment=${style.ALIGNMENT}` +
-    `,MarginV=${style.MARGIN_V},MarginL=${style.MARGIN_LR},MarginR=${style.MARGIN_LR}`;
+  const forceStyle = buildAssForceStyle();
   const filter = `scale=${OUT_W}:${OUT_H}:flags=lanczos,fps=${FPS},subtitles=${srtEsc}:force_style='${forceStyle}'`;
 
-  // ---- Cold-open title cards: drawn by the title layer, never as subtitles ----
-  const titleCards = await readTitleCards(root, episode);
+  // ---- Cold-open EXPERIMENT title cards (editorial opt-in, e.g. ESSY-0003) ----
+  const titleCards = await readColdOpenExperimentCards(root, episode);
+  // ---- Standalone PRE-ROLL episode-title segment (shared ESSY contract) ----
+  // The pre-roll is a SEPARATE segment BEFORE the main program: not an overlay,
+  // no main-timeline timestamps, no narration, no title TTS, no subtitle cue.
+  // Resolution is shared with the 1080p final renderer, so review and final can
+  // never disagree about the presence/text/duration of the episode title.
+  const preRollTitle = await resolveEpisodePreRollTitleCard({root, episode});
+  const preRollSec = preRollOffsetSec(preRollTitle);
   // ---- Ending hold + end card (shared ESSY final-assembly parity) ----
   const ending = await readEndingSpec(root, episode);
   const titleFilters = [];
   let fontPath = null;
-  if (titleCards.length || ending.endingHoldSec > 0) {
+  if (titleCards.length || ending.endingHoldSec > 0 || preRollTitle) {
     fontPath = await stageFont(path.join(root, "projects", episode, "temp"));
   }
   for (const card of titleCards) {
@@ -273,6 +266,11 @@ const main = async () => {
   const baseDur = Math.round((await probeDurationSec(input)) * 1000) / 1000;
   const holdSec = ending.endingHoldSec;
   const totalDur = Math.round((baseDur + holdSec) * 1000) / 1000;
+  // DELIVERY bookkeeping: the main program keeps its OWN t=0 (N001 narration,
+  // first approved shot, first subtitle cue); only the delivered file is
+  // offset by the pre-roll duration.
+  const mainDur = totalDur;
+  const deliveryDur = Math.round((totalDur + preRollSec) * 1000) / 1000;
   const postFilters = [];
   if (holdSec > 0) {
     postFilters.push(`tpad=stop_mode=clone:stop_duration=${holdSec.toFixed(3)}`);
@@ -309,6 +307,11 @@ const main = async () => {
   const audioArgs = audioFilters.length ? ["-c:a", "aac", "-b:a", "192k"] : ["-c:a", "copy"];
   const audioFilter = audioFilters.length ? audioFilters.join(",") : null;
 
+  // The main program is rendered EXACTLY as before (offset by nothing): the
+  // pre-roll is prepended afterwards, so no main-program timestamp changes.
+  const mainProgramPath = preRollTitle
+    ? path.join(root, "projects", episode, "temp", "review-main-program.mp4")
+    : output;
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
     "-i", input,
@@ -317,8 +320,42 @@ const main = async () => {
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
     ...audioArgs,
     "-movflags", "+faststart",
-    output,
+    mainProgramPath,
   ]);
+
+  // ---- DELIVERY composition: prepend the standalone pre-roll title card ----
+  // delivery t=0 -> pre-roll title; delivery t=PRE_ROLL_DURATION -> main
+  // timeline t=0. The segment carries a matching SILENT audio track so the
+  // concat demuxer keeps the main program's narration intact.
+  if (preRollTitle) {
+    const preRollClipPath = path.join(root, "projects", episode, "temp", "review-pre-roll-title.mp4");
+    await run("ffmpeg", buildPreRollClipArgs({
+      fontPath,
+      titleCard: preRollTitle,
+      width: OUT_W,
+      height: OUT_H,
+      fps: FPS,
+      crf: 23,
+      silentAudio: true,
+      outputPath: preRollClipPath,
+    }));
+    const concatListPath = path.join(root, "projects", episode, "temp", "review-concat.txt");
+    const concatEntry = (file) =>
+      // Concat demuxer resolves relative entries against the LIST FILE's own
+      // directory (the episode temp dir), not the factory root.
+      `file '${path.relative(path.dirname(concatListPath), file).replaceAll("\\", "/").replaceAll("'", "'\\''")}'`;
+    await writeFile(
+      concatListPath,
+      `${[preRollClipPath, mainProgramPath].map(concatEntry).join("\n")}\n`,
+      "utf8",
+    );
+    await run("ffmpeg", [
+      "-hide_banner", "-loglevel", "error", "-y",
+      "-f", "concat", "-safe", "0", "-i", concatListPath,
+      "-c", "copy", "-movflags", "+faststart",
+      output,
+    ]);
+  }
 
   console.log(
     `Review render done: ${path.relative(root, output)}\n` +
@@ -332,7 +369,12 @@ const main = async () => {
         : "") +
       `\n  ending hold: ${holdSec.toFixed(3)}s after ${baseDur.toFixed(3)}s` +
       ` (end card "${ending.text}", source: ${ending.source})` +
-      `\n  expected total duration: ${totalDur.toFixed(3)}s` +
+      `\n  pre-roll title: ${preRollTitle
+        ? `"${preRollTitle.text}" ${preRollSec.toFixed(3)}s (standalone segment, no narration, no subtitles)`
+        : "none (no WRITE-approved visual-only episode title)"}` +
+      `\n  main program: ${mainDur.toFixed(3)}s from main t=0 (N001 subtitle cues unchanged; ` +
+      `equivalent delivery window ${preRollSec.toFixed(3)}-${deliveryDur.toFixed(3)}s)` +
+      `\n  expected delivery duration: ${deliveryDur.toFixed(3)}s` +
       `\n  srt: ${path.relative(root, srtPath)}\n` +
       `  qa: ${path.relative(root, qaPath)}\n` +
       `  overlaps before/after normalization: ` +

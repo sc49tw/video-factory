@@ -3,8 +3,11 @@
 // Builds the Final-Assembly master from the episode's APPROVED assembly
 // timeline WITHOUT re-sourcing, reordering or re-timing assets:
 //
-//   A. Cold open   — title overlay fade (per-episode decisions, zero added
-//                    duration, subtitles unobscured).
+//   A. Pre-roll    — standalone episode-title card SEGMENT prepended to the
+//                    main program (shared ESSY pre-roll contract: no overlay,
+//                    no main-timeline timestamp change, no narration, no
+//                    subtitles). Episodes with their own editorial cold-open
+//                    experiment are unaffected.
 //   B. Ending hold — extends the final shot by endingHoldSec, no subtitles/CTA,
 //                    centered end-card text fade (hold appended AFTER the last
 //                    subtitle-bearing shot clip — see QA defect note in
@@ -28,12 +31,19 @@ import process from "node:process";
 import {buildSubtitleTimeline} from "./_build-subtitle-timeline.mjs";
 import {SUBTITLE_CONFIG} from "./subtitle-config.mjs";
 import {resolveStillMotion, stillImageFilter} from "./_still-motion.mjs";
+import {
+  buildOpeningDeliveryPlan,
+  finalTitleFontSize,
+} from "./essay-opening-delivery.mjs";
 import {readWorkflow, refreshEpisodeWorkflow, recordEvent} from "../src/workflow.mjs";
 import {
   buildColdOpenTitleCardFilter,
   buildEndingCardFilter,
+  buildPreRollClipArgs,
+  preRollOffsetSec,
   resolveEndingCardText,
   resolveEssayIdentity,
+  resolveEpisodePreRollTitleCard,
 } from "./essay-identity-config.mjs";
 
 const factoryRoot = process.cwd();
@@ -76,7 +86,14 @@ if (IDENTITY.ignoredEndCardOverride) {
 
 const logLines = [];
 let coldOpenTitleCards = [];
+// Shared ESSY pre-roll contract: the standalone episode-title segment that
+// precedes the main program (see essay-identity-config.mjs).
+let preRollTitle = null;
+let preRollSec = 0;
 let narrationSuppressWindows = [];
+// Shared opening-identity insertion delivery (approved v13 semantics).
+// Null for legacy episodes without openingIdentity (0001/0002/0003 behavior).
+let openingDelivery = null;
 
 function log(message) {
   const line = `[FINAL-ASM] ${message}`;
@@ -117,6 +134,13 @@ async function main() {
     path.join(factoryRoot, "projects", "_drafts", episode, "production-package.json"),
   ).catch(() => null);
   const coldOpen = productionPackage?.packaging?.coldOpenExperiment;
+  openingDelivery = productionPackage?.openingIdentity
+    ? buildOpeningDeliveryPlan({identity: productionPackage.openingIdentity, timeline})
+    : null;
+  if (openingDelivery) {
+    log(`OPENING insertion: hook complete at ${openingDelivery.startSec.toFixed(3)}s ` +
+      `+${openingDelivery.durationSec.toFixed(3)}s continuing ${openingDelivery.hookSlotId} (no pre-roll)`);
+  }
   coldOpenTitleCards = coldOpen?.titleCards ?? [];
   if (coldOpen?.suppressBlockNarration) {
     const sentenceIds = new Set(
@@ -127,6 +151,27 @@ async function main() {
       .map((block) => ({startSec: block.startSec ?? 0, endSec: block.endSec ?? 0}))
       .filter((window) => window.endSec > window.startSec);
   }
+  // ---- Standalone PRE-ROLL episode-title segment (shared ESSY contract) ----
+  // The pre-roll is a SEPARATE segment BEFORE the main program: no overlay, no
+  // main-timeline timestamps, no narration, no title TTS, no subtitle cue, and
+  // the main program keeps its own t=0 (N001 narration, first approved shot,
+  // first subtitle cue). BOTH renderers resolve it through the same shared
+  // resolver so the review proxy and the 1080p final cannot disagree.
+  if (openingDelivery) {
+    // Insertion delivery: standalone pre-roll resolves to zero/off.
+    preRollTitle = null;
+    preRollSec = 0;
+    log("PRE-ROLL title: none (openingIdentity insertion delivery)");
+  } else {
+    preRollTitle = await resolveEpisodePreRollTitleCard({root: factoryRoot, episode});
+    preRollSec = preRollOffsetSec(preRollTitle);
+    log(
+      preRollTitle
+        ? `PRE-ROLL title: "${preRollTitle.text}" ${preRollTitle.durationSec.toFixed(3)}s ` +
+            `(standalone card from titles.json visualOnly tts:false; silent, no subtitles)`
+        : "PRE-ROLL title: none (no WRITE-approved visual-only episode title)",
+    );
+  }
   // Structural validation — NO hard-coded shot count. The expected structure is
   // derived from the episode's own assembly timeline:
   const blocks = timeline.blocks ?? [];
@@ -136,7 +181,13 @@ async function main() {
   }
   for (const block of blocks) {
     const blockShots = shots.filter((s) => s.blockId === block.sentenceId);
-    const blockTotal = blockShots.reduce((sum, s) => sum + s.renderDurationSec, 0);
+    // `durationSec` includes each block's intentional trailing last-frame
+    // hold. Source playback alone covers narration; the hold is appended by
+    // the renderer and must be part of this structural window check.
+    const blockTotal = blockShots.reduce(
+      (sum, s) => sum + s.renderDurationSec + (s.trailingHoldSec ?? 0),
+      0,
+    );
     if (Math.abs(blockTotal - block.durationSec) > 0.02) {
       throw new Error(
         `Block ${block.sentenceId}: shot total ${blockTotal.toFixed(3)}s != window ${block.durationSec.toFixed(3)}s.`,
@@ -157,7 +208,17 @@ async function main() {
   // Cues come from the approved shared timeline builder (per-block edge-tts
   // VTT, DP segmentation, global normalization). If QA fails, the renderer
   // aborts BEFORE any ffmpeg visual work.
-  const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({root: factoryRoot, episode});
+  const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({
+    root: factoryRoot,
+    episode,
+    insertion: openingDelivery ? openingDelivery.subtitleInsertion : null,
+  });
+  if (openingDelivery) {
+    const bad = allCues.filter(
+      (c) => c.startSec < openingDelivery.endSec - 0.001 && c.endSec > openingDelivery.startSec + 0.001,
+    );
+    if (bad.length) throw new Error(`Subtitle intersects opening identity window (${bad.length} cues).`);
+  }
   if (!report.passed) {
     console.error(`Subtitle QA FAILED for ${episode} — final render aborted (no video produced):`);
     console.error(JSON.stringify({
@@ -198,7 +259,31 @@ async function main() {
   const onlyShots = onlyValue ? new Set(onlyValue.split(",")) : null;
   const mixOnly = process.argv.includes("--mix-only");
   if (!mixOnly) {
-  for (const shot of timeline.shots) {
+  // Delivery visual timeline: assembly timeline normally; openingIdentity
+  // deliveries extend the hook shot playback by the insertion duration and
+  // shift every later shot window by the same offset (shared delivery plan).
+  const deliveryShots = openingDelivery
+    ? [...timeline.shots].map((shot) => {
+        const override = openingDelivery.deliveryShotOverrides.get(shot.slotId);
+        const playbackDurationSec = override?.playbackDurationSec ?? shot.renderDurationSec;
+        const trailingHoldSec = override?.trailingHoldSec ?? shot.trailingHoldSec ?? 0;
+        const shift = (shot.absoluteStartSec ?? 0) >= openingDelivery.startSec - 0.001
+          ? openingDelivery.bodyOffsetSec : 0;
+        const isHook = shot.slotId === openingDelivery.hookSlotId;
+        return {
+          ...shot,
+          renderDurationSec: playbackDurationSec,
+          trailingHoldSec,
+          deliveryStartSec: (shot.absoluteStartSec ?? 0) + (isHook ? 0 : shift),
+          deliveryEndSec: (shot.absoluteEndSec ?? 0) + shift + (isHook ? openingDelivery.bodyOffsetSec : 0),
+        };
+      })
+    : [...timeline.shots].map((shot) => ({
+        ...shot,
+        deliveryStartSec: shot.absoluteStartSec ?? shot.startSec,
+        deliveryEndSec: shot.absoluteEndSec ?? shot.endSec,
+      }));
+  for (const shot of deliveryShots) {
     if (onlyShots && !onlyShots.has(shot.slotId)) continue;
     const clipPath = path.join(shotRoot, `${shot.slotId}.mp4`);
     // Cues are GLOBAL (episode-absolute) times; shots carry block-RELATIVE
@@ -208,20 +293,27 @@ async function main() {
     // defect: subtitles restarted at 27.264s). Always slice by absolute time.
     const shotCues = sliceCues(
       allCues,
-      shot.absoluteStartSec ?? shot.startSec,
-      shot.absoluteEndSec ?? shot.endSec,
+      shot.deliveryStartSec ?? shot.absoluteStartSec ?? shot.startSec,
+      shot.deliveryEndSec ?? shot.absoluteEndSec ?? shot.endSec,
     );
     // P1: still-image motion is metadata-driven (stillMotion) and never
     // derived from block/shot index parity.
     log(`SHOT ${shot.index + 1}/${timeline.shots.length} ${shot.slotId} (${shot.mediaType}, ${shot.renderDurationSec.toFixed(3)}s, ${shotCues.length} cues)`);
     const isTitleShot = shot.index === 0;
+    const playbackSec = Number(shot.renderDurationSec);
+    const holdSec = Number(shot.trailingHoldSec ?? 0);
+    const clipDurationSec = playbackSec + holdSec;
+    const extraCards = openingDelivery && shot.slotId === openingDelivery.hookSlotId
+      ? openingDelivery.cards
+      : [];
     if (shot.mediaType === "video") {
-      await renderVideoShot({shot, shotCues, clipPath});
+      await renderVideoShot({shot, shotCues, clipPath, playbackDurationSec: playbackSec, trailingHoldSec: holdSec, extraTitleCards: extraCards});
     } else {
       await renderPhotoShot({
         shot, shotCues, clipPath,
         stillMotion: resolveStillMotion(shot),
-        frameCount: Math.ceil(shot.renderDurationSec * FPS),
+        frameCount: Math.ceil(clipDurationSec * FPS),
+        extraTitleCards: extraCards,
       });
     }
     // Ending hold B: extend the FINAL shot (any media type) by endingHoldSec
@@ -250,16 +342,35 @@ async function main() {
     return;
   }
 
-  // ---- Concatenate shots + ending hold ----
+  // ---- Concatenate PRE-ROLL + shots + ending hold ----
+  // The pre-roll is the smallest robust delivery composition: a standalone
+  // generated card SEGMENT prepended to the main program with the concat
+  // demuxer. Nothing in the main program is re-encoded, re-timed or overlaid.
   const concatPath = path.join(tempRoot, "concat.txt");
   const visualMasterPath = path.join(tempRoot, `${episode}-visual-master.mp4`);
   if (!mixOnly) {
+  const segments = [];
+  if (preRollTitle) {
+    const preRollPath = path.join(tempRoot, "pre-roll-title.mp4");
+    log(`PRE-ROLL segment rendered: ${preRollTitle.durationSec.toFixed(3)}s standalone card`);
+    await run("ffmpeg", buildPreRollClipArgs({
+      fontPath: fontPath(),
+      titleCard: preRollTitle,
+      width: WIDTH,
+      height: HEIGHT,
+      fps: FPS,
+      crf: 18,
+      outputPath: preRollPath,
+    }));
+    segments.push(preRollPath);
+  }
+  segments.push(...clips);
   await writeFile(
     concatPath,
-    `${clips.map((file) => `file '${escapeConcatPath(file)}'`).join("\n")}\n`,
+    `${segments.map((file) => `file '${escapeConcatPath(file)}'`).join("\n")}\n`,
     "utf8",
   );
-  log(`CONCAT ${timeline.shots.length} shots + ending hold`);
+  log(`CONCAT ${preRollTitle ? "pre-roll segment + " : ""}${timeline.shots.length} shots + ending hold`);
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
     "-f", "concat", "-safe", "0", "-i", concatPath,
@@ -276,13 +387,23 @@ async function main() {
   const musicTotal = visualBase;
   const extendedSource = path.resolve(factoryRoot, DECISIONS.music.extendedPath);
   const extendedProbe = await probeMedia(extendedSource);
-  if (!(extendedProbe.durationSec >= musicTotal - 1.0)) {
+  // DELIVERY = pre-roll + main program. The approved narration master and the
+  // extended BGM master both cover the MAIN PROGRAM duration and are simply
+  // OFFSET by the pre-roll duration at mix time (below), so their alignment to
+  // main t=0 — and the BGM's baked final fade at the main-program end — is
+  // preserved exactly. Coverage is therefore checked against the main-program
+  // duration, not against the longer delivery duration.
+  const mainProgramDur = round3(musicTotal - preRollSec);
+  if (!(extendedProbe.durationSec >= mainProgramDur - 1.0)) {
     throw new Error(
-      `Extended BGM master ${extendedProbe.durationSec?.toFixed(3)}s does not cover final duration ` +
-        `${musicTotal.toFixed(3)}s. Run: pnpm video:build-bgm ${episode}`,
+      `Extended BGM master ${extendedProbe.durationSec?.toFixed(3)}s does not cover main program ` +
+        `${mainProgramDur.toFixed(3)}s. Run: pnpm video:build-bgm ${episode}`,
     );
   }
-  log(`BGM extended master covers ${extendedProbe.durationSec?.toFixed(3)}s (need ${musicTotal.toFixed(3)}s)`);
+  log(
+    `BGM extended master covers ${extendedProbe.durationSec?.toFixed(3)}s ` +
+      `(need ${mainProgramDur.toFixed(3)}s; pre-roll ${preRollSec.toFixed(3)}s is silent)`,
+  );
 
   // Output label: "--label v2" renders ESSY-0001-final-v2.mp4 (default v1,
   // preserving the original approved v1 output untouched).
@@ -295,6 +416,19 @@ async function main() {
   const finalOutput = path.join(outputRoot, `${episode}-final-${label}.mp4`);
   const temporaryOutput = path.join(outputRoot, `.${episode}-final-${label}.tmp.mp4`);
   const musicGain = Math.pow(10, (DECISIONS.music.gainDb ?? -9) / 20).toFixed(6);
+  // The pre-roll occupies the head of the delivered program: both the approved
+  // narration master and the BGM are delayed by exactly the pre-roll duration so
+  // N001 narration / BGM alignment to main t=0 is unchanged (the pre-roll itself
+  // is silent). No TTS or WordBoundary artifact is touched.
+  const preRollAudioDelay = preRollSec > 0 ? `adelay=${Math.round(preRollSec * 1000)}:all=1,` : "";
+  const openingSilenceSec = openingDelivery ? openingDelivery.bodyOffsetSec : 0;
+  const openingSilenceFilter = openingSilenceSec > 0
+    ? `[1:a]${narrationSuppressFilter()}asplit=2[pre][post];` +
+      `[pre]atrim=0:${openingDelivery.startSec.toFixed(3)},asetpts=PTS-STARTPTS[head];` +
+      `[post]atrim=${openingDelivery.startSec.toFixed(3)},asetpts=PTS-STARTPTS[tail];` +
+      `anullsrc=r=48000:cl=stereo:d=${openingSilenceSec.toFixed(3)}[sil];` +
+      `[head][sil][tail]concat=n=3:v=0:a=1,`
+    : `[1:a]${narrationSuppressFilter()}`;
   log(`MIX narration master + extended BGM @ ${musicGain} (${DECISIONS.music.gainDb ?? -9} dB, normalize=0, no ducking)`);
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
@@ -302,8 +436,8 @@ async function main() {
     "-i", narrationMasterPath,
     "-i", extendedSource,
     "-filter_complex",
-    `[1:a]${narrationSuppressFilter()}apad,atrim=duration=${musicTotal.toFixed(3)},anull[nar];` +
-      `[2:a]volume=${musicGain},apad,atrim=duration=${musicTotal.toFixed(3)}[bgm];` +
+    `${openingSilenceFilter}${preRollAudioDelay}apad,atrim=duration=${musicTotal.toFixed(3)},anull[nar];` +
+      `[2:a]volume=${musicGain},${preRollAudioDelay}apad,atrim=duration=${musicTotal.toFixed(3)}[bgm];` +
       `[nar][bgm]amix=inputs=2:duration=first:normalize=0:dropout_transition=0[mix]`,
     "-map", "0:v:0", "-map", "[mix]",
     "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
@@ -345,8 +479,12 @@ async function main() {
         passed: report.passed,
         reportPath: path.relative(factoryRoot, qaPath).replaceAll("\\", "/"),
       },
+      preRollTitleText: preRollTitle?.text ?? null,
+      preRollTitleSec: preRollSec,
+      preRollTitleSource: preRollTitle ? "titles.json visualOnly (tts:false)" : null,
+      mainProgramStartSec: preRollSec,
       endingHoldSec: DECISIONS.endingHoldSec,
-      baseDurationSec: round3(visualBase - DECISIONS.endingHoldSec),
+      baseDurationSec: round3(visualBase - DECISIONS.endingHoldSec - preRollSec),
       durationAddedSec: DECISIONS.endingHoldSec,
       shots: timeline.shots.length,
       narrationBlocks: manifest.audio?.length ?? 18,
@@ -391,38 +529,44 @@ async function main() {
 // Shot renderers (same mechanical treatment as the approved review cut)
 // ---------------------------------------------------------------------------
 
-async function renderVideoShot({shot, shotCues, clipPath}) {
+async function renderVideoShot({shot, shotCues, clipPath, playbackDurationSec, trailingHoldSec = 0, extraTitleCards = []}) {
+  const playbackSec = playbackDurationSec ?? shot.renderDurationSec;
+  const holdSec = trailingHoldSec ?? shot.trailingHoldSec ?? 0;
   const subtitleFilters = await buildFinalSubtitleFilters({clipPath, cueList: shotCues});
   const filters = [
     `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=increase:flags=lanczos`,
     `crop=${WIDTH}:${HEIGHT}`,
     `fps=${FPS}`,
+    ...(holdSec > 0 ? [`tpad=stop_mode=clone:stop_duration=${holdSec.toFixed(6)}`] : []),
     ...coldOpenFiltersForShot(shot),
+    ...openingTitleFiltersForShot({shot, extraTitleCards}),
     subtitleFilters,
     "format=yuv420p",
   ].filter(Boolean).join(",");
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
-    "-i", shot.sourcePath,
-    "-t", shot.renderDurationSec.toFixed(6),
+    // Apply `-t` as an INPUT limit. An output-side limit would cut the
+    // following tpad-generated hold from the encoded shot.
+    "-t", playbackSec.toFixed(6), "-i", shot.sourcePath,
     "-vf", filters,
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-an",
     clipPath,
   ]);
 }
 
-async function renderPhotoShot({shot, shotCues, clipPath, stillMotion, frameCount}) {
+async function renderPhotoShot({shot, shotCues, clipPath, stillMotion, frameCount, playbackDurationSec, trailingHoldSec = 0, extraTitleCards = []}) {
   const subtitleFilters = await buildFinalSubtitleFilters({clipPath, cueList: shotCues});
   const filters = [
     stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS, frameCount, stillMotion}),
     ...coldOpenFiltersForShot(shot),
+    ...openingTitleFiltersForShot({shot, extraTitleCards}),
     subtitleFilters,
     "format=yuv420p",
   ].filter(Boolean).join(",");
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
     "-loop", "1", "-framerate", String(FPS), "-i", shot.sourcePath,
-    "-t", shot.renderDurationSec.toFixed(6),
+    "-t", ((playbackDurationSec ?? shot.renderDurationSec) + (trailingHoldSec ?? shot.trailingHoldSec ?? 0)).toFixed(6),
     "-vf", filters,
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-an",
     clipPath,
@@ -485,6 +629,21 @@ async function renderEndingHold({shot, clipPath, outputPath}) {
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-an",
     outputPath,
   ]);
+}
+
+function openingTitleFiltersForShot({shot, extraTitleCards = []}) {
+  if (!extraTitleCards.length || !openingDelivery) return [];
+  const clipStart = Number(shot.deliveryStartSec ?? shot.absoluteStartSec ?? 0);
+  const clipLen = Number(shot.renderDurationSec) + Number(shot.trailingHoldSec ?? 0);
+  return extraTitleCards.map((card) => buildColdOpenTitleCardFilter({
+    card: {
+      ...card,
+      startSec: Math.max(0, Number(card.startSec) - clipStart),
+      endSec: Math.min(clipLen, Number(card.endSec) - clipStart),
+    },
+    fontPath: fontPath(),
+    fontSize: finalTitleFontSize({kind: card.kind, height: HEIGHT}),
+  }));
 }
 
 function coldOpenFiltersForShot(shot) {
