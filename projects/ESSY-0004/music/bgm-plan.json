@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0004",
+  "status": "extended-master",
+  "selectedTrack": "Dreamland",
+  "artist": "Aakash Gandhi",
+  "source": "YouTube Audio Library",
+  "attributionRequired": false,
+  "originalFilePath": "projects/ESSY-0001/music/candidates/Dreamland - Aakash Gandhi.mp3",
+  "extendedFilePath": "projects/ESSY-0004/music/dreamland-extended.wav",
+  "originalDurationSec": 180,
+  "targetDurationSec": 395.162,
+  "actualExtendedDurationSec": 395.162,
+  "crossfadeDurationSec": 4,
+  "crossfadeCurve": "equal-power (acrossfade c1=qsin:c2=qsin)",
+  "construction": {
+    "method": "N overlapping source passes joined by equal-power crossfades; pass boundaries placed at measured RMS minima (0.5 s profile, 2.5 s smoothing); no time-stretch or pitch-shift; gain NOT baked in",
+    "passes": [
+      {
+        "pass": 1,
+        "sourceStartSec": 0,
+        "sourceEndSec": 178
+      },
+      {
+        "pass": 2,
+        "sourceStartSec": 15.5,
+        "sourceEndSec": 176
+      },
+      {
+        "pass": 3,
+        "sourceStartSec": 91.5,
+        "sourceEndSec": 156.162
+      }
+    ]
+  },
+  "transitionTimestamps": [
+    {
+      "join": 1,
+      "timelineStartSec": 174,
+      "timelineEndSec": 178,
+      "outgoingSourceEndSec": 178,
+      "incomingSourceStartSec": 15.5
+    },
+    {
+      "join": 2,
+      "timelineStartSec": 330.5,
+      "timelineEndSec": 334.5,
+      "outgoingSourceEndSec": 176,
+      "incomingSourceStartSec": 91.5
+    }
+  ],
+  "finalFadeOutDurationSec": 4,
+  "finalFadeOutStartSec": 391.162,
+  "mixGainDb": -9,
+  "mixGainAppliedToMaster": false,
+  "audioStream": "pcm_s16le 48000 Hz stereo"
+}

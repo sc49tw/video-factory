@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "ESSY-0004",
+  "series": "ESSY",
+  "title": "Who Am I Beyond My Roles?",
+  "language": "en",
+  "openingIdentity": {
+    "seriesTitle": "A SECOND LOOK AT LIFE",
+    "episodeTitle": "Who Am I Beyond My Roles?",
+    "timing": {
+      "startSec": 13.368,
+      "durationSec": 4.0
+    },
+    "presentation": {
+      "mode": "sequential",
+      "seriesTitleFirst": true
+    },
+    "narrationSuppression": {
+      "enabled": true
+    },
+    "subtitleSuppression": {
+      "enabled": true
+    }
+  },
+  "narration": {
+    "script": "projects/ESSY-0004/script.md",
+    "manifest": "projects/ESSY-0004/manifest.json",
+    "blockCount": 14
+  },
+  "storyboard": {
+    "path": "projects/_drafts/ESSY-0004/storyboard.yaml",
+    "slotCount": 35
+  },
+  "approvedAssets": {
+    "path": "projects/ESSY-0004/sourcing/approved-slot-asset-map.json",
+    "count": 35
+  }
+}

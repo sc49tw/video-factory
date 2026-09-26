@@ -1,0 +1,111 @@
+{
+  "approvals": {
+    "english": {
+      "approved": true,
+      "approvedAt": "2026-09-11T15:01:52.223Z"
+    },
+    "scenes": {
+      "approved": true,
+      "approvedAt": "2026-09-12T00:08:21.505Z"
+    },
+    "package": {
+      "approved": true,
+      "approvedAt": "2026-09-12T00:38:46.563Z"
+    },
+    "qa": {
+      "approved": true,
+      "approvedAt": "2026-09-25T10:13:18.139Z"
+    },
+    "finalAssembly": {
+      "approved": true,
+      "approvedAt": "2026-09-25T12:50:53.847Z"
+    }
+  },
+  "artifacts": {
+    "compressionReview": "compression-review.md",
+    "script": "script.md",
+    "titles": "titles.json",
+    "storyboard": "storyboard.yaml",
+    "productionPackage": "production-package.json",
+    "assetsValidation": "assets-validation.json"
+  },
+  "currentStage": "RENDER",
+  "draftId": "ESSY-0004",
+  "format": "ESSY",
+  "history": [
+    {
+      "at": "2026-09-10T00:00:00.000Z",
+      "detail": "approved WRITE handoff: series ESSY, episode title Who Am I Beyond My Roles?, 14 stable narration blocks, visual-only titles with tts:false semantics",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-09-10T00:00:00.000Z",
+      "detail": "projects/ESSY-0004/script.md + titles.json + compression-review.md",
+      "event": "write-materialized"
+    },
+    {
+      "at": "2026-09-11T15:01:52.225Z",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-09-11T15:09:50.811Z",
+      "event": "prepare-complete",
+      "blockCount": 14,
+      "totalDurationSec": 378.576,
+      "manifest": "manifest.json"
+    },
+    {
+      "at": "2026-09-11T15:29:49.072Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-09-11T23:53:52.697Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-09-12T00:02:06.289Z",
+      "event": "draft-rolled-back",
+      "to": "STORYBOARD"
+    },
+    {
+      "at": "2026-09-12T00:08:18.309Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-09-12T00:08:21.506Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-09-12T00:38:44.070Z",
+      "event": "package-submitted"
+    },
+    {
+      "at": "2026-09-12T00:38:46.565Z",
+      "event": "package-approved"
+    },
+    {
+      "at": "2026-09-12T01:15:01.848Z",
+      "event": "assets-complete"
+    },
+    {
+      "at": "2026-09-25T10:13:18.141Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-09-25T12:50:53.849Z",
+      "event": "final-assembly-approved"
+    }
+  ],
+  "schemaVersion": "2.0",
+  "series": "ESSY",
+  "status": "completed",
+  "subtype": "essay",
+  "updatedAt": "2026-09-25T12:50:53.850Z",
+  "prepare": {
+    "completed": true,
+    "completedAt": "2026-09-11T15:09:50.810Z",
+    "blockCount": 14,
+    "totalDurationSec": 378.576,
+    "manifest": "manifest.json"
+  }
+}

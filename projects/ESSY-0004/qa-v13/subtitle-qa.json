@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.3",
+  "episode": "ESSY-0004",
+  "generatedFrom": "per-block edge-tts VTT + word-timing artifacts + assembly-timeline offsets (no re-estimation)",
+  "segmentation": "balanced phrase-aware DP (segmentParentText), MAX_CHARS hard bound",
+  "totalCueCount": 126,
+  "overlapCountBeforeNormalization": 0,
+  "overlapCountAfterNormalization": 0,
+  "invalidDurationCueCount": 0,
+  "maxRenderedLines": 2,
+  "minimumCueDurationSec": 0.823,
+  "maximumCueDurationSec": 4.702,
+  "orphanChildCueCount": 0,
+  "orphanOffenders": [],
+  "twoWordChildCueCount": 0,
+  "twoWordOffenders": [],
+  "shortGeneratedCueCount": 0,
+  "shortGeneratedCueOffenders": [],
+  "shortestGeneratedCue": {
+    "text": "they are life.",
+    "block": "sentence-004",
+    "start": 96.292,
+    "end": 97.115,
+    "durationMs": 823,
+    "chars": 14,
+    "words": 3
+  },
+  "generatedCueDurationBelow700msCount": 0,
+  "generatedCueDurationBelow700msOffenders": [],
+  "correctedOverlaps": [],
+  "timingSourceCounts": {
+    "edge-word-boundary": 126
+  },
+  "timingIntegrity": {
+    "status": "pass",
+    "requireWordTiming": false,
+    "manifestPolicy": null,
+    "blocksTotal": 14,
+    "blocksWithWordTiming": 14,
+    "blocksUsingFallback": 0,
+    "fallbackBlocks": [],
+    "fallbackCueCount": 0,
+    "wordCoverageRatio": 1,
+    "cueStartVsFirstWordDeltaMs": {
+      "count": 126,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "cueEndVsLastWordDeltaMs": {
+      "count": 126,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "maxWithinBlockDriftMs": {
+      "count": 14,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "speechGapResidualCueCount": 0
+  },
+  "passed": true,
+  "narrationBlockBoundaries": [
+    {
+      "boundary": "sentence-001/sentence-002",
+      "prevLastEndSec": 11.783,
+      "nextFirstStartSec": 17.468,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-002/sentence-003",
+      "prevLastEndSec": 36.225,
+      "nextFirstStartSec": 37.916,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-003/sentence-004",
+      "prevLastEndSec": 69.528,
+      "nextFirstStartSec": 71.228,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-004/sentence-005",
+      "prevLastEndSec": 97.115,
+      "nextFirstStartSec": 98.804,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-005/sentence-006",
+      "prevLastEndSec": 123.015,
+      "nextFirstStartSec": 124.7,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-006/sentence-007",
+      "prevLastEndSec": 150.659,
+      "nextFirstStartSec": 152.348,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-007/sentence-008",
+      "prevLastEndSec": 174.471,
+      "nextFirstStartSec": 176.18,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-008/sentence-009",
+      "prevLastEndSec": 197.323,
+      "nextFirstStartSec": 199.028,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-009/sentence-010",
+      "prevLastEndSec": 230.299,
+      "nextFirstStartSec": 232.004,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-010/sentence-011",
+      "prevLastEndSec": 260.676,
+      "nextFirstStartSec": 262.364,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-011/sentence-012",
+      "prevLastEndSec": 282.484,
+      "nextFirstStartSec": 284.18,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-012/sentence-013",
+      "prevLastEndSec": 307.383,
+      "nextFirstStartSec": 309.068,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-013/sentence-014",
+      "prevLastEndSec": 331.49,
+      "nextFirstStartSec": 333.188,
+      "noOverlap": true
+    }
+  ]
+}

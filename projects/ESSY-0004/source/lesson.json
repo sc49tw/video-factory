@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0004",
+  "series": "ESSY",
+  "subtype": "essay",
+  "title": "Who Am I Beyond My Roles?",
+  "language": "en",
+  "renderMode": "essay-narration",
+  "voice": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sections": [
+    {
+      "id": "n001",
+      "heading": "N001",
+      "narration": [
+        {
+          "id": "n001",
+          "text": "How much of your day belongs to everyone else?",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n002",
+      "heading": "N002",
+      "narration": [
+        {
+          "id": "n002",
+          "text": "From the moment we wake up,",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n003",
+      "heading": "N003",
+      "narration": [
+        {
+          "id": "n003",
+          "text": "Work takes a large part of it.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n004",
+      "heading": "N004",
+      "narration": [
+        {
+          "id": "n004",
+          "text": "But this isn't simply a story about having too much to do.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n005",
+      "heading": "N005",
+      "narration": [
+        {
+          "id": "n005",
+          "text": "And that's what makes the question difficult.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n006",
+      "heading": "N006",
+      "narration": [
+        {
+          "id": "n006",
+          "text": "You can become very good",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n007",
+      "heading": "N007",
+      "narration": [
+        {
+          "id": "n007",
+          "text": "When we were young,",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n008",
+      "heading": "N008",
+      "narration": [
+        {
+          "id": "n008",
+          "text": "Perhaps this is one of the quiet transitions of middle age.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n009",
+      "heading": "N009",
+      "narration": [
+        {
+          "id": "n009",
+          "text": "Maybe the problem isn't responsibility.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n010",
+      "heading": "N010",
+      "narration": [
+        {
+          "id": "n010",
+          "text": "Perhaps that's why free time can feel strangely uncomfortable.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n011",
+      "heading": "N011",
+      "narration": [
+        {
+          "id": "n011",
+          "text": "There is meaning in being needed.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n012",
+      "heading": "N012",
+      "narration": [
+        {
+          "id": "n012",
+          "text": "Because the person underneath those roles",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n013",
+      "heading": "N013",
+      "narration": [
+        {
+          "id": "n013",
+          "text": "One day, some of these roles will change.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n014",
+      "heading": "N014",
+      "narration": [
+        {
+          "id": "n014",
+          "text": "So perhaps the goal isn't to escape our responsibilities.",
+          "pauseAfterSec": 0.6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "blocks": [
+    {
+      "narrationId": "N001",
+      "visualArc": "external world -> inward solitude",
+      "slots": [
+        {
+          "slotId": "N001-S1",
+          "editorialFunction": "Establish distance between a person and the roles they perform before any role is shown.",
+          "visualIntent": "A single adult quietly near a window, balcony, or city edge at morning or dusk; face need not be visible; enough negative space for the questions to breathe.",
+          "avoid": [
+            "parent/worker/spouse montage",
+            "mirror staring",
+            "dramatic depression",
+            "illustrating each opening question separately"
+          ],
+          "query": "adult alone window quiet morning city contemplative"
+        },
+        {
+          "slotId": "N001-S2",
+          "editorialFunction": "Hold the opening solitude before any role appears; continue the same distance between a person and the world they inhabit.",
+          "visualIntent": "The same solitary adult small in an urban morning frame, surrounded by negative space; observational and unhurried, face need not be visible.",
+          "avoid": [
+            "parent/worker/spouse montage",
+            "mirror staring",
+            "dramatic depression",
+            "window-staring repetition",
+            "illustrating each opening question separately"
+          ],
+          "query": "single person small in frame urban morning negative space"
+        }
+      ]
+    },
+    {
+      "narrationId": "N002",
+      "visualArc": "private morning -> entering social world",
+      "slots": [
+        {
+          "slotId": "N002-S1",
+          "editorialFunction": "Establish ordinary life before the day's social roles fully activate.",
+          "visualIntent": "Natural home-morning activity such as breakfast preparation, clothing, packing, or leaving-home routine; candid rather than commercial.",
+          "avoid": [
+            "posed happy-family advertising",
+            "one image for partner, one for parent, one for child, one for professional"
+          ],
+          "query": "real family morning routine home candid"
+        },
+        {
+          "slotId": "N002-S2",
+          "editorialFunction": "Transition from private self into public/social role.",
+          "visualIntent": "An adult moving into a station, elevator, office building, or commuter flow.",
+          "avoid": [
+            "business handshake",
+            "front-facing stock actor typing at desk"
+          ],
+          "query": "commuter entering office building morning natural"
+        }
+      ]
+    },
+    {
+      "narrationId": "N003",
+      "visualArc": "work density -> transition -> evening responsibility",
+      "slots": [
+        {
+          "slotId": "N003-S1",
+          "editorialFunction": "Show sustained workday attention without illustrating messages, meetings, problems, and deadlines one by one.",
+          "visualIntent": "A credible working environment with people moving and working naturally.",
+          "avoid": [
+            "email close-up",
+            "ticking clock",
+            "deadline text",
+            "exaggerated stress acting"
+          ],
+          "query": "busy office natural workday people candid"
+        },
+        {
+          "slotId": "N003-S2",
+          "editorialFunction": "Create the physical and emotional bridge into Then we come home.",
+          "visualIntent": "Evening commute, car/train window, walking through a residential area, or arriving near home at dusk.",
+          "avoid": [
+            "exaggerated exhausted-worker acting"
+          ],
+          "query": "evening commute home dusk cinematic realistic"
+        },
+        {
+          "slotId": "N003-S3",
+          "editorialFunction": "Show that responsibility continues after paid work ends.",
+          "visualIntent": "Natural evening home activity suggesting homework help, meal cleanup, or care responsibilities without trying to show everything at once.",
+          "avoid": [
+            "child + elderly parent + spouse all staged in one shot",
+            "medical tragedy"
+          ],
+          "query": "family evening home everyday responsibility candid"
+        }
+      ]
+    },
+    {
+      "narrationId": "N004",
+      "visualArc": "responsibility -> warmth -> reframing",
+      "slots": [
+        {
+          "slotId": "N004-S1",
+          "editorialFunction": "Reframe the prior burden as part of a meaningful life.",
+          "visualIntent": "A calm, credible family moment such as eating together, walking, or kitchen interaction.",
+          "avoid": [
+            "perfect-family commercial",
+            "exaggerated smiling",
+            "wedding montage"
+          ],
+          "query": "family dinner candid quiet everyday life"
+        },
+        {
+          "slotId": "N004-S2",
+          "editorialFunction": "Let the thesis These responsibilities are not interruptions to life land without adding more information.",
+          "visualIntent": "A lived-in home, evening domestic space, or warm ordinary environment carrying traces of real life.",
+          "avoid": [
+            "checklist",
+            "calendar",
+            "symbolic responsibility props"
+          ],
+          "query": "warm lived in home evening quiet cinematic"
+        },
+        {
+          "slotId": "N004-S3",
+          "editorialFunction": "Let the warmth of shared everyday responsibility linger as part of a meaningful life.",
+          "visualIntent": "A family eating together at the table, candid and unhurried; ordinary mealtime texture rather than a posed tableau.",
+          "avoid": [
+            "perfect-family commercial",
+            "exaggerated smiling",
+            "wedding montage"
+          ],
+          "query": "family dinner candid quiet everyday life"
+        }
+      ]
+    },
+    {
+      "narrationId": "N005",
+      "visualArc": "giving -> accumulation -> depletion",
+      "slots": [
+        {
+          "slotId": "N005-S1",
+          "editorialFunction": "Express the cumulative effect of giving a little here, a little there.",
+          "visualIntent": "An adult continuing ordinary small tasks at home, putting things away or preparing for tomorrow.",
+          "avoid": [
+            "draining battery",
+            "hourglass",
+            "candle metaphor"
+          ],
+          "query": "adult evening chores home quiet natural"
+        },
+        {
+          "slotId": "N005-S2",
+          "editorialFunction": "Move from activity into the realization that very little personal space remains.",
+          "visualIntent": "Late evening after tasks are done; one person finally sits down in a quiet room.",
+          "avoid": [
+            "head-in-hands despair",
+            "clinical burnout imagery"
+          ],
+          "query": "person sitting alone living room night quiet tired"
+        }
+      ]
+    },
+    {
+      "narrationId": "N006",
+      "visualArc": "competence -> silence -> uncertainty",
+      "slots": [
+        {
+          "slotId": "N006-S1",
+          "editorialFunction": "Establish the competence of being everything one is supposed to be.",
+          "visualIntent": "A capable adult naturally working or helping family without heroization.",
+          "avoid": [
+            "superhero parent",
+            "achievement imagery"
+          ],
+          "query": "middle aged adult helping family everyday natural"
+        },
+        {
+          "slotId": "N006-S2",
+          "editorialFunction": "Reduce visual load so What do I actually want? can carry the moment.",
+          "visualIntent": "A rare empty afternoon: alone in a cafe, by a window, in a quiet room, or outdoors without an obvious task.",
+          "avoid": [
+            "phone scrolling",
+            "self-help book",
+            "staged thinking pose"
+          ],
+          "query": "adult alone quiet afternoon no phone contemplative"
+        }
+      ]
+    },
+    {
+      "narrationId": "N007",
+      "visualArc": "openness -> path taken",
+      "slots": [
+        {
+          "slotId": "N007-S1",
+          "editorialFunction": "Recall the openness of youth without using a literal life-choice montage.",
+          "visualIntent": "A young adult or traveler entering a station, road, city, or open environment suggesting possibility.",
+          "avoid": [
+            "graduation cap",
+            "career-choice montage"
+          ],
+          "query": "young adult train station journey future cinematic"
+        },
+        {
+          "slotId": "N007-S2",
+          "editorialFunction": "Show how open possibility gradually becomes a life path already travelled.",
+          "visualIntent": "A middle-aged adult continuing through a comparable everyday environment or city movement.",
+          "avoid": [
+            "split-screen young-vs-old",
+            "before/after cliche"
+          ],
+          "query": "middle aged person walking city evening reflective"
+        }
+      ]
+    },
+    {
+      "narrationId": "N008",
+      "visualArc": "constructed life -> self underneath",
+      "slots": [
+        {
+          "slotId": "N008-S1",
+          "editorialFunction": "Show the substantial life structure built over many years.",
+          "visualIntent": "Credible mature home/work/family life without luxury-success coding.",
+          "avoid": [
+            "luxury lifestyle",
+            "corporate executive cliche"
+          ],
+          "query": "middle age everyday life home work realistic"
+        },
+        {
+          "slotId": "N008-S2",
+          "editorialFunction": "Pull scale back to one person so Who am I without them? has room.",
+          "visualIntent": "One adult leaving a group or standing alone in a calm environment, preferably back or side view.",
+          "avoid": [
+            "mirror",
+            "identity masks"
+          ],
+          "query": "middle aged person alone quiet landscape thoughtful"
+        }
+      ]
+    },
+    {
+      "narrationId": "N009",
+      "visualArc": "systems that define us -> interruption -> unclaimed time",
+      "slots": [
+        {
+          "slotId": "N009-S1",
+          "editorialFunction": "Show the systems and routines that continuously define what comes next.",
+          "visualIntent": "Natural work/home/commute movement rather than literal calendar or notification imagery.",
+          "avoid": [
+            "calendar close-up",
+            "notification montage"
+          ],
+          "query": "daily routine adult work home movement natural"
+        },
+        {
+          "slotId": "N009-S2",
+          "editorialFunction": "Lower semantic intensity in the middle of the thesis to avoid illustrated-transcript behavior.",
+          "visualIntent": "Quiet city afternoon, moving sunlight, empty cafe seating, or slow street atmosphere.",
+          "avoid": [
+            "mandatory protagonist"
+          ],
+          "query": "quiet city afternoon sunlight cinematic slow"
+        }
+      ]
+    },
+    {
+      "narrationId": "N010",
+      "visualArc": "emptiness -> reflexive filling -> stillness",
+      "slots": [
+        {
+          "slotId": "N010-S1",
+          "editorialFunction": "Establish genuinely unscheduled time.",
+          "visualIntent": "Quiet afternoon at home, balcony, cafe table, or similar setting with nothing urgent happening.",
+          "avoid": [
+            "obvious happiness/sadness acting"
+          ],
+          "query": "quiet empty afternoon home adult relaxing"
+        },
+        {
+          "slotId": "N010-S2",
+          "editorialFunction": "Lightly show the reflex to fill the empty space with usefulness.",
+          "visualIntent": "One simple action such as reaching for a phone, opening a laptop, or beginning to tidy.",
+          "avoid": [
+            "rapid task montage"
+          ],
+          "query": "person reaches for phone quiet afternoon natural"
+        },
+        {
+          "slotId": "N010-S3",
+          "editorialFunction": "Leave discomfort around simply existing can begin to feel irresponsible.",
+          "visualIntent": "The person stops doing and simply sits or looks outward.",
+          "avoid": [
+            "meditation cliche",
+            "wellness imagery"
+          ],
+          "query": "adult sitting quietly window afternoon contemplative"
+        }
+      ]
+    },
+    {
+      "narrationId": "N011",
+      "visualArc": "connection -> personal sanctuary",
+      "slots": [
+        {
+          "slotId": "N011-S1",
+          "editorialFunction": "Acknowledge that being needed has genuine meaning.",
+          "visualIntent": "Natural intergenerational or parent-child interaction, care, walking, or shared activity.",
+          "avoid": [
+            "illness drama",
+            "perfect-parent imagery"
+          ],
+          "query": "adult caring elderly parent everyday candid"
+        },
+        {
+          "slotId": "N011-S2",
+          "editorialFunction": "Transition from being needed to time that does not have to prove usefulness.",
+          "visualIntent": "A small personal moment alone, such as tea on a balcony or sitting outdoors.",
+          "avoid": [
+            "productive hobby",
+            "exercise goal",
+            "self-improvement"
+          ],
+          "query": "person alone balcony tea quiet evening"
+        }
+      ]
+    },
+    {
+      "narrationId": "N012",
+      "visualArc": "passage of time -> continuing self",
+      "slots": [
+        {
+          "slotId": "N012-S1",
+          "editorialFunction": "Suggest that years have passed without using literal aging devices.",
+          "visualIntent": "A mature adult moving through a familiar city or neighborhood; light or season may carry time.",
+          "avoid": [
+            "old photographs",
+            "clock",
+            "aging-face close-up"
+          ],
+          "query": "middle aged person walking familiar neighborhood cinematic"
+        },
+        {
+          "slotId": "N012-S2",
+          "editorialFunction": "Frame identity as an ongoing question rather than a crisis.",
+          "visualIntent": "The person continues forward into an ordinary open environment.",
+          "avoid": [
+            "mountain summit",
+            "motivational achievement ending"
+          ],
+          "query": "person walking open path calm reflective realistic"
+        }
+      ]
+    },
+    {
+      "narrationId": "N013",
+      "visualArc": "roles recede -> absence -> self remains",
+      "slots": [
+        {
+          "slotId": "N013-S1",
+          "editorialFunction": "Suggest that life structures and roles eventually change or fall away.",
+          "visualIntent": "A quiet family room, emptied domestic space, or traces of a life that has shifted.",
+          "avoid": [
+            "funeral",
+            "literal child packing for empty nest"
+          ],
+          "query": "quiet empty family home room afternoon cinematic"
+        },
+        {
+          "slotId": "N013-S2",
+          "editorialFunction": "Give There will still be someone standing there. You. one of the clearest human images.",
+          "visualIntent": "A single mature adult standing calmly in a city or natural environment, neither broken nor triumphant.",
+          "avoid": [
+            "heroic sunrise pose",
+            "despair imagery"
+          ],
+          "query": "middle aged person standing alone calm landscape"
+        }
+      ]
+    },
+    {
+      "narrationId": "N014",
+      "visualArc": "responsibility -> reclaiming space -> coexistence -> inward question -> open ending",
+      "slots": [
+        {
+          "slotId": "N014-S1",
+          "editorialFunction": "Prevent the conclusion from being misread as escaping family or work.",
+          "visualIntent": "An adult still naturally participating in ordinary family responsibilities.",
+          "avoid": [
+            "leaving home",
+            "suitcase",
+            "quitting-job imagery"
+          ],
+          "query": "adult family everyday home calm candid"
+        },
+        {
+          "slotId": "N014-S2",
+          "editorialFunction": "Shift attention from the roles back toward the person carrying them.",
+          "visualIntent": "After family activity disperses or the evening settles, the adult has a brief moment alone.",
+          "avoid": [
+            "loneliness performance"
+          ],
+          "query": "adult alone after family evening quiet home"
+        },
+        {
+          "slotId": "N014-S3",
+          "editorialFunction": "Show ordinary family activity dispersing into shared evening life before the moment alone.",
+          "visualIntent": "Natural at-home family movement such as playing or dancing together in the evening, candid and unposed.",
+          "avoid": [
+            "leaving home",
+            "suitcase",
+            "quitting-job imagery"
+          ],
+          "query": "adult family everyday home calm candid"
+        },
+        {
+          "slotId": "N014-S4",
+          "editorialFunction": "Express a small part of life where a person is not required to be useful.",
+          "visualIntent": "Unproductive personal time: walking slowly, sitting near water, looking outward, or simply being outdoors.",
+          "avoid": [
+            "productivity book",
+            "gym",
+            "side hustle",
+            "creative productivity project"
+          ],
+          "query": "person doing nothing peaceful nature quiet afternoon"
+        },
+        {
+          "slotId": "N014-S5",
+          "editorialFunction": "Lower visual information before What do I need? so narration becomes dominant.",
+          "visualIntent": "Low-semantic-load horizon, water, window light, or other slow atmospheric movement; person may be small or absent.",
+          "avoid": [
+            "literal questioning face"
+          ],
+          "query": "quiet ocean horizon evening slow cinematic"
+        },
+        {
+          "slotId": "N014-S6",
+          "editorialFunction": "Carry the final question without answering it, leaving the possibility of a life that still belongs to the person.",
+          "visualIntent": "One adult moving slowly through or pausing in a shoreline, street, or open ordinary environment; calm, unfinished, non-triumphal.",
+          "avoid": [
+            "victory pose",
+            "motivational sunrise",
+            "sentimental walking-into-sunset cliche"
+          ],
+          "query": "solitary adult walking quiet shoreline dusk natural"
+        }
+      ]
+    }
+  ],
+  "sequenceLiteralnessReview": {
+    "status": "reviewed",
+    "details": [
+      "Avoid illustrated-transcript sequences such as: work -> phone -> family -> elderly parent -> calendar.",
+      "Avoid repeated middle-aged person alone at window imagery across N006 / N008 / N009 / N010 / N012 / N013 / N014.",
+      "Vary visual scale/type across the episode: person -> environment -> domestic detail -> movement -> landscape -> person.",
+      "Solitude functions differ: N006 uncertainty; N008 identity separation; N009 unclaimed time; N010 discomfort with free time; N012 changing identity; N013 remaining self; N014 coexistence and open ending.",
+      "Semantic emphasis nodes: N004 responsibilities are part of life; N009 role differs from self; N013 roles eventually disappear; N014 preserve a life that still belongs to the person.",
+      "Slot count is not a quota: one excellent atmospheric shot may cover a longer region; consolidation allowed; do not add slots for duration."
+    ]
+  }
+}
