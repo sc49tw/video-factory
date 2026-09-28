@@ -1,0 +1,267 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0005",
+  "title": "What Is Still There When I am Eighty?",
+  "tts": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sentenceCount": 18,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "blockId": "n001",
+      "path": "projects/ESSY-0005/audio/N001.mp3",
+      "durationSec": 14.136,
+      "textSha256": "1be6d67cdf2644d29e91ceca4e26493c94e38c0e1704e43a7cb4b72e6d4261fb",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-002",
+      "blockId": "n002",
+      "path": "projects/ESSY-0005/audio/N002.mp3",
+      "durationSec": 40.512,
+      "textSha256": "e1e412139a4a7b4de069dca00239944968d6fa1bb813d2f3c9b401aec58c932b",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-003",
+      "blockId": "n003",
+      "path": "projects/ESSY-0005/audio/N003.mp3",
+      "durationSec": 13.056,
+      "textSha256": "4e3acbc80c2c7ba9b330cf37e24292610d0eaec72b2d4efa5e95beb18bb45d01",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-004",
+      "blockId": "n004",
+      "path": "projects/ESSY-0005/audio/N004.mp3",
+      "durationSec": 27.84,
+      "textSha256": "71e876e9754cee5550b5d2f1a2b7f69ff3dd5ab0c3b5875ff70003a398077afb",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-005",
+      "blockId": "n005",
+      "path": "projects/ESSY-0005/audio/N005.mp3",
+      "durationSec": 7.704,
+      "textSha256": "0ef8c60716f210b39c7ca5fd3465fe74ecdf434d44988c3c414b62cd2ae1e6db",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-006",
+      "blockId": "n006",
+      "path": "projects/ESSY-0005/audio/N006.mp3",
+      "durationSec": 22.92,
+      "textSha256": "4cfe5b10d46642d3c5d1961b89e689bedf605f95275f2f132ad04d52e3e43a95",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-007",
+      "blockId": "n007",
+      "path": "projects/ESSY-0005/audio/N007.mp3",
+      "durationSec": 16.896,
+      "textSha256": "c6c62178b04f809752cb9a0d8e9181b1b7a68ce7892e95c708a7daadeb48a6a1",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-008",
+      "blockId": "n008",
+      "path": "projects/ESSY-0005/audio/N008.mp3",
+      "durationSec": 14.472,
+      "textSha256": "049f9e0e67f93114db16dd846acaf7ac50e90d0a9401e27a0873a8340d75462c",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-009",
+      "blockId": "n009",
+      "path": "projects/ESSY-0005/audio/N009.mp3",
+      "durationSec": 25.032,
+      "textSha256": "8b9cc6841c8b89d530c2613ed4eeb040d658b239f128a3d0beb2c2d924548a95",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-010",
+      "blockId": "n010",
+      "path": "projects/ESSY-0005/audio/N010.mp3",
+      "durationSec": 17.664,
+      "textSha256": "c1d5ef43ed3a1913cf156d0ea06a39826461a804370add071f5e40eec8eff386",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-011",
+      "blockId": "n011",
+      "path": "projects/ESSY-0005/audio/N011.mp3",
+      "durationSec": 18.192,
+      "textSha256": "c915598907733a78f1a8e0d6d11053fb5b68f09f8eb5442e2a5ddcc17f4d6b5c",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-012",
+      "blockId": "n012",
+      "path": "projects/ESSY-0005/audio/N012.mp3",
+      "durationSec": 22.2,
+      "textSha256": "5ce6c58086168632dd157bd6bfcf113f3aef16ad9c8cdc97e72e08fa29231479",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-013",
+      "blockId": "n013",
+      "path": "projects/ESSY-0005/audio/N013.mp3",
+      "durationSec": 22.152,
+      "textSha256": "b345ae49e887abfa7c091161852065a7714931b88f62a4f308d64ecf4ba9480e",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-014",
+      "blockId": "n014",
+      "path": "projects/ESSY-0005/audio/N014.mp3",
+      "durationSec": 23.664,
+      "textSha256": "7e482fa881e1d2357b4065449aa39227ff8d48895d75e08858b7d48afb2f9458",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-015",
+      "blockId": "n015",
+      "path": "projects/ESSY-0005/audio/N015.mp3",
+      "durationSec": 15.936,
+      "textSha256": "0bba22520c8ab7168cf26f9a6b11c397e5ec1fa34983dc74630cf48ac56efa3e",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-016",
+      "blockId": "n016",
+      "path": "projects/ESSY-0005/audio/N016.mp3",
+      "durationSec": 25.464,
+      "textSha256": "812ad2bc658a402b5962b6ec949af514be6feb585cab014e051e24e4ca5537cb",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-017",
+      "blockId": "n017",
+      "path": "projects/ESSY-0005/audio/N017.mp3",
+      "durationSec": 16.32,
+      "textSha256": "3f756c52e4a0c9dd35a614921c003814432f3c5bc1b9327fe4a76f6cace4a939",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-018",
+      "blockId": "n018",
+      "path": "projects/ESSY-0005/audio/N018.mp3",
+      "durationSec": 25.704,
+      "textSha256": "7dc0925d4a49bb92aab7058f5b08b4234daed15d565a40d1e7c1ba23b86d2771",
+      "speaker": null,
+      "tts": {
+        "voice": "en-GB-RyanNeural",
+        "rate": "-12%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    }
+  ]
+}

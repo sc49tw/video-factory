@@ -1,0 +1,71 @@
+{
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "approvedAt": "2026-09-28T00:00:00.000Z"
+    },
+    "english": {
+      "approved": true,
+      "approvedAt": "2026-09-28T00:00:00.000Z"
+    },
+    "scenes": {
+      "approved": false
+    },
+    "package": {
+      "approved": false
+    }
+  },
+  "artifacts": {
+    "request": "request.yaml",
+    "concept": "concept.yaml",
+    "script": "script.md",
+    "storyboard": null,
+    "productionPackage": null
+  },
+  "currentStage": "STORYBOARD",
+  "draftId": "ESSY-0005",
+  "format": "ESSY",
+  "history": [
+    {
+      "at": "2026-09-28T00:00:00.000Z",
+      "event": "draft-created"
+    },
+    {
+      "at": "2026-09-28T00:00:00.000Z",
+      "event": "request-completed"
+    },
+    {
+      "at": "2026-09-28T00:00:00.000Z",
+      "event": "concept-approved"
+    },
+    {
+      "at": "2026-09-28T00:00:00.000Z",
+      "detail": "approved WRITE handoff: series ESSY, episode title What Is Still There When I'm Eighty?, stable narration blocks with visual-only titles (tts:false)",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-09-28T00:00:00.000Z",
+      "detail": "projects/ESSY-0005/script.md + titles.json + compression-review.md",
+      "event": "write-materialized"
+    },
+    {
+      "at": "2026-09-28T06:17:14.802Z",
+      "event": "prepare-complete",
+      "blockCount": 18,
+      "totalDurationSec": 369.864,
+      "manifest": "manifest.json"
+    }
+  ],
+  "schemaVersion": "2.0",
+  "series": "ESSY",
+  "status": "in_progress",
+  "subtype": "essay",
+  "updatedAt": "2026-09-28T06:17:14.802Z",
+  "prepare": {
+    "completed": true,
+    "completedAt": "2026-09-28T06:17:14.801Z",
+    "blockCount": 18,
+    "totalDurationSec": 369.864,
+    "manifest": "manifest.json"
+  }
+}

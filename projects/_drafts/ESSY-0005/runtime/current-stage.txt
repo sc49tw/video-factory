@@ -1,0 +1,23 @@
+Draft: ESSY-0005
+Series: ESSY
+Subtype: essay
+Current stage: STORYBOARD
+
+Read:
+- workflows/episode-production.workflow.yaml
+- series/ESSY/series.yaml
+- series/ESSY/creative-direction.md
+- series/ESSY/style-guide.md
+- projects/_drafts/ESSY-0005/request.yaml
+- projects/_drafts/ESSY-0005/state.yaml
+- projects/_drafts/ESSY-0005/concept.yaml
+- projects/_drafts/ESSY-0005/script.md
+
+Task:
+DIRECT visual-slot planning FROM actual PREPARE timing: Visual Arc -> Slots -> editorialFunction -> visualIntent -> avoid, then sequence literalness review. Only here may slot count become concrete.
+
+Required output: storyboard.yaml (blocks/slots + sequenceLiteralnessReview)
+
+Stop condition:
+Present the slots and wait for explicit Gate 2 visual-selection approval.
+Only perform the current stage. Do not create later-stage artifacts.

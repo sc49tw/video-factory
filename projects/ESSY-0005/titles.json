@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0005",
+  "approvedScript": "script.md",
+  "blocks": ["N001", "N002", "N003", "N004", "N005", "N006", "N007", "N008", "N009", "N010", "N011", "N012", "N013", "N014", "N015", "N016", "N017", "N018"],
+  "visualOnly": [
+    {
+      "id": "series-title",
+      "text": "A Second Look at Life",
+      "tts": false,
+      "role": "title"
+    },
+    {
+      "id": "episode-title",
+      "text": "What Is Still There When I'm Eighty?",
+      "tts": false,
+      "role": "title"
+    }
+  ],
+  "prepareContract": "Build TTS input and lesson.json narration arrays SOLELY from script.md blocks N001–N018. The visualOnly entries above must NEVER enter TTS input or any narration text field: normalizeEssayEpisode (src/essay-episode.mjs) synthesizes every narration entry and has no tts:false skip inside narration arrays (tts:false is honored only for the ending/moral object per src/lesson.mjs). The episode-title string MAY be reused as lesson.json title metadata only — never as narration."
+}
