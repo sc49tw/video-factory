@@ -30,8 +30,17 @@ projects/*/audio/
 projects/**/segments/
 projects/**/temp/
 
-# Generated subtitle passes / cue files
-projects/**/subtitles/
+# Generated subtitle passes / cue files (*.srt, *.vtt, per-cue json).
+# Scoped to the CONTENTS, not the directory, so the canonical hand-authored
+# translation SOURCES below can be re-included — git cannot re-include a file
+# whose parent directory is excluded.
+#   zh-TW.json            approved Traditional Chinese wording (per-cue + parent)
+#   zh-TW-cue-splits.json approved Chinese segmentation across DP cue boundaries
+# Neither is regenerable: no tool authors the wording or the split points, and
+# the bilingual SRT is derived FROM them. The generated bilingual/en SRT lives in
+# projects/<EP>/temp/ and stays ignored.
+projects/**/subtitles/*
+!projects/**/subtitles/zh-TW*.json
 
 # QA screenshot / image artifacts ONLY.
 # Scoped to images so future qa/*.md and qa/*.json decision records stay tracked.
