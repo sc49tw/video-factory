@@ -1,4 +1,4 @@
-import {mkdir, readFile, readdir, rename, writeFile} from "node:fs/promises";
+import {mkdir, readFile, readdir, writeFile} from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import {
@@ -18,6 +18,11 @@ import {
   writeDraftState,
   writeRequest,
 } from "../src/draft-workflow.mjs";
+import {
+  archiveEpisodeRecord,
+  TERMINAL_DRAFT_STATUSES,
+  TERMINAL_WORKFLOW_STATUSES,
+} from "../src/episode-archive.mjs";
 import {evaluateEpisodeGates} from "../src/gates.mjs";
 import {buildStagePrompt} from "../src/stage-prompt.mjs";
 import {
@@ -26,7 +31,6 @@ import {
   readWorkflow,
   recordEvent,
   refreshEpisodeWorkflow,
-  writeWorkflow,
 } from "../src/workflow.mjs";
 
 const factoryRoot = process.cwd();
@@ -319,12 +323,15 @@ async function status(id) {
 
 async function continueWorkflow(id) {
   if (!id) {
+    // Archived records are terminal, exactly like completed ones: `continue`
+    // must never offer an archived episode as unfinished work.
     const drafts = (await listDraftStates()).filter(
-      (state) => state.status !== "completed",
+      (state) => !TERMINAL_DRAFT_STATUSES.includes(String(state.status)),
     );
     const episodes = (await listWorkflows(factoryRoot)).filter(
       (workflow) =>
-        workflow.kind === "episode" && workflow.status !== "completed",
+        workflow.kind === "episode" &&
+        !TERMINAL_WORKFLOW_STATUSES.includes(String(workflow.status)),
     );
     const active = [...drafts, ...episodes];
     if (active.length !== 1) {
@@ -369,48 +376,15 @@ async function reject([id, target, ...reasonArgs]) {
 }
 
 async function archiveEpisode([id, confirmation]) {
-  if (confirmation !== "--published") {
-    throw new Error(
-      "Archive requires explicit publication confirmation: archive <ID> --published",
-    );
-  }
-  const workflow = await requireEpisode(id);
-  await refreshEpisodeWorkflow(factoryRoot, workflow);
-  if (
-    workflow.status !== "completed" ||
-    workflow.approvals.qa !== true
-  ) {
-    throw new Error("Only a completed, QA-approved episode can be archived.");
-  }
-  const archiveRoot = path.join(factoryRoot, "archive", "episodes", id);
-  const targets = [
-    ["inbox", path.join(factoryRoot, "inbox", id)],
-    ["project", path.join(factoryRoot, "projects", id)],
-    ["output", path.join(factoryRoot, "output", id)],
-  ];
-  await mkdir(archiveRoot, {recursive: true});
-  workflow.currentStage = "archived";
-  workflow.status = "archived";
-  workflow.archivedAt = new Date().toISOString();
-  workflow.nextAction = "Archived after publication confirmation.";
-  recordEvent(workflow, "episode-archived", {reason: "published"});
-  await writeWorkflow(factoryRoot, workflow);
-  for (const [name, source] of targets) {
-    if (await exists(source)) {
-      await rename(source, path.join(archiveRoot, name));
-    }
-  }
-  await writeJson(path.join(archiveRoot, "archive.json"), {
+  const result = await archiveEpisodeRecord({
+    factoryRoot,
     episode: id,
-    archivedAt: workflow.archivedAt,
-    reason: "published",
-    locations: {
-      inbox: "inbox/",
-      project: "project/",
-      output: "output/",
-    },
+    confirmation,
   });
-  console.log(`Archived published episode ${id} to ${relative(archiveRoot)}.`);
+  console.log(`Archived published episode ${id} to ${relative(result.archiveRoot)}.`);
+  console.log(
+    `  Authoritative ${result.kind} record: ${result.source} (archived at ${result.archivedAt}).`,
+  );
 }
 
 async function writeCurrentTask(state) {
@@ -476,20 +450,6 @@ async function readDirectories(directory) {
   }
 }
 
-async function exists(value) {
-  try {
-    await readFile(path.join(value, "workflow.json"));
-    return true;
-  } catch {
-    try {
-      await readdir(value);
-      return true;
-    } catch {
-      return false;
-    }
-  }
-}
-
 async function writeJson(filePath, value) {
   await mkdir(path.dirname(filePath), {recursive: true});
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
@@ -527,6 +487,12 @@ function printDraft(state) {
   console.log(
     `- ${state.draftId} | ${state.series}/${state.subtype} | ${state.currentStage} | ${state.status}`,
   );
+  if (state.status === "archived") {
+    console.log(
+      `  Archived after publication confirmation (${state.archivedAt ?? "date unrecorded"}). Restore from archive/episodes/${state.draftId}/ before any further work.`,
+    );
+    return;
+  }
   if (
     state.currentStage === "PREPARE" &&
     String(state.series ?? "").toUpperCase() === "ESSY"

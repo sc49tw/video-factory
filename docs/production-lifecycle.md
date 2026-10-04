@@ -65,7 +65,7 @@ runs:
 pnpm video:workflow archive <EPISODE> --published
 ```
 
-The command accepts only completed, QA-approved episodes and moves their three
+The command accepts only completed, approved episodes and moves their three
 working directories to:
 
 ```text
@@ -77,6 +77,33 @@ archive/episodes/<EPISODE>/
 ```
 
 Archival is never automatic.
+
+The authoritative record is resolved draft-first, so both episode kinds archive
+through the same command:
+
+- Draft-backed episodes (current ESSY): `projects/_drafts/<EPISODE>/state.yaml`
+  must be `completed` with both `qa` and `finalAssembly` approved. Archival
+  then transitions that draft to `archived`, records `archivedAt`, and appends
+  an `episode-archived` history event. `currentStage` stays at the stage where
+  production finished (`RENDER`); only `status` changes, so an archived episode
+  is never left behind as a dangling `completed` draft and is never offered by
+  `video:workflow continue` as unfinished work.
+- Workflow-backed episodes (legacy): `projects/<EPISODE>/workflow.json` is
+  gate-refreshed first and must reconcile to `completed` with QA approved, then
+  is marked `archived` with `archivedAt`.
+
+`archive.json` is written last and follows the existing convention
+(`episode`, `archivedAt`, `reason`, `locations`, plus `stateSource` naming the
+record that authorized the transition). It is also what `video:publication
+check` reads to report `archived`.
+
+Archival is transactional. Eligibility, the `--published` confirmation and the
+archive targets are all validated first; if any move or the final commit fails,
+the moves and the authoritative record are rolled back and the episode is left
+exactly as it was. An existing `archive.json` or an existing archive target is
+refused rather than overwritten.
+
+Regression tests: `pnpm test:archive`.
 
 ## Publication package
 

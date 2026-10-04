@@ -181,7 +181,11 @@ including when the identity appears and what it may contain — live in
   runs ahead of artifacts. Approval completes the episode (state = DONE).
 - **Archival (preserved):** never automatic, never inferable from production
   state — `pnpm video:workflow archive <EPISODE> --published` only after the
-  user confirms EXTERNAL publication.
+  user confirms EXTERNAL publication. Eligibility comes from the authoritative
+  draft state (`completed` + QA approved + final-assembly approved); the command
+  moves inbox/project/output into `archive/episodes/<EPISODE>/`, writes
+  `archive.json`, and transitions `state.yaml` to `archived` with `archivedAt`
+  so no dangling `completed` draft survives archival.
 
 ## Responsibility model
 
