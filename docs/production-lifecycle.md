@@ -78,6 +78,70 @@ archive/episodes/<EPISODE>/
 
 Archival is never automatic.
 
+## Publication package
+
+`completed` and `published/archived` are different states. A completed episode
+with a valid publication package reports `READY TO PUBLISH` and nothing more:
+the CLI never uploads, never marks an episode published, and never archives.
+
+The canonical publication layout is the one defined in
+[ESSY brand README](../brand/ESSY/README.md) (Asset Ownership):
+
+```text
+projects/<EPISODE>/publication/
+  thumbnail.png            canonical episode thumbnail
+  youtube.json             publication metadata (human-authored)
+  publication-record.json  provenance record written by the import CLI
+```
+
+Renderer deliverables stay under `output/<EPISODE>/`, and production artifacts
+stay under `projects/<EPISODE>/`. Publication packaging is never mixed into
+renderer output.
+
+### Import the thumbnail
+
+After the human downloads the selected thumbnail through the browser:
+
+```bash
+pnpm video:publication import ESSY-0005 thumbnail
+```
+
+The command resolves the repository root by walking up from its own script
+directory (never a hard-coded checkout), resolves the Downloads directory from
+`USERPROFILE`/`HOME`, and selects the newest supported image (`.png`, `.jpg`,
+`.jpeg`, `.webp`). It COPIES the download; the file in Downloads is never moved
+or deleted. A PNG source is copied byte-for-byte, and any other container is
+converted to `thumbnail.png` with ffmpeg.
+
+Safety rules:
+
+- Non-image sources are rejected; no supported image and no recent download are
+  explicit failures. The default candidate window is 7 days (`--within-days <n>`
+  widens it), so an unrelated older download is reported instead of guessed at.
+  `--list` prints the candidates, `--from <path>` imports an explicit file.
+- An existing canonical thumbnail is never overwritten without `--replace`.
+- The download is measured before anything is written, and a failing image is
+  reported FAIL rather than cropped or resized to force a pass.
+
+Metadata (title, description, tags) is human-authored in
+`projects/<EPISODE>/publication/youtube.json`; `import` only moves the
+thumbnail. Thumbnail rules, validation, and the provenance record live in
+`scripts/video-publication.mjs` and `src/publication.mjs`.
+
+### Check the package
+
+```bash
+pnpm video:publication check ESSY-0005
+```
+
+Read-only. It validates Title, Description, Thumbnail, and Video, and reports
+the episode lifecycle as `completed`, `archived`, or `not ready`. The final
+master is resolved from the renderer's own QA record
+(`projects/<EP>/temp/final-assembly/final-assembly-qa.json` → `output`), never
+by assuming a `final-v1` label. Add `--json` for the machine-readable report.
+
+Regression tests: `pnpm test:publication`.
+
 ## Essay render pipeline (MVP, known non-final)
 
 The ESSY renderer is intentionally a simple pipeline. It is acceptable for the
