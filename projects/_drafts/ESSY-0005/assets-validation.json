@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "ESSY-0005",
+  "series": "ESSY",
+  "provenance": "projects/ESSY-0005/sourcing/downloads/provenance.json",
+  "expectedAssets": 43,
+  "validatedAssets": 43,
+  "videos": 40,
+  "photos": 2,
+  "validation": {
+    "bijection": "pass",
+    "media": "pass",
+    "durationFit": "pass"
+  }
+}

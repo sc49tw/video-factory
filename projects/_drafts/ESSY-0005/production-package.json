@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "ESSY-0005",
+  "series": "ESSY",
+  "title": "What Is Still There When I'm Eighty?",
+  "language": "en",
+  "openingIdentity": {
+    "seriesTitle": "A SECOND LOOK AT LIFE",
+    "episodeTitle": "What Is Still There When I'm Eighty?",
+    "timing": {
+      "startSec": 14.736,
+      "durationSec": 4
+    },
+    "presentation": {
+      "mode": "sequential",
+      "seriesTitleFirst": true
+    },
+    "narrationSuppression": {
+      "enabled": true
+    },
+    "subtitleSuppression": {
+      "enabled": true
+    }
+  },
+  "narration": {
+    "script": "projects/ESSY-0005/script.md",
+    "manifest": "projects/ESSY-0005/manifest.json",
+    "blockCount": 18
+  },
+  "storyboard": {
+    "path": "projects/_drafts/ESSY-0005/storyboard.yaml",
+    "slotCount": 43
+  },
+  "approvedAssets": {
+    "path": "projects/ESSY-0005/sourcing/approved-slot-asset-map.json",
+    "count": 43
+  }
+}

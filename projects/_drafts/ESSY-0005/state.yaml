@@ -9,20 +9,31 @@
       "approvedAt": "2026-09-28T00:00:00.000Z"
     },
     "scenes": {
-      "approved": false
+      "approved": true,
+      "approvedAt": "2026-10-03T13:22:09.142Z"
     },
     "package": {
-      "approved": false
+      "approved": true,
+      "approvedAt": "2026-10-04T00:05:13.652Z"
+    },
+    "qa": {
+      "approved": true,
+      "approvedAt": "2026-10-04T04:21:23.690Z"
+    },
+    "finalAssembly": {
+      "approved": true,
+      "approvedAt": "2026-10-04T06:51:44.410Z"
     }
   },
   "artifacts": {
     "request": "request.yaml",
     "concept": "concept.yaml",
     "script": "script.md",
-    "storyboard": null,
-    "productionPackage": null
+    "storyboard": "storyboard.yaml",
+    "productionPackage": "production-package.json",
+    "assetsValidation": "assets-validation.json"
   },
-  "currentStage": "STORYBOARD",
+  "currentStage": "RENDER",
   "draftId": "ESSY-0005",
   "format": "ESSY",
   "history": [
@@ -54,13 +65,50 @@
       "blockCount": 18,
       "totalDurationSec": 369.864,
       "manifest": "manifest.json"
+    },
+    {
+      "at": "2026-09-28T08:08:45.100Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-09-28T08:09:52.075Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-03T13:22:08.571Z",
+      "event": "draft-rolled-back",
+      "to": "STORYBOARD"
+    },
+    {
+      "at": "2026-10-03T13:22:09.144Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-03T15:12:45.557Z",
+      "event": "package-submitted"
+    },
+    {
+      "at": "2026-10-04T00:05:13.654Z",
+      "event": "package-approved"
+    },
+    {
+      "at": "2026-10-04T00:07:29.960Z",
+      "event": "assets-complete"
+    },
+    {
+      "at": "2026-10-04T04:21:23.691Z",
+      "event": "qa-approved"
+    },
+    {
+      "at": "2026-10-04T06:51:44.412Z",
+      "event": "final-assembly-approved"
     }
   ],
   "schemaVersion": "2.0",
   "series": "ESSY",
-  "status": "in_progress",
+  "status": "completed",
   "subtype": "essay",
-  "updatedAt": "2026-09-28T06:17:14.802Z",
+  "updatedAt": "2026-10-04T06:51:44.412Z",
   "prepare": {
     "completed": true,
     "completedAt": "2026-09-28T06:17:14.801Z",
