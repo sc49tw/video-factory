@@ -1,6 +1,6 @@
 import {readFileSync} from "node:fs";
 import Ajv2020 from "ajv/dist/2020.js";
-import {ESSY_SERIES_IDENTITY} from "./essay-identity-config.mjs";
+import {ESSY_SERIES_IDENTITY} from "../scripts/essay-identity-config.mjs";
 
 // ESSY Opening Identity validation — canonical metadata for the opening
 // identity reveal (series title + episode title after the hook, over

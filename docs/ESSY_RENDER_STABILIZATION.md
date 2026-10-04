@@ -2,16 +2,20 @@
 
 ## Outcome and honest current status
 
-ESSY-0004 v13 fixed the episode review. It did not finish a reusable end-to-end
-renderer. The final path still rejects openingIdentity. Before the next normal
-episode BUILD, complete the parity work below; do not repeat it inside another
-episode's production run. No new human approval gate is introduced.
+ESSY-0004 v13 fixed the episode review, and the final path now consumes the
+same shared opening-identity plan (ESSY-0004 `output/…-final-v1.mp4` rendered
+395.162 s with the identity intact). The remaining gaps below are engineering
+follow-ups, not a blocked final renderer; complete them before the next normal
+episode BUILD rather than repeating the work inside another episode's
+production run. No new human approval gate is introduced. The authoritative
+opening/identity semantics live in [ESSY_SERIES_GRAMMAR.md](ESSY_SERIES_GRAMMAR.md);
+this document does not restate them.
 
 ## What cost time
 
 | Failure | Durable prevention | Current status |
 | --- | --- | --- |
-| Metadata changed but the renderer ignored it | One validated composition plan used by review and final | Shared opening plan exists; final integration pending |
+| Metadata changed but the renderer ignored it | One validated composition plan used by review and final | Shared opening plan consumed by both renderers and covered by regression tests |
 | Missing named exports found when rendering | Cheap import/export preflight before ffmpeg | Basic preflight implemented |
 | Full render used to discover opening/layout defects | Short opening, body transition, ending samples first | Required operating procedure; automatic sample command pending |
 | Identity window overlapped spoken body | Insert time, preserve local audio/VTT timing, shift body together | Review implemented; regression fixture passes |
@@ -21,18 +25,21 @@ episode's production run. No new human approval gate is introduced.
 
 ## Next implementation work, in order
 
-1. Unify composition: opening, block offsets, subtitle offsets, ending and
-   music windows must come from one delivery plan. Review and final may differ
-   in resolution/encoding only, not editorial timing. Port the existing review
-   insertion to final without creating an episode-specific workaround.
+1. ~~Unify composition~~ **Done.** Opening, block offsets, subtitle offsets,
+   ending and music windows come from one delivery plan
+   (`scripts/essay-opening-plan.mjs` → `scripts/essay-opening-delivery.mjs`),
+   consumed by both renderers; review and final differ in resolution/encoding
+   only. Regression coverage: `pnpm test:opening`.
 2. Add one short smoke-render command covering the hook → identity → body
    boundary and ending, using the same production path at 540p and 1080p.
    Check frames and audio before a full render. Stop on the first failed
    checkpoint; do not launch the next full encode speculatively.
-3. Freeze a small reusable fixture from synthetic timing/media: narration text
-   and duration preserved, no spoken/subtitle title window, first body word
-   retained, title order correct, end card without subtitle, equivalent layout
-   at both resolutions. Do not rerender published episodes as regression tests.
+3. ~~Freeze a small reusable fixture~~ **Done.** `pnpm test:opening` holds a
+   synthetic fixture plus the approved ESSY-0004 metadata; it asserts narration
+   text and duration preservation, a subtitle-free identity window, the first
+   body word, title order, the end card without subtitles, and equivalent
+   layout at both resolutions. Published episodes are never rerendered as
+   regression tests.
 4. Cache stages by input/config/renderer hashes. Reuse unchanged TTS, source
    media and visual segments; invalidate only affected stages. Record cache
    hits, failed encodes, render wall time and manual correction rounds.
@@ -49,9 +56,12 @@ episode's production run. No new human approval gate is introduced.
    not require shared renderer edits; if it does, resolve the missing generic
    capability before continuing full production.
 5. Render one full review, technical QA, then human review under existing gates.
-6. `pnpm video:preflight <EP> final` must pass before approved final work.
-   Currently it intentionally fails for openingIdentity; that is an unfinished
-   capability, not a request for the user to override the check.
+6. `pnpm video:preflight <EP> final` must pass before approved final work. For
+   an `openingIdentity` episode it reports the shared plan and
+   `finalParity: READY`; it still fails legitimately when the identity timing
+   does not follow the complete hook or the hook shot lacks enough unused
+   approved footage, and that failure is a real finding, never a reason to
+   override the check.
 
 ## Definition of convergence
 

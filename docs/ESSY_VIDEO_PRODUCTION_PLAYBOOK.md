@@ -378,16 +378,79 @@ Textual descriptions are useful for filtering but do not substitute for visual r
 
 ## 9. Selection Criteria
 
+Selection proceeds through the following ordered screen; accept the first
+candidate that clears every step. Do not optimize beyond "good enough", and do
+not re-open earlier slots to chase a marginally better candidate.
+
+```text
+1. visual intent match     (broad scene description, subject, composition, motion)
+2. avoid-list check        (slot-level avoid list, §6.2)
+3. semantic action check   (§9.1 — veto on unintended narrative)
+4. technical / motion QA   (resolution, source duration fit, camera stability)
+5. accept first good-enough candidate
+```
+
+Per-candidate checklist:
+
 - Does the asset support the block's visual arc — or, where editorially intended, provide quiet atmospheric continuity / breathing room while the narration carries the idea (§6.4) — rather than merely match a keyword?
 - Does it feel natural, or like an obvious staged stock advertisement?
 - Does it add variety relative to the shots immediately before and after it?
 - Is the motion useful at the intended viewing duration (nominal 7–10 s guideline, or a longer intentional atmospheric hold per §6.4)?
 - Is the resolution sufficient for 1080p output? Prefer higher-resolution sources when a 720p variant looks soft.
 - Does the asset contain distracting logos, text, faces acting unnaturally, or visual details that shift attention away from the narration?
-- Does the visual introduce unintended meaning or symbolism that competes with the narration?
+- **Does the visual introduce unintended meaning or symbolism that competes with the narration? (§9.1 — mandatory veto.)**
 - Can the asset be used under the recorded license and provenance terms?
 
-On unintended symbolism: common stock elements carry secondary meanings — a luxury car (wealth/status/consumption), a luxury home (wealth), corporate success imagery (ambition/status), a phone (social media/addiction), an isolated elderly person (loneliness/mortality), a sunset (ending/aging/death). These elements are NOT prohibited. The editorial reviewer must notice the secondary meaning and decide whether it supports or distracts from the shot's intended editorial function.
+On unintended symbolism: common stock elements carry secondary meanings — a
+luxury car (wealth/status/consumption), a luxury home (wealth), corporate
+success imagery (ambition/status), a phone (social media/addiction), an
+isolated elderly person (loneliness/mortality), a sunset (ending/aging/death).
+These elements are NOT prohibited. The editorial reviewer must notice the
+secondary meaning and decide whether it supports or distracts from the shot's
+intended editorial function.
+
+### 9.1 Semantic Action Check (mandatory veto)
+
+A candidate may match its broad visual description (subject, composition,
+motion, mood) and still be rejected. Broad match is necessary but not
+sufficient: a shot also carries meaning through **what is visibly happening in
+it** — specific actions, held objects, readable props, and events. When that
+visible content implies a story the narration does not support, the candidate
+introduces an unintended narrative and must be rejected regardless of how well
+its broad description fits.
+
+During autonomous visual candidate selection, inspect each candidate for
+specific visible actions, held objects, readable props, or events, and ask:
+
+> **"Does anything visibly happening in this shot cause the viewer to infer a
+> story, cause, problem, relationship, or symbolic meaning that is not
+> supported by the narration or storyboard intent?"**
+
+If the answer is yes, reject the candidate, even when its broad visual
+description otherwise matches.
+
+This is a lightweight veto, not an invitation to exhaustively interpret every
+object in every frame. Apply it to catch **strong** unintended narrative
+signals — a visible action or prop that plainly drives a causal or symbolic
+reading (scarcity, failure, dependency, decline, recovery, reward, conflict,
+work, illness, or a relationship turn). Ordinary background detail, ambiguous
+gestures, and speculative symbolism are not grounds for rejection. A candidate
+is not rejected for *being* atmospheric or low-semantic-load; it is rejected
+when a specific visible element actively supplies a narrative the narration does
+not carry.
+
+**Regression example — ESSY-0005 N015-S2 (empty wallet).**
+Intended beat: *nothing to prove.* The narration offers permission to stop
+performing; the visual job is a person simply present, with no task, result,
+problem, or audience on display. A candidate showing an elderly man alone in a
+room broadly matched that description, but the actual action — **he looks into
+an empty wallet** — lets the viewer infer financial scarcity / retirement
+hardship, a causal story the narration never mentions and that contradicts the
+beat. Rejected on semantic action check. Replacement 7113136 succeeds because
+the person is simply present without a task, result, problem, or additional
+causal story. Record such rejections in the slot's sourcing notes so the veto
+is auditable across episodes. See also `docs/regression-visual-selection.md`
+for the compact regression register.
 
 ## 10. Audio / Visual Timeline Contract
 
@@ -478,6 +541,8 @@ Read the complete script first. Then:
 - The sourcing-v2 method introduced explicit `editorialFunction` reasoning before `visualIntent` and search-query generation, producing more environmental/observational alternatives instead of direct keyword illustrations. These lessons are promoted to the stable rules in Sections 1, 3, 5, 6, 8, 9 and 13.
 - Candidate metadata alone proved insufficient for final editorial selection: visual preview/contact-sheet review exposed mismatches that textual descriptions did not reveal, including generic imagery and unintended status symbolism. Contact-sheet review is therefore part of the normal approval workflow whenever previews are available.
 
+- **ESSY-0005 N015-S2 (empty wallet):** a candidate that broadly matched "elderly man alone in a room with no work or audience" was rejected because the visible action — looking into an empty wallet — introduced financial scarcity / retirement hardship, a causal story the narration ("nothing to prove") does not carry. This exposed a gap: the existing unintended-symbolism criterion reviewed *symbolism of stock elements*, but did not veto a *specific visible action or prop* that drives a causal reading. Promoted to the mandatory Semantic Action Check (§9.1), placed in the selection screen between the avoid-list check and technical/motion QA, with the N015-S2 case recorded in `docs/regression-visual-selection.md`.
+
 ## 15. Change Control
 
 Stable rules should change only after an observed production problem or a deliberate editorial decision. Current defaults may evolve episode by episode. When the workflow materially changes, increment this playbook version and keep it in Git with the Video Factory repository.
@@ -491,5 +556,7 @@ v1.3 (P1 still-image motion): STATIC is the default still treatment; motion requ
 v1.4 (P1 script compression): canonical Script Compression Pass before English approval (Section 2.1) — 8 density checks, KEEP-protection for emotional progression, 6–9 min preferred range, >9 min mandatory compression review, >10 min written justification, no hard cap. Evidence: retrospective audits of ESSY-0001–0003 (projects/<EP>/compression-review.md).
 
 v1.5 (visual editorial principles, ESSY-0004+): §6.4 canonical principles — narration carries meaning; mood match sufficient by default; "stay out of the way" as legitimate editorial function; intentional breathing room (7–10 s guideline, never a cut requirement); semantic scarcity creates emphasis; subtitle changes count toward visual rhythm (subtitles stay visually secondary, no oversizing); simplest treatment that sustains attention; low-semantic-load ambient visuals explicitly valid (examples, not a house style). Relaxed/clarified: §1.5, §3 arc/literalness/slot rows, §4 rhythm, §5.E, §6.3, §7.3.5–6, §9 motion criterion, §13.3. No new pipeline/mode; existing editorialFunction/visualIntent/avoid model expresses these choices. Semantic sourcing, literal visuals, and visual arcs remain available.
+
+v1.6 (semantic action check, ESSY-0005+): added the mandatory Semantic Action Check veto in §9.1, inserted into the ordered selection screen (§9) between the avoid-list check and technical/motion QA. Broad visual match is necessary but not sufficient: a candidate is rejected when a specific visible action, held object, readable prop, or event supplies a story, cause, problem, relationship, or symbolic meaning the narration does not support. Lightweight veto only — not exhaustive object-by-object interpretation; ordinary background detail and speculative symbolism are not grounds for rejection. Regression case recorded: ESSY-0005 N015-S2 empty-wallet rejection (asset 16940174), replacement 7113136. Strengthened the existing unintended-symbolism criterion in §9 rather than creating a duplicate rule.
 
 Suggested repository path: `docs/ESSY_VIDEO_PRODUCTION_PLAYBOOK.md`

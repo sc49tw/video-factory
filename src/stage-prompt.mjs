@@ -1,3 +1,5 @@
+import {packageContractPathForSeries} from "./series-contracts.mjs";
+
 const STAGE_DETAILS = Object.freeze({
   REQUEST: ["Collect the one missing request detail.", "request.yaml", "Stop when the request is complete."],
   CONCEPT: ["Create the best concept proposal.", "concept.yaml", "Present it and wait for explicit concept approval."],
@@ -57,7 +59,8 @@ export function buildStagePrompt(state) {
     if (name) reads.push(`${root}/${name}`);
   }
   if (state.currentStage === "PACKAGE") {
-    reads.push("contracts/production-package.schema.json");
+    // Series-specific package contract; dispatch lives ONLY in series-contracts.
+    reads.push(packageContractPathForSeries(state.series));
   }
   return [
     `Draft: ${state.draftId}`,

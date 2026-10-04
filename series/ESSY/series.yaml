@@ -20,7 +20,7 @@
   ],
   "visualRules": [
     "Visuals are mood-based atmosphere, not literal illustration of the narration.",
-    "Static placeholder images with Ken Burns motion are acceptable for the first render.",
+    "NO_MOTION_STILLS (all ESSY episodes, default): still images are frame-identical from first to last frame — fixed-ratio scale + center crop only. No Ken Burns, zoompan, push-in/pull, pan, scale animation, random drift, or simulated handheld shake. Per-slot motion exceptions require explicit user approval + code opt-in, never metadata alone.",
     "Every visual asset must have provenance metadata in inbox/<EPISODE>/visuals.json."
   ],
   "provenanceFields": [

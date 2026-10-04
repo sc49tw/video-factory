@@ -1,75 +1,53 @@
 // ---------------------------------------------------------------------------
-// Shared ESSY still-image motion policy (canonical, P1).
+// Shared ESSY still-image policy — NO_MOTION_STILLS (canonical, project-wide).
 //
-// Editorial decision (validated via the P1 motion-comfort + geometry
-// experiments and human review):
-//   "Calm frame, meaningful motion."
-//   - STATIC is the default treatment for still images.
-//   - Motion must be explicitly declared per shot via `stillMotion` metadata.
-//   - Shot index parity must NEVER select motion (old odd/even Ken Burns
-//     alternation was rejected by human review).
-//   - Canonical production values: "static" | "slow-push".
-//     ("slow-pull" and "pan" are NOT approved production treatments yet.)
-//   - Unknown/unsupported values resolve to STATIC (never guess motion).
+// Rule: still images MUST be frame-identical from first to last frame.
+// Only fixed-ratio scale + center crop. No Ken Burns, no push-in,
+// no pan, no scale animation, no random drift, no simulated handheld shake.
+// Composition (scale + crop center) is constant for the whole shot.
 //
-// slow-push geometry (from the P1 geometry experiment):
-//   - fixed center anchor (crop center = exact image center every frame)
-//   - scale only, no translation, spans the FULL shot (no early freeze)
-//   - zoom crop is quantized at 4x supersample then lanczos-downscaled, so
-//     quantization error is <= 0.25 output px (prevents perceptual wobble)
-//
-// SLOW_PUSH_ZOOM_MAX is an IMPLEMENTATION DEFAULT, not an editorial
-// requirement. Do not treat 1.035 as a validated perceptual amplitude.
+// - resolveStillMotion() ALWAYS returns "static". The legacy "slow-push"
+//   value is accepted on input but resolves to STATIC (no motion) so old
+//   metadata can never re-enable motion. Per-slot motion exceptions require
+//   explicit human approval and a code-level opt-in (not metadata alone).
+// - stillImageFilter() NEVER emits time-varying x/y / zoom.
+//   Static path only: scale=increase + center crop + fps + lanczos downscale.
 // ---------------------------------------------------------------------------
 
-export const STILL_MOTION_VALUES = ["static", "slow-push"];
+export const STILL_MOTION_VALUES = ["static"];
 
-// Restrained implementation default for slow-push end zoom.
-export const SLOW_PUSH_ZOOM_MAX = 1.035;
-
-const ZOOMPAN_SUPERSAMPLE = 4;
+// Kept for backward-compatible import only. No longer used to produce motion.
+export const SLOW_PUSH_ZOOM_MAX = 1.0;
 
 /**
  * Resolve the still-image motion treatment for a shot.
- * Absent metadata -> STATIC. Only photo/still shots are passed here by the
- * renderers; video shots never reach this policy.
+ * NO_MOTION_STILLS: always STATIC. Video shots never reach this policy.
  */
 export function resolveStillMotion(shot) {
   const value = shot?.stillMotion;
-  if (value === "slow-push") return "slow-push";
-  if (value === "static" || value == null || value === "") return "static";
-  console.warn(
-    `[still-motion] unsupported stillMotion "${value}" on shot ` +
-      `${shot.slotId ?? shot.id ?? "?"}; falling back to STATIC.`,
-  );
+  if (value != null && value !== "" && value !== "static") {
+    console.warn(
+      `[NO_MOTION_STILLS] stillMotion "${value}" on shot ` +
+        `${shot.slotId ?? shot.id ?? "?"} ignored; STATIC enforced. ` +
+        `Per-slot motion needs explicit human approval + code opt-in.`,
+    );
+  }
   return "static";
 }
 
 /**
  * ffmpeg video filter chain for a still image.
- * static    -> scale/crop only (no motion).
- * slow-push -> stable center zoom 1.0 -> SLOW_PUSH_ZOOM_MAX across the
- *              complete shot duration.
+ * STATIC ONLY: fixed scale + center crop. No time-varying expr.
  */
-export function stillImageFilter({width, height, fps, frameCount, stillMotion}) {
-  const motion = stillMotion ?? "static";
-  if (motion !== "slow-push") {
-    return (
-      `scale=${width * ZOOMPAN_SUPERSAMPLE}:${height * ZOOMPAN_SUPERSAMPLE}:` +
-      `force_original_aspect_ratio=increase:flags=lanczos,` +
-      `crop=${width * ZOOMPAN_SUPERSAMPLE}:${height * ZOOMPAN_SUPERSAMPLE},` +
-      `fps=${fps},` +
-      `scale=${width}:${height}:flags=lanczos`
-    );
-  }
-  const ss = ZOOMPAN_SUPERSAMPLE;
-  const frames = Math.max(2, frameCount);
+export function stillImageFilter({width, height, fps}) {
+  // NOTE: no frameCount / stillMotion inputs by design — motion cannot be
+  // re-enabled via parameters. Fixed-ratio scale + center crop, identical
+  // every frame.
   return (
-    `scale=${width * ss}:${height * ss}:force_original_aspect_ratio=increase:flags=lanczos,` +
-    `crop=${width * ss}:${height * ss},` +
-    `zoompan=z='1+(${SLOW_PUSH_ZOOM_MAX}-1)*on/${frames - 1}':` +
-    `x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':` +
-    `d=${frames}:s=${width * ss}x${height * ss}:fps=${fps},` +
-    `scale=${width}:${height}:flags=lanczos`
+    `scale=${width}:` +
+    `${height}:force_original_aspect_ratio=increase:flags=lanczos,` +
+    `crop=${width}:${height}:x=(in_w-out_w)/2:y=(in_h-out_h)/2,` +
+    `fps=${fps}`
   );
 }
+

@@ -96,9 +96,11 @@ When renderer behavior changes, verify a short opening/body-boundary/ending
 sample before spending time on the full review. Do not discover opening or
 subtitle presentation decisions through repeated full-length renders.
 
-For openingIdentity episodes the current final renderer is NOT ready:
-review/final insertion parity remains an explicit engineering prerequisite.
-Do not describe v13 review success as completion of the reusable pipeline.
+Opening identity episodes are fully supported: review and final consume the
+same shared opening-identity plan, and `pnpm video:preflight <EP> final`
+reports parity readiness for them. Authoritative opening/identity semantics —
+including when the identity appears and what it may contain — live in
+[ESSY_SERIES_GRAMMAR.md](ESSY_SERIES_GRAMMAR.md); do not re-derive them here.
 
 - **Owner:** Codex / Video Factory.
 - **Input:** approved script + approved asset selections.
@@ -107,7 +109,12 @@ Do not describe v13 review success as completion of the reusable pipeline.
   `contracts/production-package.schema.json` for LLFC). The package contains
   references to already-approved artifacts only — no new editorial decision —
   and for ESSY requires ENGLISH + scenes (Gate 2) approvals and completed
-  PREPARE timing (no CONCEPT gate exists in the ESSY flow).
+  PREPARE timing (no CONCEPT gate exists in the ESSY flow). The single
+  exception is the OPTIONAL `openingIdentity` block, which records the
+  episode-level opening identity decision defined by
+  [ESSY_SERIES_GRAMMAR.md](ESSY_SERIES_GRAMMAR.md); it is production-package
+  metadata, never a storyboard slot or a Gate-2 asset, and its contract is
+  `contracts/essy-opening-identity.schema.json`.
 - **Source-duration fit = narration playback only.** Inter-block trailing pause
   is a deterministic **last-frame hold** on the block's final shot (frozen
   clone, never looped, never charged to source duration). Approved narration

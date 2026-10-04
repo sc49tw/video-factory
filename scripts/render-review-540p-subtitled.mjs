@@ -33,8 +33,10 @@ import {
   resolveEndingCardSpec,
   resolveEpisodePreRollTitleCard,
 } from "./essay-identity-config.mjs";
-import {buildAssForceStyle} from "./subtitle-config.mjs";
+import {buildAssForceStyle, assForceStyle} from "./subtitle-config.mjs";
 import {renderOpeningReview} from './render-opening-review.mjs';
+import {assertMasterDraftFresh} from "../src/master-draft-freshness.mjs";
+import {buildBilingualSrt} from "./_build-bilingual-subtitles.mjs";
 
 const OUT_W = 960;
 const OUT_H = 540;
@@ -67,6 +69,58 @@ async function locateMasterDraft(outputRoot, episode) {
     );
   }
   return path.join(outputRoot, candidates.at(-1));
+}
+
+// The review render re-scales and burns onto the full-draft master; it never
+// re-renders shots. The master is therefore a cache whose declared inputs are
+// the assembly timeline and the shot source files, and it MUST be proven fresh
+// against them. Without this check an approved asset swap (asset map -> new
+// download -> rebuilt timeline) is silently dropped and the review ships the
+// previous picture — the exact failure behind the "the replacement never
+// appeared" defect.
+//
+// Freshness is content-based (sha256 of the timeline and every shot source), not
+// mtime-based, so it cannot be fooled by touching files or by editing content.
+//
+// By default a stale master is REBUILT here, so an approved asset change
+// necessarily propagates to the rendered review. Set ESSY_SKIP_DRAFT_REBUILD=1
+// to convert the stale state into a hard failure instead (useful in CI).
+async function resolveFreshMasterDraft({root, outputRoot, episode, log}) {
+  const master = await locateMasterDraft(outputRoot, episode);
+  const verdict = await assertMasterDraftFresh({root, episode, masterPath: master});
+
+  if (verdict.fresh) {
+    log?.(`Master draft is fresh: ${path.basename(master)} (fingerprint ${verdict.currentFingerprintSha256.slice(0, 12)}…)`);
+    return master;
+  }
+
+  const remediation =
+    `node scripts/render-full-draft.mjs ${episode}   # then: pnpm video:subtitle-review ${episode}`;
+
+  if (process.env.ESSY_SKIP_DRAFT_REBUILD === "1") {
+    throw new Error(
+      `STALE MASTER DRAFT — review render aborted.\n  ${verdict.reason}\n` +
+        `  Affected slot(s): ${verdict.changedSlots.join(", ") || "none"}\n` +
+        `  Remediation: ${remediation}`,
+    );
+  }
+
+  log?.(`STALE MASTER DRAFT detected — rebuilding so the approved asset change propagates.`);
+  log?.(`  ${verdict.reason}`);
+  log?.(`  Affected slot(s): ${verdict.changedSlots.join(", ") || "none"}`);
+  const {renderFullDraft} = await import("./render-full-draft.mjs");
+  await renderFullDraft({root, episode, log});
+
+  const rebuilt = await locateMasterDraft(outputRoot, episode);
+  const reverify = await assertMasterDraftFresh({root, episode, masterPath: rebuilt});
+  if (!reverify.fresh) {
+    throw new Error(
+      `Master draft rebuild did not resolve the staleness.\n  ${reverify.reason}\n` +
+        `  Remediation: ${remediation}`,
+    );
+  }
+  log?.(`Master draft rebuilt and verified: ${path.basename(rebuilt)} (fingerprint ${reverify.currentFingerprintSha256.slice(0, 12)}…)`);
+  return rebuilt;
 }
 
 async function nextOutputPath(outputRoot, episode) {
@@ -196,18 +250,40 @@ const main = async () => {
   const outputRoot = path.join(root, "output", episode);
   await mkdir(outputRoot, {recursive: true});
 
-  let pkg = null;
+let pkg = null;
   try { pkg = JSON.parse(await readFile(path.join(root, 'projects', '_drafts', episode, 'production-package.json'), 'utf8')); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
+
+  // ---- Dependency freshness: prove the master draft still reflects the
+  // approved asset map / assembly timeline / shot sources before burning onto
+  // it. A stale master is rebuilt here (or fails hard with
+  // ESSY_SKIP_DRAFT_REBUILD=1) so an approved asset change necessarily reaches
+  // the rendered review.
+  const masterDraft = await resolveFreshMasterDraft({root, outputRoot, episode});
+
   if (pkg?.openingIdentity) {
     await renderOpeningReview({root, episode, identity:pkg.openingIdentity,
-      input:await locateMasterDraft(outputRoot,episode), output:await nextOutputPath(outputRoot,episode),
+      input:masterDraft, output:await nextOutputPath(outputRoot,episode),
       fontPath:await stageFont(path.join(root,'projects',episode,'temp')), ending:await readEndingSpec(root,episode), run});
     return;
   }
 
   // ---- Build one episode-wide, globally valid SRT (validated, QA report) ----
-  const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({root, episode});
+  const {resolveSubtitleConfig} = await import("./subtitle-config.mjs");
+  const subtitleConfig = resolveSubtitleConfig(episode === "ESSY-0005" ? {MIN_GENERATED_DURATION_MS: 450} : {});
+  const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({root, episode, config: subtitleConfig});
+
+  // ---- ESSY-0005 bilingual subtitle burn-in ----
+  // GENERATED from the authoritative English SRT and gated for completeness; a
+  // missing/placeholder translation aborts before ffmpeg instead of burning.
+  let finalSrtPath = srtPath;
+  if (episode === "ESSY-0005") {
+    subtitleConfig.STYLE.FONT_SIZE = BILINGUAL_STYLE.FONT_SIZE;
+    subtitleConfig.STYLE.MARGIN_V = BILINGUAL_STYLE.MARGIN_V;
+    subtitleConfig.MAX_CHARS = BILINGUAL_STYLE.MAX_CHARS;
+    const bilingual = await buildBilingualSrt({root, episode, englishSrtPath: srtPath});
+    finalSrtPath = bilingual.srtPath;
+  }
 
   // ---- MANDATORY subtitle QA gate: abort BEFORE ffmpeg on any failure ----
   if (!report.passed) {
@@ -231,12 +307,14 @@ const main = async () => {
   }
 
   // ---- Preserve audio master / visual timeline: just re-scale + burn ----
-  const input = await locateMasterDraft(outputRoot, episode);
+  const input = masterDraft;
   const output = await nextOutputPath(outputRoot, episode);
-  // Use a relative (cwd-based) path for the subtitles filter: a Windows drive
+// Use a relative (cwd-based) path for the subtitles filter: a Windows drive
   // letter colon would otherwise be parsed as a filter option separator.
-  const srtEsc = path.relative(root, srtPath).replace(/\\/g, "/");
-  const forceStyle = buildAssForceStyle();
+  const srtEsc = path.relative(root, finalSrtPath).replace(/\\/g, "/");
+  // Shared libass style resolver — the 1080p final master burns the same SRT
+  // through the same expression, so the two paths cannot drift apart.
+  const forceStyle = assForceStyle(subtitleConfig.STYLE);
   const filter = `scale=${OUT_W}:${OUT_H}:flags=lanczos,fps=${FPS},subtitles=${srtEsc}:force_style='${forceStyle}'`;
 
   // ---- Cold-open EXPERIMENT title cards (editorial opt-in, e.g. ESSY-0003) ----

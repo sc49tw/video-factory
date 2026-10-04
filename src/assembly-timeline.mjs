@@ -145,7 +145,9 @@ export function buildAssemblyTimeline({blocks, slotsByBlock, cuesByBlock}) {
       throw new Error(`No approved sourcing slots for ${window.sentenceId}.`);
     }
     const caps = slots.map((slot) =>
-      slot.mediaType === "video" ? slot.sourceDurationSec : null,
+      slot.mediaType === "video"
+        ? slot.sourceDurationSec - (slot.inPointSec ?? 0)
+        : null,
     );
     // Source fit is against NARRATION playback only; the inter-block pause is
     // a deterministic last-frame hold on the block's final shot.
@@ -174,13 +176,18 @@ export function buildAssemblyTimeline({blocks, slotsByBlock, cuesByBlock}) {
       }
       seenAssets.add(slot.sourcePath);
       if (slot.mediaType === "video") {
-        if (renderDurationSec > slot.sourceDurationSec + 1e-6) {
+        // Fit is measured from the APPROVED in-point, not from t=0: a slot may
+        // deliberately take a later cut of a longer licensed take.
+        const availableSec = slot.sourceDurationSec - (slot.inPointSec ?? 0);
+        if (renderDurationSec > availableSec + 1e-6) {
           throw new Error(
             `INSUFFICIENT_SOURCE ${slot.slotId}: needs ${renderDurationSec.toFixed(3)}s ` +
-              `but source is ${slot.sourceDurationSec.toFixed(3)}s.`,
+              `from in-point ${(slot.inPointSec ?? 0).toFixed(3)}s but only ` +
+              `${availableSec.toFixed(3)}s of the source remain.`,
           );
         }
       }
+      const inPointSec = slot.mediaType === "video" ? Number(slot.inPointSec ?? 0) : 0;
       const shot = {
         index: timelineShots.length,
         blockId: window.sentenceId,
@@ -188,6 +195,9 @@ export function buildAssemblyTimeline({blocks, slotsByBlock, cuesByBlock}) {
         mediaType: slot.mediaType,
         sourcePath: slot.sourcePath,
         sourceDurationSec: slot.sourceDurationSec,
+        // Approved in-point inside the licensed take. The renderer seeks here, so
+        // two slots that share one take show different pictures.
+        inPointSec: round3(inPointSec),
         stillMotion: slot.stillMotion ?? null,
         renderDurationSec: round3(renderDurationSec),
         // Narration playback end (hold never carries subtitles or narration).
@@ -325,11 +335,12 @@ export function validateAssemblyTimeline(timeline) {
       if (shot.mediaType === "video") {
         if (
           shot.renderDurationSec >
-          (shot.sourceDurationSec ?? 0) + 0.001
+          (shot.sourceDurationSec ?? 0) - (shot.inPointSec ?? 0) + 0.001
         ) {
           throw new Error(
             `INSUFFICIENT_SOURCE ${shot.slotId}: shot ${shot.renderDurationSec.toFixed(3)}s ` +
-              `exceeds source ${shot.sourceDurationSec?.toFixed(3) ?? "?"}s.`,
+              `from in-point ${(shot.inPointSec ?? 0).toFixed(3)}s exceeds the remaining ` +
+              `${((shot.sourceDurationSec ?? 0) - (shot.inPointSec ?? 0)).toFixed(3)}s.`,
           );
         }
       }

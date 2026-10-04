@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "contracts/essy-production-package.schema.json",
   "title": "ESSY Production Package",
-  "description": "Deterministic, series-specific handoff from an approved ESSY creative draft into BUILD. References canonical artifacts; embeds no editorial decisions and no LLFC characters/scenes fields.",
+  "description": "Deterministic, series-specific handoff from an approved ESSY creative draft into BUILD. References canonical artifacts; embeds no editorial decisions and no LLFC characters/scenes fields. The only episode-level editorial metadata it may carry is the optional openingIdentity, whose contract is contracts/essy-opening-identity.schema.json (referenced, never duplicated) and whose semantics are defined by docs/ESSY_SERIES_GRAMMAR.md.",
   "type": "object",
   "additionalProperties": false,
   "required": ["schemaVersion", "draftId", "series", "title", "language", "narration", "storyboard", "approvedAssets"],
@@ -39,7 +39,8 @@
         "path": {"type": "string", "minLength": 1},
         "count": {"type": "integer", "minimum": 1}
       }
-    }
+    },
+    "openingIdentity": {"$ref": "essy-opening-identity.schema.json"}
   },
   "$defs": {
     "plainText": {

@@ -54,9 +54,62 @@ const visualPlan = JSON.parse(
 );
 
 // Approved slots in deterministic order (block then S-number).
-const bySlot = new Map();
+//
+// A re-sourced slot legitimately leaves TWO provenance records behind (the
+// superseded one and the approved one). Resolving by "last one read wins" makes
+// the timeline depend on array order, so an appended-then-reordered provenance
+// file could silently reinstate a superseded asset. Resolution is therefore
+// explicit and keyed on ASSET IDENTITY, never on record order or filename:
+//   - exactly one record for the slot            -> that record
+//   - several records (a re-source happened)     -> the one whose id equals the
+//     approved-slot-asset-map assetId; anything else is a hard error
+const approvedAssetBySlot = new Map();
+{
+  const collect = (node) => {
+    if (Array.isArray(node)) return node.forEach(collect);
+    if (node && typeof node === "object") {
+      if (typeof node.slotId === "string" && node.assetId) approvedAssetBySlot.set(node.slotId, node.assetId);
+      else Object.values(node).forEach(collect);
+    }
+  };
+  collect(JSON.parse(await readFile(path.join(projectRoot, "sourcing", "approved-slot-asset-map.json"), "utf8")));
+}
+
+const recordsBySlot = new Map();
 for (const item of provenance.items ?? []) {
-  if (/^N\d{3}-S\d+$/.test(item.slotId)) bySlot.set(item.slotId, item);
+  if (!/^N\d{3}-S\d+$/.test(item.slotId)) continue;
+  const list = recordsBySlot.get(item.slotId) ?? [];
+  list.push(item);
+  recordsBySlot.set(item.slotId, list);
+}
+
+const supersededSlots = [];
+const bySlot = new Map();
+for (const [slotId, records] of recordsBySlot) {
+  if (records.length === 1) {
+    const approvedAssetId = approvedAssetBySlot.get(slotId);
+    if (approvedAssetId && records[0].id && records[0].id !== approvedAssetId) {
+      throw new Error(
+        `Asset-map/provenance disagreement for ${slotId}: approved-slot-asset-map names ` +
+          `${approvedAssetId} but the only provenance record is ${records[0].id} ` +
+          `(${records[0].originalFilename}). Re-run the asset materializer for this slot.`,
+      );
+    }
+    bySlot.set(slotId, records[0]);
+    continue;
+  }
+  const approvedAssetId = approvedAssetBySlot.get(slotId);
+  const matching = records.filter((r) => r.id === approvedAssetId);
+  if (matching.length !== 1) {
+    throw new Error(
+      `Provenance cannot be resolved unambiguously for ${slotId}: the approved-slot-asset-map names ` +
+        `asset ${approvedAssetId} but ${matching.length} of ${records.length} provenance records match it ` +
+        `(records: ${records.map((r) => `${r.originalFilename}=${r.id}`).join(", ")}). ` +
+        `Re-run the asset materializer so the superseded records are removed.`,
+    );
+  }
+  supersededSlots.push(`${slotId} (dropped ${records.filter((r) => r !== matching[0]).map((r) => r.id).join(", ")})`);
+  bySlot.set(slotId, matching[0]);
 }
 const slotIds = [...bySlot.keys()].sort();
 const blockIds = [...new Set(slotIds.map((id) => id.slice(0, 4)))].sort();
@@ -101,6 +154,24 @@ for (const blockId of blockIds) {
   });
 }
 
+// Approved in-point per slot. The approved-slot-asset-map records, per slot,
+// where in the licensed take the shot must start (e.g. N004-S2 takes the
+// 18.0-31.92s cut of the same take as N004-S1 precisely so the two shots are
+// NOT the same pictures). That decision is authoritative and must reach the
+// renderer; it is not an inference made here.
+const approvedInPointBySlot = new Map();
+{
+  const collect = (node) => {
+    if (Array.isArray(node)) return node.forEach(collect);
+    if (node && typeof node === "object") {
+      if (typeof node.slotId === "string" && Number.isFinite(node.inPointSec)) {
+        approvedInPointBySlot.set(node.slotId, Number(node.inPointSec));
+      } else Object.values(node).forEach(collect);
+    }
+  };
+  collect(JSON.parse(await readFile(path.join(projectRoot, "sourcing", "approved-slot-asset-map.json"), "utf8")));
+}
+
 // Actual source durations (ffprobe) per approved slot.
 const slotsByBlock = new Map();
 for (const blockId of blockIds) {
@@ -111,11 +182,23 @@ for (const blockId of blockIds) {
       const item = bySlot.get(slotId);
       const isVideo = item.mediaType === "video";
       const sourcePath = path.join(factoryRoot, item.localPath);
+      const sourceDurationSec = isVideo ? probeMedia(sourcePath) : null;
+      const inPointSec = isVideo ? (approvedInPointBySlot.get(slotId) ?? 0) : 0;
+      if (inPointSec < 0) {
+        throw new Error(`Negative inPointSec for ${slotId}: ${inPointSec}`);
+      }
+      if (isVideo && sourceDurationSec !== null && inPointSec >= sourceDurationSec) {
+        throw new Error(
+          `inPointSec ${inPointSec}s for ${slotId} is at or past the end of its ` +
+            `${sourceDurationSec.toFixed(3)}s source.`,
+        );
+      }
       return {
         slotId,
         mediaType: item.mediaType,
         sourcePath,
-        sourceDurationSec: isVideo ? probeMedia(sourcePath) : null,
+        sourceDurationSec,
+        inPointSec,
         // P1 editorial still motion: visual-plan shot (when slotId present) wins}}}provenance passthrough.
 
         stillMotion:
@@ -158,5 +241,6 @@ console.log(
     `  blocks=${timeline.blocks.length} shots=${timeline.shots.length} ` +
     `videos=${timeline.shots.filter((s) => s.mediaType === "video").length} ` +
     `photos=${timeline.shots.filter((s) => s.mediaType === "photo").length} ` +
-    `planned=${timeline.plannedDurationSec}s`,
+    `planned=${timeline.plannedDurationSec}s` +
+    (supersededSlots.length ? `\n  superseded provenance records dropped: ${supersededSlots.join("; ")}` : ""),
 );

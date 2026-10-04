@@ -1451,7 +1451,8 @@ async function renderNarrationClip({
     lesson.series === "ESSD"
       ? staticImageFilter({width, height, fps})
       : lesson.series === "ESSY"
-        ? stillImageFilter({width, height, fps, frameCount, stillMotion})
+        // NO_MOTION_STILLS (ESSY default): fixed scale + center crop only.
+        ? stillImageFilter({width, height, fps})
         : kenBurnsFilter({width, height, fps, frameCount, motionIndex}),
     ...llfcTextFilters,
     subtitleText && !Array.isArray(cueList)
@@ -1598,13 +1599,18 @@ async function renderRealAssetPhotoClip({
   sourcePath, outputPath, durationSec, subtitleFilters, stillMotion, lesson,
 }) {
   const {width, height, fps} = lesson.video;
-  const frameCount = Math.ceil(durationSec * fps);
+  // NO_MOTION_STILLS: stillMotion metadata is ignored (see _still-motion.mjs).
+  if (stillMotion != null && stillMotion !== "" && stillMotion !== "static") {
+    console.warn(
+      `[NO_MOTION_STILLS] stillMotion "${stillMotion}" ignored for ${outputPath}; STATIC enforced.`,
+    );
+  }
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
     "-loop", "1", "-framerate", String(fps), "-i", sourcePath,
     "-t", durationSec.toFixed(6),
     "-vf", [
-      stillImageFilter({width, height, fps, frameCount, stillMotion}),
+      stillImageFilter({width, height, fps}),
       subtitleFilters,
       "format=yuv420p",
     ].filter(Boolean).join(","),

@@ -16,9 +16,11 @@ import {validateEssyProductionPackage} from "./essy-production-package.mjs";
 const PACKAGE_CONTRACTS = Object.freeze({
   LLFC: {
     approvals: Object.freeze(["concept", "english", "scenes"]),
+    contractPath: "contracts/production-package.schema.json",
   },
   ESSY: {
     approvals: Object.freeze(["english", "scenes"]),
+    contractPath: "contracts/essy-production-package.schema.json",
   },
 });
 
@@ -34,6 +36,16 @@ export function packageApprovalsForSeries(series) {
     );
   }
   return contract.approvals;
+}
+
+export function packageContractPathForSeries(series) {
+  const contract = PACKAGE_CONTRACTS[normalizeSeries(series)];
+  if (!contract) {
+    throw new Error(
+      `Series "${series}" has no production-package contract (supported: ${Object.keys(PACKAGE_CONTRACTS).join(", ")}).`,
+    );
+  }
+  return contract.contractPath;
 }
 
 export function validatePackageForSeries(series, value, state = {}) {

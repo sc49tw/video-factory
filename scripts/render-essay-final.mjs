@@ -24,12 +24,20 @@
 //                    (build-narration-master.mjs) is reused unchanged.
 //
 // Usage: node scripts/render-essay-final.mjs <EPISODE> [--label v1] [--only=...] [--mix-only]
+import {writeFileSync} from "node:fs";
 import {copyFile, mkdir, readFile, rename, rm, writeFile} from "node:fs/promises";
 import {spawn} from "node:child_process";
 import path from "node:path";
 import process from "node:process";
 import {buildSubtitleTimeline} from "./_build-subtitle-timeline.mjs";
-import {SUBTITLE_CONFIG} from "./subtitle-config.mjs";
+import {resolveSubtitleConfig, assForceStyle} from "./subtitle-config.mjs";
+import {
+  bilingualCueText,
+  buildBilingualSrt,
+  episodeBurnStyle,
+  isBilingualEpisode,
+  resolveEpisodeSubtitleConfig,
+} from "./_build-bilingual-subtitles.mjs";
 import {resolveStillMotion, stillImageFilter} from "./_still-motion.mjs";
 import {
   buildOpeningDeliveryPlan,
@@ -53,24 +61,25 @@ const projectRoot = path.join(factoryRoot, "projects", episode);
 const outputRoot = path.join(factoryRoot, "output", episode);
 const tempRoot = path.join(projectRoot, "temp", "final-assembly");
 const shotRoot = path.join(tempRoot, "shots");
+const subtitleRoot = path.join(tempRoot, "subtitles");
 
 const WIDTH = 1920;
 const HEIGHT = 1080;
 const FPS = 30;
+// A clip may differ from its approved window by at most one frame: libx264
+// emits whole frames, so a 7.680s window lands on 230 or 231 frames. Anything
+// larger means a layer was actually lost (e.g. the trailing hold).
+const CLIP_TOLERANCE_SEC = 1.5 / FPS;
 
-// ---- Subtitle style: DERIVED from the shared subtitle configuration ----
-// subtitle-config.mjs style is authored for the 540p review proxy; the final
-// 1080p master scales it by the resolution ratio. No second constant set.
-const SUBTITLE_SCALE = HEIGHT / 540;
-const FINAL_SUBTITLE_STYLE = {
-  fontSize: SUBTITLE_CONFIG.STYLE.FONT_SIZE * SUBTITLE_SCALE,
-  maxChars: SUBTITLE_CONFIG.MAX_CHARS,
-  maxLines: SUBTITLE_CONFIG.MAX_LINES,
-  bottomMarginPx: Math.round(SUBTITLE_CONFIG.STYLE.MARGIN_V * SUBTITLE_SCALE),
-  lineSpacing: 8,
-  borderColor: `black@${SUBTITLE_CONFIG.STYLE.OUTLINE}`,
-  shadowColor: `black@${SUBTITLE_CONFIG.STYLE.SHADOW}`,
-};
+// ---- Approved burn style (module scope) ------------------------------------
+// The per-shot subtitle filter builder is a module-level function, so the
+// approved burn style and the libass force-style string are resolved once here,
+// from the shared config + the shared style resolver. The 540p review proxy and
+// the opening-identity review resolve the very same values, so the final master
+// cannot drift to a different subtitle presentation.
+const subtitleConfig = resolveSubtitleConfig(resolveEpisodeSubtitleConfig(episode));
+const burnStyle = episodeBurnStyle(subtitleConfig, episode);
+const forceStyle = assForceStyle(burnStyle);
 
 // ---- Per-episode Final-Assembly decisions (projects/<EPISODE>/final-assembly.json) ----
 const DECISIONS = JSON.parse(
@@ -123,6 +132,7 @@ async function main() {
   }
   log(`IDENTITY: seriesTitle="${IDENTITY.seriesTitle}" episodeTitle="${IDENTITY.episodeTitle}"`);
   await mkdir(shotRoot, {recursive: true});
+  await mkdir(subtitleRoot, {recursive: true});
   await mkdir(outputRoot, {recursive: true});
 
   const [lesson, timeline, manifest] = await Promise.all([
@@ -208,9 +218,16 @@ async function main() {
   // Cues come from the approved shared timeline builder (per-block edge-tts
   // VTT, DP segmentation, global normalization). If QA fails, the renderer
   // aborts BEFORE any ffmpeg visual work.
+  //
+  // The config is the episode's APPROVED burn-in config (shared resolver), not
+  // the bare defaults: the approved bilingual cue set was segmented with it, and
+  // rendering with different limits would either abort the QA gate or cut a
+  // different cue set than the human approved.
+  const subtitleConfig = resolveSubtitleConfig(resolveEpisodeSubtitleConfig(episode));
   const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({
     root: factoryRoot,
     episode,
+    config: subtitleConfig,
     insertion: openingDelivery ? openingDelivery.subtitleInsertion : null,
   });
   if (openingDelivery) {
@@ -242,6 +259,47 @@ async function main() {
       `maxLines ${report.maxRenderedLines}, srt ${path.relative(factoryRoot, srtPath)}`,
   );
 
+  // ---- Bilingual burn-in (English + Traditional Chinese) ---------------------
+  // GENERATED from the authoritative English SRT produced above and gated for
+  // completeness: a missing/placeholder translation throws before ffmpeg, so a
+  // defective translation can never reach the master. This is the SAME builder,
+  // SAME cue set and SAME libass style the approved 540p review baseline was
+  // burned with — the final master must never silently fall back to the
+  // English-only legacy drawtext styling.
+  let burnSrtPath = srtPath;
+  // `burnCues` are the cues actually burned, carrying the bilingual text. For a
+  // monolingual episode they are the English cues unchanged.
+  let burnCues = allCues;
+  if (isBilingualEpisode(episode)) {
+    const bilingual = await buildBilingualSrt({root: factoryRoot, episode, englishSrtPath: srtPath});
+    burnSrtPath = bilingual.srtPath;
+    if (bilingual.cues.length !== allCues.length) {
+      throw new Error(
+        `Bilingual cue count ${bilingual.cues.length} != English cue count ${allCues.length}.`,
+      );
+    }
+    // Pair by index, but only after proving the timing is the same cue: a
+    // silent re-index would burn one line of Chinese against another cue's text.
+    burnCues = allCues.map((cue, index) => {
+      const zh = bilingual.cues[index];
+      const timecode = `${srtTimecode(cue.startSec)} --> ${srtTimecode(cue.endSec)}`;
+      if (zh.timecode !== timecode) {
+        throw new Error(
+          `Bilingual cue ${index + 1} timing mismatch: srt "${zh.timecode}" != builder "${timecode}".`,
+        );
+      }
+      if (cue.text !== zh.english) {
+        throw new Error(`Bilingual cue ${index + 1} English text differs from the authoritative cue.`);
+      }
+      return {...cue, text: bilingualCueText(zh)};
+    });
+    log(
+      `SUBTITLES bilingual: ${bilingual.report.validTranslationCount}/${bilingual.cues.length} cues, ` +
+        `EN ${burnStyle.FONT_SIZE}px + zh-TW @540p design burned at 1080p via libass, ` +
+        `srt ${path.relative(factoryRoot, burnSrtPath)}`,
+    );
+  }
+
   // Stage the drawtext font locally (colon-free relative path, see fontPath()).
   const stagedFont = path.join(tempRoot, "fonts", "arial.ttf");
   await mkdir(path.dirname(stagedFont), {recursive: true});
@@ -258,10 +316,11 @@ async function main() {
   const onlyValue = onlyArg === "--only" ? process.argv[process.argv.indexOf(onlyArg) + 1] : onlyArg?.slice(7);
   const onlyShots = onlyValue ? new Set(onlyValue.split(",")) : null;
   const mixOnly = process.argv.includes("--mix-only");
-  if (!mixOnly) {
   // Delivery visual timeline: assembly timeline normally; openingIdentity
   // deliveries extend the hook shot playback by the insertion duration and
   // shift every later shot window by the same offset (shared delivery plan).
+  // Declared OUTSIDE the render block so the duration-composition check below
+  // can derive the expected delivery length from it either way.
   const deliveryShots = openingDelivery
     ? [...timeline.shots].map((shot) => {
         const override = openingDelivery.deliveryShotOverrides.get(shot.slotId);
@@ -283,6 +342,7 @@ async function main() {
         deliveryStartSec: shot.absoluteStartSec ?? shot.startSec,
         deliveryEndSec: shot.absoluteEndSec ?? shot.endSec,
       }));
+  if (!mixOnly) {
   for (const shot of deliveryShots) {
     if (onlyShots && !onlyShots.has(shot.slotId)) continue;
     const clipPath = path.join(shotRoot, `${shot.slotId}.mp4`);
@@ -292,7 +352,7 @@ async function main() {
     // episode's first cues inside every block after the first (ESSY-0002
     // defect: subtitles restarted at 27.264s). Always slice by absolute time.
     const shotCues = sliceCues(
-      allCues,
+      burnCues,
       shot.deliveryStartSec ?? shot.absoluteStartSec ?? shot.startSec,
       shot.deliveryEndSec ?? shot.absoluteEndSec ?? shot.endSec,
     );
@@ -306,16 +366,32 @@ async function main() {
     const extraCards = openingDelivery && shot.slotId === openingDelivery.hookSlotId
       ? openingDelivery.cards
       : [];
-    if (shot.mediaType === "video") {
-      await renderVideoShot({shot, shotCues, clipPath, playbackDurationSec: playbackSec, trailingHoldSec: holdSec, extraTitleCards: extraCards});
-    } else {
+    // Media classification is STILL-ONLY by mediaType "photo" — every other
+    // mediaType ("video", "ai-video", anything future) is moving footage. This
+    // mirrors render-full-draft.mjs exactly. Testing for `=== "video"` instead
+    // routed approved AI-generated video (N003-S1) into the still-image path,
+    // which fails outright on an MP4, so a final master could not be produced
+    // for any episode using a non-"video" video asset.
+    if (isStillShot(shot)) {
       await renderPhotoShot({
         shot, shotCues, clipPath,
+        // The still path must receive the same playback/hold pair as the video
+        // path. Omitting them made every still shot render its playback window
+        // only, silently dropping its approved trailing hold (0.6s each) and
+        // shortening the master by ~1.2s.
+        playbackDurationSec: playbackSec,
+        trailingHoldSec: holdSec,
         stillMotion: resolveStillMotion(shot),
         frameCount: Math.ceil(clipDurationSec * FPS),
         extraTitleCards: extraCards,
       });
+    } else {
+      await renderVideoShot({shot, shotCues, clipPath, playbackDurationSec: playbackSec, trailingHoldSec: holdSec, extraTitleCards: extraCards});
     }
+    // Every clip is measured against its OWN approved window, so a dropped
+    // trailing hold or a lost in-point fails here, on the slot that caused it,
+    // instead of surfacing only as a short master after the whole render.
+    await assertClipWindow({shot, clipPath, expectedSec: clipDurationSec});
     // Ending hold B: extend the FINAL shot (any media type) by endingHoldSec
     // (no subtitles, no CTA). For video shots the hold freezes the shot's last
     // frame; for photos it extends the photo — no additional footage either way.
@@ -384,6 +460,36 @@ async function main() {
   // The extended BGM covers the full final duration; its final fade is baked by
   // the builder and its gain is NOT (applied at mix time below only).
   const visualBase = round3((await probeMedia(visualMasterPath)).durationSec);
+  // Duration composition is REPORTED from the approved timeline, never trusted
+  // from the concat output. Each shot clip is individually asserted against its
+  // approved playback+hold window at render time (see the per-shot probe), so
+  // the residual here is only accumulated per-clip frame quantization at 30 fps
+  // (<= 1 frame per clip), not a missing or dropped hold.
+  const lastDeliveryEndSec = deliveryShots.reduce(
+    (max, s) => Math.max(max, Number(s.deliveryEndSec ?? s.absoluteEndSec ?? 0)),
+    0,
+  );
+  const expectedDelivery = round3(
+    deliveryShots.reduce((sum, s) => sum + Number(s.renderDurationSec) + Number(s.trailingHoldSec ?? 0), 0) +
+      Number(DECISIONS.endingHoldSec) + preRollSec,
+  );
+  const frameTolerance = deliveryShots.length / FPS;
+  if (Math.abs(visualBase - expectedDelivery) > frameTolerance) {
+    throw new Error(
+      `Visual master ${visualBase.toFixed(3)}s != expected delivery ${expectedDelivery.toFixed(3)}s ` +
+        `(drift ${(visualBase - expectedDelivery).toFixed(3)}s exceeds the ` +
+        `${frameTolerance.toFixed(3)}s per-clip frame-quantization bound).`,
+    );
+  }
+  log(
+    `DURATION COMPOSITION: ${visualBase.toFixed(3)}s rendered = ` +
+      `${round3(lastDeliveryEndSec).toFixed(3)}s body (${deliveryShots.length} shots: approved playback + trailing holds, ` +
+      `delivery timeline incl. ${openingDelivery ? openingDelivery.bodyOffsetSec.toFixed(3) : "0.000"}s opening-identity offset)` +
+      ` + ${Number(DECISIONS.endingHoldSec).toFixed(3)}s ending hold` +
+      ` + ${preRollSec.toFixed(3)}s pre-roll; expected ${expectedDelivery.toFixed(3)}s, ` +
+      `rounding drift ${(visualBase - expectedDelivery >= 0 ? "+" : "") + (visualBase - expectedDelivery).toFixed(3)}s ` +
+      `(<= ${frameTolerance.toFixed(3)}s = 1 frame x ${deliveryShots.length} clips)`,
+  );
   const musicTotal = visualBase;
   const extendedSource = path.resolve(factoryRoot, DECISIONS.music.extendedPath);
   const extendedProbe = await probeMedia(extendedSource);
@@ -479,6 +585,15 @@ async function main() {
         passed: report.passed,
         reportPath: path.relative(factoryRoot, qaPath).replaceAll("\\", "/"),
       },
+      subtitleBurn: {
+        mode: isBilingualEpisode(episode) ? "bilingual-en-zhTW" : "english-only",
+        engine: "libass-subtitles-filter",
+        sourceSrt: path.relative(factoryRoot, burnSrtPath).replaceAll("\\", "/"),
+        englishSrt: path.relative(factoryRoot, srtPath).replaceAll("\\", "/"),
+        burnedCueCount: burnCues.length,
+        style540pDesign: burnStyle,
+        burnedAt: `${WIDTH}x${HEIGHT}`,
+      },
       preRollTitleText: preRollTitle?.text ?? null,
       preRollTitleSec: preRollSec,
       preRollTitleSource: preRollTitle ? "titles.json visualOnly (tts:false)" : null,
@@ -529,10 +644,32 @@ async function main() {
 // Shot renderers (same mechanical treatment as the approved review cut)
 // ---------------------------------------------------------------------------
 
+/**
+ * Shared media classification: ONLY `photo` is a still image. Every other
+ * mediaType is moving footage and must take the video path (which seeks to the
+ * approved in-point and clones its final frame for the trailing hold).
+ */
+function isStillShot(shot) {
+  return shot.mediaType === "photo";
+}
+
+async function assertClipWindow({shot, clipPath, expectedSec}) {
+  const actual = Number((await probeMedia(clipPath)).durationSec);
+  if (Math.abs(actual - expectedSec) > CLIP_TOLERANCE_SEC) {
+    throw new Error(
+      `Clip ${shot.slotId} is ${actual.toFixed(3)}s but its approved window is ` +
+        `${expectedSec.toFixed(3)}s (playback ${Number(shot.renderDurationSec).toFixed(3)}s + ` +
+        `hold ${Number(shot.trailingHoldSec ?? 0).toFixed(3)}s); tolerance ${CLIP_TOLERANCE_SEC.toFixed(3)}s.`,
+    );
+  }
+  return actual;
+}
+
 async function renderVideoShot({shot, shotCues, clipPath, playbackDurationSec, trailingHoldSec = 0, extraTitleCards = []}) {
   const playbackSec = playbackDurationSec ?? shot.renderDurationSec;
   const holdSec = trailingHoldSec ?? shot.trailingHoldSec ?? 0;
-  const subtitleFilters = await buildFinalSubtitleFilters({clipPath, cueList: shotCues});
+  const inPointSec = Number(shot.inPointSec ?? 0);
+  const subtitleFilter = await buildFinalSubtitleFilter({shot, cueList: shotCues});
   const filters = [
     `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=increase:flags=lanczos`,
     `crop=${WIDTH}:${HEIGHT}`,
@@ -540,11 +677,18 @@ async function renderVideoShot({shot, shotCues, clipPath, playbackDurationSec, t
     ...(holdSec > 0 ? [`tpad=stop_mode=clone:stop_duration=${holdSec.toFixed(6)}`] : []),
     ...coldOpenFiltersForShot(shot),
     ...openingTitleFiltersForShot({shot, extraTitleCards}),
-    subtitleFilters,
+    subtitleFilter,
     "format=yuv420p",
   ].filter(Boolean).join(",");
-  await run("ffmpeg", [
+await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
+    // Seek to the APPROVED in-point inside the licensed take (0 unless the
+    // approved map names a later cut). This is what lets two slots of one block
+    // share a single licensed take and still show different pictures — N004-S1
+    // plays 0s while N004-S2 plays 18s of the same pexels file. Omitting it
+    // replays every such slot from 0s, silently turning approved distinct
+    // footage into a visible repetition.
+    ...(inPointSec > 0 ? ["-ss", inPointSec.toFixed(6)] : []),
     // Apply `-t` as an INPUT limit. An output-side limit would cut the
     // following tpad-generated hold from the encoded shot.
     "-t", playbackSec.toFixed(6), "-i", shot.sourcePath,
@@ -554,19 +698,40 @@ async function renderVideoShot({shot, shotCues, clipPath, playbackDurationSec, t
   ]);
 }
 
-async function renderPhotoShot({shot, shotCues, clipPath, stillMotion, frameCount, playbackDurationSec, trailingHoldSec = 0, extraTitleCards = []}) {
-  const subtitleFilters = await buildFinalSubtitleFilters({clipPath, cueList: shotCues});
+async function renderPhotoShot({shot, shotCues, clipPath, stillMotion, frameCount, playbackDurationSec, trailingHoldSec, extraTitleCards = []}) {
+  // NO_MOTION_STILLS (ESSY default): stillMotion/frameCount are ignored;
+  // fixed scale + center crop only. Per-slot motion needs explicit human
+  // approval + code opt-in, never metadata.
+  if (stillMotion != null && stillMotion !== "" && stillMotion !== "static") {
+    console.warn(
+      `[NO_MOTION_STILLS] stillMotion "${stillMotion}" on ${shot.slotId ?? "?"} ignored; STATIC enforced.`,
+    );
+  }
+  // Resolve the playback/hold pair explicitly. A `= 0` parameter default here
+  // silently defeats `trailingHoldSec ?? shot.trailingHoldSec`: 0 is not
+  // nullish, so an omitted argument became "no hold" instead of "use the
+  // approved hold from the timeline".
+  const playbackSec = Number(playbackDurationSec ?? shot.renderDurationSec);
+  const holdSec = Number(trailingHoldSec ?? shot.trailingHoldSec ?? 0);
+  const clipDurationSec = playbackSec + holdSec;
+  if (Math.abs(clipDurationSec - (shot.renderDurationSec + (shot.trailingHoldSec ?? 0))) > 0.02) {
+    throw new Error(
+      `Still shot ${shot.slotId}: clip ${clipDurationSec.toFixed(3)}s != approved window ` +
+        `${(shot.renderDurationSec + (shot.trailingHoldSec ?? 0)).toFixed(3)}s.`,
+    );
+  }
+  const subtitleFilter = await buildFinalSubtitleFilter({shot, cueList: shotCues});
   const filters = [
-    stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS, frameCount, stillMotion}),
+    stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS}),
     ...coldOpenFiltersForShot(shot),
     ...openingTitleFiltersForShot({shot, extraTitleCards}),
-    subtitleFilters,
+    subtitleFilter,
     "format=yuv420p",
   ].filter(Boolean).join(",");
   await run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
     "-loop", "1", "-framerate", String(FPS), "-i", shot.sourcePath,
-    "-t", ((playbackDurationSec ?? shot.renderDurationSec) + (trailingHoldSec ?? shot.trailingHoldSec ?? 0)).toFixed(6),
+    "-t", clipDurationSec.toFixed(6),
     "-vf", filters,
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-an",
     clipPath,
@@ -611,8 +776,8 @@ async function renderEndingHold({shot, clipPath, outputPath}) {
   const textPath = path.join(tempRoot, "ending-title.txt");
   await writeFile(textPath, resolveEndingCardText({finalAssembly: DECISIONS}), "utf8");
   const filter = [
-    // Ending hold is intentionally STATIC (P1 policy: calm hold, no motion).
-    stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS, frameCount, stillMotion: "static"}),
+    // Ending hold is ALWAYS STATIC (NO_MOTION_STILLS: calm hold, no motion).
+    stillImageFilter({width: WIDTH, height: HEIGHT, fps: FPS}),
     buildEndingCardFilter({
       fontPath: escapeFilter(fontPath()),
       textFile: escapeFilter(relativeFactoryPath(textPath)),
@@ -635,29 +800,39 @@ function openingTitleFiltersForShot({shot, extraTitleCards = []}) {
   if (!extraTitleCards.length || !openingDelivery) return [];
   const clipStart = Number(shot.deliveryStartSec ?? shot.absoluteStartSec ?? 0);
   const clipLen = Number(shot.renderDurationSec) + Number(shot.trailingHoldSec ?? 0);
-  return extraTitleCards.map((card) => buildColdOpenTitleCardFilter({
-    card: {
-      ...card,
-      startSec: Math.max(0, Number(card.startSec) - clipStart),
-      endSec: Math.min(clipLen, Number(card.endSec) - clipStart),
-    },
-    fontPath: fontPath(),
-    fontSize: finalTitleFontSize({kind: card.kind, height: HEIGHT}),
-  }));
+  return extraTitleCards.map((card, index) => {
+    const cardTextPath = path.join(tempRoot, `opening-title-${index}.txt`);
+    writeFileSync(cardTextPath, card.text, "utf8");
+    return buildColdOpenTitleCardFilter({
+      card: {
+        ...card,
+        startSec: Math.max(0, Number(card.startSec) - clipStart),
+        endSec: Math.min(clipLen, Number(card.endSec) - clipStart),
+      },
+      fontPath: fontPath(),
+      fontSize: finalTitleFontSize({kind: card.kind, height: HEIGHT}),
+      textFile: escapeFilter(relativeFactoryPath(cardTextPath)),
+    });
+  });
 }
 
 function coldOpenFiltersForShot(shot) {
   return coldOpenTitleCards
     .filter((card) => card.endSec > shot.absoluteStartSec && card.startSec < shot.absoluteEndSec)
-    .map((card) => buildColdOpenTitleCardFilter({
-      card: {
-        ...card,
-        startSec: Math.max(0, card.startSec - shot.absoluteStartSec),
-        endSec: Math.min(shot.renderDurationSec, card.endSec - shot.absoluteStartSec),
-      },
-      fontPath: fontPath(),
-      fontSize: card.kind === "channel" ? 72 : 48,
-    }));
+    .map((card, index) => {
+      const cardTextPath = path.join(tempRoot, `cold-open-title-${shot.slotId}-${index}.txt`);
+      writeFileSync(cardTextPath, card.text, "utf8");
+      return buildColdOpenTitleCardFilter({
+        card: {
+          ...card,
+          startSec: Math.max(0, card.startSec - shot.absoluteStartSec),
+          endSec: Math.min(shot.renderDurationSec, card.endSec - shot.absoluteStartSec),
+        },
+        fontPath: fontPath(),
+        fontSize: card.kind === "channel" ? 72 : 48,
+        textFile: escapeFilter(relativeFactoryPath(cardTextPath)),
+      });
+    });
 }
 
 function narrationSuppressFilter() {
@@ -669,50 +844,45 @@ function narrationSuppressFilter() {
 }
 
 // ---------------------------------------------------------------------------
-// Final subtitle rendering — style derived from subtitle-config.mjs (shared).
-// The shared builder guarantees maxLines via QA; no legacy re-splitting here.
+// Final subtitle rendering — the SAME libass burn the 540p review baseline used.
+//
+// The cues arrive already segmented and QA-validated by the shared timeline
+// builder, carrying the bilingual text (English line + the generated ASS
+// `\fs` override + Traditional Chinese line). They are written verbatim to a
+// per-shot SRT, rebased to that clip, and burned with libass through the shared
+// force-style string. That is what makes final/review presentation parity a
+// structural property instead of a hope: same SRT text, same style resolver,
+// resolution-independent libass script units.
+//
+// The previous implementation burned per-cue `drawtext` with its own font-size
+// and margin constants. It could not render the bilingual cue at all (the
+// `\fs`/`\N` ASS tags would have been drawn as literal glyphs), so it is the
+// reason a final master could regress to English-only styling.
 // ---------------------------------------------------------------------------
 
-async function buildFinalSubtitleFilters({clipPath, cueList}) {
-  const {fontSize, maxChars, bottomMarginPx, lineSpacing, borderColor, shadowColor} = FINAL_SUBTITLE_STYLE;
-  const filters = [];
-  for (const cue of cueList) {
-    const lines = wrapText(cue.text, maxChars).split("\n");
-    const blockHeight = lines.length * fontSize + (lines.length - 1) * lineSpacing;
-    const firstY = HEIGHT - bottomMarginPx - blockHeight;
-    const enable = `enable='between(t,${cue.startSec.toFixed(3)},${cue.endSec.toFixed(3)})'`;
-    const cueTextPath = `${clipPath}.cue-${String(filters.length + 1).padStart(3, "0")}.txt`;
-    await writeFile(cueTextPath, lines.join("\n"), "utf8");
-    filters.push(
-      `drawtext=fontfile=${escapeFilter(fontPath())}:` +
-        `textfile=${escapeFilter(relativeFactoryPath(cueTextPath))}:` +
-        `expansion=none:fontcolor=white:fontsize=${fontSize}:line_spacing=${lineSpacing}:` +
-        `borderw=2:bordercolor=${borderColor}:` +
-        `shadowcolor=${shadowColor}:shadowx=2:shadowy=2:` +
-        `x=(w-text_w)/2:y=${firstY}:${enable}`,
-    );
-  }
-  return filters.join(",");
+async function buildFinalSubtitleFilter({shot, cueList}) {
+  if (!cueList.length) return null;
+  const srtPathForShot = path.join(subtitleRoot, `${shot.slotId}.srt`);
+  const lines = [];
+  cueList.forEach((cue, index) => {
+    lines.push(String(index + 1));
+    lines.push(`${srtTimecode(cue.startSec)} --> ${srtTimecode(cue.endSec)}`);
+    // Written verbatim: `\N` and the inline `\fs` override must survive to libass.
+    lines.push(cue.text);
+    lines.push("");
+  });
+  await writeFile(srtPathForShot, lines.join("\n"), "utf8");
+  return `subtitles=${escapeFilter(relativeFactoryPath(srtPathForShot))}:force_style='${forceStyle}'`;
 }
 
-// Legacy in-renderer cue re-splitting (expandCuesToMaxLines) REMOVED —
-// subtitle segmentation is owned exclusively by the shared pipeline
-// (_build-subtitle-timeline.mjs), whose QA gate guarantees <=2 rendered lines.
-
-function wrapText(value, maxChars) {
-  const lines = [];
-  let line = "";
-  for (const word of String(value).trim().split(/\s+/)) {
-    const candidate = line ? `${line} ${word}` : word;
-    if (candidate.length > maxChars && line) {
-      lines.push(line);
-      line = word;
-    } else {
-      line = candidate;
-    }
-  }
-  if (line) lines.push(line);
-  return lines.join("\n");
+function srtTimecode(seconds) {
+  const total = Math.max(0, Math.round(Number(seconds) * 1000));
+  const ms = total % 1000;
+  const s = Math.floor(total / 1000) % 60;
+  const m = Math.floor(total / 60000) % 60;
+  const h = Math.floor(total / 3600000);
+  const pad = (value, width) => String(value).padStart(width, "0");
+  return `${pad(h, 2)}:${pad(m, 2)}:${pad(s, 2)},${pad(ms, 3)}`;
 }
 
 // ---------------------------------------------------------------------------

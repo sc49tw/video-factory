@@ -33,7 +33,10 @@ export const ESSY_SERIES_IDENTITY = Object.freeze({
 });
 
 function escapeFilterText(value) {
-  return String(value).replaceAll("\\", "\\\\").replaceAll(":", "\\:");
+  return String(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll(":", "\\:")
+    .replaceAll("'", "\\'");
 }
 
 function normalize(value) {
@@ -170,18 +173,26 @@ export function buildOpeningTitleFilters({seriesTitle, episodeTitle, timing = {}
 }
 
 /** Build a metadata-timed cold-open card for either final-assembly resolution. */
-export function buildColdOpenTitleCardFilter({card, fontPath, fontSize}) {
+export function buildColdOpenTitleCardFilter({card, fontPath, fontSize, textFile}) {
   const start = Number(card.startSec ?? 0);
   const end = Number(card.endSec ?? start);
   const fadeIn = Number(card.fadeInDurSec ?? 0.5);
   const fadeOut = Number(card.fadeOutDurSec ?? 0.4);
   const fadeOutStart = Math.max(end - fadeOut, start);
-  const text = escapeFilterText(card.text).replaceAll("'", "\u2019").replaceAll("%", "\\%");
   const alpha =
     `'if(lt(t,${start.toFixed(3)}),0,if(lt(t,${(start + fadeIn).toFixed(3)}),` +
     `(t-${start.toFixed(3)})/${fadeIn.toFixed(3)},if(lt(t,${fadeOutStart.toFixed(3)}),1,` +
     `if(lt(t,${end.toFixed(3)}),(${end.toFixed(3)}-t)/${fadeOut.toFixed(3)},0))))'`;
-  return `drawtext=fontfile=${fontPath}:text='${text}':expansion=none:fontcolor=white:` +
+  // Card text is written to a UTF-8 file and passed as `textfile=` whenever a
+  // file is available. Inlining it is NOT safe: ffmpeg's filtergraph parser has
+  // no escape for an apostrophe inside a single-quoted value, so any title
+  // containing an apostrophe ("What Is Still There When I'm Eighty?") closes the
+  // quote early and corrupts the whole filter chain. `text` is kept only for
+  // callers with no file staging available.
+  const text = textFile
+    ? `textfile=${textFile}`
+    : `text='${escapeFilterText(card.text).replaceAll("%", "\\%")}'`;
+  return `drawtext=fontfile=${fontPath}:${text}:expansion=none:fontcolor=white:` +
     `fontsize=${fontSize}:borderw=1:bordercolor=black@0.6:shadowcolor=black@0.45:shadowx=1:shadowy=1:` +
     `x=(w-text_w)/2:y=h*0.40:alpha=${alpha}`;
 }

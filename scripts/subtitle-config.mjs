@@ -51,15 +51,39 @@ export const SUBTITLE_CONFIG = Object.freeze({
 });
 
 // SRT/libass defaults to a 384x288 script canvas. Our style is in 540p pixels.
-export function buildAssForceStyle() {
-  const s = SUBTITLE_CONFIG.STYLE;
-  const scale = 288 / 540;
+const ASS_SCRIPT_HEIGHT = 288;
+const STYLE_REFERENCE_HEIGHT = 540;
+const assScale = () => ASS_SCRIPT_HEIGHT / STYLE_REFERENCE_HEIGHT;
+
+/**
+ * The ONE libass `force_style` string builder. Every renderer that burns the
+ * shared SRT (540p review proxy, opening-identity review, 1080p final master)
+ * MUST go through this function with an explicitly resolved style. It exists
+ * because the expression was previously copy-pasted into three renderers, which
+ * let the 1080p final drift back to English-only legacy styling. Resolution is
+ * irrelevant here on purpose: libass script units are resolution-independent, so
+ * the SAME string at 1080p renders every metric exactly 2x the 540p result.
+ */
+export function assForceStyle(style) {
+  const s = style ?? SUBTITLE_CONFIG.STYLE;
+  const scale = assScale();
   return `FontName=${s.FONT_NAME},FontSize=${s.FONT_SIZE * scale}` +
     `,PrimaryColour=${s.PRIMARY_COLOUR},OutlineColour=${s.OUTLINE_COLOUR}` +
     `,BorderStyle=1,Outline=${s.OUTLINE * scale},Shadow=${s.SHADOW * scale}` +
     `,BackColour=${s.BACK_COLOUR},Alignment=${s.ALIGNMENT}` +
     `,MarginV=${s.MARGIN_V * scale},MarginL=${s.MARGIN_LR * scale},MarginR=${s.MARGIN_LR * scale}`;
 }
+
+export function buildAssForceStyle() {
+  return assForceStyle(SUBTITLE_CONFIG.STYLE);
+}
+
+/**
+ * Seconds-per-pixel constant for the shared 540p-authored style, so a renderer
+ * burning at another resolution scales the approved presentation instead of
+ * inventing its own numbers.
+ */
+export const STYLE_DESIGN_HEIGHT = STYLE_REFERENCE_HEIGHT;
 
 // Shallow-merge episode-level overrides over the shared defaults.
 // Unknown override keys are ignored to keep configs forward-compatible.

@@ -448,6 +448,24 @@ test("ESSY stage prompts carry PREPARE/DIRECT guidance; non-ESSY prompts preserv
   assert.match(buildStagePrompt(llfc), /visually teachable scenes/);
 });
 
+test("PACKAGE stage prompts point at the series-specific package contract", () => {
+  const essy = createDraftState({draftId: "ESSY-T3", series: "ESSY", subtype: "essay"});
+  essy.currentStage = "PACKAGE";
+  const essyPrompt = buildStagePrompt(essy);
+  assert.match(essyPrompt, /- contracts\/essy-production-package\.schema\.json/);
+  assert.doesNotMatch(
+    essyPrompt,
+    /- contracts\/production-package\.schema\.json/,
+    "an ESSY PACKAGE operator must never be pointed at the LLFC contract",
+  );
+
+  const llfc = createDraftState({draftId: "DRAFT-T3", series: "LLFC", subtype: "default"});
+  llfc.currentStage = "PACKAGE";
+  const llfcPrompt = buildStagePrompt(llfc);
+  assert.match(llfcPrompt, /- contracts\/production-package\.schema\.json/);
+  assert.doesNotMatch(llfcPrompt, /essy-production-package\.schema\.json/);
+});
+
 test("no competing production workflow.json during the ESSY WRITE/PREPARE/DIRECT path", async () => {
   const root = await makeRoot();
   try {

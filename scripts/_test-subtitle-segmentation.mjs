@@ -421,66 +421,63 @@ test("cold-open parity: metadata-defined title-card block never becomes a subtit
 });
 
 // ---------------------------------------------------------------------------
-// P1 still-image motion policy (scripts/_still-motion.mjs)
+// NO_MOTION_STILLS (scripts/_still-motion.mjs) — all ESSY stills are STATIC.
 // ---------------------------------------------------------------------------
 import {readFileSync} from "node:fs";
 import {
   resolveStillMotion,
   stillImageFilter,
-  SLOW_PUSH_ZOOM_MAX,
   STILL_MOTION_VALUES,
 } from "./_still-motion.mjs";
 
-const FILTER_ARGS = {width: 960, height: 540, fps: 25, frameCount: 200};
+const FILTER_ARGS = {width: 960, height: 540, fps: 25};
 
-test("still motion A: absent stillMotion metadata -> STATIC (no zoompan)", () => {
+test("still motion A: absent stillMotion metadata -> STATIC (no time-varying filter)", () => {
   const f = stillImageFilter({...FILTER_ARGS, stillMotion: resolveStillMotion({slotId: "N001-S1"})});
-  assert.ok(!f.includes("zoompan"), "static must not use zoompan");
+  assert.ok(!/zoompan|scale.*:.*:.*on/.test(f), "static must not use time-varying filters");
+  assert.ok(!/\bon\b|\bzoom\b|\bt\b/.test(f.split(",").find((p) => p.includes("crop=")) ?? ""), "crop must be fixed center, no time-varying expr");
   assert.ok(f.includes("crop="), "static must scale+crop");
+  assert.ok(f.includes("x=(in_w-out_w)/2"), "center crop x");
+  assert.ok(f.includes("y=(in_h-out_h)/2"), "center crop y");
 });
 
 test("still motion B: stillMotion='static' -> STATIC", () => {
   const f = stillImageFilter({...FILTER_ARGS, stillMotion: resolveStillMotion({stillMotion: "static"})});
-  assert.ok(!f.includes("zoompan"));
+  assert.ok(!/zoompan/.test(f));
 });
 
-test("still motion C: stillMotion='slow-push' -> stable center push", () => {
-  const motion = resolveStillMotion({stillMotion: "slow-push"});
-  const f = stillImageFilter({...FILTER_ARGS, stillMotion: motion});
-  assert.ok(f.includes("zoompan"), "slow-push uses zoompan");
-  // Fixed center anchor: exact center x/y for every frame.
-  assert.ok(f.includes("x='(iw-iw/zoom)/2'"), "center anchor x");
-  assert.ok(f.includes("y='(ih-ih/zoom)/2'"), "center anchor y");
-  // Scale-only, spans the full shot, no alternation.
-  assert.ok(f.includes(`1+(${SLOW_PUSH_ZOOM_MAX}-1)*on/199`), "linear ramp over full frameCount");
-  assert.ok(!f.includes("min(zoom+"), "no legacy clamped zoom that freezes early");
-  // 4x supersample quantization then lanczos downscale.
-  assert.ok(f.includes("zoompan"), "uses zoompan");
-  assert.ok(f.includes("s=3840x2160"), "quantizes at 4x supersample");
-  assert.ok(f.trimEnd().endsWith("flags=lanczos"), "ends with lanczos downscale");
+test("still motion C: legacy slow-push metadata resolves to STATIC (NO_MOTION_STILLS)", () => {
+  // NO_MOTION_STILLS: even explicit "slow-push" metadata MUST NOT produce motion.
+  assert.equal(resolveStillMotion({stillMotion: "slow-push"}), "static");
+  const f = stillImageFilter({...FILTER_ARGS, stillMotion: "slow-push"});
+  assert.ok(!/zoompan/.test(f), "no time-varying filter even with legacy slow-push input");
+  assert.ok(f.includes("crop=960:540"), "fixed scale+crop only");
 });
 
 test("still motion D: shot index does NOT affect motion selection", () => {
   for (const index of [0, 1, 2, 5, 9]) {
     assert.equal(resolveStillMotion({index}), "static", `index ${index} no metadata`);
     assert.equal(resolveStillMotion({index, stillMotion: "static"}), "static");
-    assert.equal(resolveStillMotion({index, stillMotion: "slow-push"}), "slow-push");
+    assert.equal(resolveStillMotion({index, stillMotion: "slow-push"}), "static", "slow-push ignored");
   }
   // Same treatment regardless of index parity.
   assert.equal(
-    stillImageFilter({...FILTER_ARGS, stillMotion: "slow-push"}),
-    stillImageFilter({...FILTER_ARGS, stillMotion: "slow-push"}),
+    stillImageFilter({...FILTER_ARGS}),
+    stillImageFilter({...FILTER_ARGS}),
   );
 });
 
 test("still motion E: review and final resolve the SAME shared semantics", () => {
+  const motionSrc = readFileSync("scripts/_still-motion.mjs", "utf8");
+  assert.ok(motionSrc.includes("NO_MOTION_STILLS"), "shared policy is NO_MOTION_STILLS");
+  assert.ok(!/zoompan\s*=|zoompan'/.test(motionSrc), "shared policy emits no time-varying still filter");
   const review = readFileSync("scripts/render-lesson.mjs", "utf8");
   const final = readFileSync("scripts/render-essay-final.mjs", "utf8");
   const imp = "from \"./_still-motion.mjs\"";
   assert.ok(review.includes(imp), "review renderer imports shared policy");
   assert.ok(final.includes(imp), "final renderer imports shared policy");
   for (const src of [review, final]) {
-    assert.ok(src.includes("resolveStillMotion(shot)"), "renderers resolve per shot");
+    assert.ok(!/stillImageFilter\([^)]*zoompan/.test(src), "no time-varying filter in ESSY still path");
     assert.ok(!src.includes("blockShotIndex % 2"), "no index-parity motion");
   }
   assert.ok(!/kenBurnsFilter\(/.test(final), "final renderer has no legacy Ken Burns");
@@ -489,7 +486,7 @@ test("still motion E: review and final resolve the SAME shared semantics", () =>
     "review renderer branches ESSY to shared policy",
   );
   assert.ok(
-    review.includes("? stillImageFilter({width, height, fps, frameCount, stillMotion})"),
+    review.includes("? stillImageFilter({width, height, fps})"),
     "review renderer uses shared stillImageFilter for ESSY stills",
   );
 });
@@ -498,10 +495,30 @@ test("still motion F: video assets unaffected + unsupported values fall back to 
   // Renderers only call the policy for photo shots; video path untouched.
   const review = readFileSync("scripts/render-lesson.mjs", "utf8");
   assert.ok(review.includes('shot.mediaType === "photo"'), "video shots bypass still-motion filter");
-  assert.deepEqual(STILL_MOTION_VALUES, ["static", "slow-push"], "canonical values");
-  assert.equal(resolveStillMotion({stillMotion: "slow-pull"}), "static", "slow-pull not canonical yet");
-  assert.equal(resolveStillMotion({stillMotion: "pan"}), "static", "pan not canonical yet");
+  assert.deepEqual(STILL_MOTION_VALUES, ["static"], "canonical values: static only");
+  assert.equal(resolveStillMotion({stillMotion: "slow-push"}), "static", "slow-push ignored");
+  assert.equal(resolveStillMotion({stillMotion: "slow-pull"}), "static", "slow-pull not allowed");
+  assert.equal(resolveStillMotion({stillMotion: "pan"}), "static", "pan not allowed");
   assert.equal(resolveStillMotion({stillMotion: ""}), "static");
+});
+
+test("still motion G: no time-varying geometry anywhere in ESSY still path", () => {
+  // Thorough ban: time-varying zoom/pan coords, dynamic crop/scale, xfade zoom.
+  const files = {
+    still: readFileSync("scripts/_still-motion.mjs", "utf8"),
+    review: readFileSync("scripts/render-lesson.mjs", "utf8"),
+    final: readFileSync("scripts/render-essay-final.mjs", "utf8"),
+  };
+  assert.ok(!/zoompan\s*=/.test(files.still), "shared still filter has no time-varying filter");
+  assert.ok(!files.still.match(/\bon\b\s*\/\s*\w+|\bzoom\s*\+|\bzoom\s*-/), "no per-frame zoom expression");
+  for (const [name, src] of Object.entries({review: files.review, final: files.final})) {
+    // ESSY still path must not contain zoompan at all.
+    const stillLines = src.split("\n").filter((l) => l.includes("stillImageFilter"));
+    for (const l of stillLines) assert.ok(!l.includes("zoompan"), `${name}: stillImageFilter call has no zoompan`);
+  }
+  assert.ok(!/stillImageFilter\([^)]*\bframeCount\b/.test(files.review), "review: no frameCount-driven motion");
+  assert.ok(!/stillImageFilter\([^)]*\bstillMotion\b/.test(files.review), "review: motion cannot be re-enabled via metadata");
+  assert.ok(!/stillImageFilter\([^)]*\bframeCount\b/.test(files.final), "final: no frameCount-driven motion");
 });
 
 let failed = 0;

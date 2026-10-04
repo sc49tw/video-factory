@@ -1,11 +1,18 @@
 import {readFileSync} from "node:fs";
 import Ajv2020 from "ajv/dist/2020.js";
+import {validateEssyOpeningIdentity} from "./essy-opening-identity.mjs";
 
 // Native ESSY production package: deterministic handoff from an approved ESSY
 // draft (ENGLISH + PREPARE + STORYBOARD/Gate 2) into BUILD. It references the
 // canonical artifacts instead of duplicating them and carries no editorial
 // decisions. LLFC production packages (contracts/production-package.schema.json)
 // are a separate contract and must never masquerade as this one.
+//
+// The package may carry the OPTIONAL openingIdentity metadata (series title +
+// episode title + timing), which is production-package metadata and never a
+// storyboard slot or Gate-2 asset. Its contract is owned by
+// contracts/essy-opening-identity.schema.json and is referenced, never copied;
+// the $ref in essy-production-package.schema.json resolves against that $id.
 
 const schema = JSON.parse(
   readFileSync(
@@ -13,7 +20,15 @@ const schema = JSON.parse(
     "utf8",
   ),
 );
-const validateSchema = new Ajv2020({allErrors: true, strict: false}).compile(schema);
+const openingIdentitySchema = JSON.parse(
+  readFileSync(
+    new URL("../contracts/essy-opening-identity.schema.json", import.meta.url),
+    "utf8",
+  ),
+);
+const ajv = new Ajv2020({allErrors: true, strict: false});
+ajv.addSchema(openingIdentitySchema);
+const validateSchema = ajv.compile(schema);
 
 const MARKDOWN_WRAPPER = /```|^\s*#{1,6}\s|^\s*[-*]\s/m;
 
@@ -44,6 +59,13 @@ export function validateEssyProductionPackage(value, expected = {}) {
   }
   if (expected.language && value.language !== expected.language) {
     throw new Error(`ESSY production package language must be "${expected.language}".`);
+  }
+  // Present-but-malformed openingIdentity is rejected by its own runtime
+  // contract (declared by contracts/essy-opening-identity.schema.json). The
+  // opening TIMING rule itself is never re-derived here: it belongs to the
+  // shared opening plan consumed by the renderers and checked by the preflight.
+  if (value.openingIdentity != null) {
+    validateEssyOpeningIdentity(value.openingIdentity);
   }
   return value;
 }
