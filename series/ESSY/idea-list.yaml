@@ -11,7 +11,7 @@
 
 schemaVersion: "1.0"
 series: ESSY
-updatedAt: "2026-09-08"
+updatedAt: "2026-09-27"
 ideas:
   - id: ESSY-IDEA-001
     title: "人生每個階段都有不同的煩惱"
@@ -60,6 +60,31 @@ ideas:
     title: "人生中的不得不然"
     status: idea
     hook: "在人生所有不得不然之中，我們仍得決定，怎麼成為自己。"
+
+  - id: ESSY-IDEA-009
+    title: "接受自己沒有成為所有可能成為的人"
+    status: idea
+    hook: "人生走到某個階段，我們不只開始看見自己成為了誰，也開始看見那些再也不會成為的自己。"
+    note: "可從 Erik Erikson 的 ego integrity vs. despair 發展：成熟也許不是相信一切都來得及，而是接受有些人生已經不會發生，仍然能對自己真正活過的人生說 yes。"
+
+  - id: ESSY-IDEA-010
+    title: "該要求小孩到什麼程度？"
+    status: idea
+    hook: "未來的世界連我們自己都很茫然，該怎麼幫他們準備？"
+    note: "探索父母對孩子的要求與對未來的不確定：要求太少怕孩子沒有選擇，要求太多又怕壓力消磨學習意願；如何分辨孩子需要的練習與父母自身的焦慮。"
+
+  - id: ESSY-IDEA-011
+    title: "身體自由的時間有限，我還該繼續把自己綁在辦公室裡嗎？"
+    status: idea
+    hook: "年紀越大，越會對身體還能自由活動的時間有限感到焦慮；等到終於有空，我還有體力去過想過的生活嗎？"
+    note: "使用者原始點子：年紀越大越會對『身體自由的時間是有限的』感到焦慮，不知道該不該繼續把自己綁在辦公室裡。與 ESSY-IDEA-004 / ESSY-0003 的工作、財務安全與剩餘人生取捨重疊；後續開發需檢查重複程度，聚焦身體仍能自由活動的時間窗口，以及金錢、空閒與體力未必同時具備的焦慮。"
+
+  - id: ESSY-IDEA-012
+    title: "餘生究竟有多長？"
+    englishTitle: "How Long Is the Rest of Your Life?"
+    status: idea
+    hook: "退休規劃要考慮 the rest of your life，但那究竟是多長？我們都知道旅程總會結束，卻不知道何時會結束。"
+    note: "使用者原始點子：當我們做退休規劃時考慮的是 the rest of your life，然而那究竟是多長呢？我們都知道旅程總會結束，但就是不曉得何時會結束。探索必須為未知長度的餘生做安排的矛盾：既怕活得比準備的資源更久，也怕為未來準備了一切，卻沒有時間享用。與 ESSY-IDEA-004 / ESSY-0003、ESSY-IDEA-011 及 ESSY-0002 的退休與時間有限主題相關；後續開發聚焦終點未知如何影響當下的選擇。"
 
 # Completed ESSY episodes that are useful editorial references but do not yet
 # correspond one-to-one with another backlog entry.
