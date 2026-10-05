@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-011",
+  "blockId": "n011",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "c915598907733a78f1a8e0d6d11053fb5b68f09f8eb5442e2a5ddcc17f4d6b5c",
+    "matchesManifest": true,
+    "audioDurationSec": 18.192,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 40,
+    "lastWordEndSec": 17.212,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "So",
+      "startSec": 0.1,
+      "endSec": 0.427
+    },
+    {
+      "text": "imagine",
+      "startSec": 0.441,
+      "endSec": 0.924
+    },
+    {
+      "text": "an",
+      "startSec": 0.938,
+      "endSec": 1.08
+    },
+    {
+      "text": "ordinary",
+      "startSec": 1.094,
+      "endSec": 1.606
+    },
+    {
+      "text": "Tuesday",
+      "startSec": 1.62,
+      "endSec": 2.117
+    },
+    {
+      "text": "morning",
+      "startSec": 2.131,
+      "endSec": 2.728
+    },
+    {
+      "text": "I",
+      "startSec": 3.715,
+      "endSec": 3.871
+    },
+    {
+      "text": "am",
+      "startSec": 3.885,
+      "endSec": 4.041
+    },
+    {
+      "text": "eighty",
+      "startSec": 4.056,
+      "endSec": 4.368
+    },
+    {
+      "text": "years",
+      "startSec": 4.382,
+      "endSec": 4.752
+    },
+    {
+      "text": "old",
+      "startSec": 4.766,
+      "endSec": 5.291
+    },
+    {
+      "text": "There",
+      "startSec": 6.272,
+      "endSec": 6.499
+    },
+    {
+      "text": "is",
+      "startSec": 6.513,
+      "endSec": 6.684
+    },
+    {
+      "text": "nowhere",
+      "startSec": 6.698,
+      "endSec": 7.124
+    },
+    {
+      "text": "I",
+      "startSec": 7.138,
+      "endSec": 7.365
+    },
+    {
+      "text": "have",
+      "startSec": 7.38,
+      "endSec": 7.692
+    },
+    {
+      "text": "to",
+      "startSec": 7.706,
+      "endSec": 7.806
+    },
+    {
+      "text": "be",
+      "startSec": 7.82,
+      "endSec": 8.147
+    },
+    {
+      "text": "Nobody",
+      "startSec": 9.127,
+      "endSec": 9.695
+    },
+    {
+      "text": "is",
+      "startSec": 9.709,
+      "endSec": 9.908
+    },
+    {
+      "text": "waiting",
+      "startSec": 9.922,
+      "endSec": 10.348
+    },
+    {
+      "text": "for",
+      "startSec": 10.363,
+      "endSec": 10.476
+    },
+    {
+      "text": "my",
+      "startSec": 10.49,
+      "endSec": 10.689
+    },
+    {
+      "text": "work",
+      "startSec": 10.703,
+      "endSec": 11.243
+    },
+    {
+      "text": "My",
+      "startSec": 12.223,
+      "endSec": 12.507
+    },
+    {
+      "text": "child",
+      "startSec": 12.522,
+      "endSec": 12.99
+    },
+    {
+      "text": "has",
+      "startSec": 13.005,
+      "endSec": 13.161
+    },
+    {
+      "text": "his",
+      "startSec": 13.175,
+      "endSec": 13.345
+    },
+    {
+      "text": "own",
+      "startSec": 13.36,
+      "endSec": 13.573
+    },
+    {
+      "text": "life",
+      "startSec": 13.587,
+      "endSec": 14.155
+    },
+    {
+      "text": "What",
+      "startSec": 15.139,
+      "endSec": 15.352
+    },
+    {
+      "text": "would",
+      "startSec": 15.366,
+      "endSec": 15.494
+    },
+    {
+      "text": "make",
+      "startSec": 15.508,
+      "endSec": 15.721
+    },
+    {
+      "text": "me",
+      "startSec": 15.735,
+      "endSec": 15.849
+    },
+    {
+      "text": "want",
+      "startSec": 15.863,
+      "endSec": 16.062
+    },
+    {
+      "text": "to",
+      "startSec": 16.076,
+      "endSec": 16.147
+    },
+    {
+      "text": "get",
+      "startSec": 16.161,
+      "endSec": 16.389
+    },
+    {
+      "text": "out",
+      "startSec": 16.403,
+      "endSec": 16.587
+    },
+    {
+      "text": "of",
+      "startSec": 16.602,
+      "endSec": 16.73
+    },
+    {
+      "text": "bed",
+      "startSec": 16.744,
+      "endSec": 17.212
+    }
+  ]
+}

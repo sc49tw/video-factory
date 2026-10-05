@@ -102,18 +102,24 @@
     {
       "at": "2026-10-04T06:51:44.412Z",
       "event": "final-assembly-approved"
+    },
+    {
+      "at": "2026-10-05T12:28:32.827Z",
+      "event": "episode-archived",
+      "reason": "published"
     }
   ],
   "schemaVersion": "2.0",
   "series": "ESSY",
-  "status": "completed",
+  "status": "archived",
   "subtype": "essay",
-  "updatedAt": "2026-10-04T06:51:44.412Z",
+  "updatedAt": "2026-10-05T12:28:32.829Z",
   "prepare": {
     "completed": true,
     "completedAt": "2026-09-28T06:17:14.801Z",
     "blockCount": 18,
     "totalDurationSec": 369.864,
     "manifest": "manifest.json"
-  }
+  },
+  "archivedAt": "2026-10-05T12:28:32.827Z"
 }

@@ -1,0 +1,3977 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0005",
+  "scope": "N015-S2 only. Single-slot replacement for the one active Gate 2 exception. No other slot, narration, audio, source in-point or v06 cut timing is touched.",
+  "officialApproval": "none - provisional only. Gate 2 and PACKAGE remain unapproved. No workflow state written.",
+  "generatedAt": "2026-10-03T08:44:30.436Z",
+  "slot": {
+    "slotId": "N015-S2",
+    "narrationId": "N015",
+    "editorialFunction": "Let the release arrive as a permission that is not visibly earned and needs no evidence.",
+    "visualIntent": "A person alone in a room with no task in progress and no audience present; nothing accomplished is on display anywhere in the frame. Quiet, unremarkable, unphotogenic by design.",
+    "preserve": [
+      "a person simply existing without a task to complete",
+      "no audience",
+      "no accomplishment or productivity on display",
+      "quiet, ordinary, unremarkable",
+      "doing nothing must not imply that anything is wrong"
+    ],
+    "avoid": [
+      "wallet, money, bills, financial difficulty",
+      "work / productivity activity",
+      "visible sadness, loneliness or defeat",
+      "medical / caregiving imagery",
+      "celebration, reward, retirement-lifestyle advertising",
+      "conspicuously cinematic or aspirational imagery"
+    ],
+    "outgoingAsset": {
+      "pexelsId": "16940174",
+      "sourcePage": "https://www.pexels.com/video/a-man-sitting-on-a-couch-with-a-dog-16940174/",
+      "creator": "Cameron Gawn",
+      "v06TimingSec": {
+        "start": 295.709,
+        "end": 302.376,
+        "dur": 6.667
+      },
+      "issue": "the cut shows a man looking into an empty wallet: an unintended financial-scarcity / retirement-hardship meaning that the narration does not carry and that conflicts with 'nothing to prove'"
+    },
+    "requiredSourceSec": 6.667
+  },
+  "method": {
+    "provider": "pexels",
+    "stage": "A (search + slug screening). Stage B verifies the shortlist on each candidate's own Pexels page.",
+    "queries": [
+      "person sitting in a chair in a quiet room at home",
+      "man sitting on sofa at home everyday",
+      "woman sitting on couch at home ordinary day",
+      "person sitting in living room doing nothing",
+      "man sitting at home in the afternoon ordinary",
+      "person sitting with pet at home on sofa",
+      "woman sitting on sofa with cat at home",
+      "man sitting in armchair at home with dog",
+      "person standing in a room at home idle",
+      "person sitting on chair at home with cat",
+      "man sitting on a couch at home in daylight",
+      "person resting in a chair at home in the morning"
+    ],
+    "searches": [
+      {
+        "query": "person sitting in a chair in a quiet room at home",
+        "returned": 14
+      },
+      {
+        "query": "man sitting on sofa at home everyday",
+        "returned": 14
+      },
+      {
+        "query": "woman sitting on couch at home ordinary day",
+        "returned": 14
+      },
+      {
+        "query": "person sitting in living room doing nothing",
+        "returned": 14
+      },
+      {
+        "query": "man sitting at home in the afternoon ordinary",
+        "returned": 14
+      },
+      {
+        "query": "person sitting with pet at home on sofa",
+        "returned": 14
+      },
+      {
+        "query": "woman sitting on sofa with cat at home",
+        "returned": 14
+      },
+      {
+        "query": "man sitting in armchair at home with dog",
+        "returned": 14
+      },
+      {
+        "query": "person standing in a room at home idle",
+        "returned": 14
+      },
+      {
+        "query": "person sitting on chair at home with cat",
+        "returned": 14
+      },
+      {
+        "query": "man sitting on a couch at home in daylight",
+        "returned": 14
+      },
+      {
+        "query": "person resting in a chair at home in the morning",
+        "returned": 14
+      }
+    ],
+    "hardRejectRules": [
+      {
+        "reason": "money / financial object or scarcity",
+        "pattern": "wallet|cash|money|coin|bills?\\b|bank|salary|budget|debt|savings|pension|financ|credit|invoice|broke|poor"
+      },
+      {
+        "reason": "work, study or productivity activity on display",
+        "pattern": "laptop|computer|office|desk|workplace|business|meeting|notebook|writing|typing|study|homework|document|contract|presentation|briefcase|calendar|checklist|todo|phone|call\\b|email|job\\b|boss\\b|career|worker|employee|colleague|video game|playing games|guitar|piano|instrument"
+      },
+      {
+        "reason": "medical, illness or caregiving imagery",
+        "pattern": "hospital|clinic|nurse|doctor|patient|medical|wheelchair|caregiver|care home|nursing|sick|illness|pill|medicine|medication|therapy|rehab|diagnos|inject|oxygen|dementia|alzheimer|disabilit|injur|wound|brace"
+      },
+      {
+        "reason": "visible sadness, loneliness, stress or defeat",
+        "pattern": "sad\\b|depress|lonely|loneliness|alone\\b|broken|worried|anxious|anxiety|stress|worry|cry|crying|tear|grief|hopeless|exhaust|suffer|pain\\b|regret|insomnia|afraid|fear\\b|panic|helpless|weary|gloomy|despair|bored|tired|upset|angry|annoy|frustrat|thoughts|thinking|ponder|contemplat|reflect"
+      },
+      {
+        "reason": "celebration, reward or achievement display",
+        "pattern": "celebrat|party|trophy|award|winning|win\\b|success|congratulat|champagne|toast|applause|cheer|prize|medal"
+      },
+      {
+        "reason": "retirement-lifestyle or aspirational advertising styling",
+        "pattern": "retire|retirement|luxur|glamor|premium|elegant|chic|stylish|luxury|aspirat|spa|resort|mansion|villa|wealthy|affluent|yoga|wine|champagne"
+      },
+      {
+        "reason": "conspicuously cinematic or staged framing",
+        "pattern": "cinematic|dramatic|slow.motion|slow motion|epic|teaser|trailer|noir|vignette|b.roll|silhouette|smoking"
+      },
+      {
+        "reason": "addressing an audience / direct to camera",
+        "pattern": "looking at camera|at the camera|talking to camera|to camera|smiling at camera|interview|vlog|presenting|speaking|talking|vlog"
+      },
+      {
+        "reason": "consumes attention on a display",
+        "pattern": "tv\\b|television|remote|watching|screen|monitor"
+      }
+    ],
+    "softFlags": [
+      {
+        "flag": "solitude-framing",
+        "pattern": "alone\\b|lonely|solitary|by himself|by herself|empty room"
+      },
+      {
+        "flag": "prop-in-hand",
+        "pattern": "glass|cup|mug|bottle|book|newspaper|magazine|phone|remote|plate|food"
+      },
+      {
+        "flag": "styled-interior",
+        "pattern": "stylish|modern|luxur|designer|elegant|loft"
+      },
+      {
+        "flag": "posed-portrait",
+        "pattern": "posing|portrait"
+      },
+      {
+        "flag": "studio-or-corporate",
+        "pattern": "studio|office|corporate|showroom"
+      },
+      {
+        "flag": "reading-or-attention",
+        "pattern": "reading|book|newspaper"
+      },
+      {
+        "flag": "leaning-or-reclining",
+        "pattern": "relax|resting|leaning|laying|lying|lying"
+      },
+      {
+        "flag": "elderly-stereotype",
+        "pattern": "elderly|senior|old man|old woman|grandpa|grandma|grey hair|gray hair"
+      },
+      {
+        "flag": "pet-companion",
+        "pattern": "dog|cat|pet|puppy|kitten"
+      },
+      {
+        "flag": "food-or-drink",
+        "pattern": "coffee|tea|water|juice|drink|eating|meal|dinner|lunch|breakfast"
+      }
+    ],
+    "positiveSignals": [
+      {
+        "signal": "ordinary domestic room",
+        "pattern": "home|apartment|living room|kitchen|bedroom|sofa|couch|armchair|chair|room\\b"
+      },
+      {
+        "signal": "plain daytime light",
+        "pattern": "daytime|daylight|morning|afternoon|evening|light|sun"
+      },
+      {
+        "signal": "unposed ordinary body",
+        "pattern": "sitting|seated|resting|ordinary|everyday|simple|calm"
+      },
+      {
+        "signal": "nothing-to-do beat",
+        "pattern": "doing nothing|idle|resting|sitting"
+      }
+    ],
+    "excludedIdsAlreadyInCut": [
+      "10397454",
+      "10577776",
+      "11769112",
+      "12176376",
+      "15198034",
+      "16940174",
+      "29251301",
+      "3196635",
+      "34374462",
+      "34374473",
+      "39139724",
+      "4483843",
+      "4729733",
+      "5116401",
+      "5493064",
+      "5644276",
+      "5780549",
+      "5900627",
+      "5949397",
+      "6136977",
+      "6263197",
+      "6549284",
+      "6565094",
+      "6857581",
+      "6975450",
+      "7180178",
+      "7195759",
+      "7200766",
+      "7225752",
+      "7679424",
+      "7702643",
+      "7744392",
+      "7986201",
+      "8108977",
+      "8172572",
+      "8860235",
+      "8865606",
+      "8902837",
+      "8928019",
+      "9056495",
+      "null"
+    ],
+    "humanSelectionUi": false,
+    "humanCandidateSelectionRequested": false
+  },
+  "counts": {
+    "searched": 147,
+    "hardRejected": 48,
+    "survived": 99,
+    "shortlisted": 18,
+    "adjudicated": true
+  },
+  "shortlist": [
+    {
+      "pexelsId": "8526493",
+      "mediaType": "video",
+      "durationSec": 38,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-sitting-on-the-couch-8526493/",
+      "slugText": "a woman sitting on the couch",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8526493/8526493-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8526493/8526493-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8526493/8526493-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8526493/8526493-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6890224",
+      "mediaType": "video",
+      "durationSec": 34,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/woman-sitting-on-sofa-while-listening-to-music-6890224/",
+      "slugText": "woman sitting on sofa while listening to music",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6890224/6890224-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6890224/6890224-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6890224/6890224-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6890224/6890224-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7226917",
+      "mediaType": "video",
+      "durationSec": 29,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Thirdman",
+      "sourceUrl": "https://www.pexels.com/video/person-sitting-in-the-sofa-7226917/",
+      "slugText": "person sitting in the sofa",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7226917/7226917-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226917/7226917-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226917/7226917-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226917/7226917-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226917/7226917-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8109047",
+      "mediaType": "video",
+      "durationSec": 21,
+      "width": 4096,
+      "height": 2160,
+      "creator": "https://kaboompics.com/",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-sitting-in-a-rocking-chair-8109047/",
+      "slugText": "a woman sitting in a rocking chair",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8109047/8109047-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8109047/8109047-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8109047/8109047-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8109047/8109047-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7217941",
+      "mediaType": "video",
+      "durationSec": 17,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Thirdman",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-sitting-on-the-couch-7217941/",
+      "slugText": "a woman sitting on the couch",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7217941/7217941-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7217941/7217941-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7217941/7217941-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7217941/7217941-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7217941/7217941-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7191204",
+      "mediaType": "video",
+      "durationSec": 17,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Ivan S",
+      "sourceUrl": "https://www.pexels.com/video/woman-wearing-sleepwear-sitting-on-sofa-7191204/",
+      "slugText": "woman wearing sleepwear sitting on sofa",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7191204/7191204-hd_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7191204/7191204-hd_1280_720_30fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7191204/7191204-sd_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7191204/7191204-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7191204/7191204-sd_426_240_30fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 29.97
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6901320",
+      "mediaType": "video",
+      "durationSec": 16,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Mikhail Nilov",
+      "sourceUrl": "https://www.pexels.com/video/man-sitting-on-chair-while-using-his-digital-tablet-6901320/",
+      "slugText": "man sitting on chair while using his digital tablet",
+      "foundByQuery": "man sitting in armchair at home with dog",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6901320/6901320-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6901320/6901320-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6901320/6901320-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6901320/6901320-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6901320/6901320-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6610243",
+      "mediaType": "video",
+      "durationSec": 14,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Tima Miroshnichenko",
+      "sourceUrl": "https://www.pexels.com/video/blind-girl-sitting-on-sofa-6610243/",
+      "slugText": "blind girl sitting on sofa",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6610243/6610243-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6610243/6610243-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6610243/6610243-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6610243/6610243-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6610243/6610243-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7614402",
+      "mediaType": "video",
+      "durationSec": 13,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Max Vakhtbovych",
+      "sourceUrl": "https://www.pexels.com/video/a-man-sitting-on-the-couch-7614402/",
+      "slugText": "a man sitting on the couch",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7614402/7614402-hd_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7614402/7614402-hd_1280_720_60fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 59.94
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7614402/7614402-sd_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7614402/7614402-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7614402/7614402-sd_426_240_30fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 29.97
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "32727071",
+      "mediaType": "video",
+      "durationSec": 12,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Zulfugar Karimov",
+      "sourceUrl": "https://www.pexels.com/video/thoughtful-woman-sitting-on-couch-indoors-32727071/",
+      "slugText": "thoughtful woman sitting on couch indoors",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/32727071/13952539_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": null,
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/32727071/13952538_1280_720_30fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": null,
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/32727071/13952537_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": null,
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/32727071/13952536_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": null,
+          "fps": 29.97
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6570947",
+      "mediaType": "video",
+      "durationSec": 11,
+      "width": 2560,
+      "height": 1080,
+      "creator": "Pavel Danilyuk",
+      "sourceUrl": "https://www.pexels.com/video/wide-angle-shot-of-a-woman-sitting-on-a-hanging-chair-6570947/",
+      "slugText": "wide angle shot of a woman sitting on a hanging chair",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6570947/6570947-hd_1366_576_25fps.mp4",
+          "width": 1366,
+          "height": 576,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6570947/6570947-sd_960_406_25fps.mp4",
+          "width": 960,
+          "height": 406,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6570947/6570947-sd_640_270_25fps.mp4",
+          "width": 640,
+          "height": 270,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6570947/6570947-sd_426_180_25fps.mp4",
+          "width": 426,
+          "height": 180,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8835464",
+      "mediaType": "video",
+      "durationSec": 7,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Los Muertos Crew",
+      "sourceUrl": "https://www.pexels.com/video/woman-sitting-on-a-chair-looking-at-a-photo-album-8835464/",
+      "slugText": "woman sitting on a chair looking at a photo album",
+      "foundByQuery": "person sitting in a chair in a quiet room at home",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8835464/8835464-hd_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8835464/8835464-hd_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8835464/8835464-sd_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8835464/8835464-sd_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8835464/8835464-sd_426_240_24fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 23.98
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7641183",
+      "mediaType": "video",
+      "durationSec": 29,
+      "width": 4096,
+      "height": 2160,
+      "creator": "MART  PRODUCTION",
+      "sourceUrl": "https://www.pexels.com/video/bed-bedroom-morning-tidy-7641183/",
+      "slugText": "bed bedroom morning tidy",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "plain daytime light"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7641183/7641183-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7641183/7641183-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7641183/7641183-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7641183/7641183-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7294968",
+      "mediaType": "video",
+      "durationSec": 19,
+      "width": 3840,
+      "height": 2160,
+      "creator": "ArtHouse Studio",
+      "sourceUrl": "https://www.pexels.com/video/woman-sitting-on-the-floor-looking-away-7294968/",
+      "slugText": "woman sitting on the floor looking away",
+      "foundByQuery": "woman sitting on sofa with cat at home",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7294968/7294968-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7294968/7294968-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7294968/7294968-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7294968/7294968-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "4038496",
+      "mediaType": "video",
+      "durationSec": 10,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/couple-love-sitting-music-4038496/",
+      "slugText": "couple love sitting music",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/4038496/4038496-hd_1366_720_50fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4038496/4038496-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4038496/4038496-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4038496/4038496-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8496758",
+      "mediaType": "video",
+      "durationSec": 7,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Ivan S",
+      "sourceUrl": "https://www.pexels.com/video/man-wearing-sweater-sitting-on-the-floor-8496758/",
+      "slugText": "man wearing sweater sitting on the floor",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8496758/8496758-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8496758/8496758-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8496758/8496758-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8496758/8496758-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8496758/8496758-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8347385",
+      "mediaType": "video",
+      "durationSec": 27,
+      "width": 4096,
+      "height": 2160,
+      "creator": "ROMAN ODINTSOV",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-running-to-the-corner-of-a-room-8347385/",
+      "slugText": "a woman running to the corner of a room",
+      "foundByQuery": "person standing in a room at home idle",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8347385/8347385-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8347385/8347385-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8347385/8347385-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8347385/8347385-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7226845",
+      "mediaType": "video",
+      "durationSec": 26,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Thirdman",
+      "sourceUrl": "https://www.pexels.com/video/man-at-home-7226845/",
+      "slugText": "man at home",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7226845/7226845-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226845/7226845-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226845/7226845-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226845/7226845-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7226845/7226845-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    }
+  ],
+  "rejectedBySlug": [
+    {
+      "pexelsId": "6608200",
+      "mediaType": "video",
+      "durationSec": 9,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Anastasia  Shuraeva",
+      "sourceUrl": "https://www.pexels.com/video/woman-reading-in-notebook-6608200/",
+      "slugText": "woman reading in notebook",
+      "foundByQuery": "person sitting in a chair in a quiet room at home",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand",
+        "reading-or-attention"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6608200/6608200-hd_1366_720_24fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6608200/6608200-sd_960_506_24fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6608200/6608200-sd_640_338_24fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6608200/6608200-sd_426_226_24fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 24
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "17461113",
+      "mediaType": "video",
+      "durationSec": 26,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Foysal Ahmed",
+      "sourceUrl": "https://www.pexels.com/video/a-man-sitting-on-a-couch-with-a-laptop-17461113/",
+      "slugText": "a man sitting on a couch with a laptop",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/17461113/17461113-hd_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/17461113/17461113-hd_1280_720_30fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/17461113/17461113-sd_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/17461113/17461113-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/17461113/17461113-sd_426_240_30fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 29.97
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "11957331",
+      "mediaType": "video",
+      "durationSec": 32,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Ayhan Infire",
+      "sourceUrl": "https://www.pexels.com/video/side-view-of-a-man-talking-on-the-phone-while-sitting-on-a-sofa-11957331/",
+      "slugText": "side view of a man talking on the phone while sitting on a sofa",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "work, study or productivity activity on display",
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/11957331/11957331-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957331/11957331-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957331/11957331-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957331/11957331-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957331/11957331-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8526498",
+      "mediaType": "video",
+      "durationSec": 35,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/a-man-seriously-looking-at-camera-8526498/",
+      "slugText": "a man seriously looking at camera",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8526498/8526498-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8526498/8526498-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8526498/8526498-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8526498/8526498-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "9065059",
+      "mediaType": "video",
+      "durationSec": 7,
+      "width": 1920,
+      "height": 1080,
+      "creator": "RDNE Stock project",
+      "sourceUrl": "https://www.pexels.com/video/man-sitting-on-sofa-while-writing-on-a-clipboard-9065059/",
+      "slugText": "man sitting on sofa while writing on a clipboard",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/9065059/9065059-hd_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9065059/9065059-hd_1280_720_30fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9065059/9065059-sd_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9065059/9065059-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 29.97
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9065059/9065059-sd_426_240_30fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 29.97
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6605950",
+      "mediaType": "video",
+      "durationSec": 42,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/an-anxious-man-on-a-couch-6605950/",
+      "slugText": "an anxious man on a couch",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "visible sadness, loneliness, stress or defeat"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6605950/6605950-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6605950/6605950-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6605950/6605950-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6605950/6605950-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "11940196",
+      "mediaType": "video",
+      "durationSec": 15,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Ayhan Infire",
+      "sourceUrl": "https://www.pexels.com/video/a-man-talking-on-the-phone-while-sitting-on-a-sofa-11940196/",
+      "slugText": "a man talking on the phone while sitting on a sofa",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "work, study or productivity activity on display",
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/11940196/11940196-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11940196/11940196-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11940196/11940196-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11940196/11940196-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11940196/11940196-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "11957096",
+      "mediaType": "video",
+      "durationSec": 17,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Ayhan Infire",
+      "sourceUrl": "https://www.pexels.com/video/a-man-receiving-a-phone-call-while-sitting-on-a-sofa-11957096/",
+      "slugText": "a man receiving a phone call while sitting on a sofa",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/11957096/11957096-hd_1920_1080_60fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 60
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957096/11957096-hd_1280_720_60fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 60
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957096/11957096-sd_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957096/11957096-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/11957096/11957096-sd_426_240_30fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 30
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "9056757",
+      "mediaType": "video",
+      "durationSec": 29,
+      "width": 3840,
+      "height": 2160,
+      "creator": "SHVETS production",
+      "sourceUrl": "https://www.pexels.com/video/a-man-talking-on-the-phone-while-sitting-on-a-buri-carpet-9056757/",
+      "slugText": "a man talking on the phone while sitting on a buri carpet",
+      "foundByQuery": "man sitting on sofa at home everyday",
+      "hardRejects": [
+        "work, study or productivity activity on display",
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [
+        "prop-in-hand",
+        "pet-companion"
+      ],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/9056757/9056757-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056757/9056757-hd_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056757/9056757-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056757/9056757-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056757/9056757-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6890226",
+      "mediaType": "video",
+      "durationSec": 34,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-using-a-wireless-headphone-6890226/",
+      "slugText": "a woman using a wireless headphone",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6890226/6890226-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6890226/6890226-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6890226/6890226-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6890226/6890226-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6264841",
+      "mediaType": "video",
+      "durationSec": 18,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Jep Gambardella",
+      "sourceUrl": "https://www.pexels.com/video/woman-in-the-couch-looking-at-the-camera-6264841/",
+      "slugText": "woman in the couch looking at the camera",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6264841/6264841-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6264841/6264841-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6264841/6264841-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6264841/6264841-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6264841/6264841-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "4946582",
+      "mediaType": "video",
+      "durationSec": 15,
+      "width": 3840,
+      "height": 2160,
+      "creator": "ArtHouse Studio",
+      "sourceUrl": "https://www.pexels.com/video/woman-sitting-on-sofa-using-cellphone-4946582/",
+      "slugText": "woman sitting on sofa using cellphone",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/4946582/4946582-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4946582/4946582-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4946582/4946582-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4946582/4946582-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4946582/4946582-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6889682",
+      "mediaType": "video",
+      "durationSec": 21,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Mikhail Nilov",
+      "sourceUrl": "https://www.pexels.com/video/woman-sitting-on-the-couch-using-laptop-6889682/",
+      "slugText": "woman sitting on the couch using laptop",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6889682/6889682-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6889682/6889682-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6889682/6889682-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6889682/6889682-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6889682/6889682-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "9056503",
+      "mediaType": "video",
+      "durationSec": 25,
+      "width": 3840,
+      "height": 2160,
+      "creator": "SHVETS production",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-writing-on-a-couch-while-sitting-on-a-couch-9056503/",
+      "slugText": "a woman writing on a couch while sitting on a couch",
+      "foundByQuery": "woman sitting on couch at home ordinary day",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/9056503/9056503-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056503/9056503-hd_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056503/9056503-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056503/9056503-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9056503/9056503-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7279015",
+      "mediaType": "video",
+      "durationSec": 22,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Anastasia  Shuraeva",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-using-a-laptop-7279015/",
+      "slugText": "a woman using a laptop",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7279015/7279015-hd_1366_720_24fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7279015/7279015-sd_960_506_24fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7279015/7279015-sd_640_338_24fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7279015/7279015-sd_426_226_24fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 24
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7855731",
+      "mediaType": "video",
+      "durationSec": 24,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/man-playing-games-while-eating-chips-7855731/",
+      "slugText": "man playing games while eating chips",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "leaning-or-reclining",
+        "food-or-drink"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7855731/7855731-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7855731/7855731-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7855731/7855731-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7855731/7855731-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "4492645",
+      "mediaType": "video",
+      "durationSec": 10,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Artem Podrez",
+      "sourceUrl": "https://www.pexels.com/video/woman-putting-her-earphones-4492645/",
+      "slugText": "woman putting her earphones",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/4492645/4492645-hd_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4492645/4492645-hd_1280_720_30fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4492645/4492645-sd_960_540_30fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4492645/4492645-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/4492645/4492645-sd_426_240_30fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 30
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8688047",
+      "mediaType": "video",
+      "durationSec": 16,
+      "width": 1920,
+      "height": 1080,
+      "creator": "ANTONI SHKRABA production",
+      "sourceUrl": "https://www.pexels.com/video/a-man-typing-on-a-laptop-while-sitting-on-the-floor-8688047/",
+      "slugText": "a man typing on a laptop while sitting on the floor",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8688047/8688047-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8688047/8688047-hd_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8688047/8688047-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8688047/8688047-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8688047/8688047-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7221756",
+      "mediaType": "video",
+      "durationSec": 19,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Pavel Danilyuk",
+      "sourceUrl": "https://www.pexels.com/video/woman-writing-on-a-notebook-7221756/",
+      "slugText": "woman writing on a notebook",
+      "foundByQuery": "person sitting in living room doing nothing",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand",
+        "reading-or-attention"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7221756/7221756-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7221756/7221756-hd_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7221756/7221756-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7221756/7221756-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7221756/7221756-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "16021980",
+      "mediaType": "video",
+      "durationSec": 25,
+      "width": 1920,
+      "height": 1080,
+      "creator": "khanhhoangminh",
+      "sourceUrl": "https://www.pexels.com/video/a-young-man-sitting-at-a-desk-using-his-laptop-16021980/",
+      "slugText": "a young man sitting at a desk using his laptop",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/16021980/16021980-hd_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/16021980/16021980-hd_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/16021980/16021980-sd_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/16021980/16021980-sd_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/16021980/16021980-sd_426_240_24fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 24
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "31948463",
+      "mediaType": "video",
+      "durationSec": 7,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Nishant Das",
+      "sourceUrl": "https://www.pexels.com/video/silhouette-of-man-reflecting-on-urban-balcony-31948463/",
+      "slugText": "silhouette of man reflecting on urban balcony",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [
+        "visible sadness, loneliness, stress or defeat",
+        "conspicuously cinematic or staged framing"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/31948463/13611443_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": null,
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/31948463/13611442_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": null,
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/31948463/13611441_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": null,
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/31948463/13611440_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": null,
+          "fps": 23.98
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "34535506",
+      "mediaType": "video",
+      "durationSec": 13,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Burak Bahadır  Büyükkılınç",
+      "sourceUrl": "https://www.pexels.com/video/silhouette-of-man-looking-out-at-scenic-view-34535506/",
+      "slugText": "silhouette of man looking out at scenic view",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [
+        "conspicuously cinematic or staged framing"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/34535506/14632581_1920_1080_50fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": null,
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/34535506/14632567_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": null,
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/34535506/14632540_960_540_50fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": null,
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/34535506/14632537_640_360_50fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": null,
+          "fps": 50
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "28701311",
+      "mediaType": "video",
+      "durationSec": 17,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Khanh Hoang Minh 2",
+      "sourceUrl": "https://www.pexels.com/video/man-counting-money-in-scenic-mountain-setting-28701311/",
+      "slugText": "man counting money in scenic mountain setting",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [
+        "money / financial object or scarcity"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/28701311/12456085_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": null,
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/28701311/12456084_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": null,
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/28701311/12456083_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": null,
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/28701311/12456080_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": null,
+          "fps": 24
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8087772",
+      "mediaType": "video",
+      "durationSec": 24,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Yaroslav Shuraev",
+      "sourceUrl": "https://www.pexels.com/video/man-smoking-indoors-8087772/",
+      "slugText": "man smoking indoors",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [
+        "conspicuously cinematic or staged framing"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8087772/8087772-hd_1366_720_24fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8087772/8087772-sd_960_506_24fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8087772/8087772-sd_640_338_24fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8087772/8087772-sd_426_226_24fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 24
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7594966",
+      "mediaType": "video",
+      "durationSec": 27,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Mikhail Nilov",
+      "sourceUrl": "https://www.pexels.com/video/man-stretching-his-head-while-studying-7594966/",
+      "slugText": "man stretching his head while studying",
+      "foundByQuery": "man sitting at home in the afternoon ordinary",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7594966/7594966-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7594966/7594966-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7594966/7594966-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7594966/7594966-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7594966/7594966-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7801443",
+      "mediaType": "video",
+      "durationSec": 26,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/woman-using-cellphone-while-playing-the-dog-7801443/",
+      "slugText": "woman using cellphone while playing the dog",
+      "foundByQuery": "person sitting with pet at home on sofa",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand",
+        "leaning-or-reclining",
+        "pet-companion"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7801443/7801443-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7801443/7801443-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7801443/7801443-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8434086",
+      "mediaType": "video",
+      "durationSec": 16,
+      "width": 4096,
+      "height": 2160,
+      "creator": "MART  PRODUCTION",
+      "sourceUrl": "https://www.pexels.com/video/man-using-a-laptop-while-petting-a-dog-8434086/",
+      "slugText": "man using a laptop while petting a dog",
+      "foundByQuery": "person sitting with pet at home on sofa",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "pet-companion"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8434086/8434086-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8434086/8434086-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8434086/8434086-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8362715",
+      "mediaType": "video",
+      "durationSec": 15,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Vlada Karpovich",
+      "sourceUrl": "https://www.pexels.com/video/cat-lying-down-on-a-pillow-beside-a-pregnant-woman-8362715/",
+      "slugText": "cat lying down on a pillow beside a pregnant woman",
+      "foundByQuery": "woman sitting on sofa with cat at home",
+      "hardRejects": [
+        "medical, illness or caregiving imagery"
+      ],
+      "softFlags": [
+        "leaning-or-reclining",
+        "pet-companion"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8362715/8362715-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8362715/8362715-hd_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8362715/8362715-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8362715/8362715-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6000643",
+      "mediaType": "video",
+      "durationSec": 12,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Sam Lion",
+      "sourceUrl": "https://www.pexels.com/video/a-woman-holding-her-cat-while-using-smartphone-6000643/",
+      "slugText": "a woman holding her cat while using smartphone",
+      "foundByQuery": "woman sitting on sofa with cat at home",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand",
+        "pet-companion"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6000643/6000643-hd_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6000643/6000643-hd_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6000643/6000643-sd_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6000643/6000643-sd_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6000643/6000643-sd_426_240_24fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 23.98
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7900244",
+      "mediaType": "video",
+      "durationSec": 56,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/healthy-person-woman-laptop-7900244/",
+      "slugText": "healthy person woman laptop",
+      "foundByQuery": "woman sitting on sofa with cat at home",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7900244/7900244-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7900244/7900244-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7900244/7900244-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7900244/7900244-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7343022",
+      "mediaType": "video",
+      "durationSec": 53,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/person-talking-through-video-call-7343022/",
+      "slugText": "person talking through video call",
+      "foundByQuery": "man sitting in armchair at home with dog",
+      "hardRejects": [
+        "work, study or productivity activity on display",
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7343022/7343022-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7343022/7343022-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7343022/7343022-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7343022/7343022-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7856539",
+      "mediaType": "video",
+      "durationSec": 16,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/man-playing-video-game-7856539/",
+      "slugText": "man playing video game",
+      "foundByQuery": "person standing in a room at home idle",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "leaning-or-reclining"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7856539/7856539-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7856539/7856539-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7856539/7856539-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7856539/7856539-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8860237",
+      "mediaType": "video",
+      "durationSec": 30,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/a-silhouette-of-a-man-standing-up-8860237/",
+      "slugText": "a silhouette of a man standing up",
+      "foundByQuery": "person standing in a room at home idle",
+      "hardRejects": [
+        "conspicuously cinematic or staged framing"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8860237/8860237-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8860237/8860237-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8860237/8860237-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8860237/8860237-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "9902187",
+      "mediaType": "video",
+      "durationSec": 25,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Ron Lach",
+      "sourceUrl": "https://www.pexels.com/video/tv-with-static-and-man-looking-through-window-9902187/",
+      "slugText": "tv with static and man looking through window",
+      "foundByQuery": "person standing in a room at home idle",
+      "hardRejects": [
+        "consumes attention on a display"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/9902187/9902187-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9902187/9902187-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9902187/9902187-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/9902187/9902187-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7935026",
+      "mediaType": "video",
+      "durationSec": 20,
+      "width": 4096,
+      "height": 2160,
+      "creator": "ArtHouse Studio",
+      "sourceUrl": "https://www.pexels.com/video/footage-of-women-in-a-room-talking-7935026/",
+      "slugText": "footage of women in a room talking",
+      "foundByQuery": "person standing in a room at home idle",
+      "hardRejects": [
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7935026/7935026-hd_1366_720_24fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7935026/7935026-sd_960_506_24fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7935026/7935026-sd_640_338_24fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7935026/7935026-sd_426_226_24fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 23.98
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6951596",
+      "mediaType": "video",
+      "durationSec": 84,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/woman-smoking-a-cigarette-6951596/",
+      "slugText": "woman smoking a cigarette",
+      "foundByQuery": "person standing in a room at home idle",
+      "hardRejects": [
+        "conspicuously cinematic or staged framing"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6951596/6951596-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6951596/6951596-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6951596/6951596-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6951596/6951596-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "10839351",
+      "mediaType": "video",
+      "durationSec": 13,
+      "width": 4096,
+      "height": 2160,
+      "creator": "Midtrack -",
+      "sourceUrl": "https://www.pexels.com/video/person-woman-office-working-10839351/",
+      "slugText": "person woman office working",
+      "foundByQuery": "person sitting on chair at home with cat",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "studio-or-corporate"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/10839351/10839351-hd_1366_720_30fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/10839351/10839351-sd_960_506_30fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/10839351/10839351-sd_640_338_30fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 30
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8572411",
+      "mediaType": "video",
+      "durationSec": 36,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/man-sitting-on-sofa-looking-at-camera-8572411/",
+      "slugText": "man sitting on sofa looking at camera",
+      "foundByQuery": "man sitting on a couch at home in daylight",
+      "hardRejects": [
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [],
+      "signals": [
+        "ordinary domestic room",
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8572411/8572411-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8572411/8572411-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8572411/8572411-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8572411/8572411-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "10374922",
+      "mediaType": "video",
+      "durationSec": 13,
+      "width": 3840,
+      "height": 2160,
+      "creator": "RDNE Stock project",
+      "sourceUrl": "https://www.pexels.com/video/man-working-on-laptop-and-looking-at-phone-10374922/",
+      "slugText": "man working on laptop and looking at phone",
+      "foundByQuery": "man sitting on a couch at home in daylight",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/10374922/10374922-hd_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/10374922/10374922-hd_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/10374922/10374922-sd_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/10374922/10374922-sd_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 24
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/10374922/10374922-sd_426_240_24fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 24
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8572182",
+      "mediaType": "video",
+      "durationSec": 43,
+      "width": 4096,
+      "height": 2160,
+      "creator": "cottonbro studio",
+      "sourceUrl": "https://www.pexels.com/video/man-using-laptop-and-having-a-phone-call-8572182/",
+      "slugText": "man using laptop and having a phone call",
+      "foundByQuery": "man sitting on a couch at home in daylight",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8572182/8572182-hd_1366_720_25fps.mp4",
+          "width": 1366,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8572182/8572182-sd_960_506_25fps.mp4",
+          "width": 960,
+          "height": 506,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8572182/8572182-sd_640_338_25fps.mp4",
+          "width": 640,
+          "height": 338,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8572182/8572182-sd_426_226_25fps.mp4",
+          "width": 426,
+          "height": 226,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6633336",
+      "mediaType": "video",
+      "durationSec": 12,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Cup of  Couple",
+      "sourceUrl": "https://www.pexels.com/video/a-man-typing-his-card-information-on-his-laptop-6633336/",
+      "slugText": "a man typing his card information on his laptop",
+      "foundByQuery": "man sitting on a couch at home in daylight",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6633336/6633336-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6633336/6633336-hd_1280_720_50fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 50
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6633336/6633336-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6633336/6633336-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6633336/6633336-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "5197679",
+      "mediaType": "video",
+      "durationSec": 17,
+      "width": 3840,
+      "height": 2160,
+      "creator": "Tima Miroshnichenko",
+      "sourceUrl": "https://www.pexels.com/video/a-man-reading-the-newspaper-5197679/",
+      "slugText": "a man reading the newspaper",
+      "foundByQuery": "man sitting on a couch at home in daylight",
+      "hardRejects": [
+        "retirement-lifestyle or aspirational advertising styling"
+      ],
+      "softFlags": [
+        "prop-in-hand",
+        "reading-or-attention"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/5197679/5197679-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/5197679/5197679-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/5197679/5197679-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/5197679/5197679-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/5197679/5197679-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "6306258",
+      "mediaType": "video",
+      "durationSec": 10,
+      "width": 2688,
+      "height": 1512,
+      "creator": "Kampus Production",
+      "sourceUrl": "https://www.pexels.com/video/a-man-having-a-video-call-on-his-smartphone-6306258/",
+      "slugText": "a man having a video call on his smartphone",
+      "foundByQuery": "man sitting on a couch at home in daylight",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/6306258/6306258-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6306258/6306258-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6306258/6306258-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6306258/6306258-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/6306258/6306258-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "34555817",
+      "mediaType": "video",
+      "durationSec": 10,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Caleb Oquendo",
+      "sourceUrl": "https://www.pexels.com/video/woman-relaxing-in-spa-while-hair-is-styled-34555817/",
+      "slugText": "woman relaxing in spa while hair is styled",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [
+        "retirement-lifestyle or aspirational advertising styling"
+      ],
+      "softFlags": [
+        "leaning-or-reclining"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/34555817/14641628_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": null,
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/34555817/14641627_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": null,
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/34555817/14641626_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": null,
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/34555817/14641625_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": null,
+          "fps": 23.98
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7585108",
+      "mediaType": "video",
+      "durationSec": 18,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Mikhail Nilov",
+      "sourceUrl": "https://www.pexels.com/video/person-sitting-by-the-window-and-having-a-video-call-7585108/",
+      "slugText": "person sitting by the window and having a video call",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [],
+      "signals": [
+        "unposed ordinary body",
+        "nothing-to-do beat"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7585108/7585108-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7585108/7585108-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7585108/7585108-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7585108/7585108-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7585108/7585108-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "7218651",
+      "mediaType": "video",
+      "durationSec": 17,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Thirdman",
+      "sourceUrl": "https://www.pexels.com/video/woman-using-a-smartphone-7218651/",
+      "slugText": "woman using a smartphone",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/7218651/7218651-hd_1920_1080_25fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7218651/7218651-hd_1280_720_25fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7218651/7218651-sd_960_540_25fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7218651/7218651-sd_640_360_25fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 25
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/7218651/7218651-sd_426_240_25fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 25
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "8810550",
+      "mediaType": "video",
+      "durationSec": 15,
+      "width": 1920,
+      "height": 1080,
+      "creator": "Los Muertos Crew",
+      "sourceUrl": "https://www.pexels.com/video/woman-in-a-bedroom-using-a-phone-8810550/",
+      "slugText": "woman in a bedroom using a phone",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [
+        "work, study or productivity activity on display"
+      ],
+      "softFlags": [
+        "prop-in-hand"
+      ],
+      "signals": [
+        "ordinary domestic room"
+      ],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/8810550/8810550-hd_1920_1080_24fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8810550/8810550-hd_1280_720_24fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8810550/8810550-sd_960_540_24fps.mp4",
+          "width": 960,
+          "height": 540,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8810550/8810550-sd_640_360_24fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 23.98
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/8810550/8810550-sd_426_240_24fps.mp4",
+          "width": 426,
+          "height": 240,
+          "quality": "sd",
+          "fps": 23.98
+        }
+      ],
+      "pageVerified": false
+    },
+    {
+      "pexelsId": "852303",
+      "mediaType": "video",
+      "durationSec": 15,
+      "width": 1920,
+      "height": 1080,
+      "creator": "BRoll.io",
+      "sourceUrl": "https://www.pexels.com/video/woman-drinking-coffee-and-talking-with-her-boyfriend-852303/",
+      "slugText": "woman drinking coffee and talking with her boyfriend",
+      "foundByQuery": "person resting in a chair at home in the morning",
+      "hardRejects": [
+        "addressing an audience / direct to camera"
+      ],
+      "softFlags": [
+        "food-or-drink"
+      ],
+      "signals": [],
+      "videoFiles": [
+        {
+          "link": "https://videos.pexels.com/video-files/852303/852303-hd_1920_1080_30fps.mp4",
+          "width": 1920,
+          "height": 1080,
+          "quality": "hd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/852303/852303-hd_1280_720_30fps.mp4",
+          "width": 1280,
+          "height": 720,
+          "quality": "hd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/852303/852303-sd_640_360_30fps.mp4",
+          "width": 640,
+          "height": 360,
+          "quality": "sd",
+          "fps": 30
+        },
+        {
+          "link": "https://videos.pexels.com/video-files/852303/852303-sd_480_270_30fps.mp4",
+          "width": 480,
+          "height": 270,
+          "quality": "sd",
+          "fps": 30
+        }
+      ],
+      "pageVerified": false
+    }
+  ],
+  "screenPool": {
+    "file": "D:/Git/video-factory/projects/ESSY-0005/sourcing/N015-S2-screen.json",
+    "queries": [
+      "man sitting alone in a room at home",
+      "person sitting in a living room at home doing nothing",
+      "elderly man sitting in an ordinary room",
+      "senior man sitting in a chair at home",
+      "man sitting on a sofa at home in the daytime",
+      "woman sitting at home in the afternoon",
+      "man sitting in a quiet room at home",
+      "person sitting in a plain room at home",
+      "older man sitting in his home doing nothing",
+      "man sitting at home with his hands on his knees"
+    ],
+    "counts": {
+      "searched": 399,
+      "rejected": 380,
+      "survived": 16
+    },
+    "evidenceChannels": [
+      "api alt text",
+      "asset page slug",
+      "neighbouring-id shoot context"
+    ]
+  },
+  "stageB": {
+    "method": "dual-channel content verification: the API alt text, the asset page slug, and the alt texts of neighbouring asset ids from the same shoot",
+    "note": "alt text alone is not trustworthy: for pexels 15092704 the alt text reads 'An elderly man sits comfortably in a rustic room, exuding calmness' while the asset slug is 'man-sitting-on-armchair-and-smoking'. The slug and the same-shoot context are what exposed that, and what confirmed that pexels 30736847 is a studio portrait series.",
+    "verifiedFinalists": [
+      {
+        "channel": "pexels api alt text",
+        "value": "Elderly man with glasses sitting in an armchair in a warmly lit room."
+      },
+      {
+        "channel": "pexels asset page slug",
+        "value": "an-elderly-man-in-brown-long-sleeves-sitting-on-the-chair"
+      },
+      {
+        "channel": "same-shoot context (neighbouring ids)",
+        "value": "7113137 'An elderly man sitting comfortably indoors, bathed in natural light, creating a serene atmosphere' (hand detail of the same man). Other ids in the block are unrelated general interiors (a plain bathroom, a boy and a dog on a pier, a sleeping cat), so this asset is not part of a mood, health or marketing campaign - there is no surrounding story that would load the frame with a meaning the narration does not carry."
+      },
+      {
+        "channel": "pexels api metadata",
+        "value": "5468x3645 (aspect 1.50, so the 16:9 cover crop trims about 7.8% of the height from each end, less than the cut's existing still N011-S2 at 12.5% per end), average colour #534B45 (a warm, low-key interior tone - note this is darker and warmer than a neutral daylight room, which is consistent with the uploader's word 'warmly lit' and is recorded here rather than glossed over), photographer cottonbro studio, Pexels License."
+      }
+    ],
+    "rejectedFinalists": [
+      {
+        "pexelsId": "16940174",
+        "kind": "outgoing asset",
+        "reason": "pexels 16940174 'a man sitting on a couch with a dog' - the shot that carries the wallet; this is the exception being fixed."
+      },
+      {
+        "pexelsId": 30736847,
+        "reason": "alt 'A man in casual attire sitting on a stool in a well-lit room' was the only fully neutral description found, but its page slug is 'casual-portrait-of-man-seated-indoors' and the neighbouring ids of the same session are a studio portrait set ('A relaxed young man sitting casually on a chair in a brightly lit studio setting', 'A relaxed pose of an adult man in casual attire inside a bright room', portrait orientations, flat grey average colours). A studio portrait is staged and photographed, which contradicts 'unphotogenic by design' and would break the cut's documentary register."
+      },
+      {
+        "pexelsId": 15092704,
+        "reason": "alt 'An elderly man sits comfortably in a rustic room, exuding calmness' but its page slug is 'man-sitting-on-armchair-and-smoking'. Hidden smoking, which this film forbids."
+      },
+      {
+        "pexelsId": 11769021,
+        "reason": "'A senior woman with glasses, resting on a porch chair at home' sits inside a neighbouring series about a widowed man holding a photo of his late wife - a grief framing."
+      },
+      {
+        "pexelsId": 10335151,
+        "reason": "'A bearded man in a blazer sitting on a comfortable sofa in a well-lit living room' - a blazer reads as dressed for an occasion, which puts something on display."
+      },
+      {
+        "pexelsId": 7614402,
+        "reason": "page description 'A stylish modern living room with a focus on floral decor and a man relaxing', tags 'Minimalist Interior', 'Modern Apartment Interior', 'Home Aesthetic' - interior-design advertising styling."
+      },
+      {
+        "pexelsId": 7226917,
+        "reason": "'man enjoys leisure time on a sofa, using a smartphone and headphones' - screen activity and headphones; a task."
+      },
+      {
+        "pexelsId": 7226845,
+        "reason": "'Man in pajamas lounging on a sofa with headphones', tags 'Relaxing', 'Exhaustion', 'Tired Man', 'Deep Breathing' - exhaustion framing implies something is wrong."
+      },
+      {
+        "pexelsId": 7217941,
+        "reason": "'A woman enjoys sewing as a hobby' - a task in progress, with tags 'Taking Pills' and 'Woman Sitting Alone'."
+      },
+      {
+        "pexelsId": 853751,
+        "reason": "'A contemplative man on a park bench overlooking a bustling cityscape', tags 'Lonely Man', 'Sad Man Sitting Alone', 'Solitude', 'Contemplation', 'Thinking Alone'."
+      },
+      {
+        "pexelsId": 7761104,
+        "reason": "tags 'Depressed Woman', 'Frustrated', 'Worried'."
+      },
+      {
+        "pexelsId": 7966848,
+        "reason": "'relaxing in a modern office' - a workplace."
+      },
+      {
+        "pexelsId": 5227406,
+        "reason": "'A person writes in a notebook with a dog beside them on a couch' - a task, and it repeats the notebook vocabulary of N015-S1."
+      },
+      {
+        "pexelsId": 7297315,
+        "reason": "'A woman pets her two dogs while sitting on a cozy sofa at home' - 'cozy' is the retirement-advertising register the exception rules out."
+      },
+      {
+        "pexelsId": 5336888,
+        "reason": "'Side view of a bearded man wearing glasses, sitting indoors in a casual setting' but its neighbouring ids are a counselling and therapy campaign."
+      },
+      {
+        "pexelsId": 7699364,
+        "reason": "'A person in a knitted sweater with folded hands sitting indoors on a couch' but its neighbouring ids are a bruised-face and wound concept series."
+      },
+      {
+        "pexelsId": 36670966,
+        "reason": "'A man comfortably sitting on a sofa indoors' with average colour #31302E and a sibling described as 'in a dimly lit atmosphere' - too dark and moody."
+      },
+      {
+        "pexelsId": 11372940,
+        "reason": "'for relaxed portrait', siblings 'moody black and white setting', 'Pensive bearded man', smartphone shots - monochrome pensive portraiture."
+      },
+      {
+        "pexelsId": 27504078,
+        "reason": "'Senior man sitting in a warm, homey kitchen', siblings show a styled modern kitchen with utensils - lifestyle styling."
+      }
+    ]
+  },
+  "selection": {
+    "slotId": "N015-S2",
+    "pexelsId": "7113136",
+    "mediaType": "photo",
+    "sourceUrl": "https://www.pexels.com/photo/an-elderly-man-in-brown-long-sleeves-sitting-on-the-chair-7113136/",
+    "altText": "Elderly man with glasses sitting in an armchair in a warmly lit room.",
+    "creator": "cottonbro studio",
+    "creatorUrl": "https://www.pexels.com/@cottonbro",
+    "downloadUrl": "https://images.pexels.com/photos/7113136/pexels-photo-7113136.jpeg",
+    "width": 5468,
+    "height": 3645,
+    "aspectRatio": 1.5001,
+    "coverHeightLossPct": 18.5,
+    "avgColor": "#534B45",
+    "localName": "N015-S2-pexels-7113136.jpg",
+    "inPointSec": 0,
+    "sourceDurationSec": null,
+    "usableSec": null,
+    "fileSizeBytes": 1302271,
+    "sha256": "7cdfb0060743668ae57929701d0f3e08e4798dc958cbda9afdfc0eb0d7160e8f",
+    "editorialBeat": "nothing to prove",
+    "rationale": "A person is in a room and nothing is being asked of them. An older man sits in an armchair in an ordinary, warmly lit domestic room with nothing in his hands and nothing arranged around him: no device to work, no document to sign, no meal to finish, no occasion to be dressed for, no money or paperwork anywhere in the frame. The shot therefore cannot propose that anything is owed, missing or at risk - which is the whole point of this beat. Because there is no task, no audience and no result on display, there is nothing for the frame to prove either, so doing nothing is simply what an ordinary afternoon looks like. It is unremarkable on purpose: no styled interior, no product, no performance, no drama. Concretely against the exception: no wallet, cash, bills or financial difficulty (the outgoing shot's problem); no work, study or productivity activity and nothing accomplished on display; no visible sadness, loneliness or defeat - the posture is ordinary rest, not collapse, and nothing in the room signals a problem; no medical or caregiving imagery; no celebration, reward or retirement-lifestyle advertising (a plain room and a plain armchair, no styling, no luxury, no product); and no conspicuously cinematic or aspirational framing. Register-wise it is also the right shape here: N015-S1 is the same person at a desk full of apparatus not required to touch, and this shot is the plain-room counterpart with nothing to pick up.",
+    "whyThisMedium": "Content could be verified before it entered the cut. The exception this shot replaces was caused by an in-frame object that the sourcing record never described (the wallet), so the replacement was verified through three independent channels on the Pexels API: the asset's own alt text, its page slug, and the alt texts of the neighbouring asset ids that belong to the same shoot. A still also makes that verification complete - there is no unobserved in-shot action inside the 6.667s. Stills are an established treatment in this cut: N011-S2 is already a still slot under the NO_MOTION_STILLS gate, and the v07 motion-QA re-verifies it with the same ssim >= 0.98 / blend-diff Y <= 4.0 test used for every still in the film.",
+    "pageEvidence": [
+      {
+        "channel": "pexels api alt text",
+        "value": "Elderly man with glasses sitting in an armchair in a warmly lit room."
+      },
+      {
+        "channel": "pexels asset page slug",
+        "value": "an-elderly-man-in-brown-long-sleeves-sitting-on-the-chair"
+      },
+      {
+        "channel": "same-shoot context (neighbouring ids)",
+        "value": "7113137 'An elderly man sitting comfortably indoors, bathed in natural light, creating a serene atmosphere' (hand detail of the same man). Other ids in the block are unrelated general interiors (a plain bathroom, a boy and a dog on a pier, a sleeping cat), so this asset is not part of a mood, health or marketing campaign - there is no surrounding story that would load the frame with a meaning the narration does not carry."
+      },
+      {
+        "channel": "pexels api metadata",
+        "value": "5468x3645 (aspect 1.50, so the 16:9 cover crop trims about 7.8% of the height from each end, less than the cut's existing still N011-S2 at 12.5% per end), average colour #534B45 (a warm, low-key interior tone - note this is darker and warmer than a neutral daylight room, which is consistent with the uploader's word 'warmly lit' and is recorded here rather than glossed over), photographer cottonbro studio, Pexels License."
+      }
+    ],
+    "residualRisks": [
+      "The uploader's alt text says 'warmly lit' and the neighbouring shot says 'serene', and the asset's own average colour (#534B45) is a warm low-key interior tone rather than a neutral daylight one. That is warmer and moodier than strictly neutral. It is not lifestyle advertising - no styling, product, luxury or aspirational framing appears in the asset or its shoot - and the cut already carries a dark warm interior still at N011-S2 (average colour #242021), so this reads as the same kind of room light rather than a new register. A reviewer who wants a flatter, brighter room should say so at Gate 2; that was the one criterion this asset could not satisfy, because the only asset with a fully neutral description (30736847) turned out to be a studio portrait set.",
+      "An older subject seated in an armchair sits one step away from the retirement cliche. It is kept out by the plain room and the absence of any display or treat, and by the film's existing rule that no shot may look like it is selling retirement.",
+      "The person's age is not specified beyond 'elderly man' in the alt text and 'an elderly man' in the slug, so no narrower age can be claimed.",
+      "Pexels served HTTP 403 for every page-level fetch of candidate asset pages during this pass, so the uploader's page topic tags could not be read for this asset. Verification rests on the three API channels above instead.",
+      "The frame itself was never visually inspected by the agent. Content evidence is textual (alt text, slug, same-shoot context), which is why a still was chosen over a video: a still has no unobserved action inside its 6.667s."
+    ],
+    "rejectedFinalists": [
+      {
+        "pexelsId": "16940174",
+        "kind": "outgoing asset",
+        "reason": "pexels 16940174 'a man sitting on a couch with a dog' - the shot that carries the wallet; this is the exception being fixed."
+      },
+      {
+        "pexelsId": 30736847,
+        "reason": "alt 'A man in casual attire sitting on a stool in a well-lit room' was the only fully neutral description found, but its page slug is 'casual-portrait-of-man-seated-indoors' and the neighbouring ids of the same session are a studio portrait set ('A relaxed young man sitting casually on a chair in a brightly lit studio setting', 'A relaxed pose of an adult man in casual attire inside a bright room', portrait orientations, flat grey average colours). A studio portrait is staged and photographed, which contradicts 'unphotogenic by design' and would break the cut's documentary register."
+      },
+      {
+        "pexelsId": 15092704,
+        "reason": "alt 'An elderly man sits comfortably in a rustic room, exuding calmness' but its page slug is 'man-sitting-on-armchair-and-smoking'. Hidden smoking, which this film forbids."
+      },
+      {
+        "pexelsId": 11769021,
+        "reason": "'A senior woman with glasses, resting on a porch chair at home' sits inside a neighbouring series about a widowed man holding a photo of his late wife - a grief framing."
+      },
+      {
+        "pexelsId": 10335151,
+        "reason": "'A bearded man in a blazer sitting on a comfortable sofa in a well-lit living room' - a blazer reads as dressed for an occasion, which puts something on display."
+      },
+      {
+        "pexelsId": 7614402,
+        "reason": "page description 'A stylish modern living room with a focus on floral decor and a man relaxing', tags 'Minimalist Interior', 'Modern Apartment Interior', 'Home Aesthetic' - interior-design advertising styling."
+      },
+      {
+        "pexelsId": 7226917,
+        "reason": "'man enjoys leisure time on a sofa, using a smartphone and headphones' - screen activity and headphones; a task."
+      },
+      {
+        "pexelsId": 7226845,
+        "reason": "'Man in pajamas lounging on a sofa with headphones', tags 'Relaxing', 'Exhaustion', 'Tired Man', 'Deep Breathing' - exhaustion framing implies something is wrong."
+      },
+      {
+        "pexelsId": 7217941,
+        "reason": "'A woman enjoys sewing as a hobby' - a task in progress, with tags 'Taking Pills' and 'Woman Sitting Alone'."
+      },
+      {
+        "pexelsId": 853751,
+        "reason": "'A contemplative man on a park bench overlooking a bustling cityscape', tags 'Lonely Man', 'Sad Man Sitting Alone', 'Solitude', 'Contemplation', 'Thinking Alone'."
+      },
+      {
+        "pexelsId": 7761104,
+        "reason": "tags 'Depressed Woman', 'Frustrated', 'Worried'."
+      },
+      {
+        "pexelsId": 7966848,
+        "reason": "'relaxing in a modern office' - a workplace."
+      },
+      {
+        "pexelsId": 5227406,
+        "reason": "'A person writes in a notebook with a dog beside them on a couch' - a task, and it repeats the notebook vocabulary of N015-S1."
+      },
+      {
+        "pexelsId": 7297315,
+        "reason": "'A woman pets her two dogs while sitting on a cozy sofa at home' - 'cozy' is the retirement-advertising register the exception rules out."
+      },
+      {
+        "pexelsId": 5336888,
+        "reason": "'Side view of a bearded man wearing glasses, sitting indoors in a casual setting' but its neighbouring ids are a counselling and therapy campaign."
+      },
+      {
+        "pexelsId": 7699364,
+        "reason": "'A person in a knitted sweater with folded hands sitting indoors on a couch' but its neighbouring ids are a bruised-face and wound concept series."
+      },
+      {
+        "pexelsId": 36670966,
+        "reason": "'A man comfortably sitting on a sofa indoors' with average colour #31302E and a sibling described as 'in a dimly lit atmosphere' - too dark and moody."
+      },
+      {
+        "pexelsId": 11372940,
+        "reason": "'for relaxed portrait', siblings 'moody black and white setting', 'Pensive bearded man', smartphone shots - monochrome pensive portraiture."
+      },
+      {
+        "pexelsId": 27504078,
+        "reason": "'Senior man sitting in a warm, homey kitchen', siblings show a styled modern kitchen with utensils - lifestyle styling."
+      }
+    ],
+    "screeningSummary": {
+      "sources": "Pexels only, as used by the rest of this cut.",
+      "passes": "about 1,500 photo and video results were screened across roughly 40 queries on two channels (API alt text and asset page slug), after first narrowing to the slot's meaning with editorial queries derived from the approved storyboard intent.",
+      "finding": "There is effectively no unstaged 'person alone, doing nothing' image on this provider: every one is sold as either a mood (thoughtful, contemplative, alone, tired, dim) or a lifestyle (cozy, comfortable, warm, styled). The replacement was therefore chosen as the single asset whose description carries no mood word, no task, no prop, no status object and no styling, and whose shoot context confirms it was not produced for a mood, health or marketing campaign.",
+      "verificationLimit": "Pexels returned HTTP 403 for all page-level fetches during this pass, so uploader topic tags could not be read. Alt text, page slug and same-shoot context were used instead. This is recorded here rather than papered over: the slug channel is what exposed the smoking shot (15092704) that the alt text had hidden."
+    },
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "officialApproval": "none - provisional only. Gate 2 and PACKAGE remain unapproved. No workflow state written.",
+    "adjudicatedAt": "2026-10-03T09:49:41.594Z"
+  }
+}

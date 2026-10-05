@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:01,270
+his world gradually became smaller.\N{\fs18}他的世界逐漸縮小。
+
+2
+00:00:02,250 --> 00:00:05,346
+He spent most of his time at home watching television.\N{\fs18}他大多數時間待在家看電視。
+
+3
+00:00:06,327 --> 00:00:09,693
+Health problems eventually made even going out difficult.\N{\fs18}健康問題最後連出門都變得困難。
+
+4
+00:00:10,673 --> 00:00:10,944
+My mother began showing signs of dementia after an accident.\N{\fs18}母親在一次意外後開始出現失智徵兆。

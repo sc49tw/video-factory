@@ -1,0 +1,15 @@
+1
+00:00:00,100 --> 00:00:01,805
+When I think about growing old,\N{\fs18}想到變老，
+
+2
+00:00:02,074 --> 00:00:04,049
+I don't have to imagine very much.\N{\fs18}我不用費力想像。
+
+3
+00:00:05,036 --> 00:00:07,124
+My grandmother had a stroke and spent\N{\fs18}我祖母中風，
+
+4
+00:00:07,138 --> 00:00:07,680
+more than ten years in a nursing home.\N{\fs18}在養護院度過了十多年。

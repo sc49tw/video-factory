@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,593
+I may need help getting through an ordinary day.\N{\fs18}我可能需要幫助才能過完平凡的一天。
+
+2
+00:00:03,573 --> 00:00:06,031
+I may no longer be able to read for hours\N{\fs18}我可能再也無法連續閱讀好幾個鐘頭
+
+3
+00:00:06,045 --> 00:00:08,431
+or sit in front of a laptop working on some\N{\fs18}或坐在筆電前
+
+4
+00:00:08,445 --> 00:00:10,633
+project that nobody asked me to do.\N{\fs18}做著沒人要求的專案。
+
+5
+00:00:11,613 --> 00:00:12,934
+All of that scares me.\N{\fs18}這一切都讓我害怕。

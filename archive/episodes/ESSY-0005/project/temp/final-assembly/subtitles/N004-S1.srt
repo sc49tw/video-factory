@@ -1,0 +1,35 @@
+1
+00:00:00,100 --> 00:00:01,279
+I can exercise,\N{\fs18}我可以運動，
+
+2
+00:00:01,449 --> 00:00:02,444
+watch what I eat,\N{\fs18}注意飲食，
+
+3
+00:00:02,685 --> 00:00:03,523
+and save enough\N{\fs18}存夠錢
+
+4
+00:00:03,538 --> 00:00:04,844
+money for retirement.\N{\fs18}準備退休。
+
+5
+00:00:05,831 --> 00:00:06,811
+But none of these can\N{\fs18}但這些都無法保證
+
+6
+00:00:06,826 --> 00:00:08,317
+guarantee what kind of old\N{\fs18}我會變成什麼樣的
+
+7
+00:00:08,331 --> 00:00:09,681
+person I will become.\N{\fs18}老人。
+
+8
+00:00:10,661 --> 00:00:12,706
+I may lose the ability to travel.\N{\fs18}我可能失去旅行的能力。
+
+9
+00:00:13,686 --> 00:00:13,920
+I may need help getting through an ordinary day.\N{\fs18}我可能需要幫助才能過完平凡的一天。

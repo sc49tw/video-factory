@@ -1,0 +1,524 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-002",
+  "blockId": "n002",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "e1e412139a4a7b4de069dca00239944968d6fa1bb813d2f3c9b401aec58c932b",
+    "matchesManifest": true,
+    "audioDurationSec": 40.512,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 100,
+    "lastWordEndSec": 39.51,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "When",
+      "startSec": 0.1,
+      "endSec": 0.341
+    },
+    {
+      "text": "I",
+      "startSec": 0.356,
+      "endSec": 0.455
+    },
+    {
+      "text": "think",
+      "startSec": 0.469,
+      "endSec": 0.711
+    },
+    {
+      "text": "about",
+      "startSec": 0.725,
+      "endSec": 1.038
+    },
+    {
+      "text": "growing",
+      "startSec": 1.052,
+      "endSec": 1.478
+    },
+    {
+      "text": "old",
+      "startSec": 1.492,
+      "endSec": 1.805
+    },
+    {
+      "text": "I",
+      "startSec": 2.074,
+      "endSec": 2.131
+    },
+    {
+      "text": "don't",
+      "startSec": 2.145,
+      "endSec": 2.387
+    },
+    {
+      "text": "have",
+      "startSec": 2.401,
+      "endSec": 2.586
+    },
+    {
+      "text": "to",
+      "startSec": 2.6,
+      "endSec": 2.728
+    },
+    {
+      "text": "imagine",
+      "startSec": 2.742,
+      "endSec": 3.225
+    },
+    {
+      "text": "very",
+      "startSec": 3.239,
+      "endSec": 3.509
+    },
+    {
+      "text": "much",
+      "startSec": 3.523,
+      "endSec": 4.049
+    },
+    {
+      "text": "My",
+      "startSec": 5.036,
+      "endSec": 5.306
+    },
+    {
+      "text": "grandmother",
+      "startSec": 5.32,
+      "endSec": 5.973
+    },
+    {
+      "text": "had",
+      "startSec": 5.987,
+      "endSec": 6.172
+    },
+    {
+      "text": "a",
+      "startSec": 6.186,
+      "endSec": 6.243
+    },
+    {
+      "text": "stroke",
+      "startSec": 6.257,
+      "endSec": 6.669
+    },
+    {
+      "text": "and",
+      "startSec": 6.684,
+      "endSec": 6.797
+    },
+    {
+      "text": "spent",
+      "startSec": 6.811,
+      "endSec": 7.124
+    },
+    {
+      "text": "more",
+      "startSec": 7.138,
+      "endSec": 7.28
+    },
+    {
+      "text": "than",
+      "startSec": 7.294,
+      "endSec": 7.465
+    },
+    {
+      "text": "ten",
+      "startSec": 7.479,
+      "endSec": 7.763
+    },
+    {
+      "text": "years",
+      "startSec": 7.777,
+      "endSec": 8.175
+    },
+    {
+      "text": "in",
+      "startSec": 8.189,
+      "endSec": 8.274
+    },
+    {
+      "text": "a",
+      "startSec": 8.289,
+      "endSec": 8.331
+    },
+    {
+      "text": "nursing",
+      "startSec": 8.345,
+      "endSec": 8.843
+    },
+    {
+      "text": "home",
+      "startSec": 8.857,
+      "endSec": 9.34
+    },
+    {
+      "text": "She",
+      "startSec": 10.32,
+      "endSec": 10.576
+    },
+    {
+      "text": "lost",
+      "startSec": 10.59,
+      "endSec": 10.888
+    },
+    {
+      "text": "the",
+      "startSec": 10.902,
+      "endSec": 11.016
+    },
+    {
+      "text": "ability",
+      "startSec": 11.03,
+      "endSec": 11.485
+    },
+    {
+      "text": "to",
+      "startSec": 11.499,
+      "endSec": 11.598
+    },
+    {
+      "text": "speak",
+      "startSec": 11.613,
+      "endSec": 12.081
+    },
+    {
+      "text": "and",
+      "startSec": 12.337,
+      "endSec": 12.465
+    },
+    {
+      "text": "much",
+      "startSec": 12.479,
+      "endSec": 12.72
+    },
+    {
+      "text": "of",
+      "startSec": 12.735,
+      "endSec": 12.82
+    },
+    {
+      "text": "her",
+      "startSec": 12.834,
+      "endSec": 13.033
+    },
+    {
+      "text": "ability",
+      "startSec": 13.047,
+      "endSec": 13.559
+    },
+    {
+      "text": "to",
+      "startSec": 13.573,
+      "endSec": 13.672
+    },
+    {
+      "text": "communicate",
+      "startSec": 13.686,
+      "endSec": 14.368
+    },
+    {
+      "text": "with",
+      "startSec": 14.382,
+      "endSec": 14.553
+    },
+    {
+      "text": "us",
+      "startSec": 14.567,
+      "endSec": 14.922
+    },
+    {
+      "text": "After",
+      "startSec": 15.902,
+      "endSec": 16.272
+    },
+    {
+      "text": "my",
+      "startSec": 16.286,
+      "endSec": 16.47
+    },
+    {
+      "text": "father",
+      "startSec": 16.485,
+      "endSec": 16.882
+    },
+    {
+      "text": "retired",
+      "startSec": 16.897,
+      "endSec": 17.507
+    },
+    {
+      "text": "his",
+      "startSec": 17.763,
+      "endSec": 17.919
+    },
+    {
+      "text": "world",
+      "startSec": 17.934,
+      "endSec": 18.303
+    },
+    {
+      "text": "gradually",
+      "startSec": 18.317,
+      "endSec": 18.828
+    },
+    {
+      "text": "became",
+      "startSec": 18.843,
+      "endSec": 19.283
+    },
+    {
+      "text": "smaller",
+      "startSec": 19.297,
+      "endSec": 19.894
+    },
+    {
+      "text": "He",
+      "startSec": 20.874,
+      "endSec": 21.087
+    },
+    {
+      "text": "spent",
+      "startSec": 21.101,
+      "endSec": 21.428
+    },
+    {
+      "text": "most",
+      "startSec": 21.442,
+      "endSec": 21.783
+    },
+    {
+      "text": "of",
+      "startSec": 21.797,
+      "endSec": 21.868
+    },
+    {
+      "text": "his",
+      "startSec": 21.882,
+      "endSec": 22.081
+    },
+    {
+      "text": "time",
+      "startSec": 22.095,
+      "endSec": 22.422
+    },
+    {
+      "text": "at",
+      "startSec": 22.436,
+      "endSec": 22.522
+    },
+    {
+      "text": "home",
+      "startSec": 22.536,
+      "endSec": 22.806
+    },
+    {
+      "text": "watching",
+      "startSec": 22.82,
+      "endSec": 23.246
+    },
+    {
+      "text": "television",
+      "startSec": 23.26,
+      "endSec": 23.97
+    },
+    {
+      "text": "Health",
+      "startSec": 24.951,
+      "endSec": 25.334
+    },
+    {
+      "text": "problems",
+      "startSec": 25.348,
+      "endSec": 25.86
+    },
+    {
+      "text": "eventually",
+      "startSec": 25.874,
+      "endSec": 26.399
+    },
+    {
+      "text": "made",
+      "startSec": 26.414,
+      "endSec": 26.74
+    },
+    {
+      "text": "even",
+      "startSec": 26.755,
+      "endSec": 27.024
+    },
+    {
+      "text": "going",
+      "startSec": 27.039,
+      "endSec": 27.436
+    },
+    {
+      "text": "out",
+      "startSec": 27.451,
+      "endSec": 27.649
+    },
+    {
+      "text": "difficult",
+      "startSec": 27.664,
+      "endSec": 28.317
+    },
+    {
+      "text": "My",
+      "startSec": 29.297,
+      "endSec": 29.539
+    },
+    {
+      "text": "mother",
+      "startSec": 29.553,
+      "endSec": 29.908
+    },
+    {
+      "text": "began",
+      "startSec": 29.922,
+      "endSec": 30.334
+    },
+    {
+      "text": "showing",
+      "startSec": 30.348,
+      "endSec": 30.703
+    },
+    {
+      "text": "signs",
+      "startSec": 30.718,
+      "endSec": 31.115
+    },
+    {
+      "text": "of",
+      "startSec": 31.13,
+      "endSec": 31.229
+    },
+    {
+      "text": "dementia",
+      "startSec": 31.243,
+      "endSec": 31.797
+    },
+    {
+      "text": "after",
+      "startSec": 31.811,
+      "endSec": 32.138
+    },
+    {
+      "text": "an",
+      "startSec": 32.152,
+      "endSec": 32.252
+    },
+    {
+      "text": "accident",
+      "startSec": 32.266,
+      "endSec": 32.919
+    },
+    {
+      "text": "On",
+      "startSec": 33.899,
+      "endSec": 34.127
+    },
+    {
+      "text": "days",
+      "startSec": 34.141,
+      "endSec": 34.567
+    },
+    {
+      "text": "when",
+      "startSec": 34.581,
+      "endSec": 34.737
+    },
+    {
+      "text": "she",
+      "startSec": 34.752,
+      "endSec": 34.894
+    },
+    {
+      "text": "doesn't",
+      "startSec": 34.908,
+      "endSec": 35.235
+    },
+    {
+      "text": "go",
+      "startSec": 35.249,
+      "endSec": 35.419
+    },
+    {
+      "text": "to",
+      "startSec": 35.434,
+      "endSec": 35.618
+    },
+    {
+      "text": "a",
+      "startSec": 35.632,
+      "endSec": 35.703
+    },
+    {
+      "text": "day",
+      "startSec": 35.718,
+      "endSec": 35.973
+    },
+    {
+      "text": "care",
+      "startSec": 35.987,
+      "endSec": 36.328
+    },
+    {
+      "text": "center",
+      "startSec": 36.343,
+      "endSec": 36.811
+    },
+    {
+      "text": "she",
+      "startSec": 37.024,
+      "endSec": 37.166
+    },
+    {
+      "text": "can",
+      "startSec": 37.181,
+      "endSec": 37.351
+    },
+    {
+      "text": "spend",
+      "startSec": 37.365,
+      "endSec": 37.72
+    },
+    {
+      "text": "hours",
+      "startSec": 37.735,
+      "endSec": 38.047
+    },
+    {
+      "text": "simply",
+      "startSec": 38.061,
+      "endSec": 38.431
+    },
+    {
+      "text": "sitting",
+      "startSec": 38.445,
+      "endSec": 38.843
+    },
+    {
+      "text": "in",
+      "startSec": 38.857,
+      "endSec": 38.942
+    },
+    {
+      "text": "a",
+      "startSec": 38.956,
+      "endSec": 39.013
+    },
+    {
+      "text": "chair",
+      "startSec": 39.027,
+      "endSec": 39.51
+    }
+  ]
+}

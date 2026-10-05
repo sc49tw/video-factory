@@ -1,0 +1,11 @@
+1
+00:00:00,100 --> 00:00:01,094
+When I look at them,\N{\fs18}看著他們，
+
+2
+00:00:01,307 --> 00:00:03,197
+my first reaction is simple:\N{\fs18}我的第一反應很單純：
+
+3
+00:00:04,184 --> 00:00:05,931
+I don't want to grow old like that.\N{\fs18}我不想以那種方式變老。

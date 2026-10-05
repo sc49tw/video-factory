@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:01,572
+For most of my life,\N{\fs18}人生大半，
+
+2
+00:00:01,573 --> 00:00:03,617
+the world has been sending\N{\fs18}世界都在向我輸入
+
+3
+00:00:03,618 --> 00:00:05,898
+things into me—books, places,\N{\fs18}書籍、地方、
+
+4
+00:00:05,899 --> 00:00:07,384
+people, questions, experiences.\N{\fs18}人、問題、經驗。

@@ -1,0 +1,4258 @@
+{
+ "thresholds": {
+  "zoomTotalPct": {
+   "review": 1.0,
+   "reject": 3.0
+  },
+  "panWidthPct": {
+   "review": 2.0,
+   "reject": 8.0
+  },
+  "shakePxPerPair": {
+   "review": 0.5,
+   "reject": 1.2
+  },
+  "rotDegTotal": {
+   "review": 0.4,
+   "reject": 1.2
+  }
+ },
+ "analysis": {
+  "res": "480x270",
+  "sampleFps": 10,
+  "grid": "4x3",
+  "searchRadiusPx": 6
+ },
+ "clips": [
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N001-S1-pexels-34374473.mp4",
+   "startSec": 0.0,
+   "durSec": 14.133,
+   "samples": 141,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.0,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -4.531,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -82.963,
+    -4.42
+   ],
+   "panWidthPct": 17.308,
+   "shakePxPerPair": 4.042,
+   "panSignFlips": [
+    0,
+    20
+   ],
+   "rotTotalDeg": 0.891,
+   "subjectResidualMedianPx": 2.201,
+   "subjectResidualMaxPx": 4.131,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -6.5,
+     "panY": -0.454,
+     "scale": -1.95262,
+     "rot": -1.93489,
+     "resid": 5.15
+    },
+    {
+     "t": 1.0,
+     "panX": -6.5,
+     "panY": 1.942,
+     "scale": -4.21592,
+     "rot": -1.94371,
+     "resid": 4.302
+    },
+    {
+     "t": 2.0,
+     "panX": -6.5,
+     "panY": -2.331,
+     "scale": 0.0,
+     "rot": 1.42242,
+     "resid": 5.145
+    },
+    {
+     "t": 3.0,
+     "panX": -6.5,
+     "panY": 2.694,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 6.17
+    },
+    {
+     "t": 4.0,
+     "panX": -6.5,
+     "panY": -1.361,
+     "scale": 0.69849,
+     "rot": 0.0,
+     "resid": 6.876
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": -4.51,
+     "scale": -0.31067,
+     "rot": 0.0,
+     "resid": 6.059
+    },
+    {
+     "t": 6.0,
+     "panX": -6.5,
+     "panY": -4.177,
+     "scale": 1.06779,
+     "rot": -4.39838,
+     "resid": 4.61
+    },
+    {
+     "t": 7.0,
+     "panX": -6.5,
+     "panY": -1.425,
+     "scale": 0.0,
+     "rot": -0.26664,
+     "resid": 3.492
+    },
+    {
+     "t": 8.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 1.1931,
+     "resid": 6.444
+    },
+    {
+     "t": 9.0,
+     "panX": -6.5,
+     "panY": 0.876,
+     "scale": 0.0,
+     "rot": 5.6401,
+     "resid": 5.153
+    },
+    {
+     "t": 10.0,
+     "panX": -6.5,
+     "panY": -2.268,
+     "scale": 5.19224,
+     "rot": 0.0,
+     "resid": 6.637
+    },
+    {
+     "t": 11.0,
+     "panX": 0.0,
+     "panY": -0.858,
+     "scale": 5.63457,
+     "rot": 0.0,
+     "resid": 5.213
+    },
+    {
+     "t": 12.0,
+     "panX": -4.963,
+     "panY": 0.952,
+     "scale": 4.76069,
+     "rot": 0.0,
+     "resid": 6.038
+    },
+    {
+     "t": 13.0,
+     "panX": -6.5,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 2.38825,
+     "resid": 6.125
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -4.53% across the used range (digital zoom / push-in, monotone=False)",
+    "composition drift 17.31% of frame width",
+    "non-monotonic camera wobble 4.04 px/pair (sign flips 0/20) - handheld signature",
+    "rotation +0.89 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 2.20 px)"
+   ],
+   "slotId": "N001-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N002-S1-pexels-5116401.mp4",
+   "startSec": 0.0,
+   "durSec": 8,
+   "samples": 77,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.086,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.0,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.0,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 2.742,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.457
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.959
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.977
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.661
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N002-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N002-S2-pexels-7200766.mp4",
+   "startSec": 0.0,
+   "durSec": 10.133,
+   "samples": 101,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.0,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.388,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -11.139,
+    -0.768
+   ],
+   "panWidthPct": 2.326,
+   "shakePxPerPair": 3.686,
+   "panSignFlips": [
+    8,
+    7
+   ],
+   "rotTotalDeg": -0.162,
+   "subjectResidualMedianPx": 0.329,
+   "subjectResidualMaxPx": 1.502,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -2.878,
+     "panY": 0.533,
+     "scale": -3.50085,
+     "rot": -0.83845,
+     "resid": 1.041
+    },
+    {
+     "t": 1.0,
+     "panX": 2.23,
+     "panY": 1.711,
+     "scale": -3.02426,
+     "rot": -0.92155,
+     "resid": 1.593
+    },
+    {
+     "t": 2.0,
+     "panX": -6.5,
+     "panY": -3.079,
+     "scale": 0.0,
+     "rot": -0.23848,
+     "resid": 0.952
+    },
+    {
+     "t": 3.0,
+     "panX": 5.271,
+     "panY": -6.5,
+     "scale": 1.6756,
+     "rot": 0.0,
+     "resid": 3.101
+    },
+    {
+     "t": 4.0,
+     "panX": -6.5,
+     "panY": -6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.06
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": -6.5,
+     "scale": 0.84319,
+     "rot": 0.50411,
+     "resid": 2.859
+    },
+    {
+     "t": 6.0,
+     "panX": 3.382,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.409
+    },
+    {
+     "t": 7.0,
+     "panX": 1.18,
+     "panY": 6.5,
+     "scale": -1.77541,
+     "rot": 0.0,
+     "resid": 1.161
+    },
+    {
+     "t": 8.0,
+     "panX": 5.675,
+     "panY": 3.916,
+     "scale": 2.98944,
+     "rot": -0.30435,
+     "resid": 1.158
+    },
+    {
+     "t": 9.0,
+     "panX": -6.5,
+     "panY": 2.65,
+     "scale": 1.8606,
+     "rot": 1.41671,
+     "resid": 2.068
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "sustained camera translation 2.33% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 3.69 px/pair (sign flips 8/7) - handheld signature"
+   ],
+   "slotId": "N002-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N002-S3-pexels-9902181.mp4",
+   "startSec": 0.0,
+   "durSec": 10.133,
+   "samples": 101,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.0,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.218,
+   "zoomMonotone": false,
+   "panNetPx": [
+    0.342,
+    -0.13
+   ],
+   "panWidthPct": 0.076,
+   "shakePxPerPair": 0.243,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.129,
+   "subjectResidualMedianPx": 0.809,
+   "subjectResidualMaxPx": 1.951,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.993,
+     "panY": -0.043,
+     "scale": -0.26295,
+     "rot": -0.08204,
+     "resid": 1.712
+    },
+    {
+     "t": 1.0,
+     "panX": 0.004,
+     "panY": -1.103,
+     "scale": -0.04872,
+     "rot": -0.01031,
+     "resid": 2.49
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.88,
+     "rot": 1.22796,
+     "resid": 2.902
+    },
+    {
+     "t": 3.0,
+     "panX": -0.26,
+     "panY": 0.844,
+     "scale": -0.22055,
+     "rot": -0.14057,
+     "resid": 1.842
+    },
+    {
+     "t": 4.0,
+     "panX": -0.537,
+     "panY": -0.32,
+     "scale": -0.76792,
+     "rot": -0.76761,
+     "resid": 1.761
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.15
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.6044,
+     "rot": 0.02169,
+     "resid": 1.876
+    },
+    {
+     "t": 7.0,
+     "panX": 0.066,
+     "panY": 0.0,
+     "scale": 0.40117,
+     "rot": -0.3016,
+     "resid": 1.054
+    },
+    {
+     "t": 8.0,
+     "panX": 0.076,
+     "panY": 0.493,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.174
+    },
+    {
+     "t": 9.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": -0.06289,
+     "rot": 0.35698,
+     "resid": 1.222
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 0.81 px)"
+   ],
+   "slotId": "N002-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N002-S4-pexels-7225752.mp4",
+   "startSec": 0.0,
+   "durSec": 10.133,
+   "samples": 101,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.0,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.166,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -0.873,
+    5.806
+   ],
+   "panWidthPct": 1.223,
+   "shakePxPerPair": 1.233,
+   "panSignFlips": [
+    3,
+    6
+   ],
+   "rotTotalDeg": 0.672,
+   "subjectResidualMedianPx": 0.118,
+   "subjectResidualMaxPx": 0.433,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.142,
+     "panY": 2.065,
+     "scale": -0.71449,
+     "rot": 1.18666,
+     "resid": 0.346
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": -0.73451,
+     "rot": 0.77088,
+     "resid": 0.425
+    },
+    {
+     "t": 2.0,
+     "panX": -2.055,
+     "panY": 1.134,
+     "scale": -0.38193,
+     "rot": -0.98511,
+     "resid": 0.308
+    },
+    {
+     "t": 3.0,
+     "panX": 3.899,
+     "panY": 1.475,
+     "scale": 0.37502,
+     "rot": -0.51558,
+     "resid": 0.569
+    },
+    {
+     "t": 4.0,
+     "panX": 4.881,
+     "panY": 2.088,
+     "scale": 0.62349,
+     "rot": 1.89772,
+     "resid": 1.349
+    },
+    {
+     "t": 5.0,
+     "panX": 2.701,
+     "panY": -1.888,
+     "scale": 0.52731,
+     "rot": 0.59187,
+     "resid": 0.435
+    },
+    {
+     "t": 6.0,
+     "panX": 2.812,
+     "panY": -3.733,
+     "scale": 0.38371,
+     "rot": -0.21274,
+     "resid": 0.404
+    },
+    {
+     "t": 7.0,
+     "panX": -4.596,
+     "panY": 2.633,
+     "scale": 0.06222,
+     "rot": -1.11866,
+     "resid": 0.892
+    },
+    {
+     "t": 8.0,
+     "panX": -6.5,
+     "panY": 3.012,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.256
+    },
+    {
+     "t": 9.0,
+     "panX": -1.873,
+     "panY": -0.982,
+     "scale": 0.25854,
+     "rot": -0.0309,
+     "resid": 2.432
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "non-monotonic camera wobble 1.23 px/pair (sign flips 3/6) - handheld signature",
+    "rotation +0.67 deg across the used range"
+   ],
+   "slotId": "N002-S4"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N003-S1-ai-N003-S1_AI_v01.mp4",
+   "startSec": 0.0,
+   "durSec": 6.533,
+   "samples": 65,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.067,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.0,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.0,
+   "subjectResidualMedianPx": 0.056,
+   "subjectResidualMaxPx": 1.465,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.802
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.579
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.761
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N003-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N003-S2-pexels-34374462.mp4",
+   "startSec": 0.0,
+   "durSec": 6.533,
+   "samples": 65,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.067,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.224,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -0.635,
+    -6.802
+   ],
+   "panWidthPct": 1.423,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.269,
+   "subjectResidualMedianPx": 0.255,
+   "subjectResidualMaxPx": 1.486,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.723,
+     "panY": -3.071,
+     "scale": -0.1585,
+     "rot": 0.00411,
+     "resid": 2.376
+    },
+    {
+     "t": 1.0,
+     "panX": 0.223,
+     "panY": -2.236,
+     "scale": 0.05287,
+     "rot": -0.35328,
+     "resid": 2.214
+    },
+    {
+     "t": 2.0,
+     "panX": -0.096,
+     "panY": -1.07,
+     "scale": -0.09772,
+     "rot": -0.24748,
+     "resid": 1.88
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": -0.30125,
+     "rot": 1.19108,
+     "resid": 2.771
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.893
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.207
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N003-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N004-S2-pexels-6848413.mp4",
+   "startSec": 0.0,
+   "durSec": 13.933,
+   "samples": 139,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.062,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 25.692,
+   "zoomMonotone": false,
+   "panNetPx": [
+    23.056,
+    -33.438
+   ],
+   "panWidthPct": 8.462,
+   "shakePxPerPair": 1.68,
+   "panSignFlips": [
+    6,
+    10
+   ],
+   "rotTotalDeg": -0.432,
+   "subjectResidualMedianPx": 0.305,
+   "subjectResidualMaxPx": 0.529,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 6.5,
+     "panY": -0.595,
+     "scale": -1.35868,
+     "rot": 0.09656,
+     "resid": 0.69
+    },
+    {
+     "t": 1.0,
+     "panX": -2.398,
+     "panY": -4.962,
+     "scale": -4.05557,
+     "rot": 0.0,
+     "resid": 1.313
+    },
+    {
+     "t": 2.0,
+     "panX": 3.256,
+     "panY": -2.345,
+     "scale": -4.9621,
+     "rot": 0.75314,
+     "resid": 1.086
+    },
+    {
+     "t": 3.0,
+     "panX": -0.951,
+     "panY": -2.304,
+     "scale": -5.49133,
+     "rot": 0.0,
+     "resid": 1.621
+    },
+    {
+     "t": 4.0,
+     "panX": 0.658,
+     "panY": -1.849,
+     "scale": -4.52143,
+     "rot": 0.84208,
+     "resid": 1.602
+    },
+    {
+     "t": 5.0,
+     "panX": 2.374,
+     "panY": -2.506,
+     "scale": -4.54526,
+     "rot": -0.15936,
+     "resid": 0.797
+    },
+    {
+     "t": 6.0,
+     "panX": 4.97,
+     "panY": -3.369,
+     "scale": -4.01383,
+     "rot": -0.93929,
+     "resid": 1.273
+    },
+    {
+     "t": 7.0,
+     "panX": 0.789,
+     "panY": -0.737,
+     "scale": -6.35414,
+     "rot": 0.0,
+     "resid": 1.239
+    },
+    {
+     "t": 8.0,
+     "panX": 1.277,
+     "panY": -3.169,
+     "scale": -5.80203,
+     "rot": -0.76609,
+     "resid": 1.517
+    },
+    {
+     "t": 9.0,
+     "panX": 1.479,
+     "panY": -6.5,
+     "scale": -4.45735,
+     "rot": -0.01524,
+     "resid": 1.864
+    },
+    {
+     "t": 10.0,
+     "panX": 0.614,
+     "panY": -5.051,
+     "scale": -3.61801,
+     "rot": 0.82742,
+     "resid": 1.238
+    },
+    {
+     "t": 11.0,
+     "panX": 2.666,
+     "panY": 0.0,
+     "scale": -4.15258,
+     "rot": -0.84111,
+     "resid": 1.259
+    },
+    {
+     "t": 12.0,
+     "panX": 0.486,
+     "panY": 1.888,
+     "scale": -4.75291,
+     "rot": -0.75808,
+     "resid": 1.096
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +25.69% across the used range (digital zoom / push-in, monotone=False)",
+    "composition drift 8.46% of frame width",
+    "non-monotonic camera wobble 1.68 px/pair (sign flips 6/10) - handheld signature",
+    "rotation -0.43 deg across the used range"
+   ],
+   "slotId": "N004-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N005-S1-pexels-5644684.mp4",
+   "startSec": 0.0,
+   "durSec": 7.7,
+   "samples": 77,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.086,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.338,
+   "zoomMonotone": false,
+   "panNetPx": [
+    4.522,
+    49.4
+   ],
+   "panWidthPct": 10.335,
+   "shakePxPerPair": 0.908,
+   "panSignFlips": [
+    4,
+    0
+   ],
+   "rotTotalDeg": 0.234,
+   "subjectResidualMedianPx": 0.177,
+   "subjectResidualMaxPx": 1.539,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.175,
+     "panY": 6.5,
+     "scale": -0.25158,
+     "rot": -0.11555,
+     "resid": 2.828
+    },
+    {
+     "t": 1.0,
+     "panX": 1.965,
+     "panY": 6.5,
+     "scale": -0.18431,
+     "rot": 0.0,
+     "resid": 0.918
+    },
+    {
+     "t": 2.0,
+     "panX": 2.228,
+     "panY": 6.5,
+     "scale": -0.1362,
+     "rot": 0.0,
+     "resid": 1.91
+    },
+    {
+     "t": 3.0,
+     "panX": 0.947,
+     "panY": 6.5,
+     "scale": -0.03965,
+     "rot": 0.0,
+     "resid": 1.727
+    },
+    {
+     "t": 4.0,
+     "panX": -0.816,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.204
+    },
+    {
+     "t": 5.0,
+     "panX": 0.725,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.473
+    },
+    {
+     "t": 6.0,
+     "panX": -0.711,
+     "panY": 6.5,
+     "scale": -0.13546,
+     "rot": 0.62393,
+     "resid": 3.09
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "composition drift 10.34% of frame width",
+    "mild camera wobble 0.91 px/pair (sign flips 4/0)"
+   ],
+   "slotId": "N005-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N006-S1-pexels-3196635.mp4",
+   "startSec": 0.0,
+   "durSec": 7.633,
+   "samples": 76,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.071,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -4.899,
+   "zoomMonotone": false,
+   "panNetPx": [
+    26.063,
+    -4.057
+   ],
+   "panWidthPct": 5.495,
+   "shakePxPerPair": 9.359,
+   "panSignFlips": [
+    8,
+    16
+   ],
+   "rotTotalDeg": 2.091,
+   "subjectResidualMedianPx": 2.593,
+   "subjectResidualMaxPx": 5.422,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 6.5,
+     "panY": 2.917,
+     "scale": -0.00092,
+     "rot": 0.0,
+     "resid": 5.709
+    },
+    {
+     "t": 1.0,
+     "panX": 6.5,
+     "panY": -2.021,
+     "scale": 3.01483,
+     "rot": 1.4861,
+     "resid": 5.378
+    },
+    {
+     "t": 2.0,
+     "panX": 6.5,
+     "panY": 1.576,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 3.983
+    },
+    {
+     "t": 3.0,
+     "panX": -2.009,
+     "panY": 3.139,
+     "scale": 1.06424,
+     "rot": 0.0,
+     "resid": 5.637
+    },
+    {
+     "t": 4.0,
+     "panX": 2.257,
+     "panY": -6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 5.101
+    },
+    {
+     "t": 5.0,
+     "panX": 0.528,
+     "panY": -4.323,
+     "scale": 0.0,
+     "rot": 2.66625,
+     "resid": 4.221
+    },
+    {
+     "t": 6.0,
+     "panX": 4.049,
+     "panY": 1.425,
+     "scale": 6.8947,
+     "rot": 0.44647,
+     "resid": 3.121
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -4.90% across the used range (digital zoom / push-in, monotone=False)",
+    "sustained camera translation 5.50% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 9.36 px/pair (sign flips 8/16) - handheld signature",
+    "rotation +2.09 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 2.59 px)"
+   ],
+   "slotId": "N006-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N006-S2-pexels-5780549.mp4",
+   "startSec": 0.0,
+   "durSec": 7.633,
+   "samples": 76,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.071,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -2.011,
+   "zoomMonotone": false,
+   "panNetPx": [
+    16.756,
+    1.643
+   ],
+   "panWidthPct": 3.507,
+   "shakePxPerPair": 6.567,
+   "panSignFlips": [
+    15,
+    22
+   ],
+   "rotTotalDeg": -2.723,
+   "subjectResidualMedianPx": 2.73,
+   "subjectResidualMaxPx": 5.785,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -3.358,
+     "panY": 4.099,
+     "scale": 1.62925,
+     "rot": 0.0,
+     "resid": 6.212
+    },
+    {
+     "t": 1.0,
+     "panX": 3.315,
+     "panY": 3.459,
+     "scale": -3.16825,
+     "rot": -3.72031,
+     "resid": 6.134
+    },
+    {
+     "t": 2.0,
+     "panX": 6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 2.32785,
+     "resid": 4.838
+    },
+    {
+     "t": 3.0,
+     "panX": 6.5,
+     "panY": -5.729,
+     "scale": 2.23165,
+     "rot": 0.0,
+     "resid": 6.242
+    },
+    {
+     "t": 4.0,
+     "panX": 6.5,
+     "panY": -0.243,
+     "scale": 1.16667,
+     "rot": -1.90652,
+     "resid": 5.806
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": -0.052,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 6.01
+    },
+    {
+     "t": 6.0,
+     "panX": 2.682,
+     "panY": -6.5,
+     "scale": 2.64579,
+     "rot": -2.68928,
+     "resid": 5.015
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -2.01% across the used range (slow push/zoom)",
+    "sustained camera translation 3.51% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 6.57 px/pair (sign flips 15/22) - handheld signature",
+    "rotation -2.72 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 2.73 px)"
+   ],
+   "slotId": "N006-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N006-S3-pexels-15198034.mp4",
+   "startSec": 0.0,
+   "durSec": 7.633,
+   "samples": 76,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.071,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.0,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.0,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 0.899,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.475
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.459
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.234
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.873
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N006-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N007-S1-pexels-7180178.mp4",
+   "startSec": 0.0,
+   "durSec": 8.433,
+   "samples": 84,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.038,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.983,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -13.212,
+    4.418
+   ],
+   "panWidthPct": 2.902,
+   "shakePxPerPair": 0.937,
+   "panSignFlips": [
+    0,
+    1
+   ],
+   "rotTotalDeg": 0.656,
+   "subjectResidualMedianPx": 0.278,
+   "subjectResidualMaxPx": 1.593,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 1.826,
+     "panY": 2.781,
+     "scale": -2.41565,
+     "rot": -0.1229,
+     "resid": 2.215
+    },
+    {
+     "t": 1.0,
+     "panX": 0.68,
+     "panY": 1.234,
+     "scale": -2.16057,
+     "rot": 0.19217,
+     "resid": 1.946
+    },
+    {
+     "t": 2.0,
+     "panX": -3.152,
+     "panY": 2.193,
+     "scale": -0.69913,
+     "rot": 0.3739,
+     "resid": 2.18
+    },
+    {
+     "t": 3.0,
+     "panX": -3.511,
+     "panY": 1.67,
+     "scale": -0.09911,
+     "rot": 0.0,
+     "resid": 2.646
+    },
+    {
+     "t": 4.0,
+     "panX": -0.568,
+     "panY": 2.128,
+     "scale": -0.91249,
+     "rot": -0.29696,
+     "resid": 1.886
+    },
+    {
+     "t": 5.0,
+     "panX": -0.089,
+     "panY": -0.997,
+     "scale": -0.12962,
+     "rot": 0.36243,
+     "resid": 1.985
+    },
+    {
+     "t": 6.0,
+     "panX": -4.864,
+     "panY": -3.171,
+     "scale": 2.20202,
+     "rot": 0.80867,
+     "resid": 1.41
+    },
+    {
+     "t": 7.0,
+     "panX": -3.056,
+     "panY": -1.58,
+     "scale": 1.94032,
+     "rot": 0.1732,
+     "resid": 2.668
+    }
+   ],
+   "verdict": "REVIEW",
+   "reasons": [
+    "sustained camera translation 2.90% of frame width (slow pan/track)",
+    "mild camera wobble 0.94 px/pair (sign flips 0/1)",
+    "rotation +0.66 deg across the used range"
+   ],
+   "slotId": "N007-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N007-S2-pexels-10577776.mp4",
+   "startSec": 0.0,
+   "durSec": 8.433,
+   "samples": 84,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.038,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 20.416,
+   "zoomMonotone": false,
+   "panNetPx": [
+    1.277,
+    2.697
+   ],
+   "panWidthPct": 0.622,
+   "shakePxPerPair": 0.43,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.08,
+   "subjectResidualMedianPx": 0.768,
+   "subjectResidualMaxPx": 1.674,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.64963,
+     "rot": 0.0,
+     "resid": 0.529
+    },
+    {
+     "t": 1.0,
+     "panX": -0.997,
+     "panY": 0.188,
+     "scale": -2.68451,
+     "rot": 0.0,
+     "resid": 1.376
+    },
+    {
+     "t": 2.0,
+     "panX": -1.486,
+     "panY": -0.505,
+     "scale": -5.66012,
+     "rot": 0.18184,
+     "resid": 3.453
+    },
+    {
+     "t": 3.0,
+     "panX": -0.216,
+     "panY": 0.836,
+     "scale": -7.31988,
+     "rot": 0.0,
+     "resid": 4.277
+    },
+    {
+     "t": 4.0,
+     "panX": 1.3,
+     "panY": 0.09,
+     "scale": -8.60959,
+     "rot": 0.0,
+     "resid": 4.135
+    },
+    {
+     "t": 5.0,
+     "panX": 2.581,
+     "panY": 1.487,
+     "scale": -7.11078,
+     "rot": 0.0,
+     "resid": 3.609
+    },
+    {
+     "t": 6.0,
+     "panX": 0.32,
+     "panY": 0.805,
+     "scale": -7.6683,
+     "rot": 0.0,
+     "resid": 2.637
+    },
+    {
+     "t": 7.0,
+     "panX": -0.27,
+     "panY": -0.302,
+     "scale": -8.82335,
+     "rot": 0.0,
+     "resid": 2.763
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +20.42% across the used range (digital zoom / push-in, monotone=False)"
+   ],
+   "slotId": "N007-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N008-S1-pexels-5900627.mp4",
+   "startSec": 0.0,
+   "durSec": 7.233,
+   "samples": 72,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.014,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.215,
+   "zoomMonotone": false,
+   "panNetPx": [
+    0.499,
+    -0.225
+   ],
+   "panWidthPct": 0.114,
+   "shakePxPerPair": 0.504,
+   "panSignFlips": [
+    1,
+    0
+   ],
+   "rotTotalDeg": -0.022,
+   "subjectResidualMedianPx": 0.376,
+   "subjectResidualMaxPx": 1.414,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.621,
+     "panY": -0.125,
+     "scale": 0.41036,
+     "rot": -0.37388,
+     "resid": 1.889
+    },
+    {
+     "t": 1.0,
+     "panX": -0.551,
+     "panY": 1.098,
+     "scale": 0.0965,
+     "rot": 0.14336,
+     "resid": 1.381
+    },
+    {
+     "t": 2.0,
+     "panX": 1.285,
+     "panY": -0.058,
+     "scale": -0.0323,
+     "rot": 0.56985,
+     "resid": 2.532
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.324,
+     "scale": -0.46568,
+     "rot": 0.31385,
+     "resid": 2.344
+    },
+    {
+     "t": 4.0,
+     "panX": -0.814,
+     "panY": -0.556,
+     "scale": -0.39038,
+     "rot": -0.5458,
+     "resid": 1.923
+    },
+    {
+     "t": 5.0,
+     "panX": -0.049,
+     "panY": -0.912,
+     "scale": -0.12663,
+     "rot": 0.01138,
+     "resid": 1.994
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.006,
+     "scale": 0.0,
+     "rot": -0.17051,
+     "resid": 2.824
+    }
+   ],
+   "verdict": "REVIEW",
+   "reasons": [
+    "mild camera wobble 0.50 px/pair (sign flips 1/0)"
+   ],
+   "slotId": "N008-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N008-S2-pexels-8108977.mp4",
+   "startSec": 0.0,
+   "durSec": 7.233,
+   "samples": 72,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.014,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 1.483,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -39.318,
+    20.706
+   ],
+   "panWidthPct": 9.258,
+   "shakePxPerPair": 4.794,
+   "panSignFlips": [
+    4,
+    3
+   ],
+   "rotTotalDeg": 1.417,
+   "subjectResidualMedianPx": 1.031,
+   "subjectResidualMaxPx": 2.615,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -1.425,
+     "panY": -0.743,
+     "scale": -0.5154,
+     "rot": 1.72958,
+     "resid": 2.222
+    },
+    {
+     "t": 1.0,
+     "panX": -6.5,
+     "panY": -0.246,
+     "scale": 0.36749,
+     "rot": -0.00964,
+     "resid": 2.61
+    },
+    {
+     "t": 2.0,
+     "panX": -6.5,
+     "panY": 1.64,
+     "scale": -0.0729,
+     "rot": 2.27507,
+     "resid": 4.954
+    },
+    {
+     "t": 3.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": -1.68868,
+     "rot": 0.0,
+     "resid": 6.847
+    },
+    {
+     "t": 4.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.19
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.34
+    },
+    {
+     "t": 6.0,
+     "panX": -4.839,
+     "panY": 0.263,
+     "scale": -1.59861,
+     "rot": -0.70374,
+     "resid": 3.469
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +1.48% across the used range (slow push/zoom)",
+    "composition drift 9.26% of frame width",
+    "non-monotonic camera wobble 4.79 px/pair (sign flips 4/3) - handheld signature",
+    "rotation +1.42 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 1.03 px)"
+   ],
+   "slotId": "N008-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N009-S1-pexels-6565094.mp4",
+   "startSec": 0.0,
+   "durSec": 8.333,
+   "samples": 83,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.025,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.131,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -15.021,
+    4.325
+   ],
+   "panWidthPct": 3.256,
+   "shakePxPerPair": 1.635,
+   "panSignFlips": [
+    4,
+    5
+   ],
+   "rotTotalDeg": 0.904,
+   "subjectResidualMedianPx": 0.199,
+   "subjectResidualMaxPx": 0.372,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -5.846,
+     "panY": 5.205,
+     "scale": -0.25775,
+     "rot": -1.2052,
+     "resid": 0.866
+    },
+    {
+     "t": 1.0,
+     "panX": -6.5,
+     "panY": 0.205,
+     "scale": 0.0,
+     "rot": -0.14264,
+     "resid": 0.585
+    },
+    {
+     "t": 2.0,
+     "panX": 0.101,
+     "panY": 3.636,
+     "scale": -0.7453,
+     "rot": -0.17522,
+     "resid": 0.733
+    },
+    {
+     "t": 3.0,
+     "panX": -3.278,
+     "panY": 2.862,
+     "scale": -0.21144,
+     "rot": -0.63982,
+     "resid": 0.909
+    },
+    {
+     "t": 4.0,
+     "panX": -2.975,
+     "panY": -3.267,
+     "scale": 0.46334,
+     "rot": -0.27647,
+     "resid": 2.175
+    },
+    {
+     "t": 5.0,
+     "panX": -0.241,
+     "panY": 0.56,
+     "scale": 0.2705,
+     "rot": 2.41273,
+     "resid": 1.849
+    },
+    {
+     "t": 6.0,
+     "panX": 4.035,
+     "panY": -0.9,
+     "scale": 0.20398,
+     "rot": 1.24666,
+     "resid": 1.012
+    },
+    {
+     "t": 7.0,
+     "panX": 0.049,
+     "panY": -4.083,
+     "scale": 0.58402,
+     "rot": 0.85827,
+     "resid": 1.861
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "sustained camera translation 3.26% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 1.64 px/pair (sign flips 4/5) - handheld signature",
+    "rotation +0.90 deg across the used range"
+   ],
+   "slotId": "N009-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N009-S2-pexels-7986201.mp4",
+   "startSec": 0.0,
+   "durSec": 8.333,
+   "samples": 83,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.025,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 12.293,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -30.106,
+    21.232
+   ],
+   "panWidthPct": 7.675,
+   "shakePxPerPair": 3.201,
+   "panSignFlips": [
+    0,
+    7
+   ],
+   "rotTotalDeg": 0.483,
+   "subjectResidualMedianPx": 1.442,
+   "subjectResidualMaxPx": 3.446,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -5.959,
+     "panY": -0.432,
+     "scale": -5.45888,
+     "rot": -1.02828,
+     "resid": 3.913
+    },
+    {
+     "t": 1.0,
+     "panX": -1.087,
+     "panY": 5.784,
+     "scale": -3.25329,
+     "rot": 0.0,
+     "resid": 5.914
+    },
+    {
+     "t": 2.0,
+     "panX": -6.5,
+     "panY": 3.488,
+     "scale": -6.23348,
+     "rot": 0.0,
+     "resid": 4.972
+    },
+    {
+     "t": 3.0,
+     "panX": -5.238,
+     "panY": 4.438,
+     "scale": -5.65132,
+     "rot": 0.69965,
+     "resid": 4.437
+    },
+    {
+     "t": 4.0,
+     "panX": -1.495,
+     "panY": 5.717,
+     "scale": -3.11456,
+     "rot": 1.39758,
+     "resid": 5.517
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": 0.314,
+     "scale": -4.74684,
+     "rot": 0.0,
+     "resid": 5.156
+    },
+    {
+     "t": 6.0,
+     "panX": -1.738,
+     "panY": 1.417,
+     "scale": -2.14845,
+     "rot": -0.12983,
+     "resid": 0.884
+    },
+    {
+     "t": 7.0,
+     "panX": -0.855,
+     "panY": -0.012,
+     "scale": 1.82328,
+     "rot": 0.17012,
+     "resid": 2.051
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +12.29% across the used range (digital zoom / push-in, monotone=False)",
+    "sustained camera translation 7.67% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 3.20 px/pair (sign flips 0/7) - handheld signature",
+    "rotation +0.48 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 1.44 px)"
+   ],
+   "slotId": "N009-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N009-S3-pexels-4729733.mp4",
+   "startSec": 0.0,
+   "durSec": 8.333,
+   "samples": 83,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.025,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -3.187,
+   "zoomMonotone": false,
+   "panNetPx": [
+    6.411,
+    -21.829
+   ],
+   "panWidthPct": 4.74,
+   "shakePxPerPair": 5.395,
+   "panSignFlips": [
+    8,
+    2
+   ],
+   "rotTotalDeg": 1.468,
+   "subjectResidualMedianPx": 1.82,
+   "subjectResidualMaxPx": 4.335,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 6.5,
+     "panY": -4.575,
+     "scale": 0.0,
+     "rot": -2.91335,
+     "resid": 6.045
+    },
+    {
+     "t": 1.0,
+     "panX": -6.5,
+     "panY": -6.5,
+     "scale": 1.55221,
+     "rot": 4.65901,
+     "resid": 5.888
+    },
+    {
+     "t": 2.0,
+     "panX": -5.8,
+     "panY": -2.963,
+     "scale": 1.98539,
+     "rot": 4.80335,
+     "resid": 5.839
+    },
+    {
+     "t": 3.0,
+     "panX": 5.219,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": -0.95376,
+     "resid": 3.932
+    },
+    {
+     "t": 4.0,
+     "panX": 2.308,
+     "panY": -4.451,
+     "scale": -1.56926,
+     "rot": -2.21981,
+     "resid": 5.206
+    },
+    {
+     "t": 5.0,
+     "panX": -3.971,
+     "panY": -6.5,
+     "scale": 2.7228,
+     "rot": 0.0,
+     "resid": 5.989
+    },
+    {
+     "t": 6.0,
+     "panX": 6.5,
+     "panY": 3.692,
+     "scale": 2.77146,
+     "rot": 0.0,
+     "resid": 6.004
+    },
+    {
+     "t": 7.0,
+     "panX": 1.999,
+     "panY": -6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 6.48
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -3.19% across the used range (digital zoom / push-in, monotone=False)",
+    "sustained camera translation 4.74% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 5.39 px/pair (sign flips 8/2) - handheld signature",
+    "rotation +1.47 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 1.82 px)"
+   ],
+   "slotId": "N009-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N010-S1-pexels-25951436.mp4",
+   "startSec": 0.0,
+   "durSec": 8.833,
+   "samples": 88,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.087,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.363,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.0,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 2.389,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 1.878
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 2.683
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.176
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.103
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": -0.00313,
+     "rot": 0.0,
+     "resid": 1.585
+    },
+    {
+     "t": 7.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": -0.79816,
+     "rot": 0.0,
+     "resid": 1.998
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N010-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N010-S2-pexels-8902837.mp4",
+   "startSec": 0.0,
+   "durSec": 8.833,
+   "samples": 88,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.087,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -2.191,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -7.621,
+    -9.247
+   ],
+   "panWidthPct": 2.496,
+   "shakePxPerPair": 2.543,
+   "panSignFlips": [
+    6,
+    3
+   ],
+   "rotTotalDeg": -0.468,
+   "subjectResidualMedianPx": 0.784,
+   "subjectResidualMaxPx": 2.265,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 1.804,
+     "panY": 6.5,
+     "scale": 3.41342,
+     "rot": 0.0,
+     "resid": 2.897
+    },
+    {
+     "t": 1.0,
+     "panX": 1.93,
+     "panY": 6.5,
+     "scale": 0.59812,
+     "rot": 0.58713,
+     "resid": 3.079
+    },
+    {
+     "t": 2.0,
+     "panX": -1.038,
+     "panY": -1.547,
+     "scale": -2.16497,
+     "rot": -0.05069,
+     "resid": 2.607
+    },
+    {
+     "t": 3.0,
+     "panX": -0.349,
+     "panY": 1.081,
+     "scale": -1.15495,
+     "rot": -0.36305,
+     "resid": 2.588
+    },
+    {
+     "t": 4.0,
+     "panX": -1.924,
+     "panY": -5.861,
+     "scale": -0.46306,
+     "rot": -1.53755,
+     "resid": 2.6
+    },
+    {
+     "t": 5.0,
+     "panX": -1.046,
+     "panY": -6.5,
+     "scale": 0.65128,
+     "rot": 0.0,
+     "resid": 3.773
+    },
+    {
+     "t": 6.0,
+     "panX": -0.441,
+     "panY": -2.176,
+     "scale": 2.11789,
+     "rot": 0.16774,
+     "resid": 2.249
+    },
+    {
+     "t": 7.0,
+     "panX": -5.942,
+     "panY": -6.5,
+     "scale": 1.83788,
+     "rot": 0.18297,
+     "resid": 2.226
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -2.19% across the used range (slow push/zoom)",
+    "sustained camera translation 2.50% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 2.54 px/pair (sign flips 6/3) - handheld signature",
+    "rotation -0.47 deg across the used range"
+   ],
+   "slotId": "N010-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N011-S1-pexels-10397454.mp4",
+   "startSec": 0.0,
+   "durSec": 9.1,
+   "samples": 91,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.0,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.055,
+   "zoomMonotone": false,
+   "panNetPx": [
+    3.608,
+    -9.545
+   ],
+   "panWidthPct": 2.126,
+   "shakePxPerPair": 1.019,
+   "panSignFlips": [
+    2,
+    2
+   ],
+   "rotTotalDeg": 0.103,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 0.32,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 2.219,
+     "panY": 1.227,
+     "scale": -0.12241,
+     "rot": 0.61786,
+     "resid": 0.278
+    },
+    {
+     "t": 1.0,
+     "panX": 1.939,
+     "panY": -2.054,
+     "scale": -0.10588,
+     "rot": 0.08102,
+     "resid": 0.114
+    },
+    {
+     "t": 2.0,
+     "panX": 0.903,
+     "panY": -2.75,
+     "scale": 0.06252,
+     "rot": -0.21166,
+     "resid": 0.474
+    },
+    {
+     "t": 3.0,
+     "panX": -1.27,
+     "panY": 0.247,
+     "scale": 0.02762,
+     "rot": -0.37419,
+     "resid": 1.138
+    },
+    {
+     "t": 4.0,
+     "panX": 1.185,
+     "panY": 0.117,
+     "scale": 0.1323,
+     "rot": -0.29066,
+     "resid": 0.122
+    },
+    {
+     "t": 5.0,
+     "panX": -2.733,
+     "panY": 1.475,
+     "scale": 0.33867,
+     "rot": -0.02771,
+     "resid": 0.25
+    },
+    {
+     "t": 6.0,
+     "panX": -0.866,
+     "panY": 0.988,
+     "scale": -0.05667,
+     "rot": 0.18155,
+     "resid": 0.244
+    },
+    {
+     "t": 7.0,
+     "panX": 1.152,
+     "panY": -6.5,
+     "scale": -0.05909,
+     "rot": 0.0,
+     "resid": 1.235
+    },
+    {
+     "t": 8.0,
+     "panX": 1.08,
+     "panY": -2.295,
+     "scale": -0.08459,
+     "rot": 0.26754,
+     "resid": 0.879
+    }
+   ],
+   "verdict": "REVIEW",
+   "reasons": [
+    "sustained camera translation 2.13% of frame width (slow pan/track)",
+    "mild camera wobble 1.02 px/pair (sign flips 2/2)"
+   ],
+   "slotId": "N011-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N012-S1-pexels-6136977.mp4",
+   "startSec": 0.0,
+   "durSec": 7.4,
+   "samples": 74,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.043,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.129,
+   "zoomMonotone": false,
+   "panNetPx": [
+    0.534,
+    6.216
+   ],
+   "panWidthPct": 1.3,
+   "shakePxPerPair": 2.055,
+   "panSignFlips": [
+    4,
+    7
+   ],
+   "rotTotalDeg": 0.629,
+   "subjectResidualMedianPx": 0.182,
+   "subjectResidualMaxPx": 3.597,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.216,
+     "panY": 4.211,
+     "scale": -0.09447,
+     "rot": 0.72942,
+     "resid": 2.679
+    },
+    {
+     "t": 1.0,
+     "panX": -0.128,
+     "panY": -1.293,
+     "scale": 0.11642,
+     "rot": -0.36238,
+     "resid": 3.074
+    },
+    {
+     "t": 2.0,
+     "panX": 0.122,
+     "panY": -0.917,
+     "scale": 0.03138,
+     "rot": -0.08398,
+     "resid": 2.283
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.822,
+     "scale": 0.06613,
+     "rot": 0.36621,
+     "resid": 0.374
+    },
+    {
+     "t": 4.0,
+     "panX": -0.176,
+     "panY": 0.987,
+     "scale": 0.07203,
+     "rot": 0.15305,
+     "resid": 0.273
+    },
+    {
+     "t": 5.0,
+     "panX": -0.121,
+     "panY": 2.173,
+     "scale": 0.0828,
+     "rot": 0.67218,
+     "resid": 0.274
+    },
+    {
+     "t": 6.0,
+     "panX": 1.03,
+     "panY": -0.023,
+     "scale": 0.02179,
+     "rot": -0.0539,
+     "resid": 1.447
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "non-monotonic camera wobble 2.06 px/pair (sign flips 4/7) - handheld signature",
+    "rotation +0.63 deg across the used range"
+   ],
+   "slotId": "N012-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N012-S2-pexels-7679424.mp4",
+   "startSec": 0.0,
+   "durSec": 7.4,
+   "samples": 74,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.043,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -1.367,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -6.353,
+    -0.555
+   ],
+   "panWidthPct": 1.329,
+   "shakePxPerPair": 2.898,
+   "panSignFlips": [
+    17,
+    13
+   ],
+   "rotTotalDeg": 1.607,
+   "subjectResidualMedianPx": 1.096,
+   "subjectResidualMaxPx": 2.473,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -2.966,
+     "panY": 4.899,
+     "scale": 0.0,
+     "rot": -0.10186,
+     "resid": 5.206
+    },
+    {
+     "t": 1.0,
+     "panX": 0.734,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": -2.20214,
+     "resid": 4.429
+    },
+    {
+     "t": 2.0,
+     "panX": 2.556,
+     "panY": -3.017,
+     "scale": 2.97773,
+     "rot": 0.78711,
+     "resid": 4.216
+    },
+    {
+     "t": 3.0,
+     "panX": -4.551,
+     "panY": -3.279,
+     "scale": 1.95415,
+     "rot": 2.22534,
+     "resid": 5.337
+    },
+    {
+     "t": 4.0,
+     "panX": 1.086,
+     "panY": -0.554,
+     "scale": 2.22455,
+     "rot": 4.60662,
+     "resid": 4.092
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": -2.841,
+     "scale": 0.0,
+     "rot": -0.04409,
+     "resid": 0.66
+    },
+    {
+     "t": 6.0,
+     "panX": 3.549,
+     "panY": -2.239,
+     "scale": -4.01123,
+     "rot": -1.63963,
+     "resid": 2.599
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -1.37% across the used range (slow push/zoom)",
+    "non-monotonic camera wobble 2.90 px/pair (sign flips 17/13) - handheld signature",
+    "rotation +1.61 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 1.10 px)"
+   ],
+   "slotId": "N012-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N012-S3-pexels-39139724.mp4",
+   "startSec": 0.0,
+   "durSec": 7.4,
+   "samples": 74,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.043,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 2.148,
+   "zoomMonotone": true,
+   "panNetPx": [
+    8.503,
+    10.002
+   ],
+   "panWidthPct": 2.735,
+   "shakePxPerPair": 2.447,
+   "panSignFlips": [
+    3,
+    1
+   ],
+   "rotTotalDeg": -0.484,
+   "subjectResidualMedianPx": 0.163,
+   "subjectResidualMaxPx": 2.593,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 1.305,
+     "panY": 2.438,
+     "scale": -4.87419,
+     "rot": -0.05858,
+     "resid": 1.346
+    },
+    {
+     "t": 1.0,
+     "panX": 0.349,
+     "panY": 5.259,
+     "scale": -0.06822,
+     "rot": 0.3569,
+     "resid": 0.371
+    },
+    {
+     "t": 2.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.662
+    },
+    {
+     "t": 3.0,
+     "panX": -6.5,
+     "panY": 3.962,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.068
+    },
+    {
+     "t": 4.0,
+     "panX": 6.5,
+     "panY": -0.028,
+     "scale": 0.0,
+     "rot": -0.1169,
+     "resid": 1.098
+    },
+    {
+     "t": 5.0,
+     "panX": 6.5,
+     "panY": -4.05,
+     "scale": 0.0,
+     "rot": -1.27458,
+     "resid": 3.716
+    },
+    {
+     "t": 6.0,
+     "panX": 6.5,
+     "panY": -4.49,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 3.851
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +2.15% across the used range (slow push/zoom)",
+    "sustained camera translation 2.73% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 2.45 px/pair (sign flips 3/1) - handheld signature",
+    "rotation -0.48 deg across the used range"
+   ],
+   "slotId": "N012-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N013-S1-pexels-11769112.mp4",
+   "startSec": 0.0,
+   "durSec": 7.4,
+   "samples": 74,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.043,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.723,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -47.45,
+    1.849
+   ],
+   "panWidthPct": 9.893,
+   "shakePxPerPair": 0.964,
+   "panSignFlips": [
+    0,
+    3
+   ],
+   "rotTotalDeg": -1.601,
+   "subjectResidualMedianPx": 0.028,
+   "subjectResidualMaxPx": 3.314,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -6.5,
+     "panY": 1.271,
+     "scale": 0.79806,
+     "rot": -1.15451,
+     "resid": 1.006
+    },
+    {
+     "t": 1.0,
+     "panX": -6.5,
+     "panY": 1.074,
+     "scale": 0.4639,
+     "rot": -0.95299,
+     "resid": 0.903
+    },
+    {
+     "t": 2.0,
+     "panX": -6.5,
+     "panY": -1.483,
+     "scale": 0.0,
+     "rot": -0.05103,
+     "resid": 1.429
+    },
+    {
+     "t": 3.0,
+     "panX": -6.5,
+     "panY": -0.677,
+     "scale": 0.00036,
+     "rot": 0.0,
+     "resid": 1.414
+    },
+    {
+     "t": 4.0,
+     "panX": -6.5,
+     "panY": 0.854,
+     "scale": 0.4006,
+     "rot": -0.11404,
+     "resid": 3.278
+    },
+    {
+     "t": 5.0,
+     "panX": -6.5,
+     "panY": 0.443,
+     "scale": 0.0,
+     "rot": -1.01045,
+     "resid": 3.375
+    },
+    {
+     "t": 6.0,
+     "panX": -6.5,
+     "panY": 0.291,
+     "scale": 0.0,
+     "rot": -0.3335,
+     "resid": 3.594
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "composition drift 9.89% of frame width",
+    "mild camera wobble 0.96 px/pair (sign flips 0/3)",
+    "rotation -1.60 deg across the used range"
+   ],
+   "slotId": "N013-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N013-S2-pexels-7195759.mp4",
+   "startSec": 0.0,
+   "durSec": 7.4,
+   "samples": 74,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.043,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 1.456,
+   "zoomMonotone": false,
+   "panNetPx": [
+    23.278,
+    13.862
+   ],
+   "panWidthPct": 5.644,
+   "shakePxPerPair": 7.205,
+   "panSignFlips": [
+    10,
+    20
+   ],
+   "rotTotalDeg": 1.769,
+   "subjectResidualMedianPx": 2.541,
+   "subjectResidualMaxPx": 5.132,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 6.5,
+     "panY": -4.57,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 5.621
+    },
+    {
+     "t": 1.0,
+     "panX": 6.5,
+     "panY": 4.816,
+     "scale": 0.0,
+     "rot": 1.9639,
+     "resid": 6.056
+    },
+    {
+     "t": 2.0,
+     "panX": 6.5,
+     "panY": 1.367,
+     "scale": 0.0,
+     "rot": -2.78291,
+     "resid": 3.885
+    },
+    {
+     "t": 3.0,
+     "panX": 6.5,
+     "panY": 5.561,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 5.043
+    },
+    {
+     "t": 4.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 5.934
+    },
+    {
+     "t": 5.0,
+     "panX": -3.679,
+     "panY": 1.923,
+     "scale": -3.35171,
+     "rot": 1.41917,
+     "resid": 5.371
+    },
+    {
+     "t": 6.0,
+     "panX": 6.5,
+     "panY": -2.305,
+     "scale": 0.0,
+     "rot": 3.39744,
+     "resid": 5.965
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +1.46% across the used range (slow push/zoom)",
+    "sustained camera translation 5.64% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 7.21 px/pair (sign flips 10/20) - handheld signature",
+    "rotation +1.77 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 2.54 px)"
+   ],
+   "slotId": "N013-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N013-S3-pexels-5949397.mp4",
+   "startSec": 0.0,
+   "durSec": 7.4,
+   "samples": 74,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.043,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.0,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.0,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 0.287,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.351
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.112
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.114
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N013-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N014-S1-pexels-5712758.mp4",
+   "startSec": 0.0,
+   "durSec": 7.9,
+   "samples": 79,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.114,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -3.457,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -4.574,
+    -0.398
+   ],
+   "panWidthPct": 0.957,
+   "shakePxPerPair": 2.935,
+   "panSignFlips": [
+    6,
+    10
+   ],
+   "rotTotalDeg": -0.003,
+   "subjectResidualMedianPx": 1.072,
+   "subjectResidualMaxPx": 3.524,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -6.5,
+     "panY": 5.748,
+     "scale": 3.29951,
+     "rot": 1.46839,
+     "resid": 4.87
+    },
+    {
+     "t": 1.0,
+     "panX": -6.5,
+     "panY": -3.313,
+     "scale": -1.10211,
+     "rot": 0.0,
+     "resid": 2.225
+    },
+    {
+     "t": 2.0,
+     "panX": 4.957,
+     "panY": 3.928,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 6.212
+    },
+    {
+     "t": 3.0,
+     "panX": 6.5,
+     "panY": -4.517,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 5.85
+    },
+    {
+     "t": 4.0,
+     "panX": 6.5,
+     "panY": -5.983,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 4.703
+    },
+    {
+     "t": 5.0,
+     "panX": -2.562,
+     "panY": -1.05,
+     "scale": 2.74005,
+     "rot": -1.5386,
+     "resid": 2.887
+    },
+    {
+     "t": 6.0,
+     "panX": -6.5,
+     "panY": 4.831,
+     "scale": 2.50925,
+     "rot": 0.06303,
+     "resid": 4.164
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change -3.46% across the used range (digital zoom / push-in, monotone=False)",
+    "non-monotonic camera wobble 2.94 px/pair (sign flips 6/10) - handheld signature",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 1.07 px)"
+   ],
+   "slotId": "N014-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N014-S2-pexels-6975450.mp4",
+   "startSec": 0.0,
+   "durSec": 7.9,
+   "samples": 79,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.114,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.53,
+   "zoomMonotone": false,
+   "panNetPx": [
+    50.7,
+    -1.202
+   ],
+   "panWidthPct": 10.565,
+   "shakePxPerPair": 1.094,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.059,
+   "subjectResidualMedianPx": 0.019,
+   "subjectResidualMaxPx": 0.115,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 6.5,
+     "panY": -0.032,
+     "scale": 0.0,
+     "rot": 0.02897,
+     "resid": 0.049
+    },
+    {
+     "t": 1.0,
+     "panX": 6.5,
+     "panY": -0.117,
+     "scale": 0.20927,
+     "rot": 0.0,
+     "resid": 0.427
+    },
+    {
+     "t": 2.0,
+     "panX": 6.5,
+     "panY": -0.143,
+     "scale": 0.31823,
+     "rot": 0.0,
+     "resid": 0.546
+    },
+    {
+     "t": 3.0,
+     "panX": 6.5,
+     "panY": -0.246,
+     "scale": 0.10302,
+     "rot": 0.0,
+     "resid": 0.603
+    },
+    {
+     "t": 4.0,
+     "panX": 6.5,
+     "panY": -0.151,
+     "scale": 0.26068,
+     "rot": 0.0,
+     "resid": 0.526
+    },
+    {
+     "t": 5.0,
+     "panX": 6.5,
+     "panY": -0.159,
+     "scale": 0.22188,
+     "rot": 0.0,
+     "resid": 0.369
+    },
+    {
+     "t": 6.0,
+     "panX": 6.5,
+     "panY": -0.231,
+     "scale": 0.02832,
+     "rot": 0.09667,
+     "resid": 0.39
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "composition drift 10.56% of frame width",
+    "mild camera wobble 1.09 px/pair (sign flips 0/0)"
+   ],
+   "slotId": "N014-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N014-S3-pexels-8116795.mp4",
+   "startSec": 0.0,
+   "durSec": 7.9,
+   "samples": 79,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.114,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.837,
+   "zoomMonotone": false,
+   "panNetPx": [
+    5.305,
+    9.089
+   ],
+   "panWidthPct": 2.193,
+   "shakePxPerPair": 1.932,
+   "panSignFlips": [
+    6,
+    4
+   ],
+   "rotTotalDeg": 1.559,
+   "subjectResidualMedianPx": 0.8,
+   "subjectResidualMaxPx": 2.565,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 1.828,
+     "panY": -0.977,
+     "scale": -0.15519,
+     "rot": 1.18901,
+     "resid": 0.416
+    },
+    {
+     "t": 1.0,
+     "panX": 0.052,
+     "panY": 2.618,
+     "scale": -0.31092,
+     "rot": 0.80006,
+     "resid": 1.198
+    },
+    {
+     "t": 2.0,
+     "panX": 0.095,
+     "panY": 3.68,
+     "scale": 0.03168,
+     "rot": -0.28109,
+     "resid": 1.502
+    },
+    {
+     "t": 3.0,
+     "panX": 0.733,
+     "panY": 5.673,
+     "scale": -0.04319,
+     "rot": 0.29543,
+     "resid": 2.075
+    },
+    {
+     "t": 4.0,
+     "panX": -0.031,
+     "panY": 4.496,
+     "scale": -0.15391,
+     "rot": 0.6434,
+     "resid": 2.428
+    },
+    {
+     "t": 5.0,
+     "panX": -0.288,
+     "panY": -0.833,
+     "scale": -0.34078,
+     "rot": 0.80752,
+     "resid": 2.04
+    },
+    {
+     "t": 6.0,
+     "panX": 2.372,
+     "panY": -6.5,
+     "scale": -0.83091,
+     "rot": -0.15819,
+     "resid": 2.731
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "sustained camera translation 2.19% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 1.93 px/pair (sign flips 6/4) - handheld signature",
+    "rotation +1.56 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 0.80 px)"
+   ],
+   "slotId": "N014-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N015-S1-pexels-7744392.mp4",
+   "startSec": 0.0,
+   "durSec": 7.966,
+   "samples": 80,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.129,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.042,
+   "zoomMonotone": false,
+   "panNetPx": [
+    9.255,
+    -1.859
+   ],
+   "panWidthPct": 1.967,
+   "shakePxPerPair": 0.92,
+   "panSignFlips": [
+    1,
+    2
+   ],
+   "rotTotalDeg": -8.136,
+   "subjectResidualMedianPx": 0.37,
+   "subjectResidualMaxPx": 1.267,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.912,
+     "panY": 2.447,
+     "scale": 0.84282,
+     "rot": 0.341,
+     "resid": 0.637
+    },
+    {
+     "t": 1.0,
+     "panX": -3.011,
+     "panY": -3.122,
+     "scale": -1.08831,
+     "rot": -0.25101,
+     "resid": 2.09
+    },
+    {
+     "t": 2.0,
+     "panX": 4.49,
+     "panY": -0.234,
+     "scale": 0.4247,
+     "rot": -0.18789,
+     "resid": 1.919
+    },
+    {
+     "t": 3.0,
+     "panX": -0.905,
+     "panY": -1.205,
+     "scale": -0.10226,
+     "rot": -1.24497,
+     "resid": 2.236
+    },
+    {
+     "t": 4.0,
+     "panX": 2.252,
+     "panY": -0.138,
+     "scale": -0.92135,
+     "rot": -5.06025,
+     "resid": 1.309
+    },
+    {
+     "t": 5.0,
+     "panX": 4.746,
+     "panY": 0.014,
+     "scale": 0.81679,
+     "rot": -4.58911,
+     "resid": 3.174
+    },
+    {
+     "t": 6.0,
+     "panX": -0.284,
+     "panY": 0.591,
+     "scale": -0.06149,
+     "rot": -5.99307,
+     "resid": 3.05
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "mild camera wobble 0.92 px/pair (sign flips 1/2)",
+    "rotation -8.14 deg across the used range"
+   ],
+   "slotId": "N015-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N015-S2-pexels-35148865.mp4",
+   "startSec": 0.0,
+   "durSec": 7.966,
+   "samples": 80,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.129,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.0,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": -0.006,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 0.0,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": -0.01255,
+     "resid": 0.327
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N015-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N016-S1-pexels-6263197.mp4",
+   "startSec": 0.0,
+   "durSec": 8.5,
+   "samples": 85,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.05,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.315,
+   "zoomMonotone": false,
+   "panNetPx": [
+    0.438,
+    -14.778
+   ],
+   "panWidthPct": 3.08,
+   "shakePxPerPair": 0.887,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": -0.376,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 0.307,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.043,
+     "panY": -1.928,
+     "scale": -0.00841,
+     "rot": -0.0765,
+     "resid": 0.037
+    },
+    {
+     "t": 1.0,
+     "panX": -0.535,
+     "panY": -0.825,
+     "scale": 0.06748,
+     "rot": -0.0256,
+     "resid": 0.149
+    },
+    {
+     "t": 2.0,
+     "panX": 0.039,
+     "panY": -1.322,
+     "scale": 0.00082,
+     "rot": -0.99836,
+     "resid": 0.418
+    },
+    {
+     "t": 3.0,
+     "panX": 0.166,
+     "panY": -4.44,
+     "scale": 0.1,
+     "rot": -1.70694,
+     "resid": 0.404
+    },
+    {
+     "t": 4.0,
+     "panX": 1.994,
+     "panY": -3.887,
+     "scale": 0.22819,
+     "rot": 0.19035,
+     "resid": 0.239
+    },
+    {
+     "t": 5.0,
+     "panX": -2.11,
+     "panY": -0.049,
+     "scale": 0.1477,
+     "rot": 0.23397,
+     "resid": 0.173
+    },
+    {
+     "t": 6.0,
+     "panX": 2.249,
+     "panY": -2.635,
+     "scale": 0.14818,
+     "rot": 0.80225,
+     "resid": 0.299
+    },
+    {
+     "t": 7.0,
+     "panX": -1.343,
+     "panY": 1.012,
+     "scale": 0.03568,
+     "rot": 0.73706,
+     "resid": 0.196
+    }
+   ],
+   "verdict": "REVIEW",
+   "reasons": [
+    "sustained camera translation 3.08% of frame width (slow pan/track)",
+    "mild camera wobble 0.89 px/pair (sign flips 0/0)"
+   ],
+   "slotId": "N016-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N016-S2-pexels-8928019.mp4",
+   "startSec": 0.0,
+   "durSec": 8.5,
+   "samples": 85,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.05,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 3.381,
+   "zoomMonotone": false,
+   "panNetPx": [
+    1.581,
+    -16.371
+   ],
+   "panWidthPct": 3.427,
+   "shakePxPerPair": 2.724,
+   "panSignFlips": [
+    4,
+    2
+   ],
+   "rotTotalDeg": 1.283,
+   "subjectResidualMedianPx": 0.305,
+   "subjectResidualMaxPx": 2.418,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 1.353,
+     "panY": -1.048,
+     "scale": -1.96529,
+     "rot": 0.6806,
+     "resid": 0.5
+    },
+    {
+     "t": 1.0,
+     "panX": 1.49,
+     "panY": -2.861,
+     "scale": -2.13904,
+     "rot": 1.73385,
+     "resid": 0.949
+    },
+    {
+     "t": 2.0,
+     "panX": -5.872,
+     "panY": -4.739,
+     "scale": -1.1323,
+     "rot": 0.0,
+     "resid": 3.012
+    },
+    {
+     "t": 3.0,
+     "panX": 3.092,
+     "panY": 2.722,
+     "scale": 3.79014,
+     "rot": 1.3037,
+     "resid": 0.908
+    },
+    {
+     "t": 4.0,
+     "panX": 2.764,
+     "panY": 5.251,
+     "scale": 0.49867,
+     "rot": -0.2086,
+     "resid": 3.975
+    },
+    {
+     "t": 5.0,
+     "panX": -0.476,
+     "panY": -3.278,
+     "scale": -3.79395,
+     "rot": -0.84882,
+     "resid": 3.154
+    },
+    {
+     "t": 6.0,
+     "panX": 5.655,
+     "panY": -5.14,
+     "scale": -0.83225,
+     "rot": 0.21931,
+     "resid": 4.544
+    },
+    {
+     "t": 7.0,
+     "panX": -6.5,
+     "panY": -6.5,
+     "scale": -2.15288,
+     "rot": 0.0,
+     "resid": 6.455
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +3.38% across the used range (digital zoom / push-in, monotone=False)",
+    "sustained camera translation 3.43% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 2.72 px/pair (sign flips 4/2) - handheld signature",
+    "rotation +1.28 deg across the used range"
+   ],
+   "slotId": "N016-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N016-S3-pexels-5493064.mp4",
+   "startSec": 0.0,
+   "durSec": 8.5,
+   "samples": 85,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.05,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.0,
+   "zoomMonotone": true,
+   "panNetPx": [
+    0.0,
+    0.0
+   ],
+   "panWidthPct": 0.0,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.0,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 0.0,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.136
+    },
+    {
+     "t": 2.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 3.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 4.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 5.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 6.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    },
+    {
+     "t": 7.0,
+     "panX": 0.0,
+     "panY": 0.0,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.0
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N016-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N017-S1-pexels-29251301.mp4",
+   "startSec": 0.0,
+   "durSec": 8.166,
+   "samples": 82,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.012,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 0.264,
+   "zoomMonotone": false,
+   "panNetPx": [
+    1.312,
+    -1.951
+   ],
+   "panWidthPct": 0.49,
+   "shakePxPerPair": 0.0,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": 0.154,
+   "subjectResidualMedianPx": 0.0,
+   "subjectResidualMaxPx": 1.433,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -1.05,
+     "panY": 1.048,
+     "scale": -0.08713,
+     "rot": 0.12144,
+     "resid": 0.352
+    },
+    {
+     "t": 1.0,
+     "panX": 0.299,
+     "panY": -0.967,
+     "scale": 0.05775,
+     "rot": 0.21776,
+     "resid": 0.504
+    },
+    {
+     "t": 2.0,
+     "panX": -0.799,
+     "panY": -0.935,
+     "scale": -0.21733,
+     "rot": 0.22443,
+     "resid": 0.95
+    },
+    {
+     "t": 3.0,
+     "panX": -0.156,
+     "panY": -0.545,
+     "scale": -0.03173,
+     "rot": -0.24336,
+     "resid": 1.652
+    },
+    {
+     "t": 4.0,
+     "panX": 1.054,
+     "panY": 0.042,
+     "scale": -0.00172,
+     "rot": -0.25384,
+     "resid": 2.341
+    },
+    {
+     "t": 5.0,
+     "panX": 1.269,
+     "panY": 0.144,
+     "scale": -0.30768,
+     "rot": -0.13447,
+     "resid": 1.234
+    },
+    {
+     "t": 6.0,
+     "panX": 0.869,
+     "panY": -0.714,
+     "scale": 0.00143,
+     "rot": 0.07376,
+     "resid": 1.485
+    },
+    {
+     "t": 7.0,
+     "panX": -0.19,
+     "panY": 0.0,
+     "scale": -0.03983,
+     "rot": 0.35291,
+     "resid": 1.573
+    }
+   ],
+   "verdict": "PASS",
+   "reasons": [
+    "camera effectively locked across the used range"
+   ],
+   "slotId": "N017-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N017-S2-pexels-12176376.mp4",
+   "startSec": 0.0,
+   "durSec": 8.167,
+   "samples": 82,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.012,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 12.782,
+   "zoomMonotone": false,
+   "panNetPx": [
+    14.95,
+    23.808
+   ],
+   "panWidthPct": 5.857,
+   "shakePxPerPair": 1.162,
+   "panSignFlips": [
+    11,
+    20
+   ],
+   "rotTotalDeg": -5.48,
+   "subjectResidualMedianPx": 1.614,
+   "subjectResidualMaxPx": 2.118,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 2.648,
+     "panY": 5.91,
+     "scale": -4.19079,
+     "rot": 0.19118,
+     "resid": 2.637
+    },
+    {
+     "t": 1.0,
+     "panX": 6.5,
+     "panY": 4.574,
+     "scale": -4.45892,
+     "rot": -3.04504,
+     "resid": 4.113
+    },
+    {
+     "t": 2.0,
+     "panX": 6.5,
+     "panY": 4.985,
+     "scale": -2.9058,
+     "rot": -2.90458,
+     "resid": 4.079
+    },
+    {
+     "t": 3.0,
+     "panX": 1.703,
+     "panY": 1.52,
+     "scale": -4.41876,
+     "rot": -2.69225,
+     "resid": 3.693
+    },
+    {
+     "t": 4.0,
+     "panX": -0.737,
+     "panY": 3.462,
+     "scale": -2.19324,
+     "rot": -3.8699,
+     "resid": 3.772
+    },
+    {
+     "t": 5.0,
+     "panX": -1.934,
+     "panY": -1.455,
+     "scale": -3.3328,
+     "rot": 0.23612,
+     "resid": 3.481
+    },
+    {
+     "t": 6.0,
+     "panX": -0.388,
+     "panY": 4.965,
+     "scale": -3.14734,
+     "rot": -0.09884,
+     "resid": 2.911
+    },
+    {
+     "t": 7.0,
+     "panX": 0.474,
+     "panY": -0.447,
+     "scale": -5.65111,
+     "rot": -0.56862,
+     "resid": 2.669
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +12.78% across the used range (digital zoom / push-in, monotone=False)",
+    "sustained camera translation 5.86% of frame width (slow pan/track)",
+    "mild camera wobble 1.16 px/pair (sign flips 11/20)",
+    "rotation -5.48 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 1.61 px)"
+   ],
+   "slotId": "N017-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N018-S1-pexels-7702643.mp4",
+   "startSec": 0.0,
+   "durSec": 8.566,
+   "samples": 86,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.062,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.22,
+   "zoomMonotone": false,
+   "panNetPx": [
+    1.144,
+    -8.865
+   ],
+   "panWidthPct": 1.862,
+   "shakePxPerPair": 1.009,
+   "panSignFlips": [
+    4,
+    2
+   ],
+   "rotTotalDeg": -0.687,
+   "subjectResidualMedianPx": 0.463,
+   "subjectResidualMaxPx": 2.321,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": 2.341,
+     "panY": 0.849,
+     "scale": -0.22849,
+     "rot": -1.59023,
+     "resid": 1.096
+    },
+    {
+     "t": 1.0,
+     "panX": 0.0,
+     "panY": -0.367,
+     "scale": -0.16773,
+     "rot": -0.97152,
+     "resid": 1.548
+    },
+    {
+     "t": 2.0,
+     "panX": -2.089,
+     "panY": -0.923,
+     "scale": -0.14988,
+     "rot": 0.23985,
+     "resid": 2.083
+    },
+    {
+     "t": 3.0,
+     "panX": 3.04,
+     "panY": -2.432,
+     "scale": 0.82027,
+     "rot": -0.21178,
+     "resid": 3.516
+    },
+    {
+     "t": 4.0,
+     "panX": 0.831,
+     "panY": -1.786,
+     "scale": -0.00302,
+     "rot": 0.89309,
+     "resid": 0.31
+    },
+    {
+     "t": 5.0,
+     "panX": -0.147,
+     "panY": -3.095,
+     "scale": 0.13169,
+     "rot": -0.46712,
+     "resid": 2.707
+    },
+    {
+     "t": 6.0,
+     "panX": -1.177,
+     "panY": -1.357,
+     "scale": 0.07753,
+     "rot": 0.18494,
+     "resid": 2.899
+    },
+    {
+     "t": 7.0,
+     "panX": -1.722,
+     "panY": 0.767,
+     "scale": 0.01671,
+     "rot": 0.39889,
+     "resid": 0.299
+    }
+   ],
+   "verdict": "REVIEW",
+   "reasons": [
+    "mild camera wobble 1.01 px/pair (sign flips 4/2)",
+    "rotation -0.69 deg across the used range"
+   ],
+   "slotId": "N018-S1"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N018-S2-pexels-6337126.mp4",
+   "startSec": 0.0,
+   "durSec": 8.567,
+   "samples": 86,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.062,
+   "analysisRes": "480x270",
+   "zoomTotalPct": -0.819,
+   "zoomMonotone": false,
+   "panNetPx": [
+    1.37,
+    4.532
+   ],
+   "panWidthPct": 0.986,
+   "shakePxPerPair": 1.154,
+   "panSignFlips": [
+    2,
+    4
+   ],
+   "rotTotalDeg": -2.351,
+   "subjectResidualMedianPx": 0.171,
+   "subjectResidualMaxPx": 0.353,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -4.024,
+     "panY": 0.716,
+     "scale": 0.88155,
+     "rot": 1.54654,
+     "resid": 1.202
+    },
+    {
+     "t": 1.0,
+     "panX": 6.5,
+     "panY": 0.238,
+     "scale": 0.07811,
+     "rot": 0.15679,
+     "resid": 0.335
+    },
+    {
+     "t": 2.0,
+     "panX": 6.5,
+     "panY": 0.165,
+     "scale": 0.0,
+     "rot": -0.01153,
+     "resid": 0.448
+    },
+    {
+     "t": 3.0,
+     "panX": 5.579,
+     "panY": 0.109,
+     "scale": 0.72814,
+     "rot": -0.90509,
+     "resid": 0.743
+    },
+    {
+     "t": 4.0,
+     "panX": -0.909,
+     "panY": 1.061,
+     "scale": -0.13799,
+     "rot": -1.25843,
+     "resid": 1.32
+    },
+    {
+     "t": 5.0,
+     "panX": -3.695,
+     "panY": 0.31,
+     "scale": -0.26962,
+     "rot": -1.81576,
+     "resid": 1.672
+    },
+    {
+     "t": 6.0,
+     "panX": -6.5,
+     "panY": 0.618,
+     "scale": 0.25526,
+     "rot": -0.62224,
+     "resid": 0.858
+    },
+    {
+     "t": 7.0,
+     "panX": -2.162,
+     "panY": 1.048,
+     "scale": 0.31457,
+     "rot": -2.30389,
+     "resid": 1.629
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "mild camera wobble 1.15 px/pair (sign flips 2/4)",
+    "rotation -2.35 deg across the used range"
+   ],
+   "slotId": "N018-S2"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N018-S3-pexels-8865606.mp4",
+   "startSec": 0.0,
+   "durSec": 8.466,
+   "samples": 85,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.05,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 2.822,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -6.944,
+    5.606
+   ],
+   "panWidthPct": 1.859,
+   "shakePxPerPair": 1.679,
+   "panSignFlips": [
+    6,
+    0
+   ],
+   "rotTotalDeg": 0.912,
+   "subjectResidualMedianPx": 2.003,
+   "subjectResidualMaxPx": 2.921,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -1.012,
+     "panY": 1.205,
+     "scale": -0.83494,
+     "rot": 0.08378,
+     "resid": 3.152
+    },
+    {
+     "t": 1.0,
+     "panX": -0.268,
+     "panY": 0.17,
+     "scale": -1.57172,
+     "rot": 1.39116,
+     "resid": 3.126
+    },
+    {
+     "t": 2.0,
+     "panX": -3.262,
+     "panY": 0.999,
+     "scale": 1.14156,
+     "rot": 0.10355,
+     "resid": 3.121
+    },
+    {
+     "t": 3.0,
+     "panX": -1.62,
+     "panY": 0.926,
+     "scale": 1.45544,
+     "rot": -0.07741,
+     "resid": 3.339
+    },
+    {
+     "t": 4.0,
+     "panX": -2.17,
+     "panY": 0.35,
+     "scale": -3.16408,
+     "rot": 0.19095,
+     "resid": 2.943
+    },
+    {
+     "t": 5.0,
+     "panX": 0.06,
+     "panY": 1.942,
+     "scale": -0.30608,
+     "rot": 0.71844,
+     "resid": 2.642
+    },
+    {
+     "t": 6.0,
+     "panX": 1.237,
+     "panY": -0.103,
+     "scale": -1.87594,
+     "rot": -0.50043,
+     "resid": 3.773
+    },
+    {
+     "t": 7.0,
+     "panX": 0.421,
+     "panY": -0.151,
+     "scale": -1.29547,
+     "rot": 0.13632,
+     "resid": 2.573
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +2.82% across the used range (slow push/zoom)",
+    "non-monotonic camera wobble 1.68 px/pair (sign flips 6/0) - handheld signature",
+    "rotation +0.91 deg across the used range",
+    "visible motion is in the subject, not the camera (median unexplained cell displacement 2.00 px)"
+   ],
+   "slotId": "N018-S3"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/clips/N011-S2.mp4",
+   "startSec": 0.0,
+   "durSec": 9.1,
+   "samples": 91,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.0,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 9.305,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -1.253,
+    -1.229
+   ],
+   "panWidthPct": 0.366,
+   "shakePxPerPair": 0.54,
+   "panSignFlips": [
+    0,
+    0
+   ],
+   "rotTotalDeg": -0.348,
+   "subjectResidualMedianPx": 0.272,
+   "subjectResidualMaxPx": 2.31,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.393,
+     "panY": -0.097,
+     "scale": -2.76632,
+     "rot": -0.21595,
+     "resid": 1.041
+    },
+    {
+     "t": 1.0,
+     "panX": -0.339,
+     "panY": 0.095,
+     "scale": -2.68633,
+     "rot": -0.12196,
+     "resid": 0.501
+    },
+    {
+     "t": 2.0,
+     "panX": -0.276,
+     "panY": -0.42,
+     "scale": -2.47018,
+     "rot": 0.015,
+     "resid": 0.8
+    },
+    {
+     "t": 3.0,
+     "panX": -0.294,
+     "panY": -0.465,
+     "scale": -2.52542,
+     "rot": -0.00474,
+     "resid": 0.714
+    },
+    {
+     "t": 4.0,
+     "panX": 0.015,
+     "panY": 0.061,
+     "scale": -2.46195,
+     "rot": -0.0092,
+     "resid": 0.948
+    },
+    {
+     "t": 5.0,
+     "panX": 0.371,
+     "panY": -0.229,
+     "scale": -2.33321,
+     "rot": -0.07404,
+     "resid": 1.215
+    },
+    {
+     "t": 6.0,
+     "panX": -0.463,
+     "panY": 0.019,
+     "scale": -2.48554,
+     "rot": -0.25677,
+     "resid": 0.779
+    },
+    {
+     "t": 7.0,
+     "panX": -0.319,
+     "panY": -0.031,
+     "scale": -2.41644,
+     "rot": -0.10761,
+     "resid": 0.577
+    },
+    {
+     "t": 8.0,
+     "panX": 0.445,
+     "panY": -0.161,
+     "scale": -2.18592,
+     "rot": -0.04441,
+     "resid": 1.262
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +9.30% across the used range (digital zoom / push-in, monotone=False)",
+    "mild camera wobble 0.54 px/pair (sign flips 0/0)"
+   ],
+   "slotId": "N011-S2-rendered"
+  },
+  {
+   "path": "temp/essy-0005-roughcut-v01/media/N003-S1-backup-pexels-8865291.mp4",
+   "startSec": 0.0,
+   "durSec": 9.509,
+   "samples": 95,
+   "sampleFps": 10,
+   "lagSamples": 10,
+   "lagSec": 1.0,
+   "coveredFraction": 1.044,
+   "analysisRes": "480x270",
+   "zoomTotalPct": 5.038,
+   "zoomMonotone": false,
+   "panNetPx": [
+    -5.145,
+    37.39
+   ],
+   "panWidthPct": 7.863,
+   "shakePxPerPair": 2.941,
+   "panSignFlips": [
+    5,
+    0
+   ],
+   "rotTotalDeg": 0.4,
+   "subjectResidualMedianPx": 0.266,
+   "subjectResidualMaxPx": 3.05,
+   "series": [
+    {
+     "t": 0.0,
+     "panX": -0.169,
+     "panY": 2.046,
+     "scale": -0.62223,
+     "rot": 0.5379,
+     "resid": 1.446
+    },
+    {
+     "t": 1.0,
+     "panX": -0.938,
+     "panY": 2.981,
+     "scale": 0.23553,
+     "rot": 0.18404,
+     "resid": 2.316
+    },
+    {
+     "t": 2.0,
+     "panX": -0.041,
+     "panY": 3.291,
+     "scale": -0.01852,
+     "rot": 0.01568,
+     "resid": 2.165
+    },
+    {
+     "t": 3.0,
+     "panX": -0.112,
+     "panY": 3.778,
+     "scale": 0.14161,
+     "rot": -0.02766,
+     "resid": 1.883
+    },
+    {
+     "t": 4.0,
+     "panX": 3.327,
+     "panY": 2.849,
+     "scale": -0.75901,
+     "rot": 0.04506,
+     "resid": 0.49
+    },
+    {
+     "t": 5.0,
+     "panX": 3.549,
+     "panY": 2.028,
+     "scale": -1.64146,
+     "rot": 0.72661,
+     "resid": 4.368
+    },
+    {
+     "t": 6.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": -4.52318,
+     "rot": 1.21316,
+     "resid": 5.399
+    },
+    {
+     "t": 7.0,
+     "panX": -6.5,
+     "panY": 6.5,
+     "scale": 0.0,
+     "rot": 0.0,
+     "resid": 0.631
+    },
+    {
+     "t": 8.0,
+     "panX": 2.458,
+     "panY": 5.828,
+     "scale": -4.3898,
+     "rot": -1.79305,
+     "resid": 1.527
+    }
+   ],
+   "verdict": "REJECT",
+   "reasons": [
+    "scale change +5.04% across the used range (digital zoom / push-in, monotone=False)",
+    "sustained camera translation 7.86% of frame width (slow pan/track)",
+    "non-monotonic camera wobble 2.94 px/pair (sign flips 5/0) - handheld signature"
+   ],
+   "slotId": "N003-S1-backup"
+  }
+ ]
+}

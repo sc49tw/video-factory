@@ -1,0 +1,259 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-001",
+  "blockId": "n001",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "1be6d67cdf2644d29e91ceca4e26493c94e38c0e1704e43a7cb4b72e6d4261fb",
+    "matchesManifest": true,
+    "audioDurationSec": 14.136,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 47,
+    "lastWordEndSec": 13.147,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "What",
+      "startSec": 0.1,
+      "endSec": 0.356
+    },
+    {
+      "text": "if",
+      "startSec": 0.37,
+      "endSec": 0.483
+    },
+    {
+      "text": "one",
+      "startSec": 0.498,
+      "endSec": 0.768
+    },
+    {
+      "text": "day",
+      "startSec": 0.782,
+      "endSec": 0.966
+    },
+    {
+      "text": "your",
+      "startSec": 0.981,
+      "endSec": 1.18
+    },
+    {
+      "text": "body",
+      "startSec": 1.194,
+      "endSec": 1.535
+    },
+    {
+      "text": "can",
+      "startSec": 1.549,
+      "endSec": 1.719
+    },
+    {
+      "text": "no",
+      "startSec": 1.734,
+      "endSec": 1.904
+    },
+    {
+      "text": "longer",
+      "startSec": 1.918,
+      "endSec": 2.33
+    },
+    {
+      "text": "take",
+      "startSec": 2.344,
+      "endSec": 2.614
+    },
+    {
+      "text": "you",
+      "startSec": 2.628,
+      "endSec": 2.742
+    },
+    {
+      "text": "where",
+      "startSec": 2.756,
+      "endSec": 2.927
+    },
+    {
+      "text": "you",
+      "startSec": 2.941,
+      "endSec": 3.083
+    },
+    {
+      "text": "want",
+      "startSec": 3.097,
+      "endSec": 3.339
+    },
+    {
+      "text": "to",
+      "startSec": 3.353,
+      "endSec": 3.452
+    },
+    {
+      "text": "go",
+      "startSec": 3.466,
+      "endSec": 3.921
+    },
+    {
+      "text": "What",
+      "startSec": 4.908,
+      "endSec": 5.164
+    },
+    {
+      "text": "if",
+      "startSec": 5.178,
+      "endSec": 5.277
+    },
+    {
+      "text": "you",
+      "startSec": 5.291,
+      "endSec": 5.405
+    },
+    {
+      "text": "wake",
+      "startSec": 5.419,
+      "endSec": 5.703
+    },
+    {
+      "text": "up",
+      "startSec": 5.718,
+      "endSec": 5.888
+    },
+    {
+      "text": "and",
+      "startSec": 5.902,
+      "endSec": 5.987
+    },
+    {
+      "text": "there",
+      "startSec": 6.002,
+      "endSec": 6.144
+    },
+    {
+      "text": "is",
+      "startSec": 6.158,
+      "endSec": 6.328
+    },
+    {
+      "text": "nowhere",
+      "startSec": 6.343,
+      "endSec": 6.712
+    },
+    {
+      "text": "you",
+      "startSec": 6.726,
+      "endSec": 6.854
+    },
+    {
+      "text": "want",
+      "startSec": 6.868,
+      "endSec": 7.067
+    },
+    {
+      "text": "to",
+      "startSec": 7.081,
+      "endSec": 7.181
+    },
+    {
+      "text": "go",
+      "startSec": 7.195,
+      "endSec": 7.394
+    },
+    {
+      "text": "anyway",
+      "startSec": 7.408,
+      "endSec": 8.005
+    },
+    {
+      "text": "And",
+      "startSec": 8.985,
+      "endSec": 9.198
+    },
+    {
+      "text": "when",
+      "startSec": 9.212,
+      "endSec": 9.468
+    },
+    {
+      "text": "so",
+      "startSec": 9.482,
+      "endSec": 9.723
+    },
+    {
+      "text": "much",
+      "startSec": 9.738,
+      "endSec": 9.979
+    },
+    {
+      "text": "of",
+      "startSec": 9.993,
+      "endSec": 10.078
+    },
+    {
+      "text": "the",
+      "startSec": 10.093,
+      "endSec": 10.192
+    },
+    {
+      "text": "person",
+      "startSec": 10.206,
+      "endSec": 10.618
+    },
+    {
+      "text": "you",
+      "startSec": 10.632,
+      "endSec": 10.746
+    },
+    {
+      "text": "used",
+      "startSec": 10.76,
+      "endSec": 11.016
+    },
+    {
+      "text": "to",
+      "startSec": 11.03,
+      "endSec": 11.087
+    },
+    {
+      "text": "be",
+      "startSec": 11.101,
+      "endSec": 11.286
+    },
+    {
+      "text": "is",
+      "startSec": 11.3,
+      "endSec": 11.442
+    },
+    {
+      "text": "gone",
+      "startSec": 11.456,
+      "endSec": 11.911
+    },
+    {
+      "text": "what",
+      "startSec": 12.067,
+      "endSec": 12.294
+    },
+    {
+      "text": "is",
+      "startSec": 12.309,
+      "endSec": 12.436
+    },
+    {
+      "text": "still",
+      "startSec": 12.451,
+      "endSec": 12.791
+    },
+    {
+      "text": "there",
+      "startSec": 12.806,
+      "endSec": 13.147
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,726
+that I am useful.\N{\fs18}我有用。
+
+2
+00:00:00,727 --> 00:00:03,872
+Just because the conversation between me\N{\fs18}只因為我與世界的
+
+3
+00:00:03,873 --> 00:00:06,390
+and the world is still going on.\N{\fs18}對話還在繼續。

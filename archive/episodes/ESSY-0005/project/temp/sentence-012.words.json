@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-012",
+  "blockId": "n012",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "5ce6c58086168632dd157bd6bfcf113f3aef16ad9c8cdc97e72e08fa29231479",
+    "matchesManifest": true,
+    "audioDurationSec": 22.2,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 56,
+    "lastWordEndSec": 21.201,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "I",
+      "startSec": 0.1,
+      "endSec": 0.27
+    },
+    {
+      "text": "think",
+      "startSec": 0.285,
+      "endSec": 0.526
+    },
+    {
+      "text": "I",
+      "startSec": 0.54,
+      "endSec": 0.597
+    },
+    {
+      "text": "would",
+      "startSec": 0.611,
+      "endSec": 0.782
+    },
+    {
+      "text": "still",
+      "startSec": 0.796,
+      "endSec": 1.066
+    },
+    {
+      "text": "like",
+      "startSec": 1.08,
+      "endSec": 1.307
+    },
+    {
+      "text": "to",
+      "startSec": 1.322,
+      "endSec": 1.464
+    },
+    {
+      "text": "ask",
+      "startSec": 1.478,
+      "endSec": 1.961
+    },
+    {
+      "text": "How",
+      "startSec": 2.948,
+      "endSec": 3.203
+    },
+    {
+      "text": "can",
+      "startSec": 3.218,
+      "endSec": 3.388
+    },
+    {
+      "text": "I",
+      "startSec": 3.402,
+      "endSec": 3.473
+    },
+    {
+      "text": "live",
+      "startSec": 3.487,
+      "endSec": 3.743
+    },
+    {
+      "text": "this",
+      "startSec": 3.757,
+      "endSec": 3.956
+    },
+    {
+      "text": "day",
+      "startSec": 3.97,
+      "endSec": 4.226
+    },
+    {
+      "text": "well",
+      "startSec": 4.24,
+      "endSec": 4.78
+    },
+    {
+      "text": "And",
+      "startSec": 5.76,
+      "endSec": 5.959
+    },
+    {
+      "text": "is",
+      "startSec": 5.973,
+      "endSec": 6.073
+    },
+    {
+      "text": "there",
+      "startSec": 6.087,
+      "endSec": 6.243
+    },
+    {
+      "text": "something",
+      "startSec": 6.257,
+      "endSec": 6.684
+    },
+    {
+      "text": "I",
+      "startSec": 6.698,
+      "endSec": 6.783
+    },
+    {
+      "text": "can",
+      "startSec": 6.797,
+      "endSec": 6.953
+    },
+    {
+      "text": "leave",
+      "startSec": 6.968,
+      "endSec": 7.167
+    },
+    {
+      "text": "behind",
+      "startSec": 7.181,
+      "endSec": 7.593
+    },
+    {
+      "text": "in",
+      "startSec": 7.607,
+      "endSec": 7.692
+    },
+    {
+      "text": "the",
+      "startSec": 7.706,
+      "endSec": 7.777
+    },
+    {
+      "text": "world",
+      "startSec": 7.791,
+      "endSec": 8.445
+    },
+    {
+      "text": "I",
+      "startSec": 9.425,
+      "endSec": 9.567
+    },
+    {
+      "text": "don't",
+      "startSec": 9.581,
+      "endSec": 9.837
+    },
+    {
+      "text": "mean",
+      "startSec": 9.851,
+      "endSec": 10.064
+    },
+    {
+      "text": "anything",
+      "startSec": 10.078,
+      "endSec": 10.49
+    },
+    {
+      "text": "grand",
+      "startSec": 10.505,
+      "endSec": 11.073
+    },
+    {
+      "text": "Maybe",
+      "startSec": 12.053,
+      "endSec": 12.522
+    },
+    {
+      "text": "a",
+      "startSec": 12.536,
+      "endSec": 12.607
+    },
+    {
+      "text": "few",
+      "startSec": 12.621,
+      "endSec": 12.877
+    },
+    {
+      "text": "strangers",
+      "startSec": 12.891,
+      "endSec": 13.502
+    },
+    {
+      "text": "read",
+      "startSec": 13.516,
+      "endSec": 13.786
+    },
+    {
+      "text": "something",
+      "startSec": 13.8,
+      "endSec": 14.24
+    },
+    {
+      "text": "I",
+      "startSec": 14.255,
+      "endSec": 14.34
+    },
+    {
+      "text": "wrote",
+      "startSec": 14.354,
+      "endSec": 14.823
+    },
+    {
+      "text": "watch",
+      "startSec": 14.993,
+      "endSec": 15.206
+    },
+    {
+      "text": "a",
+      "startSec": 15.22,
+      "endSec": 15.291
+    },
+    {
+      "text": "video",
+      "startSec": 15.306,
+      "endSec": 15.703
+    },
+    {
+      "text": "I",
+      "startSec": 15.718,
+      "endSec": 15.831
+    },
+    {
+      "text": "made",
+      "startSec": 15.845,
+      "endSec": 16.272
+    },
+    {
+      "text": "or",
+      "startSec": 16.499,
+      "endSec": 16.584
+    },
+    {
+      "text": "use",
+      "startSec": 16.598,
+      "endSec": 16.982
+    },
+    {
+      "text": "some",
+      "startSec": 16.996,
+      "endSec": 17.166
+    },
+    {
+      "text": "little",
+      "startSec": 17.181,
+      "endSec": 17.493
+    },
+    {
+      "text": "project",
+      "startSec": 17.507,
+      "endSec": 18.005
+    },
+    {
+      "text": "I",
+      "startSec": 18.019,
+      "endSec": 18.104
+    },
+    {
+      "text": "built",
+      "startSec": 18.118,
+      "endSec": 18.686
+    },
+    {
+      "text": "People",
+      "startSec": 19.666,
+      "endSec": 20.064
+    },
+    {
+      "text": "I",
+      "startSec": 20.078,
+      "endSec": 20.164
+    },
+    {
+      "text": "will",
+      "startSec": 20.178,
+      "endSec": 20.348
+    },
+    {
+      "text": "never",
+      "startSec": 20.363,
+      "endSec": 20.675
+    },
+    {
+      "text": "meet",
+      "startSec": 20.689,
+      "endSec": 21.201
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,713
+Maybe one day I won't be able to write or work on projects anymore.\N{\fs18}或許有一天我寫不了字、做不了專案。
+
+2
+00:00:01,693 --> 00:00:05,131
+Maybe I will just sit by a window, listen to music,\N{\fs18}也許我就坐在窗邊，聽聽音樂，
+
+3
+00:00:05,401 --> 00:00:07,105
+eat something I still enjoy,\N{\fs18}吃點仍覺得好吃的東西，
+
+4
+00:00:07,332 --> 00:00:07,888
+and talk to someone once in a while.\N{\fs18}偶爾跟人說說話。

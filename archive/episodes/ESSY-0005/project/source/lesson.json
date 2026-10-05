@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0005",
+  "series": "ESSY",
+  "subtype": "essay",
+  "title": "What Is Still There When I'm Eighty?",
+  "language": "en",
+  "renderMode": "essay-narration",
+  "voice": {
+    "provider": "edge",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sections": [
+    {"id": "n001", "heading": "N001", "narration": [{"id": "n001", "pauseAfterSec": 0.6}]},
+    {"id": "n002", "heading": "N002", "narration": [{"id": "n002", "pauseAfterSec": 0.6}]},
+    {"id": "n003", "heading": "N003", "narration": [{"id": "n003", "pauseAfterSec": 0.6}]},
+    {"id": "n004", "heading": "N004", "narration": [{"id": "n004", "pauseAfterSec": 0.6}]},
+    {"id": "n005", "heading": "N005", "narration": [{"id": "n005", "pauseAfterSec": 0.6}]},
+    {"id": "n006", "heading": "N006", "narration": [{"id": "n006", "pauseAfterSec": 0.6}]},
+    {"id": "n007", "heading": "N007", "narration": [{"id": "n007", "pauseAfterSec": 0.6}]},
+    {"id": "n008", "heading": "N008", "narration": [{"id": "n008", "pauseAfterSec": 0.6}]},
+    {"id": "n009", "heading": "N009", "narration": [{"id": "n009", "pauseAfterSec": 0.6}]},
+    {"id": "n010", "heading": "N010", "narration": [{"id": "n010", "pauseAfterSec": 0.6}]},
+    {"id": "n011", "heading": "N011", "narration": [{"id": "n011", "pauseAfterSec": 0.6}]},
+    {"id": "n012", "heading": "N012", "narration": [{"id": "n012", "pauseAfterSec": 0.6}]},
+    {"id": "n013", "heading": "N013", "narration": [{"id": "n013", "pauseAfterSec": 0.6}]},
+    {"id": "n014", "heading": "N014", "narration": [{"id": "n014", "pauseAfterSec": 0.6}]},
+    {"id": "n015", "heading": "N015", "narration": [{"id": "n015", "pauseAfterSec": 0.6}]},
+    {"id": "n016", "heading": "N016", "narration": [{"id": "n016", "pauseAfterSec": 0.6}]},
+    {"id": "n017", "heading": "N017", "narration": [{"id": "n017", "pauseAfterSec": 0.6}]},
+    {"id": "n018", "heading": "N018", "narration": [{"id": "n018", "pauseAfterSec": 0.6}]}
+  ]
+}

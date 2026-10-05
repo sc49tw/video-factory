@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:01,518
+and talk to someone once in a while.\N{\fs18}偶爾跟人說說話。
+
+2
+00:00:02,498 --> 00:00:04,373
+If I am not in constant pain,\N{\fs18}若無長期疼痛，
+
+3
+00:00:04,587 --> 00:00:05,510
+perhaps that would be\N{\fs18}或許那也是
+
+4
+00:00:05,524 --> 00:00:06,888
+a pretty good day too.\N{\fs18}不錯的一天。

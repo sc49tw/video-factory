@@ -1,0 +1,141 @@
+[
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S1",
+    "visualArc": "regret held without content -> the future self making a claim -> two incompatible rhythms of a life left equally standing",
+    "editorialFunction": "Name regret as a weight the narrator carries, while keeping its content deliberately unspecified so no particular past choice is identified as the wrong one.",
+    "visualIntent": "The narrator alone with a long, unresolved thought: a person sitting somewhere familiar and ordinary, turning something over in their mind without any object in frame identifying what it is about. The hesitation is real and the mood is heavy, but the material of the regret is withheld from the image exactly as it is withheld from the narration. Whatever the regret is about, the audience is not told.",
+    "avoid": [
+      "travelling, tourism, or a journey never taken",
+      "unused tickets, passports, suitcases, or unvisited destinations",
+      "any specific life choice depicted as the mistaken one",
+      "crying and self-flagellation",
+      "storm-cloud and rain-gutter imagery",
+      "sepia flashback treatment",
+      "pictorial regret metaphors"
+    ],
+    "searchQuery": "person sitting alone with a heavy unresolved thought ordinary interior",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S2",
+    "visualArc": "regret held without content -> the future self making a claim -> two incompatible rhythms of a life left equally standing",
+    "editorialFunction": "Let the future self make its claim: a second figure looking at the life that was lived.",
+    "visualIntent": "An older figure looking toward a younger person at a distance in an ordinary public place, or a first-person view from an older vantage toward a younger stranger. The exchange is unvoiced and unresolved.",
+    "avoid": [
+      "split-screen or diptych comparison",
+      "before-and-after grammar",
+      "ghostly double exposure",
+      "then-versus-now graphics"
+    ],
+    "searchQuery": "older person looking toward younger person at a distance city",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S3",
+    "visualArc": "regret held without content -> the future self making a claim -> two incompatible rhythms of a life left equally standing",
+    "editorialFunction": "Hold both possible future judgments at once as two ordinary and equally weighted rhythms of a life, without scoring them against each other.",
+    "visualIntent": "Two stretches of ordinary life shown one after the other at the same even weight and the same level of attention: one built around continuing to work, with a person among colleagues and a working week; the other built around time spent on one's own life, with a person outdoors, travelling lightly, or doing something for themselves. Both are filmed with the same calm observational distance and neither is marked, ranked, corrected, or resolved in favour of the other.",
+    "avoid": [
+      "diverging roads, crossroads, forks, or junction-from-above",
+      "split-screen, diptych, or side-by-side comparison frames",
+      "signposts, arrows, labelled paths, or route graphics",
+      "scales of balance, tug-of-war, or any winner-and-loser framing",
+      "one rhythm shot as happier, freer, more successful, or more desirable",
+      "one rhythm presented as correct and the other as a mistake"
+    ],
+    "searchQuery": "two ordinary lives shown in turn working week and time for oneself",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N017",
+    "slotId": "N017-S1",
+    "visualArc": "the outcome still unknowable -> judgement arriving from behind",
+    "editorialFunction": "Express the unknowable ending as a story still being written, not as a failure.",
+    "visualIntent": "An unwritten page, a paused recording, or a plan left open on a table; the incompleteness is neutral and untroubled, with no frustration in the frame.",
+    "avoid": [
+      "blank-page despair",
+      "crumpled or crossed-out paper",
+      "writer's-block caricature",
+      "an anxious posture over the desk"
+    ],
+    "searchQuery": "unwritten page and pen paused on table quiet neutral",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N017",
+    "slotId": "N017-S2",
+    "visualArc": "the outcome still unknowable -> judgement arriving from behind",
+    "editorialFunction": "Frame judgement as a look backward carrying information the younger self could not have had.",
+    "visualIntent": "One person walking a short distance behind another on a familiar route, seeing what the other cannot see; observational distance, and no verdict expressed in the image.",
+    "avoid": [
+      "judgemental glare or pointing",
+      "courtroom or interrogation framing",
+      "surveillance imagery",
+      "blame posture"
+    ],
+    "searchQuery": "person walking behind another on familiar path observational",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S1",
+    "visualArc": "an ordinary fragment of a younger life, seen without verdict -> time simply continuing -> the remaining road travelled rather than surveyed",
+    "editorialFunction": "Stand in for the past self with an ordinary fragment of younger-adult life, so the episode can look back without ever requiring an identifiable protagonist or a memory effect.",
+    "visualIntent": "A plain piece of ordinary life lived by a young adult — someone at a kitchen table with their own coffee, on a shared balcony, at a desk early in the morning, waiting for a bus — filmed as present-tense documentary rather than as a recovered memory. The person is a stranger to the viewer and is never identified as the narrator. The framing is level and unadorned, and nothing in the image indicates that this is being judged or redeemed.",
+    "avoid": [
+      "an identifiable younger version of the narrator, or a match-cut implying the same person",
+      "archival or period footage, super-8, film grain, or a home-video frame",
+      "sepia or halftone nostalgic filter",
+      "glowing memory effects, flashbacks, or double exposure",
+      "on-the-other-hand graphics",
+      "a tearful meeting with a past self",
+      "the younger figure posed as innocent, idealised, or condemned"
+    ],
+    "searchQuery": "young adult ordinary morning at home documentary natural light",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S2",
+    "visualArc": "an ordinary fragment of a younger life, seen without verdict -> time simply continuing -> the remaining road travelled rather than surveyed",
+    "editorialFunction": "Withhold explanation and let the narration carry the self-forgiveness, using stillness and continuation rather than any symbolic act of release.",
+    "visualIntent": "The same young person simply continuing: a stretch of ordinary time passing with nothing resolved, nothing dropped, and nothing surrendered — a held frame as the day carries on and the person is still in it. No gesture completes anything. The image deliberately supplies no object, action, or release to stand for letting go, so that the lines about having made the best choices one could and not spending the rest regretting them have no visual paraphrase to lean on.",
+    "avoid": [
+      "setting down, dropping, releasing, letting go, or putting away any object",
+      "weight, burden, baggage, or release as a visible physical act",
+      "a symbolic gesture of letting go of any kind",
+      "hot-air balloon release, confetti, or fireworks",
+      "cathartic arm-raised gesture",
+      "freedom-cliche sunburst",
+      "framing the moment as triumph, closure, or a reward"
+    ],
+    "searchQuery": "young person continuing ordinary morning stillness no event long take",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S3",
+    "visualArc": "an ordinary fragment of a younger life, seen without verdict -> time simply continuing -> the remaining road travelled rather than surveyed",
+    "editorialFunction": "End on the road that remains, travelled rather than surveyed, without reaching a destination.",
+    "visualIntent": "A single figure moving forward along a real road with visible distance ahead, at ordinary walking pace, unsentimental; the frame keeps travelling and does not arrive.",
+    "avoid": [
+      "walking-into-sunset cliche",
+      "summit or viewpoint pose",
+      "victory or horizon-pointing gestures",
+      "slow-motion finale and drone pullback"
+    ],
+    "searchQuery": "person walking forward on open road unsentimental real",
+    "preferredMediaType": "video",
+    "batch": "N016-N018"
+  }
+]

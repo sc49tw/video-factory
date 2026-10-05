@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-016",
+  "blockId": "n016",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "812ad2bc658a402b5962b6ec949af514be6feb585cab014e051e24e4ca5537cb",
+    "matchesManifest": true,
+    "audioDurationSec": 25.464,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 62,
+    "lastWordEndSec": 24.482,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "And",
+      "startSec": 0.1,
+      "endSec": 0.299
+    },
+    {
+      "text": "perhaps",
+      "startSec": 0.313,
+      "endSec": 0.753
+    },
+    {
+      "text": "there",
+      "startSec": 0.768,
+      "endSec": 0.91
+    },
+    {
+      "text": "is",
+      "startSec": 0.924,
+      "endSec": 1.094
+    },
+    {
+      "text": "one",
+      "startSec": 1.109,
+      "endSec": 1.407
+    },
+    {
+      "text": "more",
+      "startSec": 1.421,
+      "endSec": 1.62
+    },
+    {
+      "text": "thing",
+      "startSec": 1.634,
+      "endSec": 1.89
+    },
+    {
+      "text": "I",
+      "startSec": 1.904,
+      "endSec": 2.003
+    },
+    {
+      "text": "hope",
+      "startSec": 2.018,
+      "endSec": 2.33
+    },
+    {
+      "text": "I",
+      "startSec": 2.344,
+      "endSec": 2.43
+    },
+    {
+      "text": "can",
+      "startSec": 2.444,
+      "endSec": 2.628
+    },
+    {
+      "text": "let",
+      "startSec": 2.643,
+      "endSec": 2.827
+    },
+    {
+      "text": "go",
+      "startSec": 2.841,
+      "endSec": 3.083
+    },
+    {
+      "text": "of",
+      "startSec": 3.097,
+      "endSec": 3.424
+    },
+    {
+      "text": "Regret",
+      "startSec": 4.411,
+      "endSec": 5.164
+    },
+    {
+      "text": "My",
+      "startSec": 6.144,
+      "endSec": 6.442
+    },
+    {
+      "text": "eighty-year-old",
+      "startSec": 6.456,
+      "endSec": 7.166
+    },
+    {
+      "text": "self",
+      "startSec": 7.181,
+      "endSec": 7.522
+    },
+    {
+      "text": "may",
+      "startSec": 7.536,
+      "endSec": 7.706
+    },
+    {
+      "text": "look",
+      "startSec": 7.72,
+      "endSec": 7.948
+    },
+    {
+      "text": "back",
+      "startSec": 7.962,
+      "endSec": 8.218
+    },
+    {
+      "text": "at",
+      "startSec": 8.232,
+      "endSec": 8.303
+    },
+    {
+      "text": "me",
+      "startSec": 8.317,
+      "endSec": 8.445
+    },
+    {
+      "text": "today",
+      "startSec": 8.459,
+      "endSec": 8.899
+    },
+    {
+      "text": "and",
+      "startSec": 8.914,
+      "endSec": 9.084
+    },
+    {
+      "text": "say",
+      "startSec": 9.098,
+      "endSec": 9.61
+    },
+    {
+      "text": "You",
+      "startSec": 10.59,
+      "endSec": 10.803
+    },
+    {
+      "text": "had",
+      "startSec": 10.817,
+      "endSec": 10.987
+    },
+    {
+      "text": "enough",
+      "startSec": 11.002,
+      "endSec": 11.328
+    },
+    {
+      "text": "money",
+      "startSec": 11.343,
+      "endSec": 11.726
+    },
+    {
+      "text": "Why",
+      "startSec": 12.706,
+      "endSec": 13.005
+    },
+    {
+      "text": "didn't",
+      "startSec": 13.019,
+      "endSec": 13.317
+    },
+    {
+      "text": "you",
+      "startSec": 13.331,
+      "endSec": 13.416
+    },
+    {
+      "text": "stop",
+      "startSec": 13.431,
+      "endSec": 13.715
+    },
+    {
+      "text": "working",
+      "startSec": 13.729,
+      "endSec": 14.155
+    },
+    {
+      "text": "earlier",
+      "startSec": 14.169,
+      "endSec": 14.581
+    },
+    {
+      "text": "and",
+      "startSec": 14.595,
+      "endSec": 14.695
+    },
+    {
+      "text": "do",
+      "startSec": 14.709,
+      "endSec": 14.837
+    },
+    {
+      "text": "what",
+      "startSec": 14.851,
+      "endSec": 15.064
+    },
+    {
+      "text": "you",
+      "startSec": 15.078,
+      "endSec": 15.192
+    },
+    {
+      "text": "really",
+      "startSec": 15.206,
+      "endSec": 15.561
+    },
+    {
+      "text": "wanted",
+      "startSec": 15.576,
+      "endSec": 16.172
+    },
+    {
+      "text": "Or",
+      "startSec": 17.152,
+      "endSec": 17.323
+    },
+    {
+      "text": "he",
+      "startSec": 17.337,
+      "endSec": 17.522
+    },
+    {
+      "text": "may",
+      "startSec": 17.536,
+      "endSec": 17.735
+    },
+    {
+      "text": "say",
+      "startSec": 17.749,
+      "endSec": 18.317
+    },
+    {
+      "text": "You",
+      "startSec": 19.297,
+      "endSec": 19.51
+    },
+    {
+      "text": "needed",
+      "startSec": 19.524,
+      "endSec": 19.865
+    },
+    {
+      "text": "the",
+      "startSec": 19.88,
+      "endSec": 19.951
+    },
+    {
+      "text": "money",
+      "startSec": 19.965,
+      "endSec": 20.377
+    },
+    {
+      "text": "Why",
+      "startSec": 21.357,
+      "endSec": 21.641
+    },
+    {
+      "text": "didn't",
+      "startSec": 21.655,
+      "endSec": 21.925
+    },
+    {
+      "text": "you",
+      "startSec": 21.939,
+      "endSec": 22.039
+    },
+    {
+      "text": "work",
+      "startSec": 22.053,
+      "endSec": 22.337
+    },
+    {
+      "text": "a",
+      "startSec": 22.351,
+      "endSec": 22.408
+    },
+    {
+      "text": "few",
+      "startSec": 22.422,
+      "endSec": 22.692
+    },
+    {
+      "text": "more",
+      "startSec": 22.706,
+      "endSec": 22.934
+    },
+    {
+      "text": "years",
+      "startSec": 22.948,
+      "endSec": 23.345
+    },
+    {
+      "text": "while",
+      "startSec": 23.36,
+      "endSec": 23.587
+    },
+    {
+      "text": "you",
+      "startSec": 23.601,
+      "endSec": 23.701
+    },
+    {
+      "text": "still",
+      "startSec": 23.715,
+      "endSec": 24.027
+    },
+    {
+      "text": "could",
+      "startSec": 24.041,
+      "endSec": 24.482
+    }
+  ]
+}

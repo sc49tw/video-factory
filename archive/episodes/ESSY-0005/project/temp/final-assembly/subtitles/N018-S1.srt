@@ -1,0 +1,11 @@
+1
+00:00:00,100 --> 00:00:03,324
+So perhaps growing old gracefully is not reaching the end\N{\fs18}也許體面地老去，
+
+2
+00:00:03,339 --> 00:00:06,023
+and discovering that I made all the right choices.\N{\fs18}不是走到終點發現全對了。
+
+3
+00:00:07,010 --> 00:00:08,568
+Perhaps it is being able to look back\N{\fs18}而是能回頭

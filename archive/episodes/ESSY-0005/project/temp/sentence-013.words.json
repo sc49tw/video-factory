@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-013",
+  "blockId": "n013",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "b345ae49e887abfa7c091161852065a7714931b88f62a4f308d64ecf4ba9480e",
+    "matchesManifest": true,
+    "audioDurationSec": 22.152,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 51,
+    "lastWordEndSec": 21.158,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "For",
+      "startSec": 0.1,
+      "endSec": 0.313
+    },
+    {
+      "text": "most",
+      "startSec": 0.327,
+      "endSec": 0.668
+    },
+    {
+      "text": "of",
+      "startSec": 0.682,
+      "endSec": 0.782
+    },
+    {
+      "text": "my",
+      "startSec": 0.796,
+      "endSec": 0.981
+    },
+    {
+      "text": "life",
+      "startSec": 0.995,
+      "endSec": 1.535
+    },
+    {
+      "text": "the",
+      "startSec": 1.776,
+      "endSec": 1.876
+    },
+    {
+      "text": "world",
+      "startSec": 1.89,
+      "endSec": 2.302
+    },
+    {
+      "text": "has",
+      "startSec": 2.316,
+      "endSec": 2.458
+    },
+    {
+      "text": "been",
+      "startSec": 2.472,
+      "endSec": 2.657
+    },
+    {
+      "text": "sending",
+      "startSec": 2.671,
+      "endSec": 3.126
+    },
+    {
+      "text": "things",
+      "startSec": 3.14,
+      "endSec": 3.452
+    },
+    {
+      "text": "into",
+      "startSec": 3.466,
+      "endSec": 3.793
+    },
+    {
+      "text": "me",
+      "startSec": 3.807,
+      "endSec": 4.077
+    },
+    {
+      "text": "books",
+      "startSec": 4.333,
+      "endSec": 4.816
+    },
+    {
+      "text": "places",
+      "startSec": 5.072,
+      "endSec": 5.711
+    },
+    {
+      "text": "people",
+      "startSec": 5.966,
+      "endSec": 6.464
+    },
+    {
+      "text": "questions",
+      "startSec": 6.719,
+      "endSec": 7.43
+    },
+    {
+      "text": "experiences",
+      "startSec": 7.657,
+      "endSec": 8.822
+    },
+    {
+      "text": "I",
+      "startSec": 9.809,
+      "endSec": 9.979
+    },
+    {
+      "text": "hope",
+      "startSec": 9.993,
+      "endSec": 10.291
+    },
+    {
+      "text": "I",
+      "startSec": 10.306,
+      "endSec": 10.391
+    },
+    {
+      "text": "will",
+      "startSec": 10.405,
+      "endSec": 10.561
+    },
+    {
+      "text": "still",
+      "startSec": 10.576,
+      "endSec": 10.86
+    },
+    {
+      "text": "have",
+      "startSec": 10.874,
+      "endSec": 11.016
+    },
+    {
+      "text": "something",
+      "startSec": 11.03,
+      "endSec": 11.442
+    },
+    {
+      "text": "to",
+      "startSec": 11.456,
+      "endSec": 11.556
+    },
+    {
+      "text": "send",
+      "startSec": 11.57,
+      "endSec": 11.939
+    },
+    {
+      "text": "back",
+      "startSec": 11.953,
+      "endSec": 12.422
+    },
+    {
+      "text": "Not",
+      "startSec": 13.402,
+      "endSec": 13.715
+    },
+    {
+      "text": "because",
+      "startSec": 13.729,
+      "endSec": 14.027
+    },
+    {
+      "text": "I",
+      "startSec": 14.041,
+      "endSec": 14.112
+    },
+    {
+      "text": "need",
+      "startSec": 14.127,
+      "endSec": 14.397
+    },
+    {
+      "text": "to",
+      "startSec": 14.411,
+      "endSec": 14.496
+    },
+    {
+      "text": "prove",
+      "startSec": 14.51,
+      "endSec": 14.908
+    },
+    {
+      "text": "that",
+      "startSec": 14.922,
+      "endSec": 15.121
+    },
+    {
+      "text": "I",
+      "startSec": 15.135,
+      "endSec": 15.249
+    },
+    {
+      "text": "am",
+      "startSec": 15.263,
+      "endSec": 15.419
+    },
+    {
+      "text": "useful",
+      "startSec": 15.434,
+      "endSec": 16.101
+    },
+    {
+      "text": "Just",
+      "startSec": 17.081,
+      "endSec": 17.422
+    },
+    {
+      "text": "because",
+      "startSec": 17.436,
+      "endSec": 17.692
+    },
+    {
+      "text": "the",
+      "startSec": 17.706,
+      "endSec": 17.806
+    },
+    {
+      "text": "conversation",
+      "startSec": 17.82,
+      "endSec": 18.558
+    },
+    {
+      "text": "between",
+      "startSec": 18.573,
+      "endSec": 18.985
+    },
+    {
+      "text": "me",
+      "startSec": 18.999,
+      "endSec": 19.141
+    },
+    {
+      "text": "and",
+      "startSec": 19.155,
+      "endSec": 19.283
+    },
+    {
+      "text": "the",
+      "startSec": 19.297,
+      "endSec": 19.382
+    },
+    {
+      "text": "world",
+      "startSec": 19.397,
+      "endSec": 19.837
+    },
+    {
+      "text": "is",
+      "startSec": 19.851,
+      "endSec": 20.007
+    },
+    {
+      "text": "still",
+      "startSec": 20.022,
+      "endSec": 20.348
+    },
+    {
+      "text": "going",
+      "startSec": 20.363,
+      "endSec": 20.774
+    },
+    {
+      "text": "on",
+      "startSec": 20.789,
+      "endSec": 21.158
+    }
+  ]
+}

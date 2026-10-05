@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "1.0",
+  "artifact": "narrative-review-page",
+  "validatedAt": "2026-09-30T14:36:22.681Z",
+  "dataFile": "projects/ESSY-0005/sourcing/narrative-review-data.json",
+  "htmlFile": "projects/ESSY-0005/sourcing/narrative-review-page.html",
+  "totals": {
+    "checks": 30,
+    "passed": 30,
+    "failed": 0
+  },
+  "counts": {
+    "blocks": 18,
+    "slots": 43,
+    "candidates": 275,
+    "videos": 165,
+    "photos": 110,
+    "deduped": 0,
+    "previouslyWatched": 7
+  },
+  "missingNarrationOrTiming": [],
+  "checks": [
+    {
+      "id": "slot-count-43",
+      "status": "pass",
+      "detail": "storyboard=43 review=43"
+    },
+    {
+      "id": "slot-ids-match-storyboard",
+      "status": "pass",
+      "detail": "identical id sequence"
+    },
+    {
+      "id": "blocks-18",
+      "status": "pass",
+      "detail": "N001..N018 in order"
+    },
+    {
+      "id": "slot-sequence-continuous",
+      "status": "pass",
+      "detail": "1..43"
+    },
+    {
+      "id": "narration-english-exact",
+      "status": "pass",
+      "detail": "every block narration equals projects/ESSY-0005/script.md verbatim"
+    },
+    {
+      "id": "narration-zh-hant-complete",
+      "status": "pass",
+      "detail": "18 blocks, paragraph count mirrors the English, marked as reference translation"
+    },
+    {
+      "id": "timing-matches-manifest",
+      "status": "pass",
+      "detail": "windowSec length equals manifest durationSec for all 18 blocks"
+    },
+    {
+      "id": "timing-continuous",
+      "status": "pass",
+      "detail": "block windows tile 0.000-369.864s with no gap or overlap"
+    },
+    {
+      "id": "alignment-limitation-declared",
+      "status": "pass",
+      "detail": "no per-slot start/end invented; block-level narration shown with the stated limitation"
+    },
+    {
+      "id": "candidate-count-accounting",
+      "status": "pass",
+      "detail": "r4=215 r5=60 deduped=0 merged=275"
+    },
+    {
+      "id": "no-slot-without-video",
+      "status": "pass",
+      "detail": "every slot keeps video-first priority"
+    },
+    {
+      "id": "video-before-photo",
+      "status": "pass",
+      "detail": "videos render before photo fallbacks"
+    },
+    {
+      "id": "dedupe-within-slot",
+      "status": "pass",
+      "detail": "one entry per mediaType:pexelsId per slot"
+    },
+    {
+      "id": "dedupe-unique-per-slot",
+      "status": "pass",
+      "detail": "identical Pexels assets collapsed inside each slot with provenance retained"
+    },
+    {
+      "id": "provenance-retained",
+      "status": "pass",
+      "detail": "every candidate keeps round + rank + query + group provenance"
+    },
+    {
+      "id": "both-rounds-preserved",
+      "status": "pass",
+      "detail": "Round 4 only=215, Round 5 only=60, merged=0 (0 in-slot duplicates in this data set; dedupe is still applied per slot)"
+    },
+    {
+      "id": "source-files-intact",
+      "status": "pass",
+      "detail": "Round 4 / Round 5 source JSON files present and read-only to the builder"
+    },
+    {
+      "id": "watched-seven-marked",
+      "status": "pass",
+      "detail": "7 previously watched videos marked reviewed / provisional keep"
+    },
+    {
+      "id": "watched-not-approved",
+      "status": "pass",
+      "detail": "no candidate carries selection/download state"
+    },
+    {
+      "id": "watched-label-in-html",
+      "status": "pass",
+      "detail": "provisional-keep label rendered in the page, never as approval"
+    },
+    {
+      "id": "export-fn-inlined-verbatim",
+      "status": "pass",
+      "detail": "the page ships the tested export function verbatim"
+    },
+    {
+      "id": "export-serializable",
+      "status": "pass",
+      "detail": "payload round-trips through JSON"
+    },
+    {
+      "id": "export-covers-all-slots",
+      "status": "pass",
+      "detail": "43 slot entries"
+    },
+    {
+      "id": "export-carries-decisions",
+      "status": "pass",
+      "detail": "slot decision exported"
+    },
+    {
+      "id": "export-carries-notes",
+      "status": "pass",
+      "detail": "editorial notes exported"
+    },
+    {
+      "id": "export-carries-candidate-marks",
+      "status": "pass",
+      "detail": "candidate-level provisional keep / reject exported"
+    },
+    {
+      "id": "export-summary",
+      "status": "pass",
+      "detail": "{\"totalSlots\":43,\"reviewedSlots\":3,\"unresolvedSlots\":40,\"selectedForProposalSlots\":1,\"provisionalKeepSlots\":1,\"rejectSlots\":0,\"needsAnotherSearchSlots\":1,\"finalSelectionPendingSlots\":0,\"candidateProvisionalKeeps\":1,\"candidateRejects\":1,\"previouslyWatchedProvisionalKeeps\":7}"
+    },
+    {
+      "id": "export-not-approved",
+      "status": "pass",
+      "detail": "no approval semantics in the export"
+    },
+    {
+      "id": "export-controls-present",
+      "status": "pass",
+      "detail": "all four controls + notes + export present"
+    },
+    {
+      "id": "no-approval-wording",
+      "status": "pass",
+      "detail": "summary states nothing is approved"
+    }
+  ]
+}

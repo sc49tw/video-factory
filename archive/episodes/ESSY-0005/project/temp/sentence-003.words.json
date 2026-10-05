@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-003",
+  "blockId": "n003",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "4e3acbc80c2c7ba9b330cf37e24292610d0eaec72b2d4efa5e95beb18bb45d01",
+    "matchesManifest": true,
+    "audioDurationSec": 13.056,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 32,
+    "lastWordEndSec": 12.067,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "When",
+      "startSec": 0.1,
+      "endSec": 0.37
+    },
+    {
+      "text": "I",
+      "startSec": 0.384,
+      "endSec": 0.455
+    },
+    {
+      "text": "look",
+      "startSec": 0.469,
+      "endSec": 0.739
+    },
+    {
+      "text": "at",
+      "startSec": 0.753,
+      "endSec": 0.853
+    },
+    {
+      "text": "them",
+      "startSec": 0.867,
+      "endSec": 1.094
+    },
+    {
+      "text": "my",
+      "startSec": 1.307,
+      "endSec": 1.492
+    },
+    {
+      "text": "first",
+      "startSec": 1.506,
+      "endSec": 1.947
+    },
+    {
+      "text": "reaction",
+      "startSec": 1.961,
+      "endSec": 2.486
+    },
+    {
+      "text": "is",
+      "startSec": 2.501,
+      "endSec": 2.671
+    },
+    {
+      "text": "simple",
+      "startSec": 2.685,
+      "endSec": 3.197
+    },
+    {
+      "text": "I",
+      "startSec": 4.184,
+      "endSec": 4.326
+    },
+    {
+      "text": "don't",
+      "startSec": 4.34,
+      "endSec": 4.567
+    },
+    {
+      "text": "want",
+      "startSec": 4.581,
+      "endSec": 4.737
+    },
+    {
+      "text": "to",
+      "startSec": 4.752,
+      "endSec": 4.837
+    },
+    {
+      "text": "grow",
+      "startSec": 4.851,
+      "endSec": 5.078
+    },
+    {
+      "text": "old",
+      "startSec": 5.093,
+      "endSec": 5.306
+    },
+    {
+      "text": "like",
+      "startSec": 5.32,
+      "endSec": 5.533
+    },
+    {
+      "text": "that",
+      "startSec": 5.547,
+      "endSec": 5.931
+    },
+    {
+      "text": "But",
+      "startSec": 6.911,
+      "endSec": 7.095
+    },
+    {
+      "text": "then",
+      "startSec": 7.11,
+      "endSec": 7.309
+    },
+    {
+      "text": "comes",
+      "startSec": 7.323,
+      "endSec": 7.621
+    },
+    {
+      "text": "a",
+      "startSec": 7.635,
+      "endSec": 7.692
+    },
+    {
+      "text": "more",
+      "startSec": 7.706,
+      "endSec": 8.019
+    },
+    {
+      "text": "uncomfortable",
+      "startSec": 8.033,
+      "endSec": 8.814
+    },
+    {
+      "text": "thought",
+      "startSec": 8.828,
+      "endSec": 9.368
+    },
+    {
+      "text": "What",
+      "startSec": 10.348,
+      "endSec": 10.561
+    },
+    {
+      "text": "if",
+      "startSec": 10.576,
+      "endSec": 10.689
+    },
+    {
+      "text": "I",
+      "startSec": 10.703,
+      "endSec": 10.803
+    },
+    {
+      "text": "don't",
+      "startSec": 10.817,
+      "endSec": 11.073
+    },
+    {
+      "text": "get",
+      "startSec": 11.087,
+      "endSec": 11.272
+    },
+    {
+      "text": "to",
+      "startSec": 11.286,
+      "endSec": 11.371
+    },
+    {
+      "text": "choose",
+      "startSec": 11.385,
+      "endSec": 12.067
+    }
+  ]
+}

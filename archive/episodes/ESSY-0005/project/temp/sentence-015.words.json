@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-015",
+  "blockId": "n015",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "0bba22520c8ab7168cf26f9a6b11c397e5ec1fa34983dc74630cf48ac56efa3e",
+    "matchesManifest": true,
+    "audioDurationSec": 15.936,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 39,
+    "lastWordEndSec": 14.951,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "It",
+      "startSec": 0.1,
+      "endSec": 0.299
+    },
+    {
+      "text": "would",
+      "startSec": 0.313,
+      "endSec": 0.441
+    },
+    {
+      "text": "be",
+      "startSec": 0.455,
+      "endSec": 0.555
+    },
+    {
+      "text": "easy",
+      "startSec": 0.569,
+      "endSec": 1.009
+    },
+    {
+      "text": "to",
+      "startSec": 1.023,
+      "endSec": 1.137
+    },
+    {
+      "text": "turn",
+      "startSec": 1.151,
+      "endSec": 1.449
+    },
+    {
+      "text": "aging",
+      "startSec": 1.464,
+      "endSec": 1.861
+    },
+    {
+      "text": "into",
+      "startSec": 1.876,
+      "endSec": 2.145
+    },
+    {
+      "text": "another",
+      "startSec": 2.16,
+      "endSec": 2.501
+    },
+    {
+      "text": "performance",
+      "startSec": 2.515,
+      "endSec": 3.083
+    },
+    {
+      "text": "target",
+      "startSec": 3.097,
+      "endSec": 3.609
+    },
+    {
+      "text": "stay",
+      "startSec": 3.822,
+      "endSec": 4.12
+    },
+    {
+      "text": "curious",
+      "startSec": 4.134,
+      "endSec": 4.816
+    },
+    {
+      "text": "stay",
+      "startSec": 5.015,
+      "endSec": 5.313
+    },
+    {
+      "text": "productive",
+      "startSec": 5.327,
+      "endSec": 5.938
+    },
+    {
+      "text": "remain",
+      "startSec": 6.222,
+      "endSec": 6.606
+    },
+    {
+      "text": "useful",
+      "startSec": 6.62,
+      "endSec": 7.117
+    },
+    {
+      "text": "until",
+      "startSec": 7.131,
+      "endSec": 7.387
+    },
+    {
+      "text": "the",
+      "startSec": 7.401,
+      "endSec": 7.486
+    },
+    {
+      "text": "very",
+      "startSec": 7.501,
+      "endSec": 7.87
+    },
+    {
+      "text": "end",
+      "startSec": 7.884,
+      "endSec": 8.282
+    },
+    {
+      "text": "Maybe",
+      "startSec": 9.269,
+      "endSec": 9.681
+    },
+    {
+      "text": "growing",
+      "startSec": 9.695,
+      "endSec": 10.093
+    },
+    {
+      "text": "old",
+      "startSec": 10.107,
+      "endSec": 10.32
+    },
+    {
+      "text": "gracefully",
+      "startSec": 10.334,
+      "endSec": 10.945
+    },
+    {
+      "text": "also",
+      "startSec": 10.959,
+      "endSec": 11.343
+    },
+    {
+      "text": "means",
+      "startSec": 11.357,
+      "endSec": 11.698
+    },
+    {
+      "text": "knowing",
+      "startSec": 11.712,
+      "endSec": 12.067
+    },
+    {
+      "text": "when",
+      "startSec": 12.081,
+      "endSec": 12.209
+    },
+    {
+      "text": "I",
+      "startSec": 12.223,
+      "endSec": 12.28
+    },
+    {
+      "text": "no",
+      "startSec": 12.294,
+      "endSec": 12.522
+    },
+    {
+      "text": "longer",
+      "startSec": 12.536,
+      "endSec": 12.919
+    },
+    {
+      "text": "have",
+      "startSec": 12.934,
+      "endSec": 13.189
+    },
+    {
+      "text": "to",
+      "startSec": 13.203,
+      "endSec": 13.303
+    },
+    {
+      "text": "prove",
+      "startSec": 13.317,
+      "endSec": 13.743
+    },
+    {
+      "text": "any",
+      "startSec": 13.757,
+      "endSec": 13.956
+    },
+    {
+      "text": "of",
+      "startSec": 13.97,
+      "endSec": 14.07
+    },
+    {
+      "text": "those",
+      "startSec": 14.084,
+      "endSec": 14.368
+    },
+    {
+      "text": "things",
+      "startSec": 14.382,
+      "endSec": 14.951
+    }
+  ]
+}

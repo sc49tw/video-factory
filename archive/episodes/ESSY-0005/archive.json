@@ -1,0 +1,11 @@
+{
+  "episode": "ESSY-0005",
+  "archivedAt": "2026-10-05T12:28:32.827Z",
+  "reason": "published",
+  "locations": {
+    "inbox": "inbox/",
+    "project": "project/",
+    "output": "output/"
+  },
+  "stateSource": "projects/_drafts/ESSY-0005/state.yaml"
+}

@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.3",
+  "episode": "ESSY-0005",
+  "deliveryInsertion": {
+    "startSec": 14.736,
+    "durationSec": 4
+  },
+  "generatedFrom": "per-block edge-tts VTT + word-timing artifacts + assembly-timeline offsets (no re-estimation)",
+  "segmentation": "balanced phrase-aware DP (segmentParentText), MAX_CHARS hard bound",
+  "totalCueCount": 150,
+  "overlapCountBeforeNormalization": 9,
+  "overlapCountAfterNormalization": 0,
+  "invalidDurationCueCount": 0,
+  "maxRenderedLines": 2,
+  "minimumCueDurationSec": 0.497,
+  "maximumCueDurationSec": 5.582,
+  "orphanChildCueCount": 0,
+  "orphanOffenders": [],
+  "twoWordChildCueCount": 0,
+  "twoWordOffenders": [],
+  "shortGeneratedCueCount": 0,
+  "shortGeneratedCueOffenders": [],
+  "shortestGeneratedCue": {
+    "text": "I don't know",
+    "block": "sentence-017",
+    "start": 341.54,
+    "end": 342.037,
+    "durationMs": 497,
+    "chars": 12,
+    "words": 3
+  },
+  "generatedCueDurationBelow700msCount": 0,
+  "generatedCueDurationBelow700msOffenders": [],
+  "correctedOverlaps": [
+    {
+      "index": 101,
+      "block": "sentence-013",
+      "before": 253.397,
+      "after": 253.396,
+      "clampedTo": 253.397,
+      "prevText": "For most of my life,",
+      "nextText": "the world has been sending"
+    },
+    {
+      "index": 102,
+      "block": "sentence-013",
+      "before": 255.442,
+      "after": 255.441,
+      "clampedTo": 255.442,
+      "prevText": "the world has been sending",
+      "nextText": "things into me—books, places,"
+    },
+    {
+      "index": 103,
+      "block": "sentence-013",
+      "before": 257.723,
+      "after": 257.722,
+      "clampedTo": 257.723,
+      "prevText": "things into me—books, places,",
+      "nextText": "people, questions, experiences."
+    },
+    {
+      "index": 104,
+      "block": "sentence-013",
+      "before": 260.161,
+      "after": 260.16,
+      "clampedTo": 260.161,
+      "prevText": "people, questions, experiences.",
+      "nextText": "I hope I will still have"
+    },
+    {
+      "index": 105,
+      "block": "sentence-013",
+      "before": 262.049,
+      "after": 262.048,
+      "clampedTo": 262.049,
+      "prevText": "I hope I will still have",
+      "nextText": "something to send back."
+    },
+    {
+      "index": 106,
+      "block": "sentence-013",
+      "before": 263.858,
+      "after": 263.857,
+      "clampedTo": 263.858,
+      "prevText": "something to send back.",
+      "nextText": "Not because I need to prove"
+    },
+    {
+      "index": 107,
+      "block": "sentence-013",
+      "before": 265.982,
+      "after": 265.981,
+      "clampedTo": 265.982,
+      "prevText": "Not because I need to prove",
+      "nextText": "that I am useful."
+    },
+    {
+      "index": 108,
+      "block": "sentence-013",
+      "before": 267.319,
+      "after": 267.318,
+      "clampedTo": 267.319,
+      "prevText": "that I am useful.",
+      "nextText": "Just because the conversation between me"
+    },
+    {
+      "index": 109,
+      "block": "sentence-013",
+      "before": 270.465,
+      "after": 270.464,
+      "clampedTo": 270.465,
+      "prevText": "Just because the conversation between me",
+      "nextText": "and the world is still going on."
+    }
+  ],
+  "timingSourceCounts": {
+    "edge-word-boundary": 140,
+    "char-estimate": 10
+  },
+  "timingIntegrity": {
+    "status": "pass",
+    "requireWordTiming": false,
+    "manifestPolicy": null,
+    "blocksTotal": 18,
+    "blocksWithWordTiming": 18,
+    "blocksUsingFallback": 0,
+    "fallbackBlocks": [],
+    "fallbackCueCount": 10,
+    "wordCoverageRatio": 0.9456,
+    "cueStartVsFirstWordDeltaMs": {
+      "count": 140,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "cueEndVsLastWordDeltaMs": {
+      "count": 140,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "maxWithinBlockDriftMs": {
+      "count": 17,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "speechGapResidualCueCount": 0
+  },
+  "passed": true,
+  "narrationBlockBoundaries": [
+    {
+      "boundary": "sentence-001/sentence-002",
+      "prevLastEndSec": 13.147,
+      "nextFirstStartSec": 18.836,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-002/sentence-003",
+      "prevLastEndSec": 58.246,
+      "nextFirstStartSec": 59.948,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-003/sentence-004",
+      "prevLastEndSec": 71.915,
+      "nextFirstStartSec": 73.604,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-004/sentence-005",
+      "prevLastEndSec": 100.358,
+      "nextFirstStartSec": 102.044,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-005/sentence-006",
+      "prevLastEndSec": 108.656,
+      "nextFirstStartSec": 110.348,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-006/sentence-007",
+      "prevLastEndSec": 132.173,
+      "nextFirstStartSec": 133.868,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-007/sentence-008",
+      "prevLastEndSec": 149.67,
+      "nextFirstStartSec": 151.364,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-008/sentence-009",
+      "prevLastEndSec": 164.752,
+      "nextFirstStartSec": 166.436,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-009/sentence-010",
+      "prevLastEndSec": 190.363,
+      "nextFirstStartSec": 192.068,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-010/sentence-011",
+      "prevLastEndSec": 208.637,
+      "nextFirstStartSec": 210.332,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-011/sentence-012",
+      "prevLastEndSec": 227.444,
+      "nextFirstStartSec": 229.124,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-012/sentence-013",
+      "prevLastEndSec": 250.225,
+      "nextFirstStartSec": 251.824,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-013/sentence-014",
+      "prevLastEndSec": 272.982,
+      "nextFirstStartSec": 274.676,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-014/sentence-015",
+      "prevLastEndSec": 297.24,
+      "nextFirstStartSec": 298.94,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-015/sentence-016",
+      "prevLastEndSec": 313.791,
+      "nextFirstStartSec": 315.476,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-016/sentence-017",
+      "prevLastEndSec": 339.858,
+      "nextFirstStartSec": 341.54,
+      "noOverlap": true
+    },
+    {
+      "boundary": "sentence-017/sentence-018",
+      "prevLastEndSec": 356.774,
+      "nextFirstStartSec": 358.46,
+      "noOverlap": true
+    }
+  ]
+}

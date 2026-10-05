@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,115
+I want my child to care about me.\N{\fs18}我希望孩子在乎我。
+
+2
+00:00:01,095 --> 00:00:02,871
+But I don't want his life to revolve\N{\fs18}但不想他的人生
+
+3
+00:00:02,885 --> 00:00:04,447
+around taking care of me.\N{\fs18}圍繞著照顧我轉。
+
+4
+00:00:05,428 --> 00:00:07,544
+I don't need complete independence.\N{\fs18}我不需要完全獨立。

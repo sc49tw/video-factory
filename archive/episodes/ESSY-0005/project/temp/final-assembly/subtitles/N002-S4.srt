@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:03,351
+My mother began showing signs of dementia after an accident.\N{\fs18}母親在一次意外後開始出現失智徵兆。
+
+2
+00:00:04,331 --> 00:00:07,243
+On days when she doesn't go to a day care center,\N{\fs18}不去日照中心的日子，
+
+3
+00:00:07,456 --> 00:00:09,942
+she can spend hours simply sitting in a chair.\N{\fs18}她能坐在椅子上坐上好幾個鐘頭。

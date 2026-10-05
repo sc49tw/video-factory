@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:00,167
+care system can handle more\N{\fs18}照護體系能分擔更多
+
+2
+00:00:00,181 --> 00:00:01,360
+of the day-to-day care,\N{\fs18}日常照護，
+
+3
+00:00:01,630 --> 00:00:03,065
+perhaps my family doesn't\N{\fs18}或許家人
+
+4
+00:00:03,079 --> 00:00:04,883
+have to become my care system.\N{\fs18}就不用變成我的照護系統。
+
+5
+00:00:05,863 --> 00:00:07,837
+They can simply remain my family.\N{\fs18}他們可以單純地只是我的家人。

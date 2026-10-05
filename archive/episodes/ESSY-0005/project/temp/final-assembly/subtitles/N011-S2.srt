@@ -1,0 +1,15 @@
+1
+00:00:00,031 --> 00:00:02,147
+Nobody is waiting for my work.\N{\fs18}沒人等我的工作。
+
+2
+00:00:03,127 --> 00:00:05,059
+My child has his own life.\N{\fs18}孩子有他自己的生活。
+
+3
+00:00:06,043 --> 00:00:06,966
+What would make me want\N{\fs18}什麼會讓我
+
+4
+00:00:06,980 --> 00:00:08,116
+to get out of bed?\N{\fs18}想起床？

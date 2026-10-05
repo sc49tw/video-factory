@@ -1,0 +1,299 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-006",
+  "blockId": "n006",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "4cfe5b10d46642d3c5d1961b89e689bedf605f95275f2f132ad04d52e3e43a95",
+    "matchesManifest": true,
+    "audioDurationSec": 22.92,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 55,
+    "lastWordEndSec": 21.925,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "Right",
+      "startSec": 0.1,
+      "endSec": 0.512
+    },
+    {
+      "text": "now",
+      "startSec": 0.526,
+      "endSec": 0.867
+    },
+    {
+      "text": "there",
+      "startSec": 1.094,
+      "endSec": 1.222
+    },
+    {
+      "text": "are",
+      "startSec": 1.236,
+      "endSec": 1.464
+    },
+    {
+      "text": "always",
+      "startSec": 1.478,
+      "endSec": 1.947
+    },
+    {
+      "text": "things",
+      "startSec": 1.961,
+      "endSec": 2.273
+    },
+    {
+      "text": "I",
+      "startSec": 2.288,
+      "endSec": 2.401
+    },
+    {
+      "text": "want",
+      "startSec": 2.415,
+      "endSec": 2.628
+    },
+    {
+      "text": "to",
+      "startSec": 2.643,
+      "endSec": 2.742
+    },
+    {
+      "text": "experience",
+      "startSec": 2.756,
+      "endSec": 3.637
+    },
+    {
+      "text": "understand",
+      "startSec": 3.836,
+      "endSec": 4.56
+    },
+    {
+      "text": "make",
+      "startSec": 4.787,
+      "endSec": 5.214
+    },
+    {
+      "text": "or",
+      "startSec": 5.498,
+      "endSec": 5.597
+    },
+    {
+      "text": "write",
+      "startSec": 5.611,
+      "endSec": 5.995
+    },
+    {
+      "text": "down",
+      "startSec": 6.009,
+      "endSec": 6.52
+    },
+    {
+      "text": "I",
+      "startSec": 7.507,
+      "endSec": 7.678
+    },
+    {
+      "text": "want",
+      "startSec": 7.692,
+      "endSec": 7.919
+    },
+    {
+      "text": "to",
+      "startSec": 7.934,
+      "endSec": 8.005
+    },
+    {
+      "text": "go",
+      "startSec": 8.019,
+      "endSec": 8.218
+    },
+    {
+      "text": "somewhere",
+      "startSec": 8.232,
+      "endSec": 8.686
+    },
+    {
+      "text": "I",
+      "startSec": 8.701,
+      "endSec": 8.928
+    },
+    {
+      "text": "haven't",
+      "startSec": 8.942,
+      "endSec": 9.326
+    },
+    {
+      "text": "been",
+      "startSec": 9.34,
+      "endSec": 9.638
+    },
+    {
+      "text": "see",
+      "startSec": 9.894,
+      "endSec": 10.164
+    },
+    {
+      "text": "how",
+      "startSec": 10.178,
+      "endSec": 10.348
+    },
+    {
+      "text": "people",
+      "startSec": 10.363,
+      "endSec": 10.76
+    },
+    {
+      "text": "live",
+      "startSec": 10.774,
+      "endSec": 10.987
+    },
+    {
+      "text": "there",
+      "startSec": 11.002,
+      "endSec": 11.229
+    },
+    {
+      "text": "then",
+      "startSec": 11.513,
+      "endSec": 11.698
+    },
+    {
+      "text": "come",
+      "startSec": 11.712,
+      "endSec": 11.953
+    },
+    {
+      "text": "back",
+      "startSec": 11.968,
+      "endSec": 12.337
+    },
+    {
+      "text": "open",
+      "startSec": 12.635,
+      "endSec": 12.891
+    },
+    {
+      "text": "my",
+      "startSec": 12.905,
+      "endSec": 13.061
+    },
+    {
+      "text": "laptop",
+      "startSec": 13.076,
+      "endSec": 13.715
+    },
+    {
+      "text": "and",
+      "startSec": 13.956,
+      "endSec": 14.07
+    },
+    {
+      "text": "work",
+      "startSec": 14.084,
+      "endSec": 14.411
+    },
+    {
+      "text": "on",
+      "startSec": 14.425,
+      "endSec": 14.581
+    },
+    {
+      "text": "one",
+      "startSec": 14.595,
+      "endSec": 14.794
+    },
+    {
+      "text": "of",
+      "startSec": 14.809,
+      "endSec": 14.894
+    },
+    {
+      "text": "my",
+      "startSec": 14.908,
+      "endSec": 15.107
+    },
+    {
+      "text": "projects",
+      "startSec": 15.121,
+      "endSec": 15.916
+    },
+    {
+      "text": "Something",
+      "startSec": 16.897,
+      "endSec": 17.451
+    },
+    {
+      "text": "comes",
+      "startSec": 17.465,
+      "endSec": 17.82
+    },
+    {
+      "text": "in",
+      "startSec": 17.834,
+      "endSec": 18.147
+    },
+    {
+      "text": "And",
+      "startSec": 19.127,
+      "endSec": 19.34
+    },
+    {
+      "text": "I",
+      "startSec": 19.354,
+      "endSec": 19.453
+    },
+    {
+      "text": "still",
+      "startSec": 19.468,
+      "endSec": 19.766
+    },
+    {
+      "text": "have",
+      "startSec": 19.78,
+      "endSec": 19.908
+    },
+    {
+      "text": "something",
+      "startSec": 19.922,
+      "endSec": 20.377
+    },
+    {
+      "text": "I",
+      "startSec": 20.391,
+      "endSec": 20.448
+    },
+    {
+      "text": "want",
+      "startSec": 20.462,
+      "endSec": 20.689
+    },
+    {
+      "text": "to",
+      "startSec": 20.703,
+      "endSec": 20.789
+    },
+    {
+      "text": "send",
+      "startSec": 20.803,
+      "endSec": 21.158
+    },
+    {
+      "text": "back",
+      "startSec": 21.172,
+      "endSec": 21.485
+    },
+    {
+      "text": "out",
+      "startSec": 21.499,
+      "endSec": 21.925
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-010",
+  "blockId": "n010",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "c1d5ef43ed3a1913cf156d0ea06a39826461a804370add071f5e40eec8eff386",
+    "matchesManifest": true,
+    "audioDurationSec": 17.664,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 46,
+    "lastWordEndSec": 16.669,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "And",
+      "startSec": 0.1,
+      "endSec": 0.384
+    },
+    {
+      "text": "to",
+      "startSec": 0.569,
+      "endSec": 0.654
+    },
+    {
+      "text": "be",
+      "startSec": 0.668,
+      "endSec": 0.824
+    },
+    {
+      "text": "honest",
+      "startSec": 0.839,
+      "endSec": 1.293
+    },
+    {
+      "text": "I",
+      "startSec": 1.591,
+      "endSec": 1.705
+    },
+    {
+      "text": "am",
+      "startSec": 1.719,
+      "endSec": 1.918
+    },
+    {
+      "text": "really",
+      "startSec": 1.932,
+      "endSec": 2.245
+    },
+    {
+      "text": "hoping",
+      "startSec": 2.259,
+      "endSec": 2.671
+    },
+    {
+      "text": "we",
+      "startSec": 2.685,
+      "endSec": 2.813
+    },
+    {
+      "text": "will",
+      "startSec": 2.827,
+      "endSec": 2.984
+    },
+    {
+      "text": "have",
+      "startSec": 2.998,
+      "endSec": 3.154
+    },
+    {
+      "text": "good",
+      "startSec": 3.168,
+      "endSec": 3.395
+    },
+    {
+      "text": "care",
+      "startSec": 3.41,
+      "endSec": 3.651
+    },
+    {
+      "text": "robots",
+      "startSec": 3.665,
+      "endSec": 4.29
+    },
+    {
+      "text": "by",
+      "startSec": 4.305,
+      "endSec": 4.503
+    },
+    {
+      "text": "then",
+      "startSec": 4.518,
+      "endSec": 4.972
+    },
+    {
+      "text": "If",
+      "startSec": 5.959,
+      "endSec": 6.186
+    },
+    {
+      "text": "technology",
+      "startSec": 6.201,
+      "endSec": 6.882
+    },
+    {
+      "text": "and",
+      "startSec": 6.897,
+      "endSec": 7.039
+    },
+    {
+      "text": "a",
+      "startSec": 7.053,
+      "endSec": 7.124
+    },
+    {
+      "text": "good",
+      "startSec": 7.138,
+      "endSec": 7.38
+    },
+    {
+      "text": "care",
+      "startSec": 7.394,
+      "endSec": 7.678
+    },
+    {
+      "text": "system",
+      "startSec": 7.692,
+      "endSec": 8.118
+    },
+    {
+      "text": "can",
+      "startSec": 8.132,
+      "endSec": 8.289
+    },
+    {
+      "text": "handle",
+      "startSec": 8.303,
+      "endSec": 8.757
+    },
+    {
+      "text": "more",
+      "startSec": 8.772,
+      "endSec": 8.999
+    },
+    {
+      "text": "of",
+      "startSec": 9.013,
+      "endSec": 9.084
+    },
+    {
+      "text": "the",
+      "startSec": 9.098,
+      "endSec": 9.212
+    },
+    {
+      "text": "day-to-day",
+      "startSec": 9.226,
+      "endSec": 9.738
+    },
+    {
+      "text": "care",
+      "startSec": 9.752,
+      "endSec": 10.192
+    },
+    {
+      "text": "perhaps",
+      "startSec": 10.462,
+      "endSec": 10.902
+    },
+    {
+      "text": "my",
+      "startSec": 10.916,
+      "endSec": 11.101
+    },
+    {
+      "text": "family",
+      "startSec": 11.115,
+      "endSec": 11.584
+    },
+    {
+      "text": "doesn't",
+      "startSec": 11.598,
+      "endSec": 11.897
+    },
+    {
+      "text": "have",
+      "startSec": 11.911,
+      "endSec": 12.095
+    },
+    {
+      "text": "to",
+      "startSec": 12.11,
+      "endSec": 12.195
+    },
+    {
+      "text": "become",
+      "startSec": 12.209,
+      "endSec": 12.564
+    },
+    {
+      "text": "my",
+      "startSec": 12.578,
+      "endSec": 12.791
+    },
+    {
+      "text": "care",
+      "startSec": 12.806,
+      "endSec": 13.118
+    },
+    {
+      "text": "system",
+      "startSec": 13.132,
+      "endSec": 13.715
+    },
+    {
+      "text": "They",
+      "startSec": 14.695,
+      "endSec": 14.894
+    },
+    {
+      "text": "can",
+      "startSec": 14.908,
+      "endSec": 15.093
+    },
+    {
+      "text": "simply",
+      "startSec": 15.107,
+      "endSec": 15.448
+    },
+    {
+      "text": "remain",
+      "startSec": 15.462,
+      "endSec": 15.874
+    },
+    {
+      "text": "my",
+      "startSec": 15.888,
+      "endSec": 16.087
+    },
+    {
+      "text": "family",
+      "startSec": 16.101,
+      "endSec": 16.669
+    }
+  ]
+}

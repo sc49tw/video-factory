@@ -1,0 +1,261 @@
+[
+  {
+    "narrationId": "N001",
+    "slotId": "N001-S1",
+    "visualArc": "one held threshold situation in which the body's limits, the disappearing destination, and the thing that is still there are all asked at once",
+    "editorialFunction": "Carry all three opening questions inside a single continuous situation so that what is still there lands through duration, framing, and attention rather than through a second symbolic image.",
+    "visualIntent": "One uninterrupted situation held across the full block: a person at seated height on the edge of a doorway, a corridor, or a path, with a hand on a chair arm or a foot at a step, and open ordinary space ahead that they are not taking. The camera stays close enough to the body to register the limit and wide enough to keep the possibility of movement in frame, and the stillness deepens as the questions accumulate rather than cutting away to illustrate them. Level, observational, no face required.",
+    "avoid": [
+      "wheelchair portraits and clinical stock",
+      "wrinkle and age-spot close-ups",
+      "skeleton, hourglass, or clock metaphors",
+      "grey-haired slow-motion hero shots",
+      "one literal image per rhetorical question",
+      "a second or third symbolic shot to illustrate each question",
+      "existential-film emptiness: cleared rooms, a lone lit lamp, an empty chair, or a figure dwarfed by negative space",
+      "memory or flashback montage and sepia aging effects"
+    ],
+    "round4Query": "person seated at doorway threshold still frame open space ahead long take",
+    "round5Diagnosis": "Round 4 query carried cinematography Pexels cannot honour (still frame, long take) plus the abstract noun threshold, so it returned doorway-as-symbol: a tree and sky seen through a doorway and a young adult standing in the doorway. Standing figure and outdoor vista break the required seated-at-height hold and the ordinary interior.",
+    "searchQuery": "man sitting still on chair beside open doorway empty room natural light",
+    "queryRevisionReason": "Replace abstract and cinematographic terms with observable body, furniture, location and light so the pool contains seated-at-height figures in ordinary rooms.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S4",
+    "visualArc": "a family observed at close range -> lives contracting around the body -> three versions of waiting",
+    "editorialFunction": "Complete the trio with waiting rather than decline: hours passing in a chair that does not move.",
+    "visualIntent": "Afternoon light advancing across a day-care or common room; a person seated with nothing in hand, watching something just out of frame. Slow lateral drift, unhurried, no performed sorrow.",
+    "avoid": [
+      "dementia-caricature expressions",
+      "before-and-after comparison framing",
+      "sad-piano-film lighting",
+      "abandonment or neglect imagery"
+    ],
+    "round4Query": "afternoon light common room seated person waiting slow drift",
+    "round5Diagnosis": "Round 4 query said common room and waiting, which Pexels resolved to an empty institutional waiting room (abandonment adjacency, forbidden) and to a hoodied person absorbed in a phone (performed, occupied hands). Neither shows a person seated with empty hands across advancing light.",
+    "searchQuery": "senior woman seated quietly in armchair by window late afternoon light",
+    "queryRevisionReason": "Name the person, the seat, the posture and the light only; drop room type and the word waiting so the pool is domestic, occupied and hands-free.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N003",
+    "slotId": "N003-S1",
+    "visualArc": "the personal refusal -> the loss of any right to choose",
+    "editorialFunction": "Register the refusal as one person's reaction, not a general truth about aging.",
+    "visualIntent": "A middle-aged adult at home turning away mid-glance from a photograph rack or a screen; the body language of looking aside rather than a posed reaction. The object stays largely out of frame.",
+    "avoid": [
+      "gazing at old photographs",
+      "hand over mouth in shock",
+      "horror at the mirror",
+      "dramatic acting or a startle cut"
+    ],
+    "round4Query": "middle aged person looking away from photos at home candid",
+    "round5Diagnosis": "Round 4 query put photos and candid in front, so the pool collapsed into thoughtful senior portraits shot head-on and close, with the object fully in frame or absent. The intent requires the object largely out of frame and the body language of looking aside, not a pensive face.",
+    "searchQuery": "person turning head away from bookshelf indoors side view candid",
+    "queryRevisionReason": "Drop photos and all portrait or mood words; name a domestic shelf, a turn of the head and a side angle so the frame reads as a body in a room rather than a face.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N004",
+    "slotId": "N004-S1",
+    "visualArc": "disciplined attempts at control -> the realization that none of them can guarantee the outcome",
+    "editorialFunction": "Show control as one sustained discipline rather than a checklist: exercise, eating, and planning held together in a single ordinary domestic stretch of time.",
+    "visualIntent": "One person alone in their own home across a continuous stretch of ordinary time: the body at the end of a routine, food prepared according to a plan rather than appetite, a notebook or calendar open beside them with the next things written down. Repetition, breath, and self-monitoring, all unspectacular. The three efforts appear as one continuous morning-to-evening rhythm rather than as three separate demonstrations.",
+    "avoid": [
+      "wellness advertising gloss",
+      "supplement close-ups and branding",
+      "before-and-after bodies",
+      "inspirational fitness quotes or timers",
+      "showing exercise, food, and planning as three separate illustrative shots",
+      "any single discipline isolated as a visual punchline"
+    ],
+    "round4Query": "older adult alone home daily routine exercise notebook planning natural light",
+    "round5Diagnosis": "Round 4 query was a three-element list (exercise, notebook, planning), so Pexels answered each element separately as wellness stock: a yoga mat healthy-lifestyle setup and a stock portrait of a senior writing in a notebook. That is exactly the forbidden three-separate-demonstrations reading.",
+    "searchQuery": "man sitting alone at kitchen table with open notebook and plate evening",
+    "queryRevisionReason": "Collapse the three disciplines into one continuous domestic stretch at one moment: a single person, single table, notebook and prepared food together, so the pool can only return one continuous scene.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S1",
+    "visualArc": "care as absorption -> care as someone's entire life -> the narrow version that is survivable",
+    "editorialFunction": "State the fear of being a burden as a spatial problem inside one household.",
+    "visualIntent": "A parent and adult child in ordinary domestic space where practical need is legible in the surroundings — a threshold, a chair being moved, a doorway — while the relationship itself stays warm and unbothered.",
+    "avoid": [
+      "lifting and transfer assistance scenes",
+      "bathroom and care-procedure imagery",
+      "medical uniforms and apparatus",
+      "a visibly exhausted carer"
+    ],
+    "round4Query": "adult child helping parent at home doorway candid natural",
+    "round5Diagnosis": "Round 4 query used helping parent, which Pexels answered with assisted-care stock: a mother assisting her adult son, and a mother tying a schoolchild's shoes. Both are care-procedure or dependency scenes, forbidden by the intent.",
+    "searchQuery": "two adults talking in apartment hallway near doorway daylight candid",
+    "queryRevisionReason": "Describe the relation as two adults of comparable age standing and talking in a domestic hallway, with no task and no assistance, so need is not legible.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S3",
+    "visualArc": "the world sending things in -> the same material passing through a person -> the reply sent back out",
+    "editorialFunction": "Show the sending side of the motif as something leaving the narrator's computer and reaching an unknown stranger somewhere else, with total digital anonymity preserved.",
+    "visualIntent": "Two halves of one anonymous exchange. First the narrator's own screen as a finished text, video, or small project sits uploaded and closed, with no name, face, or handle attached to it. Then that same work is simply in use far away, by an ordinary stranger in an ordinary place — read on a phone at a bus stop, watched on a screen in a waiting room, opened at a kitchen table — who is unaware of who made it and never learns. The work travels; the author stays invisible.",
+    "avoid": [
+      "notes or objects left privately for someone who will find them in person",
+      "a named recipient, a known reader, or correspondence between two people",
+      "social-media interface, feeds, notifications, or platform chrome",
+      "engagement metrics, likes, follower counts, view counts, or virality graphics",
+      "applause, press coverage, awards, or a visible response to the work",
+      "any shot that reveals or implies the author's identity to the stranger"
+    ],
+    "round4Query": "anonymous uploaded file read by stranger on phone in public place",
+    "round5Diagnosis": "Round 4 query led with the abstract anonymous uploaded file and ended with phone, so the pool became phone-user portraiture in a city street and a man texting in a car: a phone as social interface, with no work in use and no ordinary waiting place.",
+    "searchQuery": "man watching video on phone sitting at bus stop bench daytime",
+    "queryRevisionReason": "Name the observable act (watching a video on a phone) and the ordinary public location, and keep feed, profile and platform words out so results stay free of platform chrome.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S1",
+    "visualArc": "the tools coming to rest -> the reduced good day -> the honest bar set without drama",
+    "editorialFunction": "Allow that the tools may stop, without staging their loss as a tragedy.",
+    "visualIntent": "A closed laptop, a notebook put down, a desk between uses; the tools are present and at rest and possibly finished with. Nothing has been abandoned in anger.",
+    "avoid": [
+      "a funeral for a laptop",
+      "dramatically shutting a screen",
+      "technology-failure imagery",
+      "empty-handed despair"
+    ],
+    "round4Query": "closed laptop and put down notebook on desk at rest",
+    "round5Diagnosis": "Round 4 query said closed laptop and put down notebook, but laptop dominated and returned a person in a suit still typing, which contradicts tools at rest; the other photo was a cold minimal workspace still life that reads as abandonment.",
+    "searchQuery": "closed laptop and closed notebook on kitchen table evening light",
+    "queryRevisionReason": "Repeat closed for both objects, remove every action verb about people, and specify an ordinary kitchen table so the pool can only return resting tools in a lived-in room.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S1",
+    "visualArc": "regret held without content -> the future self making a claim -> two incompatible rhythms of a life left equally standing",
+    "editorialFunction": "Name regret as a weight the narrator carries, while keeping its content deliberately unspecified so no particular past choice is identified as the wrong one.",
+    "visualIntent": "The narrator alone with a long, unresolved thought: a person sitting somewhere familiar and ordinary, turning something over in their mind without any object in frame identifying what it is about. The hesitation is real and the mood is heavy, but the material of the regret is withheld from the image exactly as it is withheld from the narration. Whatever the regret is about, the audience is not told.",
+    "avoid": [
+      "travelling, tourism, or a journey never taken",
+      "unused tickets, passports, suitcases, or unvisited destinations",
+      "any specific life choice depicted as the mistaken one",
+      "crying and self-flagellation",
+      "storm-cloud and rain-gutter imagery",
+      "sepia flashback treatment",
+      "pictorial regret metaphors"
+    ],
+    "round4Query": "person sitting alone with a heavy unresolved thought ordinary interior",
+    "round5Diagnosis": "Round 4 query used heavy and unresolved thought, which Pexels answered as mood stock: a man silhouetted against a bright window and a woman by a window at night. Chiaroscuro and night lighting state the narration's feeling instead of leaving the regret unspecified.",
+    "searchQuery": "man sitting alone at table in bright ordinary living room daytime",
+    "queryRevisionReason": "Remove all feeling words, specify ordinary daytime light in a lived-in room, and describe only a seated person with no identifying object, so nothing in frame explains the regret.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S2",
+    "visualArc": "regret held without content -> the future self making a claim -> two incompatible rhythms of a life left equally standing",
+    "editorialFunction": "Let the future self make its claim: a second figure looking at the life that was lived.",
+    "visualIntent": "An older figure looking toward a younger person at a distance in an ordinary public place, or a first-person view from an older vantage toward a younger stranger. The exchange is unvoiced and unresolved.",
+    "avoid": [
+      "split-screen or diptych comparison",
+      "before-and-after grammar",
+      "ghostly double exposure",
+      "then-versus-now graphics"
+    ],
+    "round4Query": "older person looking toward younger person at a distance city",
+    "round5Diagnosis": "Round 4 query ended in city, so the pool returned two senior men overlooking an urban skyline from a rooftop: a survey of the future rather than a glance toward one younger stranger in an ordinary public place.",
+    "searchQuery": "senior man standing on sidewalk looking at passing pedestrians city street",
+    "queryRevisionReason": "Replace the vista with a street-level public place and passing strangers, keeping the age difference as two unrelated figures in one frame rather than a view.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N016",
+    "slotId": "N016-S3",
+    "visualArc": "regret held without content -> the future self making a claim -> two incompatible rhythms of a life left equally standing",
+    "editorialFunction": "Hold both possible future judgments at once as two ordinary and equally weighted rhythms of a life, without scoring them against each other.",
+    "visualIntent": "Two stretches of ordinary life shown one after the other at the same even weight and the same level of attention: one built around continuing to work, with a person among colleagues and a working week; the other built around time spent on one's own life, with a person outdoors, travelling lightly, or doing something for themselves. Both are filmed with the same calm observational distance and neither is marked, ranked, corrected, or resolved in favour of the other.",
+    "avoid": [
+      "diverging roads, crossroads, forks, or junction-from-above",
+      "split-screen, diptych, or side-by-side comparison frames",
+      "signposts, arrows, labelled paths, or route graphics",
+      "scales of balance, tug-of-war, or any winner-and-loser framing",
+      "one rhythm shot as happier, freer, more successful, or more desirable",
+      "one rhythm presented as correct and the other as a mistake"
+    ],
+    "round4Query": "two ordinary lives shown in turn working week and time for oneself",
+    "round5Diagnosis": "Round 4 query stated the editorial grammar (two ordinary lives shown in turn), which Pexels cannot honour; it fell back on time symbolism (a monitor showing the time) and a seaside travel postcard. Neither rhythm is present and both risk the scored-comparison and travel-cliche failures.",
+    "searchQuery": "coworkers working at desks ordinary weekday open plan office",
+    "queryRevisionReason": "One query can carry only one of the two equally weighted rhythms, so this scope searches the working-week half: colleagues at desks in an ordinary weekday office, unranked and unsentimental.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S1",
+    "visualArc": "an ordinary fragment of a younger life, seen without verdict -> time simply continuing -> the remaining road travelled rather than surveyed",
+    "editorialFunction": "Stand in for the past self with an ordinary fragment of younger-adult life, so the episode can look back without ever requiring an identifiable protagonist or a memory effect.",
+    "visualIntent": "A plain piece of ordinary life lived by a young adult — someone at a kitchen table with their own coffee, on a shared balcony, at a desk early in the morning, waiting for a bus — filmed as present-tense documentary rather than as a recovered memory. The person is a stranger to the viewer and is never identified as the narrator. The framing is level and unadorned, and nothing in the image indicates that this is being judged or redeemed.",
+    "avoid": [
+      "an identifiable younger version of the narrator, or a match-cut implying the same person",
+      "archival or period footage, super-8, film grain, or a home-video frame",
+      "sepia or halftone nostalgic filter",
+      "glowing memory effects, flashbacks, or double exposure",
+      "on-the-other-hand graphics",
+      "a tearful meeting with a past self",
+      "the younger figure posed as innocent, idealised, or condemned"
+    ],
+    "round4Query": "young adult ordinary morning at home documentary natural light",
+    "round5Diagnosis": "Round 4 query used young adult ordinary morning, which Pexels matched as morning-routine couples stock: two people brushing teeth and a couple mirrored in a bathroom. Couple and mirror framing imply a relationship and an identifiable self, both forbidden.",
+    "searchQuery": "young man making coffee alone in small kitchen morning window light",
+    "queryRevisionReason": "Specify one person, one ordinary small task, one small room and level morning light, with no couple, mirror or nostalgia words.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  },
+  {
+    "narrationId": "N018",
+    "slotId": "N018-S2",
+    "visualArc": "an ordinary fragment of a younger life, seen without verdict -> time simply continuing -> the remaining road travelled rather than surveyed",
+    "editorialFunction": "Withhold explanation and let the narration carry the self-forgiveness, using stillness and continuation rather than any symbolic act of release.",
+    "visualIntent": "The same young person simply continuing: a stretch of ordinary time passing with nothing resolved, nothing dropped, and nothing surrendered — a held frame as the day carries on and the person is still in it. No gesture completes anything. The image deliberately supplies no object, action, or release to stand for letting go, so that the lines about having made the best choices one could and not spending the rest regretting them have no visual paraphrase to lean on.",
+    "avoid": [
+      "setting down, dropping, releasing, letting go, or putting away any object",
+      "weight, burden, baggage, or release as a visible physical act",
+      "a symbolic gesture of letting go of any kind",
+      "hot-air balloon release, confetti, or fireworks",
+      "cathartic arm-raised gesture",
+      "freedom-cliche sunburst",
+      "framing the moment as triumph, closure, or a reward"
+    ],
+    "round4Query": "young person continuing ordinary morning stillness no event long take",
+    "round5Diagnosis": "Round 4 query used stillness no event long take, which pulled contemplative scenic frames: a woman gazing thoughtfully out of a window and a lone figure on a pier under a vast sky. Sky, pier and gazing are freedom-cliche and release-adjacent imagery.",
+    "searchQuery": "young man sitting at kitchen table with coffee morning quiet apartment",
+    "queryRevisionReason": "Continue the same ordinary morning as N018-S1 with an unremarkable seated action, and exclude gaze, sky, horizon and vista words so no release metaphor can enter the frame.",
+    "preferredMediaType": "video",
+    "round": 5,
+    "batch": "r5-targeted"
+  }
+]

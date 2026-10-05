@@ -1,0 +1,222 @@
+[
+  {
+    "narrationId": "N011",
+    "slotId": "N011-S1",
+    "visualArc": "an actual eighty-year-old person inside an ordinary weekday morning -> the reason to get out of bed not yet answering itself",
+    "editorialFunction": "Establish the imagined future as a real person living a real Tuesday: the emphasis is on an actual eighty-year-old in their own home, not on an empty room standing in for old age.",
+    "visualIntent": "A genuinely elderly person of around eighty at home on an ordinary weekday morning, already up and going through it: kettle on, curtains, weather, a mug carried, ordinary clothes, a home arranged by someone who actually lives in it. Easy, unheroic self-possession; they are a resident of this morning rather than a visitor to it, and the room is lived-in rather than staged or empty.",
+    "avoid": [
+      "empty rooms, vacant interiors, or nobody-is-coming staging used to stand in for old age",
+      "birthday or anniversary framing",
+      "milestone captions or dates",
+      "staged golden morning light",
+      "heavy age makeup or theatrical frailty",
+      "loneliness performance and abandoned-house gloom",
+      "a person treated as a passive object of observation"
+    ],
+    "searchQuery": "elderly person in own home ordinary weekday morning kettle everyday",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N011",
+    "slotId": "N011-S2",
+    "visualArc": "an actual eighty-year-old person inside an ordinary weekday morning -> the reason to get out of bed not yet answering itself",
+    "editorialFunction": "Hold What would make me want to get out of bed? open inside the same inhabited home, ending the block in a person poised to move rather than in a room with nobody in it.",
+    "visualIntent": "The same person later in the morning, still in the same home, with the day available and nothing specific calling: a pause near the window, the door, or the kettle where they are simply standing with time on their hands. The frame is occupied and unhurried rather than empty, and it closes with a slight gathering toward the outside world so the block hands off to a person entering the day in N012.",
+    "avoid": [
+      "a third variation on emptiness after the first two slots",
+      "empty room, vacant chair, or unoccupied frame",
+      "heroic getting-out-of-bed shots",
+      "sunrise pep-talk framing",
+      "fitness or new-habit montage",
+      "an answer to the question: no plan, destination, or purpose is revealed"
+    ],
+    "searchQuery": "elderly person standing at window at home morning unhurried poised",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S1",
+    "visualArc": "the day asked as a question -> something small left behind -> an audience that will never be met",
+    "editorialFunction": "Pose the day as a question of how it is lived rather than how much of it there is.",
+    "visualIntent": "Someone crossing an ordinary familiar street in good but undramatic light, carrying nothing in particular, going nowhere in particular; the walk is the whole event.",
+    "avoid": [
+      "travel montage and landmarks",
+      "marathon or fitness framing",
+      "bucket-list graphics",
+      "adventure-sports staging"
+    ],
+    "searchQuery": "older person walking familiar street ordinary daylight candid",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S2",
+    "visualArc": "the day asked as a question -> something small left behind -> an audience that will never be met",
+    "editorialFunction": "Show the desire to leave something behind as a small piece of intellectual or creative work being finished and quietly put out into the world, reusing the working vocabulary established in N006.",
+    "visualIntent": "Back at the same kind of desk as N006-S3: a laptop open, a short piece of writing or a small project's worth of screen and notes, the last edit being made and the file sent or saved without ceremony. The completion is a working action — a sentence corrected, a draft closed, a small thing made and released — and the frame treats it as ordinary labour rather than as a legacy act.",
+    "avoid": [
+      "craft and handmade-object imagery: tools, materials, workshop surfaces, or a physical object being finished by hand",
+      "creator, influencer, or personal-brand performance",
+      "engagement metrics, likes, follower counts, or view counters",
+      "startup and productivity glamour, screen glow, or studio staging",
+      "grand legacy symbolism, monument, memorial, or legacy graphics",
+      "recognition, awards, or a visible audience receiving the work"
+    ],
+    "searchQuery": "person making a small edit on laptop at desk and sending a file",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N012",
+    "slotId": "N012-S3",
+    "visualArc": "the day asked as a question -> something small left behind -> an audience that will never be met",
+    "editorialFunction": "Keep the recipients unknown: strangers who will never be met, doing their own day.",
+    "visualIntent": "A public place in ordinary use — a platform, a reading room, a street market — strangers going about their business, none of them looking at the camera or aware of being shown.",
+    "avoid": [
+      "direct-to-camera testimonials",
+      "waving or acknowledging strangers",
+      "applause and an audience",
+      "staged fans or readers"
+    ],
+    "searchQuery": "strangers in public place unposed ordinary day",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S1",
+    "visualArc": "the world sending things in -> the same material passing through a person -> the reply sent back out",
+    "editorialFunction": "Show the receiving side of the motif in full: books, places, people, questions, experiences arriving.",
+    "visualIntent": "Arrivals handled one at a time in an ordinary environment — a hand taking a book from a shelf, a stranger handing something across, a map unfolded, a ticket examined. Practical, unceremonious contact.",
+    "avoid": [
+      "grand library imagery",
+      "graduation or diploma ceremony",
+      "a catalogue of achievements",
+      "book-and-lightbulb iconography"
+    ],
+    "searchQuery": "hand taking book from shelf ordinary interior",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S2",
+    "visualArc": "the world sending things in -> the same material passing through a person -> the reply sent back out",
+    "editorialFunction": "Show the same material crossing into the person: sustained attention, not production.",
+    "visualIntent": "A person turning something over while walking or standing — reading a page, pausing at a window, looking at one thing for a long moment. Attention, not insight.",
+    "avoid": [
+      "eureka moment and revelation",
+      "lightbulb or idea graphics",
+      "staged realisation",
+      "the wisdom pose"
+    ],
+    "searchQuery": "person reading page pausing with attention natural light",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N013",
+    "slotId": "N013-S3",
+    "visualArc": "the world sending things in -> the same material passing through a person -> the reply sent back out",
+    "editorialFunction": "Show the sending side of the motif as something leaving the narrator's computer and reaching an unknown stranger somewhere else, with total digital anonymity preserved.",
+    "visualIntent": "Two halves of one anonymous exchange. First the narrator's own screen as a finished text, video, or small project sits uploaded and closed, with no name, face, or handle attached to it. Then that same work is simply in use far away, by an ordinary stranger in an ordinary place — read on a phone at a bus stop, watched on a screen in a waiting room, opened at a kitchen table — who is unaware of who made it and never learns. The work travels; the author stays invisible.",
+    "avoid": [
+      "notes or objects left privately for someone who will find them in person",
+      "a named recipient, a known reader, or correspondence between two people",
+      "social-media interface, feeds, notifications, or platform chrome",
+      "engagement metrics, likes, follower counts, view counts, or virality graphics",
+      "applause, press coverage, awards, or a visible response to the work",
+      "any shot that reveals or implies the author's identity to the stranger"
+    ],
+    "searchQuery": "anonymous uploaded file read by stranger on phone in public place",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S1",
+    "visualArc": "the tools coming to rest -> the reduced good day -> the honest bar set without drama",
+    "editorialFunction": "Allow that the tools may stop, without staging their loss as a tragedy.",
+    "visualIntent": "A closed laptop, a notebook put down, a desk between uses; the tools are present and at rest and possibly finished with. Nothing has been abandoned in anger.",
+    "avoid": [
+      "a funeral for a laptop",
+      "dramatically shutting a screen",
+      "technology-failure imagery",
+      "empty-handed despair"
+    ],
+    "searchQuery": "closed laptop and put down notebook on desk at rest",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S2",
+    "visualArc": "the tools coming to rest -> the reduced good day -> the honest bar set without drama",
+    "editorialFunction": "Make the reduced version of a good day legible, warm, and entirely dignified.",
+    "visualIntent": "A window seat in late light, a small speaker, a bowl of something still enjoyed, one other person briefly present and then not. Ordinary texture, no endurance implied.",
+    "avoid": [
+      "institutional dayroom bingo",
+      "passive-aggressive stillness",
+      "tearful endurance",
+      "framing as consolation or compromise"
+    ],
+    "searchQuery": "window seat afternoon light small speaker bowl of fruit",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N014",
+    "slotId": "N014-S3",
+    "visualArc": "the tools coming to rest -> the reduced good day -> the honest bar set without drama",
+    "editorialFunction": "Set the bar honestly and without sentimentality: the absence of constant pain.",
+    "visualIntent": "A body at rest in ordinary comfort — hands loose, breathing visible, posture unforced — framed neutrally and with respect, as the baseline rather than as a symptom.",
+    "avoid": [
+      "medical charts and pill close-ups",
+      "pain or illness beauty shots",
+      "inspirational endurance framing",
+      "heroic coping imagery"
+    ],
+    "searchQuery": "resting hands comfortable ordinary afternoon quiet",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N015",
+    "slotId": "N015-S1",
+    "visualArc": "the apparatus of productivity standing ready and no longer required -> the release of having to prove anything",
+    "editorialFunction": "Expose aging as another performance target by showing the episode's own productivity apparatus — desk, projects, lists, unfinished and finished work — intact and waiting, while the person is free not to engage with any of it.",
+    "visualIntent": "The same working surfaces established in N006 and N012: a desk with a laptop, a project in progress, a list, work already completed and work not yet started, all laid out and ready. Nothing is broken, outdated, or taken away. The person is in the room with all of it and is not required to touch it — the frame holds on the setup while they simply are present, which makes the demand visible without anyone performing it.",
+    "avoid": [
+      "rehearsal rooms, stages, or anyone being watched or observed",
+      "being-performed-for or an audience of judges",
+      "musical or theatre staging",
+      "award stages and podiums",
+      "self-help seminars and retreats",
+      "hustle-culture imagery",
+      "the apparatus shown as wreckage, obsolescence, or failure"
+    ],
+    "searchQuery": "desk with laptop and lists and unfinished work person present not using it",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  },
+  {
+    "narrationId": "N015",
+    "slotId": "N015-S2",
+    "visualArc": "the apparatus of productivity standing ready and no longer required -> the release of having to prove anything",
+    "editorialFunction": "Let the release arrive as a permission that is not visibly earned and needs no evidence.",
+    "visualIntent": "A person alone in a room with no task in progress and no audience present; nothing accomplished is on display anywhere in the frame. Quiet, unremarkable, unphotogenic by design.",
+    "avoid": [
+      "victory pose or celebration",
+      "trophy, certificate, or applause",
+      "minimalist advertising styling",
+      "an obviously rewarded resolution"
+    ],
+    "searchQuery": "person alone in room with nothing to show quiet ordinary",
+    "preferredMediaType": "video",
+    "batch": "N011-N015"
+  }
+]

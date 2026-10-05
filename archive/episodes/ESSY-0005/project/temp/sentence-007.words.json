@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-007",
+  "blockId": "n007",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "c6c62178b04f809752cb9a0d8e9181b1b7a68ce7892e95c708a7daadeb48a6a1",
+    "matchesManifest": true,
+    "audioDurationSec": 16.896,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 38,
+    "lastWordEndSec": 15.902,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "Maybe",
+      "startSec": 0.1,
+      "endSec": 0.569
+    },
+    {
+      "text": "this",
+      "startSec": 0.583,
+      "endSec": 0.824
+    },
+    {
+      "text": "is",
+      "startSec": 0.839,
+      "endSec": 0.966
+    },
+    {
+      "text": "one",
+      "startSec": 0.981,
+      "endSec": 1.307
+    },
+    {
+      "text": "thing",
+      "startSec": 1.322,
+      "endSec": 1.563
+    },
+    {
+      "text": "we",
+      "startSec": 1.577,
+      "endSec": 1.734
+    },
+    {
+      "text": "underestimate",
+      "startSec": 1.748,
+      "endSec": 2.458
+    },
+    {
+      "text": "about",
+      "startSec": 2.472,
+      "endSec": 2.77
+    },
+    {
+      "text": "retirement",
+      "startSec": 2.785,
+      "endSec": 3.58
+    },
+    {
+      "text": "Work",
+      "startSec": 4.567,
+      "endSec": 4.979
+    },
+    {
+      "text": "gives",
+      "startSec": 4.993,
+      "endSec": 5.277
+    },
+    {
+      "text": "us",
+      "startSec": 5.291,
+      "endSec": 5.433
+    },
+    {
+      "text": "more",
+      "startSec": 5.448,
+      "endSec": 5.632
+    },
+    {
+      "text": "than",
+      "startSec": 5.647,
+      "endSec": 5.817
+    },
+    {
+      "text": "money",
+      "startSec": 5.831,
+      "endSec": 6.158
+    },
+    {
+      "text": "It",
+      "startSec": 7.138,
+      "endSec": 7.323
+    },
+    {
+      "text": "gives",
+      "startSec": 7.337,
+      "endSec": 7.564
+    },
+    {
+      "text": "us",
+      "startSec": 7.578,
+      "endSec": 7.678
+    },
+    {
+      "text": "structure",
+      "startSec": 7.692,
+      "endSec": 8.289
+    },
+    {
+      "text": "problems",
+      "startSec": 8.473,
+      "endSec": 8.956
+    },
+    {
+      "text": "to",
+      "startSec": 8.97,
+      "endSec": 9.07
+    },
+    {
+      "text": "solve",
+      "startSec": 9.084,
+      "endSec": 9.666
+    },
+    {
+      "text": "people",
+      "startSec": 9.894,
+      "endSec": 10.22
+    },
+    {
+      "text": "to",
+      "startSec": 10.235,
+      "endSec": 10.334
+    },
+    {
+      "text": "talk",
+      "startSec": 10.348,
+      "endSec": 10.675
+    },
+    {
+      "text": "to",
+      "startSec": 10.689,
+      "endSec": 10.888
+    },
+    {
+      "text": "and",
+      "startSec": 11.115,
+      "endSec": 11.243
+    },
+    {
+      "text": "things",
+      "startSec": 11.257,
+      "endSec": 11.613
+    },
+    {
+      "text": "that",
+      "startSec": 11.627,
+      "endSec": 11.769
+    },
+    {
+      "text": "have",
+      "startSec": 11.783,
+      "endSec": 12.01
+    },
+    {
+      "text": "to",
+      "startSec": 12.024,
+      "endSec": 12.11
+    },
+    {
+      "text": "be",
+      "startSec": 12.124,
+      "endSec": 12.252
+    },
+    {
+      "text": "finished",
+      "startSec": 12.266,
+      "endSec": 12.877
+    },
+    {
+      "text": "Then",
+      "startSec": 13.857,
+      "endSec": 14.141
+    },
+    {
+      "text": "one",
+      "startSec": 14.155,
+      "endSec": 14.439
+    },
+    {
+      "text": "day",
+      "startSec": 14.453,
+      "endSec": 14.809
+    },
+    {
+      "text": "it",
+      "startSec": 15.05,
+      "endSec": 15.192
+    },
+    {
+      "text": "stops",
+      "startSec": 15.206,
+      "endSec": 15.902
+    }
+  ]
+}

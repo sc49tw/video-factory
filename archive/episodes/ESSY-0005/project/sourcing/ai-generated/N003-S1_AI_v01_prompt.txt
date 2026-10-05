@@ -1,0 +1,16 @@
+ESSY-0005 | N003-S1 | AI Video v01
+Type: Image-to-Video
+Duration: 8 seconds
+Aspect Ratio: 16:9
+Style: Realistic documentary cinematography
+
+PROMPT:
+A middle-aged East Asian man sits quietly at a wooden table in his living room, initially looking at a framed photograph of an elderly couple. After a brief pause, he slowly shifts his gaze away from the photograph and looks toward the empty space beside the window. His expression remains restrained and thoughtful, without exaggerated sadness. Natural breathing, subtle eye movement and a very slight change in posture. Locked-off camera, soft natural daylight, realistic documentary cinematography, continuous single shot. Preserve the man's face, clothing, room layout and photograph throughout.
+
+AVOID:
+Camera push-in, sudden head turns, crying, smiling, facial morphing, movement inside the photograph, object distortion, dramatic lighting changes.
+
+GATE 2 STATUS:
+AI video: Primary provisional candidate
+Pexels 8865291: Alternative candidate
+Final approval: Pending

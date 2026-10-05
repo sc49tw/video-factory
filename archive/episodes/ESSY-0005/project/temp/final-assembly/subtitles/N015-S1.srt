@@ -1,0 +1,11 @@
+1
+00:00:00,100 --> 00:00:03,609
+It would be easy to turn aging into another performance target:\N{\fs18}很容易把變老變成另一項績效指標：
+
+2
+00:00:03,822 --> 00:00:05,938
+stay curious, stay productive,\N{\fs18}保持好奇、保持產出、
+
+3
+00:00:06,222 --> 00:00:07,968
+remain useful until the very end.\N{\fs18}到最後一刻仍有用。

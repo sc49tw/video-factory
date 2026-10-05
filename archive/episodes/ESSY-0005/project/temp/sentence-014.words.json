@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-014",
+  "blockId": "n014",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "7e482fa881e1d2357b4065449aa39227ff8d48895d75e08858b7d48afb2f9458",
+    "matchesManifest": true,
+    "audioDurationSec": 23.664,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 66,
+    "lastWordEndSec": 22.664,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "But",
+      "startSec": 0.1,
+      "endSec": 0.299
+    },
+    {
+      "text": "even",
+      "startSec": 0.313,
+      "endSec": 0.611
+    },
+    {
+      "text": "that",
+      "startSec": 0.626,
+      "endSec": 0.796
+    },
+    {
+      "text": "may",
+      "startSec": 0.81,
+      "endSec": 0.952
+    },
+    {
+      "text": "be",
+      "startSec": 0.966,
+      "endSec": 1.151
+    },
+    {
+      "text": "asking",
+      "startSec": 1.165,
+      "endSec": 1.634
+    },
+    {
+      "text": "too",
+      "startSec": 1.648,
+      "endSec": 1.861
+    },
+    {
+      "text": "much",
+      "startSec": 1.876,
+      "endSec": 2.131
+    },
+    {
+      "text": "of",
+      "startSec": 2.145,
+      "endSec": 2.245
+    },
+    {
+      "text": "my",
+      "startSec": 2.259,
+      "endSec": 2.458
+    },
+    {
+      "text": "future",
+      "startSec": 2.472,
+      "endSec": 2.912
+    },
+    {
+      "text": "self",
+      "startSec": 2.927,
+      "endSec": 3.481
+    },
+    {
+      "text": "Maybe",
+      "startSec": 4.468,
+      "endSec": 4.894
+    },
+    {
+      "text": "one",
+      "startSec": 4.908,
+      "endSec": 5.22
+    },
+    {
+      "text": "day",
+      "startSec": 5.235,
+      "endSec": 5.505
+    },
+    {
+      "text": "I",
+      "startSec": 5.519,
+      "endSec": 5.632
+    },
+    {
+      "text": "won't",
+      "startSec": 5.647,
+      "endSec": 5.874
+    },
+    {
+      "text": "be",
+      "startSec": 5.888,
+      "endSec": 6.059
+    },
+    {
+      "text": "able",
+      "startSec": 6.073,
+      "endSec": 6.328
+    },
+    {
+      "text": "to",
+      "startSec": 6.343,
+      "endSec": 6.456
+    },
+    {
+      "text": "write",
+      "startSec": 6.47,
+      "endSec": 6.84
+    },
+    {
+      "text": "or",
+      "startSec": 6.854,
+      "endSec": 6.953
+    },
+    {
+      "text": "work",
+      "startSec": 6.968,
+      "endSec": 7.365
+    },
+    {
+      "text": "on",
+      "startSec": 7.38,
+      "endSec": 7.522
+    },
+    {
+      "text": "projects",
+      "startSec": 7.536,
+      "endSec": 8.047
+    },
+    {
+      "text": "anymore",
+      "startSec": 8.061,
+      "endSec": 8.601
+    },
+    {
+      "text": "Maybe",
+      "startSec": 9.581,
+      "endSec": 10.05
+    },
+    {
+      "text": "I",
+      "startSec": 10.064,
+      "endSec": 10.192
+    },
+    {
+      "text": "will",
+      "startSec": 10.206,
+      "endSec": 10.363
+    },
+    {
+      "text": "just",
+      "startSec": 10.377,
+      "endSec": 10.647
+    },
+    {
+      "text": "sit",
+      "startSec": 10.661,
+      "endSec": 10.888
+    },
+    {
+      "text": "by",
+      "startSec": 10.902,
+      "endSec": 11.13
+    },
+    {
+      "text": "a",
+      "startSec": 11.144,
+      "endSec": 11.243
+    },
+    {
+      "text": "window",
+      "startSec": 11.257,
+      "endSec": 11.769
+    },
+    {
+      "text": "listen",
+      "startSec": 12.11,
+      "endSec": 12.365
+    },
+    {
+      "text": "to",
+      "startSec": 12.38,
+      "endSec": 12.479
+    },
+    {
+      "text": "music",
+      "startSec": 12.493,
+      "endSec": 13.019
+    },
+    {
+      "text": "eat",
+      "startSec": 13.289,
+      "endSec": 13.488
+    },
+    {
+      "text": "something",
+      "startSec": 13.502,
+      "endSec": 13.956
+    },
+    {
+      "text": "I",
+      "startSec": 13.97,
+      "endSec": 14.07
+    },
+    {
+      "text": "still",
+      "startSec": 14.084,
+      "endSec": 14.368
+    },
+    {
+      "text": "enjoy",
+      "startSec": 14.382,
+      "endSec": 14.993
+    },
+    {
+      "text": "and",
+      "startSec": 15.22,
+      "endSec": 15.348
+    },
+    {
+      "text": "talk",
+      "startSec": 15.363,
+      "endSec": 15.632
+    },
+    {
+      "text": "to",
+      "startSec": 15.647,
+      "endSec": 15.746
+    },
+    {
+      "text": "someone",
+      "startSec": 15.76,
+      "endSec": 16.158
+    },
+    {
+      "text": "once",
+      "startSec": 16.172,
+      "endSec": 16.485
+    },
+    {
+      "text": "in",
+      "startSec": 16.499,
+      "endSec": 16.598
+    },
+    {
+      "text": "a",
+      "startSec": 16.613,
+      "endSec": 16.669
+    },
+    {
+      "text": "while",
+      "startSec": 16.684,
+      "endSec": 17.294
+    },
+    {
+      "text": "If",
+      "startSec": 18.274,
+      "endSec": 18.516
+    },
+    {
+      "text": "I",
+      "startSec": 18.53,
+      "endSec": 18.63
+    },
+    {
+      "text": "am",
+      "startSec": 18.644,
+      "endSec": 18.786
+    },
+    {
+      "text": "not",
+      "startSec": 18.8,
+      "endSec": 19.056
+    },
+    {
+      "text": "in",
+      "startSec": 19.07,
+      "endSec": 19.169
+    },
+    {
+      "text": "constant",
+      "startSec": 19.184,
+      "endSec": 19.709
+    },
+    {
+      "text": "pain",
+      "startSec": 19.723,
+      "endSec": 20.149
+    },
+    {
+      "text": "perhaps",
+      "startSec": 20.363,
+      "endSec": 20.817
+    },
+    {
+      "text": "that",
+      "startSec": 20.831,
+      "endSec": 21.002
+    },
+    {
+      "text": "would",
+      "startSec": 21.016,
+      "endSec": 21.144
+    },
+    {
+      "text": "be",
+      "startSec": 21.158,
+      "endSec": 21.286
+    },
+    {
+      "text": "a",
+      "startSec": 21.3,
+      "endSec": 21.371
+    },
+    {
+      "text": "pretty",
+      "startSec": 21.385,
+      "endSec": 21.683
+    },
+    {
+      "text": "good",
+      "startSec": 21.698,
+      "endSec": 21.911
+    },
+    {
+      "text": "day",
+      "startSec": 21.925,
+      "endSec": 22.124
+    },
+    {
+      "text": "too",
+      "startSec": 22.138,
+      "endSec": 22.664
+    }
+  ]
+}

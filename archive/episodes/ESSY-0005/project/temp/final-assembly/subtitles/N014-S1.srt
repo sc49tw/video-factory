@@ -1,0 +1,7 @@
+1
+00:00:00,100 --> 00:00:03,481
+But even that may be asking too much of my future self.\N{\fs18}但即使這樣，或許也對未來的我要求太高。
+
+2
+00:00:04,468 --> 00:00:07,888
+Maybe one day I won't be able to write or work on projects anymore.\N{\fs18}或許有一天我寫不了字、做不了專案。

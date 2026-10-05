@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "1.1",
+  "episode": "ESSY-0005",
+  "target": "output/ESSY-0005/ESSY-0005-review-540p-subtitled-v3.mp4",
+  "targetResolution": "960x540",
+  "referenceMaster": "output/ESSY-0005/ESSY-0005-full-draft-v1.mp4",
+  "durationSec": 388.664,
+  "deliveryOffsetSec": 4,
+  "subtitleSource": {
+    "authoritativeEnglishCueCount": 150,
+    "bilingualCueCount": 150,
+    "zhEntriesPerCue": 150,
+    "timingIdenticalToEnglish": true,
+    "timingMismatchCount": 0,
+    "placeholderCueCount": 0,
+    "emptyTranslationCount": 0,
+    "duplicateCueIdCount": 0,
+    "countMatchesEnglish": true,
+    "passed": true
+  },
+  "subtitleInk": {
+    "inkThreshold": 120,
+    "measurement": "reference-differencing",
+    "burnGeometry": {
+      "englishRows": [
+        418,
+        450
+      ],
+      "chineseRows": [
+        450,
+        480
+      ],
+      "resolution": "960x540"
+    },
+    "cuesProbed": 150,
+    "cuesWithoutEnglishLine": [],
+    "cuesWithoutChineseLine": [],
+    "minEnglishLineInk": 1027,
+    "minChineseLineInk": 319,
+    "passed": true
+  },
+  "openingIdentity": {
+    "startSec": 14.736,
+    "endSec": 18.736,
+    "subtitleSuppressionEnabled": true,
+    "cuesIntersectingWindow": [],
+    "identitySlotId": "N001-S1",
+    "identitySourcePath": "projects/ESSY-0005/sourcing/downloads/N001-S1-pexels-34374473.mp4",
+    "framesProbedInsideWindow": 20,
+    "framesWithSubtitleInkInBand": [],
+    "maxEnglishInkInsideWindow": 13,
+    "maxChineseInkInsideWindow": 7,
+    "controlNeighbourCue": {
+      "cueId": "4",
+      "t": 19.186,
+      "t2": 19.586,
+      "englishLineInk": 2812,
+      "chineseLineInk": 789
+    },
+    "passed": true
+  },
+  "slotProof": {
+    "probes": 6,
+    "results": [
+      {
+        "deliveryTimeSec": 360.502,
+        "masterTimeSec": 356.502,
+        "expectedSlotId": "N018-S1",
+        "expectedSourceSha256": "17cab7f2228116c0",
+        "candidates": [
+          {
+            "slotId": "N018-S1",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S1-pexels-7702643.mp4",
+            "sourceSha256": "17cab7f2228116c0",
+            "sampledAtSourceSec": 2.142,
+            "score": 99.6
+          },
+          {
+            "slotId": "N018-S2",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S2-pexels-7393171.mp4",
+            "sourceSha256": "19e1c5ed32d87a35",
+            "sampledAtSourceSec": 0,
+            "score": 64
+          },
+          {
+            "slotId": "N018-S3",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S3-pexels-8865606.mp4",
+            "sourceSha256": "52bce269b2cd7898",
+            "sampledAtSourceSec": 0,
+            "score": 48.3
+          }
+        ],
+        "visibleSlotId": "N018-S1",
+        "marginToRunnerUp": 35.6,
+        "passed": true
+      },
+      {
+        "deliveryTimeSec": 364.786,
+        "masterTimeSec": 360.786,
+        "expectedSlotId": "N018-S1",
+        "expectedSourceSha256": "17cab7f2228116c0",
+        "candidates": [
+          {
+            "slotId": "N018-S1",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S1-pexels-7702643.mp4",
+            "sourceSha256": "17cab7f2228116c0",
+            "sampledAtSourceSec": 6.426,
+            "score": 99.1
+          },
+          {
+            "slotId": "N018-S2",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S2-pexels-7393171.mp4",
+            "sourceSha256": "19e1c5ed32d87a35",
+            "sampledAtSourceSec": 0,
+            "score": 59.6
+          },
+          {
+            "slotId": "N018-S3",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S3-pexels-8865606.mp4",
+            "sourceSha256": "52bce269b2cd7898",
+            "sampledAtSourceSec": 0,
+            "score": 44.3
+          }
+        ],
+        "visibleSlotId": "N018-S1",
+        "marginToRunnerUp": 39.5,
+        "passed": true
+      },
+      {
+        "deliveryTimeSec": 369.07,
+        "masterTimeSec": 365.07,
+        "expectedSlotId": "N018-S2",
+        "expectedSourceSha256": "19e1c5ed32d87a35",
+        "candidates": [
+          {
+            "slotId": "N018-S2",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S2-pexels-7393171.mp4",
+            "sourceSha256": "19e1c5ed32d87a35",
+            "sampledAtSourceSec": 2.142,
+            "score": 99.5
+          },
+          {
+            "slotId": "N018-S3",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S3-pexels-8865606.mp4",
+            "sourceSha256": "52bce269b2cd7898",
+            "sampledAtSourceSec": 0,
+            "score": 70
+          },
+          {
+            "slotId": "N018-S1",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S1-pexels-7702643.mp4",
+            "sourceSha256": "17cab7f2228116c0",
+            "sampledAtSourceSec": 10.71,
+            "score": 61.7
+          }
+        ],
+        "visibleSlotId": "N018-S2",
+        "marginToRunnerUp": 29.5,
+        "passed": true
+      },
+      {
+        "deliveryTimeSec": 373.354,
+        "masterTimeSec": 369.354,
+        "expectedSlotId": "N018-S2",
+        "expectedSourceSha256": "19e1c5ed32d87a35",
+        "candidates": [
+          {
+            "slotId": "N018-S2",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S2-pexels-7393171.mp4",
+            "sourceSha256": "19e1c5ed32d87a35",
+            "sampledAtSourceSec": 6.426,
+            "score": 99.5
+          },
+          {
+            "slotId": "N018-S3",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S3-pexels-8865606.mp4",
+            "sourceSha256": "52bce269b2cd7898",
+            "sampledAtSourceSec": 0,
+            "score": 70.9
+          },
+          {
+            "slotId": "N018-S1",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S1-pexels-7702643.mp4",
+            "sourceSha256": "17cab7f2228116c0",
+            "sampledAtSourceSec": 14.994,
+            "score": 61.9
+          }
+        ],
+        "visibleSlotId": "N018-S2",
+        "marginToRunnerUp": 28.6,
+        "passed": true
+      },
+      {
+        "deliveryTimeSec": 377.788,
+        "masterTimeSec": 373.788,
+        "expectedSlotId": "N018-S3",
+        "expectedSourceSha256": "52bce269b2cd7898",
+        "candidates": [
+          {
+            "slotId": "N018-S3",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S3-pexels-8865606.mp4",
+            "sourceSha256": "52bce269b2cd7898",
+            "sampledAtSourceSec": 2.292,
+            "score": 97.8
+          },
+          {
+            "slotId": "N018-S2",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S2-pexels-7393171.mp4",
+            "sourceSha256": "19e1c5ed32d87a35",
+            "sampledAtSourceSec": 10.86,
+            "score": 68.9
+          },
+          {
+            "slotId": "N018-S1",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S1-pexels-7702643.mp4",
+            "sourceSha256": "17cab7f2228116c0",
+            "sampledAtSourceSec": 19.428,
+            "score": 56.9
+          }
+        ],
+        "visibleSlotId": "N018-S3",
+        "marginToRunnerUp": 28.9,
+        "passed": true
+      },
+      {
+        "deliveryTimeSec": 382.372,
+        "masterTimeSec": 378.372,
+        "expectedSlotId": "N018-S3",
+        "expectedSourceSha256": "52bce269b2cd7898",
+        "candidates": [
+          {
+            "slotId": "N018-S3",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S3-pexels-8865606.mp4",
+            "sourceSha256": "52bce269b2cd7898",
+            "sampledAtSourceSec": 6.876,
+            "score": 99.1
+          },
+          {
+            "slotId": "N018-S1",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S1-pexels-7702643.mp4",
+            "sourceSha256": "17cab7f2228116c0",
+            "sampledAtSourceSec": 24.012,
+            "score": 55.4
+          },
+          {
+            "slotId": "N018-S2",
+            "sourcePath": "projects/ESSY-0005/sourcing/downloads/N018-S2-pexels-7393171.mp4",
+            "sourceSha256": "19e1c5ed32d87a35",
+            "sampledAtSourceSec": 15.444,
+            "score": 0
+          }
+        ],
+        "visibleSlotId": "N018-S3",
+        "marginToRunnerUp": 43.7,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "repetition": {
+    "withinBlockRepetitions": [],
+    "passed": true
+  },
+  "passed": true
+}

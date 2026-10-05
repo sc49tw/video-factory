@@ -1,0 +1,9 @@
+{
+  "episode": "ESSY-0005",
+  "masterPath": "projects/ESSY-0005/temp/ESSY-0005-narration-master.m4a",
+  "durationSec": 380.685,
+  "expectedDurationSec": 380.664,
+  "blocks": 18,
+  "source": "existing approved cached TTS mp3 files (deterministic assembly, no TTS regeneration)",
+  "validation": "passed"
+}

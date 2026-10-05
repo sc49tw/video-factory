@@ -1,0 +1,49 @@
+{
+  "output": "D:\\Git\\video-factory\\output\\ESSY-0005\\ESSY-0005-review-540p-subtitled-v3.mp4",
+  "opening": {
+    "startSec": 14.736,
+    "durationSec": 4,
+    "sourceDuration": 18.736,
+    "shot": {
+      "index": 0,
+      "blockId": "sentence-001",
+      "slotId": "N001-S1",
+      "mediaType": "video",
+      "sourcePath": "D:\\Git\\video-factory\\projects\\ESSY-0005\\sourcing\\downloads\\N001-S1-pexels-34374473.mp4",
+      "sourceDurationSec": 33.46,
+      "inPointSec": 0,
+      "stillMotion": null,
+      "renderDurationSec": 14.136,
+      "speechEndSec": 14.136,
+      "startSec": 0,
+      "endSec": 14.736,
+      "trailingHoldSec": 0.6,
+      "absoluteStartSec": 0,
+      "absoluteEndSec": 14.736
+    },
+    "cards": [
+      {
+        "kind": "channel",
+        "text": "A SECOND LOOK AT LIFE",
+        "startSec": 14.736,
+        "endSec": 16.736,
+        "fadeInDurSec": 0.35,
+        "fadeOutDurSec": 0.35
+      },
+      {
+        "kind": "episode",
+        "text": "What Is Still There When I'm Eighty?",
+        "startSec": 16.736,
+        "endSec": 18.736,
+        "fadeInDurSec": 0.35,
+        "fadeOutDurSec": 0.35
+      }
+    ]
+  },
+  "durationSec": 388.664,
+  "subtitleCount": 150,
+  "subtitleQaPassed": true,
+  "bilingual": true,
+  "narrationBlocks": 18,
+  "masterInput": "output/ESSY-0005/ESSY-0005-full-draft-v1.mp4"
+}

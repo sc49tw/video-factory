@@ -1,0 +1,11 @@
+1
+00:00:00,100 --> 00:00:02,728
+So imagine an ordinary Tuesday morning.\N{\fs18}想像一個普通的週二早晨。
+
+2
+00:00:03,715 --> 00:00:05,291
+I am eighty years old.\N{\fs18}我八十歲了。
+
+3
+00:00:06,272 --> 00:00:08,147
+There is nowhere I have to be.\N{\fs18}不用去任何地方。

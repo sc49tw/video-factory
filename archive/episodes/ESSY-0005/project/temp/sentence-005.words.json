@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-005",
+  "blockId": "n005",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "0ef8c60716f210b39c7ca5fd3465fe74ecdf434d44988c3c414b62cd2ae1e6db",
+    "matchesManifest": true,
+    "audioDurationSec": 7.704,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 20,
+    "lastWordEndSec": 6.712,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "But",
+      "startSec": 0.1,
+      "endSec": 0.313
+    },
+    {
+      "text": "what",
+      "startSec": 0.327,
+      "endSec": 0.54
+    },
+    {
+      "text": "scares",
+      "startSec": 0.555,
+      "endSec": 0.966
+    },
+    {
+      "text": "me",
+      "startSec": 0.981,
+      "endSec": 1.108
+    },
+    {
+      "text": "most",
+      "startSec": 1.123,
+      "endSec": 1.506
+    },
+    {
+      "text": "is",
+      "startSec": 1.52,
+      "endSec": 1.648
+    },
+    {
+      "text": "something",
+      "startSec": 1.663,
+      "endSec": 2.074
+    },
+    {
+      "text": "simpler",
+      "startSec": 2.089,
+      "endSec": 2.657
+    },
+    {
+      "text": "Waking",
+      "startSec": 3.644,
+      "endSec": 4.169
+    },
+    {
+      "text": "up",
+      "startSec": 4.184,
+      "endSec": 4.311
+    },
+    {
+      "text": "in",
+      "startSec": 4.326,
+      "endSec": 4.411
+    },
+    {
+      "text": "the",
+      "startSec": 4.425,
+      "endSec": 4.496
+    },
+    {
+      "text": "morning",
+      "startSec": 4.51,
+      "endSec": 4.965
+    },
+    {
+      "text": "and",
+      "startSec": 4.979,
+      "endSec": 5.064
+    },
+    {
+      "text": "having",
+      "startSec": 5.078,
+      "endSec": 5.405
+    },
+    {
+      "text": "nothing",
+      "startSec": 5.419,
+      "endSec": 5.831
+    },
+    {
+      "text": "I",
+      "startSec": 5.845,
+      "endSec": 5.916
+    },
+    {
+      "text": "want",
+      "startSec": 5.931,
+      "endSec": 6.186
+    },
+    {
+      "text": "to",
+      "startSec": 6.201,
+      "endSec": 6.286
+    },
+    {
+      "text": "do",
+      "startSec": 6.3,
+      "endSec": 6.712
+    }
+  ]
+}

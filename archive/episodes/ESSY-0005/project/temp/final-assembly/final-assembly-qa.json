@@ -1,0 +1,52 @@
+{
+  "episode": "ESSY-0005",
+  "output": "output/ESSY-0005/ESSY-0005-final-v1.mp4",
+  "durationSec": 388.756,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "sizeBytes": 220067915,
+  "audioMeanVolumeDb": "-24.4 dB",
+  "audioMaxVolumeDb": "-6.0 dB",
+  "musicGainDb": -9,
+  "musicSelectedTrack": "Dreamland",
+  "subtitleQa": {
+    "totalCueCount": 150,
+    "overlapCountAfterNormalization": 0,
+    "invalidDurationCueCount": 0,
+    "maxRenderedLines": 2,
+    "orphanChildCueCount": 0,
+    "twoWordChildCueCount": 0,
+    "generatedCueDurationBelow700msCount": 0,
+    "passed": true,
+    "reportPath": "projects/ESSY-0005/temp/ESSY-0005-subtitle-qa.json"
+  },
+  "subtitleBurn": {
+    "mode": "bilingual-en-zhTW",
+    "engine": "libass-subtitles-filter",
+    "sourceSrt": "projects/ESSY-0005/temp/ESSY-0005-subtitles-bilingual.srt",
+    "englishSrt": "projects/ESSY-0005/temp/ESSY-0005-subtitles.srt",
+    "burnedCueCount": 150,
+    "style540pDesign": {
+      "FONT_NAME": "Arial",
+      "FONT_SIZE": 28,
+      "OUTLINE": 1,
+      "SHADOW": 0.8,
+      "ALIGNMENT": 2,
+      "MARGIN_V": 64,
+      "MARGIN_LR": 40,
+      "PRIMARY_COLOUR": "&H00FFFFFF",
+      "OUTLINE_COLOUR": "&H00000000",
+      "BACK_COLOUR": "&H96000000"
+    },
+    "burnedAt": "1920x1080"
+  },
+  "preRollTitleText": null,
+  "preRollTitleSec": 0,
+  "preRollTitleSource": null,
+  "mainProgramStartSec": 0,
+  "endingHoldSec": 4,
+  "baseDurationSec": 384.756,
+  "durationAddedSec": 4,
+  "shots": 43,
+  "narrationBlocks": 18
+}

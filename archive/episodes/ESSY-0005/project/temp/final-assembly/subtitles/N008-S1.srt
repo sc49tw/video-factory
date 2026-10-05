@@ -1,0 +1,11 @@
+1
+00:00:00,100 --> 00:00:02,770
+I can tell myself I will have plenty to do.\N{\fs18}我可以告訴自己會有很多事可做。
+
+2
+00:00:03,757 --> 00:00:05,718
+I already have too many projects\N{\fs18}我已經有太多專案、
+
+3
+00:00:05,732 --> 00:00:07,236
+and too many places I want to see.\N{\fs18}太多想去的地方。

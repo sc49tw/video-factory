@@ -1,0 +1,15 @@
+1
+00:00:00,029 --> 00:00:01,166
+Maybe that is what\N{\fs18}也許這就是
+
+2
+00:00:01,180 --> 00:00:02,842
+makes regret so unfair.\N{\fs18}後悔最不公平的地方。
+
+3
+00:00:03,822 --> 00:00:05,384
+We judge our younger selves\N{\fs18}我們用年輕的自己
+
+4
+00:00:05,399 --> 00:00:07,174
+with information they never had.\N{\fs18}從未擁有的資訊，來審判他們。

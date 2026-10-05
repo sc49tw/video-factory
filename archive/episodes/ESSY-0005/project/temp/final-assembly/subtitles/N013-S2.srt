@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:00,952
+people, questions, experiences.\N{\fs18}人、問題、經驗。
+
+2
+00:00:00,953 --> 00:00:02,840
+I hope I will still have\N{\fs18}我希望仍能
+
+3
+00:00:02,841 --> 00:00:04,649
+something to send back.\N{\fs18}輸出點什麼。
+
+4
+00:00:04,650 --> 00:00:06,773
+Not because I need to prove\N{\fs18}不是為了證明
+
+5
+00:00:06,774 --> 00:00:07,384
+that I am useful.\N{\fs18}我有用。

@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-017",
+  "blockId": "n017",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "3f756c52e4a0c9dd35a614921c003814432f3c5bc1b9327fe4a76f6cace4a939",
+    "matchesManifest": true,
+    "audioDurationSec": 16.32,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 40,
+    "lastWordEndSec": 15.334,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "I",
+      "startSec": 0.1,
+      "endSec": 0.242
+    },
+    {
+      "text": "don't",
+      "startSec": 0.256,
+      "endSec": 0.469
+    },
+    {
+      "text": "know",
+      "startSec": 0.484,
+      "endSec": 0.597
+    },
+    {
+      "text": "which",
+      "startSec": 0.611,
+      "endSec": 0.881
+    },
+    {
+      "text": "old",
+      "startSec": 0.895,
+      "endSec": 1.066
+    },
+    {
+      "text": "man",
+      "startSec": 1.08,
+      "endSec": 1.35
+    },
+    {
+      "text": "I",
+      "startSec": 1.364,
+      "endSec": 1.449
+    },
+    {
+      "text": "will",
+      "startSec": 1.464,
+      "endSec": 1.606
+    },
+    {
+      "text": "become",
+      "startSec": 1.62,
+      "endSec": 2.188
+    },
+    {
+      "text": "I",
+      "startSec": 3.175,
+      "endSec": 3.345
+    },
+    {
+      "text": "have",
+      "startSec": 3.36,
+      "endSec": 3.601
+    },
+    {
+      "text": "to",
+      "startSec": 3.615,
+      "endSec": 3.715
+    },
+    {
+      "text": "make",
+      "startSec": 3.729,
+      "endSec": 3.942
+    },
+    {
+      "text": "decisions",
+      "startSec": 3.956,
+      "endSec": 4.553
+    },
+    {
+      "text": "now",
+      "startSec": 4.567,
+      "endSec": 4.78
+    },
+    {
+      "text": "without",
+      "startSec": 4.794,
+      "endSec": 5.192
+    },
+    {
+      "text": "knowing",
+      "startSec": 5.206,
+      "endSec": 5.547
+    },
+    {
+      "text": "how",
+      "startSec": 5.561,
+      "endSec": 5.746
+    },
+    {
+      "text": "the",
+      "startSec": 5.76,
+      "endSec": 5.874
+    },
+    {
+      "text": "story",
+      "startSec": 5.888,
+      "endSec": 6.328
+    },
+    {
+      "text": "turns",
+      "startSec": 6.343,
+      "endSec": 6.74
+    },
+    {
+      "text": "out",
+      "startSec": 6.755,
+      "endSec": 7.209
+    },
+    {
+      "text": "Maybe",
+      "startSec": 8.189,
+      "endSec": 8.644
+    },
+    {
+      "text": "that",
+      "startSec": 8.658,
+      "endSec": 8.928
+    },
+    {
+      "text": "is",
+      "startSec": 8.942,
+      "endSec": 9.07
+    },
+    {
+      "text": "what",
+      "startSec": 9.084,
+      "endSec": 9.326
+    },
+    {
+      "text": "makes",
+      "startSec": 9.34,
+      "endSec": 9.624
+    },
+    {
+      "text": "regret",
+      "startSec": 9.638,
+      "endSec": 10.149
+    },
+    {
+      "text": "so",
+      "startSec": 10.164,
+      "endSec": 10.405
+    },
+    {
+      "text": "unfair",
+      "startSec": 10.419,
+      "endSec": 11.002
+    },
+    {
+      "text": "We",
+      "startSec": 11.982,
+      "endSec": 12.209
+    },
+    {
+      "text": "judge",
+      "startSec": 12.223,
+      "endSec": 12.507
+    },
+    {
+      "text": "our",
+      "startSec": 12.522,
+      "endSec": 12.692
+    },
+    {
+      "text": "younger",
+      "startSec": 12.706,
+      "endSec": 13.09
+    },
+    {
+      "text": "selves",
+      "startSec": 13.104,
+      "endSec": 13.544
+    },
+    {
+      "text": "with",
+      "startSec": 13.559,
+      "endSec": 13.715
+    },
+    {
+      "text": "information",
+      "startSec": 13.729,
+      "endSec": 14.34
+    },
+    {
+      "text": "they",
+      "startSec": 14.354,
+      "endSec": 14.482
+    },
+    {
+      "text": "never",
+      "startSec": 14.496,
+      "endSec": 14.809
+    },
+    {
+      "text": "had",
+      "startSec": 14.823,
+      "endSec": 15.334
+    }
+  ]
+}

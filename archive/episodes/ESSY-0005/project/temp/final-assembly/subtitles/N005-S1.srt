@@ -1,0 +1,7 @@
+1
+00:00:00,100 --> 00:00:02,657
+But what scares me most is something simpler:\N{\fs18}但最讓我害怕的，其實更單純：
+
+2
+00:00:03,644 --> 00:00:06,712
+Waking up in the morning and having nothing I want to do.\N{\fs18}早上醒來，發現沒有任何想做的事。

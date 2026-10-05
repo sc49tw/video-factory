@@ -1,0 +1,194 @@
+[
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S1",
+    "visualArc": "receiving from the world -> turning it over -> sending something back",
+    "editorialFunction": "Establish the present appetite for going somewhere, seeing how people live, and understanding.",
+    "visualIntent": "An adult in motion through an unfamiliar place — a station concourse, a market street, a boarding gate — with a notebook or camera carried at hip height. Observational, unhurried, not heroic.",
+    "avoid": [
+      "travel-advertory montage",
+      "landmark and drone shots",
+      "suitcase glamour shots",
+      "wanderlust colour grading"
+    ],
+    "searchQuery": "adult walking unfamiliar street notebook natural daylight",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S2",
+    "visualArc": "receiving from the world -> turning it over -> sending something back",
+    "editorialFunction": "Show the world arriving as input: other people's rooms, work, and habits, absorbed without being collected.",
+    "visualIntent": "Observational fragments of a place held through someone else's attention — hands preparing food at a counter, a shopkeeper's shelf, a stranger's doorway — each given time to be looked at rather than skimmed.",
+    "avoid": [
+      "one-frame-per-object slideshow pacing",
+      "tourist snapshot aesthetic",
+      "food glamour close-ups",
+      "staged local colour"
+    ],
+    "searchQuery": "hands preparing food street counter observational natural",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S3",
+    "visualArc": "receiving from the world -> turning it over -> sending something back",
+    "editorialFunction": "Complete the motif by sending something back: the same person later transcribing, revising, or publishing what arrived.",
+    "visualIntent": "A person back home at a desk, typing or revising, with the day's material beside them in notebooks or photographs. Practical warm light; the act of responding is small and unspectacular.",
+    "avoid": [
+      "laptop-glow productivity glamour",
+      "startup-office staging",
+      "content-creator performance",
+      "audience metrics or reach graphics"
+    ],
+    "searchQuery": "person typing at desk with notes beside laptop warm light",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S1",
+    "visualArc": "what work actually supplies -> the structure simply stopping",
+    "editorialFunction": "Show what work supplies — structure, problems, colleagues, unfinished things — through use rather than through a job-ad montage.",
+    "visualIntent": "A working environment read through objects and small coordination: a board mid-task, a shared table with half-finished work, colleagues in mid-conversation at the edge of frame.",
+    "avoid": [
+      "handshakes and posed business suits",
+      "motivational office posters",
+      "stock teamwork gestures",
+      "one icon per listed benefit"
+    ],
+    "searchQuery": "office colleagues mid task whiteboard candid natural",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S2",
+    "visualArc": "what work actually supplies -> the structure simply stopping",
+    "editorialFunction": "Land Then one day, it stops. as a withdrawal of environment rather than a dramatic exit.",
+    "visualIntent": "The same workplace after hours: chairs pushed in, screens dark, one corridor light left on, a door standing unlocked. No person centred; nothing is being left behind dramatically.",
+    "avoid": [
+      "resignation letter close-up",
+      "packing a box in an office",
+      "theatrical sad exit",
+      "empty-desk melodrama"
+    ],
+    "searchQuery": "empty office after hours corridor light unlocked door",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S1",
+    "visualArc": "the promise of plenty to do -> the blank where the answer should be",
+    "editorialFunction": "Show the self-promise of plenty as an ordinary backlog rather than an ambition display.",
+    "visualIntent": "A work surface carrying a dense, ordinary list of intentions, places, and unfinished things — handwritten or typed, used and slightly untidy. The room around it is real, not styled.",
+    "avoid": [
+      "goal board and sticky-note wall",
+      "vision-board collage",
+      "branded planner or journal",
+      "a checklist of dreams"
+    ],
+    "searchQuery": "handwritten list of plans on desk ordinary room",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S2",
+    "visualArc": "the promise of plenty to do -> the blank where the answer should be",
+    "editorialFunction": "Undercut the promise with the honest blank: what I will want at seventy-five is currently unknowable.",
+    "visualIntent": "The same person at the same surface, pen down and no longer writing; an unmeasured pause held without resolution. Nothing in the frame expresses confusion or distress.",
+    "avoid": [
+      "confused elderly close-up",
+      "dementia and memory-loss imagery",
+      "philosophical pondering pose",
+      "dim, brooding lighting"
+    ],
+    "searchQuery": "person pausing with pen at desk quiet uncertainty",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S1",
+    "visualArc": "care as absorption -> care as someone's entire life -> the narrow version that is survivable",
+    "editorialFunction": "State the fear of being a burden as a spatial problem inside one household.",
+    "visualIntent": "A parent and adult child in ordinary domestic space where practical need is legible in the surroundings — a threshold, a chair being moved, a doorway — while the relationship itself stays warm and unbothered.",
+    "avoid": [
+      "lifting and transfer assistance scenes",
+      "bathroom and care-procedure imagery",
+      "medical uniforms and apparatus",
+      "a visibly exhausted carer"
+    ],
+    "searchQuery": "adult child helping parent at home doorway candid natural",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S2",
+    "visualArc": "care as absorption -> care as someone's entire life -> the narrow version that is survivable",
+    "editorialFunction": "Hold the tension between being cared for and consuming someone's life without resolving it in the image.",
+    "visualIntent": "The child's own life continuing — a commute, keys by the door, a phone left face down on a table — while the parent's presence is felt at the edge of frame rather than centred.",
+    "avoid": [
+      "guilt-trip close-ups",
+      "a child sighing or rolling eyes",
+      "the parent framed as an obstacle",
+      "staged family argument"
+    ],
+    "searchQuery": "young adult leaving home keys by door morning candid",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N009",
+    "slotId": "N009-S3",
+    "visualArc": "care as absorption -> care as someone's entire life -> the narrow version that is survivable",
+    "editorialFunction": "Land on the narrower, acceptable claim: some help is fine, total absorption is not.",
+    "visualIntent": "An ordinary aid used without comment in a home — a handrail, a kettle, a chair with arms — with a person's hand on it. The dignity sits in how unremarkable it is.",
+    "avoid": [
+      "arrays of medical equipment",
+      "clinical staging",
+      "adaptive-gadget advertising",
+      "visible dependence performance"
+    ],
+    "searchQuery": "handrail by stairs home used naturally everyday",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N010",
+    "slotId": "N010-S1",
+    "visualArc": "hope handed to machines -> the family returned to its simplest form",
+    "editorialFunction": "Hold the hope for care technology as a hope, not as a solution already in place.",
+    "visualIntent": "A domestic interior where a small assist device, sensor, or remote system sits unremarkably in a room; a person and a machine share space without either performing the future.",
+    "avoid": [
+      "humanoid care robots",
+      "sci-fi interfaces and holograms",
+      "surgical or telepresence robots",
+      "screens of vital-sign graphics"
+    ],
+    "searchQuery": "small home assist device in living room quiet realistic",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  },
+  {
+    "narrationId": "N010",
+    "slotId": "N010-S2",
+    "visualArc": "hope handed to machines -> the family returned to its simplest form",
+    "editorialFunction": "Resolve the section by returning the family to its simplest description: family, not staff.",
+    "visualIntent": "Two people at a table or on a sofa doing nothing more than being together — a shared meal, an easy laugh, a comfortable silence. Every technical element stays off-screen.",
+    "avoid": [
+      "multi-generational care-facility staging",
+      "gratitude and tears performance",
+      "clinic-family group photograph",
+      "sentimental embrace"
+    ],
+    "searchQuery": "two people sharing meal at home easy natural candid",
+    "preferredMediaType": "video",
+    "batch": "N006-N010"
+  }
+]

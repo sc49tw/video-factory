@@ -1,0 +1,170 @@
+[
+  {
+    "narrationId": "N001",
+    "slotId": "N001-S1",
+    "visualArc": "one held threshold situation in which the body's limits, the disappearing destination, and the thing that is still there are all asked at once",
+    "editorialFunction": "Carry all three opening questions inside a single continuous situation so that what is still there lands through duration, framing, and attention rather than through a second symbolic image.",
+    "visualIntent": "One uninterrupted situation held across the full block: a person at seated height on the edge of a doorway, a corridor, or a path, with a hand on a chair arm or a foot at a step, and open ordinary space ahead that they are not taking. The camera stays close enough to the body to register the limit and wide enough to keep the possibility of movement in frame, and the stillness deepens as the questions accumulate rather than cutting away to illustrate them. Level, observational, no face required.",
+    "avoid": [
+      "wheelchair portraits and clinical stock",
+      "wrinkle and age-spot close-ups",
+      "skeleton, hourglass, or clock metaphors",
+      "grey-haired slow-motion hero shots",
+      "one literal image per rhetorical question",
+      "a second or third symbolic shot to illustrate each question",
+      "existential-film emptiness: cleared rooms, a lone lit lamp, an empty chair, or a figure dwarfed by negative space",
+      "memory or flashback montage and sepia aging effects"
+    ],
+    "searchQuery": "person seated at doorway threshold still frame open space ahead long take",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S1",
+    "visualArc": "a family observed at close range -> lives contracting around the body -> three versions of waiting",
+    "editorialFunction": "Open the family chapter as plain observation, not prophecy, and refuse the pity camera.",
+    "visualIntent": "An older adult's hands doing something ordinary and skilled at close, level framing: folding cloth, working a latch, shelling something. The person is present and capable; frailty is not the subject.",
+    "avoid": [
+      "medical equipment and clinical settings",
+      "shaking or gnarled hand close-ups",
+      "pity framing shot from above",
+      "grandmother-in-a-nursing-home shorthand"
+    ],
+    "searchQuery": "older person hands folding cloth close natural light",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S2",
+    "visualArc": "a family observed at close range -> lives contracting around the body -> three versions of waiting",
+    "editorialFunction": "Show a mind still fully inhabited even when speech is no longer available.",
+    "visualIntent": "A bright shared dayroom, one person seated while another talks and gestures; the listener's face is engaged and following. Medium observational distance, everyday rather than dramatic.",
+    "avoid": [
+      "crying scenes and tearful visitors",
+      "vacant, catatonic stares",
+      "bedside or hospital staging",
+      "lone figure abandoned in an empty ward"
+    ],
+    "searchQuery": "dayroom two people talking one listening engaged natural",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S3",
+    "visualArc": "a family observed at close range -> lives contracting around the body -> three versions of waiting",
+    "editorialFunction": "Show a world contracting along with a body: the same rooms, fewer of them.",
+    "visualIntent": "An older man alone in his living room late in the day, a television playing but never shown; a chair, a table, a window. Long take, static camera, the scale of the room doing the work.",
+    "avoid": [
+      "sad-face close-ups",
+      "news anchors visible on the screen",
+      "hunched despair performance",
+      "darkened house with failing lights"
+    ],
+    "searchQuery": "older man alone living room television evening quiet static",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S4",
+    "visualArc": "a family observed at close range -> lives contracting around the body -> three versions of waiting",
+    "editorialFunction": "Complete the trio with waiting rather than decline: hours passing in a chair that does not move.",
+    "visualIntent": "Afternoon light advancing across a day-care or common room; a person seated with nothing in hand, watching something just out of frame. Slow lateral drift, unhurried, no performed sorrow.",
+    "avoid": [
+      "dementia-caricature expressions",
+      "before-and-after comparison framing",
+      "sad-piano-film lighting",
+      "abandonment or neglect imagery"
+    ],
+    "searchQuery": "afternoon light common room seated person waiting slow drift",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N003",
+    "slotId": "N003-S1",
+    "visualArc": "the personal refusal -> the loss of any right to choose",
+    "editorialFunction": "Register the refusal as one person's reaction, not a general truth about aging.",
+    "visualIntent": "A middle-aged adult at home turning away mid-glance from a photograph rack or a screen; the body language of looking aside rather than a posed reaction. The object stays largely out of frame.",
+    "avoid": [
+      "gazing at old photographs",
+      "hand over mouth in shock",
+      "horror at the mirror",
+      "dramatic acting or a startle cut"
+    ],
+    "searchQuery": "middle aged person looking away from photos at home candid",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N003",
+    "slotId": "N003-S2",
+    "visualArc": "the personal refusal -> the loss of any right to choose",
+    "editorialFunction": "Let the loss of choice be felt as a pause in which no direction has been selected.",
+    "visualIntent": "Someone stopped in a doorway or at the meeting of two ordinary paths, undecided; the camera holds on the hesitation rather than on the eventual movement. No explanatory wide shot.",
+    "avoid": [
+      "crossroads-from-above cliché",
+      "signposts with arrows",
+      "a visible clock counting down",
+      "binary choose-a-path graphics"
+    ],
+    "searchQuery": "person standing still in doorway undecided natural light",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N004",
+    "slotId": "N004-S1",
+    "visualArc": "disciplined attempts at control -> the realization that none of them can guarantee the outcome",
+    "editorialFunction": "Show control as one sustained discipline rather than a checklist: exercise, eating, and planning held together in a single ordinary domestic stretch of time.",
+    "visualIntent": "One person alone in their own home across a continuous stretch of ordinary time: the body at the end of a routine, food prepared according to a plan rather than appetite, a notebook or calendar open beside them with the next things written down. Repetition, breath, and self-monitoring, all unspectacular. The three efforts appear as one continuous morning-to-evening rhythm rather than as three separate demonstrations.",
+    "avoid": [
+      "wellness advertising gloss",
+      "supplement close-ups and branding",
+      "before-and-after bodies",
+      "inspirational fitness quotes or timers",
+      "showing exercise, food, and planning as three separate illustrative shots",
+      "any single discipline isolated as a visual punchline"
+    ],
+    "searchQuery": "older adult alone home daily routine exercise notebook planning natural light",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N004",
+    "slotId": "N004-S2",
+    "visualArc": "disciplined attempts at control -> the realization that none of them can guarantee the outcome",
+    "editorialFunction": "Carry the realization that none of this can guarantee what kind of old person one becomes, without illustrating the feared losses and without literalizing money.",
+    "visualIntent": "The same person later in the day, at the same table the routine was built around, with the notebook, the prepared food, and the finished session all still present and now simply out of use. The materials of control remain fully intact while the person sits with them doing nothing, so the effort is visibly real and visibly insufficient. Nothing is lost on camera and nothing is gained; the frame simply lets the insufficiency stand.",
+    "avoid": [
+      "money in any form: coins, jars, banknotes, savings charts, stock graphs, spreadsheets, or contract and insurance close-ups",
+      "wheelchair or hospital-bed portraits",
+      "cane and tremor close-ups",
+      "sighing or weeping close-ups",
+      "listing each feared loss as a separate image",
+      "framing the unused routine as wasted effort or a failure"
+    ],
+    "searchQuery": "adult sitting at home table with notebook and meal untouched quiet daylight",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  },
+  {
+    "narrationId": "N005",
+    "slotId": "N005-S1",
+    "visualArc": "the whole fear compressed into one ordinary, unclaimed morning",
+    "editorialFunction": "Compress the entire section into a single morning with nothing on the calendar.",
+    "visualIntent": "A bedroom just after waking: an open window, an unmade bed, plain light crossing the floor, a clock present but not readable. The day outside is already available and unclaimed.",
+    "avoid": [
+      "alarm-clock close-up",
+      "dark dread lighting",
+      "throwing off blankets as triumph",
+      "an empty existential void effect"
+    ],
+    "searchQuery": "bedroom morning open window unmade bed quiet light",
+    "preferredMediaType": "video",
+    "batch": "N001-N005"
+  }
+]

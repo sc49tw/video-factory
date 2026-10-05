@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-009",
+  "blockId": "n009",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "8b9cc6841c8b89d530c2613ed4eeb040d658b239f128a3d0beb2c2d924548a95",
+    "matchesManifest": true,
+    "audioDurationSec": 25.032,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 62,
+    "lastWordEndSec": 24.027,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "There",
+      "startSec": 0.1,
+      "endSec": 0.341
+    },
+    {
+      "text": "is",
+      "startSec": 0.356,
+      "endSec": 0.512
+    },
+    {
+      "text": "another",
+      "startSec": 0.526,
+      "endSec": 0.881
+    },
+    {
+      "text": "part",
+      "startSec": 0.895,
+      "endSec": 1.208
+    },
+    {
+      "text": "of",
+      "startSec": 1.222,
+      "endSec": 1.322
+    },
+    {
+      "text": "growing",
+      "startSec": 1.336,
+      "endSec": 1.762
+    },
+    {
+      "text": "old",
+      "startSec": 1.776,
+      "endSec": 1.989
+    },
+    {
+      "text": "that",
+      "startSec": 2.003,
+      "endSec": 2.188
+    },
+    {
+      "text": "bothers",
+      "startSec": 2.202,
+      "endSec": 2.557
+    },
+    {
+      "text": "me",
+      "startSec": 2.572,
+      "endSec": 2.813
+    },
+    {
+      "text": "I",
+      "startSec": 3.8,
+      "endSec": 3.942
+    },
+    {
+      "text": "don't",
+      "startSec": 3.956,
+      "endSec": 4.184
+    },
+    {
+      "text": "want",
+      "startSec": 4.198,
+      "endSec": 4.34
+    },
+    {
+      "text": "to",
+      "startSec": 4.354,
+      "endSec": 4.411
+    },
+    {
+      "text": "become",
+      "startSec": 4.425,
+      "endSec": 4.752
+    },
+    {
+      "text": "a",
+      "startSec": 4.766,
+      "endSec": 4.837
+    },
+    {
+      "text": "burden",
+      "startSec": 4.851,
+      "endSec": 5.434
+    },
+    {
+      "text": "I",
+      "startSec": 6.414,
+      "endSec": 6.57
+    },
+    {
+      "text": "want",
+      "startSec": 6.584,
+      "endSec": 6.811
+    },
+    {
+      "text": "my",
+      "startSec": 6.826,
+      "endSec": 7.01
+    },
+    {
+      "text": "child",
+      "startSec": 7.024,
+      "endSec": 7.436
+    },
+    {
+      "text": "to",
+      "startSec": 7.451,
+      "endSec": 7.522
+    },
+    {
+      "text": "care",
+      "startSec": 7.536,
+      "endSec": 7.777
+    },
+    {
+      "text": "about",
+      "startSec": 7.791,
+      "endSec": 8.189
+    },
+    {
+      "text": "me",
+      "startSec": 8.203,
+      "endSec": 8.459
+    },
+    {
+      "text": "But",
+      "startSec": 9.439,
+      "endSec": 9.624
+    },
+    {
+      "text": "I",
+      "startSec": 9.638,
+      "endSec": 9.723
+    },
+    {
+      "text": "don't",
+      "startSec": 9.738,
+      "endSec": 9.993
+    },
+    {
+      "text": "want",
+      "startSec": 10.007,
+      "endSec": 10.178
+    },
+    {
+      "text": "his",
+      "startSec": 10.192,
+      "endSec": 10.377
+    },
+    {
+      "text": "life",
+      "startSec": 10.391,
+      "endSec": 10.675
+    },
+    {
+      "text": "to",
+      "startSec": 10.689,
+      "endSec": 10.774
+    },
+    {
+      "text": "revolve",
+      "startSec": 10.789,
+      "endSec": 11.215
+    },
+    {
+      "text": "around",
+      "startSec": 11.229,
+      "endSec": 11.641
+    },
+    {
+      "text": "taking",
+      "startSec": 11.655,
+      "endSec": 12.039
+    },
+    {
+      "text": "care",
+      "startSec": 12.053,
+      "endSec": 12.294
+    },
+    {
+      "text": "of",
+      "startSec": 12.309,
+      "endSec": 12.522
+    },
+    {
+      "text": "me",
+      "startSec": 12.536,
+      "endSec": 12.791
+    },
+    {
+      "text": "I",
+      "startSec": 13.772,
+      "endSec": 13.928
+    },
+    {
+      "text": "don't",
+      "startSec": 13.942,
+      "endSec": 14.183
+    },
+    {
+      "text": "need",
+      "startSec": 14.198,
+      "endSec": 14.439
+    },
+    {
+      "text": "complete",
+      "startSec": 14.453,
+      "endSec": 14.922
+    },
+    {
+      "text": "independence",
+      "startSec": 14.936,
+      "endSec": 15.888
+    },
+    {
+      "text": "Some",
+      "startSec": 16.868,
+      "endSec": 17.209
+    },
+    {
+      "text": "help",
+      "startSec": 17.223,
+      "endSec": 17.522
+    },
+    {
+      "text": "is",
+      "startSec": 17.536,
+      "endSec": 17.678
+    },
+    {
+      "text": "fine",
+      "startSec": 17.692,
+      "endSec": 18.274
+    },
+    {
+      "text": "What",
+      "startSec": 19.255,
+      "endSec": 19.524
+    },
+    {
+      "text": "bothers",
+      "startSec": 19.539,
+      "endSec": 19.88
+    },
+    {
+      "text": "me",
+      "startSec": 19.894,
+      "endSec": 20.05
+    },
+    {
+      "text": "is",
+      "startSec": 20.064,
+      "endSec": 20.235
+    },
+    {
+      "text": "the",
+      "startSec": 20.249,
+      "endSec": 20.363
+    },
+    {
+      "text": "thought",
+      "startSec": 20.377,
+      "endSec": 20.675
+    },
+    {
+      "text": "of",
+      "startSec": 20.689,
+      "endSec": 20.774
+    },
+    {
+      "text": "another",
+      "startSec": 20.789,
+      "endSec": 21.144
+    },
+    {
+      "text": "person's",
+      "startSec": 21.158,
+      "endSec": 21.698
+    },
+    {
+      "text": "life",
+      "startSec": 21.712,
+      "endSec": 22.024
+    },
+    {
+      "text": "being",
+      "startSec": 22.039,
+      "endSec": 22.252
+    },
+    {
+      "text": "consumed",
+      "startSec": 22.266,
+      "endSec": 22.948
+    },
+    {
+      "text": "by",
+      "startSec": 22.962,
+      "endSec": 23.104
+    },
+    {
+      "text": "my",
+      "startSec": 23.118,
+      "endSec": 23.317
+    },
+    {
+      "text": "needs",
+      "startSec": 23.331,
+      "endSec": 24.027
+    }
+  ]
+}

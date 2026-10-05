@@ -1,0 +1,2 @@
+file 'D:\Git\video-factory\projects\ESSY-0005\temp\full-draft-shots\N010-S1.mp4'
+file 'D:\Git\video-factory\projects\ESSY-0005\temp\full-draft-shots\N010-S2.mp4'

@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:03,238
+My eighty-year-old self may look back at me today and say: You had enough money.\N{\fs18}八十歲的我可能回頭看現在的我說：你錢夠了。
+
+2
+00:00:04,218 --> 00:00:07,684
+Why didn't you stop working earlier and do what you really wanted?\N{\fs18}為何不早點停下來，做真正想做的事？

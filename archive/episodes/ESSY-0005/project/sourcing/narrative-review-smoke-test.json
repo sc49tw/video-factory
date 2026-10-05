@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0",
+  "artifact": "narrative-review-page-smoke-test",
+  "testedAt": "2026-09-30T14:36:35.816Z",
+  "totals": {
+    "checks": 23,
+    "passed": 23,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "inline-script-present",
+      "status": "pass",
+      "detail": "review script extracted from the page"
+    },
+    {
+      "id": "renders-43-slots",
+      "status": "pass",
+      "detail": "43 slot panels"
+    },
+    {
+      "id": "renders-18-blocks",
+      "status": "pass",
+      "detail": "18 narration blocks"
+    },
+    {
+      "id": "renders-all-candidates",
+      "status": "pass",
+      "detail": "275/275 candidate cards"
+    },
+    {
+      "id": "video-first-previews",
+      "status": "pass",
+      "detail": "video previews=165 photo thumbnails=110"
+    },
+    {
+      "id": "four-controls-per-slot",
+      "status": "pass",
+      "detail": "172 decision controls"
+    },
+    {
+      "id": "notes-field-per-slot",
+      "status": "pass",
+      "detail": "43 notes fields"
+    },
+    {
+      "id": "watched-badges",
+      "status": "pass",
+      "detail": "7 previously watched videos badged"
+    },
+    {
+      "id": "alignment-banner",
+      "status": "pass",
+      "detail": "alignment limitation stated in the page"
+    },
+    {
+      "id": "narration-and-translation-rendered",
+      "status": "pass",
+      "detail": "approved English narration and the marked reference translation render per slot"
+    },
+    {
+      "id": "sequence-context-rendered",
+      "status": "pass",
+      "detail": "preceding / following slot context derived from the approved storyboard"
+    },
+    {
+      "id": "side-by-side-layout",
+      "status": "pass",
+      "detail": "narration column and candidate column side by side on desktop, stacked on narrow screens"
+    },
+    {
+      "id": "summary-rendered",
+      "status": "pass",
+      "detail": "summary shows reviewed / unresolved / selected-for-proposal and claims no approval"
+    },
+    {
+      "id": "decision-toggles-on",
+      "status": "pass",
+      "detail": "provisional keep renders as active"
+    },
+    {
+      "id": "export-produces-json",
+      "status": "pass",
+      "detail": "export button produced a downloadable payload"
+    },
+    {
+      "id": "export-43-slots",
+      "status": "pass",
+      "detail": "43 slot entries exported"
+    },
+    {
+      "id": "export-decision",
+      "status": "pass",
+      "detail": "slot decision exported"
+    },
+    {
+      "id": "export-candidate-keep",
+      "status": "pass",
+      "detail": "candidate-level provisional keep exported with round provenance"
+    },
+    {
+      "id": "export-needs-search",
+      "status": "pass",
+      "detail": "needs-another-search exported"
+    },
+    {
+      "id": "export-notes",
+      "status": "pass",
+      "detail": "editorial notes exported"
+    },
+    {
+      "id": "export-summary",
+      "status": "pass",
+      "detail": "{\"totalSlots\":43,\"reviewedSlots\":3,\"unresolvedSlots\":40,\"selectedForProposalSlots\":1,\"provisionalKeepSlots\":1,\"rejectSlots\":0,\"needsAnotherSearchSlots\":1,\"finalSelectionPendingSlots\":0,\"candidateProvisionalKeeps\":1,\"candidateRejects\":0,\"previouslyWatchedProvisionalKeeps\":7}"
+    },
+    {
+      "id": "export-not-approved",
+      "status": "pass",
+      "detail": "export carries no approval claim"
+    },
+    {
+      "id": "local-only",
+      "status": "pass",
+      "detail": "decisions stay in the page (localStorage) and no decision file is written to the repository"
+    }
+  ]
+}

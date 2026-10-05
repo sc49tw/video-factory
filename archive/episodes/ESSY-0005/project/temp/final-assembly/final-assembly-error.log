@@ -1,0 +1,7 @@
+[FINAL-ASM] IDENTITY: seriesTitle="A SECOND LOOK AT LIFE" episodeTitle="What Is Still There When I'm Eighty?"
+[FINAL-ASM] OPENING insertion: hook complete at 14.736s +4.000s continuing N001-S1 (no pre-roll)
+[FINAL-ASM] PRE-ROLL title: none (openingIdentity insertion delivery)
+[FINAL-ASM] SUBTITLES QA PASS: 150 cues, overlaps 9->0, maxLines 2, srt projects\ESSY-0005\temp\ESSY-0005-subtitles.srt
+[FINAL-ASM] SUBTITLES bilingual: 150/150 cues, EN 28px + zh-TW @540p design burned at 1080p via libass, srt projects\ESSY-0005\temp\ESSY-0005-subtitles-bilingual.srt
+[FINAL-ASM] SHOT 1/43 N001-S1 (video, 18.136s, 3 cues)
+Cannot access 'CLIP_TOLERANCE_SEC' before initialization

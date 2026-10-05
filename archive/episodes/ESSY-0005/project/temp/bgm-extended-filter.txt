@@ -1,0 +1,6 @@
+[0:a]atrim=start=0.000:end=178.000,asetpts=PTS-STARTPTS[s0];
+[0:a]atrim=start=15.500:end=176.000,asetpts=PTS-STARTPTS[s1];
+[0:a]atrim=start=91.500:end=149.664,asetpts=PTS-STARTPTS[s2];
+[s0][s1]acrossfade=d=4:c1=qsin:c2=qsin[x1];
+[x1][s2]acrossfade=d=4:c1=qsin:c2=qsin[x2];
+[x2]aresample=48000,apad=whole_dur=388.664,atrim=duration=388.664,afade=t=out:st=384.664:d=4.000[out]

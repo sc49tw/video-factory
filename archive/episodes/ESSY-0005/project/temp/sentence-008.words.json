@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "1.0",
+  "sentenceId": "sentence-008",
+  "blockId": "n008",
+  "timingSource": "edge-tts-word-boundary",
+  "cacheIdentity": {
+    "textSha256": "049f9e0e67f93114db16dd846acaf7ac50e90d0a9401e27a0873a8340d75462c",
+    "matchesManifest": true,
+    "audioDurationSec": 14.472,
+    "tts": {
+      "voice": "en-GB-RyanNeural",
+      "rate": "-12%",
+      "pitch": "+0Hz",
+      "volume": "+0%"
+    }
+  },
+  "validation": {
+    "wordCount": 37,
+    "lastWordEndSec": 13.488,
+    "fitsAudioDuration": true
+  },
+  "words": [
+    {
+      "text": "I",
+      "startSec": 0.1,
+      "endSec": 0.256
+    },
+    {
+      "text": "can",
+      "startSec": 0.27,
+      "endSec": 0.455
+    },
+    {
+      "text": "tell",
+      "startSec": 0.469,
+      "endSec": 0.739
+    },
+    {
+      "text": "myself",
+      "startSec": 0.753,
+      "endSec": 1.307
+    },
+    {
+      "text": "I",
+      "startSec": 1.322,
+      "endSec": 1.421
+    },
+    {
+      "text": "will",
+      "startSec": 1.435,
+      "endSec": 1.577
+    },
+    {
+      "text": "have",
+      "startSec": 1.591,
+      "endSec": 1.762
+    },
+    {
+      "text": "plenty",
+      "startSec": 1.776,
+      "endSec": 2.174
+    },
+    {
+      "text": "to",
+      "startSec": 2.188,
+      "endSec": 2.316
+    },
+    {
+      "text": "do",
+      "startSec": 2.33,
+      "endSec": 2.77
+    },
+    {
+      "text": "I",
+      "startSec": 3.757,
+      "endSec": 3.942
+    },
+    {
+      "text": "already",
+      "startSec": 3.956,
+      "endSec": 4.354
+    },
+    {
+      "text": "have",
+      "startSec": 4.368,
+      "endSec": 4.624
+    },
+    {
+      "text": "too",
+      "startSec": 4.638,
+      "endSec": 4.865
+    },
+    {
+      "text": "many",
+      "startSec": 4.88,
+      "endSec": 5.135
+    },
+    {
+      "text": "projects",
+      "startSec": 5.149,
+      "endSec": 5.718
+    },
+    {
+      "text": "and",
+      "startSec": 5.732,
+      "endSec": 5.86
+    },
+    {
+      "text": "too",
+      "startSec": 5.874,
+      "endSec": 6.13
+    },
+    {
+      "text": "many",
+      "startSec": 6.144,
+      "endSec": 6.414
+    },
+    {
+      "text": "places",
+      "startSec": 6.428,
+      "endSec": 6.911
+    },
+    {
+      "text": "I",
+      "startSec": 6.925,
+      "endSec": 7.01
+    },
+    {
+      "text": "want",
+      "startSec": 7.024,
+      "endSec": 7.28
+    },
+    {
+      "text": "to",
+      "startSec": 7.294,
+      "endSec": 7.394
+    },
+    {
+      "text": "see",
+      "startSec": 7.408,
+      "endSec": 7.934
+    },
+    {
+      "text": "But",
+      "startSec": 8.914,
+      "endSec": 9.127
+    },
+    {
+      "text": "what",
+      "startSec": 9.141,
+      "endSec": 9.354
+    },
+    {
+      "text": "will",
+      "startSec": 9.368,
+      "endSec": 9.482
+    },
+    {
+      "text": "I",
+      "startSec": 9.496,
+      "endSec": 9.581
+    },
+    {
+      "text": "want",
+      "startSec": 9.595,
+      "endSec": 9.823
+    },
+    {
+      "text": "when",
+      "startSec": 9.837,
+      "endSec": 9.979
+    },
+    {
+      "text": "I",
+      "startSec": 9.993,
+      "endSec": 10.093
+    },
+    {
+      "text": "am",
+      "startSec": 10.107,
+      "endSec": 10.235
+    },
+    {
+      "text": "seventy-five",
+      "startSec": 10.249,
+      "endSec": 11.399
+    },
+    {
+      "text": "I",
+      "startSec": 12.38,
+      "endSec": 12.522
+    },
+    {
+      "text": "don't",
+      "startSec": 12.536,
+      "endSec": 12.777
+    },
+    {
+      "text": "really",
+      "startSec": 12.791,
+      "endSec": 13.047
+    },
+    {
+      "text": "know",
+      "startSec": 13.061,
+      "endSec": 13.488
+    }
+  ]
+}
