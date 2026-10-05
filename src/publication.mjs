@@ -6,8 +6,10 @@
 //
 //   projects/<EPISODE>/publication/
 //     thumbnail.png            canonical episode thumbnail
-//     youtube.json             canonical publication metadata
-//     publication-record.json  provenance record for imported assets
+//     youtube.json             canonical publication metadata (intent)
+//     publication-record.json  durable record: imported-asset provenance in
+//                              `assets`, and operator-asserted external
+//                              publication evidence in `publication`
 //
 // Renderer deliverables stay under output/<EPISODE>/ and production artifacts
 // stay under projects/<EPISODE>/. This module never moves production or render
@@ -64,6 +66,473 @@ export const PUBLICATION_DEFAULTS = Object.freeze({
   // import an explicit path with `--from <path>`.
   newestCandidateWithinDays: 7,
 });
+
+// publication-record.json envelope version. Shared by the thumbnail-import
+// record and the publication-evidence block so the two can never drift.
+export const PUBLICATION_RECORD_SCHEMA_VERSION = "1.0";
+
+// ---------------------------------------------------------------------------
+// External publication evidence
+//
+// Three concepts stay separate and are never merged:
+//
+//   A  youtube.json                      publication INTENT (human-authored)
+//   B  publication-record.json.publication  evidence the upload happened
+//   C  `--published` on video:workflow archive  archive AUTHORIZATION
+//
+// B is an operator assertion, durably recorded. It uploads nothing, transitions
+// no lifecycle state, archives nothing, and never replaces or implies C: the
+// explicit Human-by-Exception `--published` confirmation remains the only thing
+// that authorizes archival.
+//
+// Everything here is local and deterministic — the URL is PARSED, never
+// fetched — so the record proves what the operator asserted and nothing more.
+// It says so permanently in its own fields (`recordedBy`, `verification`), and
+// it makes no claim that the video exists, belongs to the channel, or is
+// Public.
+// ---------------------------------------------------------------------------
+
+export const PUBLICATION_EVIDENCE_DEFAULTS = Object.freeze({
+  schemaVersion: "1.0",
+  platform: "youtube",
+  status: "published",
+  recordedBy: "operator-asserted",
+  verification: "not-verified",
+  channelSource: "youtube.json",
+  visibilityValues: Object.freeze(["public", "unlisted", "private"]),
+  // Normal YouTube video forms only. Channel, playlist, and search URLs are
+  // deliberately absent: they identify no video.
+  httpsHosts: Object.freeze([
+    "youtube.com",
+    "www.youtube.com",
+    "m.youtube.com",
+    "music.youtube.com",
+    "youtu.be",
+    "www.youtu.be",
+  ]),
+  videoIdPattern: /^[A-Za-z0-9_-]{11}$/,
+  // An explicit UTC offset is required so a recorded instant never depends on
+  // the recording machine's local timezone.
+  timestampPattern:
+    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?(Z|[+-]\d{2}:\d{2})$/,
+});
+
+// What makes two evidence blocks the same publication. `sourceUrl` is excluded
+// on purpose: the same video recorded from youtu.be and from the canonical
+// watch URL is the same publication, so re-running must stay idempotent.
+export const PUBLICATION_EVIDENCE_IDENTITY = Object.freeze([
+  "videoId",
+  "url",
+  "publishedAt",
+  "visibility",
+]);
+
+export function canonicalYouTubeUrl(videoId) {
+  return `https://www.youtube.com/watch?v=${videoId}`;
+}
+
+function extractYouTubeVideoId(url) {
+  const host = url.hostname.toLowerCase();
+  const segments = url.pathname.replace(/^\/+/, "").split("/").filter(Boolean);
+  // youtu.be/<id>: the id is the first segment, with no area prefix.
+  if (host === "youtu.be" || host === "www.youtu.be") return segments[0] ?? null;
+  const [area, candidate] = segments;
+  if (area === "shorts" || area === "embed" || area === "live") return candidate ?? null;
+  return url.searchParams.get("v")?.trim() || null;
+}
+
+/**
+ * Parse an operator-supplied YouTube URL locally. Accepted forms:
+ * `watch?v=<id>`, `youtu.be/<id>`, `/shorts/<id>`, `/embed/<id>`, `/live/<id>`,
+ * each over https on the supported hosts, with an exact 11-character video ID.
+ *
+ * Pure: no network, no filesystem. It proves the URL's SHAPE, never that the
+ * video exists or is public.
+ */
+export function parseYouTubeUrl(value, rules = {}) {
+  const r = {...PUBLICATION_EVIDENCE_DEFAULTS, ...rules};
+  const sourceUrl = typeof value === "string" ? value.trim() : "";
+  if (!sourceUrl) {
+    return {
+      passed: false,
+      videoId: null,
+      sourceUrl: null,
+      url: null,
+      reasons: ["A YouTube video URL is required."],
+    };
+  }
+  let parsed;
+  try {
+    parsed = new URL(sourceUrl);
+  } catch {
+    return {
+      passed: false,
+      videoId: null,
+      sourceUrl,
+      url: null,
+      reasons: [`Not a valid URL: ${sourceUrl}`],
+    };
+  }
+  const reasons = [];
+  if (parsed.protocol !== "https:") {
+    reasons.push(`URL scheme must be https, got "${parsed.protocol}" in ${sourceUrl}`);
+  }
+  if (!r.httpsHosts.includes(parsed.hostname.toLowerCase())) {
+    reasons.push(
+      `Not a supported YouTube host: ${parsed.hostname} (supported: ${r.httpsHosts.join(", ")})`,
+    );
+  }
+  const videoId = extractYouTubeVideoId(parsed);
+  if (!videoId) {
+    reasons.push(
+      "No YouTube video ID found: expected watch?v=, youtu.be/<id>, /shorts/<id>, " +
+        "/embed/<id>, or /live/<id>.",
+    );
+  } else if (!r.videoIdPattern.test(videoId)) {
+    reasons.push(
+      `Not a valid YouTube video ID (exactly 11 characters of A-Z, a-z, 0-9, "-", "_"): "${videoId}".`,
+    );
+  }
+  if (reasons.length > 0) {
+    return {passed: false, videoId: null, sourceUrl, url: null, reasons};
+  }
+  return {passed: true, videoId, sourceUrl, url: canonicalYouTubeUrl(videoId), reasons: []};
+}
+
+function normalizeEvidenceTimestamp(value, label) {
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (!raw) return {value: null, reason: null};
+  if (!PUBLICATION_EVIDENCE_DEFAULTS.timestampPattern.test(raw)) {
+    return {
+      value: null,
+      reason:
+        `${label} must be an ISO-8601 timestamp with an explicit UTC offset ` +
+        `(e.g. 2026-10-05T12:40:00Z): ${raw}`,
+    };
+  }
+  const ms = Date.parse(raw);
+  if (!Number.isFinite(ms)) {
+    return {value: null, reason: `${label} is not a real timestamp: ${raw}`};
+  }
+  return {value: new Date(ms).toISOString(), reason: null};
+}
+
+/**
+ * Validate the operator's assertions before anything is read or written.
+ * `publishedAt` is NEVER defaulted: an unrecorded publication time stays absent
+ * rather than silently becoming "now" or the recording time.
+ */
+export function resolvePublicationEvidenceInput(options = {}) {
+  const {url, publishedAt = null, visibility = null, rules = {}} = options;
+  const r = {...PUBLICATION_EVIDENCE_DEFAULTS, ...rules};
+  const parsed = parseYouTubeUrl(url, r);
+  const reasons = [...parsed.reasons];
+
+  const published = normalizeEvidenceTimestamp(publishedAt, "--published-at");
+  if (published.reason) reasons.push(published.reason);
+
+  const requestedVisibility =
+    typeof visibility === "string" && visibility.trim() ? visibility.trim() : null;
+  if (requestedVisibility && !r.visibilityValues.includes(requestedVisibility)) {
+    reasons.push(
+      `--visibility must be one of ${r.visibilityValues.join(", ")}: ${requestedVisibility}`,
+    );
+  }
+
+  if (reasons.length > 0) return {passed: false, reasons};
+  return {
+    passed: true,
+    reasons: [],
+    videoId: parsed.videoId,
+    url: parsed.url,
+    sourceUrl: parsed.sourceUrl,
+    publishedAt: published.value,
+    visibility: requestedVisibility,
+  };
+}
+
+/**
+ * Read the canonical record envelope. A record that cannot be read is an
+ * explicit failure: silently overwriting it would destroy evidence.
+ */
+export async function readPublicationRecord(recordPath) {
+  try {
+    return JSON.parse(await readFile(recordPath, "utf8"));
+  } catch (error) {
+    if (error?.code === "ENOENT") return null;
+    throw new Error(
+      `Canonical publication record is unreadable (${recordPath}): ${error.message}`,
+    );
+  }
+}
+
+function publicationMetadataDigest(metadataPath, metadata) {
+  if (!metadata) return null;
+  return {
+    file: path.basename(metadataPath),
+    title: metadata.title ?? null,
+    descriptionChars:
+      typeof metadata.description === "string" ? metadata.description.length : 0,
+    tagCount: Array.isArray(metadata.tags) ? metadata.tags.length : 0,
+  };
+}
+
+/**
+ * Compare recorded evidence with requested evidence. An empty result means the
+ * same publication is already recorded and nothing needs to change.
+ */
+export function publicationEvidenceConflicts(existing, requested) {
+  if (!existing || typeof existing !== "object" || Array.isArray(existing)) {
+    return [{field: "publication", existing, requested: "an evidence block"}];
+  }
+  const conflicts = [];
+  for (const field of PUBLICATION_EVIDENCE_IDENTITY) {
+    const before = existing[field] ?? null;
+    const after = requested[field] ?? null;
+    if (before !== after) conflicts.push({field, existing: before, requested: after});
+  }
+  return conflicts;
+}
+
+/**
+ * Record operator-asserted external publication evidence in the canonical
+ * `publication-record.json`, in the episode's own location (active
+ * `projects/<EP>/publication/` or archived
+ * `archive/episodes/<EP>/project/publication/`, resolved by
+ * resolveEpisodeLocation — never by recreating a moved active tree).
+ *
+ * Idempotency is conservative and one-way:
+ * - no evidence recorded  -> write it;
+ * - same publication      -> succeed without rewriting the file or touching
+ *                            `recordedAt`;
+ * - conflicting evidence  -> refuse, naming the recorded and requested values.
+ *   This command never rewrites or removes recorded evidence; correction is a
+ *   separate reviewed decision.
+ *
+ * The envelope is read-modify-written, so thumbnail provenance and publication
+ * evidence coexist and neither import nor record can destroy the other.
+ *
+ * @returns {Promise<{written: boolean, idempotent: boolean, episode: string,
+ *   lifecycle: object, path: string, record: object, evidence: object}>}
+ */
+export async function recordPublicationEvidence(options) {
+  const {
+    factoryRoot,
+    episode,
+    url,
+    publishedAt = null,
+    visibility = null,
+    now = new Date(),
+    location = null,
+    rules = {},
+  } = options;
+  if (!episode) throw new Error("An episode ID is required.");
+  if (!factoryRoot) throw new Error("A factory root is required.");
+  const r = {...PUBLICATION_EVIDENCE_DEFAULTS, ...rules};
+
+  // A precondition for writing evidence, never a lifecycle transition: an
+  // unfinished episode cannot have been published.
+  const lifecycle = await resolveEpisodeLifecycle(factoryRoot, episode);
+  if (lifecycle.state !== "completed" && lifecycle.state !== "archived") {
+    throw new Error(
+      `Publication evidence can only be recorded for a completed or archived episode ` +
+        `(${episode} is "${lifecycle.state}"). Recording evidence does not change lifecycle ` +
+        `state and does not authorize archival: the archive gate stays ` +
+        `\`pnpm video:workflow archive ${episode} --published\`.`,
+    );
+  }
+
+  const input = resolvePublicationEvidenceInput({url, publishedAt, visibility, rules});
+  if (!input.passed) {
+    throw new Error(`Invalid publication evidence:\n  - ${input.reasons.join("\n  - ")}`);
+  }
+
+  const resolvedLocation = location ?? (await resolveEpisodeLocation(factoryRoot, episode));
+  const paths = resolvePublicationPaths(factoryRoot, episode, rules, resolvedLocation);
+  const existing = await readPublicationRecord(paths.record);
+  const requested = {
+    videoId: input.videoId,
+    url: input.url,
+    publishedAt: input.publishedAt,
+    visibility: input.visibility,
+  };
+
+  if (existing?.publication) {
+    const conflicts = publicationEvidenceConflicts(existing.publication, requested);
+    if (conflicts.length === 0) {
+      return {
+        written: false,
+        idempotent: true,
+        episode,
+        lifecycle,
+        path: paths.record,
+        record: existing,
+        evidence: existing.publication,
+      };
+    }
+    const detail = conflicts
+      .map(
+        (conflict) =>
+          `  - ${conflict.field}: recorded ${JSON.stringify(conflict.existing)}, ` +
+          `requested ${JSON.stringify(conflict.requested)}`,
+      )
+      .join("\n");
+    throw new Error(
+      `Publication evidence is already recorded for ${episode} and conflicts with the ` +
+        `requested evidence:\n${detail}\n  Replacing or correcting recorded evidence is not ` +
+        `supported: this command never rewrites or removes what was recorded.`,
+    );
+  }
+
+  // Derived, best-effort context. Every field is omitted when unavailable
+  // rather than filled with a guess.
+  const metadata = await readPublicationMetadata(paths.metadata);
+  const video = await resolveFinalMaster(factoryRoot, episode, {location: resolvedLocation});
+  const channel =
+    typeof metadata?.channel === "string" && metadata.channel.trim()
+      ? metadata.channel.trim()
+      : null;
+
+  const evidence = {
+    schemaVersion: r.schemaVersion,
+    platform: r.platform,
+    status: r.status,
+    videoId: input.videoId,
+    url: input.url,
+    sourceUrl: input.sourceUrl,
+    recordedAt: new Date(now).toISOString(),
+    recordedBy: r.recordedBy,
+    verification: r.verification,
+  };
+  if (input.publishedAt) evidence.publishedAt = input.publishedAt;
+  if (input.visibility) evidence.visibility = input.visibility;
+  if (channel) {
+    evidence.channel = channel;
+    evidence.channelSource = r.channelSource;
+  }
+  const digest = publicationMetadataDigest(paths.metadata, metadata);
+  if (digest) evidence.metadata = digest;
+  // The renderer's own recorded master reference, which is identical for an
+  // active and an archived episode and therefore outlives either layout.
+  if (video.resolved && video.relative) evidence.masterPath = video.relative;
+
+  const base =
+    existing && typeof existing === "object" && !Array.isArray(existing) ? {...existing} : {};
+  delete base.publication;
+  const record = {
+    ...base,
+    schemaVersion: base.schemaVersion ?? PUBLICATION_RECORD_SCHEMA_VERSION,
+    episode,
+    channel: channel ?? base.channel ?? null,
+    publication: evidence,
+  };
+
+  await mkdir(paths.dir, {recursive: true});
+  await writeFile(paths.record, `${JSON.stringify(record, null, 2)}\n`, "utf8");
+  return {
+    written: true,
+    idempotent: false,
+    episode,
+    lifecycle,
+    path: paths.record,
+    record,
+    evidence,
+  };
+}
+
+function checkEvidence(id, label, passed, detail) {
+  return {id, label, passed, detail};
+}
+
+/**
+ * Pure validation of recorded publication evidence. The record is an
+ * assertion, so the rules check internal consistency (canonical URL vs video
+ * ID, immutable constants, timestamp shape) — not anything remote.
+ */
+export function validatePublicationRecord(record, options = {}) {
+  const {episode = null, rules = {}} = options;
+  const r = {...PUBLICATION_EVIDENCE_DEFAULTS, ...rules};
+  const checks = [];
+  const add = (id, label, passed, detail) => checks.push(checkEvidence(id, label, passed, detail));
+
+  const evidence = record?.publication;
+  if (!evidence || typeof evidence !== "object" || Array.isArray(evidence)) {
+    add("publication", "publication evidence block", false, "absent or not a JSON object");
+    return {passed: false, checks, evidence: null, videoId: null, reasons: ["no publication evidence recorded"]};
+  }
+
+  for (const [id, label, expected] of [
+    ["schemaVersion", "schema version", r.schemaVersion],
+    ["platform", "platform", r.platform],
+    ["status", "publication status", r.status],
+    ["recordedBy", "recorded by", r.recordedBy],
+    ["verification", "verification", r.verification],
+  ]) {
+    add(id, label, evidence[id] === expected, String(evidence[id] ?? "(absent)"));
+  }
+
+  if (episode) {
+    add("episode", "episode id", record?.episode === episode, String(record?.episode ?? "(absent)"));
+  }
+
+  const videoId = typeof evidence.videoId === "string" ? evidence.videoId : "";
+  add(
+    "video-id",
+    "video id (11 characters)",
+    r.videoIdPattern.test(videoId),
+    videoId || "(absent)",
+  );
+  const url = typeof evidence.url === "string" ? evidence.url : "";
+  add(
+    "canonical-url",
+    "canonical url",
+    videoId.length > 0 && url === canonicalYouTubeUrl(videoId),
+    url || "(absent)",
+  );
+  const sourceUrl = typeof evidence.sourceUrl === "string" ? evidence.sourceUrl : "";
+  const parsedSource = parseYouTubeUrl(sourceUrl, r);
+  add(
+    "source-url",
+    "source url resolves to the same video",
+    parsedSource.passed && parsedSource.videoId === videoId,
+    sourceUrl || "(absent)",
+  );
+
+  const recordedAt = normalizeEvidenceTimestamp(evidence.recordedAt, "recordedAt");
+  add("recorded-at", "recorded at", recordedAt.value !== null, recordedAt.reason ?? String(evidence.recordedAt ?? "(absent)"));
+
+  // Optional operator assertions: absent is correct, malformed is a failure.
+  if (evidence.publishedAt !== undefined && evidence.publishedAt !== null) {
+    const published = normalizeEvidenceTimestamp(evidence.publishedAt, "publishedAt");
+    add("published-at", "published at", published.value !== null, published.reason ?? evidence.publishedAt);
+  }
+  if (evidence.visibility !== undefined && evidence.visibility !== null) {
+    add(
+      "visibility",
+      `visibility (${r.visibilityValues.join("|")})`,
+      r.visibilityValues.includes(evidence.visibility),
+      String(evidence.visibility),
+    );
+  }
+  if (evidence.channelSource !== undefined && evidence.channelSource !== null) {
+    add("channel-source", "channel source", evidence.channelSource === r.channelSource, String(evidence.channelSource));
+  }
+  if (evidence.metadata !== undefined && evidence.metadata !== null) {
+    add("metadata-reference", "metadata reference", typeof evidence.metadata.file === "string", String(evidence.metadata?.file ?? "(absent)"));
+  }
+  if (evidence.masterPath !== undefined && evidence.masterPath !== null) {
+    add("master-reference", "master reference", typeof evidence.masterPath === "string" && evidence.masterPath.length > 0, String(evidence.masterPath));
+  }
+
+  const failed = checks.filter((entry) => !entry.passed);
+  return {
+    passed: failed.length === 0,
+    checks,
+    evidence,
+    videoId: videoId || null,
+    reasons: failed.map((entry) => `${entry.label}: ${entry.detail}`),
+  };
+}
 
 // ---------------------------------------------------------------------------
 // Repository root
@@ -651,10 +1120,15 @@ export async function importThumbnailAsset(options) {
 }
 
 async function writePublicationRecord({paths, episode, plan, thumbnail, sourceAssessment}) {
+  // READ-MODIFY-WRITE. The record envelope is shared: an earlier
+  // `video:publication record` may already have stored publication evidence
+  // here, and a thumbnail import must never destroy it. An unreadable record
+  // is reported instead of overwritten.
+  const existing = await readPublicationRecord(paths.record);
   const metadata = await readPublicationMetadata(paths.metadata);
   const importedAt = new Date().toISOString();
   const record = {
-    schemaVersion: "1.0",
+    schemaVersion: PUBLICATION_RECORD_SCHEMA_VERSION,
     episode,
     channel: metadata?.channel ?? null,
     preparedAt: importedAt,
@@ -686,16 +1160,9 @@ async function writePublicationRecord({paths, episode, plan, thumbnail, sourceAs
         },
       },
     },
-    metadata: metadata
-      ? {
-          file: path.basename(paths.metadata),
-          title: metadata.title ?? null,
-          descriptionChars:
-            typeof metadata.description === "string" ? metadata.description.length : 0,
-          tagCount: Array.isArray(metadata.tags) ? metadata.tags.length : 0,
-        }
-      : null,
+    metadata: publicationMetadataDigest(paths.metadata, metadata),
   };
+  if (existing?.publication) record.publication = existing.publication;
   await writeFile(paths.record, `${JSON.stringify(record, null, 2)}\n`, "utf8");
   return record;
 }

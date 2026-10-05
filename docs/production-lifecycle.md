@@ -117,9 +117,23 @@ The canonical publication layout is the one defined in
 ```text
 projects/<EPISODE>/publication/
   thumbnail.png            canonical episode thumbnail
-  youtube.json             publication metadata (human-authored)
-  publication-record.json  provenance record written by the import CLI
+  youtube.json             publication intent (human-authored)
+  publication-record.json  the durable record:
+                             assets       thumbnail import provenance
+                             publication  operator-asserted external evidence
 ```
+
+An archived episode resolves the same layout inside
+`archive/episodes/<EPISODE>/project/publication/`, so a published episode can
+still be checked or have evidence recorded.
+
+Three concepts are deliberately kept apart and are never merged:
+
+| Concept | Artifact | Meaning |
+| --- | --- | --- |
+| A. Publication intent | `youtube.json` | what the human intends to upload: title, description, tags, thumbnail, planned visibility |
+| B. Publication evidence | `publication-record.json.publication` | that the operator states the upload actually happened, and where |
+| C. Archive authorization | `--published` on `video:workflow archive <EP>` | the independent Human-by-Exception permission to archive |
 
 Renderer deliverables stay under `output/<EPISODE>/`, and production artifacts
 stay under `projects/<EPISODE>/`. Publication packaging is never mixed into
@@ -155,6 +169,80 @@ Metadata (title, description, tags) is human-authored in
 thumbnail. Thumbnail rules, validation, and the provenance record live in
 `scripts/video-publication.mjs` and `src/publication.mjs`.
 
+`publication-record.json` is written read-modify-write, so `import` and
+`record` can run in either order: an import never destroys recorded publication
+evidence, and recording evidence never destroys thumbnail provenance. A record
+that cannot be read is reported rather than overwritten.
+
+### Record external publication evidence
+
+After the human has actually published the episode on YouTube:
+
+```bash
+pnpm video:publication record ESSY-0005 --url https://youtu.be/<video-id> \
+  [--published-at 2026-10-05T12:40:00Z] [--visibility public|unlisted|private]
+```
+
+`youtube.json` is intent; this is evidence. The accepted URL forms are
+`youtube.com/watch?v=<id>`, `youtu.be/<id>`, `/shorts/<id>`, `/embed/<id>`,
+and `/live/<id>`, over `https`, on the supported YouTube hosts, with an exact
+11-character video ID. The stored `url` is always canonicalized to
+`https://www.youtube.com/watch?v=<videoId>`, and `sourceUrl` preserves exactly
+what the operator supplied.
+
+Recorded block:
+
+```json
+"publication": {
+  "schemaVersion": "1.0",
+  "platform": "youtube",
+  "status": "published",
+  "videoId": "dQw4w9WgXcQ",
+  "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "sourceUrl": "https://youtu.be/dQw4w9WgXcQ",
+  "publishedAt": "2026-10-05T12:40:00.000Z",
+  "visibility": "unlisted",
+  "channel": "A Second Look at Life",
+  "channelSource": "youtube.json",
+  "metadata": {"file": "youtube.json", "title": "...", "descriptionChars": 0, "tagCount": 0},
+  "masterPath": "output/ESSY-0005/ESSY-0005-final-v1.mp4",
+  "recordedAt": "2026-10-05T13:10:00.000Z",
+  "recordedBy": "operator-asserted",
+  "verification": "not-verified"
+}
+```
+
+Rules:
+
+- **Nothing is verified remotely.** The URL is parsed locally and deterministically;
+  there is no YouTube API or network call. The record therefore proves only what
+  the operator asserted, and states that permanently in `recordedBy` and
+  `verification`. It makes no claim that the video exists, belongs to the
+  channel, is Public, or matches `youtube.json`.
+- **No lifecycle effect.** `record` is only allowed for a `completed` or
+  `archived` episode, and it never transitions lifecycle state. It uploads
+  nothing, archives nothing, and never marks an episode published.
+- **`--published` stays the archive gate.** Recording evidence is not, and does
+  not imply, permission to archive. Archival remains the independent explicit
+  human action `pnpm video:workflow archive <EPISODE> --published`.
+- **Optional assertions are never invented.** `publishedAt` is omitted unless
+  `--published-at` is given — it never defaults to "now" or to `recordedAt` —
+  and `visibility` is omitted unless `--visibility` is given.
+- **Idempotent, never rewriting.** Recording the same publication again succeeds
+  without rewriting the file or changing `recordedAt`, even when the same video
+  is supplied in a different supported URL form. Conflicting evidence (a
+  different video, or a changed `publishedAt`/`visibility`) is REFUSED with the
+  recorded and requested values shown. v1 does not support `--replace`, and this
+  command never rewrites or removes what was recorded; correction is a separate
+  reviewed decision.
+
+An archived episode records into `archive/episodes/<EPISODE>/project/publication/`.
+Recording after archival is additive — it adds one file to the preserved
+publication package and never edits approved production artifacts — and the
+moved `projects/<EPISODE>/` and `output/<EPISODE>/` trees are never recreated.
+
+Regression tests: `pnpm test:publication`.
+
 ### Check the package
 
 ```bash
@@ -166,6 +254,10 @@ the episode lifecycle as `completed`, `archived`, or `not ready`. The final
 master is resolved from the renderer's own QA record
 (`projects/<EP>/temp/final-assembly/final-assembly-qa.json` → `output`), never
 by assuming a `final-v1` label. Add `--json` for the machine-readable report.
+
+The check reports package readiness for publishing. Recorded publication
+evidence does not change its verdict; an archived episode still reports
+`READY TO PUBLISH` with the note that it was published earlier.
 
 Regression tests: `pnpm test:publication`.
 

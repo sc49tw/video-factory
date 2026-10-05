@@ -9,16 +9,24 @@ import path from "node:path";
 import {deflateSync} from "node:zlib";
 import {
   PUBLICATION_DEFAULTS,
+  PUBLICATION_EVIDENCE_DEFAULTS,
+  PUBLICATION_EVIDENCE_IDENTITY,
+  PUBLICATION_RECORD_SCHEMA_VERSION,
   assessThumbnail,
   buildPublicationCheckReport,
+  canonicalYouTubeUrl,
   importThumbnailAsset,
   isSupportedSourceExtension,
   isDirectory,
   isFile,
   listImageCandidates,
   measureImage,
+  parseYouTubeUrl,
   planThumbnailImport,
+  publicationEvidenceConflicts,
   readPublicationMetadata,
+  readPublicationRecord,
+  recordPublicationEvidence,
   resolveDownloadsDir,
   resolveApprovedEpisodeTitle,
   resolveEpisodeLifecycle,
@@ -27,9 +35,11 @@ import {
   resolveFinalMaster,
   resolvePublicationDir,
   resolvePublicationPaths,
+  resolvePublicationEvidenceInput,
   resolveRepoRoot,
   selectNewestCandidate,
   validatePublicationMetadata,
+  validatePublicationRecord,
   validateThumbnailFile,
 } from "../src/publication.mjs";
 
@@ -1038,6 +1048,556 @@ function runFfmpeg(args) {
     );
   });
 }
+
+// ---------------------------------------------------------------------------
+// external publication evidence (YouTube URL -> canonical record)
+// ---------------------------------------------------------------------------
+
+const VIDEO_ID = "dQw4w9WgXcQ";
+
+async function makeCompletedEpisode(root, episode = "ESSY-0004") {
+  const factoryRoot = await makeRepo(root);
+  await writeJson(path.join(factoryRoot, "projects", "_drafts", episode, "state.yaml"), {
+    schemaVersion: "2.0",
+    draftId: episode,
+    series: "ESSY",
+    currentStage: "RENDER",
+    status: "completed",
+    approvals: {
+      qa: {approved: true},
+      finalAssembly: {approved: true, approvedAt: "2026-10-04T06:51:44.410Z"},
+    },
+  });
+  await writeJson(
+    path.join(factoryRoot, "projects", episode, "publication", "youtube.json"),
+    metadataFixture(episode),
+  );
+  await touch(
+    path.join(factoryRoot, "projects", episode, "publication", "thumbnail.png"),
+    makePng(1920, 1080),
+  );
+  await writeJson(path.join(factoryRoot, "projects", episode, "final-assembly.json"), {
+    title: {episodeTitle: "What Is Still There When I'm Eighty?"},
+  });
+  await writeJson(
+    path.join(factoryRoot, "projects", episode, "temp", "final-assembly", "final-assembly-qa.json"),
+    {
+      episode,
+      output: `output/${episode}/${episode}-final-v1.mp4`,
+      durationSec: 300.5,
+      subtitleQa: {passed: true},
+    },
+  );
+  await touch(path.join(factoryRoot, "output", episode, `${episode}-final-v1.mp4`), "mp4");
+  return {factoryRoot, episode};
+}
+
+test("supported YouTube video URL forms are parsed into an exact video id", () => {
+  for (const url of [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    "https://m.youtube.com/watch?v=dQw4w9WgXcQ",
+    "https://music.youtube.com/watch?v=dQw4w9WgXcQ",
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s&list=PL123",
+    "https://youtu.be/dQw4w9WgXcQ",
+    "https://youtu.be/dQw4w9WgXcQ?t=42",
+    "https://www.youtube.com/shorts/dQw4w9WgXcQ",
+    "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "https://www.youtube.com/live/dQw4w9WgXcQ",
+    "  https://youtu.be/dQw4w9WgXcQ  ",
+  ]) {
+    const parsed = parseYouTubeUrl(url);
+    assert.equal(parsed.passed, true, `${url}: ${parsed.reasons.join("; ")}`);
+    assert.equal(parsed.videoId, VIDEO_ID, url);
+  }
+});
+
+test("non-video, non-YouTube, non-https, and malformed inputs are refused", () => {
+  const cases = [
+    ["https://vimeo.com/123456789", /supported YouTube host/],
+    ["https://example.com/watch?v=dQw4w9WgXcQ", /supported YouTube host/],
+    ["http://www.youtube.com/watch?v=dQw4w9WgXcQ", /scheme must be https/],
+    ["ftp://youtu.be/dQw4w9WgXcQ", /scheme must be https/],
+    ["dQw4w9WgXcQ", /Not a valid URL/],
+    ["", /URL is required/],
+    ["https://www.youtube.com/", /No YouTube video ID found/],
+    ["https://www.youtube.com/watch", /No YouTube video ID found/],
+    ["https://www.youtube.com/watch?v=", /No YouTube video ID found/],
+    ["https://www.youtube.com/watch?v=short", /exactly 11 characters/],
+    ["https://www.youtube.com/watch?v=dQw4w9WgXcQQ", /exactly 11 characters/],
+    ["https://www.youtube.com/watch?v=dQw4w9WgXc$", /exactly 11 characters/],
+    ["https://www.youtube.com/channel/UCuAXFkgsw1L7xaCfnd5JJOw", /No YouTube video ID found/],
+    ["https://www.youtube.com/@somehandle/videos", /No YouTube video ID found/],
+    ["https://www.youtube.com/playlist?list=PLabcdefghij", /No YouTube video ID found/],
+    ["https://www.youtube.com/results?search_query=aging", /No YouTube video ID found/],
+    ["https://youtu.be/@somehandle", /exactly 11 characters/],
+  ];
+  for (const [url, expected] of cases) {
+    const parsed = parseYouTubeUrl(url);
+    assert.equal(parsed.passed, false, `expected refusal: ${url}`);
+    assert.equal(parsed.videoId, null, url);
+    assert.ok(
+      parsed.reasons.some((reason) => expected.test(reason)),
+      `${url}: expected ${expected} in ${JSON.stringify(parsed.reasons)}`,
+    );
+  }
+});
+
+test("the recorded url is canonicalized while the supplied url is preserved", () => {
+  const short = parseYouTubeUrl(`https://youtu.be/${VIDEO_ID}`);
+  assert.equal(short.url, `https://www.youtube.com/watch?v=${VIDEO_ID}`);
+  assert.equal(short.sourceUrl, `https://youtu.be/${VIDEO_ID}`);
+  const watch = parseYouTubeUrl(`https://www.youtube.com/watch?v=${VIDEO_ID}&t=42s`);
+  assert.equal(watch.url, short.url);
+  // Extra query parameters belong to the source form, never to the canonical url.
+  assert.ok(!watch.url.includes("t=42s"));
+  assert.equal(canonicalYouTubeUrl(VIDEO_ID), `https://www.youtube.com/watch?v=${VIDEO_ID}`);
+});
+
+test("publishedAt stays absent unless the operator asserts it", () => {
+  const without = resolvePublicationEvidenceInput({url: `https://youtu.be/${VIDEO_ID}`});
+  assert.equal(without.passed, true, without.reasons.join("; "));
+  assert.equal(without.publishedAt, null, "publishedAt must never default to now");
+  assert.equal(without.visibility, null);
+
+  const withDate = resolvePublicationEvidenceInput({
+    url: `https://youtu.be/${VIDEO_ID}`,
+    publishedAt: "2026-10-05T12:40:00Z",
+  });
+  assert.equal(withDate.publishedAt, "2026-10-05T12:40:00.000Z");
+  // An explicit offset is accepted and normalized to UTC.
+  const offset = resolvePublicationEvidenceInput({
+    url: `https://youtu.be/${VIDEO_ID}`,
+    publishedAt: "2026-10-05T20:40:00+08:00",
+  });
+  assert.equal(offset.publishedAt, "2026-10-05T12:40:00.000Z");
+});
+
+test("an invalid publishedAt or visibility is refused, never coerced", () => {
+  for (const publishedAt of [
+    "yesterday",
+    "2026-10-05",
+    "2026-10-05T12:40:00",
+    "2026-13-05T12:40:00Z",
+    "2026-10-32T12:40:00Z",
+    "10/05/2026",
+  ]) {
+    const input = resolvePublicationEvidenceInput({
+      url: `https://youtu.be/${VIDEO_ID}`,
+      publishedAt,
+    });
+    assert.equal(input.passed, false, publishedAt);
+    assert.ok(
+      input.reasons.some((reason) => /published-at|publishedAt/.test(reason)),
+      `${publishedAt}: ${JSON.stringify(input.reasons)}`,
+    );
+  }
+  const badVisibility = resolvePublicationEvidenceInput({
+    url: `https://youtu.be/${VIDEO_ID}`,
+    visibility: "public-ish",
+  });
+  assert.equal(badVisibility.passed, false);
+  assert.ok(badVisibility.reasons.some((reason) => /--visibility must be one of/.test(reason)));
+});
+
+test("a completed active episode records evidence into its publication package", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeCompletedEpisode(root);
+    const paths = resolvePublicationPaths(factoryRoot, episode);
+
+    const result = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://youtu.be/${VIDEO_ID}`,
+      publishedAt: "2026-10-05T12:40:00Z",
+      visibility: "unlisted",
+      now: new Date("2026-10-05T13:10:00Z"),
+    });
+
+    assert.equal(result.written, true);
+    assert.equal(result.idempotent, false);
+    assert.equal(result.path, path.join(paths.dir, "publication-record.json"));
+    assert.equal(result.lifecycle.state, "completed");
+    // Recording evidence is not a lifecycle transition.
+    const lifecycle = await resolveEpisodeLifecycle(factoryRoot, episode);
+    assert.equal(lifecycle.state, "completed");
+    assert.equal(lifecycle.archived, false);
+
+    const evidence = result.evidence;
+    assert.deepEqual(evidence, {
+      schemaVersion: "1.0",
+      platform: "youtube",
+      status: "published",
+      videoId: VIDEO_ID,
+      url: `https://www.youtube.com/watch?v=${VIDEO_ID}`,
+      sourceUrl: `https://youtu.be/${VIDEO_ID}`,
+      recordedAt: "2026-10-05T13:10:00.000Z",
+      recordedBy: "operator-asserted",
+      verification: "not-verified",
+      publishedAt: "2026-10-05T12:40:00.000Z",
+      visibility: "unlisted",
+      channel: "A Second Look at Life",
+      channelSource: "youtube.json",
+      metadata: {
+        file: "youtube.json",
+        title: "What Is Still There When I'm Eighty?",
+        descriptionChars: metadataFixture().description.length,
+        tagCount: 2,
+      },
+      masterPath: `output/${episode}/${episode}-final-v1.mp4`,
+    });
+
+    // The envelope stays the canonical record document.
+    const onDisk = await readPublicationRecord(result.path);
+    assert.equal(onDisk.schemaVersion, PUBLICATION_RECORD_SCHEMA_VERSION);
+    assert.equal(onDisk.episode, episode);
+    assert.equal(onDisk.publication.videoId, VIDEO_ID);
+    assert.equal(validatePublicationRecord(onDisk, {episode}).passed, true);
+  });
+});
+
+test("an archived episode records evidence in its archive and recreates nothing", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, archiveRoot, episode} = await makeArchivedEpisode(root);
+    const result = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://www.youtube.com/shorts/${VIDEO_ID}`,
+      now: new Date("2026-10-05T13:10:00Z"),
+    });
+
+    assert.equal(result.written, true);
+    assert.equal(result.lifecycle.state, "archived");
+    assert.equal(result.lifecycle.archived, true);
+    // Written where the archived package lives, resolved by the location system.
+    assert.equal(
+      result.path,
+      path.join(archiveRoot, "project", "publication", "publication-record.json"),
+    );
+    // No publishedAt/visibility was asserted, so neither is recorded.
+    assert.equal("publishedAt" in result.evidence, false);
+    assert.equal("visibility" in result.evidence, false);
+    assert.equal(result.evidence.sourceUrl, `https://www.youtube.com/shorts/${VIDEO_ID}`);
+    assert.equal(result.evidence.url, `https://www.youtube.com/watch?v=${VIDEO_ID}`);
+    assert.equal(result.evidence.masterPath, `output/${episode}/${episode}-final-v1.mp4`);
+    // The moved active trees stay gone.
+    assert.equal(await isDirectory(path.join(factoryRoot, "projects", episode)), false);
+    assert.equal(await isDirectory(path.join(factoryRoot, "output", episode)), false);
+    assert.equal(validatePublicationRecord(result.record, {episode}).passed, true);
+  });
+});
+
+test("an unfinished episode cannot have publication evidence recorded", async () => {
+  await withRoot(async (root) => {
+    const factoryRoot = await makeRepo(root);
+    await writeJson(path.join(factoryRoot, "projects", "_drafts", "ESSY-0006", "state.yaml"), {
+      schemaVersion: "2.0",
+      draftId: "ESSY-0006",
+      series: "ESSY",
+      currentStage: "RENDER",
+      status: "final_assembly_pending",
+      approvals: {qa: {approved: true}},
+    });
+    await assert.rejects(
+      () =>
+        recordPublicationEvidence({
+          factoryRoot,
+          episode: "ESSY-0006",
+          url: `https://youtu.be/${VIDEO_ID}`,
+        }),
+      /completed or archived episode[\s\S]*does not authorize archival/,
+    );
+    // Nothing was created and no state changed.
+    assert.equal(
+      await isFile(
+        path.join(factoryRoot, "projects", "ESSY-0006", "publication", "publication-record.json"),
+      ),
+      false,
+    );
+    const lifecycle = await resolveEpisodeLifecycle(factoryRoot, "ESSY-0006");
+    assert.equal(lifecycle.state, "not-ready");
+  });
+});
+
+test("recording the same publication again is idempotent and byte-preserving", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeCompletedEpisode(root);
+    const first = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://youtu.be/${VIDEO_ID}`,
+      publishedAt: "2026-10-05T12:40:00Z",
+      visibility: "unlisted",
+      now: new Date("2026-10-05T13:10:00Z"),
+    });
+    const before = await readFile(first.path);
+    // The same video supplied in a different supported form, later, with the same
+    // assertions: nothing about the recording changes.
+    const second = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://www.youtube.com/watch?v=${VIDEO_ID}&t=42s`,
+      publishedAt: "2026-10-05T12:40:00Z",
+      visibility: "unlisted",
+      now: new Date("2026-11-30T09:00:00Z"),
+    });
+
+    assert.equal(second.written, false);
+    assert.equal(second.idempotent, true);
+    assert.equal(second.evidence.recordedAt, "2026-10-05T13:10:00.000Z");
+    // The original sourceUrl survives; the record was not rewritten.
+    assert.equal(second.evidence.sourceUrl, `https://youtu.be/${VIDEO_ID}`);
+    assert.deepEqual(await readFile(first.path), before);
+  });
+});
+
+test("conflicting evidence is refused with the recorded and requested values", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeCompletedEpisode(root);
+    await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://youtu.be/${VIDEO_ID}`,
+      publishedAt: "2026-10-05T12:40:00Z",
+      visibility: "unlisted",
+    });
+    const recorded = await readPublicationRecord(
+      path.join(factoryRoot, "projects", episode, "publication", "publication-record.json"),
+    );
+
+    // A different video is a conflict.
+    await assert.rejects(
+      () =>
+        recordPublicationEvidence({
+          factoryRoot,
+          episode,
+          url: "https://youtu.be/aaaaaaaaaaa",
+          publishedAt: "2026-10-05T12:40:00Z",
+          visibility: "unlisted",
+        }),
+      /conflicts with the requested evidence[\s\S]*videoId[\s\S]*Replacing or correcting/,
+    );
+    // A changed assertion on the same video is also a conflict.
+    await assert.rejects(
+      () =>
+        recordPublicationEvidence({
+          factoryRoot,
+          episode,
+          url: `https://youtu.be/${VIDEO_ID}`,
+          publishedAt: "2026-10-05T12:40:00Z",
+          visibility: "public",
+        }),
+      /visibility: recorded "unlisted", requested "public"/,
+    );
+    // Dropping a previously recorded assertion is a conflict too: absence is a
+    // recorded fact, not a "no change".
+    await assert.rejects(
+      () =>
+        recordPublicationEvidence({
+          factoryRoot,
+          episode,
+          url: `https://youtu.be/${VIDEO_ID}`,
+        }),
+      /publishedAt: recorded "2026-10-05T12:40:00.000Z", requested null/,
+    );
+    // The record is untouched by every refusal.
+    assert.deepEqual(
+      await readPublicationRecord(
+        path.join(factoryRoot, "projects", episode, "publication", "publication-record.json"),
+      ),
+      recorded,
+    );
+    // Conflict detection is a pure, testable comparison: every differing
+    // identity field is reported, never just the first.
+    assert.deepEqual(
+      publicationEvidenceConflicts(recorded.publication, {
+        videoId: VIDEO_ID,
+        url: `https://www.youtube.com/watch?v=${VIDEO_ID}`,
+        publishedAt: "2026-10-05T12:40:00.000Z",
+        visibility: "unlisted",
+      }),
+      [],
+    );
+    const changed = publicationEvidenceConflicts(recorded.publication, {
+      videoId: "aaaaaaaaaaa",
+      url: `https://www.youtube.com/watch?v=aaaaaaaaaaa`,
+      publishedAt: "2026-10-05T12:40:00.000Z",
+      visibility: "unlisted",
+    });
+    assert.deepEqual(changed.map((conflict) => conflict.field), ["videoId", "url"]);
+    assert.equal(changed[0].existing, VIDEO_ID);
+    assert.equal(changed[0].requested, "aaaaaaaaaaa");
+  });
+});
+
+test("recording evidence preserves existing thumbnail provenance in one envelope", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeCompletedEpisode(root);
+    const downloads = await makeDownloads(root);
+    const source = await touch(path.join(downloads, "selected.png"), makePng(1920, 1080));
+    const paths = resolvePublicationPaths(factoryRoot, episode);
+    const imported = await importThumbnailAsset({factoryRoot, episode, sourcePath: source, replace: true});
+    const provenance = imported.record.assets.thumbnail;
+
+    const result = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://youtu.be/${VIDEO_ID}`,
+    });
+
+    const onDisk = await readPublicationRecord(result.path);
+    assert.equal(onDisk.assets.thumbnail.sha256, provenance.sha256);
+    assert.equal(onDisk.assets.thumbnail.file, "thumbnail.png");
+    assert.equal(onDisk.publication.videoId, VIDEO_ID);
+    assert.equal((await validateThumbnailFile(paths.thumbnail)).passed, true);
+  });
+});
+
+test("a later thumbnail import preserves recorded publication evidence", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeCompletedEpisode(root);
+    const recorded = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://youtu.be/${VIDEO_ID}`,
+      publishedAt: "2026-10-05T12:40:00Z",
+      visibility: "unlisted",
+      now: new Date("2026-10-05T13:10:00Z"),
+    });
+    const downloads = await makeDownloads(root);
+    const replacement = await touch(path.join(downloads, "newer.png"), makePng(1920, 1080));
+
+    const imported = await importThumbnailAsset({
+      factoryRoot,
+      episode,
+      sourcePath: replacement,
+      replace: true,
+    });
+
+    // The import rewrote its own provenance and left the evidence alone.
+    assert.ok(imported.record.assets.thumbnail.sha256);
+    assert.equal(imported.record.assets.thumbnail.replacedExisting, true);
+    assert.deepEqual(imported.record.publication, recorded.evidence);
+    const onDisk = await readPublicationRecord(recorded.path);
+    assert.deepEqual(onDisk.publication, recorded.evidence);
+    assert.equal(validatePublicationRecord(onDisk, {episode}).passed, true);
+  });
+});
+
+test("a record without youtube.json or a rendered master omits what it cannot derive", async () => {
+  await withRoot(async (root) => {
+    const factoryRoot = await makeRepo(root);
+    await writeJson(path.join(factoryRoot, "projects", "_drafts", "ESSY-0007", "state.yaml"), {
+      schemaVersion: "2.0",
+      draftId: "ESSY-0007",
+      series: "ESSY",
+      currentStage: "RENDER",
+      status: "completed",
+      approvals: {qa: {approved: true}, finalAssembly: {approved: true}},
+    });
+    const result = await recordPublicationEvidence({
+      factoryRoot,
+      episode: "ESSY-0007",
+      url: `https://youtu.be/${VIDEO_ID}`,
+    });
+    for (const absent of ["channel", "channelSource", "metadata", "masterPath"]) {
+      assert.equal(absent in result.evidence, false, `${absent} must be omitted, not guessed`);
+    }
+    assert.equal(result.record.channel, null);
+    assert.equal(validatePublicationRecord(result.record, {episode: "ESSY-0007"}).passed, true);
+  });
+});
+
+test("publication record validation detects tampering and internal inconsistency", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeCompletedEpisode(root);
+    const result = await recordPublicationEvidence({
+      factoryRoot,
+      episode,
+      url: `https://youtu.be/${VIDEO_ID}`,
+      publishedAt: "2026-10-05T12:40:00Z",
+      visibility: "unlisted",
+    });
+    const valid = result.record;
+    assert.equal(validatePublicationRecord(valid, {episode}).passed, true);
+
+    const absent = validatePublicationRecord(
+      {schemaVersion: "1.0", episode},
+      {episode},
+    );
+    assert.equal(absent.passed, false);
+    assert.deepEqual(absent.reasons, ["no publication evidence recorded"]);
+
+    const tamper = (patch) => ({
+      ...valid,
+      publication: {...valid.publication, ...patch},
+    });
+    const failed = (record) => validatePublicationRecord(record, {episode});
+    // A URL that no longer matches its video ID.
+    const mismatched = failed(tamper({url: `https://www.youtube.com/watch?v=aaaaaaaaaaa`}));
+    assert.equal(mismatched.passed, false);
+    assert.equal(mismatched.checks.find((entry) => entry.id === "canonical-url").passed, false);
+    // A source URL pointing at a different video than the canonical one.
+    const foreignSource = failed(tamper({sourceUrl: "https://youtu.be/aaaaaaaaaaa"}));
+    assert.equal(foreignSource.checks.find((entry) => entry.id === "source-url").passed, false);
+    // A non-canonical stored url.
+    assert.equal(
+      failed(tamper({url: `https://youtu.be/${VIDEO_ID}`})).checks.find((entry) => entry.id === "canonical-url").passed,
+      false,
+    );
+    // Constants that would overstate the evidence.
+    for (const [patch, id] of [
+      [{verification: "verified"}, "verification"],
+      [{recordedBy: "pipeline"}, "recordedBy"],
+      [{status: "pending"}, "status"],
+      [{platform: "vimeo"}, "platform"],
+      [{schemaVersion: "9.9"}, "schemaVersion"],
+    ]) {
+      const check = failed(tamper(patch)).checks.find((entry) => entry.id === id);
+      assert.equal(check.passed, false, id);
+    }
+    // Optional assertions must stay well formed when present.
+    assert.equal(
+      failed(tamper({publishedAt: "whenever"})).checks.find((entry) => entry.id === "published-at").passed,
+      false,
+    );
+    assert.equal(
+      failed(tamper({visibility: "secret" })).checks.find((entry) => entry.id === "visibility").passed,
+      false,
+    );
+    assert.equal(
+      failed(tamper({channelSource: "guess"})).checks.find((entry) => entry.id === "channel-source").passed,
+      false,
+    );
+    // Timestamps and ids.
+    assert.equal(
+      failed(tamper({recordedAt: "2026-10-05"})).checks.find((entry) => entry.id === "recorded-at").passed,
+      false,
+    );
+    assert.equal(
+      failed(tamper({videoId: "too-short"})).checks.find((entry) => entry.id === "video-id").passed,
+      false,
+    );
+    // A record filed under the wrong episode.
+    const wrongEpisode = failed({...valid, episode: "ESSY-0009"});
+    assert.equal(wrongEpisode.checks.find((entry) => entry.id === "episode").passed, false);
+    // A malformed evidence block is not an object.
+    assert.equal(validatePublicationRecord({publication: "yes"}, {episode}).passed, false);
+  });
+});
+
+test("publication evidence defaults keep the assertion explicit", () => {
+  assert.equal(PUBLICATION_EVIDENCE_DEFAULTS.recordedBy, "operator-asserted");
+  assert.equal(PUBLICATION_EVIDENCE_DEFAULTS.verification, "not-verified");
+  assert.equal(PUBLICATION_EVIDENCE_DEFAULTS.status, "published");
+  assert.equal(PUBLICATION_EVIDENCE_DEFAULTS.platform, "youtube");
+  assert.deepEqual(PUBLICATION_EVIDENCE_DEFAULTS.visibilityValues, ["public", "unlisted", "private"]);
+  assert.deepEqual(PUBLICATION_EVIDENCE_IDENTITY, ["videoId", "url", "publishedAt", "visibility"]);
+  // sourceUrl is deliberately not part of identity: URL spelling must not make
+  // the same publication look like a different one.
+  assert.equal(PUBLICATION_EVIDENCE_IDENTITY.includes("sourceUrl"), false);
+  assert.equal(PUBLICATION_RECORD_SCHEMA_VERSION, "1.0");
+});
 
 // ---------------------------------------------------------------------------
 // helper

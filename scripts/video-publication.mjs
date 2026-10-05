@@ -2,16 +2,22 @@
 // Video Factory publication package CLI.
 //
 //   pnpm video:publication import ESSY-0005 thumbnail
+//   pnpm video:publication record ESSY-0005 --url <youtube-url>
 //   pnpm video:publication check  ESSY-0005
 //
 // The canonical publication directory and metadata document are the ones
 // already defined in brand/ESSY/README.md (Asset Ownership):
 // projects/<EPISODE>/publication/{thumbnail.png,youtube.json,publication-record.json}
 //
+// Three concepts stay separate here:
+//   youtube.json                          publication intent (human-authored)
+//   publication-record.json.publication   operator-asserted upload evidence
+//   archive <EP> --published              archive authorization (never implied)
+//
 // An archived episode is read from its canonical archive
 // (archive/episodes/<EPISODE>/project/publication/... + .../output/), so a
-// published episode can still be checked. Nothing is ever copied back into
-// projects/ or output/.
+// published episode can still be checked or have evidence recorded. Nothing is
+// ever copied back into projects/ or output/.
 //
 // This CLI is read-only with respect to production state: it never re-renders,
 // never edits narration/subtitles/artifacts, never marks an episode published,
@@ -29,6 +35,7 @@ import {
   isDirectory,
   listImageCandidates,
   readPublicationMetadata,
+  recordPublicationEvidence,
   resolveApprovedEpisodeTitle,
   resolveCliRepoRoot,
   resolveDownloadsDir,
@@ -54,6 +61,7 @@ const [command, ...args] = process.argv.slice(2);
 
 try {
   if (command === "import") await importAsset(parseArgs(args));
+  else if (command === "record") await recordEvidence(parseArgs(args));
   else if (command === "check") await check(args);
   else if (command === undefined || command === "--help" || command === "help") usage();
   else throw new Error(`Unknown publication command "${command}".`);
@@ -92,12 +100,20 @@ function parseArgs(values) {
 function usage() {
   console.log(`Usage:
   pnpm video:publication import <EPISODE> thumbnail [--from <path>] [--list] [--replace] [--within-days <n>]
+  pnpm video:publication record <EPISODE> --url <youtube-url> [--published-at <ISO-8601>] [--visibility public|unlisted|private] [--json]
   pnpm video:publication check  <EPISODE> [--json]
 
 Publication package layout (brand/ESSY/README.md, Asset Ownership):
   projects/<EPISODE>/publication/thumbnail.png
   projects/<EPISODE>/publication/youtube.json
   projects/<EPISODE>/publication/publication-record.json
+
+youtube.json is publication INTENT. publication-record.json is the durable
+record: assets = thumbnail import provenance, publication = operator-asserted
+external publication evidence. Recording evidence parses the URL locally and
+verifies nothing remotely; it changes no lifecycle state and never authorizes
+archival. Archival stays the explicit human action:
+  pnpm video:workflow archive <EPISODE> --published
 
 An archived episode resolves inside archive/episodes/<EPISODE>/ instead, and is
 never moved back.
@@ -227,6 +243,94 @@ function printImportReport({episode, plan, thumbnail, sourceAssessment, recordPa
     console.log(`  Source check FAILED: ${(sourceAssessment.reasons ?? []).join("; ")}`);
   }
   console.log("");
+}
+
+// ---------------------------------------------------------------------------
+// record: operator-asserted external publication evidence
+// ---------------------------------------------------------------------------
+
+async function recordEvidence({positional, flags}) {
+  const [episode] = positional;
+  if (!episode) throw new Error("An episode ID is required: record <EPISODE> --url <youtube-url>");
+  if (!flags.url) throw new Error("A YouTube video URL is required: record <EPISODE> --url <youtube-url>");
+  // v1 never rewrites recorded evidence, so the escape hatch that exists for
+  // thumbnails must not silently apply here.
+  if (flags.replace) {
+    throw new Error(
+      "record does not support --replace: replacing recorded publication evidence is not " +
+        "implemented. Recorded evidence is never rewritten by this command.",
+    );
+  }
+
+  // The episode's own location, so an archived episode records into its
+  // archive instead of recreating projects/<EPISODE>/.
+  const location = await resolveEpisodeLocation(factoryRoot, episode);
+  const result = await recordPublicationEvidence({
+    factoryRoot,
+    episode,
+    location,
+    url: flags.url,
+    publishedAt: flags["published-at"] ?? null,
+    visibility: flags.visibility ?? null,
+  });
+
+  if (flags.json) {
+    console.log(
+      JSON.stringify(
+        {
+          episode,
+          written: result.written,
+          idempotent: result.idempotent,
+          file: relative(result.path),
+          lifecycle: {
+            state: result.lifecycle.state,
+            completed: result.lifecycle.completed,
+            archived: result.lifecycle.archived,
+            source: result.lifecycle.source,
+          },
+          publication: result.evidence,
+        },
+        null,
+        2,
+      ),
+    );
+  } else {
+    printEvidenceReport(result);
+  }
+}
+
+function printEvidenceReport({written, idempotent, episode, path: recordPath, lifecycle, evidence}) {
+  console.log(`\n${episode} Publication evidence`);
+  console.log("-".repeat(32));
+  console.log(`Platform:   ${evidence.platform} (${evidence.status})`);
+  console.log(`Video ID:   ${evidence.videoId}`);
+  console.log(`URL:        ${evidence.url}`);
+  console.log(`Recorded:   ${evidence.recordedAt}  (by ${evidence.recordedBy})`);
+  console.log(`Verification: ${evidence.verification} — recorded from operator assertion; nothing was fetched.`);
+  console.log("-".repeat(32));
+  console.log(idempotent ? "ALREADY RECORDED (no change)" : "RECORDED");
+  const field = (label, value) => console.log(`  ${`${label}:`.padEnd(12)} ${value}`);
+  console.log("");
+  field("File", relative(recordPath));
+  field("Workflow", `${lifecycle.state} (unchanged — recording evidence is not a lifecycle transition)`);
+  field(
+    "Published",
+    evidence.publishedAt
+      ? `${evidence.publishedAt}  (operator asserted)`
+      : "(not recorded — pass --published-at <ISO-8601> when known)",
+  );
+  field("Visibility", evidence.visibility ? `${evidence.visibility}  (operator asserted)` : "(not recorded)");
+  if (evidence.channel) field("Channel", `${evidence.channel} (from ${evidence.channelSource})`);
+  if (evidence.metadata) field("Metadata", evidence.metadata.file);
+  if (evidence.masterPath) field("Master", evidence.masterPath);
+  if (!written) {
+    console.log("\n  The same publication is already recorded; the record was not rewritten.");
+  }
+  console.log("\n  This is an operator assertion, not remote verification.");
+  console.log(
+    "  Archiving is still a separate human action: " +
+      `pnpm video:workflow archive ${episode} --published\n`,
+  );
 }
 
 // ---------------------------------------------------------------------------
