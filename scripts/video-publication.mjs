@@ -8,6 +8,11 @@
 // already defined in brand/ESSY/README.md (Asset Ownership):
 // projects/<EPISODE>/publication/{thumbnail.png,youtube.json,publication-record.json}
 //
+// An archived episode is read from its canonical archive
+// (archive/episodes/<EPISODE>/project/publication/... + .../output/), so a
+// published episode can still be checked. Nothing is ever copied back into
+// projects/ or output/.
+//
 // This CLI is read-only with respect to production state: it never re-renders,
 // never edits narration/subtitles/artifacts, never marks an episode published,
 // and never archives. Publication and archival stay explicit human actions.
@@ -28,6 +33,7 @@ import {
   resolveCliRepoRoot,
   resolveDownloadsDir,
   resolveEpisodeLifecycle,
+  resolveEpisodeLocation,
   resolveFinalMaster,
   resolvePublicationPaths,
   validatePublicationMetadata,
@@ -93,6 +99,9 @@ Publication package layout (brand/ESSY/README.md, Asset Ownership):
   projects/<EPISODE>/publication/youtube.json
   projects/<EPISODE>/publication/publication-record.json
 
+An archived episode resolves inside archive/episodes/<EPISODE>/ instead, and is
+never moved back.
+
 Publication metadata (title/description) is human-authored in youtube.json; only
 the thumbnail is imported from the browser Downloads folder. This CLI never
 marks an episode published and never archives it.`);
@@ -119,7 +128,10 @@ async function importAsset({positional, flags}) {
     );
   }
 
-  const paths = resolvePublicationPaths(factoryRoot, episode);
+  // One episode location drives every path below: an archived episode is
+  // imported into (and checked in) its canonical archive.
+  const location = await resolveEpisodeLocation(factoryRoot, episode);
+  const paths = resolvePublicationPaths(factoryRoot, episode, {}, location);
   const replace = flags.replace === true;
   const withinDays = flags["within-days"]
     ? Number(flags["within-days"])
@@ -155,6 +167,7 @@ async function importAsset({positional, flags}) {
     candidates,
     withinDays,
     replace,
+    location,
   });
 
   printImportReport({episode, ...result, paths});
@@ -225,13 +238,14 @@ async function check(values) {
   const [episode] = positional;
   if (!episode) throw new Error("An episode ID is required: check <EPISODE>");
 
-  const paths = resolvePublicationPaths(factoryRoot, episode);
+  const location = await resolveEpisodeLocation(factoryRoot, episode);
+  const paths = resolvePublicationPaths(factoryRoot, episode, {}, location);
   const metadataDocument = await readPublicationMetadata(paths.metadata);
   const metadataValidation = validatePublicationMetadata(metadataDocument, {episode});
   const thumbnail = await validateThumbnailFile(paths.thumbnail);
-  const video = await resolveFinalMaster(factoryRoot, episode);
+  const video = await resolveFinalMaster(factoryRoot, episode, {location});
   const lifecycle = await resolveEpisodeLifecycle(factoryRoot, episode);
-  const approvedTitle = await resolveApprovedEpisodeTitle(factoryRoot, episode);
+  const approvedTitle = await resolveApprovedEpisodeTitle(factoryRoot, episode, {location});
 
   const report = buildPublicationCheckReport({
     episode,

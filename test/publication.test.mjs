@@ -13,12 +13,17 @@ import {
   buildPublicationCheckReport,
   importThumbnailAsset,
   isSupportedSourceExtension,
+  isDirectory,
   isFile,
   listImageCandidates,
   measureImage,
   planThumbnailImport,
+  readPublicationMetadata,
   resolveDownloadsDir,
+  resolveApprovedEpisodeTitle,
   resolveEpisodeLifecycle,
+  resolveEpisodeLocation,
+  resolveEpisodeRelativePath,
   resolveFinalMaster,
   resolvePublicationDir,
   resolvePublicationPaths,
@@ -569,6 +574,102 @@ test("an in-flight or unknown episode is not ready", async () => {
 });
 
 // ---------------------------------------------------------------------------
+// episode location: active vs archived
+// ---------------------------------------------------------------------------
+
+// A published episode: the archive record plus the moved project/ and output/
+// trees, and NO active projects/<EP> or output/<EP> at all.
+async function makeArchivedEpisode(root, episode = "ESSY-0005") {
+  const factoryRoot = await makeRepo(root);
+  const archiveRoot = path.join(factoryRoot, "archive", "episodes", episode);
+  await writeJson(path.join(archiveRoot, "archive.json"), {
+    episode,
+    archivedAt: "2026-10-05T12:28:32.827Z",
+    reason: "published",
+    locations: {inbox: "inbox/", project: "project/", output: "output/"},
+    stateSource: `projects/_drafts/${episode}/state.yaml`,
+  });
+  await writeJson(path.join(archiveRoot, "project", "publication", "youtube.json"), metadataFixture(episode));
+  await touch(path.join(archiveRoot, "project", "publication", "thumbnail.png"), makePng(1920, 1080));
+  await writeJson(path.join(archiveRoot, "project", "final-assembly.json"), {
+    title: {episodeTitle: "What Is Still There When I'm Eighty?"},
+  });
+  await writeJson(path.join(archiveRoot, "project", "temp", "final-assembly", "final-assembly-qa.json"), {
+    episode,
+    // The renderer records the active path; archival moves the file and leaves
+    // the record untouched.
+    output: `output/${episode}/${episode}-final-v1.mp4`,
+    durationSec: 388.756,
+    subtitleQa: {passed: true},
+  });
+  await touch(path.join(archiveRoot, "output", `${episode}-final-v1.mp4`), "mp4");
+  return {factoryRoot, archiveRoot, episode};
+}
+
+test("an active episode resolves to projects/ and output/, unchanged", async () => {
+  await withRoot(async (root) => {
+    const factoryRoot = await makeRepo(root);
+    const location = await resolveEpisodeLocation(factoryRoot, "ESSY-0004");
+    assert.equal(location.archived, false);
+    assert.equal(location.projectDir, path.join(factoryRoot, "projects", "ESSY-0004"));
+    assert.equal(location.outputDir, path.join(factoryRoot, "output", "ESSY-0004"));
+    // A recorded path still resolves against the repo root, exactly as before.
+    assert.equal(
+      resolveEpisodeRelativePath(location, "output/ESSY-0004/ESSY-0004-final-v1.mp4"),
+      path.join(factoryRoot, "output", "ESSY-0004", "ESSY-0004-final-v1.mp4"),
+    );
+    assert.equal(
+      resolvePublicationDir(factoryRoot, "ESSY-0004", location),
+      path.join(factoryRoot, "projects", "ESSY-0004", "publication"),
+    );
+  });
+});
+
+test("an archived episode resolves to its canonical archive, not projects/ or output/", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, archiveRoot, episode} = await makeArchivedEpisode(root);
+    const location = await resolveEpisodeLocation(factoryRoot, episode);
+    assert.equal(location.archived, true);
+    assert.equal(location.source, `archive/episodes/${episode}/archive.json`);
+    assert.equal(location.projectDir, path.join(archiveRoot, "project"));
+    assert.equal(location.outputDir, path.join(archiveRoot, "output"));
+    // The active trees stay gone: resolution reads, it never restores.
+    assert.equal(await isDirectory(path.join(factoryRoot, "projects", episode)), false);
+    assert.equal(await isDirectory(path.join(factoryRoot, "output", episode)), false);
+    // Recorded repo-relative paths are re-rooted onto the archive areas.
+    assert.equal(
+      resolveEpisodeRelativePath(location, `output/${episode}/${episode}-final-v1.mp4`),
+      path.join(archiveRoot, "output", `${episode}-final-v1.mp4`),
+    );
+    assert.equal(
+      resolveEpisodeRelativePath(location, `projects/${episode}/temp/${episode}-subtitles.srt`),
+      path.join(archiveRoot, "project", "temp", `${episode}-subtitles.srt`),
+    );
+    // A path recorded for another episode is never borrowed.
+    assert.equal(
+      resolveEpisodeRelativePath(location, "output/ESSY-0004/ESSY-0004-final-v1.mp4"),
+      null,
+    );
+    assert.equal(resolveEpisodeRelativePath(location, "output/ESSY-0005/"), null);
+    assert.equal(resolveEpisodeRelativePath(location, ""), null);
+  });
+});
+
+test("an archive record that is a directory is not an archive", async () => {
+  await withRoot(async (root) => {
+    const factoryRoot = await makeRepo(root);
+    // An interrupted archive leaves archive.json unusable; the episode is then
+    // still read from the active trees, never from a half-built archive.
+    await mkdir(path.join(factoryRoot, "archive", "episodes", "ESSY-0005", "archive.json"), {
+      recursive: true,
+    });
+    const location = await resolveEpisodeLocation(factoryRoot, "ESSY-0005");
+    assert.equal(location.archived, false);
+    assert.equal(location.projectDir, path.join(factoryRoot, "projects", "ESSY-0005"));
+  });
+});
+
+// ---------------------------------------------------------------------------
 // canonical final master resolution
 // ---------------------------------------------------------------------------
 
@@ -600,6 +701,133 @@ test("the final master resolves from the renderer QA record, not a hard-coded la
     const gone = await resolveFinalMaster(factoryRoot, "ESSY-0008");
     assert.equal(gone.passed, false);
     assert.match(gone.reason, /Final master is missing/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// archived publication check: an episode with no active projects/ or output/
+// ---------------------------------------------------------------------------
+
+test("an archived episode's package, master, and approved title resolve from the archive", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, archiveRoot, episode} = await makeArchivedEpisode(root);
+    const location = await resolveEpisodeLocation(factoryRoot, episode);
+    const paths = resolvePublicationPaths(factoryRoot, episode, {}, location);
+    assert.equal(
+      paths.thumbnail,
+      path.join(archiveRoot, "project", "publication", "thumbnail.png"),
+    );
+    assert.equal(paths.metadata, path.join(archiveRoot, "project", "publication", "youtube.json"));
+
+    // 1. archived publication metadata and thumbnail
+    const metadata = validatePublicationMetadata(
+      await readPublicationMetadata(paths.metadata),
+      {episode},
+    );
+    assert.equal(metadata.passed, true, metadata.reasons.join("; "));
+    assert.equal(metadata.title, "What Is Still There When I'm Eighty?");
+    const thumbnail = await validateThumbnailFile(paths.thumbnail);
+    assert.equal(thumbnail.passed, true, thumbnail.reasons.join("; "));
+    assert.equal(thumbnail.width, 1920);
+
+    // 2. the archived final-assembly QA record resolves the archived master
+    const video = await resolveFinalMaster(factoryRoot, episode);
+    assert.equal(video.passed, true, video.reason);
+    assert.equal(video.relative, `output/${episode}/${episode}-final-v1.mp4`);
+    assert.equal(video.path, path.join(archiveRoot, "output", `${episode}-final-v1.mp4`));
+    assert.equal(video.durationSec, 388.756);
+    // Passing the location explicitly is equivalent.
+    assert.equal((await resolveFinalMaster(factoryRoot, episode, {location})).path, video.path);
+
+    // 3. the archived approved episode title
+    assert.equal(
+      await resolveApprovedEpisodeTitle(factoryRoot, episode),
+      "What Is Still There When I'm Eighty?",
+    );
+
+    // 4. the composed check PASSES for a complete archived episode
+    const lifecycle = await resolveEpisodeLifecycle(factoryRoot, episode);
+    assert.equal(lifecycle.state, "archived");
+    const report = buildPublicationCheckReport({
+      episode,
+      metadata,
+      thumbnail,
+      video,
+      lifecycle,
+      approvedTitle: "What Is Still There When I'm Eighty?",
+    });
+    assert.deepEqual(report.rows.map((row) => `${row.label}=${row.passed ? "PASS" : "FAIL"}`), [
+      "Title=PASS",
+      "Description=PASS",
+      "Thumbnail=PASS",
+      "Video=PASS",
+    ]);
+    assert.equal(report.ready, true);
+    assert.ok(report.notes.some((note) => note.includes("is archived")));
+
+    // Nothing was restored into the active trees.
+    assert.equal(await isDirectory(path.join(factoryRoot, "projects", episode)), false);
+    assert.equal(await isDirectory(path.join(factoryRoot, "output", episode)), false);
+  });
+});
+
+test("an archived episode missing its master reports the archived QA path, not the active one", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, episode} = await makeArchivedEpisode(root);
+    await rm(path.join(factoryRoot, "archive", "episodes", episode, "output", `${episode}-final-v1.mp4`));
+    const video = await resolveFinalMaster(factoryRoot, episode);
+    assert.equal(video.passed, false);
+    assert.match(video.reason, /Final master is missing/);
+
+    // An archived episode that was never rendered names its archive path.
+    await writeJson(
+      path.join(factoryRoot, "archive", "episodes", "ESSY-0007", "archive.json"),
+      {episode: "ESSY-0007", archivedAt: "2026-10-05T12:28:32.827Z", reason: "published"},
+    );
+    const never = await resolveFinalMaster(factoryRoot, "ESSY-0007");
+    assert.equal(never.resolved, false);
+    assert.match(never.reason, /archive\/episodes\/ESSY-0007\/project\/temp\/final-assembly/);
+  });
+});
+
+test("an archived master's recorded path outside the episode is refused, not guessed", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, archiveRoot, episode} = await makeArchivedEpisode(root);
+    await writeJson(
+      path.join(archiveRoot, "project", "temp", "final-assembly", "final-assembly-qa.json"),
+      {episode, output: "output/ESSY-0004/ESSY-0004-final-v1.mp4", subtitleQa: {passed: true}},
+    );
+    const video = await resolveFinalMaster(factoryRoot, episode);
+    assert.equal(video.resolved, true);
+    assert.equal(video.passed, false);
+    assert.equal(video.path, null);
+    assert.match(video.reason, /is not inside ESSY-0005's archive/);
+  });
+});
+
+test("a thumbnail import for an archived episode targets the archive, not projects/", async () => {
+  await withRoot(async (root) => {
+    const {factoryRoot, archiveRoot, episode} = await makeArchivedEpisode(root);
+    const downloads = await makeDownloads(root);
+    const source = await touch(path.join(downloads, "selected.png"), makePng(1920, 1080));
+    const location = await resolveEpisodeLocation(factoryRoot, episode);
+    // Start from a package with no thumbnail yet.
+    await rm(path.join(archiveRoot, "project", "publication", "thumbnail.png"));
+
+    const result = await importThumbnailAsset({factoryRoot, episode, sourcePath: source, location});
+    assert.equal(result.thumbnail.passed, true, result.thumbnail.reasons.join("; "));
+    assert.equal(
+      result.recordPath,
+      path.join(archiveRoot, "project", "publication", "publication-record.json"),
+    );
+    // The active project tree is still not recreated.
+    assert.equal(await isDirectory(path.join(factoryRoot, "projects", episode)), false);
+    // The approved archived thumbnail was replaced only because the archive copy
+    // is the canonical one; planThumbnailImport still refuses without --replace.
+    await assert.rejects(
+      () => planThumbnailImport({factoryRoot, episode, sourcePath: source, location}),
+      /already exists[\s\S]*--replace/,
+    );
   });
 });
 

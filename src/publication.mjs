@@ -15,6 +15,14 @@
 // and archival remain explicit human actions
 // (`video:workflow archive <EP> --published`).
 //
+// Every episode artifact is resolved through ONE location (see
+// resolveEpisodeLocation): an active episode lives under projects/ + output/,
+// an archived episode under archive/episodes/<EPISODE>/project + .../output.
+// The archive layout itself is owned by src/episode-archive.mjs and is imported,
+// never restated, so a check on a published episode reads the canonical
+// archived package instead of reporting the moved paths as missing. Nothing is
+// ever copied back into projects/ or output/ to satisfy a check.
+//
 // Pure logic lives here so it is unit-testable with temp fixtures; scripts/
 // owns argv, console output, and exit codes.
 // ---------------------------------------------------------------------------
@@ -25,6 +33,7 @@ import os from "node:os";
 import path from "node:path";
 import {copyFile, mkdir, readFile, readdir, stat, writeFile} from "node:fs/promises";
 import {readDraftState} from "./draft-workflow.mjs";
+import {ARCHIVE_LOCATIONS} from "./episode-archive.mjs";
 import {readWorkflow} from "./workflow.mjs";
 
 const DAY_MS = 86_400_000;
@@ -101,20 +110,109 @@ export async function resolveCliRepoRoot(scriptDir, cwd = process.cwd()) {
 }
 
 // ---------------------------------------------------------------------------
+// Episode location
+//
+// An episode's production and render artifacts live in one of exactly two
+// places, and nothing else may claim otherwise:
+//
+//   active   projects/<EPISODE>/  output/<EPISODE>/  inbox/<EPISODE>/
+//   archived archive/episodes/<EPISODE>/{project,output,inbox}/
+//
+// `archive/episodes/<EPISODE>/archive.json` is the only archive record, and it
+// must be a FILE: a directory of that name is not a record (an interrupted
+// archive), so the episode is still treated as active.
+// ---------------------------------------------------------------------------
+
+// Active area directory name -> the archive location key that holds it. The
+// archive directory names themselves come from ARCHIVE_LOCATIONS, which
+// src/episode-archive.mjs owns, so this module can never drift from the layout
+// archival actually produces.
+const ACTIVE_AREAS = Object.freeze({inbox: "inbox", output: "output", projects: "project"});
+const ARCHIVE_AREA_DIRS = Object.freeze(
+  Object.fromEntries(
+    Object.entries(ARCHIVE_LOCATIONS).map(([area, value]) => [area, value.replace(/\/+$/, "")]),
+  ),
+);
+
+function repoRelative(factoryRoot, target) {
+  return path.relative(factoryRoot, target).replaceAll(path.sep, "/");
+}
+
+/**
+ * Resolve where an episode's artifacts live. This is the single source of
+ * truth for episode paths: an archived episode resolves to its canonical
+ * archive, an active episode to projects/ + output/, and no state is inferred
+ * from production progress.
+ *
+ * @returns {Promise<object>} `{episode, archived, inboxDir, projectDir, outputDir, source}`
+ */
+export async function resolveEpisodeLocation(factoryRoot, episode) {
+  const archiveRoot = path.join(factoryRoot, "archive", "episodes", episode);
+  const record = path.join(archiveRoot, "archive.json");
+  if (await isFile(record)) {
+    return {
+      factoryRoot,
+      episode,
+      archived: true,
+      archiveRoot,
+      record,
+      inboxDir: path.join(archiveRoot, ARCHIVE_AREA_DIRS.inbox),
+      projectDir: path.join(archiveRoot, ARCHIVE_AREA_DIRS.project),
+      outputDir: path.join(archiveRoot, ARCHIVE_AREA_DIRS.output),
+      source: repoRelative(factoryRoot, record),
+    };
+  }
+  return {
+    factoryRoot,
+    episode,
+    archived: false,
+    archiveRoot: null,
+    record: null,
+    inboxDir: path.join(factoryRoot, "inbox", episode),
+    projectDir: path.join(factoryRoot, "projects", episode),
+    outputDir: path.join(factoryRoot, "output", episode),
+    source: `projects/${episode}`,
+  };
+}
+
+/**
+ * Map a recorded repo-relative artifact path (the form the renderer writes into
+ * its QA records, e.g. `output/<EPISODE>/<EPISODE>-final-v1.mp4`) onto the
+ * episode's current location. An active episode resolves exactly as before,
+ * against the repo root. An archived episode re-roots the `inbox/`, `output/`,
+ * and `projects/` areas onto the archive, because archival moves the episode
+ * contents without rewriting the records that reference them.
+ *
+ * @returns {string|null} an absolute path, or null when the recorded path
+ *   belongs to some other episode and cannot be resolved for this one.
+ */
+export function resolveEpisodeRelativePath(location, relative) {
+  if (!location || typeof relative !== "string" || relative.trim().length === 0) return null;
+  const value = relative.trim().replaceAll("\\", "/");
+  if (!location.archived) return path.resolve(location.factoryRoot, value);
+  const [area, episode, ...rest] = value.split("/");
+  const key = ACTIVE_AREAS[area];
+  if (!key || episode !== location.episode || rest.length === 0) return null;
+  if (rest.some((segment) => segment.length === 0)) return null;
+  return path.join(location[`${key}Dir`], ...rest);
+}
+
+// ---------------------------------------------------------------------------
 // Publication paths
 // ---------------------------------------------------------------------------
 
-export function resolvePublicationDir(factoryRoot, episode) {
-  return path.join(factoryRoot, "projects", episode, "publication");
+export function resolvePublicationDir(factoryRoot, episode, location = null) {
+  const projectDir = location?.projectDir ?? path.join(factoryRoot, "projects", episode);
+  return path.join(projectDir, "publication");
 }
 
-export function resolvePublicationPaths(factoryRoot, episode, rules = {}) {
+export function resolvePublicationPaths(factoryRoot, episode, rules = {}, location = null) {
   const {
     thumbnailFileName = PUBLICATION_DEFAULTS.thumbnailFileName,
     metadataFileName = PUBLICATION_DEFAULTS.metadataFileName,
     recordFileName = PUBLICATION_DEFAULTS.recordFileName,
   } = rules;
-  const dir = resolvePublicationDir(factoryRoot, episode);
+  const dir = resolvePublicationDir(factoryRoot, episode, location);
   return {
     episode,
     dir,
@@ -242,11 +340,15 @@ export async function planThumbnailImport(options) {
     replace = false,
     now = Date.now(),
     rules = {},
+    // Resolved by the caller (see resolveEpisodeLocation) so an import for an
+    // archived episode writes into that archive instead of recreating the
+    // active projects/<EPISODE>/ directory that archival removed.
+    location = null,
   } = options;
   if (!episode) throw new Error("An episode ID is required.");
   if (!factoryRoot) throw new Error("A factory root is required.");
 
-  const paths = resolvePublicationPaths(factoryRoot, episode, rules);
+  const paths = resolvePublicationPaths(factoryRoot, episode, rules, location);
   let selected = null;
   let selection = null;
 
@@ -702,13 +804,15 @@ export function validatePublicationMetadata(metadata, options = {}) {
 }
 
 /**
- * Renderer-approved episode title (projects/<EP>/final-assembly.json →
- * title.episodeTitle). Used as an advisory cross-check, never invented.
+ * Renderer-approved episode title (final-assembly.json → title.episodeTitle) in
+ * the episode's project directory. Used as an advisory cross-check, never
+ * invented.
  */
-export async function resolveApprovedEpisodeTitle(factoryRoot, episode) {
+export async function resolveApprovedEpisodeTitle(factoryRoot, episode, options = {}) {
+  const location = options.location ?? (await resolveEpisodeLocation(factoryRoot, episode));
   try {
     const spec = JSON.parse(
-      await readFile(path.join(factoryRoot, "projects", episode, "final-assembly.json"), "utf8"),
+      await readFile(path.join(location.projectDir, "final-assembly.json"), "utf8"),
     );
     const title = spec?.title?.episodeTitle;
     return typeof title === "string" && title.trim().length > 0 ? title.trim() : null;
@@ -724,15 +828,18 @@ export async function resolveApprovedEpisodeTitle(factoryRoot, episode) {
 
 /**
  * Resolve the canonical final master from the renderer's own QA record
- * (projects/<EP>/temp/final-assembly/final-assembly-qa.json → output), the same
+ * (<project>/temp/final-assembly/final-assembly-qa.json → output), the same
  * resolver the workflow gates use in src/gates.mjs. The label is never
  * hard-coded: masters are <EP>-final-<label>.mp4 and the label varies.
+ *
+ * The QA record and the master it records are resolved in the episode's
+ * location, so an archived episode resolves its archived master from the same
+ * unmodified record.
  */
-export async function resolveFinalMaster(factoryRoot, episode) {
+export async function resolveFinalMaster(factoryRoot, episode, options = {}) {
+  const location = options.location ?? (await resolveEpisodeLocation(factoryRoot, episode));
   const qaPath = path.join(
-    factoryRoot,
-    "projects",
-    episode,
+    location.projectDir,
     "temp",
     "final-assembly",
     "final-assembly-qa.json",
@@ -747,7 +854,7 @@ export async function resolveFinalMaster(factoryRoot, episode) {
         passed: false,
         path: null,
         relative: null,
-        reason: `Final assembly has not been rendered (missing projects/${episode}/temp/final-assembly/final-assembly-qa.json).`,
+        reason: `Final assembly has not been rendered (missing ${repoRelative(location.factoryRoot, qaPath)}).`,
       };
     }
     throw error;
@@ -762,9 +869,22 @@ export async function resolveFinalMaster(factoryRoot, episode) {
       reason: "final-assembly-qa.json does not record an output master.",
     };
   }
-  const absolute = path.resolve(factoryRoot, relative);
-  const present = await isFile(absolute);
+  const absolute = resolveEpisodeRelativePath(location, relative);
   const subtitleQaPassed = qa.subtitleQa == null ? null : qa.subtitleQa.passed === true;
+  const durationSec = Number(qa.durationSec ?? 0) || null;
+  if (!absolute) {
+    return {
+      resolved: true,
+      passed: false,
+      path: null,
+      relative,
+      present: false,
+      subtitleQaPassed,
+      durationSec,
+      reason: `Recorded final master is not inside ${episode}${location.archived ? "'s archive" : "'s episode location"}: ${relative}.`,
+    };
+  }
+  const present = await isFile(absolute);
   const reasons = [];
   if (!present) reasons.push(`Final master is missing: ${relative}`);
   if (subtitleQaPassed === false) reasons.push("Final assembly subtitle QA has not passed.");
@@ -775,7 +895,7 @@ export async function resolveFinalMaster(factoryRoot, episode) {
     relative,
     present,
     subtitleQaPassed,
-    durationSec: Number(qa.durationSec ?? 0) || null,
+    durationSec,
     reason: reasons.length ? reasons.join("; ") : null,
   };
 }
@@ -789,14 +909,14 @@ export async function resolveFinalMaster(factoryRoot, episode) {
  * which is not the same as published or archived.
  */
 export async function resolveEpisodeLifecycle(factoryRoot, episode) {
-  const archivePath = path.join(factoryRoot, "archive", "episodes", episode, "archive.json");
-  if (await isFile(archivePath)) {
+  const location = await resolveEpisodeLocation(factoryRoot, episode);
+  if (location.archived) {
     return {
       state: "archived",
       archived: true,
       completed: true,
       ready: false,
-      source: path.relative(factoryRoot, archivePath).replaceAll(path.sep, "/"),
+      source: location.source,
       recordedStatus: "archived",
       detail: "Archived after publication confirmation.",
     };
