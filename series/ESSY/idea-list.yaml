@@ -93,6 +93,16 @@ ideas:
     hook: "年輕時渴望旅行，到了中年依然渴望旅行；但我們期待從旅途中得到的，是否已經不同？"
     note: "使用者原始構想：探索年輕時渴望的旅行與中年之後渴望的旅行有何改變。可探討冒險、陌生感、自由、舒適、時間、體力與家庭責任，但不預設所有人都從冒險轉向安逸；先保留為 idea，後續再透過個人經驗發展核心論點。"
 
+  - id: ESSY-IDEA-014
+    title: "信仰"
+    status: idea
+    note: "使用者提出的 ESSY 主題；目前僅記錄，不展開。"
+
+  - id: ESSY-IDEA-015
+    title: "責任"
+    status: idea
+    note: "使用者提出的 ESSY 主題；目前僅記錄，不展開。"
+
 # Completed ESSY episodes that are useful editorial references but do not yet
 # correspond one-to-one with another backlog entry.
 completedEpisodeReferences:
