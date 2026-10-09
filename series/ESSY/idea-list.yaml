@@ -86,6 +86,13 @@ ideas:
     hook: "退休規劃要考慮 the rest of your life，但那究竟是多長？我們都知道旅程總會結束，卻不知道何時會結束。"
     note: "使用者原始點子：當我們做退休規劃時考慮的是 the rest of your life，然而那究竟是多長呢？我們都知道旅程總會結束，但就是不曉得何時會結束。探索必須為未知長度的餘生做安排的矛盾：既怕活得比準備的資源更久，也怕為未來準備了一切，卻沒有時間享用。與 ESSY-IDEA-004 / ESSY-0003、ESSY-IDEA-011 及 ESSY-0002 的退休與時間有限主題相關；後續開發聚焦終點未知如何影響當下的選擇。"
 
+  - id: ESSY-IDEA-013
+    title: "年輕時與中年後，我們渴望的旅行有什麼不同？"
+    englishTitle: "Do We Still Travel for the Same Reasons?"
+    status: idea
+    hook: "年輕時渴望旅行，到了中年依然渴望旅行；但我們期待從旅途中得到的，是否已經不同？"
+    note: "使用者原始構想：探索年輕時渴望的旅行與中年之後渴望的旅行有何改變。可探討冒險、陌生感、自由、舒適、時間、體力與家庭責任，但不預設所有人都從冒險轉向安逸；先保留為 idea，後續再透過個人經驗發展核心論點。"
+
 # Completed ESSY episodes that are useful editorial references but do not yet
 # correspond one-to-one with another backlog entry.
 completedEpisodeReferences:
