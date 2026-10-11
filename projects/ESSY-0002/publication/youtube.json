@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "youtube",
+  "episode": "ESSY-0002",
+  "channel": "A Second Look at Life",
+  "series": "A SECOND LOOK AT LIFE",
+  "title": "When Your Parents Begin to Age",
+  "localizations": {
+    "zh-TW": {
+      "title": "當父母開始老去"
+    }
+  },
+  "description": "We all know our parents will grow old. But then there are moments when all those gradual changes suddenly become visible at once. A father forgets his medication. A mother needs help standing up. The quiet assumption that tomorrow will be reasonably similar to today breaks down. This essay reflects on the uncomfortable transition when caring for aging parents shifts from abstract knowledge to daily reality — and how responsibility can quietly expand until it becomes impossible, unless we learn to set boundaries.",
+  "thumbnail": "thumbnail.png",
+  "tags": [
+    "aging parents",
+    "caregiving",
+    "family",
+    "responsibility",
+    "boundaries",
+    "A Second Look at Life"
+  ],
+  "language": "en",
+  "visibility": "private"
+}

@@ -33,6 +33,11 @@ import {
   writeDraftState,
 } from "../src/draft-workflow.mjs";
 import {buildStagePrompt} from "../src/stage-prompt.mjs";
+import {
+  resolveArtifactForApproval,
+  computeFileSha256,
+  extractRenderLabel,
+} from "../scripts/video-workflow-codex.mjs";
 
 const SCRIPT_MD = [
   "# Who Am I Beyond My Roles?",
@@ -510,4 +515,185 @@ test("parseEssyNarrationBlocks is deterministic", () => {
   assert.equal(blocks[0].id, "N001");
   assert.match(blocks[0].text, /roles you carry/);
   assert.equal(parseEssyNarrationBlocks("no blocks here").length, 0);
+});
+
+// --- Artifact-aware final-assembly approval tests ---
+
+async function makeTestFactory() {
+  const root = await mkdtemp(path.join(tmpdir(), "essy-artifact-test-"));
+  const factoryRoot = path.join(root, "factory");
+  await mkdir(path.join(factoryRoot, "projects", "_drafts", "ESSY-T1"), {recursive: true});
+  await mkdir(path.join(factoryRoot, "projects", "ESSY-T1", "temp", "final-assembly"), {recursive: true});
+  await mkdir(path.join(factoryRoot, "output", "ESSY-T1"), {recursive: true});
+  return {root, factoryRoot};
+}
+
+function createFinalV2Mp4(factoryRoot) {
+  const mp4Path = path.join(factoryRoot, "output", "ESSY-T1", "ESSY-T1-final-v2.mp4");
+  // Create a fake MP4 file with known content for deterministic SHA-256
+  const content = Buffer.from("FAKE-MP4-CONTENT-FOR-TESTING-ESSY-0004-FINAL-V2");
+  return {mp4Path, content};
+}
+
+function createQaRecord(factoryRoot, outputPath) {
+  const qaPath = path.join(factoryRoot, "projects", "ESSY-T1", "temp", "final-assembly", "final-assembly-qa.json");
+  const qa = {
+    episode: "ESSY-T1",
+    output: path.relative(factoryRoot, outputPath).replaceAll(path.sep, "/"),
+    durationSec: 395.162,
+    videoCodec: "h264",
+    audioCodec: "aac",
+    sizeBytes: 279367784,
+    subtitleQa: {
+      totalCueCount: 126,
+      overlapCountAfterNormalization: 0,
+      invalidDurationCueCount: 0,
+      maxRenderedLines: 2,
+      orphanChildCueCount: 0,
+      twoWordChildCueCount: 0,
+      generatedCueDurationBelow700msCount: 0,
+      passed: true,
+      reportPath: "projects/ESSY-T1/temp/ESSY-T1-subtitle-qa.json",
+    },
+    subtitleBurn: {
+      mode: "bilingual-en-zhTW",
+      engine: "libass-subtitles-filter",
+      sourceSrt: "projects/ESSY-T1/temp/ESSY-T1-subtitles-bilingual.srt",
+      englishSrt: "projects/ESSY-T1/temp/ESSY-T1-subtitles.srt",
+      burnedCueCount: 126,
+      style540pDesign: {},
+      burnedAt: "1920x1080",
+    },
+  };
+  return {qaPath, qa};
+}
+
+test("computeFileSha256 produces deterministic hash", async () => {
+  const {root, factoryRoot} = await makeTestFactory();
+  try {
+    const {mp4Path, content} = createFinalV2Mp4(factoryRoot);
+    await writeFile(mp4Path, content);
+    const hash1 = await computeFileSha256(mp4Path);
+    const hash2 = await computeFileSha256(mp4Path);
+    assert.equal(hash1, hash2);
+    assert.equal(typeof hash1, "string");
+    assert.equal(hash1.length, 64); // SHA-256 hex = 64 chars
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("resolveArtifactForApproval validates artifact path security", async () => {
+  const {root, factoryRoot} = await makeTestFactory();
+  try {
+    const {mp4Path, content} = createFinalV2Mp4(factoryRoot);
+    await writeFile(mp4Path, content);
+
+    // Valid path
+    const meta = await resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/ESSY-T1/ESSY-T1-final-v2.mp4");
+    assert.equal(meta.filename, "ESSY-T1-final-v2.mp4");
+    assert.equal(meta.path, "output/ESSY-T1/ESSY-T1-final-v2.mp4");
+    assert.equal(meta.sizeBytes, content.length);
+    assert.equal(meta.sha256.length, 64);
+
+    // Traversal attempt should fail (resolves outside output/ESSY-T1/)
+    await assert.rejects(
+      () => resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/ESSY-T1/../ESSY-T1-final-v2.mp4"),
+      /inside output\/ESSY-T1/,
+    );
+
+    // Absolute path should fail
+    await assert.rejects(
+      () => resolveArtifactForApproval(factoryRoot, "ESSY-T1", path.resolve(mp4Path)),
+      /relative to repository root/,
+    );
+
+    // Outside output/<episode> should fail
+    const outsidePath = path.join(factoryRoot, "output", "OTHER", "file.mp4");
+    await mkdir(path.dirname(outsidePath), {recursive: true});
+    await writeFile(outsidePath, content);
+    await assert.rejects(
+      () => resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/OTHER/file.mp4"),
+      /inside output\/ESSY-T1/,
+    );
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("resolveArtifactForApproval requires existing artifact file", async () => {
+  const {root, factoryRoot} = await makeTestFactory();
+  try {
+    await assert.rejects(
+      () => resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/ESSY-T1/nonexistent.mp4"),
+      /does not exist/,
+    );
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("resolveArtifactForApproval enriches with QA metadata when matching", async () => {
+  const {root, factoryRoot} = await makeTestFactory();
+  try {
+    const {mp4Path, content} = createFinalV2Mp4(factoryRoot);
+    await writeFile(mp4Path, content);
+    const {qaPath, qa} = createQaRecord(factoryRoot, mp4Path);
+    await writeFile(qaPath, JSON.stringify(qa, null, 2));
+
+    const meta = await resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/ESSY-T1/ESSY-T1-final-v2.mp4");
+    assert.equal(meta.durationSec, 395.162);
+    assert.equal(meta.subtitleQaPassed, true);
+    assert.equal(meta.renderLabel, "bilingual-en-zhTW");
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("resolveArtifactForApproval fails on QA/artifact mismatch", async () => {
+  const {root, factoryRoot} = await makeTestFactory();
+  try {
+    const {mp4Path: mp4Path1, content: content1} = createFinalV2Mp4(factoryRoot);
+    await writeFile(mp4Path1, content1);
+
+    // Create a DIFFERENT artifact
+    const mp4Path2 = path.join(factoryRoot, "output", "ESSY-T1", "ESSY-T1-final-v1.mp4");
+    const content2 = Buffer.from("DIFFERENT-CONTENT-FOR-V1");
+    await writeFile(mp4Path2, content2);
+
+    // QA record points to v1, but we're approving v2
+    const {qaPath, qa} = createQaRecord(factoryRoot, mp4Path2);
+    await writeFile(qaPath, JSON.stringify(qa, null, 2));
+
+    await assert.rejects(
+      () => resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/ESSY-T1/ESSY-T1-final-v2.mp4"),
+      /does not match/,
+    );
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("resolveArtifactForApproval extracts renderLabel from filename when QA missing", async () => {
+  const {root, factoryRoot} = await makeTestFactory();
+  try {
+    const {mp4Path, content} = createFinalV2Mp4(factoryRoot);
+    await writeFile(mp4Path, content);
+    // No QA file
+
+    const meta = await resolveArtifactForApproval(factoryRoot, "ESSY-T1", "output/ESSY-T1/ESSY-T1-final-v2.mp4");
+    assert.equal(meta.renderLabel, "final-v2");
+    assert.equal(meta.durationSec, null);
+    assert.equal(meta.subtitleQaPassed, null);
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("extractRenderLabel handles various filename patterns", () => {
+  assert.equal(extractRenderLabel({}, "ESSY-0004-final-v1.mp4"), "final-v1");
+  assert.equal(extractRenderLabel({}, "ESSY-0004-final-v2.mp4"), "final-v2");
+  assert.equal(extractRenderLabel({}, "ESSY-0004-final-v10.mp4"), "final-v10");
+  assert.equal(extractRenderLabel({subtitleBurn: {mode: "custom-mode"}}, "any.mp4"), "custom-mode");
+  assert.equal(extractRenderLabel({}, "no-match.mp4"), "final");
 });

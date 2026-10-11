@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "youtube",
+  "episode": "ESSY-0001",
+  "channel": "A Second Look at Life",
+  "series": "A SECOND LOOK AT LIFE",
+  "title": "Why Does Life Feel Different After Forty?",
+  "localizations": {
+    "zh-TW": {
+      "title": "為什麼四十歲後，人生變得不一樣？"
+    }
+  },
+  "description": "For the first few decades of life, progress usually means adding something. More skills, more money, more friends, a better job, a bigger home. But somewhere along the way, something begins to change. Every new thing you add also asks something from you. Every possession needs space. Every subscription wants money. Every friendship needs time. Every ambition creates another standard you can fail to meet. The question changes from \"What else can I do?\" to \"What can I stop doing?\" This essay explores why life starts feeling different after forty — not because we're losing things, but because we're learning to edit what no longer serves us.",
+  "thumbnail": "thumbnail.png",
+  "tags": [
+    "midlife",
+    "simplicity",
+    "life changes",
+    "aging",
+    "minimalism",
+    "personal growth",
+    "A Second Look at Life"
+  ],
+  "language": "en",
+  "visibility": "private"
+}

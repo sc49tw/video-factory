@@ -1,6 +1,8 @@
-import {mkdir, readFile, readdir, writeFile} from "node:fs/promises";
+import {mkdir, readFile, readdir, stat, writeFile} from "node:fs/promises";
+import {createReadStream} from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import {createHash} from "node:crypto";
 import {
   getCategory,
   loadCategoryRegistry,
@@ -145,7 +147,8 @@ async function submit([id, stage, fileArgument]) {
   }
 }
 
-async function approve([id, target]) {
+async function approve([id, target, ...rest]) {
+  const artifactPath = option(rest, "--artifact");
   const state = await readDraftState(factoryRoot, id);
   if (state) {
     // Draft-backed ESSY episodes remain governed by state.yaml through the
@@ -175,26 +178,20 @@ async function approve([id, target]) {
       if (state.approvals.qa?.approved !== true) {
         throw new Error("Cannot approve final-assembly before QA approval.");
       }
-      const finalPath = path.join(factoryRoot, "output", id, `${id}-final-v1.mp4`);
-      try {
-        await readFile(finalPath);
-      } catch (error) {
-        if (error?.code === "ENOENT") {
-          throw new Error(`Cannot approve final-assembly before ${relative(finalPath)} exists.`);
-        }
-        throw error;
-      }
+      const artifactMeta = await resolveArtifactForApproval(factoryRoot, id, artifactPath);
+      const approvedAt = new Date().toISOString();
       state.approvals.finalAssembly = {
         approved: true,
-        approvedAt: new Date().toISOString(),
+        approvedAt,
+        artifact: artifactMeta,
       };
       state.status = "completed";
-      state.updatedAt = new Date().toISOString();
+      state.updatedAt = approvedAt;
       state.history ??= [];
-      state.history.push({at: state.updatedAt, event: "final-assembly-approved"});
+      state.history.push({at: approvedAt, event: "final-assembly-approved", artifact: artifactMeta});
       await writeDraftState(factoryRoot, state);
       await writeCurrentTask(state);
-      console.log(`Approved ${target} for ${id}.`);
+      console.log(`Approved ${target} for ${id} (artifact: ${artifactMeta.filename}).`);
       printDraft(state);
       return;
     }
@@ -218,10 +215,13 @@ async function approve([id, target]) {
     );
   }
   if (target === "final-assembly") {
+    const artifactMeta = await resolveArtifactForApproval(factoryRoot, id, artifactPath);
+    const approvedAt = new Date().toISOString();
     workflow.approvals.finalQa = true;
-    recordEvent(workflow, "final-assembly-approved");
+    workflow.approvals.finalAssemblyArtifact = {...artifactMeta, approvedAt};
+    recordEvent(workflow, "final-assembly-approved", {artifact: artifactMeta});
     await refreshEpisodeWorkflow(factoryRoot, workflow);
-    console.log(`Approved ${target} for ${id}.`);
+    console.log(`Approved ${target} for ${id} (artifact: ${artifactMeta.filename}).`);
     printEpisode(workflow);
     return;
   }
@@ -230,10 +230,150 @@ async function approve([id, target]) {
     workflow.needsRerender = false;
     workflow.rerenderReason = null;
   }
-  recordEvent(workflow, `${target}-approved`);
+recordEvent(workflow, `${target}-approved`);
   await refreshEpisodeWorkflow(factoryRoot, workflow);
   console.log(`Approved ${target} for ${id}.`);
   printEpisode(workflow);
+}
+
+// --- Artifact resolution & validation for final-assembly approval ---
+
+/**
+ * Resolve and validate the artifact for final-assembly approval.
+ * The artifact file is authoritative for identity (path, filename, size, sha256).
+ * final-assembly-qa.json may enrich with durationSec, subtitleQaPassed, renderLabel.
+ * Security: rejects absolute paths, directory traversal, paths outside output/<EP>/.
+ */
+async function resolveArtifactForApproval(factoryRoot, episode, artifactPathArg) {
+  // 1) Resolve artifact path from argument (mandatory for new approvals)
+  let artifactPath;
+  if (artifactPathArg) {
+    artifactPath = path.resolve(factoryRoot, artifactPathArg);
+  } else {
+    // Legacy fallback: try to find final-assembly-qa.json and use its output
+    const qaPath = path.join(factoryRoot, "projects", episode, "temp", "final-assembly", "final-assembly-qa.json");
+    let qaOutput = null;
+    try {
+      const qa = JSON.parse(await readFile(qaPath, "utf8"));
+      qaOutput = qa.output;
+    } catch {
+      // ignore, will fall through to error
+    }
+    if (qaOutput) {
+      artifactPath = path.resolve(factoryRoot, qaOutput);
+      console.warn(`Warning: --artifact not provided; using QA record output: ${path.relative(factoryRoot, artifactPath)}`);
+    } else {
+      throw new Error(
+        `Cannot approve final-assembly: --artifact <path> is required. ` +
+        `Usage: pnpm video:workflow approve ${episode} final-assembly --artifact output/${episode}/${episode}-final-v2.mp4`
+      );
+    }
+  }
+
+  // 2) Security validation: must be under output/<episode>/
+  const expectedRoot = path.resolve(factoryRoot, "output", episode);
+  const normalizedArtifact = path.normalize(artifactPath);
+  const normalizedExpected = path.normalize(expectedRoot);
+  if (!normalizedArtifact.startsWith(normalizedExpected + path.sep) && normalizedArtifact !== normalizedExpected) {
+    throw new Error(
+      `Artifact path must be inside output/${episode}/. ` +
+      `Got: ${path.relative(factoryRoot, artifactPath)}`
+    );
+  }
+  // Reject absolute paths in argument (must be relative to repo root)
+  if (path.isAbsolute(artifactPathArg)) {
+    throw new Error(`Artifact path must be relative to repository root, not absolute.`);
+  }
+  // Reject directory traversal attempts
+  if (artifactPathArg?.includes("..")) {
+    throw new Error(`Artifact path must not contain directory traversal (..).`);
+  }
+
+  // 3) Verify artifact file exists and is a file
+  let statInfo;
+  try {
+    statInfo = await stat(artifactPath);
+  } catch (error) {
+    if (error?.code === "ENOENT") {
+      throw new Error(`Artifact file does not exist: ${path.relative(factoryRoot, artifactPath)}`);
+    }
+    throw error;
+  }
+  if (!statInfo.isFile()) {
+    throw new Error(`Artifact path is not a file: ${path.relative(factoryRoot, artifactPath)}`);
+  }
+
+  // 4) Compute SHA-256 from the actual artifact file (authoritative)
+  const sha256 = await computeFileSha256(artifactPath);
+
+  // 5) Load QA metadata for enrichment (non-authoritative for identity)
+  let qaMeta = {
+    durationSec: null,
+    subtitleQaPassed: null,
+    renderLabel: extractRenderLabel(null, path.basename(artifactPath)),
+  };
+  const qaPath = path.join(factoryRoot, "projects", episode, "temp", "final-assembly", "final-assembly-qa.json");
+  try {
+    const qa = JSON.parse(await readFile(qaPath, "utf8"));
+    // QA output must match the artifact we're approving (mismatch detection)
+    if (qa.output) {
+      const qaOutputPath = path.resolve(factoryRoot, qa.output);
+      if (qaOutputPath !== artifactPath) {
+        throw new Error(
+          `QA record output (${qa.output}) does not match the artifact being approved ` +
+          `(${path.relative(factoryRoot, artifactPath)}). Refusing to associate QA from another render.`
+        );
+      }
+    }
+    // Enrich from QA (non-authoritative fields)
+    qaMeta = {
+      durationSec: qa.durationSec ?? null,
+      subtitleQaPassed: qa.subtitleQa?.passed ?? null,
+      renderLabel: extractRenderLabel(qa, path.basename(artifactPath)),
+    };
+  } catch (error) {
+    if (error?.message?.includes("does not match")) throw error;
+    // QA file missing or invalid - proceed with file-only metadata (qaMeta already has renderLabel from filename)
+  }
+
+  // 6) Build artifact metadata object (artifact file is authoritative)
+  const filename = path.basename(artifactPath);
+  const relativePath = path.relative(factoryRoot, artifactPath).replaceAll(path.sep, "/");
+
+  return {
+    filename,
+    path: relativePath,
+    sha256,
+    sizeBytes: statInfo.size,
+    ...qaMeta,
+  };
+}
+
+/**
+ * Compute SHA-256 hash of a file using streaming (memory efficient).
+ */
+function computeFileSha256(filePath) {
+  return new Promise((resolve, reject) => {
+    const hash = createHash("sha256");
+    const stream = createReadStream(filePath);
+    stream.on("data", (chunk) => hash.update(chunk));
+    stream.on("end", () => resolve(hash.digest("hex")));
+    stream.on("error", reject);
+  });
+}
+
+/**
+ * Extract render label from QA record or filename.
+ * Prefers QA subtitleBurn.mode, falls back to filename pattern.
+ */
+function extractRenderLabel(qa, filename) {
+  if (qa?.subtitleBurn?.mode) {
+    return qa.subtitleBurn.mode;
+  }
+  // Try to extract from filename like ESSY-0004-final-v2.mp4 -> final-v2
+  const match = filename.match(/final-(v\d+)\.mp4$/i);
+  if (match) return `final-${match[1]}`;
+  return "final";
 }
 
 async function rollback([id, stage]) {
@@ -540,3 +680,6 @@ function printCategories() {
 function relative(value) {
   return path.relative(factoryRoot, value).replaceAll(path.sep, "/");
 }
+
+// Export for testing
+export {resolveArtifactForApproval, computeFileSha256, extractRenderLabel};

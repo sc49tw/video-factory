@@ -501,6 +501,161 @@ test("metadata must describe the requested episode and carry usable tags", () =>
 });
 
 // ---------------------------------------------------------------------------
+// localization metadata validation
+// ---------------------------------------------------------------------------
+
+test("localizations object with valid zh-TW title passes", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        "zh-TW": {title: "當我八十歲，什麼還重要？"},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, true, result.reasons.join("; "));
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, true);
+  assert.equal(locCheck.detail, "zh-TW");
+});
+
+test("multiple valid locale entries are accepted", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        "zh-TW": {title: "標題"},
+        "zh-CN": {title: "标题"},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, true, result.reasons.join("; "));
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, true);
+  assert.ok(locCheck.detail.includes("zh-TW"));
+  assert.ok(locCheck.detail.includes("zh-CN"));
+});
+
+test("missing localizations field does not affect validation", () => {
+  const result = validatePublicationMetadata(metadataFixture(), {episode: "ESSY-0005"});
+  assert.equal(result.passed, true, result.reasons.join("; "));
+  // No localizations check when field is absent
+  const hasLocCheck = result.checks.some((entry) => entry.id === "localizations");
+  assert.equal(hasLocCheck, false);
+});
+
+test("empty localized title is rejected", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        "zh-TW": {title: "   "},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, false);
+  const failed = result.checks.filter((entry) => !entry.passed).map((entry) => entry.id);
+  assert.deepEqual(failed, ["localizations"]);
+  assert.match(result.reasons.join("; "), /non-empty string/);
+});
+
+test("invalid locale key format is rejected", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        zh: {title: "标题"},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, false);
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, false);
+  assert.match(locCheck.detail, /invalid locale key/);
+});
+
+test("localizations must be an object, not array or null", () => {
+  for (const badValue of [null, [], "string", 123]) {
+    const result = validatePublicationMetadata(
+      metadataFixture("ESSY-0005", {localizations: badValue}),
+      {episode: "ESSY-0005"},
+    );
+    assert.equal(result.passed, false, `value: ${JSON.stringify(badValue)}`);
+    const locCheck = result.checks.find((entry) => entry.id === "localizations");
+    assert.equal(locCheck.passed, false);
+    assert.match(locCheck.detail, /localizations must be an object/);
+  }
+});
+
+test("localizations value must be an object with only title field", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        "zh-TW": {title: "標題", description: "描述"},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, false);
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, false);
+  assert.match(locCheck.detail, /only supports "title" field/);
+});
+
+test("localization data survives read/write operations", () => {
+  const metadata = metadataFixture("ESSY-0005", {
+    localizations: {"zh-TW": {title: "測試標題"}},
+  });
+  const result = validatePublicationMetadata(metadata, {episode: "ESSY-0005"});
+  assert.equal(result.passed, true);
+  // Simulate round-trip: the validator returns the title field
+  assert.equal(result.title, "What Is Still There When I'm Eighty?");
+  // The localizations field is preserved in the original metadata object
+  assert.deepEqual(metadata.localizations, {"zh-TW": {title: "測試標題"}});
+});
+
+test("empty localizations object is rejected", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {localizations: {}}),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, false);
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, false);
+  assert.match(locCheck.detail, /must not be empty/);
+});
+
+test("locale entry missing title is rejected", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        "zh-TW": {},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, false);
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, false);
+  assert.match(locCheck.detail, /title is required/);
+});
+
+test("whitespace-only localized title is rejected", () => {
+  const result = validatePublicationMetadata(
+    metadataFixture("ESSY-0005", {
+      localizations: {
+        "zh-TW": {title: "\t\n"},
+      },
+    }),
+    {episode: "ESSY-0005"},
+  );
+  assert.equal(result.passed, false);
+  const locCheck = result.checks.find((entry) => entry.id === "localizations");
+  assert.equal(locCheck.passed, false);
+  assert.match(locCheck.detail, /non-empty string/);
+});
+
+// ---------------------------------------------------------------------------
 // lifecycle: completed is NOT archived
 // ---------------------------------------------------------------------------
 
