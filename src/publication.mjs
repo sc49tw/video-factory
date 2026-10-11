@@ -1259,6 +1259,45 @@ export function validatePublicationMetadata(metadata, options = {}) {
     add("series", "series", typeof metadata.series === "string" && metadata.series.trim().length > 0, String(metadata.series));
   }
 
+  if (metadata.localizations !== undefined) {
+    const locChecks = [];
+    const loc = metadata.localizations;
+    if (loc === null || typeof loc !== "object" || Array.isArray(loc)) {
+      locChecks.push("localizations must be an object");
+    } else {
+      const localeKeys = Object.keys(loc);
+      if (localeKeys.length === 0) {
+        locChecks.push("localizations must not be empty");
+      } else {
+        for (const locale of localeKeys) {
+          // Validate locale key format: two-letter language + hyphen + two-letter region (e.g., zh-TW)
+          if (!/^[a-z]{2}-[A-Z]{2}$/.test(locale)) {
+            locChecks.push(`invalid locale key "${locale}" (expected format like "zh-TW")`);
+          }
+          const value = loc[locale];
+          if (value === null || typeof value !== "object" || Array.isArray(value)) {
+            locChecks.push(`localizations["${locale}"] must be an object`);
+          } else {
+            if (value.title === undefined) {
+              locChecks.push(`localizations["${locale}"].title is required`);
+            } else if (typeof value.title !== "string" || value.title.trim().length === 0) {
+              locChecks.push(`localizations["${locale}"].title must be a non-empty string`);
+            }
+            if (Object.keys(value).some((k) => k !== "title")) {
+              locChecks.push(`localizations["${locale}"] only supports "title" field`);
+            }
+          }
+        }
+      }
+    }
+    add(
+      "localizations",
+      "localizations (optional, locale -> {title})",
+      locChecks.length === 0,
+      locChecks.length > 0 ? locChecks.join("; ") : Object.keys(loc).join(", "),
+    );
+  }
+
   const failed = checks.filter((entry) => !entry.passed);
   return {
     passed: failed.length === 0,

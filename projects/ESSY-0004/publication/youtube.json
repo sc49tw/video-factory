@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "youtube",
+  "episode": "ESSY-0004",
+  "channel": "A Second Look at Life",
+  "series": "A SECOND LOOK AT LIFE",
+  "title": "Who Am I Beyond My Roles?",
+  "localizations": {
+    "zh-TW": {
+      "title": "當沒有人再需要我，我是誰？"
+    }
+  },
+  "description": "We spend decades building identities — parent, professional, partner, caregiver. But what happens when those roles begin to fall away? Children leave home. Careers end. Parents pass on. The question shifts from \"What do I do?\" to \"Who am I when no one needs me to be someone?\" This essay explores the quiet territory beyond our roles, where identity isn't given by what we provide to others, but discovered in what remains when the expectations stop.",
+  "thumbnail": "thumbnail.png",
+  "tags": [
+    "identity",
+    "roles",
+    "midlife",
+    "purpose",
+    "self-discovery",
+    "A Second Look at Life"
+  ],
+  "language": "en",
+  "visibility": "private"
+}
