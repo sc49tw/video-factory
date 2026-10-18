@@ -36,7 +36,8 @@ import {
 import {buildAssForceStyle, assForceStyle} from "./subtitle-config.mjs";
 import {renderOpeningReview} from './render-opening-review.mjs';
 import {assertMasterDraftFresh} from "../src/master-draft-freshness.mjs";
-import {buildBilingualSrt} from "./_build-bilingual-subtitles.mjs";
+import {buildBilingualSrt, isBilingualEpisode, resolveEpisodeSubtitleConfig} from "./_build-bilingual-subtitles.mjs";
+import {requiresEssyReleaseEvidence} from "../src/essy-release.mjs";
 
 const OUT_W = 960;
 const OUT_H = 540;
@@ -223,7 +224,8 @@ async function readEndingSpec(root, episode) {
   } catch {
     // No frozen final-assembly decisions yet — canonical defaults apply.
   }
-  return {...resolveEndingCardSpec({finalAssembly}), source: finalAssembly ? "final-assembly.json" : "canonical default"};
+  const spec = resolveEndingCardSpec({finalAssembly});
+  return {...spec, endCard: finalAssembly?.endCard, music: finalAssembly?.music, source: finalAssembly ? "final-assembly.json" : "canonical default"};
 }
 
 async function probeDurationSec(filePath) {
@@ -253,6 +255,7 @@ const main = async () => {
 let pkg = null;
   try { pkg = JSON.parse(await readFile(path.join(root, 'projects', '_drafts', episode, 'production-package.json'), 'utf8')); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
+  if (requiresEssyReleaseEvidence(episode) && !pkg?.openingIdentity) throw new Error('Opening identity is required for a new ESSY review.');
 
   // ---- Dependency freshness: prove the master draft still reflects the
   // approved asset map / assembly timeline / shot sources before burning onto
@@ -262,7 +265,7 @@ let pkg = null;
   const masterDraft = await resolveFreshMasterDraft({root, outputRoot, episode});
 
   if (pkg?.openingIdentity) {
-    await renderOpeningReview({root, episode, identity:pkg.openingIdentity,
+    await renderOpeningReview({root, episode, identity:pkg.openingIdentity, title:pkg.title,
       input:masterDraft, output:await nextOutputPath(outputRoot,episode),
       fontPath:await stageFont(path.join(root,'projects',episode,'temp')), ending:await readEndingSpec(root,episode), run});
     return;
@@ -270,14 +273,14 @@ let pkg = null;
 
   // ---- Build one episode-wide, globally valid SRT (validated, QA report) ----
   const {resolveSubtitleConfig} = await import("./subtitle-config.mjs");
-  const subtitleConfig = resolveSubtitleConfig(episode === "ESSY-0005" ? {MIN_GENERATED_DURATION_MS: 450} : {});
+  const subtitleConfig = resolveSubtitleConfig(resolveEpisodeSubtitleConfig(episode));
   const {cues: allCues, srtPath, qaPath, report} = await buildSubtitleTimeline({root, episode, config: subtitleConfig});
 
   // ---- ESSY-0005 bilingual subtitle burn-in ----
   // GENERATED from the authoritative English SRT and gated for completeness; a
   // missing/placeholder translation aborts before ffmpeg instead of burning.
   let finalSrtPath = srtPath;
-  if (episode === "ESSY-0005") {
+  if (isBilingualEpisode(episode)) {
     subtitleConfig.STYLE.FONT_SIZE = BILINGUAL_STYLE.FONT_SIZE;
     subtitleConfig.STYLE.MARGIN_V = BILINGUAL_STYLE.MARGIN_V;
     subtitleConfig.MAX_CHARS = BILINGUAL_STYLE.MAX_CHARS;

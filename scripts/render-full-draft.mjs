@@ -76,6 +76,7 @@ export async function renderFullDraft({root, episode, log = console.log}) {
   await mkdir(outputRoot, {recursive: true});
 
   const timeline = JSON.parse(await readFile(timelinePath, "utf8"));
+  const manifest = JSON.parse(await readFile(path.join(projectRoot, "manifest.json"), "utf8"));
   const blocks = timeline.blocks ?? [];
   if (!blocks.length) {
     throw new Error(`No narration blocks found in assembly timeline.`);
@@ -137,7 +138,8 @@ for (const block of blocks) {
       throw new Error(`Block ${sentenceId} has no positive duration.`);
     }
     const shots = block.shots ?? [];
-    const audioPath = path.join(projectRoot, "audio", `${sentenceId}.mp3`);
+    const audio = manifest.audio?.find((entry) => entry.id === sentenceId);
+    const audioPath = audio?.path ? path.resolve(factoryRoot, audio.path) : path.join(projectRoot, "audio", `${sentenceId}.mp3`);
     const audioProbe = await probeDuration(audioPath);
     if (audioProbe > blockDurationSec + 0.05) {
       throw new Error(
@@ -164,10 +166,10 @@ for (const block of blocks) {
       if (!(renderDurationSec > 0)) {
         throw new Error(`Shot ${slotId} has no positive render duration.`);
       }
-      const sourcePath = shot.sourcePath;
-      if (!sourcePath.startsWith("D:") && !sourcePath.startsWith("C:")) {
-        throw new Error(`Non-local source path for ${slotId}: ${sourcePath}`);
+      if (!shot.sourcePath || /^[a-z][a-z\d+.-]*:\/\//i.test(shot.sourcePath)) {
+        throw new Error(`Non-local source path for ${slotId}: ${shot.sourcePath}`);
       }
+      const sourcePath = path.resolve(factoryRoot, shot.sourcePath);
       // Approved in-point inside the licensed take (0 unless the approved map
       // names a later cut). The renderer seeks here — never loops, never extends.
       const inPointSec = shot.mediaType === "video" ? Number(shot.inPointSec ?? 0) : 0;

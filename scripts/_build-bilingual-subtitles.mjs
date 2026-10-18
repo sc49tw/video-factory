@@ -54,7 +54,8 @@ const BILINGUAL_CONFIG_OVERRIDES = Object.freeze({MIN_GENERATED_DURATION_MS: 450
 
 /** True when the episode's approved burn-in is bilingual (EN + zh-TW). */
 export function isBilingualEpisode(episode) {
-  return BILINGUAL_EPISODES.has(episode);
+  const number = /^ESSY-(\d+)$/.exec(episode)?.[1];
+  return BILINGUAL_EPISODES.has(episode) || (number != null && Number(number) >= 6);
 }
 
 /**
@@ -62,7 +63,7 @@ export function isBilingualEpisode(episode) {
  * Monolingual episodes get `{}` (the shared defaults, no override).
  */
 export function resolveEpisodeSubtitleConfig(episode) {
-  return isBilingualEpisode(episode) ? {...BILINGUAL_CONFIG_OVERRIDES} : {};
+  return BILINGUAL_EPISODES.has(episode) ? {...BILINGUAL_CONFIG_OVERRIDES} : {};
 }
 
 /**

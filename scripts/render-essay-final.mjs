@@ -26,6 +26,11 @@
 // Usage: node scripts/render-essay-final.mjs <EPISODE> [--label v1] [--only=...] [--mix-only]
 import {writeFileSync} from "node:fs";
 import {copyFile, mkdir, readFile, rename, rm, writeFile} from "node:fs/promises";
+import {constants as fsConstants} from "node:fs";
+import {assertNewFinalVersion, digestFile, requiresEssyReleaseEvidence} from "../src/essy-release.mjs";
+import {verifyEssyOpeningGrammar} from "../src/essy-opening-grammar.mjs";
+import {renderOpeningVisualHold} from "./essay-opening-visual.mjs";
+import {readDraftState} from "../src/draft-workflow.mjs";
 import {spawn} from "node:child_process";
 import path from "node:path";
 import process from "node:process";
@@ -56,10 +61,13 @@ import {
 
 const factoryRoot = process.cwd();
 const episode = process.argv[2] ?? "ESSY-0001";
+const labelIndex = process.argv.indexOf("--label");
+const label = labelIndex !== -1 ? process.argv[labelIndex + 1] : "v1";
+const versionPaths = await assertNewFinalVersion(factoryRoot, episode, label);
 
 const projectRoot = path.join(factoryRoot, "projects", episode);
 const outputRoot = path.join(factoryRoot, "output", episode);
-const tempRoot = path.join(projectRoot, "temp", "final-assembly");
+const tempRoot = versionPaths.work;
 const shotRoot = path.join(tempRoot, "shots");
 const subtitleRoot = path.join(tempRoot, "subtitles");
 
@@ -103,6 +111,7 @@ let narrationSuppressWindows = [];
 // Shared opening-identity insertion delivery (approved v13 semantics).
 // Null for legacy episodes without openingIdentity (0001/0002/0003 behavior).
 let openingDelivery = null;
+let openingGrammar = null;
 
 function log(message) {
   const line = `[FINAL-ASM] ${message}`;
@@ -124,6 +133,12 @@ try {
 }
 
 async function main() {
+  if (requiresEssyReleaseEvidence(episode)) {
+    const state = await readDraftState(factoryRoot, episode);
+    if (state?.approvals?.package?.approved !== true || state?.approvals?.qa?.approved !== true) {
+      throw new Error("Final assembly requires approved PACKAGE and review QA.");
+    }
+  }
   if (IDENTITY.ignoredEndCardOverride) {
     log(
       `IDENTITY: ignoring non-canonical endCard.text "${IDENTITY.ignoredEndCardOverride}" — ` +
@@ -144,8 +159,14 @@ async function main() {
     path.join(factoryRoot, "projects", "_drafts", episode, "production-package.json"),
   ).catch(() => null);
   const coldOpen = productionPackage?.packaging?.coldOpenExperiment;
-  openingDelivery = productionPackage?.openingIdentity
-    ? buildOpeningDeliveryPlan({identity: productionPackage.openingIdentity, timeline})
+  let openingIdentity = productionPackage?.openingIdentity;
+  if (requiresEssyReleaseEvidence(episode)) {
+    openingGrammar = await verifyEssyOpeningGrammar({root:factoryRoot, episode, identity:openingIdentity, timeline, title:IDENTITY.episodeTitle});
+    openingIdentity = openingGrammar.identity;
+    log(`OPENING grammar timing: ${JSON.stringify(openingGrammar.timing)}`);
+  }
+  openingDelivery = openingIdentity
+    ? buildOpeningDeliveryPlan({identity: openingIdentity, timeline, verifiedPlan: openingGrammar?.plan})
     : null;
   if (openingDelivery) {
     log(`OPENING insertion: hook complete at ${openingDelivery.startSec.toFixed(3)}s ` +
@@ -267,12 +288,14 @@ async function main() {
   // burned with — the final master must never silently fall back to the
   // English-only legacy drawtext styling.
   let burnSrtPath = srtPath;
+  let bilingualQaPath = null;
   // `burnCues` are the cues actually burned, carrying the bilingual text. For a
   // monolingual episode they are the English cues unchanged.
   let burnCues = allCues;
   if (isBilingualEpisode(episode)) {
     const bilingual = await buildBilingualSrt({root: factoryRoot, episode, englishSrtPath: srtPath});
     burnSrtPath = bilingual.srtPath;
+    bilingualQaPath = bilingual.qaPath;
     if (bilingual.cues.length !== allCues.length) {
       throw new Error(
         `Bilingual cue count ${bilingual.cues.length} != English cue count ${allCues.length}.`,
@@ -331,6 +354,7 @@ async function main() {
         const isHook = shot.slotId === openingDelivery.hookSlotId;
         return {
           ...shot,
+          openingFreeze: isHook && openingDelivery.plan.intraBlock ? {atSec:openingDelivery.startSec - shot.absoluteStartSec, durationSec:openingDelivery.durationSec} : null,
           renderDurationSec: playbackDurationSec,
           trailingHoldSec,
           deliveryStartSec: (shot.absoluteStartSec ?? 0) + (isHook ? 0 : shift),
@@ -513,13 +537,9 @@ async function main() {
 
   // Output label: "--label v2" renders ESSY-0001-final-v2.mp4 (default v1,
   // preserving the original approved v1 output untouched).
-  const labelIndex = process.argv.indexOf("--label");
-  const label = labelIndex !== -1 && process.argv[labelIndex + 1]
-    ? process.argv[labelIndex + 1]
-    : "v1";
 
   // ---- F: final mix — narration master + Dreamland at -9 dB (mix-time) ----
-  const finalOutput = path.join(outputRoot, `${episode}-final-${label}.mp4`);
+  const finalOutput = versionPaths.output;
   const temporaryOutput = path.join(outputRoot, `.${episode}-final-${label}.tmp.mp4`);
   const musicGain = Math.pow(10, (DECISIONS.music.gainDb ?? -9) / 20).toFixed(6);
   // The pre-roll occupies the head of the delivered program: both the approved
@@ -550,20 +570,32 @@ async function main() {
     "-movflags", "+faststart",
     temporaryOutput,
   ]);
-  await rm(finalOutput, {force: true});
-  await rename(temporaryOutput, finalOutput);
+  await copyFile(temporaryOutput, finalOutput, fsConstants.COPYFILE_EXCL);
+  await rm(temporaryOutput);
 
   // ---- Technical QA ----
   const probe = await probeMedia(finalOutput);
   if (!probe.hasVideo || !probe.hasAudio) {
     throw new Error("Output validation failed: video or audio stream is missing.");
   }
+  if (!Number.isFinite(probe.durationSec) || Math.abs(probe.durationSec - musicTotal) > CLIP_TOLERANCE_SEC) {
+    throw new Error("Output validation failed: final duration does not match the assembled program.");
+  }
   const levels = await audioLevels(finalOutput);
   log(`QA duration=${probe.durationSec?.toFixed(3)}s ${probe.videoCodec}/${probe.audioCodec}`);
   log(`QA mean_volume=${levels.mean} max_volume=${levels.max} (peak used for clipping check)`);
-  await writeFile(
-    path.join(tempRoot, "final-assembly-qa.json"),
-    `${JSON.stringify({
+  const evidence = {};
+  if (bilingualQaPath) {
+    const sources = {english:srtPath, bilingual:burnSrtPath,
+      translation:path.join(projectRoot,"subtitles","zh-TW.json"), bilingualQa:bilingualQaPath};
+    for (const [name, from] of Object.entries(sources)) {
+      const target = path.join(tempRoot, `evidence-${name}${path.extname(from)}`);
+      await copyFile(from, target);
+      evidence[name] = {path:path.relative(factoryRoot,target).replaceAll("\\", "/"), sha256:await digestFile(target)};
+    }
+    evidence.master = {path:path.relative(factoryRoot,finalOutput).replaceAll("\\", "/"), sha256:await digestFile(finalOutput)};
+  }
+  const finalQa = {
       episode,
       output: path.relative(factoryRoot, finalOutput).replaceAll("\\", "/"),
       durationSec: probe.durationSec,
@@ -603,9 +635,11 @@ async function main() {
       durationAddedSec: DECISIONS.endingHoldSec,
       shots: timeline.shots.length,
       narrationBlocks: manifest.audio?.length ?? 18,
-    }, null, 2)}\n`,
-    "utf8",
-  );
+      evidence,
+      openingGrammar:openingGrammar ? {passed:true, timing:openingGrammar.timing, cards:openingGrammar.plan.cards} : null,
+    };
+  await writeFile(path.join(tempRoot, "final-assembly-qa.json"), `${JSON.stringify(finalQa,null,2)}\n`, "utf8");
+  await writeFile(path.join(projectRoot,"temp","final-assembly","final-assembly-qa.json"), `${JSON.stringify(finalQa,null,2)}\n`, "utf8");
   console.log(`Render succeeded: ${path.relative(factoryRoot, finalOutput)}`);
 
   // ---- Workflow sync ----
@@ -669,6 +703,14 @@ async function renderVideoShot({shot, shotCues, clipPath, playbackDurationSec, t
   const playbackSec = playbackDurationSec ?? shot.renderDurationSec;
   const holdSec = trailingHoldSec ?? shot.trailingHoldSec ?? 0;
   const inPointSec = Number(shot.inPointSec ?? 0);
+  let inputSource=shot.sourcePath;
+  let sourceInPoint=inPointSec;
+  if (shot.openingFreeze) {
+    inputSource=await renderOpeningVisualHold({run,source:shot.sourcePath,inPointSec,cutSec:shot.openingFreeze.atSec,
+      sourceDurationSec:playbackSec-shot.openingFreeze.durationSec,holdSec:shot.openingFreeze.durationSec,
+      width:WIDTH,height:HEIGHT,fps:FPS,work:tempRoot,output:path.join(tempRoot,'opening-held-source.mp4')});
+    sourceInPoint=0;
+  }
   const subtitleFilter = await buildFinalSubtitleFilter({shot, cueList: shotCues});
   const filters = [
     `scale=${WIDTH}:${HEIGHT}:force_original_aspect_ratio=increase:flags=lanczos`,
@@ -688,10 +730,10 @@ await run("ffmpeg", [
     // plays 0s while N004-S2 plays 18s of the same pexels file. Omitting it
     // replays every such slot from 0s, silently turning approved distinct
     // footage into a visible repetition.
-    ...(inPointSec > 0 ? ["-ss", inPointSec.toFixed(6)] : []),
+    ...(sourceInPoint > 0 ? ["-ss", sourceInPoint.toFixed(6)] : []),
     // Apply `-t` as an INPUT limit. An output-side limit would cut the
     // following tpad-generated hold from the encoded shot.
-    "-t", playbackSec.toFixed(6), "-i", shot.sourcePath,
+    "-t", playbackSec.toFixed(6), "-i", inputSource,
     "-vf", filters,
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-an",
     clipPath,
@@ -916,7 +958,7 @@ function fontPath() {
   // Relative (colon-free) per-episode staged path: ffmpeg 8 filtergraph
   // parsing rejects the "C\\:/..." drive-letter escaping, so the font is
   // staged locally per episode (from the shared Windows system font).
-  return `projects/${episode}/temp/final-assembly/fonts/arial.ttf`;
+  return relativeFactoryPath(path.join(tempRoot, "fonts", "arial.ttf"));
 }
 
 function relativeFactoryPath(value) {

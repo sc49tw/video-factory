@@ -48,6 +48,7 @@ async function probeDuration(filePath) {
 }
 
 const timeline = JSON.parse(await readFile(path.join(projectRoot, "assembly-timeline.json"), "utf8"));
+const manifest = JSON.parse(await readFile(path.join(projectRoot, "manifest.json"), "utf8"));
 const blocks = timeline.blocks ?? [];
 if (!blocks.length) throw new Error("assembly-timeline.json has no blocks.");
 await mkdir(path.join(tempRoot, "narration-master"), {recursive: true});
@@ -55,7 +56,8 @@ await mkdir(path.join(tempRoot, "narration-master"), {recursive: true});
 const segmentFiles = [];
 for (const block of blocks) {
   const sentenceId = block.sentenceId;
-  const audioPath = path.join(projectRoot, "audio", `${sentenceId}.mp3`);
+  const declared = manifest.audio?.find((item) => item.id === sentenceId)?.path;
+  const audioPath = declared ? path.resolve(factoryRoot, declared) : path.join(projectRoot, "audio", `${sentenceId}.mp3`);
   const audioDuration = await probeDuration(audioPath);
   const windowSec = block.endSec - block.startSec;
   if (audioDuration > windowSec + FPS_TOLERANCE_SEC) {

@@ -8,6 +8,8 @@ import path from 'node:path';
 import {buildOpeningDeliveryPlan} from './essay-opening-delivery.mjs';
 import * as identity from './essay-identity-config.mjs';
 import {buildAssForceStyle} from './subtitle-config.mjs';
+import {requiresEssyReleaseEvidence} from '../src/essy-release.mjs';
+import {verifyEssyOpeningGrammar} from '../src/essy-opening-grammar.mjs';
 
 const episode = process.argv[2];
 const target = process.argv[3] ?? 'review';
@@ -19,11 +21,15 @@ const timeline = await json(`projects/${episode}/assembly-timeline.json`);
 const required = ['buildColdOpenTitleCardFilter','buildEndingCardFilter','buildPreRollClipArgs','preRollOffsetSec','resolveEpisodePreRollTitleCard'];
 for (const name of required) if (typeof identity[name] !== 'function') throw new Error(`Missing renderer export: ${name}`);
 if (!buildAssForceStyle()) throw new Error('Missing shared subtitle style');
-const opening = buildOpeningDeliveryPlan({identity: pkg.openingIdentity, timeline});
+const verified = requiresEssyReleaseEvidence(episode)
+  ? await verifyEssyOpeningGrammar({root,episode,identity:pkg.openingIdentity,timeline,title:pkg.title})
+  : null;
+const opening = buildOpeningDeliveryPlan({identity: verified?.identity ?? pkg.openingIdentity, timeline, verifiedPlan:verified?.plan});
+const manifest = await json(`projects/${episode}/manifest.json`);
 for (const block of timeline.blocks) {
-  for (const file of [`audio/${block.sentenceId}.mp3`,`temp/${block.sentenceId}.vtt`,`temp/${block.sentenceId}.words.json`]) {
-    await access(path.join(root,'projects',episode,file));
-  }
+  const audio = manifest.audio?.find(a=>a.id===block.sentenceId);
+  await access(audio?.path ? path.resolve(root,audio.path) : path.join(root,'projects',episode,'audio',`${block.sentenceId}.mp3`));
+  for (const file of [`temp/${block.sentenceId}.vtt`,`temp/${block.sentenceId}.words.json`]) await access(path.join(root,'projects',episode,file));
 }
 for (const shot of timeline.shots) await access(path.resolve(root,shot.sourcePath));
 // The insertion is INSERTION-ONLY: an openingIdentity episode must not also
@@ -34,11 +40,11 @@ if (opening && preRoll) throw new Error('Conflicting opening mechanisms: opening
 if (opening) {
   const hook = timeline.shots.find(s => s.slotId === opening.hookSlotId);
   const override = opening.deliveryShotOverrides.get(opening.hookSlotId);
-  if (!hook || !override || override.mode !== 'extend-source-tail') throw new Error('Opening insertion has no hook source tail');
-  if (override.playbackDurationSec + override.trailingHoldSec > hook.sourceDurationSec + 0.001) {
+  if (!hook || !override || !['extend-source-tail','hold-at-boundary'].includes(override.mode)) throw new Error('Opening insertion has no valid visual source');
+  if (override.mode === 'extend-source-tail' && override.playbackDurationSec + override.trailingHoldSec > hook.sourceDurationSec + 0.001) {
     throw new Error(`Opening insertion exceeds approved source tail for ${opening.hookSlotId}`);
   }
-  if (Math.abs(opening.startSec - timeline.blocks[0].endSec) > 0.001) throw new Error('Opening insertion must follow the complete hook');
+  if (!opening.plan.intraBlock && Math.abs(opening.startSec - timeline.blocks[0].endSec) > 0.001) throw new Error('Opening insertion must follow the complete hook');
 }
 // FINAL additionally needs the episode's frozen final-assembly decisions and
 // the pre-built media those decisions reference (not created by this check).
@@ -64,7 +70,7 @@ console.log(JSON.stringify({episode,target,passed:finalInputs.length === 0,
   blocks:timeline.blocks.length,shots:timeline.shots.length,
   opening:opening ? {
     startSec:opening.startSec,durationSec:opening.durationSec,bodyOffsetSec:opening.bodyOffsetSec,
-    hookSlotId:opening.hookSlotId,continuingFootage:true,preRoll:'none',
+    hookSlotId:opening.hookSlotId,visualMode:opening.deliveryShotOverrides.get(opening.hookSlotId).mode,preRoll:'none',
     cards:opening.cards.map(c => ({kind:c.kind,text:c.text,startSec:c.startSec,endSec:c.endSec})),
     narrationSilenceWindow:opening.narrationSilenceWindow,
   } : 'legacy (no openingIdentity insertion)',
