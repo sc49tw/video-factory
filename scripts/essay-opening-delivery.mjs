@@ -51,14 +51,14 @@ export function deliveryEventWindow({startSec, endSec}, opening) {
  * `plan` is the exact shared planOpeningInsertion result; this only derives
  * the per-shot render changes + narration silence window + subtitle insertion.
  */
-export function buildOpeningDeliveryPlan({identity, timeline}) {
-  const plan = planOpeningInsertion(identity, timeline);
+export function buildOpeningDeliveryPlan({identity, timeline, verifiedPlan = null}) {
+  const plan = verifiedPlan ?? planOpeningInsertion(identity, timeline);
   if (!plan) return null;
   const offset = openingBodyOffsetSec(plan);
   const hookShot = plan.shot;
   const playbackSec = Number(hookShot.renderDurationSec) + offset;
   const holdSec = Number(hookShot.trailingHoldSec ?? 0);
-  if (!(playbackSec + holdSec <= Number(hookShot.sourceDurationSec) + 0.001)) {
+  if (!plan.intraBlock && !(playbackSec + holdSec <= Number(hookShot.sourceDurationSec) + 0.001)) {
     throw new Error(
       `Opening delivery exceeds approved source tail for ${hookShot.slotId}: ` +
       `need ${(playbackSec + holdSec).toFixed(3)}s, have ${Number(hookShot.sourceDurationSec).toFixed(3)}s.`,
@@ -70,7 +70,7 @@ export function buildOpeningDeliveryPlan({identity, timeline}) {
   // every later shot keeps its approved playback+hold and shifts by offset.
   // Review 540p and 1080p final both follow this same composition.
   deliveryShotOverrides.set(hookShot.slotId, {
-    mode: 'extend-source-tail',
+    mode: plan.intraBlock ? 'hold-at-boundary' : 'extend-source-tail',
     playbackDurationSec: playbackSec,
     trailingHoldSec: holdSec,
     sourceOffsetSec: 0,
@@ -95,7 +95,7 @@ export function buildOpeningDeliveryPlan({identity, timeline}) {
     hookSlotId: hookShot.slotId,
     // Identity window itself carries no spoken narration.
     narrationSilenceWindow: {startSec: plan.startSec, endSec: plan.startSec + plan.durationSec},
-    subtitleInsertion: {startSec: plan.startSec, durationSec: plan.durationSec},
+    subtitleInsertion: {startSec: plan.startSec, durationSec: plan.durationSec, ...(plan.intraBlock ? {intraBlock:true, questionCount:plan.questionCount} : {})},
   };
 }
 

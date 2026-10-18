@@ -63,9 +63,12 @@ export function normalizeOpeningIdentity(value) {
   return {
     seriesTitle: String(value.seriesTitle ?? "").trim(),
     episodeTitle: String(value.episodeTitle ?? "").trim(),
+    ...(value.openingPlan ? {openingPlan: value.openingPlan} : {}),
     timing: {
       startSec: Number(value.timing?.startSec ?? 0),
       durationSec: Number(value.timing?.durationSec ?? 4),
+      ...(value.timing?.pauseBeforeIdentitySec != null ? {pauseBeforeIdentitySec: Number(value.timing.pauseBeforeIdentitySec)} : {}),
+      ...(value.timing?.pauseAfterIdentitySec != null ? {pauseAfterIdentitySec: Number(value.timing.pauseAfterIdentitySec)} : {}),
     },
     presentation: value.presentation ?? {mode: "sequential", seriesTitleFirst: true},
     narrationSuppression: value.narrationSuppression ?? {enabled: true},

@@ -178,3 +178,20 @@ BOTH renderers MUST consume the same openingIdentity semantics:
 - ESSY-0003: coldOpenExperiment. Backward compatible; not migrated.
 - ESSY-0004+: openingIdentity is the preferred canonical path.
 
+
+---
+
+## ESSY Opening Questions
+
+- Three consecutive reflective questions are the default, not a fixed count.
+- Follow the episode's approved Opening Plan for question count and order.
+- Each question advances the inquiry.
+- Q1 to Q2 pause target: 0.6-0.9s.
+- Q2 to Q3 pause target: 0.8-1.2s.
+- Final question to identity contemplative pause target: 2.0s.
+- Identity presentation follows the episode's approved plan.
+- Identity to main narration pause target: 1.0s.
+- Avoid black screens and distracting transitions.
+- Keep ambient audio/music continuous where appropriate.
+- Timing values are editorial defaults, not mandatory fixed constants.
+- Episode-specific deviations are permitted.
