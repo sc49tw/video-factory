@@ -30,6 +30,13 @@ const APPROVAL_FOR_STAGE = Object.freeze({
   PACKAGE: "package",
 });
 
+// Word-timing artifact sources accepted by PREPARE completion.
+// "edge-tts-word-boundary": legacy Edge Read Aloud provider.
+// "azure-speech-word-boundary": Azure AI Speech provider (preferred).
+export const ESSY_WORD_BOUNDARY_TIMING_SOURCES = Object.freeze(
+  new Set(["edge-tts-word-boundary", "azure-speech-word-boundary"]),
+);
+
 const NEXT_STAGE = Object.freeze({
   REQUEST: "CONCEPT",
   CONCEPT: "ENGLISH",
@@ -543,8 +550,11 @@ export async function assertEssyPrepareTiming(factoryRoot, state) {
 
 function assertEssyWordsArtifact(words, entry) {
   const id = entry.id;
-  if (words?.timingSource !== "edge-tts-word-boundary") {
-    throw new Error(`Cannot complete PREPARE: temp/${id}.words.json is not edge-tts-word-boundary timing.`);
+  if (!ESSY_WORD_BOUNDARY_TIMING_SOURCES.has(words?.timingSource)) {
+    throw new Error(
+      `Cannot complete PREPARE: temp/${id}.words.json is not word-boundary timing ` +
+        `(expected one of: ${[...ESSY_WORD_BOUNDARY_TIMING_SOURCES].join(", ")}).`,
+    );
   }
   const cache = words.cacheIdentity;
   if (cache?.textSha256 !== entry.textSha256) {

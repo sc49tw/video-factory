@@ -19,7 +19,7 @@
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "provider": {"enum": ["edge"]},
+        "provider": {"enum": ["edge", "azure"]},
         "voice": {"type": "string"},
         "rate": {"type": "string"},
         "pitch": {"type": "string"},

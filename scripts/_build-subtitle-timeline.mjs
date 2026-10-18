@@ -23,6 +23,7 @@
 // All limits/thresholds come from scripts/subtitle-config.mjs.
 import {mkdir, readFile, writeFile} from "node:fs/promises";
 import path from "node:path";
+import {createHash} from "node:crypto";
 import {resolveSubtitleConfig} from "./subtitle-config.mjs";
 
 const GUARD_GAP_SEC = 0.001;
@@ -197,16 +198,35 @@ export function segmentParentText(text, durationSec = null, config = DEFAULT_CON
 
 // ---- Word-timing artifact (authoritative fine-grained subtitle timing) ----
 //
-// Per-block artifacts (`temp/<sentenceId>.words.json`) carry edge-tts
-// WordBoundary offsets captured at TTS generation time. Semantic segmentation
-// still decides WHAT text is shown together; word timing decides WHEN that
-// text is spoken. Character-proportional interpolation is a legacy fallback
-// only and is always explicitly identified via timingSource.
+// Per-block artifacts (`temp/<sentenceId>.words.json`) carry word-boundary
+// offsets captured at TTS generation time (Azure AI Speech or the legacy
+// Edge Read Aloud provider). Semantic segmentation still decides WHAT text
+// is shown together; word timing decides WHEN that text is spoken.
+// Character-proportional interpolation is a legacy fallback only and is
+// always explicitly identified via timingSource.
 //
 // timingSource values per cue:
-//   "edge-word-boundary" — cue times derived from word-timing artifact
-//   "legacy-vtt"         — untouched single VTT cue, no word timing available
-//   "char-estimate"      — generated children timed by char-share (legacy)
+//   "azure-word-boundary" — cue times derived from Azure Speech word timing
+//   "edge-word-boundary"  — cue times derived from edge-tts word timing
+//   "legacy-vtt"          — untouched single VTT cue, no word timing available
+//   "char-estimate"       — generated children timed by char-share (legacy)
+
+// Word-timing artifact sources consumed by buildSubtitleTimeline.
+const WORD_TIMING_ARTIFACT_SOURCES = new Set([
+  "edge-tts-word-boundary",
+  "azure-speech-word-boundary",
+]);
+
+// Cue-level labels derived from the artifact's timingSource.
+const WORD_BOUNDARY_CUE_LABELS = new Set([
+  "edge-word-boundary",
+  "azure-word-boundary",
+]);
+
+const artifactCueLabel = (timingSource) =>
+  timingSource === "azure-speech-word-boundary"
+    ? "azure-word-boundary"
+    : "edge-word-boundary";
 
 const normalizeToken = (t) => String(t).toLowerCase().replace(/[^a-z0-9']/g, "");
 
@@ -253,7 +273,7 @@ function maxInternalWordGapSec(words, firstIndex, lastIndex) {
 // display times apply only the configured lead/linger presentation policy.
 // Without an artifact, legacy char-share interpolation is used and the cue is
 // explicitly marked timingSource "char-estimate".
-export function expandCue(cue, config = DEFAULT_CONFIG, words = null, offsetSec = 0) {
+export function expandCue(cue, config = DEFAULT_CONFIG, words = null, offsetSec = 0, timingLabel = "edge-word-boundary") {
   const parts = segmentParentText(cue.text, cue.endSec - cue.startSec, config);
   if (parts.length <= 1 && !words) {
     return [{startSec: cue.startSec, endSec: cue.endSec, text: cue.text, generated: false, timingSource: "legacy-vtt"}];
@@ -285,7 +305,7 @@ export function expandCue(cue, config = DEFAULT_CONFIG, words = null, offsetSec 
         const speechStart = m.speechStartSec + offsetSec;
         const speechEnd = m.speechEndSec + offsetSec;
         return finish(text, Math.max(0, speechStart - leadSec), speechEnd + lingerSec, {
-          timingSource: "edge-word-boundary",
+          timingSource: timingLabel,
           speechStartSec: speechStart,
           speechEndSec: speechEnd,
           wordStartIndex: m.firstIndex,
@@ -307,6 +327,44 @@ export function expandCue(cue, config = DEFAULT_CONFIG, words = null, offsetSec 
       timingSource: parts.length > 1 ? "char-estimate" : "legacy-vtt",
     }));
     cursor += span;
+  }
+  return out;
+}
+
+// A one-word answer to a question, followed by a substantial spoken pause, is
+// a meaningful standalone sentence, not a generated orphan. Keep it separate
+// when the following fragment can be joined to the next cue without exceeding
+// the existing line limits. Every boundary remains anchored to spoken words.
+export function separatePausedShortSentences(children, words, offsetSec, config = DEFAULT_CONFIG) {
+  if (!words?.length) return children;
+  const out = [];
+  for (let i = 0; i < children.length; i += 1) {
+    const cue = children[i];
+    const next = children[i + 1];
+    const previous = children[i - 1];
+    const match = /^(\S+[.!?])\s+(.+)$/.exec(cue.text);
+    if (!match || !next || !previous || !/\?$/.test(previous.text) || !WORD_BOUNDARY_CUE_LABELS.has(cue.timingSource) || cue.timingSource !== next.timingSource) {
+      out.push(cue);
+      continue;
+    }
+    const first = mapCueTextToWords(match[1], words, cue.wordStartIndex);
+    const rest = first && mapCueTextToWords(match[2], words, first.cursor);
+    const combined = `${match[2]} ${next.text}`;
+    const lines = wrapText(combined, config.MAX_CHARS);
+    if (!first || !rest || first.firstIndex !== cue.wordStartIndex || rest.lastIndex !== cue.wordEndIndex ||
+        rest.speechStartSec - first.speechEndSec < 1 || lines.length > config.MAX_LINES ||
+        lines.some(line => line.length > config.MAX_CHARS)) {
+      out.push(cue);
+      continue;
+    }
+    const firstEnd = first.speechEndSec + offsetSec;
+    const restStart = rest.speechStartSec + offsetSec;
+    out.push({...cue, text: match[1], generated: false, endSec: firstEnd,
+      speechEndSec: firstEnd, wordEndIndex: first.lastIndex, maxInternalWordGapSec: 0});
+    out.push({...next, text: combined, startSec: restStart, speechStartSec: restStart,
+      wordStartIndex: rest.firstIndex,
+      maxInternalWordGapSec: Number(maxInternalWordGapSec(words, rest.firstIndex, next.wordEndIndex).toFixed(3))});
+    i += 1;
   }
   return out;
 }
@@ -347,7 +405,7 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
   if (insertion && (!(insertion.startSec >= 0) || !(insertion.durationSec > 0) || !Number.isFinite(insertion.startSec + insertion.durationSec))) {
     throw new Error('Invalid narration insertion timing.');
   }
-  if (insertion && timeline.blocks.some(b => b.startSec < insertion.startSec - 0.001 && b.endSec > insertion.startSec + 0.001)) {
+  if (insertion && !insertion.intraBlock && timeline.blocks.some(b => b.startSec < insertion.startSec - 0.001 && b.endSec > insertion.startSec + 0.001)) {
     throw new Error('Identity insertion must fall between complete narration blocks.');
   }
   const blockStart = new Map(timeline.blocks.map((b) => [b.sentenceId,
@@ -360,8 +418,9 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
   // explicit warn/fallback behavior. char-estimate NEVER silently counts as
   // production-grade timing in either mode.
   let manifestWordTimingPolicy = null;
+  let manifest = null;
   try {
-    const manifest = JSON.parse(await readFile(path.join(project, "manifest.json"), "utf8"));
+    manifest = JSON.parse(await readFile(path.join(project, "manifest.json"), "utf8"));
     manifestWordTimingPolicy = manifest?.subtitleTiming?.policy ?? null;
   } catch {
     // No manifest (non-ESSY or stripped project) — fall back to config policy.
@@ -400,38 +459,78 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
     fallbackBlocks: [],
     totalWords: 0,
     matchedWords: 0,
+    textMismatchBlocks: [],
   };
   for (const [sentenceId, offset] of blockStart.entries()) {
     if (titleCardSentenceIds.has(sentenceId)) continue;
     const vttPath = path.join(project, "temp", `${sentenceId}.vtt`);
     const vtt = await readFile(vttPath, "utf8");
     let words = null;
+    let wordTimingLabel = null;
     try {
       const artifact = JSON.parse(await readFile(path.join(project, "temp", `${sentenceId}.words.json`), "utf8"));
-      if (artifact?.timingSource === "edge-tts-word-boundary" && Array.isArray(artifact.words) && artifact.words.length) {
+      if (WORD_TIMING_ARTIFACT_SOURCES.has(artifact?.timingSource) && Array.isArray(artifact.words) && artifact.words.length) {
         if (artifact.cacheIdentity?.matchesManifest === false) {
           throw new Error(`word-timing artifact cache identity mismatch for ${sentenceId}`);
         }
         words = artifact.words;
+        wordTimingLabel = artifactCueLabel(artifact.timingSource);
         timing.blocksWithWordTiming += 1;
         timing.totalWords += words.length;
       }
     } catch (err) {
       if (err.code !== "ENOENT") throw err;
     }
-    for (const cue of parseVtt(vtt)) {
-      const children = expandCue({
-        startSec: cue.startSec + offset,
-        endSec: cue.endSec + offset,
+    const parentCues = parseVtt(vtt);
+    const record = manifest?.audio?.find((entry) => entry.id === sentenceId);
+    if (parentCues.length === 1 && parentCues[0].text === `${sentenceId} ${record?.blockId}`) {
+      const blockId = String(record?.blockId ?? "").toUpperCase();
+      if (!/^N\d{3}$/.test(blockId)) throw new Error(`Cannot recover placeholder VTT for ${sentenceId}: invalid block ID.`);
+      const text = (await readFile(path.join(project, "temp", `${blockId}.txt`), "utf8")).trim();
+      const sha = createHash("sha256").update(text).digest("hex");
+      if (!record.textSha256 || sha !== record.textSha256) throw new Error(`Canonical narration hash mismatch for ${sentenceId}.`);
+      parentCues[0].text = text;
+    }
+    if (words) {
+      const compact = value => String(value).toLowerCase().replace(/[^a-z0-9']/g, "");
+      if (!parentCues.length || compact(parentCues.map(c => c.text).join(" ")) !== compact(words.map(w => w.text).join(" "))) timing.textMismatchBlocks.push(sentenceId);
+    }
+    let renderCues = parentCues.map(cue => ({...cue, shift:0}));
+    const block = timeline.blocks.find(b => b.sentenceId === sentenceId);
+    if (insertion?.intraBlock && block.startSec < insertion.startSec && block.endSec > insertion.startSec) {
+      if (!words || parentCues.length !== 1) throw new Error('Intra-block insertion requires a single word-timed parent cue.');
+      const cue = parentCues[0];
+      let index = -1;
+      for (let n=0;n<(insertion.questionCount ?? 3);n++) index=cue.text.indexOf('?',index+1);
+      if (index < 0 || !cue.text.slice(index+1).trim()) throw new Error('Intra-block subtitle boundary is missing.');
+      const localCut = insertion.startSec - block.startSec;
+      const tail = cue.text.slice(index+1).trim();
+      const bodyWord = mapCueTextToWords(tail, words);
+      const lastHook = mapCueTextToWords(cue.text.slice(0,index+1), words);
+      if (!bodyWord || !lastHook || lastHook.speechEndSec > localCut || bodyWord.speechStartSec < localCut) throw new Error('Subtitle insertion is not in a word-boundary gap.');
+      renderCues = [
+        {...cue, endSec:localCut, text:cue.text.slice(0,index+1).trim(), shift:0},
+        {...cue, startSec:localCut, text:tail, shift:insertion.durationSec},
+      ];
+    }
+    for (const cue of renderCues) {
+      let children = expandCue({
+        startSec: cue.startSec + offset + cue.shift,
+        endSec: cue.endSec + offset + cue.shift,
         text: cue.text,
-      }, effectiveConfig, words, offset);
+      }, effectiveConfig, words, offset + cue.shift, wordTimingLabel);
+      children = separatePausedShortSentences(children, words, offset + cue.shift, effectiveConfig);
       // words are relative to block audio start; cue times are absolute
       for (const expanded of children) {
+        if (insertion?.intraBlock && block.startSec < insertion.startSec && block.endSec > insertion.startSec) {
+          if (cue.shift) expanded.startSec=Math.max(expanded.startSec,insertion.startSec+insertion.durationSec);
+          else expanded.endSec=Math.min(expanded.endSec,insertion.startSec);
+        }
         raw.push({...expanded, blockId: sentenceId});
       }
       if (words) {
         for (const child of children) {
-          if (child.timingSource === "edge-word-boundary") {
+          if (WORD_BOUNDARY_CUE_LABELS.has(child.timingSource)) {
             timing.matchedWords += child.wordEndIndex - child.wordStartIndex + 1;
           }
         }
@@ -492,7 +591,7 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
     acc[c.timingSource ?? "unknown"] = (acc[c.timingSource ?? "unknown"] ?? 0) + 1;
     return acc;
   }, {});
-  const wordCues = cues.filter((c) => c.timingSource === "edge-word-boundary");
+  const wordCues = cues.filter((c) => WORD_BOUNDARY_CUE_LABELS.has(c.timingSource));
   const startDeltasMs = wordCues.map((c) => Math.round((c.startSec - c.speechStartSec) * 1000));
   const endDeltasMs = wordCues.map((c) => Math.round((c.endSec - c.speechEndSec) * 1000));
   const driftByBlock = {};
@@ -512,7 +611,7 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
     (c) => c.timingSource === "char-estimate" || c.timingSource === "legacy-vtt",
   ).length;
   const timingIntegrityStatus =
-    timing.fallbackBlocks.length === 0
+    timing.fallbackBlocks.length === 0 && fallbackCueCount === 0 && timing.textMismatchBlocks.length === 0
       ? "pass"
       : effectiveConfig.REQUIRE_WORD_TIMING ? "fail" : "warn";
   const orphanOffenders = generated
@@ -561,6 +660,7 @@ export async function buildSubtitleTimeline({root, episode, config: configOverri
       blocksUsingFallback: timing.fallbackBlocks.length,
       fallbackBlocks: timing.fallbackBlocks,
       fallbackCueCount,
+      textMismatchBlocks: timing.textMismatchBlocks,
       wordCoverageRatio,
       cueStartVsFirstWordDeltaMs: distribution(startDeltasMs),
       cueEndVsLastWordDeltaMs: distribution(endDeltasMs),

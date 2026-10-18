@@ -364,8 +364,10 @@ async function main() {
       const temporaryAudio = path.join(tempRoot, `${stem}.mp3`);
       await writeFile(textPath, `${sentence.text}\n`, "utf8");
       if (isEssy) {
-        // Canonical ESSY synthesis: ONE edge-tts session produces audio + VTT
-        // + the canonical word-timing artifact (scripts/generate-essy-tts.py).
+        // Canonical ESSY synthesis: ONE provider session (Azure AI
+        // Speech or the legacy edge-tts provider, per lesson.tts.provider)
+        // produces audio + VTT + the canonical word-timing artifact
+        // (scripts/generate-essy-tts.py).
         try {
           await run(process.env.PYTHON ?? "python", [
             path.join(factoryRoot, "scripts", "generate-essy-tts.py"),
@@ -379,6 +381,7 @@ async function main() {
             `--rate=${sentenceTts.rate}`,
             `--pitch=${sentenceTts.pitch}`,
             `--volume=${sentenceTts.volume}`,
+            "--provider", sentenceTts.provider ?? lesson.tts.provider ?? "edge",
           ]);
         } catch (error) {
           throw new Error(

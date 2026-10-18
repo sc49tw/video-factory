@@ -266,6 +266,71 @@ test("PREPARE completion requires valid timing artifacts", async () => {
   }
 });
 
+test("PREPARE completion accepts azure-speech word-boundary timing", async () => {
+  const root = await makeRoot();
+  try {
+    const factoryRoot = path.join(root, "factory");
+    const state = essyState({currentStage: "PREPARE", status: "in_progress"});
+    state.approvals.english = {approved: true};
+    await writeDraftState(factoryRoot, state);
+
+    const episodeDir = path.join(factoryRoot, "projects", "ESSY-T1");
+    await mkdir(path.join(episodeDir, "audio"), {recursive: true});
+    await mkdir(path.join(episodeDir, "temp"), {recursive: true});
+    await writeFile(
+      path.join(episodeDir, "audio", "sentence-001.mp3"),
+      "fake-mp3",
+    );
+    await writeFile(path.join(episodeDir, "temp", "sentence-001.vtt"), "WEBVTT\n");
+    const azureWords = {
+      ...WORDS_ARTIFACT,
+      timingSource: "azure-speech-word-boundary",
+      cacheIdentity: {
+        ...WORDS_ARTIFACT.cacheIdentity,
+        tts: {
+          provider: "azure",
+          voice: "en-GB-RyanNeural",
+          rate: "-12%",
+          pitch: "+0Hz",
+          volume: "+0%",
+        },
+      },
+    };
+    await writeFile(
+      path.join(episodeDir, "temp", "sentence-001.words.json"),
+      `${JSON.stringify(azureWords, null, 2)}\n`,
+      "utf8",
+    );
+    await writeFile(
+      path.join(episodeDir, "manifest.json"),
+      `${JSON.stringify(
+        {
+          audio: [
+            {
+              id: "sentence-001",
+              path: path
+                .relative(factoryRoot, path.join(episodeDir, "audio", "sentence-001.mp3"))
+                .replaceAll(path.sep, "/"),
+              durationSec: 3.2,
+              textSha256: "aa".repeat(32),
+            },
+          ],
+        },
+        null,
+        2,
+      )}\n`,
+      "utf8",
+    );
+    await recordPrepareComplete(factoryRoot, state);
+    assert.equal(state.currentStage, "STORYBOARD");
+    assert.equal(state.prepare.completed, true);
+    assert.equal(state.prepare.blockCount, 1);
+    assert.equal(state.prepare.totalDurationSec, 3.2);
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
 test("PREPARE completion rejects stale or non-word-boundary timing", async () => {
   const root = await makeRoot();
   try {

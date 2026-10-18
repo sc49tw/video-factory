@@ -159,7 +159,10 @@ export async function normalizeEssayEpisode(raw, requestedEpisode, inboxRoot) {
     introSeconds: 0,
     shadowingTempo: 1,
     tts: {
-      provider: "edge",
+      provider:
+        typeof raw.voice?.provider === "string" && raw.voice.provider.trim()
+          ? raw.voice.provider.trim()
+          : "edge",
       voice: raw.voice?.voice ?? ESSY_DEFAULTS.voice,
       rate: raw.voice?.rate ?? ESSY_DEFAULTS.rate,
       pitch: raw.voice?.pitch ?? ESSY_DEFAULTS.pitch,

@@ -13,6 +13,7 @@ import {
   expandCue,
   normalizeCueTimeline,
   mapCueTextToWords,
+  separatePausedShortSentences,
 } from "./_build-subtitle-timeline.mjs";
 
 const {MAX_CHARS, MAX_LINES} = SUBTITLE_CONFIG;
@@ -139,6 +140,23 @@ test("expandCue output never produces generated orphans or sub-minimum children"
 // Build a synthetic word-timing artifact from [text, startSec, endSec] tuples.
 const buildWords = (entries) =>
   entries.map(([text, startSec, endSec]) => ({text, startSec, endSec}));
+
+test("a paused complete short sentence is separated using word timings", () => {
+  const words = buildWords([["Wait", 1, 1.8], ["But", 3, 3.2], ["there", 3.3, 3.5], ["is", 3.6, 3.8], ["more", 3.9, 4.2]]);
+  const children = [
+    {text: "What now?", startSec: 9, endSec: 10, timingSource: "azure-word-boundary", generated: true},
+    {text: "Wait. But", startSec: 11, endSec: 13.2, speechStartSec: 11, speechEndSec: 13.2, wordStartIndex: 0, wordEndIndex: 1, timingSource: "azure-word-boundary", generated: true},
+    {text: "there is more", startSec: 13.3, endSec: 14.2, speechStartSec: 13.3, speechEndSec: 14.2, wordStartIndex: 2, wordEndIndex: 4, timingSource: "azure-word-boundary", generated: true},
+  ];
+  const result = separatePausedShortSentences(children, words, 10);
+  assert.deepEqual(result.map(c => c.text), ["What now?", "Wait.", "But there is more"]);
+  assert.equal(result[1].endSec, 11.8);
+  assert.equal(result[1].generated, false);
+  assert.equal(result[2].startSec, 13);
+  const noPause = words.map(w => ({...w}));
+  noPause[1].startSec = 2;
+  assert.deepEqual(separatePausedShortSentences(children, noPause, 10), children);
+});
 
 test("word timing A: long multi-sentence block in ONE parent VTT cue splits into multiple word-timed children", () => {
   const parentText =
@@ -310,6 +328,50 @@ test("policy: valid word timing on new-generation manifest passes and uses word 
   }
 });
 
+test("policy: azure-speech word timing passes and labels cues azure-word-boundary", async () => {
+  const {root} = await makeFixtureEpisode({
+    manifestPolicy: "word-boundary-required",
+    withWords: true,
+    timingSource: "azure-speech-word-boundary",
+  });
+  try {
+    const {cues, report} = await buildSubtitleTimeline({root, episode: "FIX-0001"});
+    assert.equal(report.timingIntegrity.status, "pass");
+    assert.equal(report.passed, true);
+    assert.equal(report.timingSourceCounts["azure-word-boundary"] > 0, true);
+    assert.equal(report.timingSourceCounts["edge-word-boundary"], undefined, "azure artifact must not be labeled edge");
+    assert.equal(report.timingSourceCounts["char-estimate"], undefined, "no silent char-estimate fallback");
+    assert.equal(report.timingIntegrity.wordCoverageRatio, 1);
+    for (const c of cues) {
+      if (c.generated) assert.equal(c.timingSource, "azure-word-boundary");
+    }
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test("expandCue: timing label follows the provider passed by the caller", () => {
+  const parentText = "First sentence ends here. Second sentence begins now.";
+  const words = [
+    ["First", 0.00, 0.30], ["sentence", 0.30, 0.70], ["ends", 0.70, 1.00], ["here", 1.00, 1.30],
+    ["Second", 2.00, 2.30], ["sentence", 2.30, 2.75], ["begins", 2.75, 3.20], ["now", 3.20, 3.50],
+  ].map(([t, s, e]) => ({text: t, startSec: s, endSec: e}));
+  const edgeChildren = expandCue({startSec: 0, endSec: 3.5, text: parentText}, undefined, words);
+  for (const c of edgeChildren) {
+    if (c.generated) assert.equal(c.timingSource, "edge-word-boundary");
+  }
+  const azureChildren = expandCue(
+    {startSec: 0, endSec: 3.5, text: parentText},
+    undefined,
+    words,
+    0,
+    "azure-word-boundary",
+  );
+  for (const c of azureChildren) {
+    if (c.generated) assert.equal(c.timingSource, "azure-word-boundary");
+  }
+});
+
 test("policy: legacy manifest (no policy) warns but passes, fallback explicitly listed", async () => {
   const {root} = await makeFixtureEpisode({manifestPolicy: null, withWords: false});
   try {
@@ -347,7 +409,7 @@ test("canonical fixture artifact stays readable (sanity)", async () => {
   }
 });
 
-async function makeFixtureEpisode({manifestPolicy, withWords, matchesManifest = true, coldOpen = false}) {
+async function makeFixtureEpisode({manifestPolicy, withWords, matchesManifest = true, coldOpen = false, timingSource = "edge-tts-word-boundary"}) {
   const root = await mkdtemp(path.join(tmpdir(), "essy-wt-fixture-"));
   const project = path.join(root, "projects", "FIX-0001");
   await mkdir(path.join(project, "temp"), {recursive: true});
@@ -363,7 +425,7 @@ async function makeFixtureEpisode({manifestPolicy, withWords, matchesManifest = 
       schemaVersion: "1.0",
       sentenceId: "sentence-001",
       blockId: "n001",
-      timingSource: "edge-tts-word-boundary",
+      timingSource,
       cacheIdentity: {textSha256: "x", matchesManifest, audioDurationSec: 3.6, tts: {}},
       validation: {wordCount: words.length, lastWordEndSec: 3.5, fitsAudioDuration: true},
       words,

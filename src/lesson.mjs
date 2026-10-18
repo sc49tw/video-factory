@@ -192,9 +192,9 @@ export function normalizeLesson(raw, requestedEpisode) {
       `Unsupported renderMode "${normalized.renderMode}". Expected "double-pass-shadowing" or "storybook-silent".`,
     );
   }
-  if (normalized.tts.provider !== "edge") {
+  if (!["edge", "azure"].includes(normalized.tts.provider)) {
     throw new Error(
-      `Unsupported TTS provider "${normalized.tts.provider}". Expected "edge".`,
+      `Unsupported TTS provider "${normalized.tts.provider}". Expected "edge" or "azure".`,
     );
   }
   return normalized;
