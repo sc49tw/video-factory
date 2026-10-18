@@ -4,9 +4,9 @@
   "platform": "youtube",
   "upload": "owner-reported",
   "referenceStatus": "pending",
-  "url": null,
-  "visibility": null,
+  "url": "https://youtu.be/vGl1iZfnOrY",
+  "visibility": "unlisted",
   "publishedAt": null,
   "actualMetadata": "unverified",
-  "source": "Project owner reported a manual YouTube upload in ChatGPT on 2026-10-18. No video URL or publication settings were supplied or independently verified."
+  "source": "Project owner reported a manual YouTube upload in ChatGPT on 2026-10-18. No video URL or publication settings were supplied or independently verified. Updated 2026-10-18: URL https://youtu.be/vGl1iZfnOrY and visibility unlisted recorded in publication/publication-record.json as an operator assertion (recordedBy: operator-asserted, verification: not-verified; nothing fetched remotely). publishedAt remains unknown and is not recorded. Remote YouTube metadata has not been independently verified, so reference verification remains pending."
 }

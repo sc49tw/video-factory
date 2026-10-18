@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0006",
+  "channel": "A Second Look at Life",
+  "publication": {
+    "schemaVersion": "1.0",
+    "platform": "youtube",
+    "status": "published",
+    "videoId": "vGl1iZfnOrY",
+    "url": "https://www.youtube.com/watch?v=vGl1iZfnOrY",
+    "sourceUrl": "https://youtu.be/vGl1iZfnOrY",
+    "recordedAt": "2026-10-18T13:16:56.784Z",
+    "recordedBy": "operator-asserted",
+    "verification": "not-verified",
+    "visibility": "unlisted",
+    "channel": "A Second Look at Life",
+    "channelSource": "youtube.json",
+    "metadata": {
+      "file": "youtube.json",
+      "title": "An Ordinary Life",
+      "descriptionChars": 369,
+      "tagCount": 6
+    },
+    "masterPath": "output/ESSY-0006/ESSY-0006-final-v1.mp4"
+  }
+}
