@@ -38,6 +38,14 @@ The small `runtime/current-stage.txt` file references repository
 contracts and current approved artifacts; it is not a prompt for an external
 Chat session.
 
+An ESSY editorial rough cut is a provisional current-stage review aid after
+English and Scenes approval, not the RENDER stage or a release artifact. It may
+use provisional candidates before PACKAGE approval and must follow Editorial
+Rough Cut Policy v1.0 in the ESSY Playbook. PACKAGE approval, production asset
+validation, production rendering, and release gates remain separate. The
+general enforcement and preview command are not yet complete; the policy text
+alone does not establish that those checks have passed.
+
 ## Inbox
 
 `inbox/<EPISODE>/` remains because the existing renderer needs a stable,
@@ -54,7 +62,9 @@ The user no longer copies a Chat package into `inbox/`.
 
 ## Completion and archival
 
-QA approval marks an episode `completed`, but does not archive it. Files remain
+For ESSY, review QA is followed by final-assembly approval before an episode
+is `completed`. Other episode workflows use their own completion gates. Completion
+does not archive an episode. Files remain
 under `inbox/`, `projects/`, and `output/` while the user prepares thumbnails,
 metadata, and publication.
 
@@ -271,8 +281,10 @@ Current flow:
 
 1. One cached TTS pass per narration block (`projects/<EP>/audio/*.mp3`,
    keyed by text + voice settings). For ESSY the synthesis session
-   (`scripts/generate-essy-tts.py`) also emits the canonical word-boundary
-   timing artifact `temp/<sentenceId>.words.json`; `temp/*.vtt` carries the
+   (`scripts/generate-essy-tts.py`; Azure AI Speech and Edge TTS are
+   selected with `--provider`, which defaults to Edge when omitted) also emits the
+   canonical word-boundary timing artifact
+   `temp/<sentenceId>.words.json`; `temp/*.vtt` carries the
    block parent window. New-generation ESSY manifests record
    `subtitleTiming.policy = "word-boundary-required"`; missing or mismatched
    word timing fails subtitle QA before render, legacy episodes fall back
@@ -297,3 +309,35 @@ Current flow:
 
 Known costs of this MVP: one encode per shot, no partial re-render of changed
 shots, and concat-level frame rounding (~tens of milliseconds per boundary).
+
+## ESSY release contract
+
+Three opening questions are the default template. An episode may approve a
+different ordered list in `openingIdentity.openingPlan.questions`; its words,
+timing and identity presentation must agree with the approved plan. Existing
+identities without this field retain the three-question default.
+
+Final Assembly requires English and Traditional Chinese subtitle evidence by
+default, regardless of whether delivery is burned in or uses selectable tracks.
+Release QA binds each required artifact to the final version and SHA-256. An
+exception is never inferred from missing files: `final-assembly.json` must
+contain `subtitleException` with a nonempty `rationale`, a `scope` specifying
+`episode`, final `version` and `omittedLanguages`, and an `approval` containing
+`approved: true`, `by: "project owner"`, `date` and a project-relative
+`evidence` path plus SHA-256. The referenced JSON approval must repeat the
+approval, date, rationale and scope. A changed file, different version or
+different omitted language invalidates the exception.
+
+The existing renderer produces bilingual burn-in. Release evidence can also
+describe `subtitleDelivery` with `mode` (`burn-in` or `selectable-tracks`) and
+`languages` (`en`, `zh-TW`); each language needs a version-bound hashed
+`track-<language>` evidence artifact. This record expresses the producer's
+delivery assertion; it does not independently inspect embedded tracks. The
+current renderer does not create exception or selectable-track deliveries.
+
+Production completion requires final approval and release evidence, not
+publication metadata or thumbnail. Publication Ready separately validates the
+publication package. Publication records are operator assertions unless
+independently verified; an unknown `publishedAt` stays unknown. Neither
+completion nor publication recording authorizes archival, which still needs
+the separate explicit owner confirmation.

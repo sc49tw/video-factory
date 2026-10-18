@@ -26,6 +26,8 @@ import {
   TERMINAL_WORKFLOW_STATUSES,
 } from "../src/episode-archive.mjs";
 import {evaluateEpisodeGates} from "../src/gates.mjs";
+import {requiresEssyReleaseEvidence} from "../src/essy-release.mjs";
+import {validateEssyCompletion} from "../src/publication.mjs";
 import {buildStagePrompt} from "../src/stage-prompt.mjs";
 import {
   createWorkflow,
@@ -156,14 +158,26 @@ async function approve([id, target, ...rest]) {
     // artifact approvals), so route it here rather than rejecting the
     // canonical `approve <EP> qa` command merely because a draft exists.
     if (target === "qa") {
+      let artifact = null;
+      if (requiresEssyReleaseEvidence(id)) {
+        if (!artifactPath) throw new Error('Review QA approval requires --artifact <review MP4>.');
+        if (!option(rest, '--by') || !option(rest, '--channel') || !/^\d{4}-\d{2}-\d{2}$/.test(option(rest, '--date') ?? '')) throw new Error('Review QA approval requires --by, --channel and --date YYYY-MM-DD.');
+        const outputRoot = path.resolve(factoryRoot, 'output', id);
+        const file = path.resolve(factoryRoot, artifactPath);
+        if (path.dirname(file) !== outputRoot || !new RegExp(`^${id}-review-540p-subtitled-v[1-9]\\d*\\.mp4$`).test(path.basename(file))) throw new Error('Review artifact must be a versioned review MP4 in the episode output directory.');
+        const info = await stat(file);
+        if (!info.isFile() || !info.size) throw new Error('Review artifact is missing or empty.');
+        artifact = {path: path.relative(factoryRoot, file).replaceAll('\\', '/'), filename: path.basename(file), sizeBytes: info.size, sha256: await computeFileSha256(file)};
+      }
       state.approvals.qa = {
         approved: true,
         approvedAt: new Date().toISOString(),
+        ...(artifact ? {artifact, approval: {by:option(rest,'--by'), channel:option(rest,'--channel'), date:option(rest,'--date')}} : {}),
       };
       state.status = "final_assembly_pending";
       state.updatedAt = new Date().toISOString();
       state.history ??= [];
-      state.history.push({at: state.updatedAt, event: "qa-approved"});
+      state.history.push({at: state.updatedAt, event: "qa-approved", ...(artifact ? {artifact, approval:state.approvals.qa.approval} : {})});
       await writeDraftState(factoryRoot, state);
       await writeCurrentTask(state);
       console.log(`Approved ${target} for ${id}.`);
@@ -179,6 +193,10 @@ async function approve([id, target, ...rest]) {
         throw new Error("Cannot approve final-assembly before QA approval.");
       }
       const artifactMeta = await resolveArtifactForApproval(factoryRoot, id, artifactPath);
+      if (requiresEssyReleaseEvidence(id)) {
+        if (state.approvals.package?.approved !== true) throw new Error("Cannot complete ESSY before PACKAGE approval.");
+        await validateEssyCompletion(factoryRoot, id, artifactMeta.path);
+      }
       const approvedAt = new Date().toISOString();
       state.approvals.finalAssembly = {
         approved: true,
@@ -216,6 +234,7 @@ async function approve([id, target, ...rest]) {
   }
   if (target === "final-assembly") {
     const artifactMeta = await resolveArtifactForApproval(factoryRoot, id, artifactPath);
+    if (requiresEssyReleaseEvidence(id)) await validateEssyCompletion(factoryRoot, id, artifactMeta.path);
     const approvedAt = new Date().toISOString();
     workflow.approvals.finalQa = true;
     workflow.approvals.finalAssemblyArtifact = {...artifactMeta, approvedAt};
@@ -281,7 +300,7 @@ async function resolveArtifactForApproval(factoryRoot, episode, artifactPathArg)
     );
   }
   // Reject absolute paths in argument (must be relative to repo root)
-  if (path.isAbsolute(artifactPathArg)) {
+  if (artifactPathArg && path.isAbsolute(artifactPathArg)) {
     throw new Error(`Artifact path must be relative to repository root, not absolute.`);
   }
   // Reject directory traversal attempts
@@ -442,6 +461,10 @@ async function status(id) {
     const state = await readDraftState(factoryRoot, id);
     if (state) {
       printDraft(state);
+      if (state.status === "completed" && requiresEssyReleaseEvidence(id)) {
+        try { await validateEssyCompletion(factoryRoot, id, state.approvals?.finalAssembly?.artifact?.path); }
+        catch (error) { console.log(`  Deliverables no longer verified: ${error.message}`); }
+      }
       return;
     }
     const workflow = await requireEpisode(id);

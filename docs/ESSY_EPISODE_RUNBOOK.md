@@ -77,12 +77,15 @@ WRITE → PREPARE → DIRECT → BUILD → FINALIZE
   literalness check → search queries. Follow the Playbook (§§6–9). Never
   pre-fix a shot count.
 - **Execution (Codex):** candidate search (video-first), preview / contact
-  sheet generation, candidate metadata. **Search ≠ selection ≠ download.**
-  Candidates must pass visual review before download — never approve solely
-  from textual metadata when a preview is available.
+  sheet generation, candidate metadata. **Search ≠ selection ≠ production
+  download.** Preview-only candidate media may be downloaded to a separate
+  temporary review area after Script and Scenes approval; it is not a
+  production asset or evidence of approval.
 - **Output:** human-approved asset selections.
 - **Gate 2 — VISUAL SELECTION APPROVAL:** only approved assets proceed to
-  download.
+  production download. A numbered, clearly non-release editorial preview may
+  precede final asset selection and PACKAGE approval. See the Editorial Rough
+  Cut Policy v1.0 in the Playbook; PACKAGE approval remains separate.
 - **Next:** BUILD.
 
 ## PHASE 4 — BUILD
@@ -228,8 +231,10 @@ promotion.
 ## Hard rules (recap)
 
 - Audio is the master timeline; never slice narration per shot.
-- Subtitle timing comes from edge-tts WordBoundary artifacts
-  (`temp/<sentenceId>.words.json`); VTT only provides block parent windows.
+- Subtitle timing comes from word-boundary artifacts
+  (`temp/<sentenceId>.words.json`, produced by Azure AI Speech or the
+  retained Edge TTS provider in `scripts/generate-essy-tts.py`); VTT
+  only provides block parent windows.
   Never from shot boundaries. Legacy char-proportional timing is an explicit,
   reported fallback — never production-grade.
 - Subtitles always use the shared timeline builder + QA gate.

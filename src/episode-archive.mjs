@@ -168,6 +168,13 @@ export async function archiveEpisodeRecord({
   if (blockers.length > 0) {
     throw new Error(rejectionMessage(record, blockers));
   }
+  const {requiresEssyReleaseEvidence} = await import('./essy-release.mjs');
+  if (requiresEssyReleaseEvidence(episode)) {
+    const {validateEssyCompletion} = await import('./publication.mjs');
+    const artifact = record.kind === 'draft' ? record.state.approvals?.finalAssembly?.artifact : record.workflow.approvals?.finalAssemblyArtifact;
+    if (!artifact?.path) throw new Error('Archive requires the approved final artifact.');
+    await validateEssyCompletion(factoryRoot, episode, artifact.path);
+  }
 
   // Validate every archive target before creating anything, so a rejected
   // archive leaves no empty archive/episodes/<EPISODE>/ behind.

@@ -16,7 +16,7 @@ Purpose: provide a portable editorial and production contract that can be attach
 6. For every slot, assign an `editorialFunction` (what editorial job the shot performs in the surrounding sequence), then a `visualIntent` plus an `avoid` list. Narration meaning and visual function are related but not identical.
 7. Inspect the slots of each block as a sequence and run the sequence-level literalness check before generating queries. One literal shot can establish an idea; several consecutive literal shots can turn the video into an illustrated transcript.
 8. Generate video-first stock search queries for each slot only after the editorial-function, visual-intent and literalness steps are complete. Use photos as fallback, not the default.
-9. Review candidates editorially before downloading — visually, via contact sheet or preview, never solely from textual metadata when a preview is available. Search and selection are separate from download and rendering.
+9. Review candidates editorially before production downloading — visually, via contact sheet or preview, never solely from textual metadata when a preview is available. Preview-only downloads and editorial rendering are distinct from production download and rendering.
 10. After selections are approved, Video Factory performs deterministic download, provenance recording, rendering and automated QA.
 11. If a revision is needed after review, prefer small slot-level revisions; freeze unaffected shots. Do not redesign the renderer or expand scope during editorial/sourcing work unless explicitly requested.
 
@@ -78,7 +78,7 @@ the COMPRESSED English script; the compressed text is what gets frozen.
 | Placeholder plan is not authoritative | The placeholder visual-plan shot count must not constrain the final real-asset timeline once real editorial sourcing exists (Section 7.1). |
 | Fit is judged on actual media duration | Use ffprobe duration, never rounded provenance metadata, when deciding whether a source can cover its shot; otherwise raise INSUFFICIENT_SOURCE (Section 7.2). |
 | Provenance is mandatory | Every external asset must retain source, creator, license, license URL, retrieval/download time, original filename and integrity metadata when downloaded. |
-| Search before download | Candidate discovery stores metadata and previews only. Download occurs only after editorial selection. |
+| Search before download | Candidate discovery stores metadata and previews. Preview-only downloads for editorial review are separate from production downloads, which require editorial selection. |
 | Engineering and editorial work are separate | Chat/LLM decides meaning, visual intent and selection. Video Factory executes deterministic production. |
 | Small checkpoints | Develop or change the pipeline in small, reviewable steps. Use short prototypes before full-episode renders. |
 
@@ -86,6 +86,7 @@ the COMPRESSED English script; the compressed text is what gets frozen.
 
 | Setting | Current default |
 | --- | --- |
+| TTS provider | Edge TTS is the CLI default. Azure AI Speech is preferred for ESSY when selected explicitly with `scripts/generate-essy-tts.py --provider azure`; credentials use `AZURE_SPEECH_KEY`/`AZURE_SPEECH_REGION`. |
 | Voice | en-GB-RyanNeural |
 | Speech rate | -12% |
 | Pitch | 0 Hz |
@@ -117,11 +118,11 @@ H. Sequence literalness check — Review the block's slots as a sequence. Redesi
 
 I. Search plan — Only now define concise search queries per slot. Prefer video candidates and retain photo fallbacks.
 
-J. Candidate search — Search approved providers and store candidate metadata with preview URLs. Do not download.
+J. Candidate search — Search approved providers and store candidate metadata with preview URLs. Do not perform production downloads; preview-only downloads are governed by the policy below.
 
 K. Contact sheet / editorial selection — Review candidates visually via contact sheet or preview, comparing relevance, naturalness, visual variety, duration, resolution and unintended symbolism. Select assets explicitly. Never approve solely from textual metadata when a preview is available.
 
-L. Download + provenance — Download selected assets only. Record hashes, file size, local path and licensing/provenance.
+L. Production download + provenance — Download selected assets only for production. Record hashes, file size, local path and licensing/provenance. Preview-only candidates may be downloaded to a separate review area under the policy below.
 
 M. Prototype when needed — For a new style or pipeline change, render only a short range (for example 60–90 seconds) before the full episode.
 
@@ -355,9 +356,30 @@ Candidate search should be deterministic and non-destructive. Search results are
 
 Candidate metadata should include: `slotId`, `narrationId`, `editorialFunction`, `visualIntent`, `avoid`, `searchQuery`, `provider`, `assetId`, `mediaType`, `sourceUrl`, `previewUrl`, `creator`, `creatorUrl`, `license`, `licenseUrl`, `durationSec` (video), `width`, `height`, `orientation`, `selectionStatus`, `downloadedAt` (null until downloaded).
 
+### Editorial Rough Cut Policy v1.0
+
+An editorial rough cut is a provisional viewing aid, not a production or
+release artifact. It requires approved English and Scenes, canonical narration
+and approved scene timing, but does not require PACKAGE approval or an
+approved asset map. Every shot displays its slot and source IDs and the
+warning `EDITORIAL PREVIEW / NOT FOR RELEASE`. Candidate use and technical
+validation never imply approval or modify workflow state.
+
+Codex may select suitable candidates autonomously and render the labelled rough
+cut without per-candidate approval. The human identifies rejected slots; replacements are reviewed again. The
+human explicitly accepts the final selections, and a complete slot-to-asset
+map records the evidence. PACKAGE requires this map and validation of source
+identity, hashes, durations, timing and narration, followed by a separate
+human PACKAGE decision. The production render requires approved PACKAGE and
+approved assets, contains no editorial labels, and remains subject to QA and
+release gates.
+
+The general preview renderer consumes an editorial shot plan and writes a
+versioned file under `output/<EP>/editorial/`. It does not approve assets.
+
 ### 8.1 Contact-Sheet / Visual Preview Approval Gate
 
-Preferred candidate workflow:
+For production asset approval, the preferred candidate workflow is:
 
 ```text
 Candidate Search → Candidate Metadata → Contact Sheet / Visual Preview
@@ -475,8 +497,8 @@ shot A + sliced audio | shot B + sliced audio | shot C + sliced audio
 | Visual arcs & slots | Primary | Consume |
 | Search queries | Primary | Execute API search |
 | Contact sheet / visual previews | Specify requirements | Generate when practical |
-| Candidate comparison & selection | Primary | No autonomous editorial choice unless asked |
-| Download selected assets | Approve | Primary |
+| Candidate comparison & selection | Review the rough cut | Select suitable provisional candidates |
+| Download selected assets | Review production selection | Primary |
 | License/provenance persistence | Specify/review | Primary |
 | FFmpeg/rendering | No | Primary |
 | Automated QA | Review result | Primary |
@@ -484,7 +506,7 @@ shot A + sliced audio | shot B + sliced audio | shot C + sliced audio
 
 ## 12. Required Outputs from a New Chat
 
-When this playbook and a new script are supplied to a fresh conversation, the AI should first return a visual search plan for approval, not code and not downloaded assets.
+For an approved storyboard, Codex prepares the visual search plan and may select and download provisional candidates for an editorial rough cut. Production asset and PACKAGE approval remain separate.
 
 Recommended planning record:
 

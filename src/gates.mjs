@@ -5,6 +5,7 @@ import {
   normalizeEssayEpisode,
 } from "./essay-episode.mjs";
 import {normalizeLesson, resolveInside} from "./lesson.mjs";
+import {requiresEssyReleaseEvidence, validateEssyReleaseEvidence} from "./essy-release.mjs";
 
 export const STAGES = Object.freeze([
   "intake",
@@ -68,7 +69,7 @@ export async function evaluateEpisodeGates({factoryRoot, episode, series, subtyp
   } catch {
     finalAssemblySpec = null;
   }
-  if (finalAssemblySpec) {
+  if (finalAssemblySpec || requiresEssyReleaseEvidence(episode)) {
     result.finalRender.applicable = true;
     const finalQaPath = path.join(
       factoryRoot, "projects", episode, "temp", "final-assembly",
@@ -82,13 +83,15 @@ export async function evaluateEpisodeGates({factoryRoot, episode, series, subtyp
       const outputExists = finalQa.output
         ? (await stat(path.join(factoryRoot, finalQa.output))).isFile()
         : false;
-      result.finalRender.passed = subtitleQaPassed && outputExists;
+      const evidence = requiresEssyReleaseEvidence(episode)
+        ? await validateEssyReleaseEvidence(factoryRoot, episode) : null;
+      result.finalRender.passed = subtitleQaPassed && outputExists && (!evidence || evidence.passed);
       result.finalRender.output = finalQa.output ?? null;
       result.finalRender.reason = result.finalRender.passed
         ? null
         : !outputExists
           ? `Final assembly QA output is missing: ${finalQa.output ?? "unrecorded"}.`
-          : "Final assembly subtitle QA has not passed.";
+          : evidence && !evidence.passed ? evidence.reason : "Final assembly subtitle QA has not passed.";
     } catch {
       result.finalRender.passed = false;
       result.finalRender.reason =

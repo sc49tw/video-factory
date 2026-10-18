@@ -1642,9 +1642,9 @@ test("a later thumbnail import preserves recorded publication evidence", async (
 test("a record without youtube.json or a rendered master omits what it cannot derive", async () => {
   await withRoot(async (root) => {
     const factoryRoot = await makeRepo(root);
-    await writeJson(path.join(factoryRoot, "projects", "_drafts", "ESSY-0007", "state.yaml"), {
+    await writeJson(path.join(factoryRoot, "projects", "_drafts", "ESSY-0003", "state.yaml"), {
       schemaVersion: "2.0",
-      draftId: "ESSY-0007",
+      draftId: "ESSY-0003",
       series: "ESSY",
       currentStage: "RENDER",
       status: "completed",
@@ -1652,14 +1652,14 @@ test("a record without youtube.json or a rendered master omits what it cannot de
     });
     const result = await recordPublicationEvidence({
       factoryRoot,
-      episode: "ESSY-0007",
+      episode: "ESSY-0003",
       url: `https://youtu.be/${VIDEO_ID}`,
     });
     for (const absent of ["channel", "channelSource", "metadata", "masterPath"]) {
       assert.equal(absent in result.evidence, false, `${absent} must be omitted, not guessed`);
     }
     assert.equal(result.record.channel, null);
-    assert.equal(validatePublicationRecord(result.record, {episode: "ESSY-0007"}).passed, true);
+    assert.equal(validatePublicationRecord(result.record, {episode: "ESSY-0003"}).passed, true);
   });
 });
 

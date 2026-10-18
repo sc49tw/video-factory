@@ -25,7 +25,7 @@ import {
 } from "../src/episode-archive.mjs";
 import {createWorkflow, readWorkflow, writeWorkflow} from "../src/workflow.mjs";
 
-const DRAFT_EPISODE = "ESSY-9005";
+const DRAFT_EPISODE = "ESSY-0003";
 const LEGACY_EPISODE = "LLFC-9001";
 
 async function makeRoot() {
@@ -137,6 +137,22 @@ async function writeLegacyEpisode(root, {qa = true} = {}) {
   await writeWorkflow(root, workflow);
   return workflow;
 }
+
+test("new ESSY archive rejects missing release evidence even after approval", async () => {
+  const root = await makeRoot();
+  try {
+    const episode = "ESSY-9005";
+    const state = draftState({draftId: episode});
+    state.approvals.finalAssembly.artifact = {path: `output/${episode}/${episode}-final-v1.mp4`};
+    await writeDraftState(root, state);
+    await mkdir(path.join(root, "projects", episode), {recursive: true});
+    await assert.rejects(() => archiveEpisodeRecord({factoryRoot: root, episode, confirmation: "--published"}), /Release evidence failed/);
+    assert.equal(await exists(path.join(root, "projects", episode)), true);
+    assert.equal(await isEpisodeArchived(root, episode), false);
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
 
 test("archive resolves the authoritative record draft-first", async () => {
   const root = await makeRoot();
@@ -480,7 +496,7 @@ test("a failed archive commit rolls back the moves and the draft transition", as
           episode: DRAFT_EPISODE,
           confirmation: "--published",
         }),
-      /Archive of ESSY-9005 failed/,
+      /Archive of ESSY-0003 failed/,
     );
 
     // Everything is back in place and nothing claims the episode is archived.

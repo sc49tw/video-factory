@@ -37,6 +37,7 @@ import {copyFile, mkdir, readFile, readdir, stat, writeFile} from "node:fs/promi
 import {readDraftState} from "./draft-workflow.mjs";
 import {ARCHIVE_LOCATIONS} from "./episode-archive.mjs";
 import {readWorkflow} from "./workflow.mjs";
+import {requiresEssyReleaseEvidence, validateEssyReleaseEvidence} from "./essy-release.mjs";
 
 const DAY_MS = 86_400_000;
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
@@ -1394,6 +1395,10 @@ export async function resolveFinalMaster(factoryRoot, episode, options = {}) {
   const reasons = [];
   if (!present) reasons.push(`Final master is missing: ${relative}`);
   if (subtitleQaPassed === false) reasons.push("Final assembly subtitle QA has not passed.");
+  if (requiresEssyReleaseEvidence(episode)) {
+    const evidence = await validateEssyReleaseEvidence(factoryRoot, episode, relative, location);
+    if (!evidence.passed) reasons.push(evidence.reason);
+  }
   return {
     resolved: true,
     passed: reasons.length === 0,
@@ -1430,7 +1435,17 @@ export async function resolveEpisodeLifecycle(factoryRoot, episode) {
 
   const draft = await readDraftState(factoryRoot, episode);
   if (draft) {
-    const completed = draft.status === "completed" && draft.approvals?.finalAssembly?.approved === true;
+    let completed = draft.status === "completed" && draft.approvals?.finalAssembly?.approved === true;
+    let verificationError = null;
+    if (completed && requiresEssyReleaseEvidence(episode)) {
+      try {
+        const artifact=draft.approvals.finalAssembly.artifact;
+        if (!artifact?.path || !artifact.sha256) throw new Error('Approved final artifact identity is missing.');
+        const verified=await validateEssyCompletion(factoryRoot, episode, artifact.path);
+        if (artifact.sha256 !== verified.qa.evidence.master.sha256) throw new Error('Approved final artifact hash no longer matches.');
+      }
+      catch (error) { completed = false; verificationError = error.message; }
+    }
     return {
       state: completed ? "completed" : "not-ready",
       archived: false,
@@ -1438,7 +1453,7 @@ export async function resolveEpisodeLifecycle(factoryRoot, episode) {
       ready: false,
       source: `projects/_drafts/${episode}/state.yaml`,
       recordedStatus: String(draft.status ?? "unknown"),
-      detail: draft.currentStage ? `currentStage ${draft.currentStage}` : null,
+      detail: verificationError ?? (draft.currentStage ? `currentStage ${draft.currentStage}` : null),
     };
   }
 
@@ -1483,7 +1498,11 @@ export function buildPublicationCheckReport({episode, metadata, thumbnail, video
     {id: "thumbnail", label: "Thumbnail", passed: thumbnail.passed === true, detail: thumbnailSummary(thumbnail)},
     {id: "video", label: "Video", passed: video.passed === true, detail: videoSummary(video)},
   ];
-  const ready = rows.every((row) => row.passed);
+  if (requiresEssyReleaseEvidence(episode)) {
+    rows.push({id:"metadata", label:"Metadata", passed:metadata.passed === true, detail:(metadata.reasons ?? []).join('; ') || 'valid'});
+    rows.push({id:"lifecycle", label:"Approval", passed:lifecycle?.completed === true || lifecycle?.archived === true, detail:'Final assembly approval required'});
+  }
+  const ready = rows.every((row) => row.passed) && metadata.passed === true;
   const notes = [];
   if (metadata.title && approvedTitle && metadata.title !== approvedTitle) {
     notes.push(
@@ -1500,6 +1519,13 @@ export function buildPublicationCheckReport({episode, metadata, thumbnail, video
     notes.push("Episode is archived; it was published earlier.");
   }
   return {episode, ready, rows, lifecycle, notes};
+}
+
+export async function validateEssyCompletion(factoryRoot, episode, artifactPath) {
+  if (!artifactPath) throw new Error('Approved final artifact path is required.');
+  const evidence = await validateEssyReleaseEvidence(factoryRoot, episode, artifactPath);
+  if (!evidence.passed) throw new Error(`Release evidence failed: ${evidence.reason}`);
+  return evidence;
 }
 
 function findCheck(result, id) {
