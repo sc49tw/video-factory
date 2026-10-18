@@ -1,0 +1,529 @@
+{
+  "episodeId": "ESSY-0006",
+  "targetDurationSec": 452.64,
+  "timingSource": "projects/ESSY-0006/manifest.json (Azure AI Speech, en-GB-RyanNeural, rate -20%) + temp/sentence-00N.words.json (azure-speech-word-boundary). Per-block windowSec derived from manifest audio durations (canonical -20% timeline, 452.640s total); no per-slot boundary is invented.",
+  "status": "PROPOSAL_FOR_EDITORIAL_REVIEW",
+  "note": "Gate 2 (scenes) visual-selection proposal. Arc/editorialFunction/visualIntent/avoid only. Search queries are intentionally omitted and deferred to a separate search-plan step AFTER Gate 2 approval. No sourcing, download, or render is performed. Narration and TTS are frozen and unchanged.",
+  "selectionRevision": {
+    "status": "PENDING_RENEWED_GATE_2_REVIEW",
+    "reason": "Two provisional rough-cut v03 sources were selected after the preceding Scenes approval. This revision changes no narration, visual arc, editorialFunction, visualIntent, avoid list, or slot count; it records only the selected source identity and N006-S2 frame-quantized duration for renewed human visual-selection approval.",
+    "items": [
+      {
+        "slotId": "N004-S4",
+        "pexelsId": 39889654,
+        "sourceUrl": "https://www.pexels.com/video/urban-street-view-with-walking-pedestrians-39889654/",
+        "provenance": "temp/essy-0006-roughcut-v03/provenance-n004-bridge.json",
+        "actualSourceDurationSec": 23.840483,
+        "editorialFit": "Approved storyboard intent unchanged: calm, observational public-streetscape bridge; no prohibited war or geopolitical imagery."
+      },
+      {
+        "slotId": "N006-S2",
+        "pexelsId": 6756335,
+        "sourceUrl": "https://www.pexels.com/video/man-standing-on-the-corner-of-the-room-while-looking-around-6756335/",
+        "provenance": "temp/essy-0006-roughcut-v03/provenance-n006-s2-selected.json",
+        "actualSourceDurationSec": 22.6,
+        "renderedDuration": {
+          "frames": 512,
+          "fps": 30,
+          "durationSec": 17.066667
+        },
+        "wordBoundaryCheck": {
+          "nothingSec": [
+            30.222,
+            31.097
+          ],
+          "atSec": 32.034,
+          "s2EndSec": 32.033333,
+          "alignmentDeltaSec": -0.000667
+        },
+        "editorialFit": "Approved storyboard intent unchanged: near-static, near-empty ordinary frame carrying the Nothing. word and its natural pause; the reviewed asset is held without looping or freeze extension."
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "narrationId": "N001",
+      "kind": "cold-open-questions",
+      "windowSec": [
+        0,
+        51.432
+      ],
+      "visualArc": "Q1 Loss (ordinary life assembled, now threatened) -> Q2 Injustice (the life that should not be lost) -> Q3 Meaning (the unresolved question, no answer implied) -> main narration (ordinary life, stability, persistent fear)",
+      "slots": [
+        {
+          "slotId": "N001-S1",
+          "beat": "Q1 — Loss",
+          "editorialFunction": "State the first cold-open question ('What if the ordinary life you've built could disappear overnight?') over ordinary life as accumulation of small, unremarkable acts rather than achievement, so the thesis reads as lived texture, not aspiration.",
+          "visualIntent": "Hands and everyday objects at rest on an ordinary surface (a kitchen table, a work bench, tools set down): lived-in, warm, unposed, level framing, soft daylight. Presence of use, not display.",
+          "avoid": [
+            "motivational montage and success imagery",
+            "luxury interiors, new-house or real-estate glamour",
+            "smiling 'perfect family' stock",
+            "trophies, awards, celebration",
+            "currency or cash stacks as literal 'savings'",
+            "literal disruption imagery (shattering, alarms, sudden noise)"
+          ]
+        },
+        {
+          "slotId": "N001-S2",
+          "beat": "Q2 — Injustice",
+          "editorialFunction": "State the second cold-open question ('How do you live with the fear of losing everything, when you've done nothing wrong?') over the rooms that hold a life, implying decades of habitation rather than a single event, so stability feels earned by time and the unfairness is felt, not shown.",
+          "visualIntent": "A quiet, lived-in interior in late-afternoon light, one ordinary space held steady; no people required; stillness that reads as inhabited rather than empty.",
+          "avoid": [
+            "staged show-home perfection",
+            "wide 'minimalist' empty interiors",
+            "vacant-room or unoccupied-frame gloom",
+            "symmetrical architectural postcard shots",
+            "victim or blame imagery",
+            "dramatic silhouette against storm",
+            "hand-on-glass melancholy cliche"
+          ]
+        },
+        {
+          "slotId": "N001-S3",
+          "beat": "Q3 — Meaning",
+          "editorialFunction": "Provide a held visual pause so the third cold-open question ('And what does it mean to keep building a life, knowing that everything could still be taken away?') lands through attention and stillness, without the image pre-answering or illustrating the question.",
+          "visualIntent": "A person at a threshold or window edge, seen from behind or the side, looking out into ordinary space; restrained; the outside reads as normal day, not threat.",
+          "avoid": [
+            "dramatic silhouette against storm",
+            "hand-on-glass melancholy cliche",
+            "literal disruption imagery (shattering, alarms, sudden noise)",
+            "over-the-shoulder reveal of a face reacting",
+            "running toward light",
+            "open-road adventure"
+          ]
+        },
+        {
+          "slotId": "N001-S4",
+          "beat": "Main narration — ordinary life, stability, persistent fear",
+          "editorialFunction": "Carry the main narration ('We spend much of our lives building things... For most of my life, that fear has been somewhere in the background... But never entirely gone.') as the film's argument begins, returning to the motif of hands at rest and ordinary continuity.",
+          "visualIntent": "An ordinary life quietly assembled from small unglamorous acts and the rooms that hold it; the persistent, background fear expressed as atmosphere rather than event.",
+          "avoid": [
+            "motivational montage and success imagery",
+            "literal fear or threat imagery",
+            "text overlays",
+            "talking-to-camera faces"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N002",
+      "windowSec": [
+        51.432,
+        126.048
+      ],
+      "visualArc": "a place where war was never abstract -> childhood as a scale -> the specific private fear held as interior -> years passing -> an ordinary adult life built -> the anonymous reassurance of others",
+      "slots": [
+        {
+          "slotId": "N002-S1",
+          "editorialFunction": "Ground 'a place where the possibility of war was never abstract' in an ordinary living environment, deliberately withholding conflict imagery so the fear stays human-scale.",
+          "visualIntent": "A modest lived-in home or neighbourhood street at an unremarkable hour; human presence incidental; documentary calm; the ordinariness is the point.",
+          "avoid": [
+            "any military, uniform, or insignia imagery",
+            "flags-as-threat, sandbags, checkpoints",
+            "conflict, combat, or war footage of any kind",
+            "geopolitical maps or borders"
+          ]
+        },
+        {
+          "slotId": "N002-S2",
+          "editorialFunction": "Register childhood as a scale of experience rather than an event, anchoring 'when I was young' in the small physical world of a child.",
+          "visualIntent": "A child's-eye-level everyday detail (a low windowsill, a bicycle, shoes by a door) in soft daylight; quiet; faces not required.",
+          "avoid": [
+            "posed 'innocent child' stock",
+            "sentimental childhood montage",
+            "toys arranged as symbolic clutter"
+          ]
+        },
+        {
+          "slotId": "N002-S3",
+          "editorialFunction": "Hold 'What if I have to go?' as private interior dread, expressing fear through waiting and stillness rather than dramatising departure or service.",
+          "visualIntent": "A seated person, still, in ordinary light, hands quiet; the feeling of waiting and not-knowing; face not required; restrained framing.",
+          "avoid": [
+            "conscription, enlistment, or draft imagery",
+            "trains, platforms, or departure scenes",
+            "uniform ceremony or farewell at a station",
+            "sad-piano close-up acting",
+            "letters from the front"
+          ]
+        },
+        {
+          "slotId": "N002-S4",
+          "editorialFunction": "Carry the list-shaped passage ('worked, married, became a father') as the texture of accumulating years, refusing a milestone-by-milestone montage.",
+          "visualIntent": "An ordinary working-day surface or a shared domestic moment around a meal table; time passing through routine and repetition; warm and unremarkable.",
+          "avoid": [
+            "wedding cliche or veil/rings close-up",
+            "baby-reveal or newborn stock",
+            "graduation and 'life milestones' checklist imagery",
+            "one literal image per narrated event"
+          ]
+        },
+        {
+          "slotId": "N002-S5",
+          "editorialFunction": "Give 'I got used to living with the possibility' breathing room as endurance that is unresolved, not a fear that has been solved or lifted.",
+          "visualIntent": "Slow, low-motion ambient continuity: light moving across a wall, weather passing a window; low semantic load; time felt rather than shown.",
+          "avoid": [
+            "hopeful sunrise implying the fear is gone",
+            "symbolic 'lifting' or release",
+            "time-lapse used as novelty"
+          ]
+        },
+        {
+          "slotId": "N002-S6",
+          "editorialFunction": "Let the reassurance arguments ('they wouldn't really do it, the cost would be too high') feel like overheard, anonymous public talk, unanchored to any faction or screen.",
+          "visualIntent": "An ordinary public or semi-public space where people gather and talk (a market, a bus window, a waiting room), observed at a calm distance; voices implied, not scripted.",
+          "avoid": [
+            "political talking heads or news broadcast",
+            "protest, rallies, or partisan symbols",
+            "flags, emblems, maps",
+            "on-screen text or cable-news framing"
+          ]
+        },
+        {
+          "slotId": "N002-S7",
+          "editorialFunction": "Land 'I need something that lets me put the fear aside' as a small private act of ordinary self-soothing, the most intimate image in the chapter.",
+          "visualIntent": "A hand doing something small and ordinary (pouring water, straightening a cloth, closing a book) in warm lamplight; quiet, unhurried.",
+          "avoid": [
+            "prayer or symbolic gesture cliche",
+            "medication, alcohol, or cigarettes",
+            "exaggerated or performative breathing"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N003",
+      "windowSec": [
+        126.048,
+        168.192
+      ],
+      "visualArc": "a life that took decades to build -> the difference between replaceable things and irreplaceable years -> starting over as weight, not adventure",
+      "slots": [
+        {
+          "slotId": "N003-S1",
+          "editorialFunction": "State the changed fear as the threat to something built over time, so middle age reads as accumulated stakes rather than a new anxiety.",
+          "visualIntent": "A single ordinary object or room that shows age through use and wear (a well-kept tool, a settled chair, a familiar doorway); unhurried; the sense of years embodied in things.",
+          "avoid": [
+            "before/after transformation framing",
+            "shiny new-product imagery",
+            "literal 'clock' or 'hourglass' time metaphors",
+            "aging cliches (wrinkles, grey hair close-up)"
+          ]
+        },
+        {
+          "slotId": "N003-S2",
+          "editorialFunction": "Separate the replaceable from the irreplaceable, letting 'the years are gone forever' land through restraint rather than a symbol of loss.",
+          "visualIntent": "A wide, quiet domestic or working space held still; ordinary and intact on the surface while the narration turns to what cannot be rebuilt; the frame withholds any explicit symbol.",
+          "avoid": [
+            "ruins, rubble, or destroyed-property imagery",
+            "burning, flooding, or disaster scenes",
+            "sand through an hourglass or falling pages",
+            "melodramatic slow-motion grief"
+          ]
+        },
+        {
+          "slotId": "N003-S3",
+          "editorialFunction": "Carry 'starting over does not feel like an adventure' as the physical weight of age, refusing the inspirational 'new beginnings' register.",
+          "visualIntent": "A person rising or standing with ordinary, unhurried effort in a familiar space; back view or partial framing; the body's real weight and pace, not heroic.",
+          "avoid": [
+            "motivational 'fresh start' montage",
+            "sunrise-jog and new-horizon cliches",
+            "youthful athletic bodies implying renewal",
+            "arms-raised triumph or release"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N004",
+      "windowSec": [
+        168.192,
+        223.224
+      ],
+      "visualArc": "war reframed as an ongoing condition, not an event -> ordinary life continuing inside that condition (growth, food, care, work, birthdays) -> the fear of living through it, not dying in it",
+      "slots": [
+        {
+          "slotId": "N004-S1",
+          "editorialFunction": "Reframe war from a beginning-event to an ongoing condition under which life must continue, setting the chapter's register as endurance, not crisis.",
+          "visualIntent": "Ordinary life carrying on in a place marked by time and weather rather than by conflict: a quiet street, a home interior, everyday movement; calm, observational, unsensational.",
+          "avoid": [
+            "soldiers, tanks, or military equipment",
+            "explosions, combat, or air-raid footage",
+            "geopolitical maps, borders, or flags",
+            "news-broadcast or war-reportage graphics",
+            "sensational 'war zone' spectacle"
+          ]
+        },
+        {
+          "slotId": "N004-S2",
+          "editorialFunction": "Carry the list-shaped passage ('children still grow older, people still need food, parents still need care, birthdays') as the texture of life persisting, not as a montage of each item.",
+          "visualIntent": "A small cluster of ordinary continuities held as atmosphere: a family table, someone tending to another, a shared quiet moment; the point is that the ordinary continues, shown through mood and routine.",
+          "avoid": [
+            "one literal image per narrated item",
+            "birthday-cake and party cliche",
+            "hospital, medical, or clinical settings",
+            "charity/aid or refugee imagery",
+            "tearful reunion stock"
+          ]
+        },
+        {
+          "slotId": "N004-S4",
+          "editorialFunction": "Bridge the 'ordinary life continuing' list (N004-S2) into the 'fear of living through it' turn (N004-S3) as quiet atmospheric continuity, giving the turn breathing room without adding a new visual idea.",
+          "visualIntent": "Ordinary people going about an unremarkable day in a calm public streetscape: pedestrians at an unhurried pace, a working street in natural light; observational and unsensational, held as atmosphere while the narration carries the idea.",
+          "avoid": [
+            "soldiers, tanks, or military equipment",
+            "explosions, combat, or air-raid footage",
+            "geopolitical maps, borders, or flags",
+            "news-broadcast or war-reportage graphics",
+            "sensational 'war zone' spectacle"
+          ]
+        },
+        {
+          "slotId": "N004-S3",
+          "editorialFunction": "Land the turn 'Not only that I might die. That I might live.' as the harder fear of surviving and going on, held through stillness rather than depicted, with ordinary life continuing under a subtle, unspoken uncertainty.",
+          "visualIntent": "A person still and present in ordinary surroundings, going on with an ordinary day while something is held in quiet reserve; a glance toward a window or a pause mid-action that suggests uncertainty without naming it; the weight of continuing rather than the drama of loss; restrained, no face required.",
+          "avoid": [
+            "funeral, graves, or memorial imagery",
+            "grieving figures and hands-over-face",
+            "heroic survival or resilience montage",
+            "rebuilding as inspirational 'triumph'",
+            "before/after devastation comparison",
+            "military, uniform, combat, or destruction imagery",
+            "flags, geopolitical maps, or borders",
+            "sensational or melodramatic dread"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N005",
+      "windowSec": [
+        223.224,
+        283.896
+      ],
+      "visualArc": "the unanswerable question about those who start wars -> the words that fail to change it -> the limit of what one person can do",
+      "slots": [
+        {
+          "slotId": "N005-S1",
+          "editorialFunction": "Hold the question 'why must someone else's home become part of your ambition?' as genuine perplexity, without depicting leaders, power, or politics.",
+          "visualIntent": "An anonymous figure or figures in an ordinary setting, seen at a distance or from behind; the sense of a question being asked into ordinary space; no identifiable 'villains'.",
+          "avoid": [
+            "political leaders, dictators, or portraits of power",
+            "government buildings or seats of power",
+            "military command or strategy rooms",
+            "maps, globes, or territory graphics",
+            "national flags or insignia"
+          ]
+        },
+        {
+          "slotId": "N005-S2",
+          "editorialFunction": "Let the list of abstract words ('history, territory, security, power, national interest') pass as language that does not resolve the question, kept deliberately non-illustrative.",
+          "visualIntent": "Quiet, low-semantic continuity that stays out of the way while the abstract nouns are spoken: slow ambient light, an ordinary surface, a still room; the image declines to define the words.",
+          "avoid": [
+            "literal illustration of each abstract word",
+            "text-on-screen listing the words",
+            "documents, treaties, or seals",
+            "power-iconography (columns, globes, eagles)",
+            "newsprint or headline graphics"
+          ]
+        },
+        {
+          "slotId": "N005-S3",
+          "editorialFunction": "Turn 'I cannot work hard enough to make war impossible' into the felt limit of personal effort, expressed through an ordinary act of trying.",
+          "visualIntent": "Hands engaged in ordinary, honest work (preparing something, mending, tidying, tending); capable and grounded; the effort is real but visibly bounded.",
+          "avoid": [
+            "motivational 'you can do anything' imagery",
+            "heroic effort or straining bodies",
+            "literal wall, barrier, or impossible-task metaphors",
+            "despair or collapse framing"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N006",
+      "windowSec": [
+        283.896,
+        345.288
+      ],
+      "visualArc": "fear compared to the thought of death -> the key difference (death ends the plan, war destroys it and leaves you to rebuild) -> the decision to keep building anyway",
+      "slots": [
+        {
+          "slotId": "N006-S1",
+          "editorialFunction": "Open the mortality comparison with restraint, treating 'thinking about death' as a quiet philosophical register rather than grief.",
+          "visualIntent": "Calm, low-motion atmosphere with a sense of stillness and limit (still air, soft light, an unhurried natural element); contemplative, unsensational.",
+          "avoid": [
+            "skulls, graveyards, or overt mortality symbols",
+            "candles, coffins, or religious iconography",
+            "memento-mori staging",
+            "hospital or bedside imagery"
+          ]
+        },
+        {
+          "slotId": "N006-S2",
+          "editorialFunction": "Let the single-word beat 'Nothing.' land by holding a still frame for the natural duration of the word and the pause around it, so the word carries its full weight through stillness that follows the narration rather than through an artificially extended hold.",
+          "visualIntent": "A near-static, near-empty ordinary frame held naturally through the spoken word 'Nothing.' and the short pause that surrounds it: a quiet surface, a still room, gentle light; the hold tracks the word and its breath, and the absence of event becomes the content.",
+          "avoid": [
+            "filling the pause with a new image or action",
+            "black screen used as a cheap beat",
+            "symbolic object standing for 'nothing'",
+            "dramatic cut on the word",
+            "holding past the pause into dead air"
+          ]
+        },
+        {
+          "slotId": "N006-S3",
+          "editorialFunction": "Carry 'I go to work, take care of my family, save money, make plans' as the rhythm of continuing, showing persistence through routine rather than resolve.",
+          "visualIntent": "Ordinary daily actions in sequence-feel (commuting or walking, a family meal, tending a home): calm, repetitive, life-sized; the choice to go on shown as habit and care.",
+          "avoid": [
+            "motivational 'keep going' montage",
+            "arms-raised or defiant poses",
+            "one literal image per listed action",
+            "triumphant scoring-match imagery"
+          ]
+        },
+        {
+          "slotId": "N006-S4",
+          "editorialFunction": "Land 'I keep building. Not because I have solved the fear. I haven't.' as unresolved persistence, the emotional core of the essay.",
+          "visualIntent": "Hands or a figure continuing an ordinary act of building or making (assembling, planting, preparing) with calm persistence; the work continues although the question is not answered; no resolution.",
+          "avoid": [
+            "triumphant completion or 'solved' imagery",
+            "symbolic sunrise or 'light at the end'",
+            "tearful or self-congratulatory framing",
+            "before/after progress reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N007",
+      "windowSec": [
+        345.288,
+        410.352
+      ],
+      "visualArc": "the fortune of an ordinary life reached at eighty -> the same question passing to a child and his children -> the wish not to be tested for bravery",
+      "slots": [
+        {
+          "slotId": "N007-S1",
+          "editorialFunction": "Land 'How fortunate I was. I was allowed to have an ordinary life.' as quiet gratitude, not triumph, so the fortune reads as simple and hard-won.",
+          "visualIntent": "An older adult in an ordinary, comfortable domestic setting, at rest; warm, unhurried light; the stillness of a long life; contemplative, no forced emotion.",
+          "avoid": [
+            "inspirational 'life well lived' montage",
+            "awards, applause, or legacy framing",
+            "wrinkle and age-spot close-ups",
+            "grey-haired slow-motion hero shots"
+          ]
+        },
+        {
+          "slotId": "N007-S2",
+          "editorialFunction": "Carry the ordinary details of a full life ('worked, raised a family, grew old, tomorrow looked like the day before') as the comfort of repetition, not a highlights reel.",
+          "visualIntent": "Warm domestic continuity across a day or a routine (a familiar room at different light, an ordinary meal, a settled habit); the reassurance of sameness; unremarkable by design.",
+          "avoid": [
+            "photo-album or flashback montage",
+            "milestone recap with on-screen dates",
+            "nostalgic sepia or aging effects",
+            "family-portrait postcard shots"
+          ]
+        },
+        {
+          "slotId": "N007-S3",
+          "editorialFunction": "Turn the question toward the next generation ('What about my child? And what about his children?') so the worry is felt as inheritance rather than stated.",
+          "visualIntent": "A child or young person in ordinary life, observed calmly from a distance or side; the sense of a life being lived that carries the same uncertainty forward; tender but not sentimental.",
+          "avoid": [
+            "posed 'hopeful child looking to future' stock",
+            "prophetic or ominous child framing",
+            "over-the-shoulder protective-cradle cliche",
+            "literal generational montage with arrows"
+          ]
+        },
+        {
+          "slotId": "N007-S4",
+          "editorialFunction": "Close the chapter on the wish not to be tested ('I don't want to find out whether I would be brave') as a quiet refusal of the heroic frame.",
+          "visualIntent": "A restrained figure or hands in stillness, turning away from spectacle toward the ordinary; the choice to remain unheroic held gently; no face required.",
+          "avoid": [
+            "heroic, defiant, or soldierly poses",
+            "military, uniform, or combat imagery",
+            "dramatic resolve or jaw-set close-up",
+            "symbolic armour, shield, or weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "narrationId": "N008",
+      "windowSec": [
+        410.352,
+        452.64
+      ],
+      "visualArc": "the hope that peace extends beyond one life -> the ordinary future wished for the next generation (work, homes, families, small worries) -> taking tomorrow for granted -> the closing wish",
+      "slots": [
+        {
+          "slotId": "N008-S1",
+          "editorialFunction": "Open the hope that fortune does not end with one life, extending the essay's subject from the narrator to the next generation without sentimentality.",
+          "visualIntent": "Ordinary forward-looking domestic life: someone beginning an ordinary day, a home in use, quiet continuity; the calm of an unthreatened tomorrow; unhurried, observational.",
+          "avoid": [
+            "sentimental 'future generations' imagery",
+            "children silhouetted against sunrise",
+            "hopeful-globe or horizon cliches",
+            "hands-passing-the-torch symbolism"
+          ]
+        },
+        {
+          "slotId": "N008-S2",
+          "editorialFunction": "Carry the list-shaped hope ('work, build homes, raise families, complain about small things, worry about retirement') as the ordinariness being wished for, shown through mood not a checklist.",
+          "visualIntent": "A small cluster of everyday continuities held as atmosphere: ordinary work, a shared home moment, small daily concerns; the emphasis is that these are the good things precisely because they are ordinary.",
+          "avoid": [
+            "one literal image per wished-for item",
+            "motivational 'build your dream life' imagery",
+            "perfect-family or lifestyle-ad framing",
+            "retirement-resort cliche"
+          ]
+        },
+        {
+          "slotId": "N008-S3",
+          "editorialFunction": "Land 'take tomorrow for granted' and the closing wish ('An ordinary life. Not only for me. For them, too.') as the thesis restated through stillness, ending without spectacle.",
+          "visualIntent": "A calm, held ordinary image (a quiet room in warm light, a still domestic detail, a figure at rest); restrained and resolved in mood if not in the question; the film ends on the ordinary it has been arguing for.",
+          "avoid": [
+            "sunset, sunrise, or 'full circle' closure cliche",
+            "triumphant final wide shot or drone pullback",
+            "title-card-style inspirational ending",
+            "fade-to-black with swelling music cue imagery"
+          ]
+        }
+      ]
+    }
+  ],
+  "coldOpenExperiment": {
+    "id": "cold-open-three-questions",
+    "scope": "episode-specific editorial experiment; Playbook and renderer contract intentionally NOT modified",
+    "structure": "3 reflective questions -> short pause -> channel name -> episode title -> short pause -> main essay",
+    "visualTreatment": [
+      "N001 (questions): no talking-to-camera faces and no text overlays that pre-answer the questions. Slow, slightly ambiguous observational imagery whose mood matches each question (Q1 Loss: ordinary life assembled; Q2 Injustice: the life that should not be lost; Q3 Meaning: the unresolved question, no answer implied). The audience should feel addressed, not lectured.",
+      "Title beats inside N002 are rendered by the final-assembly cold-open title layer (existing renderer capability), so the N002 slot carries atmosphere only, with clean negative space where the title text will sit. No competing on-screen typography in the sourced footage.",
+      "Pauses between questions and titles belong to the narration timeline; they may extend the final shot of a block (pauseAfterSec) but never create additional slots."
+    ],
+    "openQuestionsForReview": [
+      "RESOLVED (human approval, storyboard approval): N001 keeps one visual slot per cold-open question (N001-S1/S2/S3, three separate slots).",
+      "RESOLVED (human approval, storyboard approval): N032-S2 keeps the visual rhyme with N002-S1 so the ending subtly returns to the opening/title visual language."
+    ]
+  },
+  "sequenceLiteralnessReview": {
+    "status": "reviewed",
+    "details": [
+      "The episode is a spoken argument, not an illustrated transcript. No slot depicts a narration phrase literally: 'building a life' appears as hands at rest and a lived-in room, not as a house or a trophy; 'war' is never shown and is expressed only as an ordinary place and the persistence of daily routine; 'death' is a still, contemplative atmosphere, never a grave or skull; 'Nothing.' is a held, near-empty frame rather than an object.",
+      "Visual arc runs the opening question (N001) -> a life built and a fear learned to live with (N002) -> the changed fear of middle age and irreplaceable years (N003) -> war as a condition under which ordinary life continues, and the fear of living through it (N004) -> the unanswerable question about those who start wars and the limit of personal effort (N005) -> fear compared to death and the choice to keep building (N006) -> the fortune of an ordinary life at eighty and the question passing to the next generation (N007) -> the hope that the ordinary extends forward and the closing wish (N008).",
+      "Sensitive-content strategy: Ukraine and war are retained per the approved script but rendered entirely non-political and non-spectacle. No military, uniform, insignia, combat, explosion, casualty, geopolitical map, border, or flag imagery appears anywhere. Leaders and seats of power are deliberately not depicted; the question about those who start wars is held through anonymous, distant figures. Aid/refugee imagery is also excluded to avoid sensationalism. The essay's restraint is protected by making 'war' an atmosphere and a condition, never an event on screen.",
+      "List-shaped passages are handled as texture, not checklists: N002-S4 (worked/married/father), N004-S2 (children/food/care/birthdays), N005-S2 (abstract nouns), N006-S3 (daily acts), and N008-S2 (the wished-for ordinary) each refuse one-image-per-item and instead hold a small cluster of continuity or stay deliberately non-illustrative. This is where consecutive-keyword illustration would otherwise turn the film into a transcript.",
+      "Recurring motif is stated and completed: still hands in ordinary work (N001-S1) return at the limit of effort (N005-S3) and at 'I keep building' (N006-S4), so building is the through-line. The deliberate held pause at 'Nothing.' (N006-S2) and the closing stillness (N008-S3) bookend the film's restraint.",
+      "Scale and type vary across the episode so no two adjacent slots share a setup: intimate hands/objects (N001-S1, N003-S1, N005-S3, N006-S4) -> domestic interiors (N001-S2, N002-S1, N002-S4, N003-S2, N007-S1, N007-S2, N008-S1, N008-S3) -> thresholds and looked-through space (N001-S3, N004-S3, N007-S4) -> public/observed life at distance (N002-S6, N005-S1, N007-S3) -> low-semantic ambient holds (N002-S5, N005-S2, N006-S1, N006-S2).",
+      "Visual breathing room is intentional and consistent with the ESSY reflective-essay identity: N006-S2 ('Nothing.') holds for the natural duration of the word and the pause around it, following the narration rather than extending past it, while the closing stillness (N008-S3) and the ambient hold (N002-S5) are allowed to breathe. Emotional beats preserved in the frozen script ('What if I have to go?', 'Nothing.', 'I keep building.', 'That I might live.', 'How fortunate I was.', 'An ordinary life.') are each given a dedicated held slot rather than a cut."
+    ],
+    "openQuestionsForReview": [
+      "N004 (Ukraine) is the highest editorial-risk block. Per approved editorial correction, N004-S3 now communicates ordinary life continuing under a subtle, unspoken uncertainty (a glance toward a window, a pause mid-action) while N004-S3's own avoid list explicitly re-states the prohibition on military, uniform, combat, destruction, flags, geopolitical maps/borders, and sensational or melodramatic dread. Confirm this restraint is the intended reading before Gate 2.",
+      "RESOLVED (N006-S2): per approved editorial correction, the 'Nothing.' hold is now a natural hold aligned to the spoken word and its surrounding pause — following the narration rather than an artificially extended hold, and avoiding holding past the pause into dead air. No per-slot timing is invented.",
+      "The episode never shows war and never depicts Taiwan or China; Ukraine is retained as the approved example. Confirm no reviewer expects any explicit geopolitical framing to be added at Gate 2.",
+      "Search queries are intentionally deferred until after Gate 2 approval, per the ASSETS-stage separation. This proposal covers arc/function/intent/avoid only."
+    ]
+  }
+}

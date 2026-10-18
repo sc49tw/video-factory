@@ -1,0 +1,258 @@
+# ESSY-0006
+
+Episode title (visual-only, NOT narration — see `titles.json`):
+An Ordinary Life
+
+Frozen approved English narration (human-approved COMPRESSED script,
+N001–N008). Do not modify during production. The series title
+"A Second Look at Life" and the episode title above are visual-only
+(`tts: false`, `role: title`); they are not part of any narration block
+and must never enter TTS input or `lesson.json` narration arrays.
+
+Approved creative intent (context for DIRECT — not narration):
+A first-person reflective essay on building an ordinary life when
+everything built could be taken away. The essay moves from childhood
+war-as-possibility and the fear of military service, through the
+changed fear of middle age (not death but survival after the plan is
+destroyed), to Ukraine as the proof that ordinary life continues
+under war as a condition — and closes on the fortune of an ordinary
+life and the question passing to the next generation. Central
+question: "What does it mean to build a life, when you know it
+could all be taken away?" Deliberate short beats are preserved
+exactly as approved (e.g. "What if I have to go?", "I hope they
+are.", "That I might live.", "But I cannot work hard enough to make
+war impossible.", "Nothing.", "I keep building.", "How fortunate I
+was.", "What about my child?", "And what about his children?",
+"I hope they can take tomorrow for granted.", "An ordinary life.",
+"Not only for me.", "For them, too."). The essay intentionally does
+not identify Taiwan or China; Ukraine is intentionally retained.
+
+## N001
+
+What if the ordinary life you've built could disappear overnight?
+
+How do you live with the fear of losing everything, when you've done nothing wrong?
+
+And what does it mean to keep building a life, knowing that everything could still be taken away?
+
+We spend much of our lives building things.
+
+A career. A home. A family. Some savings. Plans for what we might do when we are older.
+
+And if we are fortunate, little by little, life begins to feel stable.
+
+For most of my life, that fear has been somewhere in the background.
+
+Not always present in my thoughts.
+
+But never entirely gone.
+
+## N002
+
+I grew up in a place where the possibility of war was never entirely abstract.
+
+When I was young, there were moments when that possibility suddenly felt very real.
+
+I remember being afraid.
+
+I had not yet done my military service, and war meant something very simple to me:
+
+What if I have to go?
+
+That was about thirty years ago.
+
+The war never came.
+
+I finished my military service. I worked. I got married. I became a father.
+
+Eventually, I got used to living with the possibility.
+
+Whenever it felt a little closer, I could only look for reassurance in the arguments around me.
+
+They wouldn't really do it.
+
+The cost would be too high.
+
+It wouldn't make sense.
+
+Maybe those arguments are right.
+
+I hope they are.
+
+But either way, I need something that lets me put the fear aside and get on with my life.
+
+Because there is not much else I can do.
+
+## N003
+
+I thought getting older would make me less afraid.
+
+Instead, the fear changed.
+
+When I was young, war threatened a life that had barely begun.
+
+Now it threatens a life that took decades to build.
+
+A house can be replaced.
+
+Money can, at least in theory, be earned again.
+
+A job can be found again.
+
+But the years it took to build those things are gone forever.
+
+At my age, starting over does not feel like an adventure.
+
+I don't know if I have another thirty years to build the same life again.
+
+## N004
+
+And then I look at Ukraine.
+
+What I find hardest to imagine is not only the moment when war begins.
+
+It is everything that comes after.
+
+How do you live like that for years?
+
+Children still grow older.
+
+People still need food.
+
+Parents still need care.
+
+People still work, get sick, celebrate birthdays, and wonder what next year will look like.
+
+At some point, war is no longer an emergency.
+
+It becomes the condition under which ordinary life has to continue.
+
+That is what frightens me.
+
+Not only that I might die.
+
+That I might live.
+
+And have to figure out how to live after the life I spent decades building is gone.
+
+## N005
+
+Sometimes I wonder what goes through the minds of people who start wars.
+
+Why isn't it enough to take care of your own country?
+
+Why must someone else's home become part of your ambition?
+
+I know there are answers.
+
+History. Territory. Security. Power. National interest.
+
+But none of those words changes the question I keep coming back to:
+
+Why should my family pay the price for a decision we had nothing to do with?
+
+Maybe that is why I feel so helpless.
+
+There are many things in life I cannot control.
+
+But usually, I can at least do something.
+
+I can work harder.
+
+I can save more.
+
+I can prepare.
+
+But I cannot work hard enough to make war impossible.
+
+## N006
+
+Sometimes this fear feels a little like thinking about death.
+
+Not because war is inevitable. It isn't.
+
+But both remind me how little of the future I truly control.
+
+There is, however, an important difference.
+
+Death ends the planning.
+
+War may destroy the plan and leave you here to make another one.
+
+So what am I supposed to do?
+
+Nothing.
+
+At least, nothing that can make the possibility go away.
+
+So I go to work.
+
+I take care of my family.
+
+I save money.
+
+I make plans.
+
+I keep building.
+
+Not because I have solved the fear.
+
+I haven't.
+
+Part of me still wonders whether one day it will happen.
+
+I just don't know when.
+
+## N007
+
+And if I reach eighty and it never does?
+
+I don't think I will say I worried for nothing.
+
+I think I will say:
+
+How fortunate I was.
+
+I was allowed to have an ordinary life.
+
+I worked. I raised a family. I grew old.
+
+I made plans for tomorrow, and most mornings, tomorrow arrived looking more or less like the day before.
+
+But even then, there would be another question.
+
+What about my child?
+
+And what about his children?
+
+If the danger I worried about when I was young is still there when I am old, then perhaps I did not escape the question.
+
+I simply lived long enough to see another generation inherit it.
+
+I don't need history to remember my generation as brave.
+
+I don't want to find out whether I would be brave.
+
+And I don't want my child to have to find out either.
+
+## N008
+
+If I am fortunate enough to grow old in peace, I hope that fortune does not end with me.
+
+I hope my children can work, build homes, raise families, complain about small things, worry about retirement, and make plans for years that have not arrived yet.
+
+I hope they can take tomorrow for granted.
+
+To make plans.
+
+To build things.
+
+To assume there will be time to enjoy them.
+
+Maybe that is all I really want.
+
+An ordinary life.
+
+Not only for me.
+
+For them, too.

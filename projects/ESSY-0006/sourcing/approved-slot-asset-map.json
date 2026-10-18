@@ -1,0 +1,371 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0006",
+  "purpose": "Canonical human-approved slot to asset mapping (one slot per visual shot).",
+  "gate2": {
+    "approved": true,
+    "mechanism": "Human approval of the complete 32-slot selection in the task instruction; scenes approval recorded in draft state."
+  },
+  "invariants": {
+    "slotEqualsShot": true,
+    "slotCount": 32,
+    "shotCount": 32,
+    "uniqueSlotIds": 32,
+    "uniqueAssets": 32,
+    "assetsReused": 0
+  },
+  "items": [
+    {
+      "slotId": "N001-S1",
+      "narrationId": "N001",
+      "assetId": "pexels-video-20066239",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 12.28,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N001-S2",
+      "narrationId": "N001",
+      "assetId": "pexels-video-4099278",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 14.293333,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N001-S3",
+      "narrationId": "N001",
+      "assetId": "pexels-video-8775553",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 19.04,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N001-S4",
+      "narrationId": "N001",
+      "assetId": "pexels-video-10284254",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 41.44,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S1",
+      "narrationId": "N002",
+      "assetId": "pexels-video-5395017",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 11.498333,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S2",
+      "narrationId": "N002",
+      "assetId": "pexels-video-3683306",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 31.913333,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S3",
+      "narrationId": "N002",
+      "assetId": "pexels-video-10159563",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 11.626667,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S4",
+      "narrationId": "N002",
+      "assetId": "pexels-video-6627948",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 21.84,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S5",
+      "narrationId": "N002",
+      "assetId": "pexels-video-5155184",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 7.85,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S6",
+      "narrationId": "N002",
+      "assetId": "pexels-video-38612339",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 68.443375,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N002-S7",
+      "narrationId": "N002",
+      "assetId": "pexels-video-5452937",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 10.09,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N003-S1",
+      "narrationId": "N003",
+      "assetId": "pexels-video-39223355",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 17.64,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N003-S2",
+      "narrationId": "N003",
+      "assetId": "pexels-video-6037430",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 34.68,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N003-S3",
+      "narrationId": "N003",
+      "assetId": "pexels-video-5708836",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 15.84,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N004-S1",
+      "narrationId": "N004",
+      "assetId": "pexels-video-9933480",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 48.17,
+      "durationSource": "projects/ESSY-0006/sourcing/downloads/pexels-video-9933480-review-v2.mp4",
+      "notes": "Approved in review QA v3: 7372975d87b22ae476b71da0545f08a5d898cba3e126ef030c123144f15781a3"
+    },
+    {
+      "slotId": "N004-S2",
+      "narrationId": "N004",
+      "assetId": "pexels-video-8203037",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 10.388333,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N004-S4",
+      "narrationId": "N004",
+      "assetId": "pexels-video-36214844",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 35.32,
+      "durationSource": "projects/ESSY-0006/sourcing/downloads/pexels-video-36214844-review-v2.mp4",
+      "notes": "Approved in review QA v3: 7372975d87b22ae476b71da0545f08a5d898cba3e126ef030c123144f15781a3"
+    },
+    {
+      "slotId": "N004-S3",
+      "narrationId": "N004",
+      "assetId": "pexels-video-8091511",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 15.833333,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N005-S1",
+      "narrationId": "N005",
+      "assetId": "pexels-video-7121133",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 52.64,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N005-S2",
+      "narrationId": "N005",
+      "assetId": "pexels-video-40153740",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 22.08,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N005-S3",
+      "narrationId": "N005",
+      "assetId": "pexels-video-31650928",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 27.761067,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N006-S1",
+      "narrationId": "N006",
+      "assetId": "pexels-video-37635621",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 15.015,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N006-S2",
+      "narrationId": "N006",
+      "assetId": "pexels-video-6756335",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 22.6,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N006-S3",
+      "narrationId": "N006",
+      "assetId": "pexels-video-35395675",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 8.266667,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N006-S4",
+      "narrationId": "N006",
+      "assetId": "pexels-video-7221528",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 52.33,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N007-S1",
+      "narrationId": "N007",
+      "assetId": "pexels-video-6941441",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 57.12,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N007-S2",
+      "narrationId": "N007",
+      "assetId": "pexels-video-35674366",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 16.249567,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N007-S3",
+      "narrationId": "N007",
+      "assetId": "pexels-video-15582592",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 92.201667,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N007-S4",
+      "narrationId": "N007",
+      "assetId": "pexels-video-7038135",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 16.68,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N008-S1",
+      "narrationId": "N008",
+      "assetId": "pexels-video-40103205",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 16.8,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N008-S2",
+      "narrationId": "N008",
+      "assetId": "pexels-video-17927429",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 20.97,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    },
+    {
+      "slotId": "N008-S3",
+      "narrationId": "N008",
+      "assetId": "pexels-video-4153743",
+      "mediaType": "video",
+      "stillMotion": null,
+      "editorialStatus": "human-approved",
+      "actualDurationSec": 9.592917,
+      "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+      "notes": null
+    }
+  ]
+}

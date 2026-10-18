@@ -1,0 +1,126 @@
+{
+  "approval": {
+    "path": "output/ESSY-0006/ESSY-0006-review-540p-subtitled-v3.mp4",
+    "filename": "ESSY-0006-review-540p-subtitled-v3.mp4",
+    "sizeBytes": 65900181,
+    "sha256": "7372975d87b22ae476b71da0545f08a5d898cba3e126ef030c123144f15781a3"
+  },
+  "prior": [
+    {
+      "slotId": "N004-S1",
+      "map": {
+        "slotId": "N004-S1",
+        "narrationId": "N004",
+        "assetId": "pexels-video-37391874",
+        "mediaType": "video",
+        "stillMotion": null,
+        "editorialStatus": "human-approved",
+        "actualDurationSec": 14.633333,
+        "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+        "notes": null
+      },
+      "selection": {
+        "slotId": "N004-S1",
+        "assetId": "pexels-video-37391874",
+        "sourceUrl": "https://www.pexels.com/video/person-walking-dog-through-rustic-alleyway-37391874/",
+        "creator": "Circuit Occidental",
+        "localPreview": "temp/essy-0006-roughcut-v01/media/N004-S1-pexels-video-37391874.mp4",
+        "sha256": "c90156faaf28145952d4553ed0fe94fd56de042cb4c79ff87fb3894525de6496",
+        "width": 1200,
+        "height": 540,
+        "sourceDurationSec": 14.633333,
+        "proposedStartSec": 168.192,
+        "proposedDurationSec": 14.583,
+        "fitsSource": true,
+        "selectionStatus": "proposed"
+      },
+      "provenance": {
+        "slotId": "N004-S1",
+        "id": "pexels-video-37391874",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/person-walking-dog-through-rustic-alleyway-37391874/",
+        "downloadUrl": "https://videos.pexels.com/video-files/37391874/15836421_2400_1080_30fps.mp4",
+        "creator": "Circuit Occidental",
+        "creatorUrl": "https://www.pexels.com/@circuit-occidental-2152520313",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "originalFilename": "15836421_2400_1080_30fps.mp4",
+        "localPath": "projects/ESSY-0006/sourcing/downloads/pexels-video-37391874.mp4",
+        "bytes": 30065042,
+        "sha256": "ef6a79b4511ccf3396f2bac44309d40e1a9a69e3d2fbfc60dd45718f25cb795d",
+        "downloadedAt": "2026-10-17T12:57:08.161Z",
+        "durationSec": 14.633333,
+        "width": 2400,
+        "height": 1080,
+        "orientation": "landscape",
+        "stillMotion": null,
+        "contentValidation": {
+          "spatialDetail": 49.582,
+          "motion": 9.936,
+          "samples": 12
+        },
+        "slotDurationSec": 14.583,
+        "slotDurationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+        "reusedReviewDownload": false
+      }
+    },
+    {
+      "slotId": "N004-S4",
+      "map": {
+        "slotId": "N004-S4",
+        "narrationId": "N004",
+        "assetId": "pexels-video-39889654",
+        "mediaType": "video",
+        "stillMotion": null,
+        "editorialStatus": "human-approved",
+        "actualDurationSec": 23.840483,
+        "durationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+        "notes": null
+      },
+      "selection": {
+        "slotId": "N004-S4",
+        "assetId": "pexels-video-39889654",
+        "sourceUrl": "https://www.pexels.com/video/urban-street-view-with-walking-pedestrians-39889654/",
+        "creator": "Altaf Shah",
+        "localPreview": "temp/essy-0006-roughcut-v03/media/N004-S4-pexels-video-39889654.mp4",
+        "sha256": "cf4a147186c10fba777e650693e6c0b183ad039e9f6db7680711839f31245738",
+        "width": 960,
+        "height": 540,
+        "sourceDurationSec": 23.840483,
+        "proposedStartSec": 193.114,
+        "proposedDurationSec": 15.055,
+        "fitsSource": true,
+        "selectionStatus": "proposed"
+      },
+      "provenance": {
+        "slotId": "N004-S4",
+        "id": "pexels-video-39889654",
+        "mediaType": "video",
+        "sourceUrl": "https://www.pexels.com/video/urban-street-view-with-walking-pedestrians-39889654/",
+        "downloadUrl": "https://videos.pexels.com/video-files/39889654/17013557_1920_1080_60fps.mp4",
+        "creator": "Altaf Shah",
+        "creatorUrl": "https://www.pexels.com/@altaf-shah-3143825",
+        "license": "Pexels License",
+        "licenseUrl": "https://www.pexels.com/license/",
+        "originalFilename": "17013557_1920_1080_60fps.mp4",
+        "localPath": "projects/ESSY-0006/sourcing/downloads/pexels-video-39889654.mp4",
+        "bytes": 17137503,
+        "sha256": "fe0d574e8695e7d60717f150ee588006884985117de85442863abc19e3cbb0e1",
+        "downloadedAt": "2026-10-17T12:57:18.971Z",
+        "durationSec": 23.840483,
+        "width": 1920,
+        "height": 1080,
+        "orientation": "landscape",
+        "stillMotion": null,
+        "contentValidation": {
+          "spatialDetail": 60.3,
+          "motion": 10.341,
+          "samples": 12
+        },
+        "slotDurationSec": 15.055,
+        "slotDurationSource": "projects/_drafts/ESSY-0006/slot-selection-proposed.json",
+        "reusedReviewDownload": false
+      }
+    }
+  ]
+}

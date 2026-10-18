@@ -1,0 +1,42 @@
+{
+  "episode": "ESSY-0006",
+  "purpose": "User-requested Review QA v2; replacement selection awaits review approval",
+  "replacements": [
+    {
+      "slotId": "N004-S1",
+      "oldId": "pexels-video-37391874",
+      "id": "pexels-video-9933480",
+      "creator": "Bilel Ghalloum",
+      "sourceUrl": "https://www.pexels.com/video/close-up-of-raindrops-on-window-9933480/",
+      "downloadUrl": "https://www.pexels.com/download/video/9933480/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "localPath": "projects/ESSY-0006/sourcing/downloads/pexels-video-9933480-review-v2.mp4",
+      "sha256": "e39f67cac7aa4032b1d589430609b3bd1c9c998a978773073564d89e069c97f3",
+      "durationSec": 48.17,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 27218612,
+      "editorialStatus": "proposed for review",
+      "slotDurationSec": 14.583
+    },
+    {
+      "slotId": "N004-S4",
+      "oldId": "pexels-video-39889654",
+      "id": "pexels-video-36214844",
+      "creator": "Scott Precious",
+      "sourceUrl": "https://www.pexels.com/video/busy-urban-street-with-pedestrians-walking-36214844/",
+      "downloadUrl": "https://videos.pexels.com/video-files/36214844/15357331_1920_1080_25fps.mp4",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "localPath": "projects/ESSY-0006/sourcing/downloads/pexels-video-36214844-review-v2.mp4",
+      "sha256": "0ef3ae4ba8938007d52e0de44624fa23b5e3d63673b5367ccc7a711c05f7f81c",
+      "durationSec": 35.32,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 29169880,
+      "editorialStatus": "proposed for review",
+      "slotDurationSec": 15.055
+    }
+  ]
+}

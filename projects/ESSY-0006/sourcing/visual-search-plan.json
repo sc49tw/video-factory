@@ -1,0 +1,430 @@
+[
+  {
+    "narrationId": "N001",
+    "slotId": "N001-S1",
+    "editorialFunction": "Open the film on ordinary life as accumulation of small, unremarkable acts rather than achievement, so the thesis reads as lived texture, not aspiration.",
+    "visualIntent": "Hands and everyday objects at rest on an ordinary surface (a kitchen table, a work bench, tools set down): lived-in, warm, unposed, level framing, soft daylight. Presence of use, not display.",
+    "avoid": [
+      "motivational montage and success imagery",
+      "luxury interiors, new-house or real-estate glamour",
+      "smiling 'perfect family' stock",
+      "trophies, awards, celebration",
+      "currency or cash stacks as literal 'savings'"
+    ],
+    "searchQuery": "hands everyday objects kitchen table warm natural light still",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N001",
+    "slotId": "N001-S2",
+    "editorialFunction": "Move from objects to the rooms that hold a life, implying decades of habitation rather than a single event, so stability feels earned by time.",
+    "visualIntent": "A quiet, lived-in interior in late-afternoon light, one ordinary space held steady; no people required; stillness that reads as inhabited rather than empty.",
+    "avoid": [
+      "staged show-home perfection",
+      "wide 'minimalist' empty interiors",
+      "vacant-room or unoccupied-frame gloom",
+      "symmetrical architectural postcard shots"
+    ],
+    "searchQuery": "lived in home interior late afternoon light quiet still",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N001",
+    "slotId": "N001-S3",
+    "editorialFunction": "Provide a held visual pause so the central question lands through attention and stillness, without the image pre-answering or illustrating 'interrupted'.",
+    "visualIntent": "A person at a threshold or window edge, seen from behind or the side, looking out into ordinary space; restrained; the outside reads as normal day, not threat.",
+    "avoid": [
+      "dramatic silhouette against storm",
+      "hand-on-glass melancholy cliche",
+      "literal disruption imagery (shattering, alarms, sudden noise)",
+      "over-the-shoulder reveal of a face reacting"
+    ],
+    "searchQuery": "person standing at window looking out quiet daylight interior",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S1",
+    "editorialFunction": "Ground 'a place where the possibility of war was never abstract' in an ordinary living environment, deliberately withholding conflict imagery so the fear stays human-scale.",
+    "visualIntent": "A modest lived-in home or neighbourhood street at an unremarkable hour; human presence incidental; documentary calm; the ordinariness is the point.",
+    "avoid": [
+      "any military, uniform, or insignia imagery",
+      "flags-as-threat, sandbags, checkpoints",
+      "conflict, combat, or war footage of any kind",
+      "geopolitical maps or borders"
+    ],
+    "searchQuery": "quiet residential street ordinary day calm observational",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S2",
+    "editorialFunction": "Register childhood as a scale of experience rather than an event, anchoring 'when I was young' in the small physical world of a child.",
+    "visualIntent": "A child's-eye-level everyday detail (a low windowsill, a bicycle, shoes by a door) in soft daylight; quiet; faces not required.",
+    "avoid": [
+      "posed 'innocent child' stock",
+      "sentimental childhood montage",
+      "toys arranged as symbolic clutter"
+    ],
+    "searchQuery": "child height window sill bicycle shoes by door soft daylight",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S3",
+    "editorialFunction": "Hold 'What if I have to go?' as private interior dread, expressing fear through waiting and stillness rather than dramatising departure or service.",
+    "visualIntent": "A seated person, still, in ordinary light, hands quiet; the feeling of waiting and not-knowing; face not required; restrained framing.",
+    "avoid": [
+      "conscription, enlistment, or draft imagery",
+      "trains, platforms, or departure scenes",
+      "uniform ceremony or farewell at a station",
+      "sad-piano close-up acting",
+      "letters from the front"
+    ],
+    "searchQuery": "person seated still quiet room natural light waiting",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S4",
+    "editorialFunction": "Carry the list-shaped passage ('worked, married, became a father') as the texture of accumulating years, refusing a milestone-by-milestone montage.",
+    "visualIntent": "An ordinary working-day surface or a shared domestic moment around a meal table; time passing through routine and repetition; warm and unremarkable.",
+    "avoid": [
+      "wedding cliche or veil/rings close-up",
+      "baby-reveal or newborn stock",
+      "graduation and 'life milestones' checklist imagery",
+      "one literal image per narrated event"
+    ],
+    "searchQuery": "hands working everyday task home table warm light",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S5",
+    "editorialFunction": "Give 'I got used to living with the possibility' breathing room as endurance that is unresolved, not a fear that has been solved or lifted.",
+    "visualIntent": "Slow, low-motion ambient continuity: light moving across a wall, weather passing a window; low semantic load; time felt rather than shown.",
+    "avoid": [
+      "hopeful sunrise implying the fear is gone",
+      "symbolic 'lifting' or release",
+      "time-lapse used as novelty"
+    ],
+    "searchQuery": "soft light moving slowly across wall window quiet",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S6",
+    "editorialFunction": "Let the reassurance arguments ('they wouldn't really do it, the cost would be too high') feel like overheard, anonymous public talk, unanchored to any faction or screen.",
+    "visualIntent": "An ordinary public or semi-public space where people gather and talk (a market, a bus window, a waiting room), observed at a calm distance; voices implied, not scripted.",
+    "avoid": [
+      "political talking heads or news broadcast",
+      "protest, rallies, or partisan symbols",
+      "flags, emblems, maps",
+      "on-screen text or cable-news framing"
+    ],
+    "searchQuery": "people talking market or waiting room everyday calm distance",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N002",
+    "slotId": "N002-S7",
+    "editorialFunction": "Land 'I need something that lets me put the fear aside' as a small private act of ordinary self-soothing, the most intimate image in the chapter.",
+    "visualIntent": "A hand doing something small and ordinary (pouring water, straightening a cloth, closing a book) in warm lamplight; quiet, unhurried.",
+    "avoid": [
+      "prayer or symbolic gesture cliche",
+      "medication, alcohol, or cigarettes",
+      "exaggerated or performative breathing"
+    ],
+    "searchQuery": "hand pouring water warm lamplight quiet evening",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N003",
+    "slotId": "N003-S1",
+    "editorialFunction": "State the changed fear as the threat to something built over time, so middle age reads as accumulated stakes rather than a new anxiety.",
+    "visualIntent": "A single ordinary object or room that shows age through use and wear (a well-kept tool, a settled chair, a familiar doorway); unhurried; the sense of years embodied in things.",
+    "avoid": [
+      "before/after transformation framing",
+      "shiny new-product imagery",
+      "literal 'clock' or 'hourglass' time metaphors",
+      "aging cliches (wrinkles, grey hair close-up)"
+    ],
+    "searchQuery": "worn everyday object well used quiet natural light",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N003",
+    "slotId": "N003-S2",
+    "editorialFunction": "Separate the replaceable from the irreplaceable, letting 'the years are gone forever' land through restraint rather than a symbol of loss.",
+    "visualIntent": "A wide, quiet domestic or working space held still; ordinary and intact on the surface while the narration turns to what cannot be rebuilt; the frame withholds any explicit symbol.",
+    "avoid": [
+      "ruins, rubble, or destroyed-property imagery",
+      "burning, flooding, or disaster scenes",
+      "sand through an hourglass or falling pages",
+      "melodramatic slow-motion grief"
+    ],
+    "searchQuery": "quiet lived in room wide still ordinary daylight",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N003",
+    "slotId": "N003-S3",
+    "editorialFunction": "Carry 'starting over does not feel like an adventure' as the physical weight of age, refusing the inspirational 'new beginnings' register.",
+    "visualIntent": "A person rising or standing with ordinary, unhurried effort in a familiar space; back view or partial framing; the body's real weight and pace, not heroic.",
+    "avoid": [
+      "motivational 'fresh start' montage",
+      "sunrise-jog and new-horizon cliches",
+      "youthful athletic bodies implying renewal",
+      "arms-raised triumph or release"
+    ],
+    "searchQuery": "person standing up slowly ordinary room natural light back view",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N004",
+    "slotId": "N004-S1",
+    "editorialFunction": "Reframe war from a beginning-event to an ongoing condition under which life must continue, setting the chapter's register as endurance, not crisis.",
+    "visualIntent": "Ordinary life carrying on in a place marked by time and weather rather than by conflict: a quiet street, a home interior, everyday movement; calm, observational, unsensational.",
+    "avoid": [
+      "soldiers, tanks, or military equipment",
+      "explosions, combat, or air-raid footage",
+      "geopolitical maps, borders, or flags",
+      "news-broadcast or war-reportage graphics",
+      "sensational 'war zone' spectacle"
+    ],
+    "searchQuery": "quiet street everyday life ordinary movement calm day",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N004",
+    "slotId": "N004-S2",
+    "editorialFunction": "Carry the list-shaped passage ('children still grow older, people still need food, parents still need care, birthdays') as the texture of life persisting, not as a montage of each item.",
+    "visualIntent": "A small cluster of ordinary continuities held as atmosphere: a family table, someone tending to another, a shared quiet moment; the point is that the ordinary continues, shown through mood and routine.",
+    "avoid": [
+      "one literal image per narrated item",
+      "birthday-cake and party cliche",
+      "hospital, medical, or clinical settings",
+      "charity/aid or refugee imagery",
+      "tearful reunion stock"
+    ],
+    "searchQuery": "family at table together quiet everyday moment warm",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N004",
+    "slotId": "N004-S3",
+    "editorialFunction": "Land the turn 'Not only that I might die. That I might live.' as the harder fear of surviving and going on, held through stillness rather than depicted, with ordinary life continuing under a subtle, unspoken uncertainty.",
+    "visualIntent": "A person still and present in ordinary surroundings, going on with an ordinary day while something is held in quiet reserve; a glance toward a window or a pause mid-action that suggests uncertainty without naming it; the weight of continuing rather than the drama of loss; restrained, no face required.",
+    "avoid": [
+      "funeral, graves, or memorial imagery",
+      "grieving figures and hands-over-face",
+      "heroic survival or resilience montage",
+      "rebuilding as inspirational 'triumph'",
+      "before/after devastation comparison",
+      "military, uniform, combat, or destruction imagery",
+      "flags, geopolitical maps, or borders",
+      "sensational or melodramatic dread"
+    ],
+    "searchQuery": "person pausing ordinary day looking out window quiet uncertain",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N005",
+    "slotId": "N005-S1",
+    "editorialFunction": "Hold the question 'why must someone else's home become part of your ambition?' as genuine perplexity, without depicting leaders, power, or politics.",
+    "visualIntent": "An anonymous figure or figures in an ordinary setting, seen at a distance or from behind; the sense of a question being asked into ordinary space; no identifiable 'villains'.",
+    "avoid": [
+      "political leaders, dictators, or portraits of power",
+      "government buildings or seats of power",
+      "military command or strategy rooms",
+      "maps, globes, or territory graphics",
+      "national flags or insignia"
+    ],
+    "searchQuery": "anonymous person ordinary place seen from behind quiet",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N005",
+    "slotId": "N005-S2",
+    "editorialFunction": "Let the list of abstract words ('history, territory, security, power, national interest') pass as language that does not resolve the question, kept deliberately non-illustrative.",
+    "visualIntent": "Quiet, low-semantic continuity that stays out of the way while the abstract nouns are spoken: slow ambient light, an ordinary surface, a still room; the image declines to define the words.",
+    "avoid": [
+      "literal illustration of each abstract word",
+      "text-on-screen listing the words",
+      "documents, treaties, or seals",
+      "power-iconography (columns, globes, eagles)",
+      "newsprint or headline graphics"
+    ],
+    "searchQuery": "soft ambient light still room quiet ordinary surface slow",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N005",
+    "slotId": "N005-S3",
+    "editorialFunction": "Turn 'I cannot work hard enough to make war impossible' into the felt limit of personal effort, expressed through an ordinary act of trying.",
+    "visualIntent": "Hands engaged in ordinary, honest work (preparing something, mending, tidying, tending); capable and grounded; the effort is real but visibly bounded.",
+    "avoid": [
+      "motivational 'you can do anything' imagery",
+      "heroic effort or straining bodies",
+      "literal wall, barrier, or impossible-task metaphors",
+      "despair or collapse framing"
+    ],
+    "searchQuery": "hands doing ordinary work preparing mending close natural light",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S1",
+    "editorialFunction": "Open the mortality comparison with restraint, treating 'thinking about death' as a quiet philosophical register rather than grief.",
+    "visualIntent": "Calm, low-motion atmosphere with a sense of stillness and limit (still air, soft light, an unhurried natural element); contemplative, unsensational.",
+    "avoid": [
+      "skulls, graveyards, or overt mortality symbols",
+      "candles, coffins, or religious iconography",
+      "memento-mori staging",
+      "hospital or bedside imagery"
+    ],
+    "searchQuery": "still air soft light calm natural quiet contemplative",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S2",
+    "editorialFunction": "Let the single-word beat 'Nothing.' land by holding a still frame for the natural duration of the word and the pause around it, so the word carries its full weight through stillness that follows the narration rather than through an artificially extended hold.",
+    "visualIntent": "A near-static, near-empty ordinary frame held naturally through the spoken word 'Nothing.' and the short pause that surrounds it: a quiet surface, a still room, gentle light; the hold tracks the word and its breath, and the absence of event becomes the content.",
+    "avoid": [
+      "filling the pause with a new image or action",
+      "black screen used as a cheap beat",
+      "symbolic object standing for 'nothing'",
+      "dramatic cut on the word",
+      "holding past the pause into dead air"
+    ],
+    "searchQuery": "empty quiet room still soft light gentle stillness",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S3",
+    "editorialFunction": "Carry 'I go to work, take care of my family, save money, make plans' as the rhythm of continuing, showing persistence through routine rather than resolve.",
+    "visualIntent": "Ordinary daily actions in sequence-feel (commuting or walking, a family meal, tending a home): calm, repetitive, life-sized; the choice to go on shown as habit and care.",
+    "avoid": [
+      "motivational 'keep going' montage",
+      "arms-raised or defiant poses",
+      "one literal image per listed action",
+      "triumphant scoring-match imagery"
+    ],
+    "searchQuery": "ordinary daily routine walking home meal calm everyday",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N006",
+    "slotId": "N006-S4",
+    "editorialFunction": "Land 'I keep building. Not because I have solved the fear. I haven't.' as unresolved persistence, the emotional core of the essay.",
+    "visualIntent": "Hands or a figure continuing an ordinary act of building or making (assembling, planting, preparing) with calm persistence; the work continues although the question is not answered; no resolution.",
+    "avoid": [
+      "triumphant completion or 'solved' imagery",
+      "symbolic sunrise or 'light at the end'",
+      "tearful or self-congratulatory framing",
+      "before/after progress reveal"
+    ],
+    "searchQuery": "hands continuing quiet work assembling preparing calm",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S1",
+    "editorialFunction": "Land 'How fortunate I was. I was allowed to have an ordinary life.' as quiet gratitude, not triumph, so the fortune reads as simple and hard-won.",
+    "visualIntent": "An older adult in an ordinary, comfortable domestic setting, at rest; warm, unhurried light; the stillness of a long life; contemplative, no forced emotion.",
+    "avoid": [
+      "inspirational 'life well lived' montage",
+      "awards, applause, or legacy framing",
+      "wrinkle and age-spot close-ups",
+      "grey-haired slow-motion hero shots"
+    ],
+    "searchQuery": "older person resting quiet home warm afternoon light calm",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S2",
+    "editorialFunction": "Carry the ordinary details of a full life ('worked, raised a family, grew old, tomorrow looked like the day before') as the comfort of repetition, not a highlights reel.",
+    "visualIntent": "Warm domestic continuity across a day or a routine (a familiar room at different light, an ordinary meal, a settled habit); the reassurance of sameness; unremarkable by design.",
+    "avoid": [
+      "photo-album or flashback montage",
+      "milestone recap with on-screen dates",
+      "nostalgic sepia or aging effects",
+      "family-portrait postcard shots"
+    ],
+    "searchQuery": "familiar home room warm light ordinary daily routine quiet",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S3",
+    "editorialFunction": "Turn the question toward the next generation ('What about my child? And what about his children?') so the worry is felt as inheritance rather than stated.",
+    "visualIntent": "A child or young person in ordinary life, observed calmly from a distance or side; the sense of a life being lived that carries the same uncertainty forward; tender but not sentimental.",
+    "avoid": [
+      "posed 'hopeful child looking to future' stock",
+      "prophetic or ominous child framing",
+      "over-the-shoulder protective-cradle cliche",
+      "literal generational montage with arrows"
+    ],
+    "searchQuery": "young person ordinary life quiet observed from side daylight",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N007",
+    "slotId": "N007-S4",
+    "editorialFunction": "Close the chapter on the wish not to be tested ('I don't want to find out whether I would be brave') as a quiet refusal of the heroic frame.",
+    "visualIntent": "A restrained figure or hands in stillness, turning away from spectacle toward the ordinary; the choice to remain unheroic held gently; no face required.",
+    "avoid": [
+      "heroic, defiant, or soldierly poses",
+      "military, uniform, or combat imagery",
+      "dramatic resolve or jaw-set close-up",
+      "symbolic armour, shield, or weapon"
+    ],
+    "searchQuery": "person still quiet turning away calm ordinary light restrained",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S1",
+    "editorialFunction": "Open the hope that fortune does not end with one life, extending the essay's subject from the narrator to the next generation without sentimentality.",
+    "visualIntent": "Ordinary forward-looking domestic life: someone beginning an ordinary day, a home in use, quiet continuity; the calm of an unthreatened tomorrow; unhurried, observational.",
+    "avoid": [
+      "sentimental 'future generations' imagery",
+      "children silhouetted against sunrise",
+      "hopeful-globe or horizon cliches",
+      "hands-passing-the-torch symbolism"
+    ],
+    "searchQuery": "morning at home ordinary day begins quiet warm light",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S2",
+    "editorialFunction": "Carry the list-shaped hope ('work, build homes, raise families, complain about small things, worry about retirement') as the ordinariness being wished for, shown through mood not a checklist.",
+    "visualIntent": "A small cluster of everyday continuities held as atmosphere: ordinary work, a shared home moment, small daily concerns; the emphasis is that these are the good things precisely because they are ordinary.",
+    "avoid": [
+      "one literal image per wished-for item",
+      "motivational 'build your dream life' imagery",
+      "perfect-family or lifestyle-ad framing",
+      "retirement-resort cliche"
+    ],
+    "searchQuery": "everyday home life ordinary work shared moment quiet warm",
+    "preferredMediaType": "video"
+  },
+  {
+    "narrationId": "N008",
+    "slotId": "N008-S3",
+    "editorialFunction": "Land 'take tomorrow for granted' and the closing wish ('An ordinary life. Not only for me. For them, too.') as the thesis restated through stillness, ending without spectacle.",
+    "visualIntent": "A calm, held ordinary image (a quiet room in warm light, a still domestic detail, a figure at rest); restrained and resolved in mood if not in the question; the film ends on the ordinary it has been arguing for.",
+    "avoid": [
+      "sunset, sunrise, or 'full circle' closure cliche",
+      "triumphant final wide shot or drone pullback",
+      "title-card-style inspirational ending",
+      "fade-to-black with swelling music cue imagery"
+    ],
+    "searchQuery": "quiet room warm light still domestic detail calm rest",
+    "preferredMediaType": "video"
+  }
+]

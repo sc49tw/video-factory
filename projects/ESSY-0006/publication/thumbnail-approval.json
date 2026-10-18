@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0006",
+  "asset": "projects/ESSY-0006/publication/thumbnail.png",
+  "sha256": "a5f8f73accbf87af6c06593197246e8804944a07de3142d375800bb8f23af22a",
+  "approval": {
+    "approved": true,
+    "by": "project owner",
+    "channel": "ChatGPT",
+    "date": "2026-10-18",
+    "decision": "Approved existing thumbnail without changes"
+  },
+  "recordedAt": "2026-10-18T11:42:53Z"
+}

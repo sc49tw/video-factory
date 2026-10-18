@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "youtube",
+  "episode": "ESSY-0006",
+  "channel": "A Second Look at Life",
+  "series": "A SECOND LOOK AT LIFE",
+  "title": "An Ordinary Life",
+  "localizations": {
+    "zh-TW": {
+      "title": "平凡的生活，能留住多久？"
+    }
+  },
+  "description": "What does it mean to build an ordinary life when you know it could be taken away? This reflective essay follows the changing fear of war from youth to middle age, considers the lives that continue in Ukraine, and asks what we hope to leave for the next generation.\n\nA Second Look at Life is a series of reflective essays about time, family, and the second half of life.",
+  "thumbnail": "thumbnail.png",
+  "tags": [
+    "ordinary life",
+    "midlife",
+    "family",
+    "war and peace",
+    "reflection",
+    "A Second Look at Life"
+  ],
+  "language": "en",
+  "visibility": "private"
+}

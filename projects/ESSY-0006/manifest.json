@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0006",
+  "title": "An Ordinary Life",
+  "tts": {
+    "provider": "azure",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-20%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "subtitleTiming": {
+    "policy": "word-boundary-required",
+    "schemaVersion": "1.0"
+  },
+  "sentenceCount": 8,
+  "audio": [
+    {
+      "id": "sentence-001",
+      "blockId": "n001",
+      "path": "projects/ESSY-0006/audio/N001.mp3",
+      "durationSec": 51.432,
+      "textSha256": "7a9fca02517031decce18c7ebe0b732d247e88ec8013599e5c14f77023aaf8a8",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-002",
+      "blockId": "n002",
+      "path": "projects/ESSY-0006/audio/N002.mp3",
+      "durationSec": 74.616,
+      "textSha256": "cf6bb7fae42b8ee4d1b75de0d6b9ae9048be88573a8f06c8cf20889da997e3b7",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-003",
+      "blockId": "n003",
+      "path": "projects/ESSY-0006/audio/N003.mp3",
+      "durationSec": 42.144,
+      "textSha256": "4d11f1b93f9e40cc3a3c083eea7a501ce84826af45bac3f325afe25ab37cc332",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-004",
+      "blockId": "n004",
+      "path": "projects/ESSY-0006/audio/N004.mp3",
+      "durationSec": 55.032,
+      "textSha256": "4295638d8155fc9476d8e3f7e6620667b9bd08429b36fbbe575e125674447fa2",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-005",
+      "blockId": "n005",
+      "path": "projects/ESSY-0006/audio/N005.mp3",
+      "durationSec": 60.672,
+      "textSha256": "f3e3789313d9d0e3778e3e19ccf6a4df2c07a76e869fe24144c7ffeaf837b348",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-006",
+      "blockId": "n006",
+      "path": "projects/ESSY-0006/audio/N006.mp3",
+      "durationSec": 61.392,
+      "textSha256": "6befdf66bd297eb85e9297ff4f1d5d275cba5c62996c7209065d05cf7ce5e4c1",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-007",
+      "blockId": "n007",
+      "path": "projects/ESSY-0006/audio/N007.mp3",
+      "durationSec": 65.064,
+      "textSha256": "4cccc882a306ace4d16b7953f7756935eea944d0dc717783e05069c4f0074c6d",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    },
+    {
+      "id": "sentence-008",
+      "blockId": "n008",
+      "path": "projects/ESSY-0006/audio/N008.mp3",
+      "durationSec": 42.288,
+      "textSha256": "64e37be2ad8d4953039303f97f58a634da0a76d1208ccf13cc61d2b939e34675",
+      "speaker": null,
+      "tts": {
+        "provider": "azure",
+        "voice": "en-GB-RyanNeural",
+        "rate": "-20%",
+        "pitch": "+0Hz",
+        "volume": "+0%"
+      }
+    }
+  ]
+}

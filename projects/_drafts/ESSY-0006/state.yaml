@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "2.0",
+  "draftId": "ESSY-0006",
+  "series": "ESSY",
+  "subtype": "essay",
+  "format": "ESSY",
+  "currentStage": "RENDER",
+  "status": "completed",
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "approvedAt": "2026-10-12T14:56:15.539Z"
+    },
+    "english": {
+      "approved": true,
+      "approvedAt": "2026-10-17T03:13:10.783Z"
+    },
+    "scenes": {
+      "approved": true,
+      "approvedAt": "2026-10-17T03:19:56.740Z"
+    },
+    "package": {
+      "approved": true,
+      "approvedAt": "2026-10-17T12:51:14.709Z"
+    },
+    "qa": {
+      "approved": true,
+      "approvedAt": "2026-10-18T05:19:33.146Z",
+      "artifact": {
+        "path": "output/ESSY-0006/ESSY-0006-review-540p-subtitled-v3.mp4",
+        "filename": "ESSY-0006-review-540p-subtitled-v3.mp4",
+        "sizeBytes": 65900181,
+        "sha256": "7372975d87b22ae476b71da0545f08a5d898cba3e126ef030c123144f15781a3"
+      },
+      "approval": {
+        "by": "project owner",
+        "channel": "ChatGPT",
+        "date": "2026-10-18"
+      }
+    },
+    "finalAssembly": {
+      "approved": true,
+      "approvedAt": "2026-10-18T12:03:55.606Z",
+      "artifact": {
+        "filename": "ESSY-0006-final-v1.mp4",
+        "path": "output/ESSY-0006/ESSY-0006-final-v1.mp4",
+        "sha256": "fe4ed6f37e484aab6355b392259820d0f0af7a43c132dea8d3b1a5a8242734b3",
+        "sizeBytes": 369729808,
+        "durationSec": 463.726,
+        "subtitleQaPassed": true,
+        "renderLabel": "bilingual-en-zhTW"
+      }
+    }
+  },
+  "artifacts": {
+    "request": "request.yaml",
+    "concept": null,
+    "script": null,
+    "storyboard": "storyboard.yaml",
+    "productionPackage": "production-package.json",
+    "assetsValidation": "assets-validation.json"
+  },
+  "createdAt": "2026-10-12T14:55:00.000Z",
+  "updatedAt": "2026-10-18T12:03:55.609Z",
+  "history": [
+    {
+      "at": "2026-10-12T14:55:00.000Z",
+      "event": "draft-created"
+    },
+    {
+      "at": "2026-10-12T14:55:30.385Z",
+      "event": "request-completed"
+    },
+    {
+      "at": "2026-10-12T14:56:15.541Z",
+      "event": "concept-approved"
+    },
+    {
+      "at": "2026-10-12T15:00:11.356Z",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-10-14T14:33:34.896Z",
+      "event": "prepare-complete",
+      "blockCount": 8,
+      "totalDurationSec": 349.248,
+      "manifest": "manifest.json"
+    },
+    {
+      "at": "2026-10-14T15:07:31.946Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-10-14T15:09:50.645Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-16T13:14:42.386Z",
+      "event": "draft-rolled-back",
+      "to": "STORYBOARD"
+    },
+    {
+      "at": "2026-10-16T13:14:45.544Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-10-16T13:17:46.642Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-16T15:37:21.212Z",
+      "event": "draft-rolled-back",
+      "to": "STORYBOARD"
+    },
+    {
+      "at": "2026-10-16T15:37:40.876Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-10-16T16:01:41.922Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-17T01:56:19.165Z",
+      "event": "draft-rolled-back",
+      "to": "STORYBOARD"
+    },
+    {
+      "at": "2026-10-17T01:56:19.851Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-10-17T01:57:26.834Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-17T03:12:17.021Z",
+      "event": "draft-rolled-back",
+      "to": "ENGLISH"
+    },
+    {
+      "at": "2026-10-17T03:13:10.786Z",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-10-17T03:13:50.182Z",
+      "event": "prepare-complete",
+      "blockCount": 8,
+      "totalDurationSec": 452.64,
+      "manifest": "manifest.json"
+    },
+    {
+      "at": "2026-10-17T03:19:56.743Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-17T12:50:28.678Z",
+      "event": "package-submitted"
+    },
+    {
+      "at": "2026-10-17T12:51:14.712Z",
+      "event": "package-approved"
+    },
+    {
+      "at": "2026-10-17T13:57:46.143Z",
+      "event": "assets-complete"
+    },
+    {
+      "at": "2026-10-17T15:51:34.234Z",
+      "event": "subtitles-approved",
+      "artifact": {
+        "path": "projects/ESSY-0006/subtitles/zh-TW.json",
+        "sha256": "cc641b2584abbcc5bc39ef1840374b721ce5bf2d073f7d6dd3e40030f95ecbc1"
+      },
+      "approval": {
+        "by": "project owner",
+        "channel": "ChatGPT",
+        "date": "2026-10-17"
+      }
+    },
+    {
+      "at": "2026-10-18T05:19:33.148Z",
+      "event": "qa-approved",
+      "artifact": {
+        "path": "output/ESSY-0006/ESSY-0006-review-540p-subtitled-v3.mp4",
+        "filename": "ESSY-0006-review-540p-subtitled-v3.mp4",
+        "sizeBytes": 65900181,
+        "sha256": "7372975d87b22ae476b71da0545f08a5d898cba3e126ef030c123144f15781a3"
+      },
+      "approval": {
+        "by": "project owner",
+        "channel": "ChatGPT",
+        "date": "2026-10-18"
+      }
+    },
+    {
+      "at": "2026-10-18T11:01:58.000Z",
+      "event": "bgm-license-and-identity-verified",
+      "evidence": "projects/ESSY-0006/sourcing/licenses/dreamland-evidence.md"
+    },
+    {
+      "at": "2026-10-18T11:20:02.000Z",
+      "event": "final-assembly-human-approval-received",
+      "approval": {
+        "by": "project owner",
+        "channel": "ChatGPT",
+        "date": "2026-10-18",
+        "basis": "Owner reports watching the complete 1080p master."
+      },
+      "artifact": {
+        "path": "output/ESSY-0006/ESSY-0006-final-v1.mp4",
+        "sizeBytes": 369729808,
+        "sha256": "fe4ed6f37e484aab6355b392259820d0f0af7a43c132dea8d3b1a5a8242734b3"
+      },
+      "note": "Human approval received; canonical final-assembly gate remains pending because completion validation requires publication metadata and thumbnail."
+    },
+    {
+      "at": "2026-10-18T12:03:55.606Z",
+      "event": "final-assembly-approved",
+      "artifact": {
+        "filename": "ESSY-0006-final-v1.mp4",
+        "path": "output/ESSY-0006/ESSY-0006-final-v1.mp4",
+        "sha256": "fe4ed6f37e484aab6355b392259820d0f0af7a43c132dea8d3b1a5a8242734b3",
+        "sizeBytes": 369729808,
+        "durationSec": 463.726,
+        "subtitleQaPassed": true,
+        "renderLabel": "bilingual-en-zhTW"
+      }
+    }
+  ],
+  "prepare": {
+    "completed": true,
+    "completedAt": "2026-10-17T03:13:50.179Z",
+    "blockCount": 8,
+    "totalDurationSec": 452.64,
+    "manifest": "manifest.json"
+  }
+}

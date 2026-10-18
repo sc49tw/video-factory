@@ -1,0 +1,2 @@
+# Preserve the exact bytes bound to the subtitle approval SHA-256.
+subtitles/zh-TW.json -text
