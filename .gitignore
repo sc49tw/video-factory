@@ -64,6 +64,25 @@ projects/*/music/*.wav
 projects/*/music/candidates/
 projects/*/audition/*.mp3
 
+# ---- Regenerable Phase 1B artifacts (retain review decisions and sources) ----
+/scripts/__pycache__/
+/scripts/oneoff/__pycache__/
+/projects/SMOKE-ESSY-0001-2026-10-12T*/
+/projects/SMOKE-ESSY-0003-2026-10-12T*/
+/projects/_drafts/SMOKE-ESSY-0003-2026-10-12T*/
+/projects/ESSY-0006/sourcing/ESSY-0006-visual-audit/ESSY-0006-visual-audit/frames/*.jpg
+
+# Local diagnostics, episode audio revisions, downloaded music and backups.
+/edge-test.mp3
+/projects/ESSY-0006/audio-v04.mp3
+/projects/ESSY-0006/audio-v05.mp3
+/projects/ESSY-0006/audio-v05b.mp3
+/projects/ESSY-0006/sourcing/licenses/Dreamland - Aakash Gandhi.mp3
+/scripts/generate-esss-tts.py.bak
+/scripts/generate-essy-tts.py.bak
+/scripts/generate-essy-tts.py.fixed
+/scripts/generate-essy-tts.py.fixed2
+
 # ---- Ambiguous — MANUAL decision, NOT auto-excluded ----
 # projects/<EP>/source/*.png        content/manual images (kept)
 # inbox/<EP>/*.png                   content/manual images (kept)

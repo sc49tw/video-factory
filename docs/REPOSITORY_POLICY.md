@@ -53,6 +53,14 @@ Guiding principle:
   (only `lesson.json` and hand-authored text stay in `source/`)
 - `output/**`, `*.mp4`
 - `node_modules/**`
+- Python bytecode caches under `scripts/`, and the timestamped ESSY smoke-test
+  projects and drafts covered by `.gitignore` are local test output.
+- The ESSY-0006 visual-audit `frames/*.jpg` are regenerated screenshots;
+  retain the adjacent review records and contact sheet for human review.
+
+Ignore rules do not delete local files or affect already tracked files. Do not
+generalize the smoke-test or screenshot rules to ordinary episode sources,
+editorial decisions, licenses, or provenance records.
 
 Exceptions (whitelist) that are kept because they are genuinely reusable
 source identity, not generated output:
