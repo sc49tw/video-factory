@@ -48,7 +48,9 @@ not add text-specific exceptions for any episode.
 
 Architecture:
 
-- Source VTT timing (edge-tts) is authoritative; it is never re-estimated.
+- Source VTT timing (word-boundary artifacts from Azure AI Speech,
+  or the retained Edge TTS provider) is authoritative; it is never
+  re-estimated.
 - Generated child cues preserve monotonic, absolute timing inside the parent
   narration window (char-weighted).
 - Subtitle timing is independent of visual shot boundaries. The visual
@@ -75,3 +77,16 @@ Regression tests: `pnpm test:subtitle`.
 If required assets are missing, stop and ask for them.
 
 The output must be a production-ready MP4.
+
+## Windows Execution Rules
+
+This repository is developed on Windows 11 using PowerShell.
+
+- All terminal commands must be compatible with PowerShell.
+- Never use Bash heredocs (`<<EOF`, `node - <<'NODE'`, `python - <<'PY'`).
+- Never send raw JavaScript or Python statements directly to PowerShell.
+- Use existing script files and invoke them with `node path/to/script.mjs` or `python path/to/script.py`.
+- Do not use interactive Node.js or Python REPL sessions for automation.
+- Prefer editing files through the editor's file-editing tools.
+- If a terminal command fails because of shell syntax, correct the invocation before changing application logic.
+- Do not repeatedly create one-off scripts for tasks already supported by the project.

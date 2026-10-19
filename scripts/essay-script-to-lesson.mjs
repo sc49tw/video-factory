@@ -31,6 +31,7 @@ function parseArguments(argv) {
     else if (argument === "--voice") args.voice = argv[++index];
     else if (argument === "--rate") args.rate = argv[++index];
     else if (argument === "--pitch") args.pitch = argv[++index];
+    else if (argument === "--provider") args.provider = argv[++index];
     else args.positional.push(argument);
   }
   return args;
@@ -104,10 +105,10 @@ async function main() {
     renderMode: "essay-narration",
     topic: null,
     sources: [],
-    ...(args.voice || args.rate
+    ...(args.voice || args.rate || args.provider
       ? {
           voice: {
-            provider: "edge",
+            provider: args.provider ?? "edge",
             ...(args.voice ? {voice: args.voice} : {}),
             ...(args.rate ? {rate: args.rate} : {}),
             ...(args.pitch ? {pitch: args.pitch} : {}),

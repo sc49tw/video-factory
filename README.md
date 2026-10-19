@@ -94,15 +94,21 @@ The episode's inbox, project, and output are moved under
 `archive/episodes/<EPISODE>/`. See `docs/production-lifecycle.md`.
 
 Video Factory guides a production from creative development through approved
-assets, TTS, rendering, QA, and retrospective. Edge TTS and FFmpeg produce the
-final double-pass shadowing video.
+assets, TTS, rendering, QA, and retrospective. Azure AI Speech (preferred
+ESSY narration provider; Edge TTS retained as the optional legacy provider)
+and FFmpeg produce the final double-pass shadowing video.
 
 ## Requirements
 
 - Node.js 20+
 - pnpm
 - FFmpeg and ffprobe
-- Edge TTS, either on `PATH` or installed at `.venv/bin/edge-tts`
+- Python 3.11+ with `edge-tts` (legacy optional provider) and
+  `azure-cognitiveservices-speech` (preferred provider)
+- ESSY narration with the Azure provider requires the environment
+  variables `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION` (Azure AI
+  Speech resource; add them to the git-ignored `.env` / shell
+  environment — never commit credentials)
 
 ## Episode input
 

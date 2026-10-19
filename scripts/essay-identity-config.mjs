@@ -80,7 +80,9 @@ export function resolveEssayIdentity({finalAssembly}) {
  * (e.g. an internal label like "ESSY") is deliberately ignored.
  */
 export function resolveEndingCardText({finalAssembly}) {
-  return resolveEssayIdentity({finalAssembly}).seriesTitle;
+  const canonical = resolveEssayIdentity({finalAssembly}).seriesTitle;
+  const approvedText = finalAssembly?.endCard?.text;
+  return approvedText && normalize(approvedText) === normalize(canonical) ? String(approvedText).trim() : canonical;
 }
 
 // ---------------------------------------------------------------------------

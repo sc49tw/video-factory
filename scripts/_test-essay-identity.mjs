@@ -18,6 +18,7 @@ import {
   ESSY_SERIES_IDENTITY,
   buildOpeningTitleFilters,
   resolveEndingCardText,
+  resolveEndingCardSpec,
   resolveEssayIdentity,
 } from "./essay-identity-config.mjs";
 
@@ -98,6 +99,12 @@ test("5c: v1 endCard.text 'ESSY' override is ignored, not propagated", () => {
   const identity = resolveEssayIdentity({finalAssembly: legacy});
   assert.equal(identity.ignoredEndCardOverride, "ESSY");
   assert.equal(resolveEndingCardText({finalAssembly: legacy}), SERIES);
+});
+
+test("approved series title casing is shared by review and final", () => {
+  const decisions = {title:{episodeTitle:'An Ordinary Life'}, endingHoldSec:4, endCard:{source:'seriesTitle', text:'A Second Look at Life'}};
+  assert.equal(resolveEndingCardText({finalAssembly:decisions}), 'A Second Look at Life');
+  assert.deepEqual(resolveEndingCardSpec({finalAssembly:decisions}), {text:'A Second Look at Life', endingHoldSec:4});
 });
 
 test("6: ESSY-0002 ending card is exactly the series title", () => {
