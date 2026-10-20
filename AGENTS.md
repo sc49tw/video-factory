@@ -39,6 +39,12 @@ Never modify story, English, or images during rendering.
 
 Never modify story, English, or images during rendering.
 
+After final approval, when the owner provides a YouTube URL for an ESSY
+episode, Codex identifies the episode from context and state, then runs
+`pnpm video:publication closeout <EPISODE> --url <URL>`. The URL is
+publication evidence, not an additional approval. If the episode is ambiguous,
+ask which episode it belongs to. Closeout never authorizes archival.
+
 ## ESSY subtitle architecture (shared, mandatory)
 
 ESSY subtitles MUST use the shared subtitle timeline builder

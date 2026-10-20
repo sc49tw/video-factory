@@ -125,7 +125,8 @@ including when the identity appears and what it may contain — live in
   deficit becomes extra trailing hold. Silence never creates a sourcing slot.
 - **ASSETS completion is machine validation, not a human gate.** A passing
   `assets-validation.json` deterministically advances ASSETS → RENDER. ESSY
-  keeps exactly **four** human approval gates (english, scenes, package, qa).
+  retains the human approvals for English, scenes, PACKAGE, review QA and
+  final assembly; PACKAGE is a separate approval, not ASSETS completion.
 - **Draft-backed ownership through review.** A draft-backed ESSY episode stays
   governed by `state.yaml` through review — do **not** register a competing
   `projects/<EP>/workflow.json` for QA. “Review proxy ready” is deterministic
@@ -182,6 +183,13 @@ including when the identity appears and what it may contain — live in
   the workflow at `final-assembly` with a `final-render-succeeded` history
   event (a new label invalidates earlier approval), so workflow state never
   runs ahead of artifacts. Approval completes the episode (state = DONE).
+- **Publication closeout:** after final approval, the owner supplies the
+  YouTube URL to Codex. Codex runs `pnpm video:publication closeout <EPISODE>
+  --url <URL>`; URL evidence is not another approval gate. The command checks
+  the approved master and release evidence, records the operator assertion,
+  and commits and pushes only the episode closeout records. Missing public
+  metadata leaves verification pending. If synchronization fails, retry the
+  same URL; see [production lifecycle](production-lifecycle.md).
 - **Archival (preserved):** never automatic, never inferable from production
   state — `pnpm video:workflow archive <EPISODE> --published` only after the
   user confirms EXTERNAL publication. Eligibility comes from the authoritative
@@ -196,8 +204,8 @@ including when the identity appears and what it may contain — live in
   compression, narrative structure, visual arc, `editorialFunction`,
   `visualIntent`, literalness review, search strategy, editorial candidate
   evaluation.
-- **Human — APPROVE (4 gates):** 1. Script · 2. Visual Selection ·
-  3. Review · 4. Final.
+- **Human — APPROVE:** Script · Scenes / visual selection · PACKAGE ·
+  Review QA · Final. PACKAGE is its own existing approval dependency.
 - **Codex / Video Factory — BUILD / SEARCH / EXECUTE / VERIFY:** repository
   artifacts, TTS, WordBoundary, timing, search execution, contact sheets,
   downloads, provenance, ffprobe, timeline construction, subtitles,
@@ -205,6 +213,15 @@ including when the identity appears and what it may contain — live in
 - **Core principle:** editorial judgment must not silently migrate into
   deterministic production code; deterministic engineering work must not
   depend on ChatGPT manually performing production operations.
+
+### Review handoff
+
+Present one primary artifact for each decision: the script, a visual selection
+preview, the PACKAGE summary, the review proxy, and the final master. Include a
+short description of changes and ask for approval or targeted revisions.
+Show detailed diagnostics on request. Revisions focus on changed material;
+previously approved unchanged content stays frozen. Visual selection and all
+technical validation requirements remain in force.
 
 ## Post-episode learning loop
 

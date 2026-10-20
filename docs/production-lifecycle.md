@@ -253,6 +253,32 @@ moved `projects/<EPISODE>/` and `output/<EPISODE>/` trees are never recreated.
 
 Regression tests: `pnpm test:publication`.
 
+### ESSY automatic publication closeout
+
+After final approval the owner may provide a YouTube URL to Codex. Codex uses
+`pnpm video:publication closeout <EPISODE> --url <URL>`. The closeout validates
+the existing final approval, master identity and release evidence without
+rendering, and reuses the publication recorder. A URL is an operator assertion,
+not a new approval or remote verification. Unprovided visibility and
+publication time remain absent; verification remains `not-verified`.
+
+The command writes `publication-record.json` and `closeout.json` under the
+episode publication directory, then commits and pushes only those records.
+It requires a clean index, an unchanged tracked approval authority and no
+conflicting target changes or unrelated outgoing commits. Unrelated untracked
+files are left alone. Remote divergence stops the operation without force.
+If push fails or its outcome is uncertain, retry with the same URL: the
+existing closeout commit is verified and pushed again rather than duplicated.
+Before a commit, closeout records its original target contents and writes new
+records atomically. On failure or interruption, a same-URL retry restores only
+known closeout changes and index entries. Unrelated changes are preserved. If
+the current contents or index do not match the recorded states, recovery stops:
+preserve them and inspect the recovery file and target paths identified in the
+error. A lock is reclaimed only when its same-host owner is confirmed absent;
+unknown owners and active processes require investigation, regardless of age.
+Conflicting video IDs and changed final evidence are refused. Closeout never
+archives or moves media; archival remains a separate owner decision.
+
 ### Check the package
 
 ```bash
