@@ -28,6 +28,7 @@
 
 import path from "node:path";
 import {fileURLToPath} from "node:url";
+import {closeoutEssy} from "../src/essy-closeout.mjs";
 import {
   PUBLICATION_DEFAULTS,
   buildPublicationCheckReport,
@@ -62,6 +63,7 @@ const [command, ...args] = process.argv.slice(2);
 try {
   if (command === "import") await importAsset(parseArgs(args));
   else if (command === "record") await recordEvidence(parseArgs(args));
+  else if (command === "closeout") await closeout(parseArgs(args));
   else if (command === "check") await check(args);
   else if (command === undefined || command === "--help" || command === "help") usage();
   else throw new Error(`Unknown publication command "${command}".`);
@@ -101,6 +103,7 @@ function usage() {
   console.log(`Usage:
   pnpm video:publication import <EPISODE> thumbnail [--from <path>] [--list] [--replace] [--within-days <n>]
   pnpm video:publication record <EPISODE> --url <youtube-url> [--published-at <ISO-8601>] [--visibility public|unlisted|private] [--json]
+  pnpm video:publication closeout <ESSY-EPISODE> --url <youtube-url> [--json]
   pnpm video:publication check  <EPISODE> [--json]
 
 Publication package layout (brand/ESSY/README.md, Asset Ownership):
@@ -121,6 +124,14 @@ never moved back.
 Publication metadata (title/description) is human-authored in youtube.json; only
 the thumbnail is imported from the browser Downloads folder. This CLI never
 marks an episode published and never archives it.`);
+}
+
+async function closeout({positional, flags}) {
+  if (positional.length !== 1 || !flags.url || Object.keys(flags).some(key => !['url', 'json'].includes(key))) {
+    throw new Error('Usage: closeout <ESSY-EPISODE> --url <youtube-url> [--json]');
+  }
+  const result = await closeoutEssy({factoryRoot, episode: positional[0], url:flags.url});
+  console.log(flags.json ? JSON.stringify(result, null, 2) : `Closeout ${result.episode}: ${result.commit} (YouTube verification: ${result.verification}).`);
 }
 
 function relative(target) {

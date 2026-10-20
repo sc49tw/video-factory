@@ -326,6 +326,7 @@ export async function recordPublicationEvidence(options) {
     now = new Date(),
     location = null,
     rules = {},
+    writeRecord = (file, contents) => writeFile(file, contents, "utf8"),
   } = options;
   if (!episode) throw new Error("An episode ID is required.");
   if (!factoryRoot) throw new Error("A factory root is required.");
@@ -429,7 +430,7 @@ export async function recordPublicationEvidence(options) {
   };
 
   await mkdir(paths.dir, {recursive: true});
-  await writeFile(paths.record, `${JSON.stringify(record, null, 2)}\n`, "utf8");
+  await writeRecord(paths.record, `${JSON.stringify(record, null, 2)}\n`);
   return {
     written: true,
     idempotent: false,
