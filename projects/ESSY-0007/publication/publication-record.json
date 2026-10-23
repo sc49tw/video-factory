@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0007",
+  "channel": null,
+  "publication": {
+    "schemaVersion": "1.0",
+    "platform": "youtube",
+    "status": "published",
+    "videoId": "u3UqHBmXR74",
+    "url": "https://www.youtube.com/watch?v=u3UqHBmXR74",
+    "sourceUrl": "https://youtu.be/u3UqHBmXR74",
+    "recordedAt": "2026-10-23T05:54:27.469Z",
+    "recordedBy": "operator-asserted",
+    "verification": "not-verified",
+    "masterPath": "output/ESSY-0007/ESSY-0007-final-v1.mp4"
+  }
+}

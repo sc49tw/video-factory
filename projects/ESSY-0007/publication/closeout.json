@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0007",
+  "videoId": "u3UqHBmXR74",
+  "publicationRecord": "projects/ESSY-0007/publication/publication-record.json",
+  "finalArtifact": {
+    "path": "output/ESSY-0007/ESSY-0007-final-v1.mp4",
+    "sha256": "427dd2dfd34697f4fbc828b4ee9127e6950c9991bbcafc9d5eee92db8e7c29dc",
+    "sizeBytes": 185169929
+  }
+}
