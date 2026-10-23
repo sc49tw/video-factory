@@ -1,0 +1,53 @@
+{
+  "output": "D:\\Git\\video-factory-essy-0007\\output\\ESSY-0007\\ESSY-0007-review-540p-subtitled-v6.mp4",
+  "opening": {
+    "startSec": 10.036,
+    "durationSec": 6.02,
+    "shot": {
+      "index": 1,
+      "blockId": "sentence-001",
+      "slotId": "N001-S2",
+      "mediaType": "video",
+      "sourcePath": "projects/ESSY-0007/sourcing/downloads/pexels-video-9618047.mp4",
+      "sourceDurationSec": 41.24,
+      "inPointSec": 0,
+      "stillMotion": null,
+      "renderDurationSec": 9.204,
+      "speechEndSec": 16.03,
+      "startSec": 6.826,
+      "endSec": 16.03,
+      "trailingHoldSec": 0,
+      "absoluteStartSec": 6.826,
+      "absoluteEndSec": 16.03,
+      "assetId": "pexels-video-9618047",
+      "sourceSha256": "e7507238cae8111271ffed5e41a41ffd0dec9b58efc564575be02dfcee5ac5b4"
+    },
+    "intraBlock": true,
+    "questionCount": 3,
+    "bodyStartSec": 11.016,
+    "cards": [
+      {
+        "kind": "channel",
+        "text": "A SECOND LOOK AT LIFE",
+        "startSec": 12.036,
+        "endSec": 14.036,
+        "fadeInDurSec": 0.35,
+        "fadeOutDurSec": 0.35
+      },
+      {
+        "kind": "episode",
+        "text": "So What?",
+        "startSec": 14.036,
+        "endSec": 16.036,
+        "fadeInDurSec": 0.35,
+        "fadeOutDurSec": 0.35
+      }
+    ]
+  },
+  "durationSec": 286.212,
+  "subtitleCount": 106,
+  "subtitleQaPassed": true,
+  "bilingual": true,
+  "narrationBlocks": 8,
+  "masterInput": "output/ESSY-0007/ESSY-0007-full-draft-v1.mp4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0007",
+  "purpose": "Canonical human-approved Gate 2 slot-to-asset mapping. One item is one storyboard visual slot; this map authorizes later production download only and contains no production download or render result.",
+  "gate2": {
+    "approved": true,
+    "mechanism": "Owner Visual Selection Approval: Owner accepted the complete 32-slot final selection, including the v2, v3, and v4 targeted replacements. The pre-existing canonical draft scenes approval remains recorded in projects/_drafts/ESSY-0007/state.yaml.",
+    "approvalScope": "visual selection only; PACKAGE remains unapproved"
+  },
+  "evidence": {
+    "storyboard": "projects/_drafts/ESSY-0007/storyboard.yaml",
+    "baseReview": "projects/ESSY-0007/sourcing/review-v2-gap-closure/owner-review-proxy-v2",
+    "n007Replacement": "projects/ESSY-0007/sourcing/targeted-exception-review-v3/ESSY-0007-targeted-exception-review",
+    "targetedReplacements": "projects/ESSY-0007/sourcing/targeted-sourcing-v4/ESSY-0007-targeted-sourcing-review",
+    "license": "Pexels License — https://www.pexels.com/license/"
+  },
+  "invariants": {
+    "slotEqualsShot": true,
+    "slotCount": 32,
+    "shotCount": 32,
+    "uniqueSlotIds": 32,
+    "uniqueAssets": 28,
+    "assetsReused": 2,
+    "allowedReuse": {
+      "pexels-video-6963824": "N002-S1 and N002-S2 are one permitted continuous-take allocation; decoded source 69.72s covers their combined 16.343s window.",
+      "pexels-video-5716999": "N008-S1 through N008-S4 are one required continuous long take; decoded source 20.56s covers the combined 20.328s ending without loop, freeze, or split."
+    },
+    "prohibitedConflictsResolved": [
+      "N002-S3 and N002-S4 no longer use 6611954.",
+      "N007-S1 no longer uses N008 reserved source 5716999.",
+      "N007-S4 no longer uses occupied 5483205."
+    ]
+  },
+  "items": [
+    {"slotId":"N001-S1","narrationId":"N001","assetId":"pexels-video-5090782","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":15.08,"durationSource":"review-v1 decoded preview validation","notes":"Pexels source retained in review-v2 mapping."},
+    {"slotId":"N001-S2","narrationId":"N001","assetId":"pexels-video-9618047","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":41.333333,"durationSource":"review-v2 decoded proxy validation","notes":"Pexels source retained in review-v2 mapping."},
+    {"slotId":"N001-S3","narrationId":"N001","assetId":"pexels-video-33063729","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":27.5,"inPointSec":0.2,"durationSource":"review-v2 decoded proxy validation","notes":"Technical trim: skip the source's 0.200 s black intro; asset and visual intent unchanged."},
+    {"slotId":"N001-S4","narrationId":"N001","assetId":"pexels-video-6279151","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":15.75,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N002-S1","narrationId":"N002","assetId":"pexels-video-6963824","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":69.72,"durationSource":"review-v1 decoded preview validation","notes":"Permitted continuous allocation with N002-S2; no loop."},
+    {"slotId":"N002-S2","narrationId":"N002","assetId":"pexels-video-6963824","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":69.72,"durationSource":"review-v1 decoded preview validation","notes":"Permitted continuous allocation with N002-S1; no loop."},
+    {"slotId":"N002-S3","narrationId":"N002","assetId":"pexels-video-4776104","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":21.973333,"durationSource":"targeted-sourcing-v4 SOURCE_VALIDATION.json","notes":"Ordinary communications cabinet; source URL and SHA-256 retained in v4 validation."},
+    {"slotId":"N002-S4","narrationId":"N002","assetId":"pexels-video-5644698","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":20.68,"durationSource":"targeted-sourcing-v4 SOURCE_VALIDATION.json","notes":"Unoccupied domestic interior; source URL and SHA-256 retained in v4 validation."},
+    {"slotId":"N003-S1","narrationId":"N003","assetId":"pexels-video-8478113","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":56.916667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N003-S2","narrationId":"N003","assetId":"pexels-video-35039967","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":104.75,"durationSource":"review-v2 decoded proxy validation","notes":"Owner accepted prior needs-review candidate."},
+    {"slotId":"N003-S3","narrationId":"N003","assetId":"pexels-video-35768258","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":18.166016,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N003-S4","narrationId":"N003","assetId":"pexels-video-20184478","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":52.666667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N004-S1","narrationId":"N004","assetId":"pexels-video-39498750","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":10.666667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N004-S2","narrationId":"N004","assetId":"pexels-video-6079427","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":14.583333,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N004-S3","narrationId":"N004","assetId":"pexels-video-30288953","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":70.5,"durationSource":"review-v2 decoded proxy validation","notes":"Owner accepted prior needs-review candidate."},
+    {"slotId":"N004-S4","narrationId":"N004","assetId":"pexels-video-10839347","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":11.0,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N005-S1","narrationId":"N005","assetId":"pexels-video-7325841","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":13.25,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N005-S2","narrationId":"N005","assetId":"pexels-video-7968377","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":17.916667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N005-S3","narrationId":"N005","assetId":"pexels-video-17136728","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":36.166667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N005-S4","narrationId":"N005","assetId":"pexels-video-7841621","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":8.916667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N006-S1","narrationId":"N006","assetId":"pexels-video-3795514","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":12.083333,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N006-S2","narrationId":"N006","assetId":"pexels-video-8298263","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":22.916667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N006-S3","narrationId":"N006","assetId":"pexels-video-4873236","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":15.416667,"durationSource":"review-v2 decoded proxy validation","notes":"Owner accepted prior needs-review candidate."},
+    {"slotId":"N006-S4","narrationId":"N006","assetId":"pexels-video-7686712","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":12.416667,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N007-S1","narrationId":"N007","assetId":"pexels-video-5519767","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":18.585,"durationSource":"targeted-exception-review-v3 DIFF_SUMMARY.md","notes":"Unoccupied meeting room; distinct from N008 long-take source."},
+    {"slotId":"N007-S2","narrationId":"N007","assetId":"pexels-video-853977","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":12.916016,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N007-S3","narrationId":"N007","assetId":"pexels-video-5657846","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":23.333008,"durationSource":"review-v2 decoded proxy validation","notes":null},
+    {"slotId":"N007-S4","narrationId":"N007","assetId":"pexels-video-1509536","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":19.605,"durationSource":"targeted-sourcing-v4 SOURCE_VALIDATION.json","notes":"Unoccupied office corridor/open doorway; source URL and SHA-256 retained in v4 validation."},
+    {"slotId":"N008-S1","narrationId":"N008","assetId":"pexels-video-5716999","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":20.56,"durationSource":"review-v2 EXCEPTIONS.md and preview validation","notes":"N008-LONG-TAKE segment 1 of one continuous source."},
+    {"slotId":"N008-S2","narrationId":"N008","assetId":"pexels-video-5716999","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":20.56,"durationSource":"review-v2 EXCEPTIONS.md and preview validation","notes":"N008-LONG-TAKE segment 2 of one continuous source."},
+    {"slotId":"N008-S3","narrationId":"N008","assetId":"pexels-video-5716999","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":20.56,"durationSource":"review-v2 EXCEPTIONS.md and preview validation","notes":"N008-LONG-TAKE segment 3 of one continuous source."},
+    {"slotId":"N008-S4","narrationId":"N008","assetId":"pexels-video-5716999","mediaType":"video","stillMotion":null,"editorialStatus":"human-approved","actualDurationSec":20.56,"durationSource":"review-v2 EXCEPTIONS.md and preview validation","notes":"N008-LONG-TAKE segment 4 of one continuous source."}
+  ]
+}

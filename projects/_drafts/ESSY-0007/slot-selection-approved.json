@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0007",
+  "narrationDurationSec": 276.192,
+  "slots": [
+    {
+      "slotId": "N001-S1",
+      "assetId": "pexels-video-5090782",
+      "proposedStartSec": 0,
+      "proposedDurationSec": 6.826
+    },
+    {
+      "slotId": "N001-S2",
+      "assetId": "pexels-video-9618047",
+      "proposedStartSec": 6.826,
+      "proposedDurationSec": 9.204
+    },
+    {
+      "slotId": "N001-S3",
+      "assetId": "pexels-video-33063729",
+      "proposedStartSec": 16.03,
+      "proposedDurationSec": 6.733
+    },
+    {
+      "slotId": "N001-S4",
+      "assetId": "pexels-video-6279151",
+      "proposedStartSec": 22.763,
+      "proposedDurationSec": 7.381
+    },
+    {
+      "slotId": "N002-S1",
+      "assetId": "pexels-video-6963824",
+      "proposedStartSec": 30.144,
+      "proposedDurationSec": 10.888
+    },
+    {
+      "slotId": "N002-S2",
+      "assetId": "pexels-video-6963824",
+      "proposedStartSec": 41.032,
+      "proposedDurationSec": 5.455
+    },
+    {
+      "slotId": "N002-S3",
+      "assetId": "pexels-video-4776104",
+      "proposedStartSec": 46.487,
+      "proposedDurationSec": 13.664
+    },
+    {
+      "slotId": "N002-S4",
+      "assetId": "pexels-video-5644698",
+      "proposedStartSec": 60.151,
+      "proposedDurationSec": 14.417
+    },
+    {
+      "slotId": "N003-S1",
+      "assetId": "pexels-video-8478113",
+      "proposedStartSec": 74.568,
+      "proposedDurationSec": 9.198
+    },
+    {
+      "slotId": "N003-S2",
+      "assetId": "pexels-video-35039967",
+      "proposedStartSec": 83.766,
+      "proposedDurationSec": 9.659
+    },
+    {
+      "slotId": "N003-S3",
+      "assetId": "pexels-video-35768258",
+      "proposedStartSec": 93.425,
+      "proposedDurationSec": 8.821
+    },
+    {
+      "slotId": "N003-S4",
+      "assetId": "pexels-video-20184478",
+      "proposedStartSec": 102.246,
+      "proposedDurationSec": 9.474
+    },
+    {
+      "slotId": "N004-S1",
+      "assetId": "pexels-video-39498750",
+      "proposedStartSec": 111.72,
+      "proposedDurationSec": 9.723
+    },
+    {
+      "slotId": "N004-S2",
+      "assetId": "pexels-video-6079427",
+      "proposedStartSec": 121.443,
+      "proposedDurationSec": 8.779
+    },
+    {
+      "slotId": "N004-S3",
+      "assetId": "pexels-video-30288953",
+      "proposedStartSec": 130.222,
+      "proposedDurationSec": 6.846
+    },
+    {
+      "slotId": "N004-S4",
+      "assetId": "pexels-video-10839347",
+      "proposedStartSec": 137.068,
+      "proposedDurationSec": 10.676
+    },
+    {
+      "slotId": "N005-S1",
+      "assetId": "pexels-video-7325841",
+      "proposedStartSec": 147.744,
+      "proposedDurationSec": 12.081
+    },
+    {
+      "slotId": "N005-S2",
+      "assetId": "pexels-video-7968377",
+      "proposedStartSec": 159.825,
+      "proposedDurationSec": 11.151
+    },
+    {
+      "slotId": "N005-S3",
+      "assetId": "pexels-video-17136728",
+      "proposedStartSec": 170.976,
+      "proposedDurationSec": 8.267
+    },
+    {
+      "slotId": "N005-S4",
+      "assetId": "pexels-video-7841621",
+      "proposedStartSec": 179.243,
+      "proposedDurationSec": 4.117
+    },
+    {
+      "slotId": "N006-S1",
+      "assetId": "pexels-video-3795514",
+      "proposedStartSec": 183.36,
+      "proposedDurationSec": 10.547
+    },
+    {
+      "slotId": "N006-S2",
+      "assetId": "pexels-video-8298263",
+      "proposedStartSec": 193.907,
+      "proposedDurationSec": 5.852
+    },
+    {
+      "slotId": "N006-S3",
+      "assetId": "pexels-video-4873236",
+      "proposedStartSec": 199.759,
+      "proposedDurationSec": 6.79
+    },
+    {
+      "slotId": "N006-S4",
+      "assetId": "pexels-video-7686712",
+      "proposedStartSec": 206.549,
+      "proposedDurationSec": 7.891
+    },
+    {
+      "slotId": "N007-S1",
+      "assetId": "pexels-video-5519767",
+      "proposedStartSec": 214.44,
+      "proposedDurationSec": 11.158
+    },
+    {
+      "slotId": "N007-S2",
+      "assetId": "pexels-video-853977",
+      "proposedStartSec": 225.598,
+      "proposedDurationSec": 9.332
+    },
+    {
+      "slotId": "N007-S3",
+      "assetId": "pexels-video-5657846",
+      "proposedStartSec": 234.93,
+      "proposedDurationSec": 10.881
+    },
+    {
+      "slotId": "N007-S4",
+      "assetId": "pexels-video-1509536",
+      "proposedStartSec": 245.811,
+      "proposedDurationSec": 10.053
+    },
+    {
+      "slotId": "N008-S1",
+      "assetId": "pexels-video-5716999",
+      "proposedStartSec": 255.864,
+      "proposedDurationSec": 7.223
+    },
+    {
+      "slotId": "N008-S2",
+      "assetId": "pexels-video-5716999",
+      "proposedStartSec": 263.087,
+      "proposedDurationSec": 5.782
+    },
+    {
+      "slotId": "N008-S3",
+      "assetId": "pexels-video-5716999",
+      "proposedStartSec": 268.869,
+      "proposedDurationSec": 2.926
+    },
+    {
+      "slotId": "N008-S4",
+      "assetId": "pexels-video-5716999",
+      "proposedStartSec": 271.795,
+      "proposedDurationSec": 4.397
+    }
+  ]
+}

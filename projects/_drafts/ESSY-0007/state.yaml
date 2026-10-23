@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "2.0",
+  "draftId": "ESSY-0007",
+  "series": "ESSY",
+  "subtype": "essay",
+  "format": "ESSY",
+  "currentStage": "RENDER",
+  "status": "completed",
+  "approvals": {
+    "concept": {
+      "approved": false
+    },
+    "english": {
+      "approved": true,
+      "approvedAt": "2026-10-20T15:14:45.199Z"
+    },
+    "scenes": {
+      "approved": true,
+      "approvedAt": "2026-10-20T22:26:28.742Z"
+    },
+    "package": {
+      "approved": true,
+      "approvedAt": "2026-10-21T15:14:08.646Z"
+    },
+    "qa": {
+      "approved": true,
+      "approvedAt": "2026-10-22T23:44:06.072Z",
+      "artifact": {
+        "path": "output/ESSY-0007/ESSY-0007-review-540p-subtitled-v6.mp4",
+        "filename": "ESSY-0007-review-540p-subtitled-v6.mp4",
+        "sizeBytes": 29622408,
+        "sha256": "8c068bdf99b6193df92eb90e0a62a116d1751bfccf14461b1c9f44119ed85226"
+      },
+      "approval": {
+        "by": "Owner",
+        "channel": "editorial review",
+        "date": "2026-10-23"
+      }
+    },
+    "finalAssembly": {
+      "approved": true,
+      "approvedAt": "2026-10-22T23:53:02.186Z",
+      "artifact": {
+        "filename": "ESSY-0007-final-v1.mp4",
+        "path": "output/ESSY-0007/ESSY-0007-final-v1.mp4",
+        "sha256": "427dd2dfd34697f4fbc828b4ee9127e6950c9991bbcafc9d5eee92db8e7c29dc",
+        "sizeBytes": 185169929,
+        "durationSec": 286.397005,
+        "subtitleQaPassed": true,
+        "renderLabel": "bilingual-en-zhTW"
+      }
+    }
+  },
+  "artifacts": {
+    "request": "request.yaml",
+    "concept": null,
+    "script": "script.md",
+    "titles": "titles.json",
+    "compressionReview": "compression-review.md",
+    "bilingualNarration": "subtitles/zh-TW.json",
+    "storyboard": "storyboard.yaml",
+    "productionPackage": null,
+    "assetsValidation": "assets-validation.json"
+  },
+  "createdAt": "2026-10-20T00:00:00.000Z",
+  "updatedAt": "2026-10-22T23:53:02.188Z",
+  "history": [
+    {
+      "at": "2026-10-20T00:00:00.000Z",
+      "event": "write-imported",
+      "source": "Owner-approved Bilingual Narration Draft v6 supplied in ChatGPT conversation"
+    },
+    {
+      "at": "2026-10-20T15:14:45.202Z",
+      "event": "english-approved"
+    },
+    {
+      "at": "2026-10-20T15:39:21.111Z",
+      "event": "prepare-complete",
+      "blockCount": 8,
+      "totalDurationSec": 278.616,
+      "manifest": "manifest.json"
+    },
+    {
+      "at": "2026-10-20T22:22:01.425Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-10-20T22:26:24.749Z",
+      "event": "storyboard-submitted"
+    },
+    {
+      "at": "2026-10-20T22:26:28.744Z",
+      "event": "scenes-approved"
+    },
+    {
+      "at": "2026-10-21T15:14:08.649Z",
+      "event": "package-approved"
+    },
+    {
+      "at": "2026-10-21T15:32:36.470Z",
+      "event": "assets-complete"
+    },
+    {
+      "at": "2026-10-22T23:44:06.075Z",
+      "event": "qa-approved",
+      "artifact": {
+        "path": "output/ESSY-0007/ESSY-0007-review-540p-subtitled-v6.mp4",
+        "filename": "ESSY-0007-review-540p-subtitled-v6.mp4",
+        "sizeBytes": 29622408,
+        "sha256": "8c068bdf99b6193df92eb90e0a62a116d1751bfccf14461b1c9f44119ed85226"
+      },
+      "approval": {
+        "by": "Owner",
+        "channel": "editorial review",
+        "date": "2026-10-23"
+      }
+    },
+    {
+      "at": "2026-10-22T23:53:02.186Z",
+      "event": "final-assembly-approved",
+      "artifact": {
+        "filename": "ESSY-0007-final-v1.mp4",
+        "path": "output/ESSY-0007/ESSY-0007-final-v1.mp4",
+        "sha256": "427dd2dfd34697f4fbc828b4ee9127e6950c9991bbcafc9d5eee92db8e7c29dc",
+        "sizeBytes": 185169929,
+        "durationSec": 286.397005,
+        "subtitleQaPassed": true,
+        "renderLabel": "bilingual-en-zhTW"
+      }
+    }
+  ],
+  "prepare": {
+    "completed": true,
+    "completedAt": "2026-10-20T15:39:21.109Z",
+    "blockCount": 8,
+    "totalDurationSec": 278.616,
+    "manifest": "manifest.json"
+  }
+}

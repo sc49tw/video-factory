@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "ESSY-0007",
+  "series": "ESSY",
+  "title": "So What?",
+  "language": "en",
+  "narration": {
+    "script": "projects/ESSY-0007/script.md",
+    "manifest": "projects/ESSY-0007/manifest.json",
+    "blockCount": 8
+  },
+  "storyboard": {
+    "path": "projects/_drafts/ESSY-0007/storyboard.yaml",
+    "slotCount": 32
+  },
+  "approvedAssets": {
+    "path": "projects/ESSY-0007/sourcing/approved-slot-asset-map.json",
+    "count": 32
+  },
+  "openingIdentity": {
+    "seriesTitle": "A SECOND LOOK AT LIFE",
+    "episodeTitle": "So What?",
+    "openingPlan": {
+      "questions": [
+        "What does it mean to spend years building something?",
+        "What if the world barely notices?",
+        "And if none of it seems to matter, why do we keep going?"
+      ]
+    },
+    "timing": {
+      "startSec": 10.036,
+      "durationSec": 4.0,
+      "pauseBeforeIdentitySec": 2.0,
+      "pauseAfterIdentitySec": 1.0
+    },
+    "presentation": {
+      "mode": "sequential"
+    },
+    "narrationSuppression": {
+      "enabled": true
+    },
+    "subtitleSuppression": {
+      "enabled": true
+    }
+  }
+}

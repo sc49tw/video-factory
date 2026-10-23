@@ -1,0 +1,787 @@
+{
+  "schemaVersion": "1.0",
+  "draftId": "ESSY-0007",
+  "episodeId": "ESSY-0007",
+  "title": "So What?",
+  "status": "PROPOSAL_FOR_OWNER_GATE_2_REVIEW",
+  "timingSource": "projects/ESSY-0007/manifest.json plus temp/sentence-001..008.words.json (Azure Speech WordBoundary; en-GB-RyanNeural, -12%). All slot boundaries are absolute master-timeline offsets derived from these approved timing artifacts; narration is unchanged.",
+  "totalDurationSec": 276.192,
+  "visualArc": "Precision engineering and ordinary entertainment -> the replaceability of one engineer -> the private pleasure of understanding a problem -> an unheroic, quiet distance from work -> an unoccupied workspace held in silence.",
+  "editorialPolicy": {
+    "people": "A: avoid faces. Prefer hands, backs, partial bodies, and unoccupied workspaces.",
+    "ending": "B: N008-S1 through N008-S4 are one continuous, unoccupied modest-office-or-laboratory long take spanning the final 20.328 seconds. They are four editorial beats, not four required cuts; a home workbench is excluded.",
+    "style": "Naturalistic, restrained documentary observation; no sci-fi gloss, heroic engineer mythology, tragedy spectacle, or motivational resolution.",
+    "slotPlan": "32 editorial slots retained. Adjacent slots may reuse a source where continuity serves the narration. All sources remain unselected; this is not a search, selection, download, package, or render artifact."
+  },
+  "blocks": [
+    {
+      "narrationId": "N001",
+      "windowSec": [
+        0.0,
+        30.144
+      ],
+      "visualArc": "Competent, small-scale engineering work; its value is invisibility rather than spectacle.",
+      "slots": [
+        {
+          "slotId": "N001-S1",
+          "timingSec": [
+            0,
+            6.826
+          ],
+          "narrationBlock": "N001",
+          "narrationBeat": "I have spent much of my working life in wireless communications.",
+          "editorialFunction": "Establish a working life as attentive, ordinary craft rather than technological grandeur.",
+          "visualIntent": "Close detail of hands arranging a modest electronics workbench; notebooks, cable ends, or test leads in natural window light.",
+          "peopleVisibility": "hands only; no face",
+          "cameraMovement": "locked-off or imperceptibly stable tripod",
+          "avoid": [
+            "futuristic interface overlays",
+            "hero-engineer portraiture",
+            "server-room spectacle",
+            "branded devices"
+          ],
+          "assetRequirement": "realistic documentary video; quiet technical bench; usable 6.826 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N001-S2",
+          "timingSec": [
+            6.826,
+            16.03
+          ],
+          "narrationBlock": "N001",
+          "narrationBeat": "Trying to make the systems more reliable, more efficient, and a little better with every improvement.",
+          "editorialFunction": "Show patient adjustment without literalising every engineering claim.",
+          "visualIntent": "Partial body from behind at a desk, one hand making a small measurement or connection; the work is deliberate and unshowy.",
+          "peopleVisibility": "back/shoulder and hands only",
+          "cameraMovement": "static observational medium detail",
+          "avoid": [
+            "animated signal graphics",
+            "speed-ramp effects",
+            "command-center screens",
+            "triumphant breakthrough"
+          ],
+          "assetRequirement": "documentary desk/workshop clip; usable 9.204 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N001-S3",
+          "timingSec": [
+            16.03,
+            22.763
+          ],
+          "narrationBlock": "N001",
+          "narrationBeat": "Most improvements were small... But they could still take weeks of work.",
+          "editorialFunction": "Give the small, slow nature of improvement a physical texture.",
+          "visualIntent": "Macro or close detail of a handwritten calculation, soldering pause, or a simple test indicator changing without drama.",
+          "peopleVisibility": "hands or object only",
+          "cameraMovement": "locked-off close detail",
+          "avoid": [
+            "instant-success visuals",
+            "dramatic sparks",
+            "time-lapse",
+            "failure melodrama"
+          ],
+          "assetRequirement": "restrained work-detail video; usable 6.733 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N001-S4",
+          "timingSec": [
+            22.763,
+            30.144
+          ],
+          "narrationBlock": "N001",
+          "narrationBeat": "And that's fine... That's rather the point.",
+          "editorialFunction": "Land the ethic of invisible infrastructure by returning to a calm, usable ordinary world.",
+          "visualIntent": "Unoccupied desk after work, a router/light or ordinary home device present but not featured; room remains more important than technology.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static wide or medium hold",
+          "avoid": [
+            "product advertising",
+            "network diagrams",
+            "smart-home glamour",
+            "uplifting ending cue"
+          ],
+          "assetRequirement": "unoccupied natural workspace/interior; usable 7.381 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N002",
+      "windowSec": [
+        30.144,
+        74.568
+      ],
+      "visualArc": "A sharp, slightly absurd contrast between invisible infrastructure and frictionless entertainment; disappointment remains measured.",
+      "slots": [
+        {
+          "slotId": "N002-S1",
+          "timingSec": [
+            30.144,
+            41.032
+          ],
+          "narrationBlock": "N002",
+          "narrationBeat": "But every now and then... AI-generated short dramas.",
+          "editorialFunction": "Introduce everyday entertainment as an observed use-case, not a cultural indictment.",
+          "visualIntent": "Over-shoulder or hands-only view of someone casually scrolling short-form drama thumbnails; screen content unreadable or defocused.",
+          "peopleVisibility": "hands/shoulder only; no face",
+          "cameraMovement": "static",
+          "avoid": [
+            "legible copyrighted clips",
+            "mocking reaction shot",
+            "social-media UI emphasis",
+            "neon cyber aesthetic"
+          ],
+          "assetRequirement": "ordinary phone/tablet use, defocus-safe; usable 10.888 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N002-S2",
+          "timingSec": [
+            41.032,
+            46.487
+          ],
+          "narrationBlock": "N002",
+          "narrationBeat": "One episode after another. And I find myself thinking:",
+          "editorialFunction": "Let repetition feel faintly comic without editorial ridicule.",
+          "visualIntent": "The same thumb idly advances content while domestic surroundings stay still.",
+          "peopleVisibility": "hand only",
+          "cameraMovement": "locked-off close detail",
+          "avoid": [
+            "compulsive-addiction rhetoric",
+            "fast montage",
+            "comic graphics",
+            "visible face"
+          ],
+          "assetRequirement": "may reuse N002-S1 source as continuous take; usable 5.455 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N002-S3",
+          "timingSec": [
+            46.487,
+            60.151
+          ],
+          "narrationBlock": "N002",
+          "narrationBeat": "Decades of research. Extraordinary engineering. Billions spent building networks.",
+          "editorialFunction": "Widen from the private screen to the physical patience and scale behind it, without visualising claims as spectacle.",
+          "visualIntent": "Quiet exterior of an ordinary communications cabinet, rooftop aerial at distance, or technician's back inspecting mundane infrastructure.",
+          "peopleVisibility": "none preferred; otherwise distant back",
+          "cameraMovement": "static landscape/medium",
+          "avoid": [
+            "city-at-night sci-fi",
+            "data-stream VFX",
+            "corporate campus glamour",
+            "aerial drone hero shot"
+          ],
+          "assetRequirement": "naturalistic infrastructure observation; usable 13.664 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N002-S4",
+          "timingSec": [
+            60.151,
+            74.568
+          ],
+          "narrationBlock": "N002",
+          "narrationBeat": "And sometimes... a little disappointed.",
+          "editorialFunction": "Hold the ambivalent conclusion: impressive and a little ridiculous, then gently disappointed.",
+          "visualIntent": "Return to an unoccupied living-room corner after the device is set down; banal quiet absorbs the thought.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static long hold",
+          "avoid": [
+            "sad acting",
+            "doom imagery",
+            "moralising text",
+            "dramatic blackout"
+          ],
+          "assetRequirement": "unoccupied domestic interior; usable 14.417 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N003",
+      "windowSec": [
+        74.568,
+        111.72
+      ],
+      "visualArc": "Contribution is small, durable, and anonymous; reassurance comes from quiet usefulness, not importance.",
+      "slots": [
+        {
+          "slotId": "N003-S1",
+          "timingSec": [
+            74.568,
+            83.766
+          ],
+          "narrationBlock": "N003",
+          "narrationBeat": "Sometimes I wonder what I actually contributed... Problems that took weeks or months to understand.",
+          "editorialFunction": "Make questioning contribution feel private and professional, not self-pitying.",
+          "visualIntent": "Hands turn notebook pages beside a dormant laptop or technical printout; no readable proprietary content.",
+          "peopleVisibility": "hands only",
+          "cameraMovement": "static close/overhead",
+          "avoid": [
+            "face-in-hands despair",
+            "code close-ups",
+            "achievement plaques",
+            "literal question marks"
+          ],
+          "assetRequirement": "quiet desk detail; usable 9.198 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N003-S2",
+          "timingSec": [
+            83.766,
+            93.425
+          ],
+          "narrationBlock": "N003",
+          "narrationBeat": "Perhaps somewhere... a small part of my work is still running.",
+          "editorialFunction": "Suggest persistence without claiming authorship or showing invisible software literally.",
+          "visualIntent": "An ordinary device, transit concourse, or public interior functioning normally while the narrator remains absent.",
+          "peopleVisibility": "none or incidental distant figures",
+          "cameraMovement": "static observational",
+          "avoid": [
+            "code animation",
+            "network maps",
+            "named product screens",
+            "tech-commercial polish"
+          ],
+          "assetRequirement": "everyday system in use; usable 9.659 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N003-S3",
+          "timingSec": [
+            93.425,
+            102.246
+          ],
+          "narrationBlock": "N003",
+          "narrationBeat": "Only at moments like that... Not because it proves I was important.",
+          "editorialFunction": "Separate reassurance from status.",
+          "visualIntent": "A hand pauses after completing a small practical adjustment, then simply rests; no reveal of success.",
+          "peopleVisibility": "hand only",
+          "cameraMovement": "locked-off close detail",
+          "avoid": [
+            "thumbs-up",
+            "celebration",
+            "award imagery",
+            "hero framing"
+          ],
+          "assetRequirement": "hands at practical task; usable 8.821 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N003-S4",
+          "timingSec": [
+            102.246,
+            111.72
+          ],
+          "narrationBlock": "N003",
+          "narrationBeat": "But because something... quietly doing its job... reassurance.",
+          "editorialFunction": "End on humble reliability as the only reassurance offered.",
+          "visualIntent": "Unoccupied work surface with a small steady practical light or ordinary machine operating quietly in daylight.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static",
+          "avoid": [
+            "dramatic glowing LEDs",
+            "futurist mood",
+            "religious metaphor",
+            "victory cue"
+          ],
+          "assetRequirement": "subtle practical environment; usable 9.474 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N004",
+      "windowSec": [
+        111.72,
+        147.744
+      ],
+      "visualArc": "Replaceability is acknowledged without bitterness; larger systems continue.",
+      "slots": [
+        {
+          "slotId": "N004-S1",
+          "timingSec": [
+            111.72,
+            121.443
+          ],
+          "narrationBlock": "N004",
+          "narrationBeat": "But if I hadn't been there... Maybe later.",
+          "editorialFunction": "Open the counterfactual with an ordinary workspace that makes no claim to indispensability.",
+          "visualIntent": "Empty chair and workbench before or after a shift; tools remain where anyone could use them.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static",
+          "avoid": [
+            "abandonment tragedy",
+            "dramatic empty-office lighting",
+            "nameplate focus",
+            "lonely face"
+          ],
+          "assetRequirement": "unoccupied credible workspace; usable 9.723 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N004-S2",
+          "timingSec": [
+            121.443,
+            130.222
+          ],
+          "narrationBlock": "N004",
+          "narrationBeat": "Maybe with a better algorithm. Or a worse one.",
+          "editorialFunction": "Keep variation in solution quality matter-of-fact rather than competitive.",
+          "visualIntent": "Two sets of anonymous hands at different simple bench tasks, or one task continuing without authorship emphasis.",
+          "peopleVisibility": "hands only",
+          "cameraMovement": "static medium detail",
+          "avoid": [
+            "versus framing",
+            "performance charts",
+            "winner/loser cues",
+            "competition montage"
+          ],
+          "assetRequirement": "neutral engineering/work activity; usable 8.779 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N004-S3",
+          "timingSec": [
+            130.222,
+            137.068
+          ],
+          "narrationBlock": "N004",
+          "narrationBeat": "The products would probably still have been built... same.",
+          "editorialFunction": "Let systems continue beyond one person's presence.",
+          "visualIntent": "A quiet production floor, public transit mechanism, or building service in normal operation, observed from distance.",
+          "peopleVisibility": "none or incidental partial figures",
+          "cameraMovement": "static",
+          "avoid": [
+            "factory grandeur",
+            "industrial triumph",
+            "time-lapse",
+            "brand signage"
+          ],
+          "assetRequirement": "ordinary ongoing system; usable 6.846 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N004-S4",
+          "timingSec": [
+            137.068,
+            147.744
+          ],
+          "narrationBlock": "N004",
+          "narrationBeat": "I don't find that disappointing... Including mine.",
+          "editorialFunction": "Land replaceability as acceptance, not defeat.",
+          "visualIntent": "Back view of a person leaving a modest workspace, or the now-empty room after they leave; pace unhurried.",
+          "peopleVisibility": "back only or none",
+          "cameraMovement": "locked-off wide",
+          "avoid": [
+            "resignation melodrama",
+            "sunset exit",
+            "hero walk",
+            "funereal imagery"
+          ],
+          "assetRequirement": "quiet transition in real workspace; usable 10.676 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N005",
+      "windowSec": [
+        147.744,
+        183.36
+      ],
+      "visualArc": "The joy was in understanding, not in changing the world.",
+      "slots": [
+        {
+          "slotId": "N005-S1",
+          "timingSec": [
+            147.744,
+            159.825
+          ],
+          "narrationBlock": "N005",
+          "narrationBeat": "The strange thing is... resisted every attempt to solve it.",
+          "editorialFunction": "Return to the intrinsic pleasure of a hard problem, with contained tension.",
+          "visualIntent": "Hands revisiting a notebook or a careful bench test in a quiet, lived-in technical room.",
+          "peopleVisibility": "hands/partial torso only",
+          "cameraMovement": "static close detail",
+          "avoid": [
+            "genius trope",
+            "frantic typing",
+            "head-in-hands frustration",
+            "hackathon aesthetics"
+          ],
+          "assetRequirement": "patient problem-solving observation; usable 12.081 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N005-S2",
+          "timingSec": [
+            159.825,
+            170.976
+          ],
+          "narrationBlock": "N005",
+          "narrationBeat": "Some solutions were satisfying. Others were less than perfect.",
+          "editorialFunction": "Allow imperfection into the memory without converting it into failure.",
+          "visualIntent": "A hand compares two annotated pages or makes a modest correction; the process stays open and calm.",
+          "peopleVisibility": "hands only",
+          "cameraMovement": "locked-off overhead",
+          "avoid": [
+            "error alert screens",
+            "broken-device drama",
+            "before/after reveal",
+            "perfectionist montage"
+          ],
+          "assetRequirement": "paper/bench process footage; usable 11.151 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N005-S3",
+          "timingSec": [
+            170.976,
+            179.243
+          ],
+          "narrationBlock": "N005",
+          "narrationBeat": "But finally understanding... finally made sense today.",
+          "editorialFunction": "Give understanding a quiet perceptual shift rather than a breakthrough spectacle.",
+          "visualIntent": "A still hand stops writing; the room remains unchanged while attention settles on one simple resolved note or connection.",
+          "peopleVisibility": "hand only",
+          "cameraMovement": "static",
+          "avoid": [
+            "lightbulb metaphor",
+            "big reveal",
+            "celebratory reaction",
+            "VFX"
+          ],
+          "assetRequirement": "subtle pause at work surface; usable 8.267 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N005-S4",
+          "timingSec": [
+            179.243,
+            183.36
+          ],
+          "narrationBlock": "N005",
+          "narrationBeat": "I enjoyed that. I still do.",
+          "editorialFunction": "Make enjoyment modest and ongoing.",
+          "visualIntent": "A hand resumes a small, absorbing task; cut may remain on the same source as N005-S3.",
+          "peopleVisibility": "hand only",
+          "cameraMovement": "static",
+          "avoid": [
+            "smiling face close-up",
+            "inspirational flourish",
+            "applause",
+            "completion trophy"
+          ],
+          "assetRequirement": "may reuse N005-S3 continuous source; usable 4.117 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N006",
+      "windowSec": [
+        183.36,
+        214.44
+      ],
+      "visualArc": "Work was fortunate and imperfect; its value was the long companionship of interesting questions.",
+      "slots": [
+        {
+          "slotId": "N006-S1",
+          "timingSec": [
+            183.36,
+            193.907
+          ],
+          "narrationBlock": "N006",
+          "narrationBeat": "And looking back, I was fortunate... capable of solving.",
+          "editorialFunction": "Frame fortune as an ordinary arrangement, not an earned legend.",
+          "visualIntent": "Partial figure at an unremarkable desk or workshop, pausing in natural daylight before a routine task.",
+          "peopleVisibility": "back/shoulder or hands only",
+          "cameraMovement": "static",
+          "avoid": [
+            "career-success montage",
+            "prestige office",
+            "salary/cash imagery",
+            "hero portrait"
+          ],
+          "assetRequirement": "ordinary authentic work setting; usable 10.547 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N006-S2",
+          "timingSec": [
+            193.907,
+            199.759
+          ],
+          "narrationBlock": "N006",
+          "narrationBeat": "That was a pretty good arrangement. Not every project was important.",
+          "editorialFunction": "Temper gratitude with a plain admission of uneven importance.",
+          "visualIntent": "Unoccupied desk with everyday paperwork and a practical task waiting; no symbolic judgement.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static medium hold",
+          "avoid": [
+            "corporate satire",
+            "empty-office sadness",
+            "achievement imagery",
+            "text graphics"
+          ],
+          "assetRequirement": "unoccupied work surface; usable 5.852 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N006-S3",
+          "timingSec": [
+            199.759,
+            206.549
+          ],
+          "narrationBlock": "N006",
+          "narrationBeat": "Some work was tedious. And some solutions probably mattered less than we thought.",
+          "editorialFunction": "Give tedium and reduced importance a normal, non-comic texture.",
+          "visualIntent": "Hands perform a repetitive, careful administrative or bench action at real pace.",
+          "peopleVisibility": "hands only",
+          "cameraMovement": "locked-off close detail",
+          "avoid": [
+            "slapstick boredom",
+            "clock imagery",
+            "exhaustion acting",
+            "cynical montage"
+          ],
+          "assetRequirement": "routine work action; usable 6.790 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N006-S4",
+          "timingSec": [
+            206.549,
+            214.44
+          ],
+          "narrationBlock": "N006",
+          "narrationBeat": "But there were enough interesting questions... quite a long time.",
+          "editorialFunction": "Close the work chapter on enduring curiosity rather than career achievement.",
+          "visualIntent": "Back view in a calm workspace looking at an unresolved but ordinary object or page; hold through the final reflective cadence.",
+          "peopleVisibility": "back only",
+          "cameraMovement": "static wide/medium",
+          "avoid": [
+            "future-facing hero pose",
+            "sunrise metaphor",
+            "inspirational resolution",
+            "visible face"
+          ],
+          "assetRequirement": "quiet workspace contemplation; usable 7.891 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N007",
+      "windowSec": [
+        214.44,
+        255.864
+      ],
+      "visualArc": "Distance from work makes its impermanence clear: work continues without the narrator, bringing comfort and a slight sadness.",
+      "slots": [
+        {
+          "slotId": "N007-S1",
+          "timingSec": [
+            214.44,
+            225.598
+          ],
+          "narrationBlock": "N007",
+          "narrationBeat": "Now, as I begin to think about the years beyond work... The technical arguments.",
+          "editorialFunction": "Create distance from the former working life without memorialising it.",
+          "visualIntent": "Unoccupied meeting table or desk at the end of a day; scattered ordinary tools/papers, soft natural light.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static",
+          "avoid": [
+            "nostalgic sepia",
+            "retirement advertisement",
+            "awards/legacy display",
+            "dramatic empty chair"
+          ],
+          "assetRequirement": "real, subdued workspace; usable 11.158 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N007-S2",
+          "timingSec": [
+            225.598,
+            234.93
+          ],
+          "narrationBlock": "N007",
+          "narrationBeat": "The little victories that seemed so important at the time. Most have already faded.",
+          "editorialFunction": "Let former urgency recede without treating it as worthless.",
+          "visualIntent": "A closed notebook or cleared whiteboard area in a quiet room; marks of work remain but receive no emphasis.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static close/medium",
+          "avoid": [
+            "erasing metaphor",
+            "melodramatic loss",
+            "trophy imagery",
+            "time-lapse"
+          ],
+          "assetRequirement": "subtle remnants of everyday work; usable 9.332 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N007-S3",
+          "timingSec": [
+            234.93,
+            245.811
+          ],
+          "narrationBlock": "N007",
+          "narrationBeat": "Technology keeps changing... Old solutions become obsolete.",
+          "editorialFunction": "Show succession as normal renewal, never a threat from younger people.",
+          "visualIntent": "Hands of an unidentifiable different worker making a routine adjustment, or anonymous people entering a work floor at distance.",
+          "peopleVisibility": "hands/distant partial figures only",
+          "cameraMovement": "static",
+          "avoid": [
+            "young-genius trope",
+            "age conflict",
+            "speedy innovation montage",
+            "futurist VFX"
+          ],
+          "assetRequirement": "ordinary multi-person work environment; usable 10.881 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N007-S4",
+          "timingSec": [
+            245.811,
+            255.864
+          ],
+          "narrationBlock": "N007",
+          "narrationBeat": "And the work goes on. Without needing me. There's something comforting about that. But also a little sadness.",
+          "editorialFunction": "Hold comfort and sadness together in the same unforced image.",
+          "visualIntent": "Unoccupied workspace after activity has passed, seen from a doorway; daylight and room tone carry the final ambivalence.",
+          "peopleVisibility": "none",
+          "cameraMovement": "static long hold",
+          "avoid": [
+            "funeral tone",
+            "hero farewell",
+            "dramatic door close",
+            "sunset ending"
+          ],
+          "assetRequirement": "unoccupied natural workspace; usable 10.053 s",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    },
+    {
+      "narrationId": "N008",
+      "windowSec": [
+        255.864,
+        276.192
+      ],
+      "visualArc": "The ending does not resolve the question. An unoccupied workspace remains, holding ordinary life and a slight emptiness.",
+      "slots": [
+        {
+          "slotId": "N008-S1",
+          "timingSec": [
+            255.864,
+            263.087
+          ],
+          "narrationBlock": "N008",
+          "narrationBeat": "Maybe that's simply how life goes. We spend years doing things we take seriously.",
+          "editorialFunction": "Begin the final release into quiet observation.",
+          "visualIntent": "CONTINUOUS ENDING TAKE: an unoccupied, modest office or laboratory in late natural light, with lived-in signs of work but no event. It is not a home workbench.",
+          "peopleVisibility": "none",
+          "cameraMovement": "locked-off, no motion",
+          "avoid": [
+            "face reveal",
+            "sunset symbolism",
+            "inspirational typography",
+            "music-video treatment"
+          ],
+          "assetRequirement": "one unoccupied-workspace clip shared with N008-S2/S3/S4; continuous 20.328 s minimum",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N008-S2",
+          "timingSec": [
+            263.087,
+            268.869
+          ],
+          "narrationBlock": "N008",
+          "narrationBeat": "And one day, we look back. Not exactly with regret.",
+          "editorialFunction": "Let reflection occupy the same unchanged frame; no explanatory cut is needed.",
+          "visualIntent": "CONTINUOUS ENDING TAKE: retain exact N008-S1 framing and source; ordinary work objects remain at rest.",
+          "peopleVisibility": "none",
+          "cameraMovement": "locked-off, no motion",
+          "avoid": [
+            "flashback montage",
+            "photo album",
+            "melodramatic darkness",
+            "symbolic clock"
+          ],
+          "assetRequirement": "same continuous N008-S1 source; no cut required; 5.782 s editorial beat",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N008-S3",
+          "timingSec": [
+            268.869,
+            271.795
+          ],
+          "narrationBlock": "N008",
+          "narrationBeat": "Just a slight sense of emptiness.",
+          "editorialFunction": "Give the short, exposed phrase a dedicated beat without turning it into tragedy.",
+          "visualIntent": "CONTINUOUS ENDING TAKE: same room, same frame; its quiet emptiness is literal only at the level of absence of people, not a symbolic prop.",
+          "peopleVisibility": "none",
+          "cameraMovement": "locked-off, no motion",
+          "avoid": [
+            "black screen",
+            "abandoned-building imagery",
+            "grief cliche",
+            "dramatic cut"
+          ],
+          "assetRequirement": "same continuous N008-S1 source; no cut required; 2.926 s editorial beat",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        },
+        {
+          "slotId": "N008-S4",
+          "timingSec": [
+            271.795,
+            276.192
+          ],
+          "narrationBlock": "N008",
+          "narrationBeat": "And perhaps a quiet sense of wondering what it was all for.",
+          "editorialFunction": "End with the question still open, allowing the last frame to stay after speech ends.",
+          "visualIntent": "CONTINUOUS ENDING TAKE: same unoccupied workspace, held through narration end; no action, no closure, no fade dictated by the visual plan.",
+          "peopleVisibility": "none",
+          "cameraMovement": "locked-off, no motion",
+          "avoid": [
+            "uplift montage",
+            "final hero image",
+            "resolved answer",
+            "fade-to-black cue",
+            "on-screen question text"
+          ],
+          "assetRequirement": "same continuous N008-S1 source; no cut required; final 4.397 s including natural trailing room for last-word tail",
+          "sourceStatus": "PLANNED_UNSELECTED"
+        }
+      ]
+    }
+  ],
+  "sequenceLiteralnessReview": {
+    "status": "PASS_FOR_OWNER_REVIEW",
+    "details": [
+      "The visual arc treats the essay as reflection, not illustrated transcript. Engineering is shown through ordinary labour, interfaces are never made legible, and entertainment is a casual domestic observation rather than a target of ridicule.",
+      "The replaceability argument is carried by unoccupied/shared workspaces and continuing systems, never by defeat, redundancy notices, or a new engineer replacing the narrator.",
+      "The pleasure of solving problems uses pauses, notebooks, and hands; it avoids genius, breakthrough, or world-changing imagery.",
+      "Faces are avoided throughout in accordance with policy A. Where people appear, only hands, backs, shoulders, or distant incidental bodies are permitted.",
+      "N008 deliberately overrides routine pacing: all four final beats use one continuous unoccupied-workspace source for the full 20.328 s ending. This preserves the 32-slot editorial plan while making no claim that 32 source clips or edits are needed.",
+      "No slot relies on visual timing for subtitles. All boundaries reference the approved Azure WordBoundary master timeline; subtitle construction remains a later shared-pipeline responsibility."
+    ],
+    "openQuestionsForReview": [
+      "Confirm the N002 short-drama image should remain an intentionally defocused, generic phone/tablet observation, avoiding any readable content or platform identity.",
+      "RESOLVED BY OWNER GATE 2 DECISION: the final N008 unoccupied workspace is a modest office or laboratory, not a home workbench.",
+      "All 32 slots are unselected planning placeholders. Gate 2 selection, source queries, preview/download, PACKAGE, BUILD, and render remain out of scope until Owner approval."
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0007",
+  "series": "ESSY",
+  "subtype": "essay",
+  "title": "So What?",
+  "language": "en",
+  "renderMode": "essay-narration",
+  "voice": {
+    "provider": "azure",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-12%",
+    "pitch": "+0Hz",
+    "volume": "+0%"
+  },
+  "sections": [
+    {
+      "id": "n001",
+      "heading": "N001",
+      "narration": [
+        {
+          "id": "n001",
+          "text": "What does it mean to spend years building something?\n\nWhat if the world barely notices?\n\nAnd if none of it seems to matter, why do we keep going?\n\nI have spent much of my working life in wireless communications.\n\nTrying to make the systems more reliable, more efficient, and a little better with every improvement.\n\nMost people shouldn't have to think about how their wireless connection works.\n\nThat's rather the point.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n002",
+      "heading": "N002",
+      "narration": [
+        {
+          "id": "n002",
+          "text": "But every now and then, I look at what all this technology is being used for.\n\nSomeone is watching an endless series of AI-generated short dramas.\n\nOne episode after another.\n\nAnd I find myself thinking:\n\nDecades of research.\n\nExtraordinary engineering.\n\nBillions spent building networks.\n\nAnd sometimes, I wonder if all that effort was really for something like this.\n\nIt's impressive.\n\nAnd a little ridiculous.\n\nOf course, I know the technology serves far more important purposes.\n\nBut still, I can't help feeling a little disappointed.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n003",
+      "heading": "N003",
+      "narration": [
+        {
+          "id": "n003",
+          "text": "Sometimes I wonder what I actually contributed.\n\nAlgorithms I worked on.\n\nPieces of code I wrote.\n\nProblems that took weeks or months to understand.\n\nPerhaps somewhere, in some product, a small part of my work is still running.\n\nOnly at moments like that do I feel a small sense of having contributed something.\n\nNot because it proves I was important.\n\nBut because something I once worked hard on might still be quietly doing its job.\n\nAnd that gives me a small sense of reassurance.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n004",
+      "heading": "N004",
+      "narration": [
+        {
+          "id": "n004",
+          "text": "But if I hadn't been there, someone else would probably have solved those problems.\n\nMaybe sooner.\n\nMaybe later.\n\nMaybe with a better algorithm.\n\nOr a worse one.\n\nThe products would probably still have been built.\n\nAnd the world would look almost exactly the same.\n\nI don't find that disappointing.\n\nMost of us contribute small pieces to things much larger than ourselves.\n\nAnd those pieces can usually be replaced.\n\nIncluding mine.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n005",
+      "heading": "N005",
+      "narration": [
+        {
+          "id": "n005",
+          "text": "The strange thing is, none of this made the work less interesting.\n\nI still remember the satisfaction of finally understanding a problem that had resisted every attempt to solve it.\n\nSome solutions were satisfying.\n\nOthers were less than perfect.\n\nBut finally understanding something that had puzzled me was always rewarding.\n\nNot because I had changed the world.\n\nBut because something that hadn't made sense yesterday finally made sense today.\n\nI enjoyed that.\n\nI still do.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n006",
+      "heading": "N006",
+      "narration": [
+        {
+          "id": "n006",
+          "text": "And looking back, I was fortunate.\n\nSomeone was willing to pay me to solve problems I was reasonably interested in, and capable of solving.\n\nThat was a pretty good arrangement.\n\nNot every project was important.\n\nSome work was tedious.\n\nAnd some solutions probably mattered less than we thought.\n\nBut there were enough interesting questions to keep me going.\n\nFor quite a long time, as it turns out.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n007",
+      "heading": "N007",
+      "narration": [
+        {
+          "id": "n007",
+          "text": "Now, as I begin to think about the years beyond work, I sometimes look back from a greater distance.\n\nThe projects.\n\nThe deadlines.\n\nThe technical arguments.\n\nThe little victories that seemed so important at the time.\n\nMost have already faded.\n\nTechnology keeps changing.\n\nNew engineers arrive.\n\nNew problems appear.\n\nOld solutions become obsolete.\n\nAnd the work goes on.\n\nWithout needing me.\n\nThere's something comforting about that.\n\nBut also a little sadness.",
+          "pauseAfterSec": 0
+        }
+      ]
+    },
+    {
+      "id": "n008",
+      "heading": "N008",
+      "narration": [
+        {
+          "id": "n008",
+          "text": "Maybe that's simply how life goes.\n\nWe spend years doing things we take seriously.\n\nAnd one day, we look back.\n\nNot exactly with regret.\n\nJust a slight sense of emptiness.\n\nAnd perhaps a quiet sense of wondering what it was all for.",
+          "pauseAfterSec": 0
+        }
+      ]
+    }
+  ]
+}

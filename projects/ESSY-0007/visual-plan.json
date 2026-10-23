@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "1.0",
+  "episode": "ESSY-0007",
+  "strategy": "approved-slot-handoff",
+  "shots": [
+    {
+      "slotId": "N001-S1",
+      "sectionId": "sentence-001",
+      "startSec": 0,
+      "endSec": 6.826,
+      "cues": []
+    },
+    {
+      "slotId": "N001-S2",
+      "sectionId": "sentence-001",
+      "startSec": 6.826,
+      "endSec": 16.03,
+      "cues": []
+    },
+    {
+      "slotId": "N001-S3",
+      "sectionId": "sentence-001",
+      "startSec": 16.03,
+      "endSec": 22.763,
+      "cues": []
+    },
+    {
+      "slotId": "N001-S4",
+      "sectionId": "sentence-001",
+      "startSec": 22.763,
+      "endSec": 30.144,
+      "cues": []
+    },
+    {
+      "slotId": "N002-S1",
+      "sectionId": "sentence-002",
+      "startSec": 0,
+      "endSec": 10.888,
+      "cues": []
+    },
+    {
+      "slotId": "N002-S2",
+      "sectionId": "sentence-002",
+      "startSec": 10.888,
+      "endSec": 16.343,
+      "cues": []
+    },
+    {
+      "slotId": "N002-S3",
+      "sectionId": "sentence-002",
+      "startSec": 16.343,
+      "endSec": 30.007,
+      "cues": []
+    },
+    {
+      "slotId": "N002-S4",
+      "sectionId": "sentence-002",
+      "startSec": 30.007,
+      "endSec": 44.424,
+      "cues": []
+    },
+    {
+      "slotId": "N003-S1",
+      "sectionId": "sentence-003",
+      "startSec": 0,
+      "endSec": 9.198,
+      "cues": []
+    },
+    {
+      "slotId": "N003-S2",
+      "sectionId": "sentence-003",
+      "startSec": 9.198,
+      "endSec": 18.857,
+      "cues": []
+    },
+    {
+      "slotId": "N003-S3",
+      "sectionId": "sentence-003",
+      "startSec": 18.857,
+      "endSec": 27.678,
+      "cues": []
+    },
+    {
+      "slotId": "N003-S4",
+      "sectionId": "sentence-003",
+      "startSec": 27.678,
+      "endSec": 37.152,
+      "cues": []
+    },
+    {
+      "slotId": "N004-S1",
+      "sectionId": "sentence-004",
+      "startSec": 0,
+      "endSec": 9.723,
+      "cues": []
+    },
+    {
+      "slotId": "N004-S2",
+      "sectionId": "sentence-004",
+      "startSec": 9.723,
+      "endSec": 18.502,
+      "cues": []
+    },
+    {
+      "slotId": "N004-S3",
+      "sectionId": "sentence-004",
+      "startSec": 18.502,
+      "endSec": 25.348,
+      "cues": []
+    },
+    {
+      "slotId": "N004-S4",
+      "sectionId": "sentence-004",
+      "startSec": 25.348,
+      "endSec": 36.024,
+      "cues": []
+    },
+    {
+      "slotId": "N005-S1",
+      "sectionId": "sentence-005",
+      "startSec": 0,
+      "endSec": 12.081,
+      "cues": []
+    },
+    {
+      "slotId": "N005-S2",
+      "sectionId": "sentence-005",
+      "startSec": 12.081,
+      "endSec": 23.232,
+      "cues": []
+    },
+    {
+      "slotId": "N005-S3",
+      "sectionId": "sentence-005",
+      "startSec": 23.232,
+      "endSec": 31.499,
+      "cues": []
+    },
+    {
+      "slotId": "N005-S4",
+      "sectionId": "sentence-005",
+      "startSec": 31.499,
+      "endSec": 35.616,
+      "cues": []
+    },
+    {
+      "slotId": "N006-S1",
+      "sectionId": "sentence-006",
+      "startSec": 0,
+      "endSec": 10.547,
+      "cues": []
+    },
+    {
+      "slotId": "N006-S2",
+      "sectionId": "sentence-006",
+      "startSec": 10.547,
+      "endSec": 16.399,
+      "cues": []
+    },
+    {
+      "slotId": "N006-S3",
+      "sectionId": "sentence-006",
+      "startSec": 16.399,
+      "endSec": 23.189,
+      "cues": []
+    },
+    {
+      "slotId": "N006-S4",
+      "sectionId": "sentence-006",
+      "startSec": 23.189,
+      "endSec": 31.08,
+      "cues": []
+    },
+    {
+      "slotId": "N007-S1",
+      "sectionId": "sentence-007",
+      "startSec": 0,
+      "endSec": 11.158,
+      "cues": []
+    },
+    {
+      "slotId": "N007-S2",
+      "sectionId": "sentence-007",
+      "startSec": 11.158,
+      "endSec": 20.49,
+      "cues": []
+    },
+    {
+      "slotId": "N007-S3",
+      "sectionId": "sentence-007",
+      "startSec": 20.49,
+      "endSec": 31.371,
+      "cues": []
+    },
+    {
+      "slotId": "N007-S4",
+      "sectionId": "sentence-007",
+      "startSec": 31.371,
+      "endSec": 41.424,
+      "cues": []
+    },
+    {
+      "slotId": "N008-S1",
+      "sectionId": "sentence-008",
+      "startSec": 0,
+      "endSec": 7.223,
+      "cues": []
+    },
+    {
+      "slotId": "N008-S2",
+      "sectionId": "sentence-008",
+      "startSec": 7.223,
+      "endSec": 13.005,
+      "cues": []
+    },
+    {
+      "slotId": "N008-S3",
+      "sectionId": "sentence-008",
+      "startSec": 13.005,
+      "endSec": 15.931,
+      "cues": []
+    },
+    {
+      "slotId": "N008-S4",
+      "sectionId": "sentence-008",
+      "startSec": 15.931,
+      "endSec": 20.328,
+      "cues": []
+    }
+  ]
+}
